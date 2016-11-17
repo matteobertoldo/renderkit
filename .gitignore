@@ -23,3 +23,6 @@ app.min.js
 app.min.js.map
 sprite.svg
 dist/*.html
+
+# IDE Generated Files
+# --------------------------
