@@ -13,3 +13,13 @@ node_modules
 # Optional npm cache directory
 
 .npm
+
+# Compiled Gulp Files
+# --------------------------
+
+style.min.css
+style.min.css.map
+app.min.js
+app.min.js.map
+sprite.svg
+dist/*.html
