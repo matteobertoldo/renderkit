@@ -9,7 +9,7 @@ Definitely the standard 👌🏽 for start Front-End Web Projects.
 - [jQuery 3+](http://jquery.com) 
 - [Foundation Sass Grid & Breakpoints](http://foundation.zurb.com/sites/docs/grid.html) 
 - Sass Custom Packages
-- Fast-Click
+- [Fast-Click](https://github.com/ftlabs/fastclick)
 - What Input
 - Inline SVG 
 - Outdated Browsers Support
