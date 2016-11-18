@@ -368,14 +368,6 @@ legend {
 		@include appearance-none;
 		border: 1px solid lightgray;
 	}
-
-	//padding: 1px;
-
-	//@if ($global-custom-select != true) {
-		//@include fix-firefox() {
-			//padding: 2px;
-		//}
-	//}
 }
 
 input {
@@ -433,8 +425,6 @@ select {
 			@include appearance-none;
 		}
 	} @else {
-		//padding: 1px;
-
 		&:-moz-focusring {
 			color: transparent;
 			text-shadow: 0 0 0 $global-base-color;
@@ -461,7 +451,6 @@ textarea {
 		border: 1px solid lightgray;
 	}
 
-	//padding: 2px;
 	overflow: auto;
 	resize: none;
 }
