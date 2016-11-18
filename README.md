@@ -6,7 +6,7 @@ Definitely the standard 👌🏽 for start Front-End Web Projects.
 - [Node.js](https://nodejs.org/) 
 - [Gulp](http://gulpjs.com) 
 - Modernizr Custom Build 
-- [jQuery](http://jquery.com) 3+ 
+- [jQuery 3+](http://jquery.com) 
 - Foundation Sass Grid & Breakpoints 
 - Sass Custom Packages
 - Fast-Click
