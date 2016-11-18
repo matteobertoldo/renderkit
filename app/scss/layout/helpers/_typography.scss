@@ -1,0 +1,72 @@
+// @typography helper package
+// @author: mbertoldo@alpenite.com
+// @note: packages of classes to be invoked via template
+// --------------------------------
+
+/*@typography classes, headings & paraghraps*/
+
+// @set global position text & view
+// @param: classes
+// --------------------
+
+@each $align in (left, right, center, justify) {
+	.text-#{$align} {
+        text-align: $align;
+    }
+}
+
+.text-ellipsis {
+	@include text-ellipsis;
+}
+
+// @set global heading font size
+// @param: tags
+// --------------------
+
+@each $header, $font-size in $heading-sizes {
+	#{$header} {
+		font-size: $font-size;
+	}
+}
+
+// @set global heading font family & margin
+// @set margin only if heading was the first child element but not the last-child
+// @param: tags
+// --------------------
+
+#{headings(1,6)} {
+	font: {
+		family: $global-heading-font-family;
+		weight: $global-heading-font-weight;
+	}
+
+	line-height: $global-heading-line-height;
+	letter-spacing: $global-heading-letter-spacing;
+	color: $global-heading-color;
+
+	@if ($global-margin-heading) {
+		&:first-child:not(:last-child) {
+			margin: $margin-heading;
+		}
+	}
+}
+
+// @set global paragraph font family & margin
+// @param: tag
+// --------------------
+
+p {
+	font: {
+		family: $global-paragraph-font-family;
+		weight: $global-paragraph-font-weight;
+	}
+
+	line-height: $global-paragraph-line-height;
+	color: $global-paragraph-color;
+
+	@if ($global-margin-paragraph) {
+		&:not(:last-child) {
+			margin: $margin-paragraph;
+		}
+	}
+}

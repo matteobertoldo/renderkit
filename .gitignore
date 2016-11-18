@@ -26,3 +26,4 @@ dist/*.html
 
 # IDE Generated Files
 # --------------------------
+./idea

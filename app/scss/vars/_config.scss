@@ -1,0 +1,128 @@
+// @define global vars
+// @param: {String}
+// @author: mbertoldo@alpenite.com
+// @include: style.scss
+// @component: public
+
+// @colors palette
+// ----------------
+
+$colors-palette: ();
+
+// @colors: accessibility
+// ----------------
+
+$selection-background-color: #b3d4fc !global;
+$global-selection-color: false !default;
+$selection-color: initial !default;
+
+// @colors: global
+// ----------------
+
+$global-background-color: white !default;
+$global-base-color: black !default;
+$global-heading-color: inherit !default;
+$global-paragraph-color: inherit !default;
+$global-link-color: black !default;
+$global-hover-link-color: black !default;
+
+// @colors: input
+// @form
+// ----------------
+
+$global-input-color: black !default; //TODO: set on custom form configuration
+$global-input-border: lightgray !default; //TODO: set on custom form configuration
+$global-custom-input-border: lightgray !default;
+$hover-custom-input-border: false !default;
+$hover-custom-input-border-color: initial !default;
+$checked-custom-input-border: true !default;
+$custom-checkbox-checked-border: #333 !default;
+$custom-radio-checked-border: #333 !default;
+$custom-checkbox-mark-color: #333 !default;
+$custom-radio-mark-color: #333 !default;
+
+// @typography
+// @note: default output of ´font´, ´font size´, ´letter spacing´, ´line-height´ rules defined in px they will be automatically converted into rem units.
+// Set tre || false on gulp.config.json.
+// ----------------
+
+$font-dir: '../../assets/fonts/' !global;
+$global-text-direction: ltr !default;
+$primary-type-font: sans-serif !default;
+$global-font-family: $primary-type-font;
+$global-heading-font-family: inherit !default;
+$global-paragraph-font-family: inherit !default;
+$global-strong-font-family: inherit !default;
+$global-font-weight: normal !default;
+$global-heading-font-weight: bold !default;
+$global-paragraph-font-weight: normal !default;
+$global-line-height: 1.15 !default;
+$global-heading-line-height: 1.4 !default;
+$global-paragraph-line-height: 1.4 !default;
+$heading-sizes: (
+	'h1': 22px,
+	'h2': 20px,
+	'h3': 18px,
+	'h4': 16px,
+	'h5': 14px,
+	'h6': 12px
+) !default;
+$global-heading-letter-spacing: normal !default;
+
+// @layout
+// ----------------
+
+$global-input-default-appearance: false !default;
+$global-custom-checkbox-radio: true !default;
+$global-custom-select: false !default; //TODO: set support for custom select via JS.
+$global-flexbox-clearfix: true !default;
+$global-link-text-decoration: false !default;
+$global-input-border-radius: 0 !default; //TODO: set on custom form configuration
+$global-margin-heading: true !default;
+$global-margin-paragraph: false !default;
+$margin-heading: 0 0 16px 0 !default;
+$margin-paragraph: 0 0 0 0 !default;
+
+// @print
+// ----------------
+
+$global-transparent-print-background: false !default;
+
+// @grid
+// @foudation
+// ----------------
+
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+$grid-row-width: 1200px !default;
+$grid-column-count: 6 !default;
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+) !default;
+$grid-column-align-edge: true !default;
+$-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
+$block-grid-max: 1 !default;
+
+// @breakpoints
+// @foundation
+// @medium: iPhone 6/7 landscape mode
+// ----------------
+
+$breakpoints: (
+  small: 0,
+  medium: 667px,
+  large: 768px,
+  xlarge: 1024px,
+  xxlarge: 1280px,
+) !default;
+$breakpoint-classes: (small medium large) !default;
+$-zf-zero-breakpoint: small !default;
+
+// @transitions
+// ----------------
+
+$fast: 0.3s !default;
+$medium: 0.45s !default;
+$slow: 0.7s !default;
+$cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;

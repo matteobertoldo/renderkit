@@ -1,0 +1,38 @@
+// @accessibility helper package
+// @author: mbertoldo@alpenite.com
+// @note: packages of classes to be invoked via template
+// --------------------------------
+
+/*@accessibility classes & pseudo elem*/
+
+::selection {
+    background: $selection-background-color;
+    @if ($global-selection-color) {
+        color: $selection-color;
+    }
+    text-shadow: none;
+}
+
+.visuallyhidden {
+	@include visuallyhidden;
+}
+
+.no-select {
+	user-select: none;
+}
+
+.no-touch {
+	@include touch-action(none);
+}
+
+.no-text {
+    @include no-text;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.no-display {
+    display: none;
+}

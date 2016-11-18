@@ -1,0 +1,449 @@
+// @mixin grid
+// @author: foundation.zurb.com
+// @component: core
+// @note: Licensed under MIT Open Source
+
+// Change the behavior of columns defined inside this mixin to use a different column count.
+// @param {Number} $columns - Number of columns to use.
+// @param {Boolean} $root [false]
+// @note: If `false`, selectors inside this mixin will nest inside the parent selector.
+// @note: If `true`, selectors will not nest.
+
+@mixin grid-context($columns, $root: false) {
+    $old-grid-column-count: $grid-column-count;
+    $grid-column-count: $columns !global;
+
+    @if $root {
+        @at-root {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+
+    $grid-column-count: $old-grid-column-count !global;
+}
+
+// Creates a grid row.
+// @param: {Number} $columns [null] - Column count for this row. `null` will use the default column count.
+// @param: {Keywords} $behavior [null]
+// @note: Modifications to the default grid styles. `nest` indicates the row will be placed inside another row. `collapse` indicates that the columns inside this row will not have padding. `nest collapse` combines both behaviors.
+// @param: {Keyword|Number} $size [$grid-row-width] Maximum size of the row. Set to `expand` to make the row taking the full width.
+// @param: {Boolean} $cf [true] - Whether or not to include a clearfix.
+// @param: {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
+
+@mixin grid-row($columns: null, $behavior: null, $size: $grid-row-width, $cf: true, $gutters: $grid-column-gutter) {
+	$margin: auto;
+
+	@if index($behavior, nest) != null {
+		@include grid-row-nest($gutters);
+
+		@if index($behavior, collapse) != null {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	} @else {
+		@include grid-row-size($size);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@if $cf {
+		@include clearfix;
+	}
+
+	@if $columns != null {
+		@include grid-context($columns) {
+			@content;
+		}
+	}
+}
+
+// Inverts the margins of a row to nest it inside of a column.
+// @param: {Number|Map} $gutters [$grid-column-gutter]
+// @note: Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
+
+@mixin grid-row-nest($gutters: $grid-column-gutter) {
+	@include -zf-each-breakpoint {
+		$margin: grid-column-gutter($-zf-size, $gutters) / 2 * - 1;
+		margin-left: $margin;
+		margin-right: $margin;
+	}
+}
+
+// Set a grid row size
+// @param: {Keyword|Number} $size [$grid-row-width] Maximum size of the row.
+// @note: Set to `expand` to make the row taking the full width.
+
+@mixin grid-row-size($size: $grid-row-width) {
+	@if $size == expand {
+		$size: none;
+	}
+	max-width: $size;
+}
+
+// Creates a grid column.
+// @param: {Mixed} $columns [$grid-column-count] - Width of the column. Refer to the `grid-column()` function to see possible values.
+// @param: {Mixed} $gutters [$grid-column-gutter] - Spacing between columns. Refer to the `grid-column-gutter()` function to see possible values.
+
+@mixin grid-column($columns: $grid-column-count, $gutters: $grid-column-gutter) {
+	@include grid-column-size($columns);
+	float: $global-left;
+	@include grid-column-gutter($gutters: $gutters);
+
+	@if $grid-column-align-edge {
+		&:last-child:not(:first-child) {
+			float: $global-right;
+		}
+	}
+}
+
+// Creates a grid column row. This is the equivalent of adding `.row` and `.column` to the same element.
+// @param: {Mixed} $gutters [$grid-column-gutter] - Width of the gutters on either side of the column row. Refer to the `grid-column-gutter()` function to see possible values.
+
+@mixin grid-column-row($gutters: $grid-column-gutter) {
+	@include grid-row;
+	@include grid-column($gutters: $gutters);
+
+	&, &:last-child {
+		float: none;
+	}
+}
+
+// Shorthand for `grid-column()`.
+// @alias grid-column
+
+@mixin grid-col($columns: $grid-column-count,$gutters: $grid-column-gutter) {
+	@include grid-column($columns, $gutters);
+}
+
+// Shorthand for `grid-column-row()`.
+// @alias grid-column-row
+
+@mixin grid-col-row($gutters: $grid-column-gutter) {
+	@include grid-column-row($gutters);
+}
+
+// Set the width of a grid column.
+// @param: {Number|List} $width [$grid-column-count] - Width to make the column. You can pass in any value accepted by the `grid-column()` function, such as `6`, `50%`, or `1 of 2`.
+
+@mixin grid-column-size($columns: $grid-column-count) {
+	width: grid-column($columns);
+}
+
+// Shorthand for `grid-column-size()`.
+// @alias grid-column-size
+
+@mixin grid-col-size($columns: $grid-column-count) {
+	@include grid-column-size($columns);
+}
+
+// Reposition a column.
+// @param: {Number|Keyword} $position - Direction and amount to move. The column will move equal to the width of the column count specified. A positive number will push the column to the right, while a negative number will pull it to the left. Set to center to center the column.
+
+@mixin grid-column-position($position) {
+	@if type-of($position) == 'number' {
+		$offset: percentage($position / $grid-column-count);
+
+		position: relative;
+		#{$global-left}: $offset;
+	} @else if $position == center {
+		&, &:last-child:not(:first-child) {
+			float: none;
+			clear: both;
+		}
+
+		margin-left: auto;
+		margin-right: auto;
+	} @else {
+		@warn 'Wrong syntax for grid-column-position(). Enter a positive or negative number, or center.';
+	}
+}
+
+// Reset a position definition.
+
+@mixin grid-column-unposition {
+	position: static;
+	float: left;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+// Offsets a column to the right by `$n` columns.
+// @param: {Number|List} $n - Width to offset by. You can pass in any value accepted by the `grid-column()` mixin, such as `6`, `50%`, or `1 of 2`.
+
+@mixin grid-column-offset($n) {
+	margin-#{$global-left}: grid-column($n);
+}
+
+// Disable the default behavior of the last column in a row aligning to the opposite edge.
+
+@mixin grid-column-end {
+	&:last-child:last-child {
+		float: $global-left;
+	}
+}
+
+// Shorthand for `grid-column-position()`.
+// @alias grid-column-position
+
+@mixin grid-col-pos($position) {
+	@include grid-column-position($position);
+}
+
+// Shorthand for `grid-column-unposition()`.
+// @alias grid-column-unposition
+
+@mixin grid-col-unpos {
+	@include grid-column-unposition;
+}
+
+// Shorthand for `grid-column-offset()`.
+// @alias grid-column-offset
+
+@mixin grid-col-off($n) {
+	@include grid-column-offset($n);
+}
+
+// Shorthand for `grid-column-end()`.
+// @alias grid-column-end
+
+@mixin grid-col-end {
+	@include grid-column-end;
+}
+
+// Set the gutters on a column
+// @param: {Number|Keyword} $gutter [auto]
+// @param: {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use. Responsive gutter settings by default.
+
+@mixin grid-column-gutter($gutter: auto, $gutters: $grid-column-gutter) {
+    @if $gutter == auto and type-of($gutters) == 'map' {
+        @each $value, $breakpoint in $gutters {
+            @include breakpoint($breakpoint) {
+                @include grid-column-gutter($value);
+            }
+        }
+    } @else {
+        @if type-of($gutter) == 'string' {
+            $gutter: grid-column-gutter($gutter, $gutters);
+        }
+
+        $padding: $gutter / 2;
+
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+}
+
+// Collapse the gutters on a column by removing the padding.
+// @note: only use this mixin within a breakpoint. To collapse a column's gutters on all screen sizes, use the `$gutter` parameter of the `grid-column()` mixin instead.
+
+@mixin grid-column-collapse {
+    @include grid-column-gutter(0);
+}
+
+// Shorthand for `grid-column-gutter()`.
+// @alias grid-column-gutter
+
+@mixin grid-col-gutter($gutter: auto,$gutters: $grid-column-gutter) {
+    @include grid-column-gutter($gutter, $gutters);
+}
+
+// Shorthand for `grid-column-collapse()`.
+// @alias grid-column-collapse
+
+@mixin grid-col-collapse {
+    @include grid-column-collapse;
+}
+
+// Outputs CSS classes for the grid.
+// @access private
+
+@mixin foundation-grid( $row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded' ) {
+  // Row
+  .#{$row} {
+    @include grid-row;
+    // Collapsing
+    &.#{$collapse} {
+      > .#{$column} {
+        @include grid-col-collapse;
+      }
+    }
+    // Nesting
+    & .#{$row} {
+      @include grid-row-nest($grid-column-gutter);
+
+      &.#{$collapse} {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    // Expanded (full-width) row
+    &.#{$expanded} {
+      @include grid-row-size(expand);
+
+      .#{$row} {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    // Static (unresponsive) row gutters
+    @each $breakpoint, $value in $grid-column-gutter {
+      &.#{$gutter}-#{$breakpoint} {
+        > .#{$column} {
+          @include grid-col-gutter($value);
+        }
+      }
+    }
+  }
+  // Column
+  .#{$column} {
+    @include grid-col;
+    @if $grid-column-align-edge {
+      &.#{$end} {
+        @include grid-col-end;
+      }
+    }
+  }
+  // Column row
+  // The double .row class is needed to bump up the specificity
+  .#{$column}.#{$row}.#{$row} {
+    float: none;
+  }
+  // To properly nest a column row, padding and margin is removed
+  .#{$row} .#{$column}.#{$row}.#{$row} {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include -zf-each-breakpoint {
+     @for $i from 1 through $grid-column-count{
+      // Column width
+      .#{$-zf-size}-#{$i} {
+        @include grid-col-size($i);
+      }
+      // Source ordering
+      @if $i < $grid-column-count {
+        .#{$-zf-size}-#{$push}-#{$i} {
+          @include grid-col-pos($i);
+        }
+
+        .#{$-zf-size}-#{$pull}-#{$i} {
+          @include grid-col-pos(-$i);
+        }
+      }
+      // Offsets
+      $o: $i - 1;
+
+      .#{$-zf-size}-#{$offset}-#{$o} {
+        @include grid-col-off($o);
+      }
+    }
+    // Block grid
+    @for $i from 1 through $block-grid-max {
+      .#{$-zf-size}-up-#{$i} {
+        @include grid-layout($i, ".#{$column}");
+      }
+    }
+    // Responsive collapsing
+    .#{$-zf-size}-#{$collapse} {
+      > .#{$column} {
+        @include grid-col-collapse;
+      }
+
+      .#{$row} {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .#{$expanded}.#{$row} .#{$-zf-size}-#{$collapse}.#{$row} {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .#{$-zf-size}-#{$uncollapse} {
+      > .#{$column} {
+        @include grid-col-gutter($-zf-size);
+      }
+    }
+    // Positioning
+    .#{$-zf-size}-#{$center} {
+      @include grid-col-pos(center);
+    }
+    // Gutter adjustment
+    .#{$-zf-size}-#{$pull}-0,
+    .#{$-zf-size}-#{$push}-0,
+    .#{$-zf-size}-#{$uncenter} {
+      @include grid-col-unpos;
+    }
+  }
+
+  @if $column == 'column' {
+    .columns {
+      @extend .column;
+    }
+  }
+}
+
+
+// Sizes child elements so that `$n` number of items appear on each row.
+// @param: {Number} $n - Number of elements to display per row.
+// @param: {String} $selector ['.column'] - Selector(s) to use for child elements.
+// @param: {Number|List} $gutter
+// @note: The gutter to apply to child elements. Accepts multiple values:
+// @note: $grid-column-gutter will use the values in the $grid-column-gutter map, including breakpoint sizes.
+// @note: A fixed numeric value will apply this gutter to all breakpoints.
+
+@mixin grid-layout($n, $selector: '.column', $gutter: null) {
+    & > #{$selector} {
+        width: percentage(1/$n);
+        float: $global-left;
+
+        @if($gutter) {
+            @if type-of($gutter) == 'map' {
+                @each $breakpoint, $value in $gutter {
+                    $padding: $value / 2;
+                    @include breakpoint($breakpoint) {
+                        padding-left: $padding;
+                        padding-right: $padding;
+                    }
+                }
+            } @else if type-of($gutter) == 'number' and strip-unit($gutter) > 0 {
+                $padding: $gutter / 2;
+                padding-left: $padding;
+                padding-right: $padding;
+            }
+        }
+
+        &:nth-of-type(1n) {
+            clear: none;
+        }
+
+        &:nth-of-type(#{$n}n+1) {
+            clear: both;
+        }
+
+        &:last-child {
+            float: $global-left;
+        }
+    }
+}
+
+// Adds extra CSS to block grid children so the last items in the row center automatically. Apply this to the columns, not the row.
+// @param: {Number} $n - Number of items that appear in each row.
+
+@mixin grid-layout-center-last($n) {
+    @for $i from 1 to $n {
+        @if $i == 1 {
+            &:nth-child(#{$n}n+1):last-child {
+                margin-left: (100 - 100 / $n * $i) / 2 * 1%;
+            }
+        } @else {
+            &:nth-child(#{$n}n+1):nth-last-child(#{$i}) {
+                margin-left: (100 - 100 / $n * $i) / 2 * 1%;
+            }
+        }
+    }
+}

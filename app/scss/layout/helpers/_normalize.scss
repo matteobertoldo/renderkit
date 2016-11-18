@@ -1,0 +1,494 @@
+// @normalize scss
+// @author: original authors Nicolas Gallagher & Jonathan Neal
+// @author: mbertoldo@alpenite.com (extended and re-written in scss)
+// @note: global styles "normalized" in all browsers. From normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css
+// @component: core
+
+/*@custom normalize: normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css*/
+
+// @param-1: Change the default font family in all browsers (opinionated).
+// @param-2: Mixin for prevent adjustments of font size after orientation changes in IE and iOS.
+// @param-3: Mixin for reset the default iOS tap highlight color.
+// @param-4: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// --------------------------------
+
+html {
+	font-family: $primary-type-font;
+	@include text-size-adjust;
+	@include ios-tap-reset;
+	box-sizing: border-box;
+}
+
+// @universal reset (inherit ´box sizing´ for best performance)
+// --------------------------------
+
+*, ::before, ::after {
+	box-sizing: inherit;
+}
+
+// @param-1: Set the default px value to rem 16px -> 1rem.
+// @param-2: Set global-line-height -> 1.4 (default best for paragraph)
+// @vars: (./scss/vars/vars.scss @typography).
+// --------------------------------
+
+body {
+	font: {
+		family: $global-font-family;
+		weight: $global-font-weight;
+	}
+	background-color: $global-background-color;
+	color: $global-base-color;
+	line-height: $global-line-height;
+	margin: 0;
+}
+
+// HTML 5 tags correct display
+// @note: all HTML5 tags for reset the correct display in older browsers. No "<hgroup/>" tag included because is deprecated. See: http://caniuse.com/#search=html -> Obsolete/deprecated HTML elements.
+// @note: <details/> <summary/> correct display in Edge, IE, and Firefox. <main/> correct display in IE.
+// --------------------------------
+
+article, aside, details, figcaption, figure,
+footer, header, main, nav, section, summary {
+	display: block;
+}
+
+// Remove the default html tags margin
+// --------------------------------
+
+abbr, blockquote, dd, dl, dt, fieldset, figure, form,
+h1, h2, h3, h4, h5, h6, hr, legend, li, ol, p, pre, ul {
+	margin: 0;
+}
+
+// Add the correct display in IE 9-.
+// --------------------------------
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+// Add the correct display in iOS 4-7.
+// --------------------------------
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+// --------------------------------
+
+progress {
+	vertical-align: baseline;
+}
+
+// Add the correct display in IE 10-.
+// @note: <template> Add the correct display in IE.
+// --------------------------------
+
+template,
+[hidden] {
+	display: none;
+}
+
+// @param-1: Remove the gray background on active links in IE 10.
+// @param-2: Set the default color to black (can be changed).
+// @param-3: Set ´true´ or ´false´ on $global-link-text-decoration for remove o mantain the default underline.
+// @param-3: If true remove gaps in links underline in iOS 8+ and Safari 8+.
+// @param-4: Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
+// [data-whatinput="*"] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
+// --------------------------------
+
+a {
+	background-color: transparent;
+	color: $global-link-color;
+
+	@if($global-link-text-decoration) {
+		 -webkit-text-decoration-skip: objects;
+	} @else {
+		text-decoration: none;
+	}
+
+	&:hover,
+	[data-whatinput="mouse"] &:focus,
+	[data-whatinput="touch"] &:focus, {
+		outline: 0;
+	}
+
+	&:hover {
+		color: $global-hover-link-color;
+	}
+}
+
+// @param-1: Remove the bottom border in Firefox 39-.
+// @param-2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+// Add the correct font weight in Chrome, Edge, and Safari.
+// --------------------------------
+
+b,
+strong {
+	font: {
+		family: $global-strong-font-family;
+		weight: bolder;
+	}
+}
+
+// Add the correct font style in Android 4.3-.
+// --------------------------------
+
+dfn {
+	font-style: italic;
+}
+
+// Add the correct background and color in IE 9-.
+// --------------------------------
+
+mark {
+	background-color: #ff0;
+	color: #000;
+}
+
+// Replace the default "quotes" in all browsers.
+// --------------------------------
+
+q {
+	&::before {
+		content: '\201C';
+	}
+
+	&::after {
+		content: '\201D';
+	}
+}
+
+// Add the correct font size in all browsers.
+// --------------------------------
+
+small {
+	font-size: percentage(0.8);
+}
+
+// Prevent <sub/> and <sup/> elements from affecting the line height in all browsers.
+// --------------------------------
+
+sub,
+sup {
+	position: relative;
+	font-size: percentage(0.75);
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: em(-4px);
+}
+
+sup {
+	top: em(-8px);
+}
+
+// Make <img/> <video/> tags responsive in all browsers.
+// --------------------------------
+
+img,
+video {
+	@include responsive-mode;
+}
+
+// Remove the border on images inside links in IE 10-, and remove the default border for <iframe/> tag in all browsers.
+// --------------------------------
+
+img,
+iframe {
+    border: 0;
+}
+
+// @param-1.1: Correct the inheritance and scaling of font size in all browsers.
+// @param-1.2: Correct the odd `em` font sizing in all browsers.
+// --------------------------------
+
+code,
+kbd,
+pre,
+samp {
+	font: {
+		family: monospace, monospace;
+		size: em(16px);
+	}
+}
+
+// Set default overflow auto on <pre/> tag in all browsers.
+// --------------------------------
+
+pre {
+	overflow: auto;
+}
+
+// @param-1: Add the correct box sizing in Firefox.
+// @param-3: Show the overflow in Edge and IE.
+// --------------------------------
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+// SVG inline tag reset.
+// Hide the overflow in IE.
+// --------------------------------
+
+svg {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: em(-1px);
+	width: 100%;
+	height: 100%;
+    fill: currentColor;
+
+	&:not(:root) {
+		overflow: hidden;
+	}
+}
+
+// Set font smoothing on body and on form input
+// Set global text direction
+// @note: if only apply on body the font smoothing don't have effect on inputs.
+// --------------------------------
+
+body,
+button,
+input,
+select,
+textarea {
+	@include font-smoothing;
+	direction: $global-text-direction;
+}
+
+// Change font properties to `inherit` in all browsers (opinionated).
+// Remove the margin in Firefox and Safari.
+// [data-whatinput="*"] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
+// @require: {wathInput}
+// --------------------------------
+
+button,
+input,
+select,
+textarea {
+	@if ($global-input-default-appearance != true) {
+		font: inherit;
+	}
+
+	color: inherit;
+	line-height: normal;
+	margin: 0;
+
+	[data-whatinput="mouse"] &:focus,
+	[data-whatinput="touch"] &:focus {
+		outline: 0;
+	}
+}
+
+// Show the overflow in IE.
+// @param-1: Show the overflow in Edge.
+// --------------------------------
+
+button,
+input {
+	overflow: visible;
+}
+
+// Remove the inheritance of text transform in Edge, Firefox, and IE.
+// Remove the inheritance of text transform in Firefox.
+// Remove the inheritance of background-color when remove the appearance.
+// --------------------------------
+
+select,
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	@if ($global-input-default-appearance != true) {
+		@include appearance-none;
+		border: 1px solid lightgray;
+		background-color: white;
+	}
+
+	text-transform: none;
+	cursor: pointer;
+}
+
+// Remove the inner border and padding in Firefox.
+// --------------------------------
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+// Correct the text wrapping in Edge and IE.
+// Correct the color inheritance from `fieldset` elements in IE.
+// Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
+
+legend {
+	display: table;
+	max-width: 100%;
+	white-space: normal;
+	color: inherit;
+	padding: 0;
+}
+
+// Remove the default margin on input[type="checkbox"] & [type="radio"].
+// [type="checkbox"][type="radio"] Remove the padding in IE 10-.
+// @each: Loop all standard and "Cross Browsing" input type field.
+// @if: $global-custom-select is not true fix default padding with select for the same height
+// ´::-webkit-inner-spin-button´, ´::-webkit-outer-spin-button´ Correct the cursor style of increment and decrement buttons in Chrome.
+// [type="search"] Correct the outline style in Safari.
+// ´::-webkit-search-cancel-button´, ´::-webkit-search-cancel-button´ Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+// ´::-webkit-file-upload-button´ Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
+// --------------------------------
+
+%reset-input-style {
+	@if ($global-input-default-appearance != true) {
+		@include appearance-none;
+		border: 1px solid lightgray;
+	}
+
+	//padding: 1px;
+
+	//@if ($global-custom-select != true) {
+		//@include fix-firefox() {
+			//padding: 2px;
+		//}
+	//}
+}
+
+input {
+	&[type="checkbox"],
+	&[type="radio"] {
+		@if ($global-custom-checkbox-radio) {
+			@extend .visuallyhidden;
+			@include appearance-none;
+		} @else {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	@each $input-type in (email, search, tel, text, url) {
+		&[type="#{$input-type}"] {
+			@extend %reset-input-style;
+		}
+	}
+
+	&[type="number"]::-webkit-inner-spin-button,
+	&[type="number"]::-webkit-outer-spin-button {
+		height: auto;
+	}
+
+	&[type="search"] {
+		outline-offset: -2px;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			@include appearance-none(only-webkit);
+		}
+	}
+
+	&::-webkit-file-upload-button {
+		@include appearance-none(only-webkit);
+		font: inherit;
+		border: 1px solid lightgray;
+		background-color: white;
+	}
+}
+
+// Set global custom select ´true´ or ´false´
+// Remove vendor pseudo elements in <select/> element.
+// @param-2: Hack for remove the "focus-ring" in Firefox, when <select/> is on focus.
+// @param-3: Remove the default IE/Edge "arrow" pseudo element.
+// @param-4: Restorage the current color in IE/Edge when is selected an option.
+// --------------------------------
+
+select {
+	@if ($global-custom-select) {
+		@extend .visuallyhidden;
+
+		@if ($global-input-default-appearance) {
+			@include appearance-none;
+		}
+	} @else {
+		//padding: 1px;
+
+		&:-moz-focusring {
+			color: transparent;
+			text-shadow: 0 0 0 $global-base-color;
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		&::-ms-value {
+			color: currentColor;
+		}
+	}
+}
+
+// Remove the default vertical scrollbar in IE.
+// Set the default padding in all browsers (opinionated).
+// @param: `resize` set to none for don't broken the layout in some points (no IE support).
+// --------------------------------
+
+textarea {
+	@if ($global-input-default-appearance != true) {
+		@include appearance-none;
+		border: 1px solid lightgray;
+	}
+
+	//padding: 2px;
+	overflow: auto;
+	resize: none;
+}
+
+// Set style for inputs [disabled] attribute after apply `appearance-none` rule.
+// --------------------------------
+
+@if ($global-input-default-appearance != true) {
+	[disabled] {
+		color: inherit;
+		opacity: 0.5;
+		cursor: default;
+	}
+}
+
+
+// Collapse borders on table in every browsers.
+// --------------------------------
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// IE10 viewport hack for Surface/Desktop Windows 8 bug.
+// --------------------------------
+
+@-ms-viewport {
+    width: device-width;
+}

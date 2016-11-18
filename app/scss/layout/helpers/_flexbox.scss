@@ -1,0 +1,62 @@
+// @flexbox helper package
+// @author: mbertoldo@alpenite.com
+// @note: packages of classes to be invoked via template
+// @support: flexbox + flexboxtweener (set on Autoprefixer)
+// --------------------------------
+
+/*@fexbox classes*/
+
+.flex-display {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-align-items-center {
+	align-items: center;
+}
+
+.flex-align-items-end {
+	align-items: flex-end;
+}
+
+.flex-justify-content-center {
+	justify-content: center;
+}
+
+.flex-justify-content-between {
+	justify-content: space-between;
+}
+
+.flex-justify-content-end {
+	justify-content: flex-end;
+}
+
+.flex-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-dir-reverse {
+	flex-direction: row-reverse;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-column-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-auto {
+	flex: 1 0 auto;
+}

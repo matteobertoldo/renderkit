@@ -1,0 +1,13 @@
+// @importer for global "helpers" template
+// @author: mbertoldo@alpenite.com
+// @import: style.scss
+// @component: core
+
+@import 'layout/helpers/normalize';
+@import 'layout/helpers/print';
+@import 'layout/helpers/accessibility';
+@import 'layout/helpers/typography';
+@import 'layout/helpers/flexbox';
+@import 'layout/helpers/grid';
+@import 'layout/helpers/custom-input';
+@import 'layout/helpers/outdated';

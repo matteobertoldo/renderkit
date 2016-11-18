@@ -1,0 +1,76 @@
+// @mixins accessibility
+// @author: mbertoldo@alpenite.com
+// @import: _mixins.scss
+// @component: core
+
+// Mixin for visuallyhidden.
+// @note: this hide the target element visually only, but not it's interaction.
+// ----------------------------
+
+@mixin visuallyhidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+}
+
+// Mixin for appearance, remove the default -webkit-core and -moz-core appearance for the inputs on form component.
+// @note: no standard properties in according to "http://caniuse.com/#feat=css-appearance".
+// ----------------------------
+
+@mixin appearance-none($only-webkit: null) {
+	@if $only-webkit == only-webkit {
+		-webkit-appearance: none;
+	} @else {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+}
+
+// Mixin for iOS smooth scroll.
+// @note: created only for simplify the syntax.
+// ----------------------------
+
+@mixin ios-scroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+// Mixin for iOS tap highlight color.
+// @note: reset the default tap highlight color on iOS devices.
+// ----------------------------
+
+@mixin ios-tap-reset {
+	-webkit-tap-highlight-color: transparent;
+}
+
+// Mixin for touch action.
+// @param 2: include IE10+ support
+// @note: Safari 9.1+ support only "manipulation", value "manipulation", "pan-x", "pan-y", "none"
+// ----------------------------
+
+@mixin touch-action($prop) {
+	@if $prop == none {
+		-webkit-touch-callout: none;
+	}
+	-ms-touch-action: $prop;
+	touch-action: $prop;
+}
+
+// Mixin for css pointer events support.
+// @require: {Modernizr.csspointerevents} custom build at https://modernizr.com
+// @note: include IE support for the browser doesn't support CSS pointer events
+// @author: mbertoldo@alpenite.com
+// ----------------------------
+
+@mixin fix-pointer-events {
+	.no-csspointerevents & {
+		visibility: hidden;
+		@content;
+	}
+}

@@ -1,0 +1,32 @@
+// @grid helper package
+// @author: grid (foundation.zurb.com)
+// @component: core
+// @note: Licensed under MIT Open Source
+// @note: packages of classes to be invoked via template
+// --------------------------------
+
+/*@clearfix*/
+
+.clearfix {
+	@include clearfix;
+}
+
+/*@float classes (from foundation)*/
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*@foundation-grid classes (6.3)*/
+
+@include foundation-grid;
