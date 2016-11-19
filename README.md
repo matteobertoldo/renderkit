@@ -14,7 +14,7 @@ Definitely the standard 👌🏽 for start Front-End Web Projects.
 - Inline SVG 
 - Outdated Browsers Support
 
-## Getting Sart
+## Getting Sarted
 
 Documentation coming soon.
 
