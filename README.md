@@ -13,3 +13,11 @@ Definitely the standard 👌🏽 for start Front-End Web Projects.
 - What Input
 - Inline SVG 
 - Outdated Browsers Support
+
+## Getting Sart
+
+Documentation coming soon.
+
+## License 
+
+Bolierplate Standard is released under the [MIT](https://opensource.org/licenses/MIT) License.
