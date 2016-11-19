@@ -25,6 +25,13 @@ app.min.js.map
 sprite.svg
 dist/*.html
 
-# IDE Generated Files
+# IDE Generated Files & Folders
 # --------------------------
 ./idea
+*.sublime-project
+*.sublime-workspace
+
+# macOS Generated Files
+# --------------------------
+
+*.DS_Store
