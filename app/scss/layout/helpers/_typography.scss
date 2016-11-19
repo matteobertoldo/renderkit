@@ -19,18 +19,22 @@
 	@include text-ellipsis;
 }
 
-// @set global heading font size
+// @set global heading font size + breakpoints
 // @param: tags
 // --------------------
 
-@each $header, $font-size in $heading-sizes {
-	#{$header} {
-		font-size: $font-size;
+@each $size, $headers in $header-sizes {
+	@include breakpoint($size) {
+		@each $header, $font-size in $headers {
+			#{$header} {
+				font-size: $font-size;
+			}
+		}
 	}
 }
 
 // @set global heading font family & margin
-// @set margin only if heading was the first child element but not the last-child
+// @set margin only if heading was not the last-child
 // @param: tags
 // --------------------
 
@@ -45,7 +49,7 @@
 	color: $global-heading-color;
 
 	@if ($global-margin-heading) {
-		&:first-child:not(:last-child) {
+		&:not(:last-child) {
 			margin: $margin-heading;
 		}
 	}

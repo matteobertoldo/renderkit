@@ -56,7 +56,7 @@ footer, header, main, nav, section, summary {
 // --------------------------------
 
 abbr, blockquote, dd, dl, dt, fieldset, figure, form,
-h1, h2, h3, h4, h5, h6, hr, legend, li, ol, p, pre, ul {
+#{headings(1,6)}, hr, legend, li, ol, p, pre, ul {
 	margin: 0;
 }
 

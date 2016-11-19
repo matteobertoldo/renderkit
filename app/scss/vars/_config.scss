@@ -59,13 +59,23 @@ $global-paragraph-font-weight: normal !default;
 $global-line-height: 1.15 !default;
 $global-heading-line-height: 1.4 !default;
 $global-paragraph-line-height: 1.4 !default;
-$heading-sizes: (
-	'h1': 22px,
-	'h2': 20px,
-	'h3': 18px,
-	'h4': 16px,
-	'h5': 14px,
-	'h6': 12px
+$header-sizes: (
+  small: (
+    'h1': 24px,
+    'h2': 20px,
+    'h3': 19px,
+    'h4': 18px,
+    'h5': 17px,
+    'h6': 16px,
+  ),
+  medium: (
+    'h1': 48px,
+    'h2': 40px,
+    'h3': 31px,
+    'h4': 25px,
+    'h5': 20px,
+    'h6': 16px,
+  ),
 ) !default;
 $global-heading-letter-spacing: normal !default;
 
