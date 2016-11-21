@@ -60,22 +60,22 @@ $global-line-height: 1.15 !default;
 $global-heading-line-height: 1.4 !default;
 $global-paragraph-line-height: 1.4 !default;
 $header-sizes: (
-  small: (
-    'h1': 24px,
-    'h2': 20px,
-    'h3': 19px,
-    'h4': 18px,
-    'h5': 17px,
-    'h6': 16px,
-  ),
-  medium: (
-    'h1': 48px,
-    'h2': 40px,
-    'h3': 31px,
-    'h4': 25px,
-    'h5': 20px,
-    'h6': 16px,
-  ),
+    small: (
+        'h1': 24px,
+        'h2': 20px,
+        'h3': 19px,
+        'h4': 18px,
+        'h5': 17px,
+        'h6': 16px,
+    ),
+    medium: (
+        'h1': 48px,
+        'h2': 40px,
+        'h3': 31px,
+        'h4': 25px,
+        'h5': 20px,
+        'h6': 16px,
+    ),
 ) !default;
 $global-heading-letter-spacing: normal !default;
 
@@ -107,8 +107,8 @@ $global-right: if($global-text-direction == rtl, left, right);
 $grid-row-width: 1200px !default;
 $grid-column-count: 6 !default;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+    small: 20px,
+    medium: 30px,
 ) !default;
 $grid-column-align-edge: true !default;
 $-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
@@ -120,11 +120,11 @@ $block-grid-max: 1 !default;
 // ----------------
 
 $breakpoints: (
-  small: 0,
-  medium: 667px,
-  large: 768px,
-  xlarge: 1024px,
-  xxlarge: 1280px,
+    small: 0,
+    medium: 667px,
+    large: 768px,
+    xlarge: 1024px,
+    xxlarge: 1280px,
 ) !default;
 $breakpoint-classes: (small medium large) !default;
 $-zf-zero-breakpoint: small !default;

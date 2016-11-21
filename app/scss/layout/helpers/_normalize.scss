@@ -290,7 +290,6 @@ textarea {
 	@if ($global-input-default-appearance != true) {
 		font: inherit;
 	}
-
 	color: inherit;
 	line-height: normal;
 	margin: 0;
@@ -325,7 +324,6 @@ button,
 		border: 1px solid lightgray;
 		background-color: white;
 	}
-
 	text-transform: none;
 	cursor: pointer;
 }
@@ -420,7 +418,6 @@ input {
 select {
 	@if ($global-custom-select) {
 		@extend .visuallyhidden;
-
 		@if ($global-input-default-appearance) {
 			@include appearance-none;
 		}
