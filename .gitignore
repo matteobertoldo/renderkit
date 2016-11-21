@@ -27,6 +27,7 @@ dist/*.html
 
 # IDE Generated Files & Folders
 # --------------------------
+
 ./idea
 *.sublime-project
 *.sublime-workspace
