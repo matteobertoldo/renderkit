@@ -14,15 +14,15 @@
 }
 
 .visuallyhidden {
-	@include visuallyhidden;
+    @include visuallyhidden;
 }
 
 .no-select {
-	user-select: none;
+    user-select: none;
 }
 
 .no-touch {
-	@include touch-action(none);
+    @include touch-action(none);
 }
 
 .no-text {
