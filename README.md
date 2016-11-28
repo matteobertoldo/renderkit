@@ -1,5 +1,5 @@
 # Boilerplate Standard
-Definitely the standard 👌🏽 for start Front-End Web Projects.
+> Definitely the standard 👌🏽 for start Front-End Web Projects.
 
 ## Tech Used
 
