@@ -18,12 +18,12 @@ node_modules
 # Compiled Gulp Files
 # --------------------------
 
-style.min.css
-style.min.css.map
-app.min.js
-app.min.js.map
-sprite.svg
-dist/*.html
+dist/**/*.html
+dist/**/*.css
+dist/js/*.js
+dist/**/*.svg
+dist/svg/symbol/
+dist/**/*.map
 
 # IDE Generated Files & Folders
 # --------------------------

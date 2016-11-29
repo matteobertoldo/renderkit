@@ -17,6 +17,10 @@
     @include visuallyhidden;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .no-select {
     user-select: none;
 }

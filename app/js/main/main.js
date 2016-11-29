@@ -22,7 +22,6 @@
     };
 
     $(function() {
-
         /**
          * @enable hover on touch-device
          * @param: event
@@ -39,7 +38,5 @@
          */
 
         FastClick.attach(document.body);
-
     });
-
 })(jQuery);
