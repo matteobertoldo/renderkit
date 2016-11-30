@@ -43,7 +43,6 @@
 		family: $global-heading-font-family;
 		weight: $global-heading-font-weight;
 	}
-
 	line-height: $global-heading-line-height;
 	letter-spacing: $global-heading-letter-spacing;
 	color: $global-heading-color;
@@ -64,8 +63,8 @@ p {
 		family: $global-paragraph-font-family;
 		weight: $global-paragraph-font-weight;
 	}
-
 	line-height: $global-paragraph-line-height;
+	letter-spacing: $global-paragraph-letter-spacing;
 	color: $global-paragraph-color;
 
 	@if ($global-margin-paragraph) {

@@ -9,12 +9,10 @@
 
 #outdated {
     position: fixed;
-
 	//this fix the position on old IE (like IE6/7) can't support ´position: fixed;´
 	@include fix-old-ie {
 		position: absolute;
 	}
-
     top: 0;
     left: 0;
     width: 100%;
