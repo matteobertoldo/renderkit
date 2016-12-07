@@ -23,11 +23,7 @@ gulp.task('app', function() {
         suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.js));
-});
-
-gulp.task('app:watch', ['app'], function() {
-	gulp.watch(conf.distribution.js + '*.js').on('change', function() {
+    .pipe(gulp.dest(conf.distribution.js)).on('finish', function() {
         global.browserSync.reload();
     });
 });

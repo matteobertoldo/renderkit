@@ -20,11 +20,7 @@ gulp.task('html', function() {
         indent_size: conf.htmlOptions.indentSize,
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
-    .pipe(gulp.dest(conf.distribution.base));
-});
-
-gulp.task('html:watch', ['html'], function() {
-    gulp.watch(conf.distribution.base + '*.html').on('change', function() {
+    .pipe(gulp.dest(conf.distribution.base)).on('finish', function() {
         global.browserSync.reload();
     });
 });
