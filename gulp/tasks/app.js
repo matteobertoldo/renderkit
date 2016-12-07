@@ -27,7 +27,7 @@ gulp.task('app', function() {
 });
 
 gulp.task('app:watch', ['app'], function() {
-	gulp.watch(conf.distribution.js + '**/*.js').on('change', function() {
+	gulp.watch(conf.distribution.js + '*.js').on('change', function() {
         global.browserSync.reload();
     });
 });

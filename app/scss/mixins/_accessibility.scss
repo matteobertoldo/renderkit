@@ -42,11 +42,11 @@
 }
 
 // Mixin for iOS tap highlight color.
-// @note: reset the default tap highlight color on iOS devices.
+// @note: set the default tap highlight color on iOS devices.
 // ----------------------------
 
-@mixin ios-tap-reset {
-	-webkit-tap-highlight-color: transparent;
+@mixin ios-tap-color($color) {
+	-webkit-tap-highlight-color: #{$color};
 }
 
 // Mixin for touch action.

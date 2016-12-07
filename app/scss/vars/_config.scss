@@ -115,6 +115,7 @@ $block-grid-max: 1 !default;
 $global-input-default-appearance: false !default;
 $global-custom-checkbox-radio: true !default;
 $global-custom-select: false !default; //TODO: set on custom form configuration
+$global-custom-option-select: false !default; //TODO: set support via JS
 $global-flexbox-clearfix: true !default;
 $global-link-text-decoration: false !default;
 $global-input-border-radius: 0 !default; //TODO: set on custom form configuration
@@ -135,3 +136,4 @@ $fast: 0.3s !default;
 $medium: 0.45s !default;
 $slow: 0.7s !default;
 $cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;
+$cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
