@@ -50,7 +50,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass:watch', ['sass'], function() {
-    gulp.watch(conf.distribution.css + '**/*.css').on('change', function() {
+    gulp.watch(conf.distribution.css + '*.css').on('change', function() {
         global.browserSync.reload();
     });
 });

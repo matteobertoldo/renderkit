@@ -14,11 +14,11 @@
     var WIN = $(window),
     DOC = $(document),
     IS_TOUCH = Modernizr.touchevents,
-    BREAKPOINT = {
-        desktop: 'only screen and (max-width: 1280px)',
-        tlandcape: 'only screen and (max-width: 1024px)',
-        tportrait: 'only screen and (max-width: 768px)',
-        smartphone: 'only screen and (max-width: 667px)'
+    breakpoint = {
+        xxlarge: 'only screen and (max-width: 1280px)',
+        xlarge: 'only screen and (max-width: 1024px)',
+        large: 'only screen and (max-width: 768px)',
+        medium: 'only screen and (max-width: 667px)'
     };
 
     $(function() {

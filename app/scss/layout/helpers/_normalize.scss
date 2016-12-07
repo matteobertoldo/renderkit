@@ -15,7 +15,7 @@
 html {
 	font-family: $primary-type-font;
 	@include text-size-adjust;
-	@include ios-tap-reset;
+	@include ios-tap-color(transparent);
 	box-sizing: border-box;
 }
 
@@ -361,13 +361,6 @@ legend {
 // ´::-webkit-file-upload-button´ Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
 // --------------------------------
 
-%reset-input-style {
-	@if ($global-input-default-appearance != true) {
-		@include appearance-none;
-		border: 1px solid lightgray;
-	}
-}
-
 input {
 	&[type="checkbox"],
 	&[type="radio"] {
@@ -382,7 +375,7 @@ input {
 
 	@each $input-type in (email, search, tel, text, url) {
 		&[type="#{$input-type}"] {
-			@extend %reset-input-style;
+			@extend %reset-input-style !optional;
 		}
 	}
 
@@ -416,24 +409,9 @@ input {
 // --------------------------------
 
 select {
-	@if ($global-custom-select) {
+	@include reset-select;
+	@if ($global-custom-option-select) {
 		@extend .visuallyhidden;
-		@if ($global-input-default-appearance) {
-			@include appearance-none;
-		}
-	} @else {
-		&:-moz-focusring {
-			color: transparent;
-			text-shadow: 0 0 0 $global-base-color;
-		}
-
-		&::-ms-expand {
-			display: none;
-		}
-
-		&::-ms-value {
-			color: currentColor;
-		}
 	}
 }
 

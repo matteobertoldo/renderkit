@@ -30,7 +30,7 @@
  });
 
  gulp.task('svg:watch', ['svg'], function() {
-	 gulp.watch(conf.distribution.svg).on('change', function() {
+	 gulp.watch(conf.distribution.svg + '/**/*.svg').on('change', function() {
 		 global.browserSync.reload();
 	 });
  });
