@@ -2,50 +2,6 @@
 // @author: mbertoldo@alpenite.com
 // @component: core
 
-// Mixin for reset global input default ´appearance´.
-// @author: mbertoldo@alpenite.com
-// ----------------------------------
-
-@mixin set-reset-input-style {
-	@if ($global-input-default-appearance) {
-		@content;
-	} @else {
-		@include appearance-none;
-		border: 1px solid lightgray;
-	}
-}
-
-%reset-input-style {
-	@include set-reset-input-style;
-}
-
-// Mixin for reset global vendor select pseudo elements after set ´$global-input-default-appearance´ to ´true´.
-// @author: mbertoldo@alpenite.com
-// ----------------------------------
-
-@mixin reset-select {
-	@if ($global-input-default-appearance) {
-		@content;
-	} @else {
-		@if($global-custom-select) {
-			&:-moz-focusring {
-				color: transparent;
-				text-shadow: 0 0 0 $global-base-color;
-			}
-
-			&::-ms-expand {
-				display: none;
-			}
-
-			&::-ms-value {
-				color: currentColor;
-			}
-		} @else {
-			@content;
-		}
-	}
-}
-
 // Mixin for responsive mode (generally for <img/> || <video/> tags).
 // ----------------------------------
 

@@ -26,11 +26,7 @@
  gulp.task('svg', function() {
 	 gulp.src(conf.assets.svg + '**/*.svg')
 	 .pipe(svgSprite(svgSpriteOptions))
-	 .pipe(gulp.dest(conf.distribution.svg));
- });
-
- gulp.task('svg:watch', ['svg'], function() {
-	 gulp.watch(conf.distribution.svg + '/**/*.svg').on('change', function() {
-		 global.browserSync.reload();
-	 });
+	 .pipe(gulp.dest(conf.distribution.svg)).on('finish', function() {
+         global.browserSync.reload();
+     });
  });

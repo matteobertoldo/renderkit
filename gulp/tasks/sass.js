@@ -46,11 +46,7 @@ gulp.task('sass', function() {
         suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.css));
-});
-
-gulp.task('sass:watch', ['sass'], function() {
-    gulp.watch(conf.distribution.css + '*.css').on('change', function() {
+    .pipe(gulp.dest(conf.distribution.css)).on('finish', function() {
         global.browserSync.reload();
     });
 });

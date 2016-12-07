@@ -287,11 +287,9 @@ button,
 input,
 select,
 textarea {
-	@if ($global-input-default-appearance != true) {
-		font: inherit;
-	}
+	font-size: percentage(1);
 	color: inherit;
-	line-height: normal;
+	line-height: $global-line-height;
 	margin: 0;
 
 	[data-whatinput="mouse"] &:focus,
@@ -315,17 +313,19 @@ input {
 // --------------------------------
 
 select,
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	@if ($global-input-default-appearance != true) {
-		@include appearance-none;
-		border: 1px solid lightgray;
-		background-color: white;
-	}
+button {
 	text-transform: none;
 	cursor: pointer;
+}
+
+// Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4.
+// Correct the inability to style clickable types in iOS and Safari.
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
 }
 
 // Remove the inner border and padding in Firefox.
@@ -373,9 +373,16 @@ input {
 		}
 	}
 
-	@each $input-type in (email, search, tel, text, url) {
-		&[type="#{$input-type}"] {
-			@extend %reset-input-style !optional;
+	@if ($global-reset-input-appearance) {
+		%reset-input-style {
+			@include appearance-none;
+			border: 1px solid lightgray;
+		}
+
+		@each $input-type in (email, search, tel, text, url) {
+			&[type="#{$input-type}"] {
+				@extend %reset-input-style;
+			}
 		}
 	}
 
@@ -394,23 +401,41 @@ input {
 	}
 
 	&::-webkit-file-upload-button {
-		@include appearance-none(only-webkit);
+		-webkit-appearance: button;
 		font: inherit;
-		border: 1px solid lightgray;
-		background-color: white;
+		@if ($global-reset-input-appearance) {
+			border: 1px solid lightgray;
+			background-color: white;
+		}
 	}
 }
 
-// Set global custom select ´true´ or ´false´
-// Remove vendor pseudo elements in <select/> element.
-// @param-2: Hack for remove the "focus-ring" in Firefox, when <select/> is on focus.
-// @param-3: Remove the default IE/Edge "arrow" pseudo element.
-// @param-4: Restorage the current color in IE/Edge when is selected an option.
+// Global reset for select
+// @param-1: Hack for remove the "focus-ring" in Firefox, when <select/> is on focus.
+// @param-2: Remove the default IE/Edge "arrow" pseudo element.
+// @param-3: Restorage the current color in IE/Edge when is selected an option.
 // --------------------------------
 
 select {
-	@include reset-select;
-	@if ($global-custom-option-select) {
+	@if($global-custom-select) {
+		@include appearance-none;
+
+		&:-moz-focusring {
+			color: transparent;
+			text-shadow: 0 0 0 $global-base-color;
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		&::-ms-value {
+			color: currentColor;
+		}
+	}
+
+	@if ($global-custom-options-select) {
+		@include appearance-none;
 		@extend .visuallyhidden;
 	}
 }
@@ -421,7 +446,7 @@ select {
 // --------------------------------
 
 textarea {
-	@if ($global-input-default-appearance != true) {
+	@if ($global-reset-input-appearance) {
 		@include appearance-none;
 		border: 1px solid lightgray;
 	}
@@ -433,14 +458,13 @@ textarea {
 // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
 // --------------------------------
 
-@if ($global-input-default-appearance != true) {
+@if ($global-reset-input-appearance) {
 	[disabled] {
 		color: inherit;
 		opacity: 0.5;
 		cursor: default;
 	}
 }
-
 
 // Collapse borders on table in every browsers.
 // --------------------------------

@@ -112,10 +112,10 @@ $block-grid-max: 1 !default;
 // @layout
 // ----------------
 
-$global-input-default-appearance: false !default;
+$global-reset-input-appearance: true !default;
 $global-custom-checkbox-radio: true !default;
-$global-custom-select: false !default; //TODO: set on custom form configuration
-$global-custom-option-select: false !default; //TODO: set support via JS
+$global-custom-select: true !default; //TODO: set on custom form configuration
+$global-custom-options-select: true !default; //TODO: set support via JS
 $global-flexbox-clearfix: true !default;
 $global-link-text-decoration: false !default;
 $global-input-border-radius: 0 !default; //TODO: set on custom form configuration
