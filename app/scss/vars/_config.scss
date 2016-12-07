@@ -66,6 +66,7 @@ $global-font-family: $primary-type-font;
 $global-heading-font-family: inherit !default;
 $global-paragraph-font-family: inherit !default;
 $global-strong-font-family: inherit !default;
+$global-strong-font-weight: bolder !default;
 $global-font-weight: normal !default;
 $global-heading-font-weight: bold !default;
 $global-paragraph-font-weight: normal !default;
@@ -110,12 +111,14 @@ $-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
 $block-grid-max: 1 !default;
 
 // @layout
+// @param: $global-reset-input-appearance == true
+// @note: it is highly recommended to remove the unexpected style input fields on iOS devices.
 // ----------------
 
 $global-reset-input-appearance: true !default;
 $global-custom-checkbox-radio: true !default;
-$global-custom-select: true !default; //TODO: set on custom form configuration
-$global-custom-options-select: true !default; //TODO: set support via JS
+$global-custom-select: false !default; //TODO: set on custom form configuration
+$global-custom-options-select: false !default; //TODO: set support via JS
 $global-flexbox-clearfix: true !default;
 $global-link-text-decoration: false !default;
 $global-input-border-radius: 0 !default; //TODO: set on custom form configuration

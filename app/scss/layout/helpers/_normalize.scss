@@ -140,7 +140,7 @@ b,
 strong {
 	font: {
 		family: $global-strong-font-family;
-		weight: bolder;
+		weight: $global-strong-font-weight;
 	}
 }
 
@@ -450,7 +450,6 @@ textarea {
 		@include appearance-none;
 		border: 1px solid lightgray;
 	}
-
 	overflow: auto;
 	resize: none;
 }
