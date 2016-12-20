@@ -5,7 +5,6 @@
 
 @media print {
     *, ::after, ::before {
-        color: #000 !important;
         text-shadow: none !important;
         @if ($global-transparent-print-background) {
             background: 0 0 !important;

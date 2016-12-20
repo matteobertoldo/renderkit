@@ -12,9 +12,14 @@
      */
 
     var WIN = $(window),
-    DOC = $(document),
-    IS_TOUCH = Modernizr.touchevents,
-    breakpoint = {
+    DOC = $(document);
+
+    var util = {
+        documentTouch: Modernizr.touchevents,
+        objectFit: Modernizr.objectFit
+    };
+
+    var breakpoint = {
         xxlarge: 'only screen and (max-width: 1280px)',
         xlarge: 'only screen and (max-width: 1024px)',
         large: 'only screen and (max-width: 768px)',
@@ -27,7 +32,7 @@
          * @param: event
          */
 
-        if (IS_TOUCH) {
+        if (util.documentTouch) {
             DOC.on('touchstart', true);
         }
 
@@ -38,5 +43,13 @@
          */
 
         FastClick.attach(document.body);
+
+        /**
+         * @support for use external SVG spritemaps.
+         * @require: {svg4everybody}
+         * @param: function
+         */
+
+         svg4everybody();
     });
 })(jQuery);
