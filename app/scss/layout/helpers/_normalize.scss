@@ -287,7 +287,9 @@ button,
 input,
 select,
 textarea {
-	font-size: percentage(1);
+	@if ($global-reset-input-appearance) {
+		font-size: percentage(1);
+	}
 	color: inherit;
 	line-height: $global-line-height;
 	margin: 0;
@@ -354,33 +356,32 @@ legend {
 // Remove the default margin on input[type="checkbox"] & [type="radio"].
 // [type="checkbox"][type="radio"] Remove the padding in IE 10-.
 // @each: Loop all standard and "Cross Browsing" input type field.
-// @if: $global-custom-select is not true fix default padding with select for the same height
 // ´::-webkit-inner-spin-button´, ´::-webkit-outer-spin-button´ Correct the cursor style of increment and decrement buttons in Chrome.
 // [type="search"] Correct the outline style in Safari.
 // ´::-webkit-search-cancel-button´, ´::-webkit-search-cancel-button´ Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
 // ´::-webkit-file-upload-button´ Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
 // --------------------------------
 
+%reset-input-style {
+	appearance: none;
+	border: 1px solid lightgray;
+}
+
 input {
 	&[type="checkbox"],
 	&[type="radio"] {
 		@if ($global-custom-checkbox-radio) {
+			appearance: none;
 			@extend .visuallyhidden;
-			@include appearance-none;
 		} @else {
 			margin: 0;
 			padding: 0;
 		}
 	}
 
-	@if ($global-reset-input-appearance) {
-		%reset-input-style {
-			@include appearance-none;
-			border: 1px solid lightgray;
-		}
-
-		@each $input-type in (email, search, tel, text, url) {
-			&[type="#{$input-type}"] {
+	@each $input-type in (email, search, tel, text, url) {
+		&[type="#{$input-type}"] {
+			@if ($global-reset-input-appearance) {
 				@extend %reset-input-style;
 			}
 		}
@@ -396,7 +397,7 @@ input {
 
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-decoration {
-			@include appearance-none(only-webkit);
+			-webkit-appearance: none;
 		}
 	}
 
@@ -418,7 +419,7 @@ input {
 
 select {
 	@if($global-custom-select) {
-		@include appearance-none;
+		appearance: none;
 
 		&:-moz-focusring {
 			color: transparent;
@@ -435,7 +436,7 @@ select {
 	}
 
 	@if ($global-custom-options-select) {
-		@include appearance-none;
+		appearance: none;
 		@extend .visuallyhidden;
 	}
 }
@@ -447,7 +448,7 @@ select {
 
 textarea {
 	@if ($global-reset-input-appearance) {
-		@include appearance-none;
+		appearance: none;
 		border: 1px solid lightgray;
 	}
 	overflow: auto;

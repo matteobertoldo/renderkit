@@ -4,22 +4,38 @@
  * @author: mbertoldo@alpenite.com
  */
 
-// @global folders name
+// @global base folders name
 // -----------------
 
 var workspace = 'app/';
 var assets = 'assets/';
 var distribution = 'dist/';
 
-// @global css config
+// @global output style for css
 // @note: if cssOptions.remPropList it will be ['*'] the entire properties like [`margin`,`padding`] etc it will be converted into rem units.
 // -----------------
 
-var outputStyle = ['nested', 'compact', 'expanded', 'compressed'];
+var outputStyle = {
+    nested: 'nested',
+    compact: 'compact',
+    expanded: 'expanded',
+    compressed: 'compressed'
+};
+
+// @global generated files on `distribution` folder
+// @note: include map extension.
+// @note: on `svg` folder can generate an a `html` example file so we can detect it.
+// -----------------
+
+var generatedFiles = {
+    html: distribution + '*.html',
+    css: distribution + 'css/*.{css,map}',
+    svg: distribution + 'svg/**/*.{svg,html}',
+    js: distribution + 'js/*.{js,map}',
+};
 
 module.exports = {
     workspace: {
-        base: workspace,
         html: workspace + 'template/',
         scss: workspace + 'scss/',
         js: workspace + 'js/',
@@ -50,21 +66,30 @@ module.exports = {
         browsersSupport: ['> 1%', 'last 4 versions'],
         flexbox: 'no-2009',
         msGridLayout: false,
-        outputName: 'style',
-        outputStyle: outputStyle[2],
+        remUnit: true,
         replaceRemUnit: true,
         unitRemPrecision: 5,
         remPropList: ['font', 'font-size', 'line-height', 'letter-spacing'],
-        remMediaQueries: false
+        remMediaQueries: false,
+        outputName: 'style',
+        outputStyle: outputStyle.expanded,
+        minifyCSS: true
     },
     jsOptions: {
-        compress: true,
-        outputName: 'app'
+        outputName: 'app',
+        minifyJS: true
     },
     svgOptions: {
         cssRender: false,
         scssRender: false,
         outputName: 'sprite',
         exampleFile: false
+    },
+    cleanOptions: {
+        cleanGlobalDistFiles: true,
+        cleanAllFiles: generatedFiles,
+        cleanFilesType: generatedFiles.css,
+        dryRun: false,
+        forceDelete: false
     }
 };

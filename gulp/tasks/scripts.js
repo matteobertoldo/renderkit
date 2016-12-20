@@ -1,28 +1,32 @@
 /**
- * @app-js task
- * @return: [vendor, main]
+ * @scripts js task
+ * @return: {scripts}
  * @author: mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var conf = require('../gulpconfig');
+var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglifyJS2 = require('gulp-uglify');
-var gulpUtil = require('gulp-util');
+var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 
-gulp.task('app', function() {
+gulp.task('scripts', function() {
     gulp.src([conf.workspace.vendorJS + '**/*.js', conf.workspace.mainJS + '**/*.js'])
-	.pipe(sourcemaps.init())
+	.pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.init()))
     .pipe(concat(conf.jsOptions.outputName + '.js'))
-    .pipe(uglifyJS2({
-        compress: conf.jsOptions.compress
-    })).on('error', gulpUtil.log)
-    .pipe(rename({
+    .pipe(gulpif(conf.jsOptions.minifyJS, uglifyJS2({
+        compress: true
+    }))).on('error', gutil.log)
+    .pipe(plumber())
+    .pipe(gulpif(conf.jsOptions.minifyJS, rename({
         suffix: '.min'
-    }))
-    .pipe(sourcemaps.write('./'))
+    })))
+    .pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.write('./')))
+    .pipe(plumber.stop())
     .pipe(gulp.dest(conf.distribution.js)).on('finish', function() {
         global.browserSync.reload();
     });

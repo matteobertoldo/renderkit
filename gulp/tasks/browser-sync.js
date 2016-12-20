@@ -1,6 +1,6 @@
 /**
  * @browser-sync task
- * @param: set staticServer {true||false}
+ * @param: staticServer {bool}
  * @author: mbertoldo@alpenite.com
  */
 

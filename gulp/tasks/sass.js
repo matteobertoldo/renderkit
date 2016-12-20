@@ -5,7 +5,9 @@
  */
 
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var conf = require('../gulpconfig');
+var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -33,19 +35,34 @@ var processors = [
     })
 ];
 
+// @remUnit
+// @param: bool
+// @return: [processors]
+// ----------------------------------
+
+if(!conf.cssOptions.remUnit) {
+    processors.splice(1,1);
+}
+
+// @cleanCSS clean + minify mode
+// @return: true || false
+// ----------------------------------
+
 gulp.task('sass', function() {
     gulp.src(conf.workspace.scss + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: conf.cssOptions.outputStyle
     }).on('error', sass.logError))
+    .pipe(plumber())
     .pipe(concat(conf.cssOptions.outputName + '.css'))
     .pipe(postcss(processors))
-    .pipe(cleanCSS())
-    .pipe(rename({
+    .pipe(gulpif(conf.cssOptions.minifyCSS, cleanCSS()))
+    .pipe(gulpif(conf.cssOptions.minifyCSS, rename({
         suffix: '.min'
-    }))
+    })))
     .pipe(sourcemaps.write('./'))
+    .pipe(plumber.stop())
     .pipe(gulp.dest(conf.distribution.css)).on('finish', function() {
         global.browserSync.reload();
     });

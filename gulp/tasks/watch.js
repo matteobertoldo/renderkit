@@ -1,15 +1,15 @@
 /**
  * @gulp watch task
- * @return: [tasks]
+ * @return: {tasks}
  * @author: mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
 
-gulp.task('watch', ['html', 'sass', 'svg', 'app', 'browser-sync'], function() {
+gulp.task('watch', ['html', 'sass', 'svg', 'scripts', 'browser-sync'], function() {
     gulp.watch(conf.workspace.html + '**/*.html', ['html']);
     gulp.watch(conf.workspace.scss + '**/*.scss', ['sass']);
-    gulp.watch(conf.workspace.js + '**/*.js', ['app']);
+    gulp.watch(conf.workspace.js + '**/*.js', ['scripts']);
     gulp.watch(conf.assets.svg + '**/*.svg', ['svg']);
 });

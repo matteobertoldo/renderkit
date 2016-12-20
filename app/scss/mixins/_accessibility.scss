@@ -20,19 +20,6 @@
     padding: 0;
 }
 
-// Mixin for appearance, remove the default -webkit-core and -moz-core appearance for the inputs on form component.
-// @note: no standard properties in according to "http://caniuse.com/#feat=css-appearance".
-// ----------------------------
-
-@mixin appearance-none($only-webkit: null) {
-	@if $only-webkit == only-webkit {
-		-webkit-appearance: none;
-	} @else {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	}
-}
-
 // Mixin for iOS smooth scroll.
 // @note: created only for simplify the syntax.
 // ----------------------------
