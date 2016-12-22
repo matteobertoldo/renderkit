@@ -63,7 +63,8 @@ gulp.task('sass', function() {
     })))
     .pipe(sourcemaps.write('./'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.css)).on('finish', function() {
+    .pipe(gulp.dest(conf.distribution.css))
+    .on('finish', function() {
         global.browserSync.reload();
     });
 });

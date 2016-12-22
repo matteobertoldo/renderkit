@@ -1,0 +1,118 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+// @note: No `em` conversion. Removed `!important` flag. Every media query was added the `only` attribute.
+
+// Hide an element by default, only displaying it above a certain screen size.
+// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+
+@mixin show-for($size) {
+	$size: map-get($breakpoints, $size);
+
+	@include breakpoint($size down) {
+		display: none;
+	}
+}
+
+// Hide an element by default, only displaying it within a certain breakpoint.
+// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+// @note: remove unnecessary `media query` if value is 0. {mbertoldo@alpenite.com}
+
+@mixin show-for-only($size) {
+	$lower-bound-size: map-get($breakpoints, $size);
+	$upper-bound-size: -zf-map-next($breakpoints, $size);
+
+	@if $upper-bound-size == null {
+		@media only screen and (max-width: $lower-bound-size) {
+			display: none;
+		}
+	} @else {
+		@if strip-unit($lower-bound-size) == 0 {
+			@media only screen and (min-width: $upper-bound-size) {
+				display: none;
+			}
+		} @else {
+			@media only screen and (max-width: $lower-bound-size), only screen and (min-width: $upper-bound-size) {
+				display: none;
+			}
+		}
+	}
+}
+
+// Show an element by default, and hide it above a certain screen size.
+// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+
+@mixin hide-for($size) {
+	@include breakpoint($size) {
+		display: none;
+	}
+}
+
+// Show an element by default, and hide it above a certain screen size.
+// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+
+@mixin hide-for-only($size) {
+	@include breakpoint($size only) {
+		display: none;
+	}
+}
+
+@mixin foundation-visibility-classes {
+	@each $size in $breakpoint-classes {
+		@if $size != $-zf-zero-breakpoint {
+			.hide-for-#{$size} {
+				@include hide-for($size);
+			}
+
+			.show-for-#{$size} {
+				@include show-for($size);
+			}
+		}
+
+		.hide-for-#{$size}-only {
+			@include hide-for-only($size);
+		}
+
+		.show-for-#{$size}-only {
+			@include show-for-only($size);
+		}
+	}
+
+	.show-for-sr,
+	.show-on-focus {
+		@extend .visuallyhidden;
+	}
+
+	.show-on-focus {
+		&:active,
+		&:focus {
+			@extend .visuallyhidden-off;
+		}
+	}
+
+	.show-for-landscape,
+	.hide-for-portrait {
+		display: block;
+
+		@include breakpoint(landscape) {
+			display: block;
+		}
+
+		@include breakpoint(portrait) {
+			display: none;
+		}
+	}
+
+	.hide-for-landscape,
+	.show-for-portrait {
+		display: none;
+
+		@include breakpoint(landscape) {
+			display: none;
+		}
+
+		@include breakpoint(portrait) {
+			display: block;
+		}
+	}
+}

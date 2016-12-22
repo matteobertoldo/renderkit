@@ -20,6 +20,20 @@
     padding: 0;
 }
 
+// Mixin for visuallyhidden-off.
+// @note: restores the style applied by `visuallyhidden` mixin.
+// ----------------------------
+
+@mixin visuallyhidden-off {
+    position: static;
+    width: auto;
+    height: auto;
+    border: initial;
+    clip: none;
+    overflow: inherit;
+    margin: 0;
+}
+
 // Mixin for iOS smooth scroll.
 // @note: created only for simplify the syntax.
 // ----------------------------

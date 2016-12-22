@@ -17,6 +17,10 @@
     @include visuallyhidden;
 }
 
+.visuallyhidden-off {
+    @include visuallyhidden-off;
+}
+
 .invisible {
     visibility: hidden;
 }
@@ -40,3 +44,7 @@
 .no-display {
     display: none;
 }
+
+/*@visibility classes*/
+
+@include foundation-visibility-classes;
