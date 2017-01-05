@@ -10,21 +10,21 @@ var conf = require('../gulpconfig');
 var plumber = require('gulp-plumber');
 var include = require('gulp-html-tag-include');
 var htmlbeautify = require('gulp-html-beautify');
-var gulpUtil = require('gulp-util');
+var gutil = require('gulp-util');
 
 gulp.task('html', function() {
-    gulp.src(conf.workspace.html + '*.html')
-    .pipe(include({
-        prefixVar: '@'
-    })).on('error', gulpUtil.log)
+    return gulp.src(conf.workspace.html + '*.html')
     .pipe(plumber())
+    .pipe(include({
+        prefixVar: conf.htmlOptions.prefixVar
+    })).on('error', gutil.log)
     .pipe(htmlbeautify({
         indent_size: conf.htmlOptions.indentSize,
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
-    .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.base))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    .pipe(gulp.dest(conf.distribution.base));
+});
+
+gulp.task('html:watch', ['html'], function() {
+    return global.browserSync.reload();
 });

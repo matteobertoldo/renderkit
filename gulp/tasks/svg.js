@@ -6,7 +6,9 @@
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
+var gutil = require('gulp-util');
 var svgSprite = require('gulp-svg-sprite');
+var plumber= require('gulp-plumber');
 
 // @svg `spritemap` options
 // --------------
@@ -27,10 +29,12 @@ var svgSpriteOptions = {
 };
 
 gulp.task('svg', function() {
-    gulp.src(conf.workspace.svg + '**/*.svg')
-    .pipe(svgSprite(svgSpriteOptions))
-    .pipe(gulp.dest(conf.distribution.images))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    return gulp.src(conf.workspace.svg + '**/*.svg')
+    .pipe(plumber())
+    .pipe(svgSprite(svgSpriteOptions)).on('error', gutil.log)
+    .pipe(gulp.dest(conf.distribution.images));
+});
+
+gulp.task('svg:watch', ['svg'], function() {
+    return global.browserSync.reload();
 });

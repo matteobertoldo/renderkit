@@ -49,12 +49,12 @@ if(!conf.cssOptions.remUnit) {
 // ----------------------------------
 
 gulp.task('sass', function() {
-    gulp.src(conf.workspace.scss + '**/*.scss')
+    return gulp.src(conf.workspace.scss + '**/*.scss')
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: conf.cssOptions.outputStyle
     }).on('error', sass.logError))
-    .pipe(plumber())
     .pipe(concat(conf.cssOptions.outputName + '.css'))
     .pipe(postcss(processors))
     .pipe(gulpif(conf.cssOptions.minifyCSS, cleanCSS()))
@@ -62,9 +62,9 @@ gulp.task('sass', function() {
         suffix: '.min'
     })))
     .pipe(sourcemaps.write('./'))
-    .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.css))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    .pipe(gulp.dest(conf.distribution.css));
+});
+
+gulp.task('sass:watch', ['sass'], function() {
+    return global.browserSync.reload();
 });
