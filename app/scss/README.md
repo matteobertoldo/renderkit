@@ -4,7 +4,7 @@ The output CSS file in your folder `distribution` it is structured with SASS. Pl
 ### Authoring
 All stylesheets are written in SCSS, whose syntax is a superset of CSS.
 
-SCSS is meant authoring to be used with a build tool, which is currently [gulp](http://gulpjs.com).
+SCSS authoring is meant to be used with a build tool, which is currently [gulp](http://gulpjs.com).
 Once compiled, the SCSS is output as CSS in `distribution/css` folder just like before.
 
 ## Code styles
