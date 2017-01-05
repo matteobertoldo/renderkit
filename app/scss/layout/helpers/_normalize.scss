@@ -341,6 +341,14 @@ button::-moz-focus-inner,
 	padding: 0;
 }
 
+// Change the border, margin, and padding in all browsers (opinionated).
+
+fieldset {
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: em(5px) em(10px) em(12px);
+}
+
 // Correct the text wrapping in Edge and IE.
 // Correct the color inheritance from `fieldset` elements in IE.
 // Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.

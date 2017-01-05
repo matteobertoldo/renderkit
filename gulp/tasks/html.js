@@ -23,7 +23,8 @@ gulp.task('html', function() {
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.base)).on('finish', function() {
+    .pipe(gulp.dest(conf.distribution.base))
+    .on('finish', function() {
         global.browserSync.reload();
     });
 });

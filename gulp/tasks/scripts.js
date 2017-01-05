@@ -27,7 +27,8 @@ gulp.task('scripts', function() {
     })))
     .pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.write('./')))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.js)).on('finish', function() {
+    .pipe(gulp.dest(conf.distribution.js))
+    .on('finish', function() {
         global.browserSync.reload();
     });
 });

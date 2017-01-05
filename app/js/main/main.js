@@ -1,7 +1,7 @@
-/*!main.js
-  @include: global functions
+/**!main.js
+  @param: {global.functions}
   @author: mbertoldo@alpenite.com
-  @note: Hand-made and built with love in Venice, IT.
+  @description: Hand-made and built with love in Venice, IT.
 */
 
 (function($) {
@@ -47,7 +47,7 @@
         /**
          * @support for use external SVG spritemaps.
          * @require: {svg4everybody}
-         * @param: function
+         * @param: {function}
          */
 
          svg4everybody();

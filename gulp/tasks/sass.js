@@ -36,7 +36,7 @@ var processors = [
 ];
 
 // @remUnit
-// @param: bool
+// @param: {bool}
 // @return: [processors]
 // ----------------------------------
 
@@ -45,7 +45,7 @@ if(!conf.cssOptions.remUnit) {
 }
 
 // @cleanCSS clean + minify mode
-// @return: true || false
+// @param: {bool}
 // ----------------------------------
 
 gulp.task('sass', function() {
@@ -63,7 +63,8 @@ gulp.task('sass', function() {
     })))
     .pipe(sourcemaps.write('./'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.css)).on('finish', function() {
+    .pipe(gulp.dest(conf.distribution.css))
+    .on('finish', function() {
         global.browserSync.reload();
     });
 });

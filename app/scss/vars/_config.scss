@@ -59,7 +59,7 @@ $custom-radio-mark-color: #333 !default;
 // @typography
 // ----------------
 
-$font-dir: '../../assets/fonts/' !global;
+$font-dir: '../assets/fonts/' !global;
 $global-text-direction: ltr !default;
 $primary-type-font: sans-serif !default;
 $global-font-family: $primary-type-font;
@@ -101,14 +101,14 @@ $global-paragraph-letter-spacing: normal !default;
 $global-left: if($global-text-direction == rtl, right, left);
 $global-right: if($global-text-direction == rtl, left, right);
 $grid-row-width: 1200px !default;
-$grid-column-count: 6 !default;
+$grid-column-count: 12 !default;
 $grid-column-gutter: (
     small: 20px,
     medium: 30px,
 ) !default;
 $grid-column-align-edge: true !default;
 $-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
-$block-grid-max: 1 !default;
+$block-grid-max: 6 !default;
 
 // @layout
 // @param: $global-reset-input-appearance == true
@@ -131,6 +131,8 @@ $margin-paragraph: 0 0 0 0 !default;
 // ----------------
 
 $global-transparent-print-background: false !default;
+$global-margin-print: 0.5cm !default;
+$global-link-href-show: false !default;
 
 // @transitions
 // ----------------
@@ -140,3 +142,4 @@ $medium: 0.45s !default;
 $slow: 0.7s !default;
 $cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;
 $cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
+$transition1: $fast $cubic-1;

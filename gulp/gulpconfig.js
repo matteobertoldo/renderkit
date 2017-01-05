@@ -1,5 +1,7 @@
 /**
  * @gulp configuration tasks file
+ * @global: {objectsFoldersFiles}
+ * @param: {String}
  * @return: {global.options}
  * @author: mbertoldo@alpenite.com
  */
@@ -7,9 +9,11 @@
 // @global base folders name
 // -----------------
 
-var workspace = 'app/';
-var assets = 'assets/';
-var distribution = 'dist/';
+var folder = {
+    workspace: 'app/',
+    assets: 'assets/',
+    distribution: 'dist/'
+};
 
 // @global output style for css
 // @note: if cssOptions.remPropList it will be ['*'] the entire properties like [`margin`,`padding`] etc it will be converted into rem units.
@@ -28,32 +32,30 @@ var outputStyle = {
 // -----------------
 
 var generatedFiles = {
-    html: distribution + '*.html',
-    css: distribution + 'css/*.{css,map}',
-    svg: distribution + 'svg/**/*.{svg,html}',
-    js: distribution + 'js/*.{js,map}',
+    html: folder.distribution + '*.html',
+    css: folder.distribution + 'css/*.{css,map}',
+    svg: folder.distribution + folder.assets + '/images/**/*.{svg,html}',
+    js: folder.distribution + 'js/*.{js,map}',
 };
 
 module.exports = {
     workspace: {
-        html: workspace + 'template/',
-        scss: workspace + 'scss/',
-        js: workspace + 'js/',
-        vendorJS: workspace + 'js/vendor/',
-        mainJS: workspace + 'js/main/'
-    },
-    assets: {
-        svg: assets + 'images/icons/svg/'
+        html: folder.workspace + 'template/',
+        scss: folder.workspace + 'scss/',
+        svg: folder.workspace + folder.assets + 'svg/',
+        js: folder.workspace + 'js/',
+        vendorJS: folder.workspace + 'js/vendor/',
+        mainJS: folder.workspace + 'js/main/'
     },
     distribution: {
-        base: distribution,
-        css: distribution + 'css/',
-        svg: distribution + 'svg/',
-        js: distribution + 'js/'
+        base: folder.distribution,
+        css: folder.distribution + 'css/',
+        images: folder.distribution + folder.assets + 'images/',
+        js: folder.distribution + 'js/',
     },
     syncOptions: {
         staticServer: true,
-        startPath: distribution + 'uikit.html',
+        startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'standard',
         notification: true
@@ -88,7 +90,7 @@ module.exports = {
     cleanOptions: {
         cleanGlobalDistFiles: true,
         cleanAllFiles: generatedFiles,
-        cleanFilesType: generatedFiles.css,
+        cleanFilesType: generatedFiles.html,
         dryRun: false,
         forceDelete: false
     }

@@ -14,10 +14,26 @@
     width: 1px;
     height: 1px;
     border: 0;
+    white-space: nowrap;
     clip: rect(1px, 1px, 1px, 1px);
     overflow: hidden;
     margin: -1px;
     padding: 0;
+}
+
+// Mixin for visuallyhidden-off.
+// @note: restores the style applied by `visuallyhidden` mixin.
+// ----------------------------
+
+@mixin visuallyhidden-off {
+    position: static;
+    width: auto;
+    height: auto;
+    border: initial;
+    white-space: inherit;
+    clip: none;
+    overflow: inherit;
+    margin: 0;
 }
 
 // Mixin for iOS smooth scroll.

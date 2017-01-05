@@ -301,6 +301,7 @@
 
 // Outputs CSS classes for the grid.
 // @access private
+// @note: no em conversion. Every media query was added the `only` attribute.
 
 @mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded') {
     .#{$row} {

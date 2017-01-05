@@ -27,9 +27,10 @@ var svgSpriteOptions = {
 };
 
 gulp.task('svg', function() {
-    gulp.src(conf.assets.svg + '**/*.svg')
+    gulp.src(conf.workspace.svg + '**/*.svg')
     .pipe(svgSprite(svgSpriteOptions))
-    .pipe(gulp.dest(conf.distribution.svg)).on('finish', function() {
+    .pipe(gulp.dest(conf.distribution.images))
+    .on('finish', function() {
         global.browserSync.reload();
     });
 });

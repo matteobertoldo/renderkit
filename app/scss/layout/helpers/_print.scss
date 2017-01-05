@@ -1,5 +1,6 @@
 // @media print package
 // @note: source (https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
+// @edited: mbertoldo@alpenite.com
 
 /*@media print package*/
 
@@ -16,20 +17,22 @@
         text-decoration: underline;
     }
 
-    a[href]:after {
-        content: ' (' attr(href) ')';
+    @if ($global-link-href-show) {
+        a[href]:after {
+            content: ' (' attr(href) ')';
+        }
+    } @else {
+        a[href^="javascript:"]:after,
+        a[href^="#"]:after {
+            content: '';
+        }
     }
 
     abbr[title]:after {
         content: ' (' attr(title) ')';
     }
 
-    a[href^="javascript:"]:after, a[href^="#"]:after {
-        content: '';
-    }
-
-    blockquote, pre {
-        border: 1px solid #999;
+    blockquote, pre, table {
         page-break-inside: avoid;
     }
 
@@ -42,7 +45,7 @@
     }
 
     img {
-        max-width: 100% !important;
+        max-width: 100%;
     }
 
     h2, h3, p {
@@ -55,11 +58,11 @@
     }
 
     @page {
-        margin: 0.5cm;
+        margin: $global-margin-print;
     }
 
     .show-for-print {
-        display: block !important
+        display: block !important;
     }
 
     .hide-for-print {
