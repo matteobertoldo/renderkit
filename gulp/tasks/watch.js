@@ -11,5 +11,5 @@ gulp.task('watch', ['html', 'sass', 'svg', 'scripts', 'browser-sync'], function(
     gulp.watch(conf.workspace.html + '**/*.html', ['html']);
     gulp.watch(conf.workspace.scss + '**/*.scss', ['sass']);
     gulp.watch(conf.workspace.js + '**/*.js', ['scripts']);
-    gulp.watch(conf.assets.svg + '**/*.svg', ['svg']);
+    gulp.watch(conf.workspace.svg + '**/*.svg', ['svg']);
 });

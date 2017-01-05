@@ -21,7 +21,7 @@ node_modules
 dist/**/*.html
 dist/css/
 dist/js/*.js
-dist/svg/
+dist/assets/images/symbol/
 dist/**/*.map
 
 # IDE Generated Files & Folders
