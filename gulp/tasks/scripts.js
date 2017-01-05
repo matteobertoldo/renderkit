@@ -16,17 +16,16 @@ var rename = require('gulp-rename');
 
 gulp.task('scripts', function() {
     return gulp.src([conf.workspace.vendorJS + '**/*.js', conf.workspace.mainJS + '**/*.js'])
+    .pipe(plumber())
 	.pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.init()))
     .pipe(concat(conf.jsOptions.outputName + '.js'))
     .pipe(gulpif(conf.jsOptions.minifyJS, uglifyJS2({
         compress: true
     }))).on('error', gutil.log)
-    .pipe(plumber())
     .pipe(gulpif(conf.jsOptions.minifyJS, rename({
         suffix: '.min'
     })))
     .pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.write('./')))
-    .pipe(plumber.stop())
     .pipe(gulp.dest(conf.distribution.js));
 });
 

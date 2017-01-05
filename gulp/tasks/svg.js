@@ -30,10 +30,9 @@ var svgSpriteOptions = {
 
 gulp.task('svg', function() {
     return gulp.src(conf.workspace.svg + '**/*.svg')
-    .pipe(svgSprite(svgSpriteOptions)).on('error', gutil.log)
     .pipe(plumber())
-    .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.images))
+    .pipe(svgSprite(svgSpriteOptions)).on('error', gutil.log)
+    .pipe(gulp.dest(conf.distribution.images));
 });
 
 gulp.task('svg:watch', ['svg'], function() {

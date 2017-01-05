@@ -10,19 +10,18 @@ var conf = require('../gulpconfig');
 var plumber = require('gulp-plumber');
 var include = require('gulp-html-tag-include');
 var htmlbeautify = require('gulp-html-beautify');
-var gulpUtil = require('gulp-util');
+var gutil = require('gulp-util');
 
 gulp.task('html', function() {
     return gulp.src(conf.workspace.html + '*.html')
+    .pipe(plumber())
     .pipe(include({
         prefixVar: conf.htmlOptions.prefixVar
-    })).on('error', gulpUtil.log)
-    .pipe(plumber())
+    })).on('error', gutil.log)
     .pipe(htmlbeautify({
         indent_size: conf.htmlOptions.indentSize,
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
-    .pipe(plumber.stop())
     .pipe(gulp.dest(conf.distribution.base));
 });
 
