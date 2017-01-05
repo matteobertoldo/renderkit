@@ -15,7 +15,7 @@ var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 
 gulp.task('scripts', function() {
-    gulp.src([conf.workspace.vendorJS + '**/*.js', conf.workspace.mainJS + '**/*.js'])
+    return gulp.src([conf.workspace.vendorJS + '**/*.js', conf.workspace.mainJS + '**/*.js'])
 	.pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.init()))
     .pipe(concat(conf.jsOptions.outputName + '.js'))
     .pipe(gulpif(conf.jsOptions.minifyJS, uglifyJS2({
@@ -27,8 +27,9 @@ gulp.task('scripts', function() {
     })))
     .pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.write('./')))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.js))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    .pipe(gulp.dest(conf.distribution.js));
+});
+
+gulp.task('scripts:watch', ['scripts'], function() {
+    return global.browserSync.reload();
 });

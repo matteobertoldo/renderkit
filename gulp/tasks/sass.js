@@ -49,7 +49,7 @@ if(!conf.cssOptions.remUnit) {
 // ----------------------------------
 
 gulp.task('sass', function() {
-    gulp.src(conf.workspace.scss + '**/*.scss')
+    return gulp.src(conf.workspace.scss + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: conf.cssOptions.outputStyle
@@ -63,8 +63,9 @@ gulp.task('sass', function() {
     })))
     .pipe(sourcemaps.write('./'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.css))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    .pipe(gulp.dest(conf.distribution.css));
+});
+
+gulp.task('sass:watch', ['sass'], function() {
+    return global.browserSync.reload();
 });

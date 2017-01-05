@@ -19,8 +19,7 @@ requireDir('./gulp/tasks', {
 	recurse: false
 });
 
-// @watch task
-// @gulp is watching you...
+// @run tasks
 // -----------------
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['start']);

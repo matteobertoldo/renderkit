@@ -61,6 +61,7 @@ module.exports = {
         notification: true
     },
     htmlOptions: {
+        prefixVar: '@',
         indentSize: 4,
         endWithNewline: false
     },

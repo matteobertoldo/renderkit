@@ -13,9 +13,9 @@ var htmlbeautify = require('gulp-html-beautify');
 var gulpUtil = require('gulp-util');
 
 gulp.task('html', function() {
-    gulp.src(conf.workspace.html + '*.html')
+    return gulp.src(conf.workspace.html + '*.html')
     .pipe(include({
-        prefixVar: '@'
+        prefixVar: conf.htmlOptions.prefixVar
     })).on('error', gulpUtil.log)
     .pipe(plumber())
     .pipe(htmlbeautify({
@@ -23,8 +23,9 @@ gulp.task('html', function() {
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(conf.distribution.base))
-    .on('finish', function() {
-        global.browserSync.reload();
-    });
+    .pipe(gulp.dest(conf.distribution.base));
+});
+
+gulp.task('html:watch', ['html'], function() {
+    return global.browserSync.reload();
 });

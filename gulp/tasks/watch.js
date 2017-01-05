@@ -1,15 +1,19 @@
 /**
- * @gulp watch task
+ * @gulp watch tasks
  * @return: {tasks}
+ * @description: gulp is watching you...
  * @author: mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
+var sequence = require('run-sequence');
 
-gulp.task('watch', ['html', 'sass', 'svg', 'scripts', 'browser-sync'], function() {
-    gulp.watch(conf.workspace.html + '**/*.html', ['html']);
-    gulp.watch(conf.workspace.scss + '**/*.scss', ['sass']);
-    gulp.watch(conf.workspace.js + '**/*.js', ['scripts']);
-    gulp.watch(conf.workspace.svg + '**/*.svg', ['svg']);
+gulp.task('start', function(done) {
+    sequence('html', 'sass', 'svg', 'scripts', 'browser-sync', done);
+
+    gulp.watch(conf.workspace.html + '**/*.html', ['html:watch']);
+    gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
+    gulp.watch(conf.workspace.js + '**/*.js', ['scripts:watch']);
+    gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
 });

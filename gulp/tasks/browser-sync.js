@@ -9,7 +9,7 @@ var conf = require('../gulpconfig');
 
 gulp.task('browser-sync', function() {
     if(conf.syncOptions.staticServer) {
-        global.browserSync.init({
+        return global.browserSync.init({
             server: {
                 baseDir: './'
             },
@@ -18,7 +18,7 @@ gulp.task('browser-sync', function() {
             logPrefix: conf.syncOptions.logPrefix
         });
     } else {
-        global.browserSync.init({
+        return global.browserSync.init({
             proxy: {
                 target: conf.syncOptions.proxyName
             },
