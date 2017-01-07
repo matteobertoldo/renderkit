@@ -142,4 +142,6 @@ $medium: 0.45s !default;
 $slow: 0.7s !default;
 $cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;
 $cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
-$transition1: $fast $cubic-1;
+$transition-1: $fast $cubic-1;
+$transition-2: $fast $cubic-2;
+$transition-3: $medium $cubic-1;

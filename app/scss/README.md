@@ -5,7 +5,7 @@ The output CSS file in your folder `distribution` it is structured with SASS. Pl
 All stylesheets are written in SCSS, whose syntax is a superset of CSS.
 
 SCSS authoring is meant to be used with a build tool, which is currently [gulp](http://gulpjs.com).
-Once compiled, the SCSS is output as CSS in `distribution/css` folder just like before.
+Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 
 ## Code styles
 Inspired by <https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#css> and <http://css-tricks.com/sass-style-guide/>
@@ -58,11 +58,23 @@ a {color: $green; text-decoration: underline;}
 
 ```scss
 // OK
-.className {
+.class-name {
 }
 
 // Bad
-div.className {
+div.class-name {
+}
+```
+-   Please don't use "camelcase" formatting for set the class name.
+-   Use `-` for separating the words.
+
+```scss
+// OK
+.my-class-name {
+}
+
+// Bad
+.myClassName {
 }
 ```
 -   Use lowercase for HEX colors, i.e. `#eaea56` instead of `#EAEA56`.
@@ -70,7 +82,7 @@ div.className {
 -   **!important** Avoid using `!important` at all cost!
 
 ## Variables
-All variables are defined in the `vars/_config.scss` files.
+All variables are defined in the `vars/_config.scss` file.
 For color variables, use <http://www.color-blindness.com/color-name-hue/> to find the color name.
 
 ```scss

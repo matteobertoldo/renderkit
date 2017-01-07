@@ -54,6 +54,7 @@ module.exports = {
         js: folder.distribution + 'js/',
     },
     syncOptions: {
+        browserSync: false,
         staticServer: true,
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
