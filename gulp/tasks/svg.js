@@ -8,7 +8,7 @@ var gulp = require('gulp');
 var conf = require('../gulpconfig');
 var gutil = require('gulp-util');
 var svgSprite = require('gulp-svg-sprite');
-var plumber= require('gulp-plumber');
+var plumber = require('gulp-plumber');
 
 // @svg `spritemap` options
 // --------------
