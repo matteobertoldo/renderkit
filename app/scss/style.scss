@@ -14,7 +14,10 @@
 @import 'mixins/mixins';
 
 //@global fonts
-@import 'layout/template/fonts';
+@import 'layout/fonts/fonts';
 
 //@global "helpers" layout
 @import 'layout/helpers/helpers';
+
+//@global "templates" styles & components
+@import 'layout/templates/templates';

@@ -11,6 +11,7 @@ Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 Inspired by <https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#css> and <http://css-tricks.com/sass-style-guide/>
 
 -   Include partials should be prefixed with `_`, i.e. `_partial.scss`
+-   Please don't write any rules into `style.scss` or into an `importer` file. You can simply find it with `@importer` flag.
 -   Multiple-line approach (one property and value per line).
 
 ```scss
@@ -49,7 +50,7 @@ a {color: $green; text-decoration: underline;}
 // Bad
 . selectorA, .selectorB {}
 ```
--   No vendor prefixes. This will be done at build time using autoprefixer.
+-   No vendor prefixes. This will be done at build time using [autoprefixer](https://github.com/postcss/autoprefixer).
 -   Attribute selectors, like `input[type="text"]` should always wrap the attribute's value in double quotes, for consistency and safety.
 -   Maximum selector nesting: **three** levels deep.
 -   Global sass file (`style.scss`) is just a table of content.

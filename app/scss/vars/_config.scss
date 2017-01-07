@@ -14,7 +14,7 @@ $breakpoints: (
     medium: 667px,
     large: 768px,
     xlarge: 1024px,
-    xxlarge: 1280px,
+    xxlarge: 1280px
 ) !default;
 $breakpoint-classes: (small medium large) !default;
 $-zf-zero-breakpoint: small !default;
@@ -22,7 +22,16 @@ $-zf-zero-breakpoint: small !default;
 // @colors palette
 // ----------------
 
-$colors-palette: ();
+$colors-palette: (
+    whitesmoke: #f9f9f9,
+    linkwater: #d7dde4,
+    pacificblue: #0099cc,
+    charcoal: #4d4d4d
+) !default;
+$color-whitesmoke: map-get($colors-palette, whitesmoke) !default;
+$color-linkwater: map-get($colors-palette, linkwater) !default;
+$color-pacificblue: map-get($colors-palette, pacificblue) !default;
+$color-charcoal: map-get($colors-palette, charcoal) !default;
 
 // @colors: accessibility
 // ----------------

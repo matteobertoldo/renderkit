@@ -54,11 +54,11 @@ module.exports = {
         js: folder.distribution + 'js/',
     },
     syncOptions: {
-        browserSync: false,
+        browserSync: true,
         staticServer: true,
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
-        logPrefix: 'standard',
+        logPrefix: 'boilerplate-standard',
         notification: true
     },
     htmlOptions: {
