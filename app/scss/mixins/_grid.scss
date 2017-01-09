@@ -79,7 +79,8 @@
 	@if $size == expand {
 		$size: none;
 	}
-	max-width: $size;
+
+    max-width: $size;
 }
 
 // Creates a grid column.
@@ -113,7 +114,7 @@
 // Shorthand for `grid-column()`.
 // @alias grid-column
 
-@mixin grid-col($columns: $grid-column-count,$gutters: $grid-column-gutter) {
+@mixin grid-col($columns: $grid-column-count, $gutters: $grid-column-gutter) {
 	@include grid-column($columns, $gutters);
 }
 
@@ -213,25 +214,18 @@
 }
 
 // Set the gutters on a column
+// Spacing between columns, accepts multiple values:
+// - A single value will make the gutter that exact size.
+// - A breakpoint name will make the gutter the corresponding size in the $gutters map.
+// - "auto" will make the gutter responsive, using the $gutters map values.
 // @param: {Number|Keyword} $gutter [auto]
 // @param: {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use. Responsive gutter settings by default.
 
 @mixin grid-column-gutter($gutter: auto, $gutters: $grid-column-gutter) {
-    @if $gutter == auto and type-of($gutters) == 'map' {
-        @each $value, $breakpoint in $gutters {
-            @include breakpoint($breakpoint) {
-                @include grid-column-gutter($value);
-            }
-        }
-    } @else {
-        @if type-of($gutter) == 'string' {
-            $gutter: grid-column-gutter($gutter, $gutters);
-        }
-
-        $padding: $gutter / 2;
-
-        padding-left: $padding;
+    @include -zf-breakpoint-value($gutter, $gutters) {
+        $padding: $-zf-bp-value / 2;
         padding-right: $padding;
+        padding-left: $padding;
     }
 }
 

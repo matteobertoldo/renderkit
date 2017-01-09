@@ -1,7 +1,7 @@
 /**
  * @gulp html task
  * @include: gulp-html-tag-include
- * @note: no subfolders detect for don't go in distribution with html partials.
+ * @description: no subfolders detect for don't go in distribution with html partials.
  * @author: mbertoldo@alpenite.com
  */
 

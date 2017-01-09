@@ -4,10 +4,9 @@
 // @component: core
 
 @import 'layout/helpers/normalize';
+@import 'layout/helpers/outdated';
 @import 'layout/helpers/print';
 @import 'layout/helpers/accessibility';
-@import 'layout/helpers/typography';
-@import 'layout/helpers/flexbox';
 @import 'layout/helpers/grid';
-@import 'layout/helpers/custom-input';
-@import 'layout/helpers/outdated';
+@import 'layout/helpers/flexbox';
+@import 'layout/helpers/typography';

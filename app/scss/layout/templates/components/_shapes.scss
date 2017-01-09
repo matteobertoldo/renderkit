@@ -1,0 +1,32 @@
+// @global elements shapes & classes
+// @author: mbertoldo@alpenite.com
+// @component: core
+
+/*@shapes elements*/
+
+// @set: placeholder mixin for arrow "base style".
+// -----------------
+
+%arrow-base-style {
+	width: $global-arrow-dimension;
+	height: $global-arrow-dimension;
+	border: solid $global-arrow-color;
+	border-width: 0 $global-arrow-width $global-arrow-width 0;
+}
+
+// @print: arrow classes & direction support.
+// -----------------
+
+.cursor-arrow {
+	@extend %arrow-base-style;
+
+	@each $direction, $transform in $arrow-direction {
+		&.#{$direction} {
+			transform: rotate3d(0, 0, 1, $transform);
+		}
+	}
+}
+
+.full-rounded {
+	border-radius: 50%;
+}

@@ -51,11 +51,21 @@
 // @author: mbertoldo@alpenite.com
 // ----------------------------
 
-@mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width) {
+@mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
 	width: $arrow-width;
 	height: $arrow-height;
 	border: solid $arrow-color;
 	border-width: 0 $arrow-border-width $arrow-border-width 0;
+
+	@if ($arrow-direction == down) {
+		transform: rotate3d(0, 0, 1, 45deg);
+	} @else if ($arrow-direction == up) {
+		transform: rotate3d(0, 0, 1, -135deg);
+	} @else if ($arrow-direction == right) {
+		transform: rotate3d(0, 0, 1, -45deg);
+	} @else if ($arrow-direction == left) {
+		transform: rotate3d(0, 0, 1, 135deg);
+	}
 }
 
 // Mixin for Placeholder, create multiple instances of the placeholder pseudo element.
