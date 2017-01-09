@@ -6,7 +6,7 @@
 
 // @breakpoints
 // @foundation
-// @medium: iPhone 6/7 landscape mode
+// @note: `medium` (iPhone 6/7 landscape mode)
 // ----------------
 
 $breakpoints: (
@@ -19,53 +19,9 @@ $breakpoints: (
 $breakpoint-classes: (small medium large) !default;
 $-zf-zero-breakpoint: small !default;
 
-// @colors palette
-// ----------------
-
-$colors-palette: (
-    whitesmoke: #f9f9f9,
-    linkwater: #d7dde4,
-    pacificblue: #0099cc,
-    charcoal: #4d4d4d
-) !default;
-$color-whitesmoke: map-get($colors-palette, whitesmoke) !default;
-$color-linkwater: map-get($colors-palette, linkwater) !default;
-$color-pacificblue: map-get($colors-palette, pacificblue) !default;
-$color-charcoal: map-get($colors-palette, charcoal) !default;
-
-// @colors: accessibility
-// ----------------
-
-$selection-background-color: #b3d4fc !global;
-$global-selection-color: false !default;
-$selection-color: initial !default;
-
-// @colors: global
-// ----------------
-
-$global-background-color: white !default;
-$global-base-color: black !default;
-$global-heading-color: inherit !default;
-$global-paragraph-color: inherit !default;
-$global-link-color: black !default;
-$global-hover-link-color: black !default;
-
-// @colors: input
-// @form
-// ----------------
-
-$global-input-color: black !default; //TODO: set on custom form configuration
-$global-input-border: lightgray !default; //TODO: set on custom form configuration
-$global-custom-input-border: lightgray !default;
-$hover-custom-input-border: false !default;
-$hover-custom-input-border-color: initial !default;
-$checked-custom-input-border: true !default;
-$custom-checkbox-checked-border: #333 !default;
-$custom-radio-checked-border: #333 !default;
-$custom-checkbox-mark-color: #333 !default;
-$custom-radio-mark-color: #333 !default;
-
 // @typography
+// @note: `header-sizes` is set in `px`. The default output is set as `rem` units.
+// You can set the favorite output on `gulpconfing.js`.
 // ----------------
 
 $font-dir: '../assets/fonts/' !global;
@@ -107,8 +63,6 @@ $global-paragraph-letter-spacing: normal !default;
 // @foundation
 // ----------------
 
-$global-left: if($global-text-direction == rtl, right, left);
-$global-right: if($global-text-direction == rtl, left, right);
 $grid-row-width: 1200px !default;
 $grid-column-count: 12 !default;
 $grid-column-gutter: (
@@ -116,8 +70,56 @@ $grid-column-gutter: (
     medium: 30px,
 ) !default;
 $grid-column-align-edge: true !default;
-$-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
+$global-left: if($global-text-direction == rtl, right, left) !default;
+$global-right: if($global-text-direction == rtl, left, right) !default;
 $block-grid-max: 6 !default;
+
+// @colors: palette
+// ----------------
+
+$colors-palette: (
+    whitesmoke: #f9f9f9,
+    linkwater: #d7dde4,
+    pacificblue: #0099cc,
+    charcoal: #4d4d4d
+) !default;
+$color-whitesmoke: map-get($colors-palette, whitesmoke) !default;
+$color-linkwater: map-get($colors-palette, linkwater) !default;
+$color-pacificblue: map-get($colors-palette, pacificblue) !default;
+$color-charcoal: map-get($colors-palette, charcoal) !default;
+
+// @colors: accessibility
+// ----------------
+
+$selection-background-color: #b3d4fc !global;
+$global-selection-color: false !default;
+$selection-color: initial !default;
+
+// @colors: global
+// ----------------
+
+$global-background-color: white !default;
+$global-base-color: black !default;
+$global-heading-color: inherit !default;
+$global-paragraph-color: inherit !default;
+$global-link-color: black !default;
+$global-hover-link-color: black !default;
+
+// @colors: input + shapes
+// @form
+// ----------------
+
+$global-input-color: black !default; //TODO: set on custom form configuration
+$global-input-border: lightgray !default; //TODO: set on custom form configuration
+$global-custom-input-border: lightgray !default;
+$hover-custom-input-border: false !default;
+$hover-custom-input-border-color: initial !default;
+$checked-custom-input-border: true !default;
+$custom-checkbox-checked-border: #333 !default;
+$custom-radio-checked-border: #333 !default;
+$custom-checkbox-mark-color: #333 !default;
+$custom-radio-mark-color: #333 !default;
+$global-arrow-color: #333 !default;
 
 // @layout
 // @include: shapes elements
@@ -136,14 +138,7 @@ $global-margin-heading: true !default;
 $global-margin-paragraph: false !default;
 $margin-heading: 0 0 16px 0 !default;
 $margin-paragraph: 0 !default;
-$arrow-direction: (
-	down: 45deg,
-	up: -135deg,
-	right: -45deg,
-	left: 135deg
-);
 $global-arrow-dimension: 20px !default;
-$global-arrow-color: #333 !default;
 $global-arrow-width: 3px !default;
 
 // @print

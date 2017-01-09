@@ -4,6 +4,16 @@
 
 /*@shapes elements*/
 
+// @set: direction for arrow elements.
+// -----------------
+
+$arrow-direction: (
+	down: 45deg,
+	up: -135deg,
+	right: -45deg,
+	left: 135deg
+) !global;
+
 // @set: placeholder mixin for arrow "base style".
 // -----------------
 
