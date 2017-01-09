@@ -120,11 +120,12 @@ $-zf-end-float: if($grid-column-align-edge, $global-right, $global-left);
 $block-grid-max: 6 !default;
 
 // @layout
+// @include: shapes elements
 // @param: $global-reset-input-appearance == true
 // @note: it is highly recommended to remove the unexpected style input fields on iOS devices.
 // ----------------
 
-$global-reset-input-appearance: true !default;
+$global-reset-input-appearance: true !global;
 $global-custom-checkbox-radio: true !default;
 $global-custom-select: false !default; //TODO: set on custom form configuration
 $global-custom-options-select: false !default; //TODO: set support via JS
@@ -134,7 +135,16 @@ $global-input-border-radius: 0 !default; //TODO: set on custom form configuratio
 $global-margin-heading: true !default;
 $global-margin-paragraph: false !default;
 $margin-heading: 0 0 16px 0 !default;
-$margin-paragraph: 0 0 0 0 !default;
+$margin-paragraph: 0 !default;
+$arrow-direction: (
+	down: 45deg,
+	up: -135deg,
+	right: -45deg,
+	left: 135deg
+);
+$global-arrow-dimension: 20px !default;
+$global-arrow-color: #333 !default;
+$global-arrow-width: 3px !default;
 
 // @print
 // ----------------
@@ -154,3 +164,6 @@ $cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
 $transition-1: $fast $cubic-1;
 $transition-2: $fast $cubic-2;
 $transition-3: $medium $cubic-1;
+$transition-4: $medium $cubic-2;
+$transition-5: $slow $cubic-1;
+$transition-6: $slow $cubic-2;
