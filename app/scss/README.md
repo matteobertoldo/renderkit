@@ -31,7 +31,6 @@ a {color: $green; text-decoration: underline;}
 .block {
 	display: block;
 }
-
 // Bad
 .block {
 	display:block;
@@ -119,7 +118,8 @@ For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-
 @include breakpoint(medium down) {
     // @content
 }
-
+```
+```css
 // CSS output
 @media only screen and (max-width: 1024px) {
 
