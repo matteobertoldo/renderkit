@@ -14,11 +14,12 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
-    "browser-sync": "^2.17.3",
+    "browser-sync": "^2.18.6",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.0",
+    "gulp-fontgen": "^0.2.5",
     "gulp-html-beautify": "^1.0.1",
     "gulp-html-tag-include": "^1.0.1",
     "gulp-if": "^2.0.2",

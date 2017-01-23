@@ -93,3 +93,35 @@ $sangria: #990000;
 // Bad
 $red: #990000;
 ```
+
+## Breakpoints
+All breakpoints are defined in `vars/_config.scss` on `$breakpoints` map.
+The "breakpoint string" are part of the "core" of Foundation. **Important**, the default output of each media queries is `px` to simplify the process. Unlike the standard Foundation which is in `em`.
+If you want the output to `em` or in `rem`, simply nest in the map value of the `$breakpoints` the functions `em()` or `rem()`.
+Or alternatively configure the `gulpconfig.js` file into `cssOptions.remMediaQueries` the value to `true`.
+
+```scss
+// ex. with em
+$breakpoints: (
+    medium: em(667px),
+);
+
+// ex. with rem
+$breakpoints: (
+    medium: rem(667px),
+);
+```
+An example of use of the Foundations media queries.
+For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-queries.html>
+
+```scss
+// SCSS Breakpoint
+@include breakpoint(medium down) {
+    // @content
+}
+
+// CSS output
+@media only screen and (max-width: 1024px) {
+
+}
+```

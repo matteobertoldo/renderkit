@@ -21,7 +21,7 @@ if(conf.cleanOptions.cleanGlobalDistFiles) {
 }
 
 // @dryRun
-// @note: if dryRun will be `true` tou can see only on console the files or folders that would be deleted.
+// @note: if dryRun will be `true` you can see only on console the files or folders that would be deleted.
 
 gulp.task('clean', function() {
     del(filesType, {
