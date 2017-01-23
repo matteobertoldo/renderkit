@@ -120,7 +120,7 @@ For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-
 }
 ```
 ```css
-// CSS output
+/*CSS output*/
 @media only screen and (max-width: 1024px) {
 
 }
