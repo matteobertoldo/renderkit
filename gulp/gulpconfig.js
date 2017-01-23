@@ -51,7 +51,7 @@ module.exports = {
         base: folder.distribution,
         css: folder.distribution + 'css/',
         images: folder.distribution + folder.assets + 'images/',
-        js: folder.distribution + 'js/',
+        js: folder.distribution + 'js/'
     },
     syncOptions: {
         browserSync: true,
