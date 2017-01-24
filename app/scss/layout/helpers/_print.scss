@@ -7,9 +7,15 @@
 @media print {
     *, ::after, ::before {
         text-shadow: none !important;
-        @if ($global-transparent-print-background) {
+
+        @if ($global-transparent-background-print) {
             background: 0 0 !important;
         }
+
+        @if ($global-color-black-print) {
+            color: #000 !important;
+        }
+
         box-shadow: none !important;
     }
 

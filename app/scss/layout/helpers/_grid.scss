@@ -1,5 +1,6 @@
 // @grid helper package
 // @author: grid (foundation.zurb.com)
+// @author: mbertoldo@alpenite.com
 // @component: core
 // @note: Licensed under MIT Open Source
 // @note: packages of classes to be invoked via template
@@ -9,6 +10,10 @@
 
 .clearfix {
 	@include clearfix;
+}
+
+.clear-both {
+    clear: both
 }
 
 /*@float classes (from foundation)*/
