@@ -45,6 +45,16 @@
     display: none;
 }
 
+.cursor-grab {
+    cursor: move;
+    cursor: grab
+}
+
+.cursor-grabbing {
+    cursor: move;
+    cursor: grabbing
+}
+
 /*@visibility classes*/
 
 @include foundation-visibility-classes;

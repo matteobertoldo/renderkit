@@ -3,6 +3,8 @@
 // @component: core
 // @note: Licensed under MIT Open Source
 
+$-zf-zero-breakpoint: small !default;
+
 @if nth(map-values($breakpoints), 1) != 0 {
     @error 'Your smallest breakpoint (defined in $breakpoints) must be set to "0".';
 } @else {

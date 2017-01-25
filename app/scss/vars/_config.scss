@@ -17,7 +17,6 @@ $breakpoints: (
     xxlarge: 1280px
 ) !default;
 $breakpoint-classes: (small medium large) !default;
-$-zf-zero-breakpoint: small !default;
 
 // @typography
 // @note: `header-sizes` is set in `px`. The default output is set as `rem` units.
@@ -124,7 +123,7 @@ $global-arrow-color: #333 !default;
 // @layout
 // @include: shapes elements
 // @param: $global-reset-input-appearance == true
-// @note: it is highly recommended to remove the unexpected style input fields on iOS devices.
+// @note: it's highly recommended to remove the unexpected style input fields on iOS devices.
 // ----------------
 
 $global-reset-input-appearance: true !global;
@@ -144,7 +143,8 @@ $global-arrow-width: 3px !default;
 // @print
 // ----------------
 
-$global-transparent-print-background: false !default;
+$global-transparent-background-print: false !default;
+$global-color-black-print: false !default;
 $global-margin-print: 0.5cm !default;
 $global-link-href-show: false !default;
 
