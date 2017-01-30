@@ -12,19 +12,31 @@
 var folder = {
     workspace: 'app/',
     assets: 'assets/',
-    distribution: 'dist/'
+    distribution: 'dist/',
+    pkg: 'bower_components/'
 };
 
 // @global output style for css
-// @note: if cssOptions.remPropList it will be ['*'] the entire properties like [`margin`,`padding`] etc it will be converted into rem units.
 // -----------------
 
-var outputStyle = {
+var cssOutputStyle = {
     nested: 'nested',
     compact: 'compact',
     expanded: 'expanded',
     compressed: 'compressed'
 };
+
+// @global sources for js plugins
+// @note: Manage the updates with bower_components. If you use different package managers you can simply update the resources or the "manager" into `folder.pkg`.
+// @note: If you do not want to manage plugins with any package manager, simply set the subject packageManager.manage false by doing so it also performs the import speed. In the event that a plugins is not present in bower components it will automatically be caught by the `app/js/vendor`.
+// -----------------
+
+var plugins = [
+    folder.pkg + 'disable-scroll/dist/disable-scroll.js',
+    folder.pkg + 'fastclick/lib/fastclick.js',
+    folder.pkg + 'svg4everybody/dist/svg4everybody.js',
+    folder.pkg + 'what-input/dist/what-input.js'
+];
 
 // @global generated files on `distribution` folder
 // @note: include map extension.
@@ -44,8 +56,8 @@ module.exports = {
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + folder.assets + 'svg/',
         js: folder.workspace + 'js/',
-        vendorJS: folder.workspace + 'js/vendor/',
-        mainJS: folder.workspace + 'js/main/'
+        vendor: folder.workspace + 'js/vendor/',
+        main: folder.workspace + 'js/main/'
     },
     distribution: {
         base: folder.distribution,
@@ -53,12 +65,16 @@ module.exports = {
         images: folder.distribution + folder.assets + 'images/',
         js: folder.distribution + 'js/'
     },
+    packageManager: {
+        manage: true,
+        src: plugins
+    },
     syncOptions: {
         browserSync: true,
         staticServer: true,
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
-        logPrefix: 'boilerplate-standard',
+        logPrefix: 'bp-standard',
         notification: true
     },
     htmlOptions: {
@@ -76,12 +92,12 @@ module.exports = {
         remPropList: ['font', 'font-size', 'line-height', 'letter-spacing'],
         remMediaQueries: false,
         outputName: 'style',
-        outputStyle: outputStyle.expanded,
-        minifyCSS: true
+        outputStyle: cssOutputStyle.expanded,
+        minify: true
     },
     jsOptions: {
         outputName: 'app',
-        minifyJS: true
+        minify: true
     },
     svgOptions: {
         cssRender: false,
@@ -90,10 +106,10 @@ module.exports = {
         exampleFile: false
     },
     cleanOptions: {
-        cleanGlobalDistFiles: true,
-        cleanAllFiles: generatedFiles,
-        cleanFilesType: generatedFiles.html,
         dryRun: false,
-        forceDelete: false
+        forceDelete: false,
+        cleanAllDistFiles: true,
+        cleanAllFiles: generatedFiles,
+        cleanFilesType: generatedFiles.html
     }
 };

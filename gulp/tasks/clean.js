@@ -14,7 +14,7 @@ var del = require('del');
 // @return: {string} || [arr]
 // -------------------
 
-if(conf.cleanOptions.cleanGlobalDistFiles) {
+if(conf.cleanOptions.cleanAllDistFiles) {
     var filesType = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
     var filesType = conf.cleanOptions.cleanFilesType;
