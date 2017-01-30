@@ -14,18 +14,32 @@ var uglifyJS2 = require('gulp-uglify');
 var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 
+// @global scripts sources
+// -----------------------
+
+var src = [conf.workspace.vendor + '**/*.js', (conf.packageManager.manage) ? conf.packageManager.src : [], conf.workspace.main + '**/*.js'];
+var arr = [];
+
+// @convert sources into a single array (no sub array)
+// @note: `run-sequence` don't accept a "sub array".
+// -----------------------
+
+for (var i = 0; i < src.length; i++) {
+    arr = arr.concat(src[i]);
+}
+
 gulp.task('scripts', function() {
-    return gulp.src([conf.workspace.vendorJS + '**/*.js', conf.workspace.mainJS + '**/*.js'])
+    return gulp.src(arr)
     .pipe(plumber())
-	.pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.init()))
+	.pipe(gulpif(conf.jsOptions.minify, sourcemaps.init()))
     .pipe(concat(conf.jsOptions.outputName + '.js'))
-    .pipe(gulpif(conf.jsOptions.minifyJS, uglifyJS2({
+    .pipe(gulpif(conf.jsOptions.minify, uglifyJS2({
         compress: true
     }))).on('error', gutil.log)
-    .pipe(gulpif(conf.jsOptions.minifyJS, rename({
+    .pipe(gulpif(conf.jsOptions.minify, rename({
         suffix: '.min'
     })))
-    .pipe(gulpif(conf.jsOptions.minifyJS, sourcemaps.write('./')))
+    .pipe(gulpif(conf.jsOptions.minify, sourcemaps.write('./')))
     .pipe(gulp.dest(conf.distribution.js));
 });
 

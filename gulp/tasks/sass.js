@@ -44,7 +44,7 @@ if(!conf.cssOptions.remUnit) {
     processors.splice(1,1);
 }
 
-// @cleanCSS clean + minify mode
+// @cleanCSS: (clean + minify mode)
 // @param: {bool}
 // ----------------------------------
 
@@ -57,8 +57,8 @@ gulp.task('sass', function() {
     }).on('error', sass.logError))
     .pipe(concat(conf.cssOptions.outputName + '.css'))
     .pipe(postcss(processors))
-    .pipe(gulpif(conf.cssOptions.minifyCSS, cleanCSS()))
-    .pipe(gulpif(conf.cssOptions.minifyCSS, rename({
+    .pipe(gulpif(conf.cssOptions.minify, cleanCSS()))
+    .pipe(gulpif(conf.cssOptions.minify, rename({
         suffix: '.min'
     })))
     .pipe(sourcemaps.write('./'))
