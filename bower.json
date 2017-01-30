@@ -1,6 +1,6 @@
 {
-  "name": "standard",
-  "description": "Vendor plugins for boilerplate-standard",
+  "name": "bower_components",
+  "description": "Manage plugins with bower_components",
   "main": "index.js",
   "authors": [
     "Matteo Bertoldo - mbertoldo@alpenite.com"
