@@ -3,7 +3,7 @@
  * @return: true || false
  * @param: {Object}
  * @require: {Modernizr}
- * @description: _underscore renaming hack to load the script first of all (highly recommended)
+ * @description: is highly recommended load the script first of all.
  * @author: mbertoldo@alpenite.com
  */
 
