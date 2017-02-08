@@ -1,6 +1,7 @@
 # Logs
 # --------------------------
 
+log
 logs
 npm-debug.log*
 *.log
@@ -14,26 +15,30 @@ bower_components
 # Optional npm cache directory
 # --------------------------
 
-.npm
+*.npm
 
 # Compiled Gulp Files
 # --------------------------
 
 dist/**/*.html
 dist/css/
-dist/js/*.js
-dist/assets/images/symbol/
+dist/js/
+dist/assets/
 dist/**/*.map
 
 # IDE Generated Files & Folders
 # --------------------------
 
-./idea
+*.idea
 *.sublime-project
 *.sublime-workspace
+*.settings
+*.project
+*.tern-project
+*.vscode
 
 # macOS Generated Files
 # --------------------------
 
 *.DS_Store
-__MACOSX
+*__MACOSX/

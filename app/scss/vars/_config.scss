@@ -119,6 +119,7 @@ $custom-radio-checked-border: #333 !default;
 $custom-checkbox-mark-color: #333 !default;
 $custom-radio-mark-color: #333 !default;
 $global-arrow-color: #333 !default;
+$global-checkmark-color: #333 !default;
 
 // @layout
 // @include: shapes elements
@@ -137,8 +138,8 @@ $global-margin-heading: true !default;
 $global-margin-paragraph: false !default;
 $margin-heading: 0 0 16px 0 !default;
 $margin-paragraph: 0 !default;
-$global-arrow-dimension: 20px !default;
 $global-arrow-width: 3px !default;
+$global-checkmark-width: 3px !default;
 
 // @print
 // ----------------

@@ -1,4 +1,4 @@
-// @typography helper package
+// @typography package
 // @author: mbertoldo@alpenite.com
 // @note: packages of classes to be invoked via template
 // --------------------------------
@@ -17,6 +17,16 @@
 
 .text-ellipsis {
 	@include text-ellipsis;
+}
+
+// @set global text transform
+// @param: classes
+// --------------------
+
+@each $transform in (uppercase, lowercase, capitalize) {
+    .text-#{$transform} {
+        text-transform: $transform;
+    }
 }
 
 // @set global heading font size + breakpoints
