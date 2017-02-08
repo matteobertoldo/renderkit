@@ -7,8 +7,8 @@
 -   [Gulp](http://gulpjs.com)
 -   [Browsersync](https://www.browsersync.io)
 -   [Bower Components](https://bower.io)
--   [Modernizr Custom Build](https://modernizr.com)
--   [jQuery 3+](http://jquery.com)
+-   [Modernizr](https://modernizr.com)
+-   [jQuery](http://jquery.com)
 -   [Foundation Sass Grid & Breakpoints](http://foundation.zurb.com/sites/docs/grid.html)
 -   Sass Custom Packages
 -   [Fast-Click](https://github.com/ftlabs/fastclick)
@@ -18,7 +18,7 @@
 
 ## Getting Sarted
 
-Documentation coming soon.
+Full documentation coming soon.
 
 ## License
 

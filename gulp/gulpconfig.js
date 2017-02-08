@@ -26,9 +26,30 @@ var cssOutputStyle = {
     compressed: 'compressed'
 };
 
+// @global Modernizr custom options
+// @based on https://modernizr.com/download#setclasses
+// -----------------
+
+var customizr = {
+    'classPrefix': '',
+    'options': [
+        'addTest',
+        'mq',
+        'setClasses',
+        'testAllProps',
+        'testProp'
+    ],
+    'feature-detects': [
+        'css/flexbox',
+        'css/flexboxtweener',
+        'css/objectfit',
+        'css/transitions',
+        'hashchange',
+        'touchevents'
+    ]
+};
+
 // @global sources for js plugins
-// @note: Manage the updates with bower_components. If you use different package managers you can simply update the resources or the "manager" into `folder.pkg`.
-// @note: If you do not want to manage plugins with any package manager, simply set the subject packageManager.manage false by doing so it also performs the import speed. In the event that a plugins is not present in bower components it will automatically be caught by the `app/js/vendor`.
 // -----------------
 
 var plugins = [
@@ -39,16 +60,17 @@ var plugins = [
 ];
 
 // @global generated files on `distribution` folder
-// @note: include map extension.
-// @note: on `svg` folder can generate an a `html` example file so we can detect it.
 // -----------------
 
 var generatedFiles = {
     html: folder.distribution + '*.html',
-    css: folder.distribution + 'css/*.{css,map}',
+    css: folder.distribution + 'css/**/*.{css,map}',
     svg: folder.distribution + folder.assets + '/images/**/*.{svg,html}',
-    js: folder.distribution + 'js/*.{js,map}',
+    js: folder.distribution + 'js/**/*.{js,map}'
 };
+
+// @global options
+// -----------------
 
 module.exports = {
     workspace: {
@@ -63,11 +85,8 @@ module.exports = {
         base: folder.distribution,
         css: folder.distribution + 'css/',
         images: folder.distribution + folder.assets + 'images/',
-        js: folder.distribution + 'js/'
-    },
-    packageManager: {
-        manage: true,
-        src: plugins
+        js: folder.distribution + 'js/',
+        lib: folder.distribution + 'js/lib/'
     },
     syncOptions: {
         browserSync: true,
@@ -95,9 +114,18 @@ module.exports = {
         outputStyle: cssOutputStyle.expanded,
         minify: true
     },
+    packageManager: {
+        managePlugins: true,
+        src: plugins
+    },
     jsOptions: {
-        outputName: 'app',
-        minify: true
+        jQuery: folder.pkg + 'jquery/dist/jquery.js',
+        minifyjQuery: true,
+        modernizrCustomOptions: true,
+        customizr: customizr,
+        minifyModernizr: true,
+        outputPluginsName: 'app',
+        minifyPlugins: true
     },
     svgOptions: {
         cssRender: false,

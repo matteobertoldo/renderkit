@@ -19,6 +19,7 @@
 // ----------------------------
 
 @mixin triangle($triangle-size, $triangle-color, $triangle-direction: down) {
+	display: block;
 	width: 0;
 	height: 0;
 	border: inset $triangle-size;
@@ -52,6 +53,7 @@
 // ----------------------------
 
 @mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
+	display: block;
 	width: $arrow-width;
 	height: $arrow-height;
 	border: solid $arrow-color;

@@ -12,6 +12,7 @@
     "what-input": "^4.0.6",
     "fastclick": "^1.0.6",
     "svg4everybody": "^2.1.4",
-    "disable-scroll": "^0.3.0"
+    "disable-scroll": "^0.3.0",
+    "jquery": "^3.1.1"
   }
 }

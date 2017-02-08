@@ -13,16 +13,16 @@
     text-shadow: none;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .visuallyhidden {
     @include visuallyhidden;
 }
 
 .visuallyhidden-off {
     @include visuallyhidden-off;
-}
-
-.invisible {
-    visibility: hidden;
 }
 
 .no-select {
@@ -45,14 +45,10 @@
     display: none;
 }
 
-.cursor-grab {
-    cursor: move;
-    cursor: grab
-}
-
-.cursor-grabbing {
-    cursor: move;
-    cursor: grabbing
+@each $cursor in (pointer, default, grab, grabbing) {
+    .cursor-#{$cursor} {
+        cursor: $cursor;
+    }
 }
 
 /*@visibility classes*/

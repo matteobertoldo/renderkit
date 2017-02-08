@@ -12,6 +12,7 @@ Inspired by <https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#css> 
 
 -   Include partials should be prefixed with `_`, i.e. `_partial.scss`
 -   Please don't write any rules into `style.scss` or into an `importer` file. You can simply find it with `@importer` flag.
+-   Global sass file (`style.scss`) is just a table of content.
 -   Multiple-line approach (one property and value per line).
 
 ```scss
@@ -52,7 +53,6 @@ a {color: $green; text-decoration: underline;}
 -   No vendor prefixes. This will be done at build time using [autoprefixer](https://github.com/postcss/autoprefixer).
 -   Attribute selectors, like `input[type="text"]` should always wrap the attribute's value in double quotes, for consistency and safety.
 -   Maximum selector nesting: **three** levels deep.
--   Global sass file (`style.scss`) is just a table of content.
 -   Avoid the use of ID (`#`) like a plague. Class naming is preferred.
 -   When using class or ID selector, drop the element selector.
 
@@ -111,7 +111,7 @@ $breakpoints: (
 );
 ```
 An example of use of the Foundations media queries.
-For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-queries.html>
+For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-queries.html> (consider only examples in SCSS).
 
 ```scss
 // SCSS Breakpoint

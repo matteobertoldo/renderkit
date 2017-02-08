@@ -3,10 +3,9 @@
 // @import: style.scss
 // @component: core
 
-@import 'layout/helpers/normalize';
-@import 'layout/helpers/outdated';
-@import 'layout/helpers/print';
-@import 'layout/helpers/accessibility';
-@import 'layout/helpers/grid';
-@import 'layout/helpers/flexbox';
-@import 'layout/helpers/typography';
+@import 'normalize';
+@import 'print';
+@import 'outdated';
+@import 'accessibility';
+@import 'grid';
+@import 'flexbox';
