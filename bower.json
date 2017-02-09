@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/matteobertoldo/boilerplate-standard",
-  "private": true,
+  "private": false,
   "dependencies": {
     "what-input": "^4.0.6",
     "fastclick": "^1.0.6",
