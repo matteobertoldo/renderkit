@@ -4,6 +4,9 @@
 // @support: flexbox + flexboxtweener (set on Autoprefixer)
 // --------------------------------
 
+// @set flexbox map
+// -----------------
+
 $flexbox-classes: (
     display: (
         'display': 'flex',
@@ -48,6 +51,9 @@ $flexbox-classes: (
         'flex': '1 0 auto'
     )
 );
+
+// @print classes
+// -----------------
 
 @each $class, $classes in $flexbox-classes {
 	.flex-#{$class} {
