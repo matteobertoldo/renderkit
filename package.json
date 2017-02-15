@@ -22,7 +22,6 @@
     "gulp-clean-css": "^2.4.0",
     "gulp-concat": "^2.6.0",
     "gulp-file": "^0.3.0",
-    "gulp-fontgen": "^0.2.5",
     "gulp-html-beautify": "^1.0.1",
     "gulp-html-tag-include": "^1.0.1",
     "gulp-if": "^2.0.2",
