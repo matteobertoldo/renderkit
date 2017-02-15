@@ -22,8 +22,7 @@ var folder = {
 var cssOutputStyle = {
     nested: 'nested',
     compact: 'compact',
-    expanded: 'expanded',
-    compressed: 'compressed'
+    expanded: 'expanded'
 };
 
 // @global Modernizr custom options
