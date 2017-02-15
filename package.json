@@ -2,9 +2,10 @@
   "name": "boilerplate-standard",
   "version": "1.0.0",
   "description": "Definitely the standard for start front end Web projects",
-  "main": "dist/js/app.js",
+  "main": "./gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "libs": "gulp libs",
     "clean": "gulp clean"
   },
   "repository": {

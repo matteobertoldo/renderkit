@@ -102,13 +102,24 @@ module.exports = {
         endWithNewline: false
     },
     cssOptions: {
-        browsersSupport: ['> 1%', 'last 4 versions'],
+        browsersSupport: [
+            '> 1%',
+            'last 4 versions',
+            'iOS >= 8',
+            'IE >= 10',
+            'Safari >= 7',
+        ],
         flexbox: 'no-2009',
         msGridLayout: false,
         remUnit: true,
         replaceRemUnit: true,
         unitRemPrecision: 5,
-        remPropList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+        remPropList: [
+            'font',
+            'font-size',
+            'line-height',
+            'letter-spacing'
+        ],
         remMediaQueries: false,
         outputName: 'style',
         outputStyle: cssOutputStyle.expanded,
@@ -136,8 +147,8 @@ module.exports = {
     cleanOptions: {
         dryRun: false,
         forceDelete: false,
-        cleanAllDistFiles: true,
+        cleanAllDistFiles: false,
         cleanAllFiles: generatedFiles,
-        cleanFilesType: generatedFiles.html
+        cleanFilesType: generatedFiles.css
     }
 };

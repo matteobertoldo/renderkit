@@ -10,11 +10,10 @@
 -   [Modernizr](https://modernizr.com)
 -   [jQuery](http://jquery.com)
 -   [Foundation Sass Grid & Breakpoints](http://foundation.zurb.com/sites/docs/grid.html)
--   Sass Custom Packages
 -   [Fast-Click](https://github.com/ftlabs/fastclick)
 -   [What Input](https://github.com/ten1seven/what-input)
+-   Sass Custom Packages
 -   Inline SVG
--   Outdated Browsers Support
 
 ## Getting Sarted
 

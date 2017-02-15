@@ -40,7 +40,7 @@
 // @note: created only for simplify the syntax.
 // ----------------------------
 
-@mixin ios-scroll {
+@mixin ios-smooth-scroll {
 	-webkit-overflow-scrolling: touch;
 }
 
