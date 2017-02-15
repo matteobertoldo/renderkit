@@ -4,6 +4,8 @@
 // @include: style.scss
 // @access: public
 
+@import "utils/functions";
+
 // @breakpoints
 // @foundation
 // @note: `medium` (iPhone 6/7 landscape mode)
@@ -23,7 +25,7 @@ $breakpoint-classes: (small medium large) !default;
 // You can set the favorite output on `gulpconfing.js`.
 // ----------------
 
-$font-dir: '../assets/fonts/' !global;
+$font-dir: '../assets/fonts/' !default;
 $global-text-direction: ltr !default;
 $primary-type-font: sans-serif !default;
 $global-font-family: $primary-type-font;
@@ -90,7 +92,7 @@ $color-charcoal: map-get($colors-palette, charcoal) !default;
 // @colors: accessibility
 // ----------------
 
-$selection-background-color: #b3d4fc !global;
+$selection-background-color: #b3d4fc !default;
 $global-selection-color: false !default;
 $selection-color: initial !default;
 
@@ -127,7 +129,7 @@ $global-checkmark-color: #333 !default;
 // @note: it's highly recommended to remove the unexpected style input fields on iOS devices.
 // ----------------
 
-$global-reset-input-appearance: true !global;
+$global-reset-input-appearance: true !default;
 $global-custom-checkbox-radio: true !default;
 $global-custom-select: false !default; //TODO: set on custom form configuration
 $global-custom-options-select: false !default; //TODO: set support via JS

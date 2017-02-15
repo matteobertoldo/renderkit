@@ -1,7 +1,5 @@
-# editorconfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
 end_of_line = lf
 insert_final_newline = true
@@ -9,7 +7,6 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-# Matches the exact files either package.json, .travis.yml or bower.json
-[{package.json,.travis.yml,bower.json}]
+[{package.json,bower.json}]
 indent_style = space
 indent_size = 2

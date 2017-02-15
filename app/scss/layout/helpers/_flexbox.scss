@@ -4,59 +4,55 @@
 // @support: flexbox + flexboxtweener (set on Autoprefixer)
 // --------------------------------
 
-/*@fexbox classes*/
+$flexbox-classes: (
+    display: (
+        'display': 'flex',
+    ),
+    wrap: (
+        'flex-wrap': 'wrap'
+    ),
+    wrapper: (
+        'display': 'flex',
+        'flex-wrap': 'wrap'
+    ),
+    align-items-center: (
+        'align-items': 'center'
+    ),
+    align-items-end: (
+        'align-items': 'end'
+    ),
+    justify-content-center: (
+        'justify-content': 'center'
+    ),
+    justify-content-between: (
+        'justify-content': 'space-between'
+    ),
+    justify-content-end: (
+        'justify-content': 'flex-end'
+    ),
+    centered: (
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center'
+    ),
+    row-reverse: (
+        'flex-direction': 'row-reverse'
+    ),
+    column: (
+        'flex-direction': 'column'
+    ),
+    column-reverse: (
+        'flex-direction': 'column-reverse'
+    ),
+    wide-auto: (
+        'flex': '1 0 auto'
+    )
+);
 
-.flex-display {
-	display: flex;
-}
-
-.flex-wrap {
-	flex-wrap: wrap;
-}
-
-.flex-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.flex-align-items-center {
-	align-items: center;
-}
-
-.flex-align-items-end {
-	align-items: flex-end;
-}
-
-.flex-justify-content-center {
-	justify-content: center;
-}
-
-.flex-justify-content-between {
-	justify-content: space-between;
-}
-
-.flex-justify-content-end {
-	justify-content: flex-end;
-}
-
-.flex-centered {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.flex-dir-reverse {
-	flex-direction: row-reverse;
-}
-
-.flex-column {
-	flex-direction: column;
-}
-
-.flex-column-reverse {
-	flex-direction: column-reverse;
-}
-
-.flex-wide-auto {
-	flex: 1 0 auto;
+@each $class, $classes in $flexbox-classes {
+	.flex-#{$class} {
+		@each $property, $properties in $classes {
+			#{$property}: unquote($properties);
+		}
+	}
 }

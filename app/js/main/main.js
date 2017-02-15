@@ -1,5 +1,5 @@
 /**!main.js
-  @param: {global.functions}
+  @return: {global.functions}
   @author: mbertoldo@alpenite.com
   @description: Hand-made and built with love in Venice, IT.
 */

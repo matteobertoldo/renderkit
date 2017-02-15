@@ -1,13 +1,22 @@
 {
-  "name": "bower_components",
-  "description": "Manage plugins with bower_components",
-  "main": "index.js",
+  "name": "boilerplate-standard",
+  "description": "",
+  "main": "bower.json",
   "authors": [
     "Matteo Bertoldo - mbertoldo@alpenite.com"
   ],
   "license": "MIT",
   "homepage": "https://github.com/matteobertoldo/boilerplate-standard",
   "private": false,
+  "ignore": [
+     "**/.*",
+     "node_modules",
+     "bower_components",
+     "test",
+     "tests",
+     "log",
+     "logs"
+   ],
   "dependencies": {
     "what-input": "^4.0.6",
     "fastclick": "^1.0.6",
