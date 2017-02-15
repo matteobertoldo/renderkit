@@ -21,4 +21,4 @@ Full documentation coming soon.
 
 ## License
 
-Bolierplate Standard is released under the [MIT](https://opensource.org/licenses/MIT) License.
+Boilerplate Standard is released under the [MIT](https://opensource.org/licenses/MIT) License.
