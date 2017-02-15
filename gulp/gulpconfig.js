@@ -103,9 +103,7 @@ module.exports = {
     cssOptions: {
         browsersSupport: [
             '> 1%',
-            'last 4 versions',
-            'IE >= 10',
-            'iOS >= 8',
+            'last 4 versions'
         ],
         flexbox: 'no-2009',
         msGridLayout: false,
