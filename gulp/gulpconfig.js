@@ -105,9 +105,8 @@ module.exports = {
         browsersSupport: [
             '> 1%',
             'last 4 versions',
-            'iOS >= 8',
             'IE >= 10',
-            'Safari >= 7',
+            'iOS >= 8',
         ],
         flexbox: 'no-2009',
         msGridLayout: false,
@@ -123,7 +122,8 @@ module.exports = {
         remMediaQueries: false,
         outputName: 'style',
         outputStyle: cssOutputStyle.expanded,
-        minify: true
+        minify: true,
+        optimizationMinify: true
     },
     packageManager: {
         managePlugins: true,

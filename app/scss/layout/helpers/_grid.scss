@@ -18,18 +18,16 @@
 
 /*@float classes (from foundation)*/
 
-.float-left {
-	float: left;
-}
-
-.float-right {
-	float: right;
-}
-
-.float-center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+@each $float in (left, right, center) {
+    .float-#{$float} {
+        @if ($float == 'center') {
+            display: block;
+        	margin-left: auto;
+        	margin-right: auto;
+        } @else {
+            float: $float;
+        }
+    }
 }
 
 /*@foundation-grid classes (6.4)*/

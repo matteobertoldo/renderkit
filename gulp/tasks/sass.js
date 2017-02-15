@@ -57,7 +57,9 @@ gulp.task('sass', function() {
     }).on('error', sass.logError))
     .pipe(concat(conf.cssOptions.outputName + '.css'))
     .pipe(postcss(processors))
-    .pipe(gulpif(conf.cssOptions.minify, cleanCSS()))
+    .pipe(gulpif(conf.cssOptions.minify, cleanCSS({
+        level: (conf.cssOptions.optimizationMinify) ? 2 : 1
+    })))
     .pipe(gulpif(conf.cssOptions.minify, rename({
         suffix: '.min'
     })))
