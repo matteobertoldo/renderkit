@@ -4,20 +4,6 @@
 
 /*@shapes elements*/
 
-.full-rounded {
-	border-radius: 50%;
-}
-
-// @set: direction for arrow elements.
-// -----------------
-
-$arrow-direction: (
-	down: 45deg,
-	up: -135deg,
-	right: -45deg,
-	left: 135deg
-) !global;
-
 // @set: placeholder mixin for arrow "base style".
 // -----------------
 
@@ -35,6 +21,13 @@ $arrow-direction: (
 .shape-arrow {
 	@extend %arrow-base-style;
 
+    $arrow-direction: (
+    	down: 45deg,
+    	up: -135deg,
+    	right: -45deg,
+    	left: 135deg
+    );
+
 	@each $direction, $transform in $arrow-direction {
 		&.#{$direction} {
 			transform: rotate3d(0, 0, 1, $transform);
@@ -44,4 +37,8 @@ $arrow-direction: (
 
 .shape-checkmark {
     @include arrow(10px, 20px, $global-checkmark-color, $global-checkmark-width, down);
+}
+
+.full-rounded {
+	border-radius: 50%;
 }

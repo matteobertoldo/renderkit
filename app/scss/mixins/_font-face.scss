@@ -1,8 +1,14 @@
+// Mixin for font face rule.
+// @require: {function} str-replace
+// @component: core
+// @author: mbertoldo@alpenite.com
+// --------------------------------
+
 // Function for string replace.
 // @param: {String}
-// @returns: str-replace($mystring, $string-to-replace, $replacer);
+// @return: str-replace($mystring, $string-to-replace, $replacer);
 // @note: https://css-tricks.com/snippets/sass/str-replace-function/
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function str-replace($string, $search, $replace: "") {
 	$index: str-index($string, $search);
@@ -16,10 +22,11 @@
 
 // Mixin for font face rule.
 // @require: {function} str-replace
-// @note: important the @var "$font-dir" is defined on config @typography
-// @use: @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
-// @author: mbertoldo@alpenite.com
-// ----------------------------------------------------------------------
+// @note: only define as String your Font Name and define your "font file name".
+// @note: if you have subfolders where is your font files, just simply define the folder where is this, before font file name. Ex ´mysubfolderfont/my_awesome_font_file_name´.
+// @note: important the `$font-dir` is defined on _config.scss @typography
+// @use: (full options)
+// @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
 
 @mixin font-face($font-name, $font-file, $style: normal, $weight: normal, $category: null, $ie-old-support: false) {
 	$filepath: $font-dir + $font-file;
