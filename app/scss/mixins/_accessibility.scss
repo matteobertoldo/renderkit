@@ -51,29 +51,3 @@
 @mixin ios-tap-color($color) {
 	-webkit-tap-highlight-color: #{$color};
 }
-
-// Mixin for touch action.
-// @param 2: include IE10+ support
-// @note: Safari 9.1+ support only "manipulation", value "manipulation", "pan-x", "pan-y", "none"
-// ----------------------------
-
-@mixin touch-action($prop) {
-	@if ($prop == 'none') {
-		-webkit-touch-callout: none;
-	}
-	-ms-touch-action: $prop;
-	touch-action: $prop;
-}
-
-// Mixin for css pointer events support.
-// @require: {Modernizr.csspointerevents} custom build at https://modernizr.com
-// @note: include IE support for the browser doesn't support CSS pointer events
-// @author: mbertoldo@alpenite.com
-// ----------------------------
-
-@mixin fix-pointer-events {
-	.no-csspointerevents & {
-		visibility: hidden;
-		@content;
-	}
-}

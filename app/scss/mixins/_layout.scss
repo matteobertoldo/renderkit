@@ -169,3 +169,16 @@
 		@content;
 	}
 }
+
+// Mixin for css pointer events support.
+// @require: {Modernizr.csspointerevents} custom build at https://modernizr.com
+// @note: include IE support for the browser doesn't support CSS pointer events
+// @author: mbertoldo@alpenite.com
+// ----------------------------
+
+@mixin fix-pointer-events {
+	.no-csspointerevents & {
+		visibility: hidden;
+		@content;
+	}
+}
