@@ -1,6 +1,5 @@
-// @global functions
+// @global "units" functions
 // @author: mbertoldo@alpenite.com
-// @include: style.scss
 // @component: core
 
 // Removes the unit (e.g. px, em, rem) from a value, returning the number only.
@@ -33,6 +32,7 @@
 
 // Function for catch color palette in $colors-palette map.
 // @note: use -> .my-element { color: palette(whitesmoke); }
+// @author: mbertoldo@alpenite.com
 // ----------------------------------------------------------------------
 
 @function palette($color) {

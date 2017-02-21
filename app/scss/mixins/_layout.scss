@@ -63,7 +63,9 @@
 
 // Mixin for Placeholder, create multiple instances of the placeholder pseudo element.
 // @param: `-moz-` render the pseudo placeholder element with opacity included. We set it's value to 1 if you want to see the full color.
-// @param: `$on-focus` if blur is set, we make clear the pseudo element (only in -webkit- and -moz- render, in IE is already present this behavior.)
+// @param: `$on-focus` if `focus-hidden` is set, we make clear the pseudo element (only in -webkit- and -moz- render, in IE is already present this behavior.)
+// @author: mbertoldo@alpenite.com
+// ----------------------------------
 
 // @use 1: (placeholder color is #ccc, on focus nothing will happen: default)
 // ------------------------
@@ -82,9 +84,6 @@
 // .myselector {
 // 		@include placeholder(#ccc, 'focus', #333);
 // }
-
-// @author: mbertoldo@alpenite.com
-// ----------------------------------
 
 @mixin placeholder($placeholder-color, $on-focus: null, $placeholder-focus-color: initial) {
 	$prefix: '-placeholder';
