@@ -26,6 +26,11 @@ dist/js/
 dist/assets/
 dist/**/*.map
 
+# Private files
+# --------------------------
+
+gulp/private/*.json
+
 # IDE Generated Files & Folders
 # --------------------------
 

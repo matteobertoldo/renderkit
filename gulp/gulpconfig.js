@@ -1,6 +1,5 @@
 /**
  * @gulp configuration tasks file
- * @global: {objectsFoldersFiles}
  * @param: {String}
  * @return: {global.options}
  * @author: mbertoldo@alpenite.com
@@ -25,39 +24,6 @@ var cssOutputStyle = {
     expanded: 'expanded'
 };
 
-// @global Modernizr custom options
-// @based on https://modernizr.com/download#setclasses
-// -----------------
-
-var customizr = {
-    'classPrefix': '',
-    'options': [
-        'addTest',
-        'mq',
-        'setClasses',
-        'testAllProps',
-        'testProp'
-    ],
-    'feature-detects': [
-        'css/flexbox',
-        'css/flexboxtweener',
-        'css/objectfit',
-        'css/transitions',
-        'hashchange',
-        'touchevents'
-    ]
-};
-
-// @global sources for js plugins
-// -----------------
-
-var plugins = [
-    folder.pkg + 'disable-scroll/dist/disable-scroll.js',
-    folder.pkg + 'fastclick/lib/fastclick.js',
-    folder.pkg + 'svg4everybody/dist/svg4everybody.js',
-    folder.pkg + 'what-input/dist/what-input.js'
-];
-
 // @global generated files on `distribution` folder
 // -----------------
 
@@ -77,8 +43,8 @@ module.exports = {
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + folder.assets + 'svg/',
         js: folder.workspace + 'js/',
-        vendor: folder.workspace + 'js/vendor/',
-        main: folder.workspace + 'js/main/'
+        jsVendor: folder.workspace + 'js/vendor/',
+        jsMain: folder.workspace + 'js/main/'
     },
     distribution: {
         base: folder.distribution,
@@ -93,7 +59,9 @@ module.exports = {
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'bp-standard',
-        notification: true
+        notification: true,
+        reloadNonGeneratedFiles: true,
+        reloadCustomFileExtension: folder.workspace + '**/*.{xml,txt}'
     },
     htmlOptions: {
         prefixVar: '@',
@@ -124,13 +92,38 @@ module.exports = {
     },
     packageManager: {
         managePlugins: true,
-        src: plugins
+        src: [
+            folder.pkg + 'disable-scroll/dist/disable-scroll.js',
+            folder.pkg + 'fastclick/lib/fastclick.js',
+            folder.pkg + 'svg4everybody/dist/svg4everybody.js',
+            folder.pkg + 'what-input/dist/what-input.js'
+        ]
     },
     jsOptions: {
-        jQuery: folder.pkg + 'jquery/dist/jquery.js',
-        minifyjQuery: true,
+        libs: [
+            folder.pkg + 'jquery/dist/jquery.js'
+        ],
+        minifyLibs: true,
+        modernizr: true,
         modernizrCustomOptions: true,
-        customizr: customizr,
+        customizr: {
+            'classPrefix': '',
+            'options': [
+                'addTest',
+                'mq',
+                'setClasses',
+                'testAllProps',
+                'testProp'
+            ],
+            'feature-detects': [
+                'css/flexbox',
+                'css/flexboxtweener',
+                'css/objectfit',
+                'css/transitions',
+                'hashchange',
+                'touchevents'
+            ]
+        },
         minifyModernizr: true,
         outputPluginsName: 'app',
         minifyPlugins: true
@@ -141,11 +134,24 @@ module.exports = {
         outputName: 'sprite',
         exampleFile: false
     },
+    ftpOptions: {
+        sftpConnection: false,
+        parallelUploads: 5,
+        cacheReload: true,
+        debugMode: false,
+        logMode: true,
+        fullFolderForDeploy: true,
+        folderForDeploy: [
+            folder.distribution
+        ],
+        deployByFile: generatedFiles.html,
+        deployRemoteFolder: folder.distribution
+    },
     cleanOptions: {
         dryRun: false,
         forceDelete: false,
-        cleanAllDistFiles: false,
+        cleanAllDistFiles: true,
         cleanAllFiles: generatedFiles,
-        cleanFilesType: generatedFiles.css
+        cleanFilesType: generatedFiles.html
     }
 };

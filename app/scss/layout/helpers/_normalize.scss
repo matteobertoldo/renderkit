@@ -7,14 +7,15 @@
 /*@custom normalize: normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css*/
 
 // @param-1: Change the default font family in all browsers (opinionated).
-// @param-2: Mixin for prevent adjustments of font size after orientation changes in IE and iOS.
-// @param-3: Mixin for reset the default iOS tap highlight color.
-// @param-4: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// @param-2|3: Prevent adjustments of font size after orientation changes in IE and iOS Devices.
+// @param-4: Mixin for reset the default iOS tap highlight color.
+// @param-5: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 // --------------------------------
 
 html {
 	font-family: $primary-type-font;
-	@include text-size-adjust;
+    -ms-text-size-adjust: percentage(1);
+	-webkit-text-size-adjust: percentage(1);
 	@include ios-tap-color(transparent);
 	box-sizing: border-box;
 }
@@ -33,12 +34,12 @@ html {
 
 body {
 	font: {
-		family: $global-font-family;
-		weight: $global-font-weight;
+		family: $body-font-family;
+		weight: $body-font-weight;
 	}
-	background-color: $global-background-color;
-	color: $global-base-color;
-	line-height: $global-line-height;
+	background-color: $body-background-color;
+	color: $body-base-color;
+	line-height: $body-line-height;
 	margin: 0;
 }
 
@@ -47,16 +48,44 @@ body {
 // @note: <details/> <summary/> correct display in Edge, IE, and Firefox. <main/> correct display in IE.
 // --------------------------------
 
-article, aside, details, figcaption, figure,
-footer, header, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
 	display: block;
 }
 
 // Remove the default html tags margin
 // --------------------------------
 
-abbr, blockquote, dd, dl, dt, fieldset, figure, form,
-#{headings(1,6)}, hr, legend, li, ol, p, pre, ul {
+abbr,
+blockquote,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+legend,
+li,
+ol,
+p,
+pre,
+ul {
 	margin: 0;
 }
 
@@ -203,7 +232,9 @@ sup {
 
 img,
 video {
-	@include responsive-mode;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
 }
 
 // Remove the border on images inside links in IE 10-, and remove the default border for <iframe/> tag in all browsers.
@@ -291,7 +322,7 @@ textarea {
 		font-size: percentage(1);
 	}
 	color: inherit;
-	line-height: $global-line-height;
+	line-height: $body-line-height;
 	margin: 0;
 
 	[data-whatinput="mouse"] &:focus,

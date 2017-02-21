@@ -1,7 +1,6 @@
 /**
  * @gulpfile tasks managment
- * @include: devDependencies on package.json
- * @require: {node_modules}
+ * @required: {node_modules}
  * @author: mbertoldo@alpenite.com
  */
 
@@ -22,4 +21,4 @@ requireDir('./gulp/tasks', {
 // @run tasks
 // -----------------
 
-gulp.task('default', ['start']);
+gulp.task('default', ['watch']);

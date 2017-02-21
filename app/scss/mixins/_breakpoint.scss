@@ -4,6 +4,132 @@
 // @note: Licensed under MIT Open Source
 
 $-zf-zero-breakpoint: small !default;
+$-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
+
+// Function for find the next key in a map.
+// @access: private
+// @param: {Map} $map - Map to traverse.
+// @param: {Mixed} $key - Key to use as a starting point.
+// @returns: {Mixed} The value for the key after `$key`, if `$key` was found. If `$key` was not found, or `$key` was the last value in the map, returns `null`.
+// @author: foundation.zurb.com
+// @note: Licensed under MIT Open Source
+// ----------------------------------------------------------------------
+
+@function -zf-map-next($map, $key) {
+    $values: map-keys($map);
+    $i: 0;
+
+    @if (map-has-key($map, $key)) {
+        $i: index($values, $key) + 1;
+    }
+
+    @if ($i > length($map) or $i == 0) {
+        @return null;
+    } @else {
+        @return map-get($map, nth($values, $i));
+    }
+}
+
+// Generates a media query string matching the input value.
+// @param: {Keyword|Number} $val [small] - Breakpoint name, or px, rem, or em value to process.
+// @param: `retina` set a "non vendor" prefix for autoprefixer: (less -webkit-) edited.
+// @require: {Function} -zf-map-next
+// @note: Refer to the documentation for the `breakpoint()` mixin to see what the possible inputs are.
+// @note: edited `em` breakpoint parse value.
+// ----------------------------------------------------------------------
+
+@function breakpoint($val: $-zf-zero-breakpoint) {
+    $bp: nth($val, 1);
+    $bp-max: 0;
+    $dir: if(length($val) > 1, nth($val, 2), up);
+    $str: '';
+    $named: false;
+
+	@if $bp == 'landscape' or $bp == 'portrait' {
+		@return '(orientation: #{$bp})';
+	} @else if $bp == 'retina' {
+		@return '(min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
+    }
+
+    @if type-of($bp) == 'string' {
+        @if map-has-key($breakpoints, $bp) {
+            @if $dir == 'only' or $dir == 'down' {
+                $bp-max: -zf-map-next($breakpoints, $bp);
+            }
+
+            $bp: map-get($breakpoints, $bp);
+            $named: true;
+        } @else {
+            $bp: 0;
+
+            @warn 'breakpoint(): "#{$val}" is not defined in your $breakpoints setting.';
+        }
+    }
+
+	@if $bp > 0 or $dir == 'only' or $dir == 'down' {
+		@if $dir == 'only' {
+			@if $named == true {
+		        @if $bp > 0 {
+					$str: $str + '(min-width: #{$bp})';
+
+					@if $bp-max != null {
+						$str: $str + ' and ';
+					}
+			  	}
+
+				@if $bp-max != null {
+					$str: $str + '(max-width: #{$bp-max})';
+			    }
+			} @else {
+				@warn 'breakpoint(): Only named media queries can have an `only` range.';
+			}
+	   	} @else if $dir == 'down' {
+			$max: if($named, $bp-max, $bp);
+
+			@if $named or $bp > 0 {
+				@if $max != null {
+					$str: $str + '(max-width: #{$max})';
+				}
+			}
+		} @else if $bp > 0 {
+			$str: $str + '(min-width: #{$bp})';
+	    }
+	}
+
+	@return $str;
+}
+
+// Get a value for a breakpoint from a responsive config map. If the config map has the key `$value`, the exact breakpoint value is returned. If the config map does *not* have the breakpoint, the value matching the next lowest breakpoint in the config map is returned.
+// @access private
+// @param: {Map} $map - Input config map.
+// @param: {Keyword} $value - Breakpoint name to use.
+// @return: {Mixed} The corresponding breakpoint value.
+// ----------------------------------------------------------------------
+
+@function -zf-get-bp-val($map, $value) {
+	@if not map-has-key($breakpoints, $value) {
+		@return null;
+	} @else if map-has-key($map, $value) {
+		@return map-get($map, $value);
+	} @else {
+		$anchor: null;
+		$found: false;
+
+		@each $key, $val in $breakpoints {
+			@if not $found {
+				@if map-has-key($map, $key) {
+					$anchor: $key;
+				}
+
+				@if $key == $value {
+					$found: true;
+				}
+			}
+		}
+
+		@return map-get($map, $anchor);
+	}
+}
 
 @if nth(map-values($breakpoints), 1) != 0 {
     @error 'Your smallest breakpoint (defined in $breakpoints) must be set to "0".';
@@ -15,15 +141,24 @@ $-zf-zero-breakpoint: small !default;
 // @param: {Keyword|Number} $value - Breakpoint name, or px, rem, or em value to process.
 // @output: If the breakpoint is "0px and larger", outputs the content as-is. Otherwise, outputs the content wrapped in a media query.
 // @note: If a string is passed, the mixin will look for it in the `$breakpoints` map, and use a media query there.
+// @note: edited with `only` keyword.
 
 @mixin breakpoint($value) {
     $str: breakpoint($value);
+    $bp: index($-zf-breakpoints-keys, $value);
+    $pbp: index($-zf-breakpoints-keys, $print-breakpoint);
 
     @if $str == '' {
         @content;
     } @else {
-        @media only screen and #{$str} {
-            @content;
+        @if $bp != null and $bp <= $pbp {
+            @media print, only screen and #{$str} {
+                @content;
+            }
+        } @else {
+            @media only screen and #{$str} {
+                @content;
+            }
         }
     }
 }

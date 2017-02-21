@@ -18,16 +18,6 @@
 	-moz-font-feature-settings: 'liga', 'kern';
 }
 
-// Fix scaling font on mobile device and on device orientation.
-// @param 1: reset scaling on -ms-core (IE 10+ mobile)
-// @param 2: reset scaling on -webkit-core (iOS)
-// ----------------------------------------------------------------------
-
-@mixin text-size-adjust {
-	-ms-text-size-adjust: percentage(1);
-	-webkit-text-size-adjust: percentage(1);
-}
-
 // Mixin for restore the font dependencies styles.
 // ----------------------------------------------------------------------
 
@@ -60,42 +50,4 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-}
-
-// Mixin for font face rule.
-// @require: {function} str-replace
-// @note: important the @var "$font-dir" is defined on config @typography
-// @use: @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
-// @author: mbertoldo@alpenite.com
-// ----------------------------------------------------------------------
-
-@mixin font-face($font-name, $font-file, $style: normal, $weight: normal, $category: null, $ie-old-support: false) {
-	$filepath: $font-dir + $font-file;
-	$filter-font-name: str-replace($font-name, ' ', '_');
-
-	@font-face {
-		font: {
-			@if $category != null {
-				family: '#{$font-name}', #{$category};
-			} @else {
-				family: '#{$font-name}';
-			}
-			style: $style;
-			weight: $weight;
-		}
-
-		@if $ie-old-support == false {
-			src: url($filepath + '.woff') format('woff'),
-				 url($filepath + '.woff2') format('woff2'),
-				 url($filepath + '.ttf') format('truetype'),
-				 url($filepath + '.svg#' + $filter-font-name) format('svg');
-		} @else {
-			src: url($filepath + '.eot');
-			src: url($filepath + '.eot?#iefix') format('embedded-opentype'),
-				 url($filepath + '.woff') format('woff'),
-				 url($filepath + '.woff2') format('woff2'),
-				 url($filepath + '.ttf') format('truetype'),
-				 url($filepath + '.svg#' + $filter-font-name) format('svg');
-		}
-    }
 }
