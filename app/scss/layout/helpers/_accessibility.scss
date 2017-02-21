@@ -30,7 +30,7 @@
 }
 
 .no-touch {
-    @include touch-action(none);
+    @include touch-action('none');
 }
 
 .no-text {

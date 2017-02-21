@@ -8,17 +8,17 @@
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
 var plumber = require('gulp-plumber');
-var include = require('gulp-html-tag-include');
-var htmlbeautify = require('gulp-html-beautify');
+var htmlInclude = require('gulp-html-tag-include');
+var htmlBeautify = require('gulp-html-beautify');
 var gutil = require('gulp-util');
 
 gulp.task('html', function() {
     return gulp.src(conf.workspace.html + '*.html')
     .pipe(plumber())
-    .pipe(include({
+    .pipe(htmlInclude({
         prefixVar: conf.htmlOptions.prefixVar
     })).on('error', gutil.log)
-    .pipe(htmlbeautify({
+    .pipe(htmlBeautify({
         indent_size: conf.htmlOptions.indentSize,
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))

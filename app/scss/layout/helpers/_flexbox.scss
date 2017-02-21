@@ -8,46 +8,46 @@
 // -----------------
 
 $flexbox-classes: (
-    display: (
+    'display': (
         'display': 'flex',
     ),
-    wrap: (
+    'wrap': (
         'flex-wrap': 'wrap'
     ),
-    wrapper: (
+    'wrapper': (
         'display': 'flex',
         'flex-wrap': 'wrap'
     ),
-    align-items-center: (
+    'align-items-center': (
         'align-items': 'center'
     ),
-    align-items-end: (
+    'align-items-end': (
         'align-items': 'end'
     ),
-    justify-content-center: (
+    'justify-content-center': (
         'justify-content': 'center'
     ),
-    justify-content-between: (
+    'justify-content-between': (
         'justify-content': 'space-between'
     ),
-    justify-content-end: (
+    'justify-content-end': (
         'justify-content': 'flex-end'
     ),
-    centered: (
+    'centered': (
         'display': 'flex',
         'align-items': 'center',
         'justify-content': 'center'
     ),
-    row-reverse: (
+    'row-reverse': (
         'flex-direction': 'row-reverse'
     ),
-    column: (
+    'column': (
         'flex-direction': 'column'
     ),
-    column-reverse: (
+    'column-reverse': (
         'flex-direction': 'column-reverse'
     ),
-    wide-auto: (
+    'wide-auto': (
         'flex': '1 0 auto'
     )
 );

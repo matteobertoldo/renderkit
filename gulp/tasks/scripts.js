@@ -18,16 +18,16 @@ var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var sequence = require('run-sequence');
 
-// @build: global jquery lib
+// @build: global base lib
 // -----------------------
 
-gulp.task('jquery', function() {
-    return gulp.src(conf.jsOptions.jQuery)
+gulp.task('base-libs', function() {
+    return gulp.src(conf.jsOptions.libs)
     .pipe(plumber())
-    .pipe(gulpif(conf.jsOptions.minifyjQuery, uglify({
+    .pipe(gulpif(conf.jsOptions.minifyLibs, uglify({
         compress: true
     }))).on('error', gutil.log)
-    .pipe(gulpif(conf.jsOptions.minifyjQuery, rename({
+    .pipe(gulpif(conf.jsOptions.minifyLibs, rename({
         suffix: '.min'
     })))
     .pipe(gulp.dest(conf.distribution.lib));
@@ -61,7 +61,7 @@ gulp.task('modernizr', function() {
 // @note: `run-sequence` don't accept a "sub array".
 // -----------------------
 
-var src = [conf.workspace.vendor + '**/*.js', (conf.packageManager.managePlugins) ? conf.packageManager.src : [], conf.workspace.main + '**/*.js'];
+var src = [conf.workspace.jsVendor + '**/*.js', (conf.packageManager.managePlugins) ? conf.packageManager.src : [], conf.workspace.jsMain + '**/*.js'];
 var arr = [];
 
 for (var i = 0; i < src.length; i++) {
@@ -87,9 +87,19 @@ gulp.task('bundle:watch', ['bundle'], function() {
     return global.browserSync.reload();
 });
 
+// @push `modernizr`
+// @param: {bool}
+// -------------------
+
+var libs = ['base-libs'];
+
+if (conf.jsOptions.modernizr) {
+    libs.push('modernizr');
+}
+
 // @build: all libraries
-// -----------------------
+// -------------------
 
 gulp.task('libs', function(done) {
-    sequence('jquery', 'modernizr', done);
+    sequence.apply(null, libs, done);
 });

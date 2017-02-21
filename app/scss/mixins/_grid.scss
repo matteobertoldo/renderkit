@@ -3,6 +3,63 @@
 // @component: core
 // @note: Licensed under MIT Open Source
 
+// Calculates the width of a column based on a number of factors.
+// @param: {Number|List} $columns
+// @returns: {Number} A calculated percentage value.
+// @author: foundation.zurb.com
+// @note: Licensed under MIT Open Source
+// ----------------------------------------------------------------------
+
+@function grid-column($columns) {
+	$width: 0%;
+
+	@if type-of($columns) == 'number' {
+		@if unit($columns) == '%' {
+			$width: $columns;
+		} @else if $columns < 1 {
+			$width: percentage($columns);
+		} @else {
+			$width: percentage($columns / $grid-column-count);
+		}
+	} @else if type-of($columns) == 'list' {
+		@if length($columns) != 3 {
+			@error 'Wrong syntax for grid-column(). Use the format "n of n".';
+		} @else {
+			$width: percentage(nth($columns, 1) / nth($columns, 3));
+		}
+	} @else {
+		@error 'Wrong syntax for grid-column(). Use a number, decimal, percentage, or "n of n".';
+	}
+
+	@return $width;
+}
+
+// Shorthand for `grid-column()`.
+// @alias grid-column
+// @author: foundation.zurb.com
+// @note: Licensed under MIT Open Source
+// ----------------------------------------------------------------------
+
+@function grid-col($columns: $grid-column-count) {
+	@return grid-column($columns);
+}
+
+// Get a gutter size for a given breakpoint
+// @param {Keyword} $breakpoint [small] - Breakpoint name.
+// @param {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use. Responsive gutter settings by default.
+// @returns {Number} Gutter size.
+// @author: foundation.zurb.com
+// @note: Licensed under MIT Open Source
+// ----------------------------------------------------------------------
+
+@function grid-column-gutter($breakpoint: $-zf-zero-breakpoint, $gutters: $grid-column-gutter) {
+	@if type-of($gutters) == 'number' {
+		@return $gutters;
+	}
+
+	@return -zf-get-bp-val($gutters, $breakpoint);
+}
+
 // Change the behavior of columns defined inside this mixin to use a different column count.
 // @param {Number} $columns - Number of columns to use.
 // @param {Boolean} $root [false]

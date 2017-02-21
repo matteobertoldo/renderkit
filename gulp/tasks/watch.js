@@ -6,6 +6,7 @@
  */
 
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var conf = require('../gulpconfig');
 var sequence = require('run-sequence');
 
@@ -26,7 +27,7 @@ if (conf.syncOptions.browserSync) {
 // @start & enjoy.
 // -------------------
 
-gulp.task('start', function(done) {
+gulp.task('watch', function(done) {
     sequence.apply(null, tasks, done);
     gulp.watch(conf.workspace.html + '**/*.html', ['html:watch']);
     gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);

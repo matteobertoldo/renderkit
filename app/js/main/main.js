@@ -11,9 +11,6 @@
      * @breakpoint: update var on sass config
      */
 
-    var WIN = $(window),
-    DOC = $(document);
-
     var util = {
         documentTouch: Modernizr.touchevents,
         objectFit: Modernizr.objectFit
@@ -33,7 +30,7 @@
          */
 
         if (util.documentTouch) {
-            DOC.on('touchstart', true);
+            $(document).on('touchstart', true);
         }
 
         /**

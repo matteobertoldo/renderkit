@@ -1,0 +1,53 @@
+// Function for string replace.
+// @param: {String}
+// @returns: str-replace($mystring, $string-to-replace, $replacer);
+// @note: https://css-tricks.com/snippets/sass/str-replace-function/
+// ----------------------------------------------------------------------
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// Mixin for font face rule.
+// @require: {function} str-replace
+// @note: important the @var "$font-dir" is defined on config @typography
+// @use: @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
+// @author: mbertoldo@alpenite.com
+// ----------------------------------------------------------------------
+
+@mixin font-face($font-name, $font-file, $style: normal, $weight: normal, $category: null, $ie-old-support: false) {
+	$filepath: $font-dir + $font-file;
+	$filter-font-name: str-replace($font-name, ' ', '_');
+
+	@font-face {
+		font: {
+			@if $category != null {
+				family: '#{$font-name}', #{$category};
+			} @else {
+				family: '#{$font-name}';
+			}
+			style: $style;
+			weight: $weight;
+		}
+
+		@if $ie-old-support == false {
+			src: url($filepath + '.woff') format('woff'),
+				 url($filepath + '.woff2') format('woff2'),
+				 url($filepath + '.ttf') format('truetype'),
+				 url($filepath + '.svg#' + $filter-font-name) format('svg');
+		} @else {
+			src: url($filepath + '.eot');
+			src: url($filepath + '.eot?#iefix') format('embedded-opentype'),
+				 url($filepath + '.woff') format('woff'),
+				 url($filepath + '.woff2') format('woff2'),
+				 url($filepath + '.ttf') format('truetype'),
+				 url($filepath + '.svg#' + $filter-font-name) format('svg');
+		}
+    }
+}

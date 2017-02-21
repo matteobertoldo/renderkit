@@ -58,7 +58,7 @@
 // ----------------------------
 
 @mixin touch-action($prop) {
-	@if $prop == none {
+	@if ($prop == 'none') {
 		-webkit-touch-callout: none;
 	}
 	-ms-touch-action: $prop;

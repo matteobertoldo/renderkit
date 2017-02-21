@@ -1,0 +1,6 @@
+{
+    "host": "ftp.hostname",
+    "username": "@username",
+    "password": "@password",
+    "port": 21
+}
