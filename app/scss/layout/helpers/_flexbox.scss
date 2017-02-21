@@ -55,6 +55,8 @@ $flexbox-classes: (
 // @print classes
 // -----------------
 
+/*@flexbox-classes*/
+
 @each $class, $classes in $flexbox-classes {
 	.flex-#{$class} {
 		@each $property, $properties in $classes {

@@ -1,0 +1,79 @@
+// @media print package
+// @note: source (https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
+// @edited: mbertoldo@alpenite.com
+
+@mixin media-print {
+    /*@media print package*/
+
+    @media print {
+        *, ::after, ::before {
+            text-shadow: none !important;
+
+            @if ($global-transparent-background-print) {
+                background: 0 0 !important;
+            }
+
+            @if ($global-color-black-print) {
+                color: #000 !important;
+            }
+
+            box-shadow: none !important;
+        }
+
+        a, a:visited {
+            text-decoration: underline;
+        }
+
+        @if ($global-link-href-show) {
+            a[href]:after {
+                content: ' (' attr(href) ')';
+            }
+        } @else {
+            a[href^="javascript:"]:after,
+            a[href^="#"]:after {
+                content: '';
+            }
+        }
+
+        abbr[title]:after {
+            content: ' (' attr(title) ')';
+        }
+
+        blockquote, pre, table {
+            page-break-inside: avoid;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        img, tr {
+            page-break-inside: avoid;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h2, h3, p {
+            orphans: 3;
+            widows: 3;
+        }
+
+        h2, h3 {
+            page-break-after: avoid;
+        }
+
+        @page {
+            margin: $global-margin-print;
+        }
+
+        .show-for-print {
+            display: block !important;
+        }
+
+        .hide-for-print {
+            display: none !important;
+        }
+    }
+}

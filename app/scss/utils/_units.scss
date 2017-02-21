@@ -29,16 +29,3 @@
 
 	@return $rem * 1rem;
 }
-
-// Function for catch color palette in $colors-palette map.
-// @note: use -> .my-element { color: palette(whitesmoke); }
-// @author: mbertoldo@alpenite.com
-// ----------------------------------------------------------------------
-
-@function palette($color) {
-	@if map-has-key($colors-palette, $color) {
-        @return map-get($colors-palette, $color);
-    } @else {
-        @error 'No color palette found in $colors-palette map.';
-    }
-}

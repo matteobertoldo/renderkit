@@ -20,8 +20,7 @@
 	@return $string;
 }
 
-// Mixin for font face rule.
-// @require: {function} str-replace
+// `font-face` output function.
 // @note: only define as String your Font Name and define your "font file name".
 // @note: if you have subfolders where is your font files, just simply define the folder where is this, before font file name. Ex ´mysubfolderfont/my_awesome_font_file_name´.
 // @note: important the `$font-dir` is defined on _config.scss @typography
