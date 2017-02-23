@@ -4,8 +4,6 @@
 // @include: style.scss
 // @access: public
 
-@import 'utils/utils';
-
 // @breakpoints
 // @foundation
 // ----------------
@@ -89,6 +87,7 @@ $colors-palette: (
 $selection-background-color: #b3d4fc !default;
 $global-selection-color: false !default;
 $selection-color: initial !default;
+$ios-tap-color: transparent;
 
 // @colors: global
 // ----------------

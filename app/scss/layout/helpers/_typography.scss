@@ -61,26 +61,4 @@ p {
 	}
 }
 
-// @set global position text & view
-// @return: classes
-// --------------------
-
-@each $align in (left, right, center, justify, ellipsis) {
-	.text-#{$align} {
-        @if ($align == 'ellipsis') {
-            @include text-ellipsis;
-        } @else {
-            text-align: $align;
-        }
-    }
-}
-
-// @set global text transform
-// @return: classes
-// --------------------
-
-@each $transform in (uppercase, lowercase, capitalize) {
-    .text-#{$transform} {
-        text-transform: $transform;
-    }
-}
+@include text-classes;

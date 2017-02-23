@@ -17,17 +17,17 @@ var ftpconnection = ftp.create({
     parallel: conf.ftpOptions.parallelUploads,
     reload: conf.ftpOptions.cacheReload,
     debug: conf.ftpOptions.debugMode,
-    log: (conf.ftpOptions.logMode) ? gutil.log : null
+    log: (conf.ftpOptions.log) ? gutil.log : null
 });
 
 // @set: deploy global files or deploy by file type.
 // @param: {bool}
 // --------------------
 
-var localfiles = (conf.ftpOptions.fullFolderForDeploy) ? conf.ftpOptions.folderForDeploy + '**/*' : conf.ftpOptions.deployByFile;
+var localfiles = (conf.ftpOptions.fullFolderForDeploy) ? conf.ftpOptions.folderForDeploy + '**/*': conf.ftpOptions.deployByFile;
 
 gulp.task('deploy:ftp', function() {
-    return ftpconnection, gulp.src(localfiles)
+    return gulp.src('./app/**/*')
     .pipe(ftpconnection.newer(conf.ftpOptions.deployRemoteFolder))
     .pipe(ftpconnection.clean(localfiles, conf.ftpOptions.deployRemoteFolder))
     .pipe(ftpconnection.dest(conf.ftpOptions.deployRemoteFolder));

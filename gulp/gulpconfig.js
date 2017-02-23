@@ -59,9 +59,15 @@ module.exports = {
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'bp-standard',
-        notification: true,
-        reloadNonGeneratedFiles: true,
-        reloadCustomFileExtension: folder.workspace + '**/*.{xml,txt}'
+        notification: true
+    },
+    watchOptions: {
+        stream: true,
+        log: true,
+        streamDirToWatch: [
+            folder.workspace + '**/*.{xml,txt}'
+        ],
+        reloadBrowsersOnChange: true
     },
     htmlOptions: {
         prefixVar: '@',
@@ -139,11 +145,9 @@ module.exports = {
         parallelUploads: 5,
         cacheReload: true,
         debugMode: false,
-        logMode: true,
+        log: true,
+        folderForDeploy: folder.distribution,
         fullFolderForDeploy: true,
-        folderForDeploy: [
-            folder.distribution
-        ],
         deployByFile: generatedFiles.html,
         deployRemoteFolder: folder.distribution
     },

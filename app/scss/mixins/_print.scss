@@ -1,10 +1,9 @@
 // @media print package
+// @component: core
 // @note: source (https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
-// @edited: mbertoldo@alpenite.com
 
 @mixin media-print {
     /*@media print package*/
-
     @media print {
         *, ::after, ::before {
             text-shadow: none !important;

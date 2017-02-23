@@ -4,14 +4,8 @@
  @note: Hand-made and built with love in Venice, IT.
 */
 
-//@global vars
+@import 'utils/utils';
 @import 'vars/config';
-
-//@global mixins
 @import 'mixins/mixins';
-
-//@global "helpers" layout
 @import 'layout/helpers/helpers';
-
-//@global "templates" styles & components
-@import 'layout/templates/templates';
+@import 'layout/components/components';

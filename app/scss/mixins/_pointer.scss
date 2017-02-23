@@ -1,0 +1,13 @@
+// @pointer classes mixin
+// @author: mbertoldo@alpenite.com
+// @component: core
+// @note: packages of classes to be invoked via template
+// --------------------------------
+
+@mixin pointer-classes {
+    @each $cursor in (pointer, default, grab, grabbing) {
+        .cursor-#{$cursor} {
+            cursor: $cursor;
+        }
+    }
+}

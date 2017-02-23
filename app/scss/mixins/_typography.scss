@@ -2,22 +2,6 @@
 // @author: mbertoldo@alpenite.com
 // @component: core
 
-// Reset Default Font Rendering.
-// @param 1: reset all default font synthesis of browsers
-// @param 2: set all text to perform legibility
-// @param 3: reset default font-base on -webkit-core
-// @param 4: remove exeed weight on -moz-core on macOS
-// @param 5: set on -moz-core the same font -webkit-core ligature and "kerning" (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
-// ----------------------------------------------------------------------
-
-@mixin font-smoothing {
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-moz-font-feature-settings: 'liga', 'kern';
-}
-
 // Mixin for restore the font dependencies styles.
 // ----------------------------------------------------------------------
 
@@ -50,4 +34,23 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+}
+
+@mixin text-classes {
+    /*@typography text classes*/
+    @each $align in (left, right, center, justify, ellipsis) {
+    	.text-#{$align} {
+            @if ($align == 'ellipsis') {
+                @include text-ellipsis;
+            } @else {
+                text-align: $align;
+            }
+        }
+    }
+
+    @each $transform in (uppercase, lowercase, capitalize) {
+        .text-#{$transform} {
+            text-transform: $transform;
+        }
+    }
 }

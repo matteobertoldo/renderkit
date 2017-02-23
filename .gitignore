@@ -39,11 +39,13 @@ gulp/private/*.json
 *.sublime-workspace
 *.settings
 *.project
+*.classpath
 *.tern-project
 *.vscode
 
-# macOS Generated Files
+# OS Generated Files
 # --------------------------
 
 *.DS_Store
 *__MACOSX
+*Thumbs.db

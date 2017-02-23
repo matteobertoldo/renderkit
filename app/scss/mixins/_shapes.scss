@@ -1,0 +1,62 @@
+// @shapes mixins
+// @author: mbertoldo@alpenite.com
+// @component: core
+
+// Mixin Triangle from https://github.com/zurb/foundation-sites/blob/develop/scss/util/_mixins.scss
+// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
+// @param-1: {Number} $triangle-size - Width of the triangle.
+// @param-2: {Color} $triangle-color - Color of the triangle.
+// @param-3: {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
+// ----------------------------
+
+@mixin triangle($triangle-size, $triangle-color, $triangle-direction: down) {
+	display: block;
+	width: 0;
+	height: 0;
+	border: inset $triangle-size;
+
+	@if ($triangle-direction == down) {
+		border-color: $triangle-color transparent transparent;
+		border-top-style: solid;
+		border-bottom-width: 0;
+	} @else if ($triangle-direction == up) {
+		border-color: transparent transparent $triangle-color;
+		border-bottom-style: solid;
+		border-top-width: 0;
+	} @else if ($triangle-direction == right) {
+		border-color: transparent transparent transparent $triangle-color;
+		border-left-style: solid;
+		border-right-width: 0;
+	} @else if ($triangle-direction == left) {
+		border-color: transparent $triangle-color transparent transparent;
+		border-right-style: solid;
+		border-left-width: 0;
+	}
+}
+
+// Mixin Arrow
+// Creates a CSS arrow, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the arrow to an existing element.
+// @param-1: {Number} $arrow-width - Width of the arrow.
+// @param-2: {Number} $arrow-height - Height of the arrow.
+// @param-3: {Color} $arrow-color - Color of the arrow.
+// @param-4: {Number} $arrow-border-width - The border width of the arrow.
+// @author: mbertoldo@alpenite.com
+// ----------------------------
+
+@mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
+	display: block;
+	width: $arrow-width;
+	height: $arrow-height;
+	border: solid $arrow-color;
+	border-width: 0 $arrow-border-width $arrow-border-width 0;
+
+	@if ($arrow-direction == down) {
+		transform: rotate3d(0, 0, 1, 45deg);
+	} @else if ($arrow-direction == up) {
+		transform: rotate3d(0, 0, 1, -135deg);
+	} @else if ($arrow-direction == right) {
+		transform: rotate3d(0, 0, 1, -45deg);
+	} @else if ($arrow-direction == left) {
+		transform: rotate3d(0, 0, 1, 135deg);
+	}
+}
