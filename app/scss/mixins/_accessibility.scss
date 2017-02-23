@@ -1,6 +1,5 @@
 // @mixins accessibility
 // @author: mbertoldo@alpenite.com
-// @import: _mixins.scss
 // @component: core
 
 // Mixin for visuallyhidden.
@@ -36,18 +35,51 @@
     margin: 0;
 }
 
-// Mixin for iOS smooth scroll.
-// @note: created only for simplify the syntax.
-// ----------------------------
+// @accessibility classes mixin
+// @author: mbertoldo@alpenite.com
+// @note: packages of classes to be invoked via template
+// --------------------------------
 
-@mixin ios-smooth-scroll {
-	-webkit-overflow-scrolling: touch;
-}
+@mixin accessibility-classes {
+    /*@accessibility classes & pseudo elem*/
+    ::selection {
+        background: $selection-background-color;
+        @if ($global-selection-color) {
+            color: $selection-color;
+        }
+        text-shadow: none;
+    }
 
-// Mixin for iOS tap highlight color.
-// @note: set the default tap highlight color on iOS devices.
-// ----------------------------
+    .invisible {
+        visibility: hidden;
+    }
 
-@mixin ios-tap-color($color) {
-	-webkit-tap-highlight-color: #{$color};
+    .visuallyhidden {
+        @include visuallyhidden;
+    }
+
+    .visuallyhidden-off {
+        @include visuallyhidden-off;
+    }
+
+    .no-select {
+        user-select: none;
+    }
+
+    .no-touch {
+        -webkit-touch-callout: none;
+        touch-action: none;
+    }
+
+    .no-text {
+        @include no-text;
+    }
+
+    .no-overflow {
+        overflow: hidden;
+    }
+
+    .no-display {
+        display: none;
+    }
 }

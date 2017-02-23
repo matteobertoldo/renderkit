@@ -58,6 +58,7 @@
 }
 
 @mixin foundation-visibility-classes {
+    /*@visibility classes*/
 	@each $size in $breakpoint-classes {
 		@if $size != $-zf-zero-breakpoint {
 			.hide-for-#{$size} {
