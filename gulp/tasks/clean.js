@@ -10,21 +10,21 @@ var conf = require('../gulpconfig');
 var gutil = require('gulp-util');
 var del = require('del');
 
-// @filesType
+// @localfiles
 // @return: {string} || [arr]
 // -------------------
 
 if(conf.cleanOptions.cleanAllDistFiles) {
-    var filesType = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
+    var localfiles = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
-    var filesType = conf.cleanOptions.cleanFilesType;
+    var localfiles = conf.cleanOptions.cleanFilesByType;
 }
 
 // @dryRun
 // @note: if dryRun will be `true` you can see only on console the files or folders that would be deleted.
 
 gulp.task('clean', function() {
-    del(filesType, {
+    del(localfiles, {
         dryRun: conf.cleanOptions.dryRun,
         force: conf.cleanOptions.forceDelete
     }).then(function(paths) {

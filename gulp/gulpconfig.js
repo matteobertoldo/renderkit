@@ -146,16 +146,16 @@ module.exports = {
         cacheReload: true,
         debugMode: false,
         log: true,
-        folderForDeploy: folder.distribution,
-        fullFolderForDeploy: true,
-        deployByFile: generatedFiles.html,
-        deployRemoteFolder: folder.distribution
+        foldersAndFilesForDeploy: [
+            folder.distribution + '**/*'
+        ],
+        deployOnRemoteFolder: './'
     },
     cleanOptions: {
         dryRun: false,
         forceDelete: false,
         cleanAllDistFiles: true,
         cleanAllFiles: generatedFiles,
-        cleanFilesType: generatedFiles.html
+        cleanFilesByType: generatedFiles.html
     }
 };

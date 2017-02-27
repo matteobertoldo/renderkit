@@ -24,11 +24,9 @@ var ftpconnection = ftp.create({
 // @param: {bool}
 // --------------------
 
-var localfiles = (conf.ftpOptions.fullFolderForDeploy) ? conf.ftpOptions.folderForDeploy + '**/*': conf.ftpOptions.deployByFile;
-
 gulp.task('deploy:ftp', function() {
-    return gulp.src('./app/**/*')
-    .pipe(ftpconnection.newer(conf.ftpOptions.deployRemoteFolder))
-    .pipe(ftpconnection.clean(localfiles, conf.ftpOptions.deployRemoteFolder))
-    .pipe(ftpconnection.dest(conf.ftpOptions.deployRemoteFolder));
+    return ftpconnection, gulp.src(conf.ftpOptions.foldersAndFilesForDeploy, {
+        buffer: false
+    }).pipe(ftpconnection.newer(conf.ftpOptions.deployOnRemoteFolder))
+    .pipe(ftpconnection.dest(conf.ftpOptions.deployOnRemoteFolder));
 });
