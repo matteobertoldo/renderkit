@@ -20,8 +20,9 @@ if(conf.cleanOptions.cleanAllDistFiles) {
     var localfiles = conf.cleanOptions.cleanFilesByType;
 }
 
-// @dryRun
-// @note: if dryRun will be `true` you can see only on console the files or folders that would be deleted.
+// @clean
+// @return: [files]
+// -------------------
 
 gulp.task('clean', function() {
     del(localfiles, {

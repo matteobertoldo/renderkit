@@ -24,9 +24,18 @@ var ftpconnection = ftp.create({
 // @param: {bool}
 // --------------------
 
-gulp.task('deploy:ftp', function() {
-    return ftpconnection, gulp.src(conf.ftpOptions.foldersAndFilesForDeploy, {
+gulp.task('ftp:deploy', function() {
+    return ftpconnection,
+    gulp.src(conf.ftpOptions.foldersAndFilesForDeploy, {
         buffer: false
     }).pipe(ftpconnection.newer(conf.ftpOptions.deployOnRemoteFolder))
     .pipe(ftpconnection.dest(conf.ftpOptions.deployOnRemoteFolder));
+});
+
+gulp.task('ftp:fileslog', function() {
+    return ftpconnection,
+    ftpconnection.src(conf.ftpOptions.deployOnRemoteFolder + '**/*', {
+        base: '.',
+        buffer: true
+    });
 });

@@ -26,15 +26,21 @@ if (conf.syncOptions.browserSync) {
 
 // @watch stream configuration
 // @param: {bool}
-// @param: ignored: /(^|[\/\\])\../ (dots file)
+// @param: {ignored: /(^|[\/\\])\../ (dots file)}
 // -------------------
 
 function stream() {
     return watch(conf.watchOptions.streamDirToWatch, {
         ignoreInitial: true
     }).on('change', function(path) {
+        var date = new Date();
+        var hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours();
+        var minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();
+        var seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+        var timestamp = hours + ':' + minutes + ':' + seconds;
+
         if (conf.watchOptions.log) {
-            console.log('[' + gutil.colors.blue(conf.syncOptions.logPrefix) + ']' + " File: '" + gutil.colors.cyan(path) +  "' has been changed");
+            console.log('[' + gutil.colors.gray(timestamp) + ']' + " File: '" + gutil.colors.cyan(path) +  "' has been changed");
         }
 
         if (conf.syncOptions.browserSync && conf.watchOptions.reloadBrowsersOnChange) {
