@@ -1,3 +1,9 @@
+/**
+ * @deploy tasks
+ * @return: {stream}
+ * @author: mbertoldo@alpenite.com
+ */
+
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
 var gutil = require('gulp-util');
@@ -52,7 +58,7 @@ var log = {
     }
 };
 
-// @ftp `conn` options
+// @ftp `create` options
 // @return: {Obj}
 // --------------------
 
