@@ -9,6 +9,7 @@
 // -----------------
 
 var folder = {
+    root: './',
     workspace: 'app/',
     assets: 'assets/',
     distribution: 'dist/',
@@ -47,11 +48,11 @@ module.exports = {
         jsMain: folder.workspace + 'js/main/'
     },
     distribution: {
-        base: folder.distribution,
-        css: folder.distribution + 'css/',
-        images: folder.distribution + folder.assets + 'images/',
+        html: folder.distribution,
+        scss: folder.distribution + 'css/',
+        svg: folder.distribution + folder.assets + 'images/',
         js: folder.distribution + 'js/',
-        lib: folder.distribution + 'js/lib/'
+        jsLib: folder.distribution + 'js/lib/'
     },
     syncOptions: {
         browserSync: true,
@@ -59,12 +60,10 @@ module.exports = {
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'bp-standard',
-        notification: true
-    },
-    watchOptions: {
-        stream: true,
-        log: true,
-        streamDirToWatch: [
+        notification: true,
+        stream: false,
+        streamLog: true,
+        streamFoldersToWatch: [
             folder.workspace + '**/*.{xml,txt}'
         ],
         reloadBrowsersOnChange: true
@@ -143,18 +142,25 @@ module.exports = {
     ftpOptions: {
         sftpConnection: false,
         parallelUploads: 5,
-        cacheReload: true,
+        cacheReload: false,
         debugMode: false,
         log: true,
-        foldersAndFilesForDeploy: [
-            folder.distribution + '**/*'
-        ],
-        deployOnRemoteFolder: './'
+        baseFolderForDeploy: folder.distribution,
+        folderAndFilesForDeploy: folder.distribution + '**/*',
+        deployOnRemoteFolder: folder.distribution,
+        remoteFolderToDelete: folder.root + folder.distribution
+    },
+    deployOnTheFlyOptions: {
+        deployOnTheFly: true,
+        deployOnTheFlyFolder: folder.distribution,
+        deployOnTheFlyObjects: folder.distribution + '**/*.{html,css,js,svg,txt}',
+        ignoreDotFiles: true,
+        ignoreInitialRun: false
     },
     cleanOptions: {
-        dryRun: false,
+        dryRun: true,
         forceDelete: false,
-        cleanAllDistFiles: true,
+        cleanAllDistributionFiles: true,
         cleanAllFiles: generatedFiles,
         cleanFilesByType: generatedFiles.html
     }

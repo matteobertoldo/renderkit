@@ -22,7 +22,7 @@ gulp.task('html', function() {
         indent_size: conf.htmlOptions.indentSize,
         end_with_newline: conf.htmlOptions.endWithNewLine,
     }))
-    .pipe(gulp.dest(conf.distribution.base));
+    .pipe(gulp.dest(conf.distribution.html));
 });
 
 gulp.task('html:watch', ['html'], function() {

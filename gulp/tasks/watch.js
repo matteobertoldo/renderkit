@@ -11,12 +11,33 @@ var watch = require('gulp-watch');
 var conf = require('../gulpconfig');
 var sequence = require('run-sequence');
 
+// @watch stream configuration
+// @return: browserSync.reload()
+// -------------------
+
+function stream() {
+    if (conf.syncOptions.stream) {
+        return watch(conf.syncOptions.streamFoldersToWatch, {
+            ignoreInitial: true,
+            cwd: process.cwd()
+        }).on('change', function(path) {
+            if (conf.syncOptions.streamLog) {
+                console.log(log.timestamp + " File '" + log.path(path) +  "' has been changed");
+            }
+
+            if (conf.syncOptions.browserSync && conf.syncOptions.reloadBrowsersOnChange) {
+                return global.browserSync.reload();
+            }
+        });
+    }
+}
+
 // @global tasks
 // --------------
 
 var tasks = ['html', 'sass', 'svg', 'bundle'];
 
-// @push `browserSync`
+// @push `browser-sync`
 // @param: {bool}
 // -------------------
 
@@ -24,33 +45,16 @@ if (conf.syncOptions.browserSync) {
     tasks.push('browser-sync');
 }
 
-// @watch stream configuration
+// @push `deploy-watch`
 // @param: {bool}
-// @param: {ignored: /(^|[\/\\])\../ (dots file)}
 // -------------------
 
-function stream() {
-    return watch(conf.watchOptions.streamDirToWatch, {
-        ignoreInitial: true
-    }).on('change', function(path) {
-        var date = new Date();
-        var hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours();
-        var minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();
-        var seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
-        var timestamp = hours + ':' + minutes + ':' + seconds;
-
-        if (conf.watchOptions.log) {
-            console.log('[' + gutil.colors.gray(timestamp) + ']' + " File: '" + gutil.colors.cyan(path) +  "' has been changed");
-        }
-
-        if (conf.syncOptions.browserSync && conf.watchOptions.reloadBrowsersOnChange) {
-            return global.browserSync.reload();
-        }
-    });
+if (conf.deployOnTheFlyOptions.deployOnTheFly) {
+    tasks.push('deploy-watch');
 }
 
 // @init all events
-// @start & enjoy.
+// @start & enjoy
 // -------------------
 
 gulp.task('watch', function(done) {
@@ -59,8 +63,5 @@ gulp.task('watch', function(done) {
     gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
     gulp.watch(conf.workspace.js + '**/*.js', ['bundle:watch']);
     gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
-
-    if (conf.watchOptions.stream) {
-        stream();
-    }
+    stream();
 });

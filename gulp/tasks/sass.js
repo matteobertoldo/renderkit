@@ -64,7 +64,7 @@ gulp.task('sass', function() {
         suffix: '.min'
     })))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.css));
+    .pipe(gulp.dest(conf.distribution.scss));
 });
 
 gulp.task('sass:watch', ['sass'], function() {
