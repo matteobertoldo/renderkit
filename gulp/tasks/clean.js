@@ -10,33 +10,34 @@ var conf = require('../gulpconfig');
 var gutil = require('gulp-util');
 var del = require('del');
 
-// @filesType
+// @localfiles
 // @return: {string} || [arr]
 // -------------------
 
-if(conf.cleanOptions.cleanAllDistFiles) {
-    var filesType = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
+if(conf.cleanOptions.cleanAllDistributionFiles) {
+    var localfiles = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
-    var filesType = conf.cleanOptions.cleanFilesType;
+    var localfiles = conf.cleanOptions.cleanFilesByType;
 }
 
-// @dryRun
-// @note: if dryRun will be `true` you can see only on console the files or folders that would be deleted.
+// @clean
+// @return: [files]
+// -------------------
 
 gulp.task('clean', function() {
-    del(filesType, {
+    del(localfiles, {
         dryRun: conf.cleanOptions.dryRun,
         force: conf.cleanOptions.forceDelete
     }).then(function(paths) {
         if(conf.cleanOptions.dryRun) {
             if(paths.length > 0)  {
-                console.log('Files and folders that would be deleted:\n', gutil.colors.yellow(paths.join('\n')));
+                console.log('Files and folders that would be deleted:\n' + gutil.colors.yellow(paths.join('\n').trim()));
             } else {
                 console.log(gutil.colors.yellow('Nothing will be deleted'));
             }
         } else {
             if(paths.length > 0)  {
-                console.log('Files and/or folders deleted:\n', gutil.colors.red(paths.join('\n')));
+                console.log('Files and/or folders deleted:\n' + gutil.colors.red(paths.join('\n')));
             } else {
                 console.log(gutil.colors.green('Nothing to delete'));
             }

@@ -32,7 +32,7 @@ gulp.task('svg', function() {
     return gulp.src(conf.workspace.svg + '**/*.svg')
     .pipe(plumber())
     .pipe(svgSprite(svgSpriteOptions)).on('error', gutil.log)
-    .pipe(gulp.dest(conf.distribution.images));
+    .pipe(gulp.dest(conf.distribution.svg));
 });
 
 gulp.task('svg:watch', ['svg'], function() {

@@ -30,7 +30,7 @@ gulp.task('base-libs', function() {
     .pipe(gulpif(conf.jsOptions.minifyLibs, rename({
         suffix: '.min'
     })))
-    .pipe(gulp.dest(conf.distribution.lib));
+    .pipe(gulp.dest(conf.distribution.jsLib));
 });
 
 // @build: modernizr lib
@@ -51,7 +51,7 @@ gulp.task('modernizr', function() {
         .pipe(gulpif(conf.jsOptions.minifyModernizr, rename({
             suffix: '.min'
         })))
-        .pipe(gulp.dest(conf.distribution.lib));
+        .pipe(gulp.dest(conf.distribution.jsLib));
     });
 });
 

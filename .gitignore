@@ -20,11 +20,8 @@ bower_components
 # Compiled Gulp Files
 # --------------------------
 
-dist/**/*.html
-dist/css/
-dist/js/
-dist/assets/
-dist/**/*.map
+dist/**/*
+!dist/**/*robots.txt
 
 # Private files
 # --------------------------
