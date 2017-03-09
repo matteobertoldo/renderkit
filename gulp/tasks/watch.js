@@ -10,19 +10,20 @@ var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var conf = require('../gulpconfig');
 var sequence = require('run-sequence');
+var fs = require('fs');
 
 // @watch stream configuration
 // @return: browserSync.reload()
 // -------------------
 
-function stream() {
+var stream = function() {
     if (conf.syncOptions.stream) {
         return watch(conf.syncOptions.streamFoldersToWatch, {
             ignoreInitial: true,
             cwd: process.cwd()
         }).on('change', function(path) {
             if (conf.syncOptions.streamLog) {
-                console.log(log.timestamp + " File '" + log.path(path) +  "' has been changed");
+                gutil.log("File '" + gutil.colors.cyan(path) + "' has been changed");
             }
 
             if (conf.syncOptions.browserSync && conf.syncOptions.reloadBrowsersOnChange) {
@@ -30,7 +31,7 @@ function stream() {
             }
         });
     }
-}
+};
 
 // @global tasks
 // --------------
@@ -50,7 +51,11 @@ if (conf.syncOptions.browserSync) {
 // -------------------
 
 if (conf.deployOnTheFlyOptions.deployOnTheFly) {
-    tasks.push('deploy-watch');
+    if (fs.existsSync('./gulp/private/ftp.json')) {
+        tasks.push('deploy-watch');
+    } else {
+        gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
+    }
 }
 
 // @init all events

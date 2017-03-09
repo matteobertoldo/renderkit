@@ -61,7 +61,7 @@ module.exports = {
         proxyName: 'localhost:8888/',
         logPrefix: 'bp-standard',
         notification: true,
-        stream: false,
+        stream: true,
         streamLog: true,
         streamFoldersToWatch: [
             folder.workspace + '**/*.{xml,txt}'
@@ -148,7 +148,7 @@ module.exports = {
         baseFolderForDeploy: folder.distribution,
         folderAndFilesForDeploy: folder.distribution + '**/*',
         deployOnRemoteFolder: folder.distribution,
-        remoteFolderToDelete: folder.root + folder.distribution
+        remoteFolderToDelete: folder.distribution
     },
     deployOnTheFlyOptions: {
         deployOnTheFly: true,
