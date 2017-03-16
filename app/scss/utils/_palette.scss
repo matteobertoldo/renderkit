@@ -11,6 +11,6 @@
 	@if map-has-key($colors-palette, $color) {
         @return map-get($colors-palette, $color);
     } @else {
-        @error 'No color palette found in $colors-palette map.';
+        @warn 'No color palette found in `$colors-palette` map.';
     }
 }

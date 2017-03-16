@@ -1,0 +1,96 @@
+// @custom: checkbox & radio input
+// @require: <label/> with `for` attribute in according to input `id`
+// @note: generate a pseudo elements for every input, fully customizable with associate <label/>.
+// @author: mbertoldo@alpenite.com
+// @access: private
+
+@mixin checkbox-radio-classes {
+    /*@custom input checkbox & radio*/
+    .input-checkbox,
+    .input-radio {
+    	display: inline-block;
+    	position: relative;
+    	font-size: 16px;
+    	line-height: 16px;
+    	padding-left: 26px;
+    	cursor: pointer;
+    	user-select: none;
+
+    	&::before,
+        &::after {
+    		content: '';
+    		position: absolute;
+    	}
+
+    	&::before {
+    		top: 0;
+    		left: 0;
+    		width: 16px;
+    		height: 16px;
+    		border: 1px solid $global-custom-input-border;
+    		border-radius: 2px;
+    		transition: border-color 0.3s ease;
+    	}
+
+    	@if ($hover-custom-input-border) {
+    		&:hover {
+                &::before {
+        			border-color: $hover-custom-input-border-color;
+        		}
+            }
+    	}
+
+    	&::after {
+    		transition: transform 0.3s ease;
+    	}
+    }
+
+    .input-checkbox {
+    	&::after {
+    		top: 3px;
+    		left: 5px;
+    		@include arrow(6px, 8px, $custom-checkbox-mark-color, 3px);
+    		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg);
+    	}
+
+    	input[type="checkbox"]:checked + & {
+    		@if ($checked-custom-input-border) {
+    			&::before {
+    				border-color: $custom-checkbox-checked-border;
+    			}
+    		}
+
+    		&::after {
+    			transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg);
+    		}
+    	}
+    }
+
+    .input-radio {
+    	&::before,
+        &::after {
+    		border-radius: 50%;
+    	}
+
+    	&::after {
+    		top: 4px;
+    		left: 4px;
+    		width: 8px;
+    		height: 8px;
+    		background-color: $custom-radio-mark-color;
+    		transform: scale3d(0, 0, 0);
+    	}
+
+    	input[type="radio"]:checked + & {
+    		@if ($checked-custom-input-border) {
+    			&::before {
+    				border-color: $custom-radio-checked-border;
+    			}
+    		}
+
+    		&::after {
+    			transform: scale3d(1, 1, 1);
+    		}
+    	}
+    }
+}

@@ -10,7 +10,7 @@
 // @note: https://css-tricks.com/snippets/sass/str-replace-function/
 // --------------------------------
 
-@function str-replace($string, $search, $replace: "") {
+@function str-replace($string, $search, $replace: '') {
 	$index: str-index($string, $search);
 
 	@if $index {
@@ -56,4 +56,16 @@
 				 url($filepath + '.svg#' + $filter-font-name) format('svg');
 		}
     }
+}
+
+// Mixin for restore the font dependencies styles.
+// ----------------------------------------------------------------------
+
+@mixin font-reset {
+    font: {
+		synthesis: none;
+		weight: normal;
+		size: normal;
+	}
+	text-transform: none;
 }

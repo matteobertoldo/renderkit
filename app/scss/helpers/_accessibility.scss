@@ -1,6 +1,6 @@
-// @mixins accessibility
+// @mixins: accessibility
 // @author: mbertoldo@alpenite.com
-// @component: core
+// @access: private
 
 // Mixin for visuallyhidden.
 // @note: this hide the target element visually only, but not it's interaction.
@@ -33,6 +33,18 @@
     clip: none;
     overflow: inherit;
     margin: 0;
+}
+
+// Mixin for no text shown.
+// @param 1 : fix the space generated on <a/> tag if it's not defined as (block || inline-block)
+// ----------------------------------------------------------------------
+
+@mixin no-text {
+	font: 0/0 a;
+    text-indent: percentage(1);
+    white-space: nowrap;
+    color: transparent;
+    overflow: hidden;
 }
 
 // @accessibility classes mixin

@@ -2,7 +2,7 @@
 // @author: original authors Nicolas Gallagher & Jonathan Neal
 // @author: mbertoldo@alpenite.com (extended and re-written in scss)
 // @note: global styles "normalized" in all browsers. From normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css
-// @component: core
+// @access: private
 
 @mixin scss-normalize {
     /*@custom normalize: normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css*/
@@ -136,7 +136,7 @@
     	background-color: transparent;
     	color: $global-link-color;
 
-    	@if($global-link-text-decoration) {
+    	@if ($global-link-text-decoration) {
     		 -webkit-text-decoration-skip: objects;
     	} @else {
     		text-decoration: none;
@@ -419,7 +419,7 @@
     	&[type="radio"] {
     		@if ($global-custom-checkbox-radio) {
     			appearance: none;
-    			@extend .visuallyhidden;
+                @include visuallyhidden;
     		} @else {
     			margin: 0;
     			padding: 0;
@@ -465,12 +465,12 @@
     // --------------------------------
 
     select {
-    	@if($global-custom-select) {
-    		appearance: none;
+    	@if ($global-custom-select) {
+    		@extend %reset-input-style;
 
     		&:-moz-focusring {
     			color: transparent;
-    			text-shadow: 0 0 0 $global-base-color;
+    			text-shadow: 0 0 0 $body-base-color;
     		}
 
     		&::-ms-expand {
@@ -484,7 +484,7 @@
 
     	@if ($global-custom-options-select) {
     		appearance: none;
-    		@extend .visuallyhidden;
+    		@include visuallyhidden;
     	}
     }
 
@@ -495,8 +495,7 @@
 
     textarea {
     	@if ($global-reset-input-appearance) {
-    		appearance: none;
-    		border: 1px solid lightgray;
+    		@extend %reset-input-style;
     	}
     	overflow: auto;
     	resize: none;
