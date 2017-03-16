@@ -1,21 +1,15 @@
-// @importer for global mixins
+// @importer: for global "helpers"
 // @author: mbertoldo@alpenite.com
-// @import: style.scss
-// @component: core
+// @access: private
 
-@import 'font-face';
-@import 'breakpoint';
 @import 'typography';
 @import 'normalize';
 @import 'print';
 @import 'accessibility';
 @import 'visibility';
-@import 'shapes';
-@import 'layout';
 @import 'float';
 @import 'clearfix';
 @import 'grid';
 @import 'flexbox';
 @import 'pointer';
 @import 'colors';
-@import 'polyfill';

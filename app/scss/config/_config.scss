@@ -1,8 +1,7 @@
-// @define global vars
+// @importer: global vars
 // @param: {String}
 // @author: mbertoldo@alpenite.com
-// @include: style.scss
-// @access: public
+// @access: private
 
 // @breakpoints
 // @foundation
@@ -24,7 +23,7 @@ $print-breakpoint: large !default;
 $font-dir: '../assets/fonts/' !default;
 $global-text-direction: ltr !default;
 $primary-type-font: sans-serif !default;
-$body-font-family: $primary-type-font;
+$body-font-family: $primary-type-font !default;
 $body-font-weight: normal !default;
 $body-line-height: 1.15 !default;
 $global-heading-font-family: inherit !default;
@@ -60,7 +59,7 @@ $global-paragraph-letter-spacing: normal !default;
 // @foundation
 // ----------------
 
-$grid-row-width: 1200px !global;
+$grid-row-width: 1200px !default;
 $grid-column-count: 12 !default;
 $grid-column-gutter: (
     small: 20px,
@@ -119,7 +118,7 @@ $global-checkmark-color: #333 !default;
 
 $global-reset-input-appearance: true !default;
 $global-custom-checkbox-radio: true !default;
-$global-custom-select: false !default; //TODO: set on custom form configuration
+$global-custom-select: true !default; //TODO: set on custom form configuration
 $global-custom-options-select: false !default; //TODO: set support via JS
 $global-flexbox-clearfix: true !default;
 $global-link-text-decoration: false !default;
@@ -147,9 +146,9 @@ $medium: 0.45s !default;
 $slow: 0.7s !default;
 $cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;
 $cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
-$transition-1: $fast $cubic-1;
-$transition-2: $fast $cubic-2;
-$transition-3: $medium $cubic-1;
-$transition-4: $medium $cubic-2;
-$transition-5: $slow $cubic-1;
-$transition-6: $slow $cubic-2;
+$transition-1: $fast $cubic-1 !default;
+$transition-2: $fast $cubic-2 !default;
+$transition-3: $medium $cubic-1 !default;
+$transition-4: $medium $cubic-2 !default;
+$transition-5: $slow $cubic-1 !default;
+$transition-6: $slow $cubic-2 !default;

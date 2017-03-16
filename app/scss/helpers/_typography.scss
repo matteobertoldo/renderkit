@@ -1,0 +1,97 @@
+// @mixins for typography
+// @author: mbertoldo@alpenite.com
+// @access: private
+
+// @set global heading font family & margin
+// @set margin only if heading was not the last-child
+// @param: tags
+// --------------------
+
+@mixin headers-style {
+    /*@headers-style*/
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    	font: {
+    		family: $global-heading-font-family;
+    		weight: $global-heading-font-weight;
+    	}
+    	line-height: $global-heading-line-height;
+    	letter-spacing: $global-heading-letter-spacing;
+    	color: $global-heading-color;
+
+    	@if ($global-margin-heading) {
+            margin: $margin-heading;
+    	}
+    }
+}
+
+// @set global heading font size + breakpoints
+// @param: tags
+// --------------------
+
+@mixin headers-style-responsive {
+    /*@headers-style-responsive*/
+    @each $size, $headers in $header-sizes {
+    	@include breakpoint($size) {
+    		@each $header, $font-size in $headers {
+    			#{$header} {
+    				font-size: $font-size;
+    			}
+    		}
+    	}
+    }
+}
+
+// @set global paragraph font family & margin
+// @param: tag
+// --------------------
+
+@mixin paragraph-style {
+    /*@paragraph-style*/
+    p {
+    	font: {
+    		family: $global-paragraph-font-family;
+    		weight: $global-paragraph-font-weight;
+    	}
+    	line-height: $global-paragraph-line-height;
+    	letter-spacing: $global-paragraph-letter-spacing;
+    	color: $global-paragraph-color;
+
+    	@if ($global-margin-paragraph) {
+            margin: $margin-paragraph;
+    	}
+    }
+}
+
+// Mixin for ellipsis text.
+// @note: create ellipsis on text -> mytext...
+// ----------------------------------------------------------------------
+
+@mixin text-ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin text-classes {
+    /*@text-classes*/
+    @each $align in (left, right, center, justify, ellipsis) {
+    	.text-#{$align} {
+            @if ($align == 'ellipsis') {
+                @include text-ellipsis;
+            } @else {
+                text-align: $align;
+            }
+        }
+    }
+
+    @each $transform in (uppercase, lowercase, capitalize) {
+        .text-#{$transform} {
+            text-transform: $transform;
+        }
+    }
+}

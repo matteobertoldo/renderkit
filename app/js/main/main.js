@@ -6,7 +6,7 @@
 
 (function($) {
     /**
-     * @define global const
+     * @define global util & breakpoints
      * @param: {string}
      * @breakpoint: update var on sass config
      */

@@ -1,0 +1,42 @@
+// @global: elements shapes & classes
+// @author: mbertoldo@alpenite.com
+// @access: private
+
+/*@shapes elements & classes*/
+
+// @print: arrow classes & direction support.
+// -----------------
+
+@mixin shape-classes {
+    .shape-arrow {
+        display: block;
+    	width: 20px;
+    	height: 20px;
+    	border: solid $global-arrow-color;
+    	border-width: 0 $global-arrow-width $global-arrow-width 0;
+
+        // @arrow direction map
+        // -----------------
+
+        $arrow-direction: (
+            down: 45deg,
+            up: -135deg,
+            right: -45deg,
+            left: 135deg
+        );
+
+    	@each $direction, $transform in $arrow-direction {
+    		&.#{$direction} {
+    			transform: rotate3d(0, 0, 1, $transform);
+    		}
+    	}
+    }
+
+    .shape-checkmark {
+        @include arrow(10px, 20px, $global-checkmark-color, $global-checkmark-width, down);
+    }
+
+    .full-rounded {
+    	border-radius: 50%;
+    }
+}

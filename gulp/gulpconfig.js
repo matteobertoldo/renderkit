@@ -60,7 +60,7 @@ module.exports = {
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'bp-standard',
-        notification: true,
+        notification: false,
         stream: true,
         streamLog: true,
         streamFoldersToWatch: [
