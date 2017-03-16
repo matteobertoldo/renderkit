@@ -35,6 +35,19 @@ a {color: $green; text-decoration: underline;}
     display:block;
 }
 ```
+-   Use ONE space to engage the rules within the braces.
+
+```scss
+// OK
+.block {
+    display: block;
+}
+// Bad
+.block{
+    display: block;
+}
+```
+
 -   End all lines with a semi-colon.
 -   For multiple, comma-separated selectors, place each selector on its own line.
 
