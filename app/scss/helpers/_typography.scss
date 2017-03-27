@@ -5,7 +5,7 @@
 // @set global heading font family & margin
 // @set margin only if heading was not the last-child
 // @param: tags
-// --------------------
+// --------------------------------
 
 @mixin headers-style {
     /*@headers-style*/
@@ -31,7 +31,7 @@
 
 // @set global heading font size + breakpoints
 // @param: tags
-// --------------------
+// --------------------------------
 
 @mixin headers-style-responsive {
     /*@headers-style-responsive*/
@@ -48,7 +48,7 @@
 
 // @set global paragraph font family & margin
 // @param: tag
-// --------------------
+// --------------------------------
 
 @mixin paragraph-style {
     /*@paragraph-style*/
@@ -69,13 +69,16 @@
 
 // Mixin for ellipsis text.
 // @note: create ellipsis on text -> mytext...
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @mixin text-ellipsis {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+
+// Mixin for text disposition.
+// --------------------------------
 
 @mixin text-classes {
     /*@text-classes*/

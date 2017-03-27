@@ -8,7 +8,7 @@
 // @returns: {Number} A calculated percentage value.
 // @author: foundation.zurb.com
 // @note: Licensed under MIT Open Source
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function grid-column($columns) {
 	$width: 0%;
@@ -38,7 +38,7 @@
 // @alias grid-column
 // @author: foundation.zurb.com
 // @note: Licensed under MIT Open Source
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function grid-col($columns: $grid-column-count) {
 	@return grid-column($columns);
@@ -50,7 +50,7 @@
 // @returns {Number} Gutter size.
 // @author: foundation.zurb.com
 // @note: Licensed under MIT Open Source
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function grid-column-gutter($breakpoint: $-zf-zero-breakpoint, $gutters: $grid-column-gutter) {
 	@if type-of($gutters) == 'number' {
@@ -65,6 +65,7 @@
 // @param {Boolean} $root [false]
 // @note: If `false`, selectors inside this mixin will nest inside the parent selector.
 // @note: If `true`, selectors will not nest.
+// --------------------------------
 
 @mixin grid-context($columns, $root: false) {
     $old-grid-column-count: $grid-column-count;
@@ -88,6 +89,7 @@
 // @param: {Keyword|Number} $size [$grid-row-width] Maximum size of the row. Set to `expand` to make the row taking the full width.
 // @param: {Boolean} $cf [true] - Whether or not to include a clearfix.
 // @param: {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
+// --------------------------------
 
 @mixin grid-row($columns: null, $behavior: null, $size: $grid-row-width, $cf: true, $gutters: $grid-column-gutter) {
 	$margin: auto;
@@ -119,6 +121,7 @@
 // Inverts the margins of a row to nest it inside of a column.
 // @param: {Number|Map} $gutters [$grid-column-gutter]
 // @note: Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
+// --------------------------------
 
 @mixin grid-row-nest($gutters: $grid-column-gutter) {
 	@include -zf-each-breakpoint {
@@ -131,6 +134,7 @@
 // Set a grid row size
 // @param: {Keyword|Number} $size [$grid-row-width] Maximum size of the row.
 // @note: Set to `expand` to make the row taking the full width.
+// --------------------------------
 
 @mixin grid-row-size($size: $grid-row-width) {
 	@if $size == expand {
@@ -143,6 +147,7 @@
 // Creates a grid column.
 // @param: {Mixed} $columns [$grid-column-count] - Width of the column. Refer to the `grid-column()` function to see possible values.
 // @param: {Mixed} $gutters [$grid-column-gutter] - Spacing between columns. Refer to the `grid-column-gutter()` function to see possible values.
+// --------------------------------
 
 @mixin grid-column($columns: $grid-column-count, $gutters: $grid-column-gutter) {
 	@include grid-column-size($columns);
@@ -158,6 +163,7 @@
 
 // Creates a grid column row. This is the equivalent of adding `.row` and `.column` to the same element.
 // @param: {Mixed} $gutters [$grid-column-gutter] - Width of the gutters on either side of the column row. Refer to the `grid-column-gutter()` function to see possible values.
+// --------------------------------
 
 @mixin grid-column-row($gutters: $grid-column-gutter) {
 	@include grid-row;
@@ -170,6 +176,7 @@
 
 // Shorthand for `grid-column()`.
 // @alias grid-column
+// --------------------------------
 
 @mixin grid-col($columns: $grid-column-count, $gutters: $grid-column-gutter) {
 	@include grid-column($columns, $gutters);
@@ -177,6 +184,7 @@
 
 // Shorthand for `grid-column-row()`.
 // @alias grid-column-row
+// --------------------------------
 
 @mixin grid-col-row($gutters: $grid-column-gutter) {
 	@include grid-column-row($gutters);
@@ -184,6 +192,7 @@
 
 // Set the width of a grid column.
 // @param: {Number|List} $width [$grid-column-count] - Width to make the column. You can pass in any value accepted by the `grid-column()` function, such as `6`, `50%`, or `1 of 2`.
+// --------------------------------
 
 @mixin grid-column-size($columns: $grid-column-count) {
 	width: grid-column($columns);
@@ -191,6 +200,7 @@
 
 // Shorthand for `grid-column-size()`.
 // @alias grid-column-size
+// --------------------------------
 
 @mixin grid-col-size($columns: $grid-column-count) {
 	@include grid-column-size($columns);
@@ -198,6 +208,7 @@
 
 // Reposition a column.
 // @param: {Number|Keyword} $position - Direction and amount to move. The column will move equal to the width of the column count specified. A positive number will push the column to the right, while a negative number will pull it to the left. Set to center to center the column.
+// --------------------------------
 
 @mixin grid-column-position($position) {
 	@if type-of($position) == 'number' {
@@ -219,6 +230,7 @@
 }
 
 // Reset a position definition.
+// --------------------------------
 
 @mixin grid-column-unposition {
 	position: static;
@@ -229,12 +241,14 @@
 
 // Offsets a column to the right by `$n` columns.
 // @param: {Number|List} $n - Width to offset by. You can pass in any value accepted by the `grid-column()` mixin, such as `6`, `50%`, or `1 of 2`.
+// --------------------------------
 
 @mixin grid-column-offset($n) {
 	margin-#{$global-left}: grid-column($n);
 }
 
 // Disable the default behavior of the last column in a row aligning to the opposite edge.
+// --------------------------------
 
 @mixin grid-column-end {
 	&:last-child:last-child {
@@ -244,6 +258,7 @@
 
 // Shorthand for `grid-column-position()`.
 // @alias grid-column-position
+// --------------------------------
 
 @mixin grid-col-pos($position) {
 	@include grid-column-position($position);
@@ -251,6 +266,7 @@
 
 // Shorthand for `grid-column-unposition()`.
 // @alias grid-column-unposition
+// --------------------------------
 
 @mixin grid-col-unpos {
 	@include grid-column-unposition;
@@ -258,6 +274,7 @@
 
 // Shorthand for `grid-column-offset()`.
 // @alias grid-column-offset
+// --------------------------------
 
 @mixin grid-col-off($n) {
 	@include grid-column-offset($n);
@@ -265,6 +282,7 @@
 
 // Shorthand for `grid-column-end()`.
 // @alias grid-column-end
+// --------------------------------
 
 @mixin grid-col-end {
 	@include grid-column-end;
@@ -277,6 +295,7 @@
 // - "auto" will make the gutter responsive, using the $gutters map values.
 // @param: {Number|Keyword} $gutter [auto]
 // @param: {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use. Responsive gutter settings by default.
+// --------------------------------
 
 @mixin grid-column-gutter($gutter: auto, $gutters: $grid-column-gutter) {
     @include -zf-breakpoint-value($gutter, $gutters) {
@@ -288,6 +307,7 @@
 
 // Collapse the gutters on a column by removing the padding.
 // @note: only use this mixin within a breakpoint. To collapse a column's gutters on all screen sizes, use the `$gutter` parameter of the `grid-column()` mixin instead.
+// --------------------------------
 
 @mixin grid-column-collapse {
     @include grid-column-gutter(0);
@@ -295,6 +315,7 @@
 
 // Shorthand for `grid-column-gutter()`.
 // @alias grid-column-gutter
+// --------------------------------
 
 @mixin grid-col-gutter($gutter: auto,$gutters: $grid-column-gutter) {
     @include grid-column-gutter($gutter, $gutters);
@@ -302,6 +323,7 @@
 
 // Shorthand for `grid-column-collapse()`.
 // @alias grid-column-collapse
+// --------------------------------
 
 @mixin grid-col-collapse {
     @include grid-column-collapse;
@@ -314,6 +336,7 @@
 // @note: The gutter to apply to child elements. Accepts multiple values:
 // @note: $grid-column-gutter will use the values in the $grid-column-gutter map, including breakpoint sizes.
 // @note: A fixed numeric value will apply this gutter to all breakpoints.
+// --------------------------------
 
 @mixin grid-layout($n, $selector: '.column', $gutter: null) {
     & > #{$selector} {
@@ -353,6 +376,7 @@
 // Outputs CSS classes for the grid.
 // @access private
 // @note: no em conversion. Every media query was added the `only` attribute.
+// --------------------------------
 
 @mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded') {
 	/*@foundation-grid classes (6.4)*/

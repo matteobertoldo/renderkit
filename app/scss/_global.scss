@@ -7,21 +7,25 @@
 @import 'helpers/helpers';
 @import 'components/components';
 
-@mixin light-sass {
+@mixin light-sass($components: true) {
     @include scss-normalize;
+    @include headers-style;
+    @include headers-style-responsive;
+    @include paragraph-style;
     @include media-print;
     @include accessibility-classes;
+    @include text-classes;
     @include pointer-classes;
     @include foundation-visibility-classes;
     @include float-classes;
     @include clearfix-classes;
     @include foundation-grid;
     @include flexbox-classes;
-    @include headers-style;
-    @include headers-style-responsive;
-    @include paragraph-style;
-    @include text-classes;
-    @include colors-palette;
-    @include checkbox-radio-classes;
-    @include shape-classes;
+
+    @if ($components) {
+        @include form-style;
+        @include checkbox-radio-classes;
+        @include colors-palette;
+        @include shape-classes;
+    }
 }

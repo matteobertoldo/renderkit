@@ -1,6 +1,6 @@
 /**
- * @scripts js task
- * @return: {scripts}
+ * @library js task
+ * @return: {baselibs}
  * @author: mbertoldo@alpenite.com
  */
 
@@ -11,8 +11,6 @@ var file = require('gulp-file');
 var modernizr = require('modernizr');
 var modernizrProp = require('modernizr/lib/config-all.json');
 var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
-var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var rename = require('gulp-rename');
@@ -53,38 +51,6 @@ gulp.task('modernizr', function() {
         })))
         .pipe(gulp.dest(conf.distribution.jsLib));
     });
-});
-
-// @global: plugins sources
-// @concat: convert sources into a single array (no sub array)
-// @build: "bundle" scripts (vendors + main)
-// @note: `run-sequence` don't accept a "sub array".
-// -----------------------
-
-var src = [conf.workspace.jsVendor + '**/*.js', (conf.packageManager.managePlugins) ? conf.packageManager.src : [], conf.workspace.jsMain + '**/*.js'];
-var arr = [];
-
-for (var i = 0; i < src.length; i++) {
-    arr = arr.concat(src[i]);
-}
-
-gulp.task('bundle', function() {
-    return gulp.src(arr)
-    .pipe(plumber())
-	.pipe(gulpif(conf.jsOptions.minifyPlugins, sourcemaps.init()))
-    .pipe(concat(conf.jsOptions.outputPluginsName + '.js'))
-    .pipe(gulpif(conf.jsOptions.minifyPlugins, uglify({
-        compress: true
-    }))).on('error', gutil.log)
-    .pipe(gulpif(conf.jsOptions.minifyPlugins, rename({
-        suffix: '.min'
-    })))
-    .pipe(gulpif(conf.jsOptions.minifyPlugins, sourcemaps.write('./')))
-    .pipe(gulp.dest(conf.distribution.js));
-});
-
-gulp.task('bundle:watch', ['bundle'], function() {
-    return global.browserSync.reload();
 });
 
 // @push `modernizr`

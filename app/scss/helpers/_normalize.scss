@@ -12,6 +12,7 @@
     // @param-4: Mixin for reset the default iOS tap highlight color.
     // @param-5: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     // --------------------------------
+
     html {
     	font-family: $primary-type-font;
         -ms-text-size-adjust: percentage(1);
@@ -35,6 +36,7 @@
     body {
     	font: {
     		family: $body-font-family;
+            size: $body-font-size;
     		weight: $body-font-weight;
     	}
     	background-color: $body-background-color;
@@ -126,7 +128,7 @@
 
     // @param-1: Remove the gray background on active links in IE 10.
     // @param-2: Set the default color to black (can be changed).
-    // @param-3: Set ´true´ or ´false´ on $global-link-text-decoration for remove o mantain the default underline.
+    // @param-3: Set `true` or `false` on $global-link-text-decoration for remove o mantain the default underline.
     // @param-3: If true remove gaps in links underline in iOS 8+ and Safari 8+.
     // @param-4: Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
     // [data-whatinput="*"] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
@@ -142,19 +144,31 @@
     		text-decoration: none;
     	}
 
-    	&:hover,
-    	[data-whatinput="mouse"] &:focus,
-    	[data-whatinput="touch"] &:focus, {
-    		outline: 0;
-    	}
+        @if ($focus-outline-link-hidden) {
+            @if ($what-input-outline-detect) {
+                &:hover,
+            	[data-whatinput="mouse"] &:focus,
+            	[data-whatinput="touch"] &:focus, {
+            		outline: 0;
+            	}
+            } @else {
+                &:hover {
+                    outline: 0;
+                }
+            }
+        }
 
     	&:hover {
     		color: $global-hover-link-color;
+            @if ($global-link-transition-hover-color) {
+                transition: color 0.3s ease;
+            }
     	}
     }
 
     // @param-1: Remove the bottom border in Firefox 39-.
     // @param-2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+    // --------------------------------
 
     abbr[title] {
     	border-bottom: none;
@@ -326,6 +340,7 @@
     input,
     select,
     textarea {
+        font-family: inherit;
     	@if ($global-reset-input-appearance) {
     		font-size: percentage(1);
     	}
@@ -333,10 +348,19 @@
     	line-height: $body-line-height;
     	margin: 0;
 
-    	[data-whatinput="mouse"] &:focus,
-    	[data-whatinput="touch"] &:focus {
-    		outline: 0;
-    	}
+        @if ($focus-outline-input-hidden) {
+            @if ($what-input-outline-detect) {
+                [data-whatinput="mouse"] &:focus,
+            	[data-whatinput="touch"] &:focus {
+            		outline: 0;
+            	}
+
+            } @else {
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
     }
 
     // Show the overflow in IE.
@@ -361,6 +385,7 @@
 
     // Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4.
     // Correct the inability to style clickable types in iOS and Safari.
+    // --------------------------------
 
     button,
     html [type="button"],
@@ -381,6 +406,7 @@
     }
 
     // Change the border, margin, and padding in all browsers (opinionated).
+    // --------------------------------
 
     fieldset {
     	border: 1px solid silver;
@@ -391,6 +417,7 @@
     // Correct the text wrapping in Edge and IE.
     // Correct the color inheritance from `fieldset` elements in IE.
     // Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
+    // --------------------------------
 
     legend {
     	display: table;
@@ -403,15 +430,16 @@
     // Remove the default margin on input[type="checkbox"] & [type="radio"].
     // [type="checkbox"][type="radio"] Remove the padding in IE 10-.
     // @each: Loop all standard and "Cross Browsing" input type field.
-    // ´::-webkit-inner-spin-button´, ´::-webkit-outer-spin-button´ Correct the cursor style of increment and decrement buttons in Chrome.
+    // `::-webkit-inner-spin-button`, `::-webkit-outer-spin-button` Correct the cursor style of increment and decrement buttons in Chrome.
     // [type="search"] Correct the outline style in Safari.
-    // ´::-webkit-search-cancel-button´, ´::-webkit-search-cancel-button´ Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
-    // ´::-webkit-file-upload-button´ Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
+    // `::-webkit-search-cancel-button`, `::-webkit-search-cancel-button` Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+    // `::-webkit-file-upload-button` Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
     // --------------------------------
 
     %reset-input-style {
     	appearance: none;
     	border: 1px solid lightgray;
+        border-radius: 0;
     }
 
     input {
@@ -426,7 +454,7 @@
     		}
     	}
 
-    	@each $input-type in (email, search, tel, text, url) {
+    	@each $input-type in (email, password, search, tel, text, url) {
     		&[type="#{$input-type}"] {
     			@if ($global-reset-input-appearance) {
     				@extend %reset-input-style;
@@ -498,7 +526,6 @@
     		@extend %reset-input-style;
     	}
     	overflow: auto;
-    	resize: none;
     }
 
     // Set style for inputs [disabled] attribute after apply `appearance-none` rule.

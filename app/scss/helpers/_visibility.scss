@@ -5,6 +5,7 @@
 
 // Hide an element by default, only displaying it above a certain screen size.
 // @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+// --------------------------------
 
 @mixin show-for($size) {
 	$size: map-get($breakpoints, $size);
@@ -17,6 +18,7 @@
 // Hide an element by default, only displaying it within a certain breakpoint.
 // @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
 // @note: remove unnecessary `media query` if value is 0. {mbertoldo@alpenite.com}
+// --------------------------------
 
 @mixin show-for-only($size) {
 	$lower-bound-size: map-get($breakpoints, $size);
@@ -41,6 +43,7 @@
 
 // Show an element by default, and hide it above a certain screen size.
 // @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+// --------------------------------
 
 @mixin hide-for($size) {
 	@include breakpoint($size) {
@@ -50,12 +53,16 @@
 
 // Show an element by default, and hide it above a certain screen size.
 // @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+// --------------------------------
 
 @mixin hide-for-only($size) {
 	@include breakpoint($size only) {
 		display: none;
 	}
 }
+
+// Mixin for visibilty clasess
+// --------------------------------
 
 @mixin foundation-visibility-classes {
     /*@visibility classes*/

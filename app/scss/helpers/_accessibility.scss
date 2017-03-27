@@ -4,7 +4,7 @@
 
 // Mixin for visuallyhidden.
 // @note: this hide the target element visually only, but not it's interaction.
-// ----------------------------
+// --------------------------------
 
 @mixin visuallyhidden {
     position: absolute;
@@ -22,7 +22,7 @@
 
 // Mixin for visuallyhidden-off.
 // @note: restores the style applied by `visuallyhidden` mixin.
-// ----------------------------
+// --------------------------------
 
 @mixin visuallyhidden-off {
     position: static;
@@ -37,7 +37,7 @@
 
 // Mixin for no text shown.
 // @param 1 : fix the space generated on <a/> tag if it's not defined as (block || inline-block)
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @mixin no-text {
 	font: 0/0 a;

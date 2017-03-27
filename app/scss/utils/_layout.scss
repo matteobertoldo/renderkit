@@ -2,25 +2,23 @@
 // @param: `-moz-` render the pseudo placeholder element with opacity included. We set it's value to 1 if you want to see the full color.
 // @param: `$on-focus` if `focus-hidden` is set, we make clear the pseudo element (only in -webkit- and -moz- render, in IE is already present this behavior.)
 // @author: mbertoldo@alpenite.com
-// ----------------------------------
+// @access: private
 
 // @use 1: (placeholder color is #ccc)
-// ------------------------
 // .myselector {
 // 		@include placeholder(#ccc);
 // }
 
 // @use 2: (placeholder color is #ccc, on focus it will be hidden)
-// ------------------------
 // .myselector {
 // 		@include placeholder(#ccc, 'focus-hidden');
 // }
 
 // @use 3: (placeholder color is #ccc on focus will become #333)
-// ------------------------
 // .myselector {
 // 		@include placeholder(#ccc, 'focus', #333);
 // }
+// --------------------------------
 
 @mixin placeholder($placeholder-color, $on-focus: null, $placeholder-focus-color: initial) {
 	$prefix: '-placeholder';
@@ -36,10 +34,8 @@
 
         @if ($on-focus == 'focus') {
             &:focus#{$vendor}#{$prefix} {
-                &:focus#{$vendor}#{$prefix} {
-                    @if ($vendor != ':-ms') {
-                        color: $placeholder-focus-color;
-                    }
+                @if ($vendor != ':-ms') {
+                    color: $placeholder-focus-color;
                 }
             }
         } @else if ($on-focus == 'focus-hidden') {
@@ -56,7 +52,7 @@
 // @require: {counter-reset: section;} defined on a parent selector
 // @note: include this on a child selector on `::before`, your separator, space or not.
 // @author: mbertoldo@alpenite.com
-// ----------------------------------
+// --------------------------------
 
 @mixin counter-increment($separator, $space: space) {
 	@if ($space == 'no-space') {
@@ -67,4 +63,17 @@
 
 	counter-increment: section;
 	content: counters(section,'#{$separator}') $space;
+}
+
+// Mixin for create a "layer" position.
+// @note: can be used for modals.
+// @author: mbertoldo@alpenite.com
+// --------------------------------
+
+@mixin layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

@@ -7,6 +7,7 @@
 // @link http://hugogiraudel.com/2014/04/28/casting-map-into-list/
 // @param {Map} $map - Map to pull a value from.
 // @returns {List} Depending on the flag, returns either $keys or $values or both.
+// --------------------------------
 
 @function map-to-list($map, $keep: 'both') {
     $keep: if(index('keys' 'values', $keep), $keep, 'both');
@@ -49,7 +50,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 // @returns: {Mixed} The value for the key after `$key`, if `$key` was found. If `$key` was not found, or `$key` was the last value in the map, returns `null`.
 // @author: foundation.zurb.com
 // @note: Licensed under MIT Open Source
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function -zf-map-next($map, $key) {
     $values: map-keys($map);
@@ -72,7 +73,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 // @require: {Function} -zf-map-next
 // @note: Refer to the documentation for the `breakpoint()` mixin to see what the possible inputs are.
 // @note: edited `em` breakpoint parse value.
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function breakpoint($val: $-zf-zero-breakpoint) {
     $bp: nth($val, 1);
@@ -140,7 +141,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 // @param: {Map} $map - Input config map.
 // @param: {Keyword} $value - Breakpoint name to use.
 // @return: {Mixed} The corresponding breakpoint value.
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function -zf-get-bp-val($map, $value) {
 	@if not map-has-key($breakpoints, $value) {
@@ -178,6 +179,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 // @output: If the breakpoint is "0px and larger", outputs the content as-is. Otherwise, outputs the content wrapped in a media query.
 // @note: If a string is passed, the mixin will look for it in the `$breakpoints` map, and use a media query there.
 // @note: edited with `only` keyword.
+// --------------------------------
 
 @mixin breakpoint($value) {
     $str: breakpoint($value);
@@ -201,6 +203,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 
 // Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query. Use this with the grid, or any other component that has responsive classes.
 // @param: {Boolean} $small [true] - If `false`, the mixin will skip the `small` breakpoint. Use this with components that don't prefix classes with `small-`, only `medium-` and up.
+// --------------------------------
 
 @mixin -zf-each-breakpoint($small: true) {
     $map: $breakpoint-classes;
@@ -224,6 +227,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 // - For "auto", `$-zf-bp-value` is the corresponding breakpoint value in `$map` and is passed to `@content`, which is made responsive for each breakpoint of `$map`.
 // @param {Number|Keyword} $name [auto] - Single value or breakpoint name to use. "auto" by default.
 // @param {Number|Map} $map - Map of breakpoints and values or single value to use.
+// --------------------------------
 
 @mixin -zf-breakpoint-value($name: auto, $map: null) {
     @if $name == auto and type-of($map) == 'map' {

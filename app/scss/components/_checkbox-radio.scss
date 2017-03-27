@@ -10,9 +10,9 @@
     .input-radio {
     	display: inline-block;
     	position: relative;
-    	font-size: 16px;
-    	line-height: 16px;
-    	padding-left: 26px;
+    	font-size: $global-input-font-size;
+        margin: 0;
+    	padding-left: $global-custom-checkbox-radio-size + $custom-checkbox-radio-label-gutter;
     	cursor: pointer;
     	user-select: none;
 
@@ -23,19 +23,22 @@
     	}
 
     	&::before {
-    		top: 0;
+    		top: 50%;
     		left: 0;
-    		width: 16px;
-    		height: 16px;
-    		border: 1px solid $global-custom-input-border;
-    		border-radius: 2px;
+    		width: $global-custom-checkbox-radio-size;
+    		height: $global-custom-checkbox-radio-size;
+            background-color: $global-input-background-color;
+    		border: $global-input-border;
+    		border-radius: $global-input-border-radius;
+            margin-top: -(rem($global-custom-checkbox-radio-size / 2));
     		transition: border-color 0.3s ease;
+            overflow: hidden;
     	}
 
-    	@if ($hover-custom-input-border) {
+    	@if ($global-hover-input-border) {
     		&:hover {
                 &::before {
-        			border-color: $hover-custom-input-border-color;
+        			border-color: $global-hover-input-border-color;
         		}
             }
     	}
@@ -45,12 +48,21 @@
     	}
     }
 
+    // @global marker size for checkbox & radio
+    // @return: {String}
+    // @note: the marker will always be half size compared to `$global-custom-checkbox-radio-size`;
+    // --------------------------------
+
+    $marker-size: ($global-custom-checkbox-radio-size / 2);
+    $marker-size-half: ($marker-size / 2);
+
     .input-checkbox {
     	&::after {
-    		top: 3px;
-    		left: 5px;
-    		@include arrow(6px, 8px, $custom-checkbox-mark-color, 3px);
-    		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg);
+    		top: 50%;
+    		left: rem(($global-custom-checkbox-radio-size - $marker-size-half) / 2);
+    		@include arrow(rem($marker-size-half), rem($marker-size), $custom-checkbox-mark-color, $custom-checkbox-mark-thick);
+            margin-top: -(rem($marker-size-half));
+    		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     	}
 
     	input[type="checkbox"]:checked + & {
@@ -61,9 +73,25 @@
     		}
 
     		&::after {
-    			transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg);
+    			transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     		}
     	}
+
+        input[type="checkbox"]:focus:not(:checked) + & {
+            &::before {
+                border-color: $global-focus-input-border-color;
+            }
+        }
+
+        @if ($custom-checkbox-radio-outline-detect) {
+            [data-whatinput="initial"] input[type="checkbox"]:focus + &,
+            [data-whatinput="keyboard"] input[type="checkbox"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                 }
+            }
+        }
     }
 
     .input-radio {
@@ -73,12 +101,13 @@
     	}
 
     	&::after {
-    		top: 4px;
-    		left: 4px;
-    		width: 8px;
-    		height: 8px;
+    		top: 50%;
+    		left: rem(($global-custom-checkbox-radio-size - $marker-size) / 2);
+    		width: rem($marker-size);
+    		height: rem($marker-size);
     		background-color: $custom-radio-mark-color;
-    		transform: scale3d(0, 0, 0);
+            margin-top: -(rem($marker-size / 2));
+    		transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     	}
 
     	input[type="radio"]:checked + & {
@@ -89,8 +118,24 @@
     		}
 
     		&::after {
-    			transform: scale3d(1, 1, 1);
+    			transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
     		}
     	}
+
+        input[type="radio"]:focus:not(:checked) + & {
+            &::before {
+                border-color: $global-focus-input-border-color;
+            }
+        }
+
+        @if ($custom-checkbox-radio-outline-detect) {
+            [data-whatinput="initial"] input[type="radio"]:focus + &,
+            [data-whatinput="keyboard"] input[type="radio"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                 }
+            }
+        }
     }
 }

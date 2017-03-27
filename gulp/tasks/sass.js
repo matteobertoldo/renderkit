@@ -40,7 +40,7 @@ var processors = [
 // @return: [processors]
 // ----------------------------------
 
-if(!conf.cssOptions.remUnit) {
+if (!conf.cssOptions.remUnit) {
     processors.splice(1,1);
 }
 
@@ -49,7 +49,7 @@ if(!conf.cssOptions.remUnit) {
 // ----------------------------------
 
 gulp.task('sass', function() {
-    return gulp.src(conf.workspace.scss + '**/*.scss')
+    return gulp.src(conf.workspace.scss + '**/*.s+(a|c)ss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({

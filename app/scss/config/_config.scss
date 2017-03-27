@@ -5,7 +5,7 @@
 
 // @breakpoints
 // @foundation
-// ----------------
+// --------------------------------
 
 $breakpoints: (
     small: 0,
@@ -18,18 +18,23 @@ $breakpoint-classes: (small medium large) !default;
 $print-breakpoint: large !default;
 
 // @typography
-// ----------------
+// --------------------------------
 
 $font-dir: '../assets/fonts/' !default;
-$global-text-direction: ltr !default;
 $primary-type-font: sans-serif !default;
+$body-font-size: 16px !default;
 $body-font-family: $primary-type-font !default;
 $body-font-weight: normal !default;
 $body-line-height: 1.15 !default;
+$global-text-direction: ltr !default;
 $global-heading-font-family: inherit !default;
 $global-paragraph-font-family: inherit !default;
 $global-strong-font-family: inherit !default;
 $global-strong-font-weight: bolder !default;
+
+// @typography ~ headers + paragraph
+// --------------------------------
+
 $global-heading-font-weight: bold !default;
 $global-paragraph-font-weight: normal !default;
 $global-heading-line-height: 1.4 !default;
@@ -55,9 +60,9 @@ $header-sizes: (
 $global-heading-letter-spacing: normal !default;
 $global-paragraph-letter-spacing: normal !default;
 
-// @grid
+// @foundation grid
 // @foundation
-// ----------------
+// --------------------------------
 
 $grid-row-width: 1200px !default;
 $grid-column-count: 12 !default;
@@ -70,8 +75,16 @@ $global-left: if($global-text-direction == rtl, right, left) !default;
 $global-right: if($global-text-direction == rtl, left, right) !default;
 $block-grid-max: 6 !default;
 
+// @print
+// --------------------------------
+
+$global-transparent-background-print: false !default;
+$global-color-black-print: false !default;
+$global-margin-print: 0.5cm !default;
+$global-link-href-show: false !default;
+
 // @colors: palette
-// ----------------
+// --------------------------------
 
 $colors-palette: (
     whitesmoke: #f9f9f9,
@@ -81,15 +94,18 @@ $colors-palette: (
 ) !default;
 
 // @colors: accessibility
-// ----------------
+// --------------------------------
 
 $selection-background-color: #b3d4fc !default;
 $global-selection-color: false !default;
 $selection-color: initial !default;
-$ios-tap-color: transparent;
+$ios-tap-color: transparent !default;
+$focus-outline-link-hidden: false !default;
+$focus-outline-input-hidden: true !default;
+$what-input-outline-detect: true !default;
 
 // @colors: global
-// ----------------
+// --------------------------------
 
 $body-background-color: white !default;
 $body-base-color: black !default;
@@ -98,57 +114,75 @@ $global-paragraph-color: inherit !default;
 $global-link-color: black !default;
 $global-hover-link-color: black !default;
 
-// @colors: input + shapes
-// ----------------
+// @layout: global
+// --------------------------------
 
-$global-input-color: black !default; //TODO: set on custom form configuration
-$global-input-border: lightgray !default; //TODO: set on custom form configuration
-$global-custom-input-border: lightgray !default;
-$hover-custom-input-border: false !default;
-$checked-custom-input-border: true !default;
-$custom-checkbox-checked-border: #333 !default;
-$custom-radio-checked-border: #333 !default;
-$custom-checkbox-mark-color: #333 !default;
-$custom-radio-mark-color: #333 !default;
-$global-arrow-color: #333 !default;
-$global-checkmark-color: #333 !default;
-
-// @layout
-// ----------------
-
-$global-reset-input-appearance: true !default;
-$global-custom-checkbox-radio: true !default;
-$global-custom-select: true !default; //TODO: set on custom form configuration
-$global-custom-options-select: false !default; //TODO: set support via JS
 $global-flexbox-clearfix: true !default;
-$global-link-text-decoration: false !default;
-$global-input-border-radius: 0 !default; //TODO: set on custom form configuration
+$global-link-text-decoration: true !default;
+$global-link-transition-hover-color: true !default;
 $global-margin-heading: true !default;
 $global-margin-paragraph: false !default;
 $margin-heading: 0 0 16px 0 !default;
 $margin-paragraph: 0 !default;
+
+// @components: form
+// --------------------------------
+
+$global-reset-input-appearance: true !default;
+$global-inputs-rowclass: 'form-row';
+$global-inputs-labelclass: 'form-label';
+$global-input-height: 30px !default;
+$global-input-font-size: 14px !default;
+$global-input-label-font-size: 14px !default;
+$global-input-label-color: palette(charcoal);
+$global-input-label-margin: 0 0 5px 0;
+$global-input-border-radius: 4px !default;
+$global-input-padding: 5px 10px !default;
+$global-input-background-color: palette(whitesmoke) !default;
+$global-input-color: palette(charcoal) !default;
+$global-input-placeholder-color: palette(linkwater) !default;
+$global-input-placeholder-focus-hidden: false !default;
+$global-input-placeholder-focus-default: true !default;
+$global-input-placeholder-focus-color: palette(charcoal);
+$global-input-border: 1px solid palette(linkwater) !default;
+$global-hover-input-border: true !default;
+$global-hover-input-border-color: palette(charcoal) !default;
+$global-focus-input-border-color: palette(charcoal) !default;
+
+// @components: form ~ textarea
+// --------------------------------
+
+$global-textarea-height: 110px !default;
+$global-textarea-resize: true !default;
+
+// @components: form ~ select
+// @$global-select-caret-shape: 'arrow' || 'triangle' || 'empty'
+// --------------------------------
+
+$global-custom-select: true !default;
+$global-select-caret-color: palette(charcoal);
+$global-select-caret-shape: 'arrow' !default;
+$global-select-caret-size: 10px !default;
+$global-custom-options-select: false !default;
+
+// @components: form ~ checkbox-radio
+// --------------------------------
+
+$global-custom-checkbox-radio: true !default;
+$global-custom-checkbox-radio-size: 24px !default;
+$custom-checkbox-radio-label-gutter: 10px !default;
+$custom-checkbox-mark-thick: 2px !default;
+$custom-checkbox-mark-color: palette(charcoal) !default;
+$custom-radio-mark-color: palette(charcoal) !default;
+$checked-custom-input-border: true !default;
+$custom-checkbox-checked-border: palette(charcoal) !default;
+$custom-radio-checked-border: palette(charcoal) !default;
+$custom-checkbox-radio-outline-detect: true;
+
+// @components: shapes
+// --------------------------------
+
+$global-arrow-color: palette(charcoal) !default;
 $global-arrow-width: 3px !default;
+$global-checkmark-color: palette(charcoal) !default;
 $global-checkmark-width: 3px !default;
-
-// @print
-// ----------------
-
-$global-transparent-background-print: false !default;
-$global-color-black-print: false !default;
-$global-margin-print: 0.5cm !default;
-$global-link-href-show: false !default;
-
-// @transitions
-// ----------------
-
-$fast: 0.3s !default;
-$medium: 0.45s !default;
-$slow: 0.7s !default;
-$cubic-1: cubic-bezier(0.7, 0, 0.3, 1) !default;
-$cubic-2: cubic-bezier(0.77, 0, 0.175, 1) !default;
-$transition-1: $fast $cubic-1 !default;
-$transition-2: $fast $cubic-2 !default;
-$transition-3: $medium $cubic-1 !default;
-$transition-4: $medium $cubic-2 !default;
-$transition-5: $slow $cubic-1 !default;
-$transition-6: $slow $cubic-2 !default;
