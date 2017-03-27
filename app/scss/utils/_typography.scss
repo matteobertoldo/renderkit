@@ -1,8 +1,7 @@
 // Mixin for font face rule.
 // @require: {function} str-replace
-// @component: core
 // @author: mbertoldo@alpenite.com
-// --------------------------------
+// @access: private
 
 // Function for string replace.
 // @param: {String}
@@ -26,6 +25,7 @@
 // @note: important the `$font-dir` is defined on _config.scss @typography
 // @use: (full options)
 // @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
+// --------------------------------
 
 @mixin font-face($font-name, $font-file, $style: normal, $weight: normal, $category: null, $ie-old-support: false) {
 	$filepath: $font-dir + $font-file;
@@ -59,7 +59,8 @@
 }
 
 // Mixin for restore the font dependencies styles.
-// ----------------------------------------------------------------------
+// @author: mbertoldo@alpenite.com
+// --------------------------------
 
 @mixin font-reset {
     font: {

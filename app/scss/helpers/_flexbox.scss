@@ -3,7 +3,6 @@
 // @access: private
 // @return: vendor prefixes for `flexboxtweener` (set on Autoprefixer)
 // @note: packages of classes to be invoked via template
-// --------------------------------
 
 @mixin flexbox-classes {
     $flexbox-classes: (

@@ -151,7 +151,7 @@ module.exports = {
         remoteFolderToDelete: folder.distribution
     },
     deployOnTheFlyOptions: {
-        deployOnTheFly: true,
+        deployOnTheFly: false,
         deployOnTheFlyFolder: folder.distribution,
         deployOnTheFlyObjects: folder.distribution + '**/*.{html,css,js,svg,txt}',
         ignoreDotFiles: true,

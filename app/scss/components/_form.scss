@@ -1,0 +1,147 @@
+// @form: components
+// @note: style & classes all form components.
+// @author: mbertoldo@alpenite.com
+// @access: private
+
+// Mixin for generate "caret" for custom select
+// @return: {String} - `background-image`
+// --------------------------------
+
+@mixin select-caret-shape($select-caret-color: #000, $select-caret-shape: 'arrow') {
+    $shape: '';
+    $viewbox-value: '';
+
+    // @transform HEX caret color to rgb
+    // @return {String}
+    // --------------------------------
+
+    $caret-color: 'rgb%28#{round(red($select-caret-color))}, #{round(green($select-caret-color))}, #{round(blue($select-caret-color))}%29';
+
+    @if ($select-caret-shape == 'triangle') {
+        $viewbox-value: '24';
+        $shape: "<polygon fill='#{$caret-color}' points='0,0 32,0 16,24'></polygon>";
+    } @else if ($select-caret-shape == 'arrow') {
+        $viewbox-value: '19';
+        $shape: "<path fill='#{$caret-color}' d='M16,19.2L0,3.8L4.6,0L16,11.5L27.4,0L32,3.8L16,19.2z'/>";
+    } @else if ($select-caret-shape) == 'empty' {
+        $viewbox-value: null;
+        $shape: null;
+    } @else {
+        @warn 'Incorrect value. Please choose between `arrow` or `triangle` to set the caret for select.';
+    }
+
+    @if ($global-custom-select) {
+        @if ($select-caret-shape) != 'empty' {
+            background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 #{$viewbox-value}'>#{$shape}</svg>");
+        }
+    }
+}
+
+@mixin form-style {
+    /*@form style*/
+    .#{$global-inputs-rowclass} {
+        position: relative;
+
+        & > .#{$global-inputs-labelclass} {
+            display: block;
+            font-size: $global-input-label-font-size;
+            color: $global-input-label-color;
+            margin: $global-input-label-margin;
+        }
+
+        %style-inputs {
+            display: block;
+            width: 100%;
+            height: $global-input-height;
+            font-size: $global-input-font-size;
+            background-color: $global-input-background-color;
+            color: $global-input-color;
+            border: $global-input-border;
+            border-radius: $global-input-border-radius;
+            padding: $global-input-padding;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-color: $global-focus-input-border-color;
+            }
+
+            @if ($global-hover-input-border) {
+                &:hover {
+                    border-color: $global-focus-input-border-color;
+                }
+            }
+
+            // @reset FF pseudo attributes
+            // --------------------------------
+
+            &:required,
+            &:invalid {
+                box-shadow: none;
+            }
+        }
+
+        %placeholder-style {
+            $placeholder-value: '';
+
+            @if ($global-input-placeholder-focus-hidden) {
+                $placeholder-value: 'focus-hidden';
+            } @else {
+                @if ($global-input-placeholder-focus-default) {
+                    $placeholder-value: null;
+                } @else {
+                    $placeholder-value: 'focus';
+                }
+            }
+
+            @include placeholder($global-input-placeholder-color, $placeholder-value, $global-input-placeholder-focus-color);
+        }
+
+        // @loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`
+        // @note: `:-moz-focusring` hide default focus ring in FF with current `$global-input-color`
+        // --------------------------------
+
+        @each $input-type in (email, password, search, select, tel, text, textarea, url) {
+            @if ($input-type == select or $input-type == textarea) {
+                #{$input-type} {
+                    @extend %style-inputs;
+
+                    @if ($input-type == select) {
+                        &:-moz-focusring {
+                            color: transparent;
+                			text-shadow: 0 0 0 $global-input-color;
+                        }
+                    }
+
+                    @if ($input-type != select) {
+                        @extend %placeholder-style;
+                    }
+                }
+            } @else {
+                input[type="#{$input-type}"] {
+                    @extend %style-inputs;
+                    @extend %placeholder-style;
+                }
+            }
+        }
+
+        select {
+            @include select-caret-shape($global-select-caret-color, $global-select-caret-shape);
+            background-repeat: no-repeat;
+            background-size: $global-select-caret-size;
+            background-position: center right;
+            background-origin: content-box;
+
+            &[multiple] {
+                background-image: none;
+                height: auto;
+            }
+        }
+
+        textarea {
+            height: $global-textarea-height;
+            @if ($global-textarea-resize) {
+                resize: none;
+            }
+        }
+    }
+}

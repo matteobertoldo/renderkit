@@ -1,10 +1,11 @@
 // @global "units" functions
 // @author: mbertoldo@alpenite.com
-// @component: core
+// @access: private
 
 // Removes the unit (e.g. px, em, rem) from a value, returning the number only.
 // @param: {Number} $num - Number to strip unit from.
 // @returns: {Number} The same number, sans unit.
+// --------------------------------
 
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
@@ -12,7 +13,7 @@
 
 // Function for transform "px" value to "em".
 // @note: use -> font-size: em(16px) == font-size: 1em;
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function em($size) {
 	$em: $size / 16px;
@@ -22,7 +23,7 @@
 
 // Function for transform "px" value to "rem".
 // @note: use -> font-size: rem(16px) == font-size: 1rem;
-// ----------------------------------------------------------------------
+// --------------------------------
 
 @function rem($size) {
 	$rem: $size / 16px;

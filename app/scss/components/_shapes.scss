@@ -2,12 +2,8 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
-/*@shapes elements & classes*/
-
-// @print: arrow classes & direction support.
-// -----------------
-
 @mixin shape-classes {
+    /*@shape-classes*/
     .shape-arrow {
         display: block;
     	width: 20px;
@@ -16,7 +12,7 @@
     	border-width: 0 $global-arrow-width $global-arrow-width 0;
 
         // @arrow direction map
-        // -----------------
+        // --------------------------------
 
         $arrow-direction: (
             down: 45deg,
