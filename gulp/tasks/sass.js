@@ -55,7 +55,7 @@ gulp.task('sass', function() {
     .pipe(sass({
         outputStyle: conf.cssOptions.outputStyle
     }).on('error', sass.logError))
-    .pipe(concat(conf.cssOptions.outputName + '.css'))
+    .pipe(gulpif(conf.cssOptions.singleOutput, concat(conf.cssOptions.outputName + '.css')))
     .pipe(postcss(processors))
     .pipe(gulpif(conf.cssOptions.minify, cleanCSS({
         level: (conf.cssOptions.optimizationMinify) ? 2 : 1

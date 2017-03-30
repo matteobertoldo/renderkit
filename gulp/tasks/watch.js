@@ -33,18 +33,6 @@ var stream = function() {
     }
 };
 
-// @push `deploy-watch`
-// @param: {bool}
-// -------------------
-
-if (conf.deployOnTheFlyOptions.deployOnTheFly) {
-    if (fs.existsSync('./gulp/private/ftp.json')) {
-        tasks.push('deploy-watch');
-    } else {
-        gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
-    }
-}
-
 // @global tasks
 // --------------
 
@@ -56,6 +44,18 @@ var tasks = ['html', 'sass', 'svg', 'bundle'];
 
 if (conf.syncOptions.browserSync) {
     tasks.push('browser-sync');
+}
+
+// @push `deploy-watch`
+// @param: {bool}
+// -------------------
+
+if (conf.deployOnTheFlyOptions.deployOnTheFly) {
+    if (fs.existsSync('./gulp/private/ftp.json')) {
+        tasks.push('deploy-watch');
+    } else {
+        gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
+    }
 }
 
 // @init all events
