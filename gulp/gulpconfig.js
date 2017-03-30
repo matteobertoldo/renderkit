@@ -90,6 +90,7 @@ module.exports = {
             'letter-spacing'
         ],
         remMediaQueries: false,
+        singleOutput: true,
         outputName: 'style',
         outputStyle: cssOutputStyle.expanded,
         minify: true,

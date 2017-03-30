@@ -7,6 +7,12 @@ All stylesheets are written in SCSS, whose syntax is a superset of CSS.
 SCSS authoring is meant to be used with a build tool, which is currently [gulp](http://gulpjs.com).
 Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 
+## Packages
+
+Please don't write any rules into `light-sass.scss` or into an `importer` file. You can simply find it with `@importer` flag.
+-   Global sass file (`light-sass.scss`) is just a table of content.
+-   If you add a ***new*** package remember to update `_global.scss` file with the new package.
+
 ## Code styles
 Inspired by <https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#css> and <http://css-tricks.com/sass-style-guide/>
 
@@ -30,6 +36,7 @@ a {color: $green; text-decoration: underline;}
 .block {
     display: block;
 }
+
 // Bad
 .block {
     display:block;
@@ -42,6 +49,7 @@ a {color: $green; text-decoration: underline;}
 .block {
     display: block;
 }
+
 // Bad
 .block{
     display: block;
@@ -61,7 +69,7 @@ a {color: $green; text-decoration: underline;}
 // Bad
 . selectorA, .selectorB {}
 ```
--   No vendor prefixes. This will be done at build time using [autoprefixer](https://github.com/postcss/autoprefixer).
+-   No vendor prefixes. This will be done at build time using [Autoprefixer](https://github.com/postcss/autoprefixer).
 -   Attribute selectors, like `input[type="text"]` should always wrap the attribute's value in double quotes, for consistency and safety.
 -   Maximum selector nesting: **three** levels deep.
 -   Avoid the use of ID (`#`) like a plague. Class naming is preferred.
@@ -92,14 +100,8 @@ div.class-name {
 -   Contract HEX colors when possible, i.e. `#fff` instead of `#ffffff`.
 -   **!important** Avoid using `!important` at all cost!
 
-## Packages
-
-Please don't write any rules into `light-sass.scss` or into an `importer` file. You can simply find it with `@importer` flag.
--   Global sass file (`light-sass.scss`) is just a table of content.
--   If you add a ***new*** package remember to update `_global.scss` file with the new package.
-
 ## Variables
-All variables are defined in the `_config.scss` file.
+All variables and configurations are defined in the `_config.scss` file.
 For color variables, use <http://www.color-blindness.com/color-name-hue/> to find and set the correct color name.
 
 ```scss
@@ -144,6 +146,7 @@ $breakpoints: (
 ```
 An example of use of the Foundations media queries.
 For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-queries.html> (consider only examples in SCSS).
+Remember: The Foundation Breakpoints are developed with the logic of "Mobile First".
 
 ```scss
 // SCSS Breakpoint
