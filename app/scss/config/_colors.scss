@@ -1,0 +1,30 @@
+// @colors: palette
+// --------------------------------
+
+$colors-palette: (
+    whitesmoke: #f9f9f9,
+    linkwater: #d7dde4,
+    pacificblue: #0099cc,
+    charcoal: #4d4d4d
+) !default;
+
+// @colors: accessibility
+// --------------------------------
+
+$selection-background-color: #b3d4fc !default;
+$global-selection-color: false !default;
+$selection-color: initial !default;
+$ios-tap-color: transparent !default;
+$focus-outline-link-hidden: false !default;
+$focus-outline-input-hidden: true !default;
+$what-input-outline-detect: true !default;
+
+// @colors: global
+// --------------------------------
+
+$body-background-color: white !default;
+$body-base-color: black !default;
+$global-heading-color: inherit !default;
+$global-paragraph-color: inherit !default;
+$global-link-color: black !default;
+$global-hover-link-color: black !default;

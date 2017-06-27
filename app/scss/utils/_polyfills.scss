@@ -6,7 +6,7 @@
 // --------------------------------
 
 @mixin fix-firefox {
-	@-moz-document url-prefix() {
+	@-moz-document url-prefix() & {
 		@content;
 	}
 }
@@ -28,7 +28,6 @@
 
 @mixin fix-pointer-events {
 	.no-csspointerevents & {
-		visibility: hidden;
 		@content;
 	}
 }

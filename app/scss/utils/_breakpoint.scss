@@ -107,7 +107,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 		@if $dir == 'only' {
 			@if $named == true {
 		        @if $bp > 0 {
-					$str: $str + '(min-width: #{$bp})';
+					$str: $str + '(min-width: #{$bp + 1})';
 
 					@if $bp-max != null {
 						$str: $str + ' and ';
@@ -129,7 +129,7 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 				}
 			}
 		} @else if $bp > 0 {
-			$str: $str + '(min-width: #{$bp})';
+			$str: $str + '(min-width: #{$bp + 1})';
 	    }
 	}
 

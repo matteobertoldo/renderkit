@@ -1,7 +1,7 @@
 // Foundation for Sites by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
-// @note: No `em` conversion. Removed `!important` flag. Every media query was added the `only` attribute.
+// @note: No `em` conversion. Every media query was added the `only` attribute.
 
 // Hide an element by default, only displaying it above a certain screen size.
 // @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
@@ -11,7 +11,7 @@
 	$size: map-get($breakpoints, $size);
 
 	@include breakpoint($size down) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -26,16 +26,16 @@
 
 	@if $upper-bound-size == null {
 		@media only screen and (max-width: $lower-bound-size) {
-			display: none;
+			display: none !important;
 		}
 	} @else {
 		@if strip-unit($lower-bound-size) == 0 {
-			@media only screen and (min-width: $upper-bound-size) {
-				display: none;
+			@media only screen and (min-width: $upper-bound-size + 1) {
+				display: none !important;
 			}
 		} @else {
-			@media only screen and (max-width: $lower-bound-size), only screen and (min-width: $upper-bound-size) {
-				display: none;
+			@media only screen and (max-width: $lower-bound-size), only screen and (min-width: $upper-bound-size + 1) {
+				display: none !important;
 			}
 		}
 	}
@@ -47,7 +47,7 @@
 
 @mixin hide-for($size) {
 	@include breakpoint($size) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -57,7 +57,7 @@
 
 @mixin hide-for-only($size) {
 	@include breakpoint($size only) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -100,14 +100,14 @@
 
 	.show-for-landscape,
 	.hide-for-portrait {
-		display: block;
+		display: block !important;
 
 		@include breakpoint(landscape) {
-			display: block;
+			display: block !important;
 		}
 
 		@include breakpoint(portrait) {
-			display: none;
+			display: none !important;
 		}
 	}
 
@@ -116,11 +116,11 @@
 		display: none;
 
 		@include breakpoint(landscape) {
-			display: none;
+			display: none !important;
 		}
 
 		@include breakpoint(portrait) {
-			display: block;
+			display: block !important;
 		}
 	}
 }
