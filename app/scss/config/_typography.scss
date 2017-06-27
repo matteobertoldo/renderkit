@@ -1,0 +1,42 @@
+// @typography
+// --------------------------------
+
+$font-dir: '../assets/fonts/' !default;
+$primary-type-font: sans-serif !default;
+$body-font-size: 16px !default;
+$body-font-family: $primary-type-font !default;
+$body-font-weight: normal !default;
+$body-line-height: 1.15 !default;
+$global-text-direction: ltr !default;
+$global-heading-font-family: inherit !default;
+$global-paragraph-font-family: inherit !default;
+$global-strong-font-family: inherit !default;
+$global-strong-font-weight: bolder !default;
+
+// @typography ~ headers + paragraph
+// --------------------------------
+
+$global-heading-font-weight: bold !default;
+$global-paragraph-font-weight: normal !default;
+$global-heading-line-height: 1.4 !default;
+$global-paragraph-line-height: 1.4 !default;
+$header-sizes: (
+    small: (
+        'h1': 24px,
+        'h2': 20px,
+        'h3': 19px,
+        'h4': 18px,
+        'h5': 17px,
+        'h6': 16px,
+    ),
+    medium: (
+        'h1': 48px,
+        'h2': 40px,
+        'h3': 31px,
+        'h4': 25px,
+        'h5': 20px,
+        'h6': 16px,
+    ),
+) !default;
+$global-heading-letter-spacing: normal !default;
+$global-paragraph-letter-spacing: normal !default;

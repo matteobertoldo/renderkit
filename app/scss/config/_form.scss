@@ -1,0 +1,53 @@
+// @components: form
+// --------------------------------
+
+$global-reset-input-appearance: true !default;
+$global-inputs-rowclass: 'form-row';
+$global-inputs-labelclass: 'form-label';
+$global-input-height: 30px !default;
+$global-input-font-size: 14px !default;
+$global-input-label-font-size: 14px !default;
+$global-input-label-color: palette(charcoal);
+$global-input-label-margin: 0 0 5px 0;
+$global-input-border-radius: 4px !default;
+$global-input-padding: 10px !default;
+$global-input-background-color: palette(whitesmoke) !default;
+$global-input-color: palette(charcoal) !default;
+$global-input-placeholder-color: palette(linkwater) !default;
+$global-input-placeholder-focus-hidden: false !default;
+$global-input-placeholder-focus-default: true !default;
+$global-input-placeholder-focus-color: palette(charcoal);
+$global-input-border: 1px solid palette(linkwater) !default;
+$global-hover-input-border: true !default;
+$global-hover-input-border-color: palette(charcoal) !default;
+$global-focus-input-border-color: palette(charcoal) !default;
+
+// @components: form ~ textarea
+// --------------------------------
+
+$global-textarea-height: 110px !default;
+$global-textarea-resize: true !default;
+
+// @components: form ~ select
+// @$global-select-caret-shape: 'arrow' || 'triangle' || 'empty'
+// --------------------------------
+
+$global-custom-select: true !default;
+$global-select-caret-color: palette(charcoal);
+$global-select-caret-shape: 'arrow' !default;
+$global-select-caret-size: 10px !default;
+$global-custom-options-select: false !default;
+
+// @components: form ~ checkbox-radio
+// --------------------------------
+
+$global-custom-checkbox-radio: true !default;
+$global-custom-checkbox-radio-size: 24px !default;
+$custom-checkbox-radio-label-gutter: 10px !default;
+$custom-checkbox-mark-thick: 2px !default;
+$custom-checkbox-mark-color: palette(charcoal) !default;
+$custom-radio-mark-color: palette(charcoal) !default;
+$checked-custom-input-border: true !default;
+$custom-checkbox-checked-border: palette(charcoal) !default;
+$custom-radio-checked-border: palette(charcoal) !default;
+$custom-checkbox-radio-outline-detect: true;

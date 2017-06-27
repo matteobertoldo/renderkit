@@ -157,13 +157,6 @@
                 }
             }
         }
-
-    	&:hover {
-    		color: $global-hover-link-color;
-            @if ($global-link-transition-hover-color) {
-                transition: color 0.3s ease;
-            }
-    	}
     }
 
     // @param-1: Remove the bottom border in Firefox 39-.

@@ -36,7 +36,7 @@ var stream = function() {
 // @global tasks
 // --------------
 
-var tasks = ['html', 'sass', 'svg', 'bundle'];
+var tasks = conf.defaultTasks;
 
 // @push `browser-sync`
 // @param: {bool}
