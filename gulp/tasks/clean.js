@@ -14,8 +14,11 @@ var del = require('del');
 // @return: {string} || [arr]
 // -------------------
 
-if(conf.cleanOptions.cleanAllDistributionFiles) {
-    var localfiles = Object.values(conf.cleanOptions.cleanAllFiles).toString().split(/,(?=[^}]*(?:{|$))/);
+if (conf.cleanOptions.cleanAllDistributionFiles) {
+    var vals = Object.keys(conf.cleanOptions.cleanAllFiles).map(function(key) {
+        return conf.cleanOptions.cleanAllFiles[key];
+    });
+    var localfiles = vals.toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
     var localfiles = conf.cleanOptions.cleanFilesByType;
 }
@@ -29,14 +32,14 @@ gulp.task('clean', function() {
         dryRun: conf.cleanOptions.dryRun,
         force: conf.cleanOptions.forceDelete
     }).then(function(paths) {
-        if(conf.cleanOptions.dryRun) {
-            if(paths.length > 0)  {
+        if (conf.cleanOptions.dryRun) {
+            if (paths.length > 0)  {
                 console.log('Files and folders that would be deleted:\n' + gutil.colors.yellow(paths.join('\n').trim()));
             } else {
                 console.log(gutil.colors.yellow('Nothing will be deleted'));
             }
         } else {
-            if(paths.length > 0)  {
+            if (paths.length > 0)  {
                 console.log('Files and/or folders deleted:\n' + gutil.colors.red(paths.join('\n')));
             } else {
                 console.log(gutil.colors.green('Nothing to delete'));

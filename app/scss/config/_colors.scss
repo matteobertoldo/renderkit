@@ -15,9 +15,6 @@ $selection-background-color: #b3d4fc !default;
 $global-selection-color: false !default;
 $selection-color: initial !default;
 $ios-tap-color: transparent !default;
-$focus-outline-link-hidden: false !default;
-$focus-outline-input-hidden: true !default;
-$what-input-outline-detect: true !default;
 
 // @colors: global
 // --------------------------------
@@ -26,5 +23,4 @@ $body-background-color: white !default;
 $body-base-color: black !default;
 $global-heading-color: inherit !default;
 $global-paragraph-color: inherit !default;
-$global-link-color: black !default;
-$global-hover-link-color: black !default;
+$global-link-color: inherit !default;

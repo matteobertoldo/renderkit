@@ -1,7 +1,7 @@
 // @global: colors palette mixin
 // @author: mbertoldo@alpenite.com
-// @note: Warning. Each output class agrees with the key value and defined value `_config.sccs` -> $-colors palette
-// @note: Please use <http://www.color-blindness.com/color-name-hue/> for set the name of the colors.
+// @note: Each output class agrees with the key value and defined value `_config.sccs` -> $-colors palette
+// @note: Use <http://www.color-blindness.com/color-name-hue/> for set the name of the colors.
 // @access: private
 
 @mixin colors-palette {
