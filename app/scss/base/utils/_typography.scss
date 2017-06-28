@@ -19,42 +19,39 @@
 	@return $string;
 }
 
-// `font-face` output function.
+// @font-face mixin.
 // @note: only define as String your Font Name and define your "font file name".
 // @note: if you have subfolders where is your font files, just simply define the folder where is this, before font file name. Ex ´mysubfolderfont/my_awesome_font_file_name´.
-// @note: important the `$font-dir` is defined on _config.scss @typography
-// @use: (full options)
-// @include font-face("My Font Name", my_font_file, font-style-value, font-weight-value, font-type, ie-old-support);
+// @note: important the `$font-dir` is defined on config @typography.scss
+// @use: @include font-face(GillSans, 'subpath/gillsans', normal, 400, eot woff woff2 ttf svg);
 // --------------------------------
 
-@mixin font-face($font-name, $font-file, $style: normal, $weight: normal, $category: null, $ie-old-support: false) {
+@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
 	$filepath: $font-dir + $font-file;
 	$filter-font-name: str-replace($font-name, ' ', '_');
+    $src: null;
+    $extmods: (
+		eot: "?#iefix",
+		svg: "#" + str-replace($font-name, " ", "_")
+	);
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $extension in $extensions {
+		$extmod: if(map-has-key($extmods, $extension), $extension + map-get($extmods, $extension), $extension);
+		$format: if(map-has-key($formats, $extension), map-get($formats, $extension), $extension);
+        $src: append($src, url(quote($filepath + "." + $extmod)) format(quote($format)), comma);
+	}
 
 	@font-face {
 		font: {
-			@if $category != null {
-				family: '#{$font-name}', #{$category};
-			} @else {
-				family: '#{$font-name}';
-			}
+            family: quote(#{$font-name});
 			style: $style;
 			weight: $weight;
 		}
-
-		@if $ie-old-support == false {
-			src: url($filepath + '.woff') format('woff'),
-				 url($filepath + '.woff2') format('woff2'),
-				 url($filepath + '.ttf') format('truetype'),
-				 url($filepath + '.svg#' + $filter-font-name) format('svg');
-		} @else {
-			src: url($filepath + '.eot');
-			src: url($filepath + '.eot?#iefix') format('embedded-opentype'),
-				 url($filepath + '.woff') format('woff'),
-				 url($filepath + '.woff2') format('woff2'),
-				 url($filepath + '.ttf') format('truetype'),
-				 url($filepath + '.svg#' + $filter-font-name) format('svg');
-		}
+        src: $src;
     }
 }
 

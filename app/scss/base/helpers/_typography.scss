@@ -21,6 +21,7 @@
     	}
     	line-height: $global-heading-line-height;
     	letter-spacing: $global-heading-letter-spacing;
+        text-transform: $global-heading-text-transform;
     	color: $global-heading-color;
 
     	@if ($global-margin-heading) {
@@ -59,6 +60,7 @@
     	}
     	line-height: $global-paragraph-line-height;
     	letter-spacing: $global-paragraph-letter-spacing;
+        text-transform: $global-paragraph-text-transform;
     	color: $global-paragraph-color;
 
     	@if ($global-margin-paragraph) {
