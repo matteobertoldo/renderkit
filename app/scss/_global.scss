@@ -2,10 +2,10 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
-@import 'utils/utils';
+@import 'base/utils/utils';
 @import 'config/config';
-@import 'helpers/helpers';
-@import 'components/components';
+@import 'base/helpers/helpers';
+@import 'base/components/components';
 
 @mixin light-sass($components: true) {
     @include scss-normalize;
