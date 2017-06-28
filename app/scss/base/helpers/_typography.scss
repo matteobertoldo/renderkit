@@ -15,17 +15,18 @@
     h4,
     h5,
     h6 {
-    	font: {
-    		family: $global-heading-font-family;
-    		weight: $global-heading-font-weight;
-    	}
-    	line-height: $global-heading-line-height;
-    	letter-spacing: $global-heading-letter-spacing;
-    	color: $global-heading-color;
+        font: {
+            family: $global-heading-font-family;
+            weight: $global-heading-font-weight;
+        }
+        line-height: $global-heading-line-height;
+        letter-spacing: $global-heading-letter-spacing;
+        text-transform: $global-heading-text-transform;
+        color: $global-heading-color;
 
-    	@if ($global-margin-heading) {
+        @if ($global-margin-heading) {
             margin: $margin-heading;
-    	}
+        }
     }
 }
 
@@ -53,17 +54,18 @@
 @mixin paragraph-style {
     /*@paragraph-style*/
     p {
-    	font: {
-    		family: $global-paragraph-font-family;
-    		weight: $global-paragraph-font-weight;
-    	}
-    	line-height: $global-paragraph-line-height;
-    	letter-spacing: $global-paragraph-letter-spacing;
-    	color: $global-paragraph-color;
+        font: {
+            family: $global-paragraph-font-family;
+            weight: $global-paragraph-font-weight;
+        }
+        line-height: $global-paragraph-line-height;
+        letter-spacing: $global-paragraph-letter-spacing;
+        text-transform: $global-paragraph-text-transform;
+        color: $global-paragraph-color;
 
-    	@if ($global-margin-paragraph) {
+        @if ($global-margin-paragraph) {
             margin: $margin-paragraph;
-    	}
+        }
     }
 }
 
