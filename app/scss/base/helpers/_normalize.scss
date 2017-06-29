@@ -14,7 +14,7 @@
     // --------------------------------
 
     html {
-    	font-family: $primary-type-font;
+    	font-family: sans-serif;
         -ms-text-size-adjust: percentage(1);
     	-webkit-text-size-adjust: percentage(1);
     	-webkit-tap-highlight-color: $ios-tap-color;
@@ -477,6 +477,14 @@
     			background-color: white;
     		}
     	}
+
+        // Reset line break for `input` tag.
+        // --------------------------------
+
+        &[type="reset"],
+        &[type="submit"] {
+            white-space: normal;
+        }
     }
 
     // Global reset for select
