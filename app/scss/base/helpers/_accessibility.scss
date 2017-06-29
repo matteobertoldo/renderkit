@@ -55,7 +55,7 @@
 @mixin accessibility-classes {
     /*@accessibility classes & pseudo elem*/
     ::selection {
-        background: $selection-background-color;
+        background: $global-selection-background-color;
         @if ($global-selection-color) {
             color: $selection-color;
         }
