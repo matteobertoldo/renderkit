@@ -102,7 +102,7 @@ div.class-name {
 
 ## Variables
 All variables and configurations are defined in the `_config.scss` file.
-For color variables, use <http://www.color-blindness.com/color-name-hue/> to find and set the correct color name.
+For color variables, it can be used use <http://www.color-blindness.com/color-name-hue/> to find and set the correct color name.
 
 ```scss
 // OK
@@ -116,7 +116,7 @@ If you want use a color in `$colors-palette` map, please use `palette` function.
 ```scss
 // SCSS Palette function
 .selector {
-    color: palette(pacificblue);
+    color: palette(3);
 }
 ```
 

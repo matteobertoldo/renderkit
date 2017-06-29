@@ -59,7 +59,7 @@
             border: $global-input-border;
             border-radius: $global-input-border-radius;
             padding: $global-input-padding;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
             &:focus {
                 border-color: $global-focus-input-border-color;
@@ -78,6 +78,17 @@
             &:invalid {
                 box-shadow: none;
             }
+
+            // @validation class
+            // --------------------------------
+
+            &.#{$global-validation-input-error-class} {
+                border-color: $global-validation-input-error-color;
+
+                &:hover, &:focus {
+                    border-color: $global-validation-input-error-color;
+                }
+            }
         }
 
         %placeholder-style {
@@ -94,6 +105,18 @@
             }
 
             @include placeholder($global-input-placeholder-color, $placeholder-value, $global-input-placeholder-focus-color);
+        }
+
+        %autofill {
+            @if ($global-input-custom-autofill) {
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0 $global-input-height $global-input-autofill-color inset;
+                    -webkit-text-fill-color: $global-input-color;
+                    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+                }
+            }
         }
 
         // @loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`
@@ -114,12 +137,14 @@
 
                     @if ($input-type != select) {
                         @extend %placeholder-style;
+                        @extend %autofill !optional;
                     }
                 }
             } @else {
                 input[type="#{$input-type}"] {
                     @extend %style-inputs;
                     @extend %placeholder-style;
+                    @extend %autofill !optional;
                 }
             }
         }

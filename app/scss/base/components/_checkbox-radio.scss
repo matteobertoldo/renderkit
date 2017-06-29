@@ -83,6 +83,18 @@
             }
         }
 
+        input[type="checkbox"].#{$global-validation-input-error-class} + & {
+            &::before {
+                border-color: $global-validation-input-error-color;
+            }
+        }
+
+        input[type="checkbox"].#{$global-validation-input-error-class}:focus:not(:checked) + & {
+            &::before {
+                border-color: $global-validation-input-error-color;
+            }
+        }
+
         @if ($custom-checkbox-radio-outline-detect) {
             [data-whatinput="initial"] input[type="checkbox"]:focus + &,
             [data-whatinput="keyboard"] input[type="checkbox"]:focus + & {
@@ -125,6 +137,18 @@
         input[type="radio"]:focus:not(:checked) + & {
             &::before {
                 border-color: $global-focus-input-border-color;
+            }
+        }
+
+        input[type="radio"].#{$global-validation-input-error-class} + & {
+            &::before {
+                border-color: $global-validation-input-error-color;
+            }
+        }
+
+        input[type="radio"].#{$global-validation-input-error-class}:focus:not(:checked) + & {
+            &::before {
+                border-color: $global-validation-input-error-color;
             }
         }
 
