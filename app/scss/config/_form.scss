@@ -2,8 +2,8 @@
 // --------------------------------
 
 $global-reset-input-appearance: true !default;
-$global-inputs-rowclass: 'form-row';
-$global-inputs-labelclass: 'form-label';
+$global-inputs-rowclass: 'form-row' !default;
+$global-inputs-labelclass: 'form-label' !default;
 $global-input-height: 40px !default;
 $global-input-font-size: 14px !default;
 $global-input-label-font-size: 14px !default;
@@ -14,9 +14,10 @@ $global-input-padding: 10px !default;
 $global-input-background-color: palette(1) !default;
 $global-input-color: palette(4) !default;
 $global-input-placeholder-color: palette(2) !default;
-$global-input-placeholder-focus-hidden: false !default;
-$global-input-placeholder-focus-default: true !default;
-$global-input-placeholder-focus-color: palette(4);
+$global-input-placeholder-focus-hidden: true !default;
+$global-input-placeholder-focus-color: palette(2) !default;
+$global-input-placeholder-font-family: sans-serif !default;
+$global-input-placeholder-font-style: italic !default;
 $global-input-border: 1px solid palette(2) !default;
 $global-hover-input-border: true !default;
 $global-hover-input-border-color: palette(4) !default;
@@ -33,9 +34,12 @@ $global-textarea-resize: true !default;
 // --------------------------------
 
 $global-custom-select: true !default;
-$global-select-caret-color: palette(4);
+$global-select-caret-color: palette(4) !default;
+$global-select-caret-shape-render: true;
 $global-select-caret-shape: 'arrow' !default;
 $global-select-caret-size: 10px !default;
+$global-select-caret-image-url: 'path/to/shape' !default;
+$global-select-caret-background-size: 10px !default;
 $global-custom-options-select: false !default;
 
 // @components: form ~ checkbox-radio
@@ -50,12 +54,13 @@ $custom-radio-mark-color: palette(4) !default;
 $checked-custom-input-border: true !default;
 $custom-checkbox-checked-border: palette(4) !default;
 $custom-radio-checked-border: palette(4) !default;
-$custom-checkbox-radio-outline-detect: true;
+$custom-checkbox-radio-outline-detect: true !default;
 
 // @components: form ~ validation class + autofill
 // --------------------------------
 
-$global-validation-input-error-class: 'error';
-$global-validation-input-error-color: palette(5);
-$global-input-custom-autofill: true;
+$validation-input-error-class: 'error' !default;
+$validation-input-error-border-color: palette(5) !default;
+$validation-input-error-background-color: $global-input-background-color !default;
+$global-input-custom-autofill: true !default;
 $global-input-autofill-color: $global-input-background-color !default;
