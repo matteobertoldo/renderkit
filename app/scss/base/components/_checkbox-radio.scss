@@ -83,15 +83,15 @@
             }
         }
 
-        input[type="checkbox"].#{$global-validation-input-error-class} + & {
+        input[type="checkbox"].#{$validation-input-error-class} + & {
             &::before {
-                border-color: $global-validation-input-error-color;
+                border-color: $validation-input-error-border-color;
             }
         }
 
-        input[type="checkbox"].#{$global-validation-input-error-class}:focus:not(:checked) + & {
+        input[type="checkbox"].#{$validation-input-error-class}:focus:not(:checked) + & {
             &::before {
-                border-color: $global-validation-input-error-color;
+                border-color: $validation-input-error-border-color;
             }
         }
 
@@ -140,15 +140,15 @@
             }
         }
 
-        input[type="radio"].#{$global-validation-input-error-class} + & {
+        input[type="radio"].#{$validation-input-error-class} + & {
             &::before {
-                border-color: $global-validation-input-error-color;
+                border-color: $validation-input-error-border-color;
             }
         }
 
-        input[type="radio"].#{$global-validation-input-error-class}:focus:not(:checked) + & {
+        input[type="radio"].#{$validation-input-error-class}:focus:not(:checked) + & {
             &::before {
-                border-color: $global-validation-input-error-color;
+                border-color: $validation-input-error-border-color;
             }
         }
 

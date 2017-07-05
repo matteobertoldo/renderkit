@@ -27,7 +27,7 @@
         $viewbox-value: null;
         $shape: null;
     } @else {
-        @warn 'Incorrect value. Please choose between `arrow` or `triangle` to set the caret for select.';
+        @warn 'Incorrect value. Please choose between `arrow`, `triangle` or `empty` to set the caret for select.';
     }
 
     @if ($global-custom-select) {
@@ -42,7 +42,7 @@
     .#{$global-inputs-rowclass} {
         position: relative;
 
-        & > .#{$global-inputs-labelclass} {
+        .#{$global-inputs-labelclass} {
             display: block;
             font-size: $global-input-label-font-size;
             color: $global-input-label-color;
@@ -82,29 +82,39 @@
             // @validation class
             // --------------------------------
 
-            &.#{$global-validation-input-error-class} {
-                border-color: $global-validation-input-error-color;
+            &.#{$validation-input-error-class} {
+                border-color: $validation-input-error-border-color;
+                background-color: $validation-input-error-background-color;
 
                 &:hover, &:focus {
-                    border-color: $global-validation-input-error-color;
+                    border-color: $validation-input-error-border-color;
+                    background-color: $validation-input-error-background-color;
                 }
             }
         }
 
         %placeholder-style {
-            $placeholder-value: '';
-
-            @if ($global-input-placeholder-focus-hidden) {
-                $placeholder-value: 'focus-hidden';
-            } @else {
-                @if ($global-input-placeholder-focus-default) {
-                    $placeholder-value: null;
-                } @else {
-                    $placeholder-value: 'focus';
+            &::placeholder {
+                font: {
+                    family: $global-input-placeholder-font-family;
+                    style: $global-input-placeholder-font-style;
                 }
+                color: $global-input-placeholder-color;
             }
 
-            @include placeholder($global-input-placeholder-color, $placeholder-value, $global-input-placeholder-focus-color);
+            @if ($global-input-placeholder-focus-hidden) {
+                &:focus {
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
+            } @else {
+                &:focus {
+                    &::placeholder {
+                        color: $global-input-placeholder-focus-color;
+                    }
+                }
+            }
         }
 
         %autofill {
@@ -150,9 +160,14 @@
         }
 
         select {
-            @include select-caret-shape($global-select-caret-color, $global-select-caret-shape);
+            @if ($global-select-caret-shape-render) {
+                @include select-caret-shape($global-select-caret-color, $global-select-caret-shape);
+                background-size: $global-select-caret-size;
+            } @else {
+                background-image: url(#{$global-select-caret-image-url});
+                background-size: $global-select-caret-background-size;
+            }
             background-repeat: no-repeat;
-            background-size: $global-select-caret-size;
             background-position: center right;
             background-origin: content-box;
 
