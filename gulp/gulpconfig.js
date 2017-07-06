@@ -11,7 +11,6 @@
 var folder = {
     root: './',
     workspace: 'app/',
-    assets: 'assets/',
     distribution: 'dist/',
     pkg: 'bower_components/'
 };
@@ -31,7 +30,7 @@ var cssOutputStyle = {
 var generatedFiles = {
     html: folder.distribution + '*.html',
     css: folder.distribution + 'css/**/*.{css,map}',
-    svg: folder.distribution + folder.assets + '/images/**/*.{svg,html}',
+    svg: folder.distribution + 'assets/images/**/*.{svg,html}',
     js: folder.distribution + 'js/**/*.{js,map}'
 };
 
@@ -43,7 +42,7 @@ module.exports = {
     workspace: {
         html: folder.workspace + 'template/',
         scss: folder.workspace + 'scss/',
-        svg: folder.workspace + folder.assets + 'svg/',
+        svg: folder.workspace + 'svg/',
         js: folder.workspace + 'js/',
         jsVendor: folder.workspace + 'js/vendor/',
         jsMain: folder.workspace + 'js/main/'
@@ -51,7 +50,7 @@ module.exports = {
     distribution: {
         html: folder.distribution,
         scss: folder.distribution + 'css/',
-        svg: folder.distribution + folder.assets + 'images/',
+        svg: folder.distribution + 'assets/images/',
         js: folder.distribution + 'js/',
         jsLib: folder.distribution + 'js/lib/'
     },
