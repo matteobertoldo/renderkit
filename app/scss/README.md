@@ -14,7 +14,7 @@ Please don't write any rules into `light-sass.scss` or into an `importer` file. 
 -   If you add a ***new*** package remember to update `_global.scss` file with the new package.
 
 ## Code styles
-Inspired by <https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#css> and <http://css-tricks.com/sass-style-guide/>
+Inspired by <http://codeguide.co/#css> and <http://css-tricks.com/sass-style-guide/>
 
 -   Include partials should be prefixed with `_`, i.e. `_partial.scss`
 -   Multiple-line approach (one property and value per line).
@@ -128,7 +128,6 @@ If you want use a color in `$colors-palette` map, please use `palette` function.
 ```
 
 ## Breakpoints
-All breakpoints are defined in `_config.scss` on `$breakpoints` map.
 The "breakpoint string" are part of the "core" of Foundation. **Important**, the default output of each media queries is `px` to simplify the process. Unlike the standard Foundation which is in `em`.
 If you want the output to `em` or in `rem`, simply nest in the map value of the `$breakpoints` the functions `em()` or `rem()`.
 Or alternatively configure the `gulpconfig.js` file into `cssOptions.remMediaQueries` the value to `true`.
