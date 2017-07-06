@@ -101,7 +101,7 @@ div.class-name {
 -   **!important** Avoid using `!important` at all cost!
 
 ## Variables
-All variables and configurations are defined in the `_config.scss` file.
+All variables and configurations are defined in the `config` folder, in separate files by type of configuration.
 For color variables, it can be used use <http://www.color-blindness.com/color-name-hue/> to find and set the correct color name.
 
 ```scss
