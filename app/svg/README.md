@@ -7,7 +7,7 @@ Below is an example of markup.
 
 ```html
 <svg role="img" title="Github">
-	<use xlink:href="dist/images/sprite.svg#github"/>
+    <use xlink:href="dist/images/sprite.svg#github"/>
 </svg>
 ```
 The id (`#`) is the name of the svg file.
@@ -31,3 +31,7 @@ And import the polyfill to use `svg spritemap` in all browsers
 <script>svg4everybody(); // run when document are ready</script>
 ```
 For all possible fallbacks to support the various browsers consult [svg4everybody](https://github.com/jonathantneal/svg4everybody).
+
+## Why SVG Spritemap?
+
+The advantages of a `SVG Spritemaps` are many. Just think that if you were to **extend** an font font with the introduction of a new icon or simply **modify an existing icon**, you would need to rebuild the entire icon font and this would re-create it, even though it is true that there are Many online tools that easily recreate an entire icon font package, but in any case it would be uncomfortable for more frequent interventions. For **all the advantages** offered by the `SVG Spritemaps`, you should consult this [page](- https://css-tricks.com/icon-fonts-vs-svg/) for a more detailed overview.
