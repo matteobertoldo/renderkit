@@ -25,57 +25,5 @@
         <link rel="stylesheet" type="text/css" href="css/style.min.css">
         <script type="text/javascript" src="js/lib/modernizr.custom.min.js"></script>
         <script type="text/javascript" src="js/lib/jquery.min.js"></script>
-        <script type="text/javascript">
-        /**
-         * RGBtoHEX
-         * function
-         * param: {string}
-         * return: {string}
-         */
-
-        function RGBtoHEX(r, g, b) {
-            var rgb = b | (g << 8) | (r << 16);
-
-            return (0x1000000 | rgb).toString(16).substring(1);
-        }
-
-        /**
-         * createPaletteElements
-         * function
-         * param: {regEx, property, stylesheets}
-         * return: {Obj}
-         * author: mbertoldo{at}alpenite.com
-         */
-
-        function createPaletteElements(selector, style, sheet) {
-            var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets;
-
-            for (var i = 0, l = sheets.length; i < l; i++) {
-                var sheet = sheets[i];
-
-                if (!sheet.cssRules) {
-                    continue;
-                }
-
-                for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-                    var rule = sheet.cssRules[j];
-
-                    if (selector.test(rule.selectorText)) {
-                        var selectors = rule.selectorText;
-                        var rgb = rule.style[style].split(',');
-                        var r = rgb[0].replace('rgb(', '');
-                        var g = rgb[1];
-                        var b = rgb[2].replace(')', '');
-                        var hex = RGBtoHEX(r, g, b);
-                        var list = document.createElement('li');
-
-                        list.setAttribute('style', 'background-color:#' + hex + ';');
-                    }
-                }
-            }
-        }
-
-        createPaletteElements(/palette-color-/, 'color');
-        </script>
     </head>
     <body>

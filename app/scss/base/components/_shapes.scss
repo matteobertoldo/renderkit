@@ -32,6 +32,10 @@
         @include arrow(10px, 20px, $global-checkmark-color, $global-checkmark-width, down);
     }
 
+    .shape-close {
+        @include close-shape(20px, $global-close-shape-line-size, $global-close-shape-color);
+    }
+
     .full-rounded {
     	border-radius: 50%;
     }

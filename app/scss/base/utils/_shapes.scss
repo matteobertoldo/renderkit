@@ -2,7 +2,7 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
-// Mixin Triangle from https://github.com/zurb/foundation-sites/blob/develop/scss/util/_mixins.scss
+// Mixin "triangle" from https://github.com/zurb/foundation-sites/blob/develop/scss/util/_mixins.scss
 // Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
 // @param-1: {Number} $triangle-size - Width of the triangle.
 // @param-2: {Color} $triangle-color - Color of the triangle.
@@ -34,7 +34,7 @@
 	}
 }
 
-// Mixin Arrow
+// Mixin "arrow"
 // Creates a CSS arrow, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the arrow to an existing element.
 // @param-1: {Number} $arrow-width - Width of the arrow.
 // @param-2: {Number} $arrow-height - Height of the arrow.
@@ -59,4 +59,40 @@
 	} @else if ($arrow-direction == left) {
 		transform: rotate3d(0, 0, 1, 135deg);
 	}
+}
+
+// Mixin "close-shape"
+// @param-1: {Number} $cross-size - Size of the close shape.
+// @param-2: {Number} $cross-line-size - Size of lines close shape.
+// @param-3: {Color} $cross-color - Color of the close shape.
+// @author: mbertoldo@alpenite.com
+// --------------------------------
+
+@mixin close-shape($close-shape-size, $close-shape-line-size, $close-shape-color) {
+    position: relative;
+    width: $close-shape-size;
+    height: $close-shape-size;
+    border: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: $close-shape-line-size;
+        background-color: $close-shape-color;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
 }
