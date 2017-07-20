@@ -1,17 +1,16 @@
 // @global: colors palette mixin
 // @author: mbertoldo@alpenite.com
-// @note: Each output class agrees with the key value and defined value `_config.sccs` -> $-colors palette
-// @note: Use <http://www.color-blindness.com/color-name-hue/> for set the name of the colors.
+// @note: Each output class agrees with key & value in $colors palette();
 // @access: private
 
 @mixin colors-palette {
     /*@global colors-palette*/
     @each $palette, $color in $colors-palette {
-    	.color-#{$palette} {
+    	.palette-color-#{$palette} {
     		color: $color;
     	}
 
-    	.background-#{$palette} {
+    	.background-color-#{$palette} {
     		background-color: $color;
     	}
     }
