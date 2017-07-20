@@ -5,7 +5,11 @@
   "main": "./gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "watch": "gulp watch",
+    "sass": "gulp sass",
+    "svg": "gulp svg",
     "libs": "gulp libs",
+    "bundle": "gulp bundle",
     "clean": "gulp clean",
     "deploy": "gulp deploy:ftp"
   },
