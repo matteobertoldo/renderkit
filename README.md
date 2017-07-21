@@ -1,4 +1,5 @@
 # Boilerplate Standard
+
 > "Definitely the standard 👌🏽 for start front end Web projects".
 
 From a `UI-Kit` up in `Production`. "Boilerplate Standard" is an excellent friend to develop, compile, compress files for the front end Web developing dynamically...but not only. With more than **100** options for different tasks, your work environment will be dynamic as ever.
@@ -16,12 +17,40 @@ SCSS-CSS|[Sass Lang](http://sass-lang.com/), [gulp-sass](https://github.com/dlma
 JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify) (Coming soon)
 Icons|[SVG Spritemaps](https://github.com/jkphl/gulp-svg-sprite) supported with [SVG for Everybody](https://github.com/jonathantneal/svg4everybody)
 Live Updating|[BrowserSync](http://www.browsersync.io/)
-Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV with [dw-webdav](https://www.npmjs.com/package/dwdav) (coming soon), Shopify Upload
+Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV with [dw-webdav](https://www.npmjs.com/package/dwdav) (coming soon)
 
 ## Getting Sarted
 
+Clone "Boilerplate Standard" with your favorite Git client
+
+`https://github.com/matteobertoldo/boilerplate-standard.git`.
+
+Or simply download the package.
+To initialize the work environment first you need to install **Node.js** from the official site.
+You can download from [this page](https://nodejs.org/en/download/) the latest version of Node.
+It's recommended that you install the *LTS version*. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
+Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
+Type the following command from administrator mode.
+
+`sudo npm install gulp -g`
+
+In Windows there is no `sudo`, you must run the terminal in "Administrator Mode" (right-clicking the program in the UI and choosing "run as administrator").
+
+## Install dependencies
+
+To generate `node_modules` packages, you must download the dependencies that will be read in the `package.json` file.
+Then point to the "boilerplate-standard" folder or our project folder with the `cd` command.
+
+`cd/path/to/boilerplate-standard/` or `cd/path/to/myproject`
+
+Once you enter the folder type: `sudo npm install` (in Unix system)
+
+In Windows "run as administrator" `npm install` only.
+
+## Package manager
+
 Full documentation coming soon.
 
-## License
+### License
 
 "Boilerplate Standard" is released under the [MIT](https://opensource.org/licenses/MIT) License.

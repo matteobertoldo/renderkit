@@ -1,6 +1,5 @@
 /**
  * @gulp configuration tasks file
- * @param: {String}
  * @return: {global.options}
  * @author: mbertoldo@alpenite.com
  */

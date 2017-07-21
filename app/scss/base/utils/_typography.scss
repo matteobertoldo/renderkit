@@ -28,11 +28,10 @@
 
 @mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
 	$filepath: $font-dir + $font-file;
-	$filter-font-name: str-replace($font-name, ' ', '_');
     $src: null;
     $extmods: (
 		eot: "?#iefix",
-		svg: "#" + str-replace($font-name, " ", "_")
+		svg: "#" + str-replace($font-name, ' ', '_')
 	);
 	$formats: (
 		otf: "opentype",
