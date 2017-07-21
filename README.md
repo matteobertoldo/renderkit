@@ -21,7 +21,11 @@ Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV wit
 
 ## Getting Sarted
 
-Clone or download "Boilerplate Standard".
+Clone "Boilerplate Standard" with your favorite Git client
+
+`https://github.com/matteobertoldo/boilerplate-standard.git`.
+
+Or simply download the package.
 To initialize the work environment first you need to install **Node.js** from the official site.
 You can download from [this page](https://nodejs.org/en/download/) the latest version of Node.
 It's recommended that you install the *LTS version*. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
