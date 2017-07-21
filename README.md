@@ -32,7 +32,9 @@ It's recommended that you install the *LTS version*. "Boilerplate Standard" has 
 Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
 Type the following command from administrator mode.
 
-`sudo npm install gulp -g`
+```bash
+sudo npm install gulp -g
+```
 
 In Windows there is no `sudo`, you must run the terminal in "Administrator Mode" (right-clicking the program in the UI and choosing "run as administrator").
 
@@ -41,15 +43,29 @@ In Windows there is no `sudo`, you must run the terminal in "Administrator Mode"
 To generate `node_modules` packages, you must download the dependencies that will be read in the `package.json` file.
 Then point to the "boilerplate-standard" folder or our project folder with the `cd` command.
 
-`cd/path/to/boilerplate-standard/` or `cd/path/to/myproject`
+```bash
+cd /path/to/boilerplate-standard/
 
-Once you enter the folder type: `sudo npm install` (in Unix system)
+# or target your project
+cd /path/to/myproject/
+```
 
-In Windows "run as administrator" `npm install` only.
+Once you enter the folder type: (in Unix system)
+```bash
+# unix system
+sudo npm install
+
+# in windows "run as administrator"
+npm install
+```
 
 ## Package manager
 
-Full documentation coming soon.
+Manage the plugins updates with `bower_components`. If you use different package managers you can simply update the resources or the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
+
+If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed. In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
+
+Full documentation coming soon
 
 ### License
 
