@@ -21,7 +21,7 @@ Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV wit
 
 ## Getting Sarted
 
-Clone "Boilerplate Standard" with your favorite Git client
+Clone "Boilerplate Standard" with your favorite Git client:
 
 `https://github.com/matteobertoldo/boilerplate-standard.git`.
 
@@ -50,7 +50,7 @@ cd /path/to/boilerplate-standard/
 cd /path/to/myproject/
 ```
 
-Once you enter the folder type: (in Unix system)
+Once you enter the folder type:
 ```bash
 # unix system
 sudo npm install
@@ -63,9 +63,18 @@ npm install
 
 Manage the plugins updates with `bower_components`. If you use different package managers you can simply update the resources or the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
 
-If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed. In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
+If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed. Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
+To install Bower:
 
-Full documentation coming soon
+```bash
+#unix system only
+npm install bower -g
+```
+
+-   For install bower in **Windows** please [read this point](https://github.com/bower/bower#windows-users).
+-   For install bower in **Ubuntu** please [read this point](https://github.com/bower/bower#ubuntu-users)
+
+Full documentation coming soon.
 
 ### License
 
