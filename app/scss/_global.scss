@@ -4,10 +4,12 @@
 
 @import 'base/utils/utils';
 @import 'config/config';
+@import 'base/fonts/fonts';
 @import 'base/helpers/helpers';
 @import 'base/components/components';
 
 @mixin light-sass($components: true) {
+    @include global-fonts;
     @include scss-normalize;
     @include headers-style;
     @include headers-style-responsive;

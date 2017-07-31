@@ -1,0 +1,22 @@
+// @global-fonts mixin
+// @note: Load all fonts with `@import url` from Google Font or with `@font-face` method or both.
+// @author: mbertoldo@alpenite.com
+// @access: private
+
+@mixin global-fonts {
+    /*@global fonts*/
+    @if ($google-fonts-load) {
+        @import url('https://fonts.googleapis.com/css?family=#{$google-fonts-name}');
+    }
+
+    @if ($font-face-load) {
+        @each $font-family, $property in $font-face-map {
+            $font-file: nth($property, 1);
+            $font-style: nth($property, 2);
+            $font-weight: nth($property, 3);
+            $extensions: nth($property, 4);
+
+            @include font-face($font-family, $font-file, $font-style, $font-weight, $extensions);
+        }
+    }
+}
