@@ -1,4 +1,4 @@
-# SASS Guide
+# SASS Guide (Code of conduct)
 The output CSS file in your folder `distribution` it is structured with SASS. Please read this SASS guide before create your custom packages or extend a current package.
 
 ### Authoring
@@ -8,7 +8,6 @@ SCSS authoring is meant to be used with a build tool, which is currently [gulp](
 Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 
 ## Packages
-
 Please don't write any rules into `light-sass.scss` or into an `importer` file. You can simply find it with `@importer` flag.
 -   Global sass file (`light-sass.scss`) is just a table of content.
 -   If you add a ***new*** package remember to update `_global.scss` file with the new package.
@@ -146,16 +145,33 @@ $breakpoints: (
 An example of use of the Foundations media queries.
 For all possibilities please visit <http://foundation.zurb.com/sites/docs/media-queries.html> (consider only examples in SCSS).
 Remember: The Foundation Breakpoints are developed with the logic of "Mobile First".
+The "breakpoint" function can be nested as in the following example.
 
 ```scss
-// SCSS Breakpoint
-@include breakpoint(medium down) {
-    // @content
+.foo {
+    .children {
+        align-self: flex-end;
+
+        // SCSS Breakpoint
+        @include breakpoint(medium down) {
+            align-self: flex-start;
+        }
+    }
 }
 ```
 ```css
 /*CSS output*/
-@media only screen and (max-width: 768px) {
+.foo .children {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end
+}
 
+@media only screen and (max-width:1024px) {
+    .foo .children {
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start
+    }
 }
 ```
