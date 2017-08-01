@@ -4,7 +4,7 @@
 
 From a `UI-Kit` up in `Production`. "Boilerplate Standard" is an excellent friend to develop, compile, compress files for the front end Web developing dynamically...but not only. With more than **100** options for different tasks, your work environment will be dynamic as ever.
 
-Great for developing static template but at the same time great to "interpose" across multiple development platforms like Wordpress, Shopify, Magento, Demandware and many more.
+Great for developing static template but at the same time great to "interpose" across multiple development platforms like **Wordpress**, **Shopify**, **Magento**, **Demandware** and many more.
 
 ## Table of contents
 

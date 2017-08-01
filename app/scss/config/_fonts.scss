@@ -5,7 +5,7 @@
 $font-dir: '../assets/fonts/' !default;
 $google-fonts-load: false !default;
 $google-fonts-name: 'MyAwesomeGoogleFont' !default;
-$font-face-load: true !default;
+$font-face-load: false !default;
 $font-face-map: (
     'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg)
 ) !default;
