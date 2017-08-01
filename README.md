@@ -33,7 +33,11 @@ Once the Node installation is complete, Gulp's global installation is required. 
 Type the following command from administrator mode.
 
 ```bash
+# unix system
 sudo npm install gulp -g
+
+# in windows "run as administrator"
+npm install gulp -g
 ```
 
 In Windows there is no `sudo`, you must run the terminal in "Administrator Mode" (right-clicking the program in the UI and choosing "run as administrator").
