@@ -41,7 +41,7 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
     "modernizr": "^3.5.0",
-    "postcss-pxtorem-plus": "^3.4.1",
+    "postcss-pxtorem-plus": "^3.4.3",
     "require-dir": "^0.3.2",
     "run-sequence": "^1.2.2",
     "vinyl-ftp": "^0.6.0"

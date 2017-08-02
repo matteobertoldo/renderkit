@@ -61,17 +61,17 @@
 	}
 }
 
-// Mixin "close-shape"
+// Mixin "shape-close"
 // @param-1: {Number} $cross-size - Size of the close shape.
 // @param-2: {Number} $cross-line-size - Size of lines close shape.
 // @param-3: {Color} $cross-color - Color of the close shape.
 // @author: mbertoldo@alpenite.com
 // --------------------------------
 
-@mixin close-shape($close-shape-size, $close-shape-line-size, $close-shape-color) {
+@mixin shape-close($shape-close-size, $shape-close-line-size, $shape-close-color) {
     position: relative;
-    width: $close-shape-size;
-    height: $close-shape-size;
+    width: $shape-close-size;
+    height: $shape-close-size;
     border: 0;
     background: none;
     margin: 0;
@@ -84,8 +84,8 @@
         top: 50%;
         left: 0;
         width: 100%;
-        height: $close-shape-line-size;
-        background-color: $close-shape-color;
+        height: $shape-close-line-size;
+        background-color: $shape-close-color;
     }
 
     &::before {

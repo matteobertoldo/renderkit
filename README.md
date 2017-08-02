@@ -1,6 +1,6 @@
 # Boilerplate Standard
 
-> "Definitely the standard 👌🏽 for start front end Web projects".
+> "Definitely the standard 👌🏽 for start new front-end Web projects".
 
 From a `UI-Kit` up in `Production`. "Boilerplate Standard" is an excellent friend to develop, compile, compress files for the front end Web developing dynamically...but not only. With more than **100** options for different tasks, your work environment will be dynamic as ever.
 
@@ -72,11 +72,21 @@ To install Bower:
 
 ```bash
 #unix system only
-npm install bower -g
+sudo npm install bower -g
 ```
 
 -   For install bower in **Windows** please [read this point](https://github.com/bower/bower#windows-users).
 -   For install bower in **Ubuntu** please [read this point](https://github.com/bower/bower#ubuntu-users)
+
+After installing Bower globally and always pointing to our project folder, type:
+
+```bash
+bower install
+```
+
+The `bower_components` folder will be generated with all plugins read in the `bower.json` file.
+
+You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
 
 Full documentation coming soon.
 

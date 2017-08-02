@@ -21,7 +21,6 @@ bower_components
 # --------------------------
 
 dist/**/*
-!dist/**/*robots.txt
 
 # Private files
 # --------------------------

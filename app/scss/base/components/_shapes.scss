@@ -6,8 +6,8 @@
     /*@shape-classes*/
     .shape-arrow {
         display: block;
-    	width: 20px;
-    	height: 20px;
+    	width: $global-arrow-size;
+    	height: $global-arrow-size;
     	border: solid $global-arrow-color;
     	border-width: 0 $global-arrow-width $global-arrow-width 0;
 
@@ -29,11 +29,11 @@
     }
 
     .shape-checkmark {
-        @include arrow(10px, 20px, $global-checkmark-color, $global-checkmark-width, down);
+        @include arrow(($global-checkmark-size / 2), $global-checkmark-size, $global-checkmark-color, $global-checkmark-width, down);
     }
 
     .shape-close {
-        @include close-shape(20px, $global-close-shape-line-size, $global-close-shape-color);
+        @include shape-close($global-shape-close-size, $global-shape-close-line-size, $global-shape-close-color);
     }
 
     .full-rounded {
