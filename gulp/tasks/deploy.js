@@ -64,7 +64,7 @@ var deployOnTheFly = function() {
 
         return ftp.ftpconnection.rmdir(pathToRoot(path), function(err) {
             if (err) {
-                gutil.log(log.timestamp + ' ' + log.warn(err));
+                gutil.log(log.warn(err));
             } else {
                 return;
             }
@@ -78,7 +78,7 @@ var deployOnTheFly = function() {
 
         return ftp.ftpconnection.delete(pathToRoot(path), function(err) {
             if (err) {
-                console.log(log.timestamp + ' ' + log.warn(err));
+                gutil.log(log.warn(err));
             } else {
                 return;
             }

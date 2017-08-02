@@ -1,7 +1,7 @@
 {
   "name": "boilerplate-standard",
-  "description": "",
-  "main": "bower.json",
+  "description": "Definitely the standard for start new front-end Web projects",
+  "main": "gulpfile.js",
   "authors": [
     "Matteo Bertoldo - mbertoldo@alpenite.com"
   ],
