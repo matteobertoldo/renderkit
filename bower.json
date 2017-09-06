@@ -9,19 +9,18 @@
   "homepage": "https://github.com/matteobertoldo/boilerplate-standard",
   "private": true,
   "ignore": [
-     "**/.*",
-     "node_modules",
-     "bower_components",
-     "test",
-     "tests",
-     "log",
-     "logs"
-   ],
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "log",
+    "logs"
+  ],
   "dependencies": {
-    "what-input": "^4.0.6",
+    "what-input": "^4.3.1",
     "fastclick": "^1.0.6",
-    "svg4everybody": "^2.1.4",
-    "disable-scroll": "^0.3.0",
-    "jquery": "^3.1.1"
+    "svg4everybody": "^2.1.9",
+    "jquery": "^3.2.1"
   }
 }

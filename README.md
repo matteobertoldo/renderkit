@@ -71,7 +71,7 @@ If you don't want to manage plugins with any package manager, simply set `packag
 To install Bower:
 
 ```bash
-#unix system only
+# unix system only
 sudo npm install bower -g
 ```
 
