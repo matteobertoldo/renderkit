@@ -14,6 +14,16 @@ var folder = {
     pkg: 'bower_components/'
 };
 
+// @global generated files on `distribution` folder
+// -----------------
+
+var generatedFiles = {
+    html: folder.distribution + '*.html',
+    css: folder.distribution + 'css/**/*.{css,map}',
+    svg: folder.distribution + 'images/**/*.{svg,html}',
+    js: folder.distribution + 'js/**/*.{js,map}'
+};
+
 // @global output style for css
 // -----------------
 
@@ -23,21 +33,11 @@ var cssOutputStyle = {
     expanded: 'expanded'
 };
 
-// @global generated files on `distribution` folder
-// -----------------
-
-var generatedFiles = {
-    html: folder.distribution + '*.html',
-    css: folder.distribution + 'css/**/*.{css,map}',
-    svg: folder.distribution + 'assets/images/**/*.{svg,html}',
-    js: folder.distribution + 'js/**/*.{js,map}'
-};
-
 // @global options
 // -----------------
 
 module.exports = {
-    defaultTasks: ['html', 'sass', 'svg', 'bundle'],
+    defaultTasks: ['html-nunjucks', 'sass', 'svg', 'bundle'],
     workspace: {
         html: folder.workspace + 'template/',
         scss: folder.workspace + 'scss/',
@@ -49,7 +49,7 @@ module.exports = {
     distribution: {
         html: folder.distribution,
         scss: folder.distribution + 'css/',
-        svg: folder.distribution + 'assets/images/',
+        svg: folder.distribution + 'images/',
         js: folder.distribution + 'js/',
         jsLib: folder.distribution + 'js/lib/'
     },
@@ -63,12 +63,12 @@ module.exports = {
         stream: true,
         streamLog: true,
         streamFoldersToWatch: [
-            folder.workspace + '**/*.{xml,txt}'
+            folder.workspace + '**/*.{xml,json,txt}'
         ],
         reloadBrowsersOnChange: true
     },
     htmlOptions: {
-        prefixVar: '@',
+        dataFilePath: 'data/global.json',
         indentSize: 4,
         endWithNewline: false
     },

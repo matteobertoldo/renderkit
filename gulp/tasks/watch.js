@@ -64,7 +64,7 @@ if (conf.deployOnTheFlyOptions.deployOnTheFly) {
 
 gulp.task('watch', function(done) {
     sequence.apply(null, tasks, done);
-    gulp.watch(conf.workspace.html + '**/*.html', ['html:watch']);
+    gulp.watch(conf.workspace.html + '**/*.+(html|nunjucks|njk)', ['html:watch']);
     gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
     gulp.watch(conf.workspace.js + '**/*.js', ['bundle:watch']);
     gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
