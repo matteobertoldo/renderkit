@@ -12,7 +12,7 @@ Features | Tools Used
 ------ | -----
 Dev. Environment|[Node.js](https://nodejs.org/), [Gulp](http://gulpjs.com)
 Package Manager|[Bower](https://bower.io)
-HTML|[Nunjucks](https://mozilla.github.io/nunjucks/) (Coming soon)
+HTML|[Nunjucks](https://mozilla.github.io/nunjucks/)
 SCSS-CSS|[Sass Lang](http://sass-lang.com/), [gulp-sass](https://github.com/dlmanning/gulp-sass), [gulp-postcss](https://github.com/postcss/gulp-postcss), [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem), [Foundation Grid](http://foundation.zurb.com/sites/docs/grid.html), [clean-css](https://github.com/jakubpawlowicz/clean-css), [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps)
 JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify) (Coming soon)
 Icons|[SVG Spritemaps](https://github.com/jkphl/gulp-svg-sprite) supported with [SVG for Everybody](https://github.com/jonathantneal/svg4everybody)
@@ -89,6 +89,11 @@ The `bower_components` folder will be generated with all plugins read in the `bo
 You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
 
 Full documentation coming soon.
+
+## News & Coming Soon Features
+
+-   Nunjucks templating! *NEW*
+-   Browserify JS *(Coming Soon)*
 
 ### License
 
