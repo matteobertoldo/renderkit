@@ -59,7 +59,7 @@
             border: $global-input-border;
             border-radius: $global-input-border-radius;
             padding: $global-input-padding;
-            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            transition: $global-input-transition;
 
             &:focus {
                 border-color: $global-focus-input-border-color;

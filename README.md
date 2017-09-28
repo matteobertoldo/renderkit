@@ -2,7 +2,7 @@
 
 > "Definitely the standard 👌🏽 for start new front-end Web projects".
 
-From a `UI-Kit` up in `Production`. "Boilerplate Standard" is an excellent friend to develop, compile, compress files for the front end Web developing dynamically...but not only. With more than **100** options for different tasks, your work environment will be dynamic as ever.
+From a `UI-Kit` up in `production`. "Boilerplate Standard" is an excellent friend to develop, compile, compress files for the front end Web developing dynamically...but not only. With more than **100** options for different tasks, your work environment will be dynamic as ever.
 
 Great for developing static template but at the same time great to "interpose" across multiple development platforms like **Wordpress**, **Shopify**, **Magento**, **Demandware** and many more.
 
@@ -28,7 +28,7 @@ Clone "Boilerplate Standard" with your favorite Git client:
 Or simply download the package.
 To initialize the work environment first you need to install **Node.js** from the official site.
 You can download from [this page](https://nodejs.org/en/download/) the latest version of Node.
-It's recommended that you install the *LTS version*. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
+It's highly recommended that you install the ***LTS version***. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
 Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
 Type the following command from administrator mode.
 
@@ -92,8 +92,8 @@ Full documentation coming soon.
 
 ## News & Coming Soon Features
 
--   Nunjucks templating! *NEW*
--   Browserify JS *(Coming Soon)*
+-   Nunjucks templating! ***NEW***
+-   Browserify JS ***(Coming Soon)***
 
 ### License
 
