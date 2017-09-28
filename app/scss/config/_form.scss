@@ -22,6 +22,7 @@ $global-input-border: 1px solid palette(2) !default;
 $global-hover-input-border: true !default;
 $global-hover-input-border-color: palette(4) !default;
 $global-focus-input-border-color: palette(4) !default;
+$global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease !default;
 
 // @components: form ~ textarea
 // --------------------------------

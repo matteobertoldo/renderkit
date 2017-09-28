@@ -1,0 +1,40 @@
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<style id="uikit-render">
+body {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+aside {
+    width: 300px;
+    min-height: 100vh;
+    float: left;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+    background-blend-mode: multiply;
+    box-shadow: 0 3px 10px 5px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    width: calc(100% - 300px);
+    overflow: hidden;
+}
+
+.section-type {
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.section-title {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 280px;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    text-transform: none;
+    letter-spacing: 12px;
+    margin: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+</style>
