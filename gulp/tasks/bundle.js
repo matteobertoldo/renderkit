@@ -35,7 +35,12 @@ gulp.task('bundle', function() {
     .pipe(concat(conf.jsOptions.outputPluginsName + '.js'))
     .pipe(gulpif(conf.jsOptions.minifyPlugins, uglify({
         compress: true
-    }))).on('error', gutil.log)
+    }))).on('error', function(err) {
+        gutil.log('Error in: ' + gutil.colors.red(err.plugin));
+        gutil.log('Message: ' + gutil.colors.red(err.cause.message));
+        gutil.log('File: ' + gutil.colors.red(err.fileName));
+        gutil.log('Line: ' + gutil.colors.red(err.cause.col));
+    })
     .pipe(gulpif(conf.jsOptions.minifyPlugins, rename({
         suffix: '.min'
     })))

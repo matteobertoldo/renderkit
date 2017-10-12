@@ -20,7 +20,7 @@ var data = require('gulp-data');
 // --------------------
 
 var getData = function(file) {
-    return JSON.parse(fs.readFileSync(path.resolve(conf.workspace.html + 'data/global.json'), 'utf8'));
+    return JSON.parse(fs.readFileSync(path.resolve(conf.htmlOptions.dataFilePath), 'utf8'));
 };
 var dataJSON = getData();
 
@@ -32,8 +32,9 @@ gulp.task('html-nunjucks', function() {
         path: [conf.workspace.html]
     }))
     .on('error', function(err) {
-        gutil.log(gutil.colors.red(err.message));
-        gutil.log(gutil.colors.red(err.fileName));
+        gutil.log('Error in: ' + gutil.colors.red(err.plugin));
+        gutil.log('Message: ' + gutil.colors.red(err.message));
+        gutil.log('File: ' + gutil.colors.red(err.fileName));
     })
     .pipe(htmlBeautify({
         indent_size: conf.htmlOptions.indentSize,

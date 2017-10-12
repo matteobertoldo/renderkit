@@ -1,14 +1,15 @@
 {% extends "layout/default.njk" %}
 {% set title = pages.uikit.title %}
+{% set description = pages.uikit.description %}
 
 {% block content %}
-    {% include "include/uikit-render/palette-script.njk" %}
-    {% include "include/uikit-render/ui-styles.njk" %}
+    {% include "include/uikit/palette-script.njk" %}
+    {% include "include/uikit/ui-styles.njk" %}
     <aside></aside>
     <main>
         <section class="section-type typhograpy">
             <h1 class="section-title">Typography</h1>
         </section>
     </main>
-    {% include "include/footer.njk" %}
+    {% include "include/base/footer.njk" %}
 {% endblock %}

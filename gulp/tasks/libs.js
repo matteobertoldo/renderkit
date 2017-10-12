@@ -24,7 +24,12 @@ gulp.task('base-libs', function() {
     .pipe(plumber())
     .pipe(gulpif(conf.jsOptions.minifyLibs, uglify({
         compress: true
-    }))).on('error', gutil.log)
+    }))).on('error', function(err) {
+        gutil.log('Error in: ' + gutil.colors.red(err.plugin));
+        gutil.log('Message: ' + gutil.colors.red(err.cause.message));
+        gutil.log('File: ' + gutil.colors.red(err.fileName));
+        gutil.log('Line: ' + gutil.colors.red(err.cause.col));
+    })
     .pipe(gulpif(conf.jsOptions.minifyLibs, rename({
         suffix: '.min'
     })))
@@ -45,7 +50,12 @@ gulp.task('modernizr', function() {
         .pipe(plumber())
         .pipe(gulpif(conf.jsOptions.minifyModernizr, uglify({
             compress: true
-        }))).on('error', gutil.log)
+        }))).on('error', function(err) {
+            gutil.log('Error in: ' + gutil.colors.red(err.plugin));
+            gutil.log('Message: ' + gutil.colors.red(err.cause.message));
+            gutil.log('File: ' + gutil.colors.red(err.fileName));
+            gutil.log('Line: ' + gutil.colors.red(err.cause.col));
+        })
         .pipe(gulpif(conf.jsOptions.minifyModernizr, rename({
             suffix: '.min'
         })))
