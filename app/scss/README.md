@@ -1,4 +1,4 @@
-# SASS Guide (Code of conduct)
+# SASS Guide
 The output CSS file in your folder `distribution` it is structured with SASS. Please read this SASS guide before create your custom packages or extend a current package.
 
 ### Authoring

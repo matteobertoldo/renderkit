@@ -68,7 +68,7 @@ module.exports = {
         reloadBrowsersOnChange: true
     },
     htmlOptions: {
-        dataFilePath: 'data/global.json',
+        dataFilePath: folder.workspace + 'template/data/global.json',
         indentSize: 4,
         endWithNewline: false
     },
