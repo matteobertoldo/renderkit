@@ -63,11 +63,11 @@ sudo npm install
 npm install
 ```
 
-## Package manager
+## Package Manager
 
 Manage the plugins updates with `bower_components`. If you use different package managers you can simply update the resources or the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
 
-If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed. Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
+Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
 To install Bower:
 
 ```bash
@@ -87,6 +87,10 @@ bower install
 The `bower_components` folder will be generated with all plugins read in the `bower.json` file.
 
 You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
+
+## Disable Package Manager
+
+If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed.
 
 Full documentation coming soon.
 

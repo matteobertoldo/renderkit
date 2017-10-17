@@ -1,3 +1,17 @@
+# Table of contents
+
+Features | Tools Used
+------ | -----
+Unit Utils| `rem()` or `em()` functions
+Cross Browsing Elements|[Normalize.css](https://github.com/necolas/normalize.css) (rewritten & extended in `scss`)
+Fonts| Custom `@font-face` mixin
+Typography| Custom typography helpers `@mixins`
+Float|[Foundation Float Classes](https://foundation.zurb.com/sites/docs/float-classes.html)
+Grids|[Foundation Float Grid](https://foundation.zurb.com/sites/docs/grid.html), [Foundation XY Grid](https://foundation.zurb.com/sites/docs/xy-grid.html) (Coming Soon)
+Accessibility| Accessibility `@mixins` packages `@accessibility-classes`
+Flexbox| Flexbox `@mixins` packages `@flexbox-classess`
+Visibility|[Foundation Visibility](https://foundation.zurb.com/sites/docs/visibility.html)
+
 # SASS Guide
 The output CSS file in your folder `distribution` it is structured with SASS. Please read this SASS guide before create your custom packages or extend a current package.
 
@@ -8,11 +22,11 @@ SCSS authoring is meant to be used with a build tool, which is currently [gulp](
 Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 
 ## Packages
-Please don't write any rules into `light-sass.scss` or into an `importer` file. You can simply find it with `@importer` flag.
--   Global sass file (`light-sass.scss`) is just a table of content.
+Please don't write any rules into `style.scss` or into an `importer` file. You can simply find it with `@importer` flag.
+-   Global sass file (`style.scss`) is just a table of content.
 -   If you add a ***new*** package remember to update `_global.scss` file with the new package.
 
-## Code styles
+## Code Styles
 Inspired by <http://codeguide.co/#css> and <http://css-tricks.com/sass-style-guide/>
 
 -   Include partials should be prefixed with `_`, i.e. `_partial.scss`
@@ -99,8 +113,9 @@ div.class-name {
 -   Contract HEX colors when possible, i.e. `#fff` instead of `#ffffff`.
 -   **!important** Avoid using `!important` at all cost!
 
-## Variables
+## Variables & Configurations
 All variables and configurations are defined in the `config` folder, in separate files by type of configuration.
+
 For color variables, it can be used use <http://www.color-blindness.com/color-name-hue/> to find and set the correct color name.
 
 ```scss
