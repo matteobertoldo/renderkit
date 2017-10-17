@@ -8,8 +8,8 @@
 // --------------------------------
 
 @function palette($color) {
-	@if map-has-key($colors-palette, $color) {
-        @return map-get($colors-palette, $color);
+	@if map-has-key($palette-color, $color) {
+        @return map-get($palette-color, $color);
     } @else {
         @warn 'No color palette found in `$colors-palette` map.';
     }

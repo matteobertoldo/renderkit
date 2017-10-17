@@ -5,7 +5,7 @@
 
 @mixin colors-palette {
     /*@global colors-palette*/
-    @each $palette, $color in $colors-palette {
+    @each $palette, $color in $palette-color {
     	.palette-color-#{$palette} {
     		color: $color;
     	}
