@@ -4,6 +4,7 @@ Features | Tools Used
 ------ | -----
 Unit Utils| `rem()` or `em()` functions
 Cross Browsing Elements|[Normalize.css](https://github.com/necolas/normalize.css) (rewritten & extended in `scss`)
+Breakpoint|[Foundation Media Queries](https://foundation.zurb.com/sites/docs/media-queries.html) with no `rem` conversion
 Fonts| Custom `@font-face` mixin
 Typography| Custom typography helpers `@mixins`
 Float|[Foundation Float Classes](https://foundation.zurb.com/sites/docs/float-classes.html)

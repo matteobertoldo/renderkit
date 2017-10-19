@@ -1,6 +1,10 @@
 # SVG Guide
 This folder will have to place all `svg` files in order to generate a `spritemap` svg.
-Any output setting can be configured in the `gulp/gulpconfig.js` file in the` svgOptions` section. You can create an **HTML** sample file to see the front-end render. [Cross browsing](https://github.com/jonathantneal/svg4everybody#implementation-status) support for the `<use>` tag, to use external content, is provided by the polyfill `svg4everybody();`.
+Any output setting can be configured in the `gulp/gulpconfig.js` file in the` svgOptions` section.
+
+You can create an **HTML sample file** to see the front-end render. You can configure the `svgOptions.exampleFile` object to` true` (default). By doing so, an HTML file will be generated in the distribution folder for the Spritemap.
+
+[Cross browsing](https://github.com/jonathantneal/svg4everybody#implementation-status) support for the `<use>` tag, to use external content, is provided by the polyfill `svg4everybody();`.
 Below is an example of markup.
 
 ## Markup

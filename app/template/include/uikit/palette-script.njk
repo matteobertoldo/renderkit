@@ -40,9 +40,11 @@ function createPaletteElements(selector, style, sheet) {
                 var g = rgb[1];
                 var b = rgb[2].replace(')', '');
                 var hex = RGBtoHEX(r, g, b);
+
                 var list = document.createElement('li');
 
                 list.setAttribute('style', 'background-color:#' + hex + ';');
+                //document.getElementById("palette-list").appendChild(list);
             }
         }
     }
