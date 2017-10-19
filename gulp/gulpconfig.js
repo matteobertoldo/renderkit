@@ -137,7 +137,7 @@ module.exports = {
         cssRender: false,
         scssRender: false,
         outputName: 'sprite',
-        exampleFile: false
+        exampleFile: true
     },
     ftpOptions: {
         sftpConnection: false,

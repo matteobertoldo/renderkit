@@ -29,6 +29,7 @@ Or simply download the package.
 To initialize the work environment first you need to install **Node.js** from the official site.
 You can download from [this page](https://nodejs.org/en/download/) the latest version of Node.
 It's highly recommended that you install the ***LTS version***. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
+
 Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
 Type the following command from administrator mode.
 
@@ -90,7 +91,7 @@ You can configure all options in the `gulp/gulpconfig.js` file in the `packageMa
 
 ## Disable Package Manager
 
-If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed.
+If you don't want to manage plugins with any package manager, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` doing so it also performs the import speed. **Therefore ignore the previous step for installing Bower**.
 
 Full documentation coming soon.
 
