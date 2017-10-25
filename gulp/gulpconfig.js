@@ -24,22 +24,13 @@ var generatedFiles = {
     js: folder.distribution + 'js/**/*.{js,map}'
 };
 
-// @global output style for css
-// -----------------
-
-var cssOutputStyle = {
-    nested: 'nested',
-    compact: 'compact',
-    expanded: 'expanded'
-};
-
 // @global options
 // -----------------
 
 module.exports = {
-    defaultTasks: ['html-nunjucks', 'sass', 'svg', 'bundle'],
+    defaultTasks: ['html', 'sass', 'svg', 'bundle'],
     workspace: {
-        html: folder.workspace + 'template/',
+        html: folder.workspace + 'templates/',
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + 'svg/',
         js: folder.workspace + 'js/',
@@ -68,7 +59,7 @@ module.exports = {
         reloadBrowsersOnChange: true
     },
     htmlOptions: {
-        dataFilePath: folder.workspace + 'template/data/global.json',
+        dataFilePath: folder.workspace + 'templates/data/global.json',
         indentSize: 4,
         endWithNewline: false
     },
@@ -91,14 +82,13 @@ module.exports = {
         remMediaQueries: false,
         singleOutput: true,
         outputName: 'style',
-        outputStyle: cssOutputStyle.expanded,
+        outputStyle: 'expanded',
         minify: true,
         optimizationMinify: true
     },
     packageManager: {
         managePlugins: true,
         src: [
-            folder.pkg + 'disable-scroll/dist/disable-scroll.js',
             folder.pkg + 'fastclick/lib/fastclick.js',
             folder.pkg + 'svg4everybody/dist/svg4everybody.js',
             folder.pkg + 'what-input/dist/what-input.js'
