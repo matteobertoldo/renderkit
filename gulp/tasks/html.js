@@ -24,7 +24,7 @@ var getData = function(file) {
 };
 var dataJSON = getData();
 
-gulp.task('html-nunjucks', function() {
+gulp.task('html', function() {
     return gulp.src(conf.workspace.html + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
     .pipe(data(dataJSON))
@@ -43,6 +43,6 @@ gulp.task('html-nunjucks', function() {
     .pipe(gulp.dest(conf.distribution.html));
 });
 
-gulp.task('html:watch', ['html-nunjucks'], function() {
+gulp.task('html:watch', ['html'], function() {
     return global.browserSync.reload();
 });

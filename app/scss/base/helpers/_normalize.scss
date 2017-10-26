@@ -1,7 +1,7 @@
 // @normalize mixin
 // @author: original authors Nicolas Gallagher & Jonathan Neal
 // @author: mbertoldo@alpenite.com (extended and re-written in scss)
-// @note: global styles "normalized" in all browsers. From normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css
+// @note: global styles "normalized" in all browsers. From normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
 // @access: private
 
 @mixin scss-normalize {
@@ -439,8 +439,7 @@
     	&[type="checkbox"],
     	&[type="radio"] {
     		@if ($global-custom-checkbox-radio) {
-    			appearance: none;
-                @include visuallyhidden;
+                display: none;
     		} @else {
     			margin: 0;
     			padding: 0;
