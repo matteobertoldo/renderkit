@@ -6,5 +6,5 @@ For a complete list of all available APIs, see [this page](https://mozilla.githu
 
 ## Data
 
-You can configure dynamic data via `json file`.
-Configure reading the "date json" file in the `htmlOptions` directory under the entry:` dataFilePath` inside the `gulp/gulpconfig.js` file.
+You can configure dynamic data via `json` file.
+Configure reading the "data json" file in the `htmlOptions` directory under the entry:` dataFilePath` inside the `gulp/gulpconfig.js` file.

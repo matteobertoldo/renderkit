@@ -28,7 +28,12 @@ var generatedFiles = {
 // -----------------
 
 module.exports = {
-    defaultTasks: ['html', 'sass', 'svg', 'bundle'],
+    defaultTasks: {
+        html: true,
+        sass: false,
+        svg: false,
+        bundle: false
+    },
     workspace: {
         html: folder.workspace + 'templates/',
         scss: folder.workspace + 'scss/',
