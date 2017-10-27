@@ -57,7 +57,7 @@ if (conf.syncOptions.browserSync) {
 
 if (conf.deployOnTheFlyOptions.deployOnTheFly) {
     if (fs.existsSync('./gulp/private/ftp.json')) {
-        tasks.push('deploy-watch');
+        defaultTasks.push('deploy-watch');
     } else {
         gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
     }
