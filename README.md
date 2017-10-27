@@ -12,7 +12,7 @@ Features | Tools Used
 ------ | -----
 Dev. Environment|[Node.js](https://nodejs.org/), [Gulp](http://gulpjs.com)
 Package Manager|[Bower](https://bower.io)
-HTML|[Nunjucks](https://mozilla.github.io/nunjucks/)
+HTML|[Nunjucks Templating](https://mozilla.github.io/nunjucks/)
 SCSS-CSS|[Sass Lang](http://sass-lang.com/), [gulp-sass](https://github.com/dlmanning/gulp-sass), [gulp-postcss](https://github.com/postcss/gulp-postcss), [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem), [Foundation Grid](http://foundation.zurb.com/sites/docs/grid.html), [clean-css](https://github.com/jakubpawlowicz/clean-css), [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps)
 JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify) (Coming soon)
 Icons|[SVG Spritemaps](https://github.com/jkphl/gulp-svg-sprite) supported with [SVG for Everybody](https://github.com/jonathantneal/svg4everybody)
@@ -68,7 +68,7 @@ npm install
 
 Manage the plugins updates with `bower_components`. If you use different package managers you can simply update the resources or the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
 
-Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor`.
+Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor` or configures the import folder in the `workspace.jsVendor` object.
 To install Bower:
 
 ```bash

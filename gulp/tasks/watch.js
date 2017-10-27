@@ -33,17 +33,22 @@ var stream = function() {
     }
 };
 
-// @global tasks
+// @default tasks
 // --------------
 
 var tasks = conf.defaultTasks;
+var keys = Object.keys(tasks);
+
+var defaultTasks = keys.filter(function(key) {
+    return tasks[key];
+});
 
 // @push `browser-sync`
 // @param: {bool}
 // -------------------
 
 if (conf.syncOptions.browserSync) {
-    tasks.push('browser-sync');
+    defaultTasks.push('browser-sync');
 }
 
 // @push `deploy-watch`
@@ -52,7 +57,7 @@ if (conf.syncOptions.browserSync) {
 
 if (conf.deployOnTheFlyOptions.deployOnTheFly) {
     if (fs.existsSync('./gulp/private/ftp.json')) {
-        tasks.push('deploy-watch');
+        defaultTasks.push('deploy-watch');
     } else {
         gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
     }
@@ -63,10 +68,14 @@ if (conf.deployOnTheFlyOptions.deployOnTheFly) {
 // -------------------
 
 gulp.task('watch', function(done) {
-    sequence.apply(null, tasks, done);
-    gulp.watch(conf.workspace.html + '**/*.+(html|nunjucks|njk)', ['html:watch']);
-    gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
-    gulp.watch(conf.workspace.js + '**/*.js', ['bundle:watch']);
-    gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
-    stream();
+    if (defaultTasks.length) {
+        sequence.apply(null, defaultTasks, done);
+        gulp.watch(conf.workspace.html + '**/*.+(html|nunjucks|njk)', ['html:watch']);
+        gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
+        gulp.watch(conf.workspace.js + '**/*.js', ['bundle:watch']);
+        gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
+        stream();
+    } else {
+        gutil.log(gutil.colors.yellow('Set up at least one task to use `gulp watch`'));
+    }
 });

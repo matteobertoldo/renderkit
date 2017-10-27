@@ -28,7 +28,12 @@ var generatedFiles = {
 // -----------------
 
 module.exports = {
-    defaultTasks: ['html', 'sass', 'svg', 'bundle'],
+    defaultTasks: {
+        html: true,
+        sass: true,
+        svg: true,
+        bundle: true
+    },
     workspace: {
         html: folder.workspace + 'templates/',
         scss: folder.workspace + 'scss/',
@@ -143,7 +148,7 @@ module.exports = {
     deployOnTheFlyOptions: {
         deployOnTheFly: false,
         deployOnTheFlyFolder: folder.distribution,
-        deployOnTheFlyObjects: folder.distribution + '**/*.{html,css,js,svg,txt}',
+        deployOnTheFlyObjects: folder.distribution + '**/*.{html,css,js,json,svg}',
         ignoreDotFiles: true,
         ignoreInitialRun: false
     },
