@@ -5,6 +5,7 @@ log
 logs
 npm-debug.log*
 *.log
+*yarn.lock
 
 # Dependency directories
 # --------------------------
