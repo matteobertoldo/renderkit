@@ -11,7 +11,7 @@ var folder = {
     root: './',
     workspace: 'app/',
     distribution: 'dist/',
-    pkg: 'bower_components/'
+    pkg: 'node_modules/'
 };
 
 // @global generated files on `distribution` folder
