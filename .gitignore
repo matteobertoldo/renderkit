@@ -46,3 +46,4 @@ gulp/private/*.json
 *.DS_Store
 *__MACOSX
 *Thumbs.db
+/yarn.lock
