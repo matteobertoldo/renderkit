@@ -35,7 +35,7 @@ It's highly recommended that you install the ***LTS version***. <br/>
 
 ## Install gulp
 
-Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
+Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks. <br/>
 Type the following command from administrator mode.
 
 ```bash
@@ -50,7 +50,7 @@ In Windows there is no `sudo`, you must run the terminal in "Administrator Mode"
 
 ## Package Manager
 
-Manage the plugins updates with `yarn`. <br/>
+Manage the dev. environment plugins updates with `yarn`. <br/>
 For install yarn globally type:
 
 ```bash
@@ -61,17 +61,7 @@ sudo npm install yarn -g
 npm install yarn -g
 ```
 
-All "vendor" plugins, not related to the work environment, are displayed within the `package.json` file in the `dependencies` object.
-
-You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
-
-## Disable Package Manager
-
-If you don't want to manage vendor plugins with `yarn`, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` and remember update the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
-
-If you configure the `packageManager.manage` object to `false` it is necessary to declare the `vendor` folder for importing the plugins. It can be configured in the `workspace.jsVendor` object and is also required if a plugin is not present in [yarn](https://yarnpkg.com/en/).
-
-## Install dependencies
+## Install Dev dependencies
 
 To generate `node_modules` packages, you must download the dependencies that will be read in the `package.json` file.
 Then point to the "boilerplate-standard" folder or our project folder with the `cd` command.
@@ -91,6 +81,18 @@ sudo yarn install
 # in windows "run as administrator"
 yarn install
 ```
+
+## Manage dependencies
+
+All js **"vendor" plugins**, not related to the work environment, are displayed within the `package.json` file in the `dependencies` object.
+
+You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
+
+## Disable Package Manager
+
+If you don't want to manage js vendor plugins with `yarn`, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` and remember update the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
+
+If you configure the `packageManager.manage` object to `false` it is necessary to declare the `vendor` folder for importing the plugins. It can be configured in the `workspace.jsVendor` object and is also required if a plugin is not present in [yarn](https://yarnpkg.com/en/).
 
 Full documentation coming soon.
 
