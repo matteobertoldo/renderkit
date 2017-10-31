@@ -1,6 +1,6 @@
 /**
- * @gulp html "nunjucks" task
- * @description: Nunjucks language see more @https://mozilla.github.io/nunjucks/.
+ * @file: html.js
+ * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
  * @author: mbertoldo@alpenite.com
  */
 

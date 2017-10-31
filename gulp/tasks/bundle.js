@@ -1,6 +1,6 @@
 /**
- * @scripts js task
- * @return: {scripts}
+ * @file: bundle.js
+ * @description: Generate a "bundle" file with "vendors" and "main" scripts.
  * @author: mbertoldo@alpenite.com
  */
 

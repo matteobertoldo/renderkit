@@ -1,6 +1,6 @@
 /**
- * @gulp svg task
- * @return: sprite.svg
+ * @file: svg.js
+ * @description: Generate an "svg-spritemaps".
  * @author: mbertoldo@alpenite.com
  */
 

@@ -1,6 +1,6 @@
 /**
- * @gulp configuration tasks file
- * @return: {global.options}
+ * @file: gulpconfig.js
+ * @description: Global configuration file for `gulp`.
  * @author: mbertoldo@alpenite.com
  */
 
@@ -28,12 +28,6 @@ var generatedFiles = {
 // -----------------
 
 module.exports = {
-    defaultTasks: {
-        html: true,
-        sass: true,
-        svg: true,
-        bundle: true
-    },
     workspace: {
         html: folder.workspace + 'templates/',
         scss: folder.workspace + 'scss/',
@@ -48,6 +42,12 @@ module.exports = {
         svg: folder.distribution + 'images/',
         js: folder.distribution + 'js/',
         jsLib: folder.distribution + 'js/lib/'
+    },
+    defaultWatchTasks: {
+        html: true,
+        sass: true,
+        svg: true,
+        bundle: true
     },
     syncOptions: {
         browserSync: true,
@@ -91,6 +91,12 @@ module.exports = {
         minify: true,
         optimizationMinify: true
     },
+    svgOptions: {
+        cssRender: false,
+        scssRender: false,
+        outputName: 'sprite',
+        exampleFile: true
+    },
     packageManager: {
         managePlugins: true,
         src: [
@@ -127,12 +133,6 @@ module.exports = {
         minifyModernizr: true,
         outputPluginsName: 'app',
         minifyPlugins: true
-    },
-    svgOptions: {
-        cssRender: false,
-        scssRender: false,
-        outputName: 'sprite',
-        exampleFile: true
     },
     ftpOptions: {
         sftpConnection: false,

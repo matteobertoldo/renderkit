@@ -1,8 +1,8 @@
 /**
- * @clean task
- * @return: global clean || by type files
+ * @file: clean.js
+ * @description: Clean all generated file or by tipe.
  * @author: mbertoldo@alpenite.com
- * @contributor: mgaion@alpenite.com (regex split)
+ * @author: mgaion@alpenite.com (regex `split`)
  */
 
 var gulp = require('gulp');

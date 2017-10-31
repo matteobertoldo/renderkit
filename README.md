@@ -21,14 +21,19 @@ Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV wit
 
 ## Getting Sarted
 
-Clone "Boilerplate Standard" with your favorite Git client:
-
+Clone "Boilerplate Standard" with your favorite Git client, or simply download the package.
 `https://github.com/matteobertoldo/boilerplate-standard.git`.
 
-Or simply download the package.
+## Install node.js
+
 To initialize the work environment first you need to install **Node.js** from the official site.
 You can download from [this page](https://nodejs.org/en/download/) the latest version of Node.
-It's highly recommended that you install the ***LTS version***. "Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
+-   For **Linux users**, it is recommended that you see the package managers on [this page]( https://nodejs.org/en/download/package-manager/) to install Node.
+
+It's highly recommended that you install the ***LTS version***. <br/>
+"Boilerplate Standard" has been tested by Node version 7+ and is **fully compatible** with the *LTS version*.
+
+## Install gulp
 
 Once the Node installation is complete, Gulp's global installation is required. Gulp will be our task manager to use all the tasks.
 Type the following command from administrator mode.
@@ -69,6 +74,9 @@ npm install
 Manage the plugins updates with `bower_components`. If you use different package managers you can simply update the resources or the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
 
 Find your plugin in [bower.io](https://bower.io/search/). In the event that a plugins is not present in "bower components" it will automatically be imported by the folder `app/js/vendor` or configures the import folder in the `workspace.jsVendor` object.
+
+## Install Bower
+
 To install Bower:
 
 ```bash
