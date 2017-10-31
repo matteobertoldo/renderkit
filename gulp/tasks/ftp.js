@@ -1,5 +1,5 @@
 /**
- * @gulp ftp tasks
+ * @file: ftp.js
  * @return: {stream}
  * @author: mbertoldo@alpenite.com
  */
