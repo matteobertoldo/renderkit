@@ -1,6 +1,5 @@
 /**
- * @gulp watch tasks
- * @return: {tasks}
+ * @file: watch.js
  * @description: gulp is watching you...
  * @author: mbertoldo@alpenite.com
  */
@@ -33,13 +32,13 @@ var stream = function() {
     }
 };
 
-// @default tasks
+// @default watch tasks
 // --------------
 
-var tasks = conf.defaultTasks;
+var tasks = conf.defaultWatchTasks;
 var keys = Object.keys(tasks);
 
-var defaultTasks = keys.filter(function(key) {
+var defaultWatchTasks = keys.filter(function(key) {
     return tasks[key];
 });
 
@@ -48,7 +47,7 @@ var defaultTasks = keys.filter(function(key) {
 // -------------------
 
 if (conf.syncOptions.browserSync) {
-    defaultTasks.push('browser-sync');
+    defaultWatchTasks.push('browser-sync');
 }
 
 // @push `deploy-watch`
@@ -57,7 +56,7 @@ if (conf.syncOptions.browserSync) {
 
 if (conf.deployOnTheFlyOptions.deployOnTheFly) {
     if (fs.existsSync('./gulp/private/ftp.json')) {
-        defaultTasks.push('deploy-watch');
+        defaultWatchTasks.push('deploy-watch');
     } else {
         gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
     }
@@ -68,8 +67,8 @@ if (conf.deployOnTheFlyOptions.deployOnTheFly) {
 // -------------------
 
 gulp.task('watch', function(done) {
-    if (defaultTasks.length) {
-        sequence.apply(null, defaultTasks, done);
+    if (defaultWatchTasks.length) {
+        sequence.apply(null, defaultWatchTasks, done);
         gulp.watch(conf.workspace.html + '**/*.+(html|nunjucks|njk)', ['html:watch']);
         gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
         gulp.watch(conf.workspace.js + '**/*.js', ['bundle:watch']);

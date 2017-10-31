@@ -1,6 +1,6 @@
 /**
- * @library js task
- * @return: {baselibs}
+ * @file: libs.js
+ * @description: Task to compile libraries like Modernizr or compress libraries used.
  * @author: mbertoldo@alpenite.com
  */
 
