@@ -61,7 +61,7 @@ sudo npm install yarn -g
 npm install yarn -g
 ```
 
-## Install Dev dependencies
+## Install Dev Dependencies
 
 To generate `node_modules` packages, you must download the dependencies that will be read in the `package.json` file.
 Then point to the "boilerplate-standard" folder or our project folder with the `cd` command.
@@ -82,17 +82,17 @@ sudo yarn install
 yarn install
 ```
 
-## Manage dependencies
+## Manage Dependencies
 
-All js **"vendor" plugins**, not related to the work environment, are displayed within the `package.json` file in the `dependencies` object.
+All **"dependencies vendor" plugins**, not related to the work environment, are displayed within the `package.json` file in the `dependencies` object.
 
-You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. To manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
+You can configure all options in the `gulp/gulpconfig.js` file in the `packageManager` object to handle the import and the plugins. Boilerplate Standard in this case only manages dependencies for `js` plugins, to manage output name and file compression, see `outputPluginsName` & `minifyPlugins`.
 
-## Disable Package Manager
+## Disable Dependencies
 
-If you don't want to manage js vendor plugins with `yarn`, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` and remember update the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
+If you don't want to manage "dependencies vendor" plugins with `yarn`, simply set `packageManager.manage` in `gulp/gulpconfig.js` by `false` and remember update the "manager" into `gulp/gulpconfig.js` at `folder.pkg`.
 
-If you configure the `packageManager.manage` object to `false` it is necessary to declare the `vendor` folder for importing the plugins. It can be configured in the `workspace.jsVendor` object and is also required if a plugin is not present in [yarn](https://yarnpkg.com/en/).
+If you configure the `packageManager.manage` object to `false` it is necessary to declare the `vendor` folder for importing the plugins. It can be configured in the `workspace.js.vendor` object and is also required if a plugin is not present in [yarn](https://yarnpkg.com/en/).
 
 Full documentation coming soon.
 

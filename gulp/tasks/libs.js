@@ -13,6 +13,7 @@ var modernizrProp = require('modernizr/lib/config-all.json');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
+var errors = require('../utils/errors');
 var rename = require('gulp-rename');
 var sequence = require('run-sequence');
 
@@ -25,15 +26,12 @@ gulp.task('base-libs', function() {
     .pipe(gulpif(conf.jsOptions.minifyLibs, uglify({
         compress: true
     }))).on('error', function(err) {
-        gutil.log('Error in: ' + gutil.colors.red(err.plugin));
-        gutil.log('Message: ' + gutil.colors.red(err.cause.message));
-        gutil.log('File: ' + gutil.colors.red(err.fileName));
-        gutil.log('Line: ' + gutil.colors.red(err.cause.col));
+        return errors(err);
     })
     .pipe(gulpif(conf.jsOptions.minifyLibs, rename({
         suffix: '.min'
     })))
-    .pipe(gulp.dest(conf.distribution.jsLib));
+    .pipe(gulp.dest(conf.distribution.js.lib));
 });
 
 // @build: modernizr lib
@@ -51,15 +49,12 @@ gulp.task('modernizr', function() {
         .pipe(gulpif(conf.jsOptions.minifyModernizr, uglify({
             compress: true
         }))).on('error', function(err) {
-            gutil.log('Error in: ' + gutil.colors.red(err.plugin));
-            gutil.log('Message: ' + gutil.colors.red(err.cause.message));
-            gutil.log('File: ' + gutil.colors.red(err.fileName));
-            gutil.log('Line: ' + gutil.colors.red(err.cause.col));
+            return errors(err);
         })
         .pipe(gulpif(conf.jsOptions.minifyModernizr, rename({
             suffix: '.min'
         })))
-        .pipe(gulp.dest(conf.distribution.jsLib));
+        .pipe(gulp.dest(conf.distribution.js.lib));
     });
 });
 

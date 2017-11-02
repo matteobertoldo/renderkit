@@ -1,8 +1,16 @@
 {
-    "pages": {
+    "file": {
+        "css": "css/style.min.css",
+        "modernizr": "js/lib/modernizr.custom.min.js",
+        "jquery": "js/lib/jquery.min.js",
+        "vendor": "js/vendor.min.js",
+        "bundle": "js/app.min.js"
+    },
+    "page": {
         "uikit": {
             "title" : "UI Kit",
             "description" : "From UI Kit to production"
         }
-    }
+    },
+    "browserify": true
 }

@@ -19,15 +19,12 @@ var data = require('gulp-data');
 // @return: {String}
 // --------------------
 
-var getData = function(file) {
-    return JSON.parse(fs.readFileSync(path.resolve(conf.htmlOptions.dataFilePath), 'utf8'));
-};
-var dataJSON = getData();
-
 gulp.task('html', function() {
     return gulp.src(conf.workspace.html + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
-    .pipe(data(dataJSON))
+    .pipe(data(function(file) {
+        return JSON.parse(fs.readFileSync(path.resolve(conf.htmlOptions.dataFilePath), 'utf8'));
+    }))
     .pipe(nunjucksRender({
         path: [conf.workspace.html]
     }))
