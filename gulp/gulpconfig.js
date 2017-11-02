@@ -13,16 +13,6 @@ var folder = {
     pkg: 'node_modules/'
 };
 
-// @global generated files on `distribution` folder
-// -----------------
-
-var generatedFiles = {
-    html: folder.distribution + '*.html',
-    css: folder.distribution + 'css/**/*.{css,map}',
-    svg: folder.distribution + 'images/**/*.{svg,html}',
-    js: folder.distribution + 'js/**/*.{js,map}'
-};
-
 // @global options
 // -----------------
 
@@ -160,10 +150,17 @@ module.exports = {
         ignoreInitialRun: false
     },
     cleanOptions: {
-        dryRun: true,
+        generatedFiles: {
+            html: folder.distribution + '*.html',
+            css: folder.distribution + 'css/**/*.{css,map}',
+            svg: folder.distribution + 'images/**/*.{svg,html}',
+            js: folder.distribution + 'js/**/*.{js,map}'
+        },
+        dryRun: false,
         forceDelete: false,
         cleanAllDistributionFiles: true,
-        cleanAllFiles: generatedFiles,
-        cleanFilesByType: generatedFiles.html
+        cleanFilesByType: function() {
+            return this.generatedFiles.html;
+        }
     }
 };
