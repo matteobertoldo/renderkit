@@ -99,7 +99,7 @@ Full documentation coming soon.
 ## News & Coming Soon Features
 
 -   Nunjucks templating! ***NEW***
--   Browserify JS ***(Coming Soon)***
+-   Browserify JS ***NEW***
 
 ### License
 
