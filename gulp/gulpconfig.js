@@ -138,6 +138,7 @@ module.exports = {
         debugMode: false,
         log: true,
         baseFolderForDeploy: folder.distribution,
+        levelFolderForDeploy: 1,
         folderAndFilesForDeploy: folder.distribution + '**/*',
         deployOnRemoteFolder: folder.distribution,
         remoteFolderToDelete: folder.distribution
