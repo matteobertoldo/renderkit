@@ -1,51 +1,10 @@
-/**!main.js
-  @author: mbertoldo@alpenite.com
-  @description: Built with love in Venice, IT.
-*/
+var base = require('./utils/utils.js');
 
-(function($) {
-    /**
-     * @define global util & breakpoints
-     * @param: {string}
-     * @breakpoint: update var on sass config
-     */
+$(function() {
+    if (base.util.touchevents) {
+        $(document).on('touchstart', true);
+    }
 
-    var util = {
-        documentTouch: Modernizr.touchevents,
-        objectFit: Modernizr.objectFit
-    };
-
-    var breakpoint = {
-        xxlarge: 'only screen and (max-width: 1280px)',
-        xlarge: 'only screen and (max-width: 1024px)',
-        large: 'only screen and (max-width: 768px)',
-        medium: 'only screen and (max-width: 667px)'
-    };
-
-    $(function() {
-        /**
-         * @enable hover on touch-device
-         * @param: event
-         */
-
-        if (util.documentTouch) {
-            $(document).on('touchstart', true);
-        }
-
-        /**
-         * @remove click delay on touch-device
-         * @require: {FastClick}
-         * @param: event
-         */
-
-        FastClick.attach(document.body);
-
-        /**
-         * @support for use external SVG spritemaps.
-         * @require: {svg4everybody}
-         * @param: {function}
-         */
-
-         svg4everybody();
-    });
-})(jQuery);
+    FastClick.attach(document.body);
+    svg4everybody();
+});

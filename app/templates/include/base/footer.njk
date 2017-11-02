@@ -1,3 +1,6 @@
 <footer>
+    {% if browserify %}
+        <script src="{{file.vendor}}"></script>
+    {% endif %}
     <script src="js/app.min.js"></script>
 </footer>

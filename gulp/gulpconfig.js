@@ -8,7 +8,6 @@
 // -----------------
 
 var folder = {
-    root: './',
     workspace: 'app/',
     distribution: 'dist/',
     pkg: 'node_modules/'
@@ -32,16 +31,20 @@ module.exports = {
         html: folder.workspace + 'templates/',
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + 'svg/',
-        js: folder.workspace + 'js/',
-        jsVendor: folder.workspace + 'js/vendor/',
-        jsMain: folder.workspace + 'js/main/'
+        js: {
+            base: folder.workspace + 'js/',
+            main: folder.workspace + 'js/main/',
+            vendor: folder.workspace + 'js/vendor/'
+        }
     },
     distribution: {
         html: folder.distribution,
         scss: folder.distribution + 'css/',
         svg: folder.distribution + 'images/',
-        js: folder.distribution + 'js/',
-        jsLib: folder.distribution + 'js/lib/'
+        js: {
+            base: folder.distribution + 'js/',
+            lib: folder.distribution + 'js/lib/'
+        }
     },
     defaultWatchTasks: {
         html: true,
@@ -97,14 +100,6 @@ module.exports = {
         outputName: 'sprite',
         exampleFile: true
     },
-    packageManager: {
-        managePlugins: true,
-        src: [
-            folder.pkg + 'fastclick/lib/fastclick.js',
-            folder.pkg + 'svg4everybody/dist/svg4everybody.js',
-            folder.pkg + 'what-input/dist/what-input.js'
-        ]
-    },
     jsOptions: {
         libs: [
             folder.pkg + 'jquery/dist/jquery.js'
@@ -131,8 +126,21 @@ module.exports = {
             ]
         },
         minifyModernizr: true,
-        outputPluginsName: 'app',
-        minifyPlugins: true
+        browserify: true,
+        browserifyBasePath: folder.workspace + 'js/main/',
+        browserifyBaseFile: 'main.js',
+        outputPluginsName: 'vendor',
+        minifyPlugins: true,
+        outputBundleName: 'app',
+        minifyBundle: true
+    },
+    packageManager: {
+        managePlugins: true,
+        src: [
+            folder.pkg + 'fastclick/lib/fastclick.js',
+            folder.pkg + 'svg4everybody/dist/svg4everybody.js',
+            folder.pkg + 'what-input/dist/what-input.js'
+        ]
     },
     ftpOptions: {
         sftpConnection: false,
