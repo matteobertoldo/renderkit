@@ -1,17 +1,19 @@
 {
   "name": "boilerplate-standard",
   "version": "1.0.0",
-  "description": "Definitely the standard for start front end Web projects",
+  "description": "Definitely the standard for start new front-end Web projects",
   "main": "./gulpfile.js",
   "scripts": {
     "start": "gulp",
     "watch": "gulp watch",
+    "html": "gulp html",
     "sass": "gulp sass",
     "svg": "gulp svg",
     "libs": "gulp libs",
     "bundle": "gulp bundle",
     "clean": "gulp clean",
-    "deploy": "gulp deploy:ftp"
+    "ftpdeploy": "gulp ftp:deploy",
+    "deploy-watch": "deploy-watch"
   },
   "repository": "https://matteobertoldo@github.com/matteobertoldo/boilerplate-standard.git",
   "author": "Matteo Bertoldo - mbertoldo@alpenite.com",

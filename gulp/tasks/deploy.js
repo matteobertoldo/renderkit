@@ -16,10 +16,11 @@ var ftp = require('./ftp');
 
 var pathToRoot = function(fullpath) {
     var remoteDir = conf.ftpOptions.deployOnRemoteFolder;
+    var level = conf.ftpOptions.levelFolderForDeploy;
     var rpath = null;
 
     if (remoteDir === './' || remoteDir === '/') {
-        var dirs = fullpath.substring(fullpath.indexOf('/') + 1);
+        var dirs = fullpath.substring(fullpath.indexOf('/') + level);
         rpath = '/' + dirs;
 
         return rpath;
