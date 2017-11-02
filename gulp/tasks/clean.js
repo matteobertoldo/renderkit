@@ -15,12 +15,12 @@ var del = require('del');
 // -------------------
 
 if (conf.cleanOptions.cleanAllDistributionFiles) {
-    var vals = Object.keys(conf.cleanOptions.cleanAllFiles).map(function(key) {
-        return conf.cleanOptions.cleanAllFiles[key];
+    var vals = Object.keys(conf.cleanOptions.generatedFiles).map(function(key) {
+        return conf.cleanOptions.generatedFiles[key];
     });
     var localfiles = vals.toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
-    var localfiles = conf.cleanOptions.cleanFilesByType;
+    var localfiles = conf.cleanOptions.cleanFilesByType();
 }
 
 // @clean
@@ -34,7 +34,7 @@ gulp.task('clean', function() {
     }).then(function(paths) {
         if (conf.cleanOptions.dryRun) {
             if (paths.length > 0)  {
-                console.log('Files and folders that would be deleted:\n' + gutil.colors.yellow(paths.join('\n').trim()));
+                console.log('Files and/or folders that would be deleted:\n' + gutil.colors.yellow(paths.join('\n').trim()));
             } else {
                 console.log(gutil.colors.yellow('Nothing will be deleted'));
             }

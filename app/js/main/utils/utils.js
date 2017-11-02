@@ -1,5 +1,5 @@
 /**
- * @var util: global util & breakpoints
+ * @var utils: global utilities & breakpoints
  * @return: {bool|string|Array}
  * @description: Remember to agree the same values ​​for `$breakpoint` also in the file `scss/config/_breakpoints.scss`
  */
@@ -15,7 +15,7 @@ var mediaValue = function(value) {
     return Modernizr.mq('only screen and (max-width:' + value.toString() + 'px)');
 };
 
-var util = {
+var utils = {
     touchevents: Modernizr.touchevents,
     objectfit: Modernizr.objectfit,
     breakpoint: {
@@ -26,4 +26,4 @@ var util = {
     }
 };
 
-module.exports = util;
+module.exports = utils;
