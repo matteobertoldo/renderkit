@@ -14,10 +14,10 @@ Dev. Environment|[Node.js](https://nodejs.org/), [Gulp](http://gulpjs.com)
 Package Manager|[Yarn](https://yarnpkg.com/en/)
 HTML|[Nunjucks Templating](https://mozilla.github.io/nunjucks/)
 SCSS-CSS|[Sass Lang](http://sass-lang.com/), [gulp-sass](https://github.com/dlmanning/gulp-sass), [gulp-postcss](https://github.com/postcss/gulp-postcss), [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem), [Foundation Grid](http://foundation.zurb.com/sites/docs/grid.html), [clean-css](https://github.com/jakubpawlowicz/clean-css), [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps)
-JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify) (Coming soon)
+JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify)
 Icons|[SVG Spritemaps](https://github.com/jkphl/gulp-svg-sprite) supported with [SVG for Everybody](https://github.com/jonathantneal/svg4everybody)
 Live Updating|[BrowserSync](http://www.browsersync.io/)
-Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp), WebDAV with [dw-webdav](https://www.npmjs.com/package/dwdav) (coming soon)
+Deployment|FTP with [vinyl-ftp](https://github.com/morris/vinyl-ftp)
 
 ## Getting Sarted
 

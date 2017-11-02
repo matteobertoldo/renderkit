@@ -1,7 +1,7 @@
-var base = require('./utils/utils.js');
+var util = require('./utils/utils');
 
 $(function() {
-    if (base.util.touchevents) {
+    if (util.touchevents) {
         $(document).on('touchstart', true);
     }
 

@@ -63,7 +63,7 @@ if (conf.jsOptions.browserify) {
 
     gulp.task('bundle', function() {
         var bundle = browserify({
-            entries: conf.jsOptions.browserifyBasePath + conf.jsOptions.browserifyBaseFile,
+            entries: conf.jsOptions.browserifyBaseFile,
             debug: true
         });
 
