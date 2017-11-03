@@ -19,6 +19,25 @@
 	@return $string;
 }
 
+// Function for catch "font-family" in `$font-face-map`.
+// @note: use -> .my-text { font-family: font(1); }
+// @author: mbertoldo@alpenite.com
+// --------------------------------
+
+@function font($font-family-key) {
+    $list: $font-face-map;
+    $key: map-keys($list);
+    $map-length: length($list);
+
+    @if ($font-family-key > $map-length) {
+        @warn 'No font-family found in `$font-face-map` map.';
+    } @else {
+        $value: nth($key, $font-family-key);
+
+        @return $value;
+    }
+}
+
 // @font-face mixin.
 // @note: only define as String your Font Name and define your "font file name".
 // @note: if you have subfolders where is your font files, just simply define the folder where is this, before font file name. Ex ´mysubfolderfont/my_awesome_font_file_name´.

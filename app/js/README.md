@@ -1,4 +1,4 @@
-# JavaScript Guide
+# JavaScript Package
 
 ## Modularization
 [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) standard is used for client-side JavaScript modularization. The modules are then bundled into a single file using [Browserify](http://browserify.org/).
