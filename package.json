@@ -24,7 +24,7 @@
     "browserify": "^14.5.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.4.0",
+    "gulp-clean-css": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
     "gulp-file": "^0.3.0",

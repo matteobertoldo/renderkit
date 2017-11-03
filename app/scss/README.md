@@ -1,4 +1,11 @@
-# Table of contents
+# SASS Package
+The output CSS file in your folder `distribution` it is structured with SASS. Please read this SASS guide before create your custom packages or extend a current package. <br/>
+All stylesheets are written in SCSS, whose syntax is a superset of CSS.
+
+SCSS authoring is meant to be used with a build tool, which is currently [gulp](http://gulpjs.com).
+Once compiled, the SCSS is output as CSS in `distribution/css` folder.
+
+## Table of contents
 
 Features | Tools Used
 ------ | -----
@@ -12,15 +19,6 @@ Grids|[Foundation Float Grid](https://foundation.zurb.com/sites/docs/grid.html),
 Accessibility| Accessibility `@mixins` packages `@accessibility-classes`
 Flexbox| Flexbox `@mixins` packages `@flexbox-classess`
 Visibility|[Foundation Visibility](https://foundation.zurb.com/sites/docs/visibility.html)
-
-# SASS Guide
-The output CSS file in your folder `distribution` it is structured with SASS. Please read this SASS guide before create your custom packages or extend a current package.
-
-### Authoring
-All stylesheets are written in SCSS, whose syntax is a superset of CSS.
-
-SCSS authoring is meant to be used with a build tool, which is currently [gulp](http://gulpjs.com).
-Once compiled, the SCSS is output as CSS in `distribution/css` folder.
 
 ## Packages
 Please don't write any rules into `style.scss` or into an `importer` file. You can simply find it with `@importer` flag.
