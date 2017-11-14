@@ -11,18 +11,18 @@ var $breakpoint = {
     medium: 640
 };
 
-var mediaValue = function(value) {
-    return Modernizr.mq('only screen and (max-width:' + value.toString() + 'px)');
+var mq = function(value) {
+    return 'only screen and (max-width:' + value.toString() + 'px)';
 };
 
 var utils = {
     touchevents: Modernizr.touchevents,
     objectfit: Modernizr.objectfit,
     breakpoint: {
-        xxlarge: mediaValue($breakpoint.xxlarge),
-        xlarge: mediaValue($breakpoint.xlarge),
-        large: mediaValue($breakpoint.large),
-        medium: mediaValue($breakpoint.medium)
+        xxlarge: mq($breakpoint.xxlarge),
+        xlarge: mq($breakpoint.xlarge),
+        large: mq($breakpoint.large),
+        medium: mq($breakpoint.medium)
     }
 };
 

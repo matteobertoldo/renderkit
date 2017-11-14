@@ -8,6 +8,6 @@ $breakpoints: (
     large: 1024px,
     xlarge: 1200px,
     xxlarge: 1440px
-) !default;
-$breakpoint-classes: (small medium large) !default;
-$print-breakpoint: large !default;
+);
+$breakpoint-classes: (small medium large);
+$print-breakpoint: large;

@@ -2,6 +2,8 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
+$global-font-size: 100% !default;
+
 // Removes the unit (e.g. px, em, rem) from a value, returning the number only.
 // @param: {Number} $num - Number to strip unit from.
 // @returns: {Number} The same number, sans unit.
@@ -9,6 +11,52 @@
 
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
+}
+
+// Converts a pixel, percentage, rem or em value to a unitless value based on a given font size. Ideal for working out unitless line heights.
+// @param {Number} $value - Value to convert to a unitless line height
+// @param {Number} $base - The font size to use to work out the line height - defaults to $global-font-size
+// @return {Number} - Unitless number
+// --------------------------------
+
+@function unitless-calc($value, $base: null) {
+    @if $base == null {
+        $base: $global-font-size;
+    }
+
+    @if unit($base) == '%' {
+        $base: ($base / 100%) * 16px;
+    }
+
+    @if unit($base) == 'rem' {
+        $base: strip-unit($base) * 16px;
+    }
+
+    @if unit($base) == 'em' {
+        $base: strip-unit($base) * 16px;
+    }
+
+    @if unit($value) == '%' {
+        $value: ($value / 100%) * $base;
+    }
+
+    @if unit($value) == 'rem' {
+        $value: strip-unit($value) * $base;
+    }
+
+    @if unit($value) == 'em' {
+        $value: strip-unit($value) * $base;
+    }
+
+    @if unit($value) == 'px' {
+        @return strip-unit($value) / strip-unit($base);
+    }
+
+    @if unitless($value) and ($value > 10) {
+        @return $value / strip-unit($base);
+    }
+
+    @return $value;
 }
 
 // Function for transform "px" value to "em".

@@ -1,0 +1,13 @@
+// @foundation float grid
+// --------------------------------
+
+$grid-row-width: 1200px;
+$grid-column-count: 12;
+$grid-column-gutter: (
+    small: 20px,
+    medium: 30px,
+);
+$grid-column-align-edge: true;
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+$block-grid-max: 8;

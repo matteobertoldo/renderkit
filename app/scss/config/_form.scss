@@ -1,67 +1,71 @@
 // @components: form
 // --------------------------------
 
-$global-reset-input-appearance: true !default;
-$global-inputs-rowclass: 'form-row' !default;
-$global-inputs-labelclass: 'form-label' !default;
-$global-input-height: 40px !default;
-$global-input-font-size: 14px !default;
-$global-input-label-font-size: 14px !default;
+$global-input-form-element: (email, password, search, select, tel, text, textarea, url);
+$global-reset-input-appearance: true;
+$global-inputs-rowclass: 'form-row';
+$global-inputs-labelclass: 'form-label';
+$global-input-height: 40px;
+$global-input-font-family: inherit;
+$global-input-font-size: 14px;
+$global-input-label-font-family: inherit;
+$global-input-label-font-size: 14px;
 $global-input-label-color: palette(4);
 $global-input-label-margin: 0 0 5px 0;
-$global-input-border-radius: 4px !default;
-$global-input-padding: 10px !default;
-$global-input-background-color: palette(1) !default;
-$global-input-color: palette(4) !default;
-$global-input-placeholder-color: palette(2) !default;
-$global-input-placeholder-focus-hidden: true !default;
-$global-input-placeholder-focus-color: palette(2) !default;
-$global-input-placeholder-font-family: sans-serif !default;
-$global-input-placeholder-font-style: italic !default;
-$global-input-border: 1px solid palette(2) !default;
-$global-hover-input-border: true !default;
-$global-hover-input-border-color: palette(4) !default;
-$global-focus-input-border-color: palette(4) !default;
-$global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease !default;
+$global-input-border-radius: 4px;
+$global-input-padding: 10px;
+$global-input-background-color: palette(1);
+$global-input-color: palette(4);
+$global-input-placeholder-color: palette(2);
+$global-input-placeholder-focus-hidden: true;
+$global-input-placeholder-focus-color: palette(2);
+$global-input-placeholder-font-family: inherit;
+$global-input-placeholder-font-style: italic;
+$global-input-border: 1px solid palette(2);
+$global-hover-input-border: true;
+$global-hover-input-border-color: palette(4);
+$global-focus-input-border-color: palette(4);
+$global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
 // @components: form ~ textarea
 // --------------------------------
 
-$global-textarea-height: 110px !default;
-$global-textarea-resize: true !default;
+$global-textarea-height: 110px;
+$global-textarea-resize: true;
 
 // @components: form ~ select
 // @$global-select-caret-shape: 'arrow' || 'triangle' || 'empty'
 // --------------------------------
 
-$global-custom-select: true !default;
-$global-select-caret-color: palette(4) !default;
+$global-custom-select: true;
+$global-select-caret-color: palette(4);
 $global-select-caret-shape-render: true;
-$global-select-caret-shape: 'arrow' !default;
-$global-select-caret-size: 10px !default;
-$global-select-caret-image-url: 'path/to/shape' !default;
-$global-select-caret-background-size: 10px !default;
-$global-custom-options-select: false !default;
+$global-select-caret-shape: 'arrow';
+$global-select-caret-size: 10px;
+$global-select-caret-image-url: 'path/to/shape';
+$global-select-caret-background-size: 10px;
+$global-custom-options-select: false;
 
 // @components: form ~ checkbox-radio
 // --------------------------------
 
-$global-custom-checkbox-radio: true !default;
-$global-custom-checkbox-radio-size: 24px !default;
-$custom-checkbox-radio-label-gutter: 10px !default;
-$custom-checkbox-mark-thick: 2px !default;
-$custom-checkbox-mark-color: palette(4) !default;
-$custom-radio-mark-color: palette(4) !default;
-$checked-custom-input-border: true !default;
-$custom-checkbox-checked-border: palette(4) !default;
-$custom-radio-checked-border: palette(4) !default;
-$custom-checkbox-radio-outline-detect: true !default;
+$global-custom-checkbox-radio: true;
+$global-custom-checkbox-radio-size: 24px;
+$custom-checkbox-radio-label-gutter: 10px;
+$custom-checkbox-mark-thick: 2px;
+$custom-checkbox-mark-color: palette(4);
+$custom-radio-mark-color: palette(4);
+$checked-custom-input-border: true;
+$custom-checkbox-checked-border: palette(4);
+$custom-radio-checked-border: palette(4);
+$custom-checkbox-radio-outline-detect: true;
 
 // @components: form ~ validation class + autofill
 // --------------------------------
 
-$validation-input-error-class: 'error' !default;
-$validation-input-error-border-color: palette(5) !default;
-$validation-input-error-background-color: $global-input-background-color !default;
-$global-input-custom-autofill: true !default;
-$global-input-autofill-color: $global-input-background-color !default;
+$validation-input-error-class: 'error';
+$validation-input-error-border-color: palette(5);
+$validation-input-error-background-color: $global-input-background-color;
+$global-input-custom-autofill: false;
+$global-input-autofill-color: $global-input-color;
+$global-input-autofill-background-color: $global-input-background-color;

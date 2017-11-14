@@ -64,7 +64,7 @@ module.exports = {
     cssOptions: {
         browsersSupport: [
             '> 1%',
-            'last 4 versions'
+            'last 6 versions'
         ],
         flexbox: 'no-2009',
         msGridLayout: false,

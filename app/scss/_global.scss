@@ -1,14 +1,16 @@
-// @importer: for global "light-sass" packages
+// @importer: for global "sass" mixin
 // @author: mbertoldo@alpenite.com
 // @access: private
+// @note: `vendor` dependencies @SassyLists
 
+@import 'node_modules/sassy-lists/dist/SassyLists';
 @import 'base/utils/utils';
-@import 'config/config';
 @import 'base/fonts/fonts';
 @import 'base/helpers/helpers';
 @import 'base/components/components';
+@import 'config/config';
 
-@mixin light-sass($components: true) {
+@mixin sass() {
     @include global-fonts;
     @include scss-normalize;
     @include headers-style;
@@ -21,13 +23,19 @@
     @include foundation-visibility-classes;
     @include float-classes;
     @include clearfix-classes;
-    @include foundation-grid;
-    @include flexbox-classes;
 
-    @if ($components) {
-        @include form-style;
-        @include checkbox-radio-classes;
-        @include colors-palette;
-        @include shape-classes;
+    // @components
+    // -------------
+
+    @if ($flex) {
+        @include foundation-xy-grid-classes;
+        @include flexbox-classes;
+    } @else {
+        @include foundation-grid;
     }
+
+    @include form-style;
+    @include checkbox-radio-classes;
+    @include colors-palette;
+    @include shape-classes;
 }

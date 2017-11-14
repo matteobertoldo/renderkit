@@ -40,32 +40,18 @@ $breakpoints: (
     xlarge: 1200px,
     xxlarge: 1440px
 ) !default;
+
+$print-breakpoint: large !default;
 $-zf-zero-breakpoint: small !default;
 $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 
-// Function for find the next key in a map.
-// @access: private
-// @param: {Map} $map - Map to traverse.
-// @param: {Mixed} $key - Key to use as a starting point.
-// @returns: {Mixed} The value for the key after `$key`, if `$key` was found. If `$key` was not found, or `$key` was the last value in the map, returns `null`.
-// @author: foundation.zurb.com
-// @note: Licensed under MIT Open Source
-// --------------------------------
-
-@function -zf-map-next($map, $key) {
-    $values: map-keys($map);
-    $i: 0;
-
-    @if (map-has-key($map, $key)) {
-        $i: index($values, $key) + 1;
-    }
-
-    @if ($i > length($map) or $i == 0) {
-        @return null;
-    } @else {
-        @return map-get($map, nth($values, $i));
-    }
+@if nth(map-values($breakpoints), 1) != 0 {
+    @error 'Your smallest breakpoint (defined in $breakpoints) must be set to "0".';
+} @else {
+    $-zf-zero-breakpoint: nth(map-keys($breakpoints), 1);
 }
+
+$breakpoint-classes: (small medium large) !default;
 
 // Generates a media query string matching the input value.
 // @param: {Keyword|Number} $val [small] - Breakpoint name, or px, rem, or em value to process.
@@ -136,44 +122,6 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
 	@return $str;
 }
 
-// Get a value for a breakpoint from a responsive config map. If the config map has the key `$value`, the exact breakpoint value is returned. If the config map does *not* have the breakpoint, the value matching the next lowest breakpoint in the config map is returned.
-// @access private
-// @param: {Map} $map - Input config map.
-// @param: {Keyword} $value - Breakpoint name to use.
-// @return: {Mixed} The corresponding breakpoint value.
-// --------------------------------
-
-@function -zf-get-bp-val($map, $value) {
-	@if not map-has-key($breakpoints, $value) {
-		@return null;
-	} @else if map-has-key($map, $value) {
-		@return map-get($map, $value);
-	} @else {
-		$anchor: null;
-		$found: false;
-
-		@each $key, $val in $breakpoints {
-			@if not $found {
-				@if map-has-key($map, $key) {
-					$anchor: $key;
-				}
-
-				@if $key == $value {
-					$found: true;
-				}
-			}
-		}
-
-		@return map-get($map, $anchor);
-	}
-}
-
-@if nth(map-values($breakpoints), 1) != 0 {
-    @error 'Your smallest breakpoint (defined in $breakpoints) must be set to "0".';
-} @else {
-    $-zf-zero-breakpoint: nth(map-keys($breakpoints), 1);
-}
-
 // Mixin for wraps a media query around the content you put inside the mixin.
 // @param: {Keyword|Number} $value - Breakpoint name, or px, rem, or em value to process.
 // @output: If the breakpoint is "0px and larger", outputs the content as-is. Otherwise, outputs the content wrapped in a media query.
@@ -201,21 +149,142 @@ $-zf-breakpoints-keys: map-to-list($breakpoints, 'keys');
     }
 }
 
-// Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query. Use this with the grid, or any other component that has responsive classes.
-// @param: {Boolean} $small [true] - If `false`, the mixin will skip the `small` breakpoint. Use this with components that don't prefix classes with `small-`, only `medium-` and up.
+// Function for find the next key in a map.
+// @access: private
+// @param: {Map} $map - Map to traverse.
+// @param: {Mixed} $key - Key to use as a starting point.
+// @returns: {Mixed} The value for the key after `$key`, if `$key` was found. If `$key` was not found, or `$key` was the last value in the map, returns `null`.
+// @author: foundation.zurb.com
+// @note: Licensed under MIT Open Source
 // --------------------------------
 
-@mixin -zf-each-breakpoint($small: true) {
-    $map: $breakpoint-classes;
+@function -zf-map-next($map, $key) {
+    $values: map-keys($map);
+    $i: 0;
 
-    @if not $small {
-        $map: map-remove($map, $-zf-zero-breakpoint);
+    @if (map-has-key($map, $key)) {
+        $i: index($values, $key) + 1;
     }
 
-    @each $size in $map {
-        $-zf-size: $size !global;
+    @if ($i > length($map) or $i == 0) {
+        @return null;
+    } @else {
+        @return map-get($map, nth($values, $i));
+    }
+}
 
-        @include breakpoint($size) {
+// Return a list of our named breakpoints less than $key. Useful for dealing with
+// responsive gutters for the grid.
+// @access private
+// @param {String} $key - Key to use as last breakpoint.
+// @returns {Array} The list of breakpoints up to and. If $key is auto, returns breakpoints above the zero
+// --------------------------------
+
+@function -zf-breakpoints-less-than($key) {
+    $list: ();
+    $found_key: false;
+
+    @each $name in $-zf-breakpoints-keys {
+        @if ($name == $key) {
+            $found_key: true;
+        }
+
+        @if not $found_key {
+            $list: append($list, $name);
+        }
+    }
+
+    @return $list;
+}
+
+// Return a list of our named breakpoints less than $key. Useful for dealing with
+// responsive gutters for the grid.
+// @access private
+// @param {String} $breakpoing - a named or non-named breakpoint.
+// @returns {Array} The list of breakpoints up to and. If $key is auto, returns breakpoints above the zero
+// --------------------------------
+
+@function -zf-closest-named-breakpoint($breakpoint) {
+    $last: $-zf-zero-breakpoint;
+    $found: false;
+    $value: unitless-calc($breakpoint, 1px);
+
+    @each $key, $val in $breakpoints {
+        @if not $found {
+            @if unitless-calc($val) > $value {
+                $found: true;
+            } @else {
+                $last: $key;
+            }
+        }
+    }
+
+    @return $last;
+}
+
+// Get a value for a breakpoint from a responsive config map or single value.
+// - If the config is a single value, return it regardless of `$value`.
+// - If the config is a map and has the key `$value`, the exact breakpoint value is returned.
+// - If the config is a map and does *not* have the breakpoint, the value matching the next lowest breakpoint in the config map is returned.
+// @access private
+// @param {Number|Map} $map - Responsive config map or single value.
+// @param {Keyword} $value - Breakpoint name to use.
+// @return {Mixed} The corresponding breakpoint value.
+// --------------------------------
+
+@function -zf-get-bp-val($map, $value) {
+    @if type-of($map) == 'number' {
+        @return $map;
+    }
+
+    @if not map-has-key($breakpoints, $value) {
+        @if type-of($value) == 'number' {
+            $value: -zf-closest-named-breakpoint($value);
+        } @else {
+            @return null;
+        }
+    } @else if map-has-key($map, $value) {
+        @return map-get($map, $value);
+    } @else {
+        $anchor: null;
+        $found: false;
+
+        @each $key, $val in $breakpoints {
+            @if not $found {
+                @if map-has-key($map, $key) {
+                    $anchor: $key;
+                }
+
+                @if $key == $value {
+                    $found: true;
+                }
+            }
+        }
+
+        @return map-get($map, $anchor);
+    }
+}
+
+// Iterates through breakpoints defined in `$breakpoint-classes` and prints the CSS inside the mixin at each breakpoint's media query. Use this with the grid, or any other component that has responsive classes.
+// @param {Boolean} $small [true] - If `false`, the mixin will skip the `small` breakpoint. Use this with components that don't prefix classes with `small-`, only `medium-` and up.
+// @param {Boolean} $auto-insert-breakpoints [true] - If `false`, the mixin will iterate over breakpoints without doing the media query itself. Useful for more complex media query generation as in the margin grid.
+// --------------------------------
+
+@mixin -zf-each-breakpoint($small: true, $auto-insert-breakpoints: true) {
+    $list: $breakpoint-classes;
+
+    @if not $small {
+        $list: sl-remove($list, $-zf-zero-breakpoint);
+    }
+
+    @each $name in $list {
+        $-zf-size: $name !global;
+
+        @if $auto-insert-breakpoints {
+            @include breakpoint($name) {
+                @content;
+            }
+        } @else {
             @content;
         }
     }
