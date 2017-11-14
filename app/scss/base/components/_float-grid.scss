@@ -234,7 +234,7 @@
 
 @mixin grid-column-unposition {
 	position: static;
-	float: left;
+	float: $global-left;
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -373,9 +373,8 @@
     }
 }
 
-// Outputs CSS classes for the grid.
+// Outputs CSS classes for the float grid.
 // @access private
-// @note: no em conversion. Every media query was added the `only` attribute.
 // --------------------------------
 
 @mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded') {

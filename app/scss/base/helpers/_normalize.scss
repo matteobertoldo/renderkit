@@ -39,7 +39,11 @@
             size: $body-font-size;
     		weight: $body-font-weight;
     	}
-    	background-color: $body-background-color;
+        @if ($body-background-gradient) {
+            background-image: $body-background-gradient-value;
+        } @else {
+            background-color: $body-background-color;
+        }
     	color: $body-base-color;
     	line-height: $body-line-height;
     	margin: 0;

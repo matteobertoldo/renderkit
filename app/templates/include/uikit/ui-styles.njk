@@ -1,9 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 <style id="uikit-render">
-body {
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-}
-
 main {
     overflow: hidden;
 }
@@ -19,13 +15,16 @@ main {
     font-size: 280px;
     font-size: calc((112.5% + 15vw) * 2);
     position: absolute;
-    top: 0;
+    top: 50%;
     left: -15px;
     text-transform: none;
     letter-spacing: 12px;
     margin: 0;
     opacity: 0.03;
     pointer-events: none;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     z-index: -1;
 }
 </style>

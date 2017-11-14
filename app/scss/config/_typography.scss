@@ -1,23 +1,23 @@
 // @typography
 // --------------------------------
 
-$body-font-size: 16px !default;
-$body-font-family: sans-serif !default;
-$body-font-weight: normal !default;
-$body-line-height: 1.15 !default;
-$global-text-direction: ltr !default;
-$global-heading-font-family: inherit !default;
-$global-paragraph-font-family: inherit !default;
-$global-strong-font-family: inherit !default;
-$global-strong-font-weight: bolder !default;
+$body-font-size: 16px;
+$body-font-family: sans-serif;
+$body-font-weight: normal;
+$body-line-height: 1.15;
+$global-text-direction: ltr;
+$global-heading-font-family: inherit;
+$global-paragraph-font-family: inherit;
+$global-strong-font-family: inherit;
+$global-strong-font-weight: bolder;
 
 // @typography ~ headers + paragraph
 // --------------------------------
 
-$global-heading-font-weight: bold !default;
-$global-paragraph-font-weight: normal !default;
-$global-heading-line-height: 1.4 !default;
-$global-paragraph-line-height: 1.4 !default;
+$global-heading-font-weight: bold;
+$global-paragraph-font-weight: normal;
+$global-heading-line-height: 1.4;
+$global-paragraph-line-height: 1.4;
 $header-sizes: (
     small: (
         'h1': 24px,
@@ -35,12 +35,12 @@ $header-sizes: (
         'h5': 20px,
         'h6': 16px,
     ),
-) !default;
-$global-heading-letter-spacing: normal !default;
-$global-paragraph-letter-spacing: normal !default;
-$global-heading-text-transform: uppercase !default;
-$global-paragraph-text-transform: none !default;
-$global-margin-heading: true !default;
-$global-margin-paragraph: false !default;
-$margin-heading: 0 0 16px 0 !default;
-$margin-paragraph: 0 !default;
+);
+$global-heading-letter-spacing: normal;
+$global-paragraph-letter-spacing: normal;
+$global-heading-text-transform: uppercase;
+$global-paragraph-text-transform: none;
+$global-margin-heading: true;
+$global-margin-paragraph: false;
+$margin-heading: 0 0 16px 0;
+$margin-paragraph: 0;

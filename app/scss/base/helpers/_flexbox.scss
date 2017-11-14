@@ -52,10 +52,12 @@
 
     /*@flexbox-classes*/
     @each $class, $classes in $flexbox-classes {
-    	.flex-#{$class} {
-    		@each $property, $properties in $classes {
-    			#{$property}: unquote($properties);
-    		}
-    	}
+        @if ($flex) {
+            .flex-#{$class} {
+        		@each $property, $properties in $classes {
+        			#{$property}: unquote($properties);
+        		}
+        	}
+        }
     }
 }

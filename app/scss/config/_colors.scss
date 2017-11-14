@@ -8,21 +8,23 @@ $palette-color: (
     4: #4d4d4d,
     5: #9C0000,
     6: #f2bbbb
-) !default;
+);
 
 // @colors: accessibility
 // --------------------------------
 
-$global-selection-background-color: #b3d4fc !default;
-$global-selection-color: false !default;
-$selection-color: initial !default;
-$ios-tap-color: transparent !default;
+$global-selection-background-color: #b3d4fc;
+$global-selection-color: false;
+$selection-color: initial;
+$ios-tap-color: transparent;
 
 // @colors: global
 // --------------------------------
 
-$body-background-color: white !default;
-$body-base-color: black !default;
-$global-heading-color: inherit !default;
-$global-paragraph-color: inherit !default;
-$global-link-color: inherit !default;
+$body-background-gradient: false;
+$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+$body-background-color: white;
+$body-base-color: black;
+$global-heading-color: inherit;
+$global-paragraph-color: inherit;
+$global-link-color: inherit;

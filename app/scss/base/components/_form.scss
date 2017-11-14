@@ -44,7 +44,10 @@
 
         .#{$global-inputs-labelclass} {
             display: block;
-            font-size: $global-input-label-font-size;
+            font: {
+                family: $global-input-label-font-family;
+                size: $global-input-label-font-size;
+            }
             color: $global-input-label-color;
             margin: $global-input-label-margin;
         }
@@ -53,7 +56,10 @@
             display: block;
             width: 100%;
             height: $global-input-height;
-            font-size: $global-input-font-size;
+            font: {
+                family: $global-input-font-family;
+                size: $global-input-font-size;
+            }
             background-color: $global-input-background-color;
             color: $global-input-color;
             border: $global-input-border;
@@ -71,7 +77,7 @@
                 }
             }
 
-            // @reset FF pseudo attributes
+            // @reset Firefox/Gecko pseudo attributes
             // --------------------------------
 
             &:required,
@@ -122,9 +128,9 @@
                 &:-webkit-autofill,
                 &:-webkit-autofill:hover,
                 &:-webkit-autofill:focus {
-                    -webkit-box-shadow: 0 0 0 $global-input-height $global-input-autofill-color inset;
-                    -webkit-text-fill-color: $global-input-color;
-                    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+                    -webkit-box-shadow: 0 0 0 $global-input-height $global-input-autofill-background-color inset;
+                    -webkit-text-fill-color: $global-input-autofill-color;
+                    transition: $global-input-transition;
                 }
             }
         }
@@ -133,10 +139,11 @@
         // @note: `:-moz-focusring` hide default focus ring in FF with current `$global-input-color`
         // --------------------------------
 
-        @each $input-type in (email, password, search, select, tel, text, textarea, url) {
+        @each $input-type in $global-input-form-element {
             @if ($input-type == select or $input-type == textarea) {
                 #{$input-type} {
                     @extend %style-inputs;
+                    @extend %autofill !optional;
 
                     @if ($input-type == select) {
                         &:-moz-focusring {
@@ -147,7 +154,6 @@
 
                     @if ($input-type != select) {
                         @extend %placeholder-style;
-                        @extend %autofill !optional;
                     }
                 }
             } @else {

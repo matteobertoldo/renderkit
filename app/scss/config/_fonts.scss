@@ -2,10 +2,10 @@
 // @note: $google-fonts-family accept the name of the font after string `?family=`.
 // --------------------------------
 
-$font-dir: '../assets/fonts/' !default;
-$google-fonts-load: false !default;
-$google-fonts-name: 'MyAwesomeGoogleFont' !default;
-$font-face-load: false !default;
+$font-dir: '../assets/fonts/';
+$google-fonts-load: false;
+$google-fonts-name: 'MyAwesomeGoogleFont';
+$font-face-load: false;
 $font-face-map: (
     'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg)
-) !default;
+);
