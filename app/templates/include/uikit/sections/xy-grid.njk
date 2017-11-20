@@ -1,0 +1,28 @@
+{#
+- Set on `global.json` file your favorite preview of grid. Choose betwenn `xy-grid` or `float-grid` or both from Foundation.
+#}
+
+{% set columns = page.uikit.flexgrid.gridcolumns %}
+{% set finalcolumns = columns / columns %}
+{% set gridcontainer = page.uikit.flexgrid.gridcontainer %}
+
+<div class="render-grid-content">
+    <h2 class="section-title-type">
+        <span class="text">XY Grid System</span>
+    </h2>
+    <p class="description-type">
+        Currently use: <code class="function-code">`xy-grid`</code> with <b>{{columns}}</b> columns. <br />
+        You set <code class="sass-code">$flex: true</code>. <br />
+        Configure your <code class="sass-code">$grid-row-width</code> & <code class="sass-code">$grid-margin-gutters</code>.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            {% for column in range(0, columns) %}
+                <div class="small-{{columns}} medium-{{columns}} large-{{finalcolumns}} cell"></div>
+            {% endfor %}
+        </div>
+        <span class="max-width-count">{{gridcontainer}}</span>
+        <span class="width-count"></span>
+    </div>
+</div>

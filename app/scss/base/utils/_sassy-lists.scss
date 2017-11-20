@@ -1,0 +1,110 @@
+// Returns whether `$list` contains `$value`.
+// @ignore Documentation: http://at-import.github.io/SassyLists/documentation/#function-sl-contain
+// @param {List}    $list  - list to check
+// @param {*}       $value - value to look for
+// @example
+// sl-contain(a b c, a)
+// true
+// @example
+// sl-contain(a b c, z)
+// false
+// @return {Bool}
+
+@function sl-contain($list, $value) {
+    @return not not index($list, $value);
+}
+
+// Returns truthiness of `$value`.
+// @access private
+// @param {*} $value - value to check
+// @return {Bool}
+
+@function sl-is-true($value) {
+    @return if($value == null, false, $value and $value != null and $value != '' and $value != ());
+}
+
+// Casts `$value` into a list.
+// @ignore Documentation: http://at-import.github.io/SassyLists/documentation/#function-sl-to-list
+// @param {*} $value - value to cast to list
+// @param {String} $separator [space] - separator to use
+// @example
+// sl-to-list(a b c, comma)
+// a, b, c
+// @return {List}
+
+@function sl-to-list($value, $separator: list-separator($value)) {
+    @return join((), $value, $separator);
+}
+
+// Removes all false and null values from `$list`.
+// @ignore Documentation: http://at-import.github.io/SassyLists/documentation/#function-sl-purge
+// @requires sl-is-true
+// @requires sl-to-list
+// @param {List} $list - list to purge
+// @example
+// sl-purge(null a false b)
+// a b
+// @return {List}
+// @note Remove `sl-missing-dependencies`
+
+@function sl-purge($list) {
+    $result: ();
+
+    @each $item in $list {
+        @if sl-is-true($item) {
+            $result: append($result, $item, list-separator($list));
+        }
+    }
+
+    @return sl-to-list($result);
+}
+
+// Replaces `$old` by `$new` in `$list`.
+// @ignore Documentation: http://at-import.github.io/SassyLists/documentation/#function-sl-replace
+// @requires sl-is-true
+// @requires sl-purge
+// @requires sl-to-list
+// @param {List}    $list  - list to update
+// @param {*}       $old   - value to replace
+// @param {*}       $value - new value for $old
+// @example
+// sl-replace(a b c, b, z)
+// a z c
+// @example
+// sl-replace(a b c, y, z)
+// a b c
+// @return {List}
+// @note Remove `sl-missing-dependencies`
+
+@function sl-replace($list, $old, $value) {
+    $running: true;
+
+    @while $running {
+        $index: index($list, $old);
+
+        @if not $index {
+            $running: false;
+        } @else {
+            $list: set-nth($list, $index, $value);
+        }
+    }
+
+    $list: if(sl-is-true($value), $list, sl-purge($list));
+
+    @return sl-to-list($list);
+}
+
+// Removes value(s) `$value` from `$list`.
+// @ignore Documentation: http://at-import.github.io/SassyLists/documentation/#function-sl-remove
+// @requires sl-replace
+// @param {List}    $list      - list to update
+// @param {*}       $value     - value to remove
+// @example
+// sl-remove(a b c, a)
+// b c
+// @return {List}
+// @note Remove `sl-missing-dependencies`
+
+@function sl-remove($list, $value) {
+    @return sl-replace($list, $value, null);
+}

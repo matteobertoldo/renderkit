@@ -9,12 +9,12 @@
 
 @mixin headers-style {
     /*@headers-style*/
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6, {
         font: {
             family: $global-heading-font-family;
             weight: $global-heading-font-weight;
@@ -39,7 +39,8 @@
     @each $size, $headers in $header-sizes {
     	@include breakpoint($size) {
     		@each $header, $font-size in $headers {
-    			#{$header} {
+    			#{$header},
+                .#{$header} {
     				font-size: $font-size;
     			}
     		}
