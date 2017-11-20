@@ -1,9 +1,7 @@
 // @importer: for global "sass" mixin
 // @author: mbertoldo@alpenite.com
 // @access: private
-// @note: `vendor` dependencies @SassyLists
 
-@import 'node_modules/sassy-lists/dist/SassyLists';
 @import 'base/utils/utils';
 @import 'base/fonts/fonts';
 @import 'base/helpers/helpers';
@@ -35,7 +33,11 @@
     }
 
     @include form-style;
-    @include checkbox-radio-classes;
+
+    @if ($global-custom-checkbox-radio) {
+        @include checkbox-radio-classes;
+    }
+
     @include colors-palette;
     @include shape-classes;
 }

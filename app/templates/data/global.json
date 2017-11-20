@@ -1,4 +1,7 @@
 {
+    "modernizr": true,
+    "jquery": true,
+    "browserify": true,
     "file": {
         "css": "css/style.min.css",
         "modernizr": "js/lib/modernizr.custom.min.js",
@@ -8,9 +11,20 @@
     },
     "page": {
         "uikit": {
-            "title" : "UI Kit",
-            "description" : "From UI Kit to production"
+            "title": "UI Kit",
+            "description": "From UI Kit to production",
+            "flexgrid": {
+                "show": true,
+                "gridcontainer": "1200px",
+                "gridcolumns": 12
+            },
+            "floatgrid": {
+                "show": false,
+                "gridcontainer": "1200px",
+                "gridcolumns": 12,
+                "rowclass": "row",
+                "columnclass": "column"
+            }
         }
-    },
-    "browserify": true
+    }
 }

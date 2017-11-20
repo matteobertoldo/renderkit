@@ -1,14 +1,46 @@
 {% extends "layout/default.njk" %}
 {% set title = page.uikit.title %}
 {% set description = page.uikit.description %}
+{% set flexgrid = page.uikit.flexgrid.show %}
+{% set floatgrid = page.uikit.floatgrid.show %}
 
 {% block content %}
-    {% include "include/uikit/palette-script.njk" %}
-    {% include "include/uikit/ui-styles.njk" %}
     <main>
-        <section class="section-type typhograpy">
-            <h1 class="section-title">Typography</h1>
+        {% include "include/uikit/controllers/ui/ui-style.njk" %}
+
+        <section class="section-type palette">
+            <div class="controllers" hidden="true">
+                {% include "include/uikit/controllers/palette/palette.njk" %}
+                {% include "include/uikit/controllers/palette/palette-style.njk" %}
+            </div>
+            <div class="content">
+                <h1 class="section-title">Palette</h1>
+                <h2 class="section-title-type">
+                    <span class="text">Colors palette</span>
+                </h2>
+                {% include "include/uikit/sections/palette.njk" %}
+            </div>
+        </section>
+
+        <section class="section-type grid">
+            <div class="controllers" hidden="true">
+                {% if flexgrid %}
+                    {% include "include/uikit/controllers/grid/xy-grid-style.njk" %}
+                {% endif %}
+                {% if floatgrid %}
+                    {% include "include/uikit/controllers/grid/float-grid-style.njk" %}
+                {% endif %}
+            </div>
+            <div class="content">
+                <h1 class="section-title">Grid</h1>
+                {% if flexgrid %}
+                    {% include "include/uikit/sections/xy-grid.njk" %}
+                {% endif %}
+                {% if floatgrid %}
+                    {% include "include/uikit/sections/float-grid.njk" %}
+                {% endif %}
+            </div>
         </section>
     </main>
-    {% include "include/base/footer.njk" %}
+    {% include "include/base/scripts.njk" %}
 {% endblock %}

@@ -1,11 +1,11 @@
 // @normalize mixin
 // @author: original authors Nicolas Gallagher & Jonathan Neal
 // @author: mbertoldo@alpenite.com (extended and re-written in scss)
-// @note: global styles "normalized" in all browsers. From normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
+// @note: global styles & tags "normalized" in all browsers. From normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
 // @access: private
 
 @mixin scss-normalize {
-    /*@custom normalize: normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css*/
+    /*@custom normalize: normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css*/
 
     // @param-1: Change the default font family in all browsers (opinionated).
     // @param-2|3: Prevent adjustments of font size after orientation changes in IE and iOS Devices.

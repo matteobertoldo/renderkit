@@ -136,10 +136,10 @@
         }
 
         // @loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`
-        // @note: `:-moz-focusring` hide default focus ring in FF with current `$global-input-color`
+        // @note: `:-moz-focusring` hide default focus ring in Firefox/Gecko with current `$global-input-color`
         // --------------------------------
 
-        @each $input-type in $global-input-form-element {
+        @each $input-type in (email, password, search, select, tel, text, textarea, url) {
             @if ($input-type == select or $input-type == textarea) {
                 #{$input-type} {
                     @extend %style-inputs;

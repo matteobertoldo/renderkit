@@ -35,8 +35,4 @@
     .shape-close {
         @include shape-close($global-shape-close-size, $global-shape-close-line-size, $global-shape-close-color);
     }
-
-    .full-rounded {
-    	border-radius: 50%;
-    }
 }
