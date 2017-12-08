@@ -1,0 +1,47 @@
+<style>
+#font-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    list-style-type: none;
+    margin: 80px auto 0;
+    padding: 0;
+}
+
+#font-list::before,
+#font-list::after {
+    content: '';
+    display: table;
+}
+
+#font-list::after {
+    clear: both;
+}
+
+#font-list li {
+    color: #666;
+    margin: 0;
+    padding: 0;
+}
+
+#font-list li > p {
+    display: block;
+    font-family: inherit;
+    font-size: 90px;
+    text-transform: none;
+    line-height: normal;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#font-list li > span {
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: inherit;
+    color: inherit;
+}
+</style>

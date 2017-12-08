@@ -6,7 +6,6 @@ For a complete list of all available APIs, see [this page](https://mozilla.githu
 The structure of the folders and their files is explained below.
 It is **highly recommended** to create a template file in the `root` and separate the "partials" into the `include` folder. So any new non-partial template or layout must be placed in the root of the `templates` folder or in the folder where the Nunjucks templates are hosted, otherwise the partial files will be uploaded to the `distribution` folder!.
 
-
 ## Data
 
 You can configure dynamic data via `json` file.
@@ -14,10 +13,10 @@ Configure reading the "data json" file in the `htmlOptions` directory under the 
 
 ## Include
 
-In the `include` folder will be placed all the partial files, which unlike the files in the` layout` folder will not be extended. To create new partial files, it is recommended to place them in the `base` folder.
+In the `include` folder will be placed all the partial files, which unlike the files in the` layout` folder will not be extended. To create new partial files, it is recommended to place them in a different folder.
 
 To simplify the distinction between future partial files for new templates, all files necessary for rendering the UI-Kit main page have been placed in the `ui-kit` folder.
 
 ## Layout
 
-The `layout` folder will host the files to render the global layout of each template. You can configure or extend multiple types of structures depending on your needs. UI Basic Kit uses the default layout that is `default.njk`.
+The `layout` folder will host the files to render the global layout of each template. You can configure or extend multiple types of structures depending on your needs. UI Basic Kit uses the default layout that is `uikit-base.njk`.

@@ -1,13 +1,19 @@
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 <style>
-.section-type {
+.uikit-section-type {
+    display: block;
     position: relative;
     min-height: 400px;
     overflow: hidden;
+    margin: 0;
     padding: 50px 30px;
 }
 
-.section-title {
+.uikit-section-type .controllers {
+    display: none;
+}
+
+.uikit-section-type .section-title {
     position: absolute;
     top: 50%;
     left: 30px;
@@ -27,8 +33,8 @@
     z-index: -1;
 }
 
-.section-title-type {
-    font-size: 24px;
+.uikit-section-type .section-title-type {
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 0.031rem;
     line-height: 1;
@@ -36,20 +42,20 @@
     margin-bottom: 5px;
 }
 
-.description-type {
+.uikit-section-type .description-type {
     font-size: 14px;
     line-height: 1.4;
 }
 
-.sass-code {
+.uikit-section-type .sass-code {
     color: #e31d79;
 }
 
-.function-code {
+.uikit-section-type .function-code {
     color: #44a8b6;
 }
 
-.render-grid-content:not(:first-of-type) {
+.uikit-section-type .render-grid-content:not(:first-of-type) {
     margin-top: 80px;
 }
 </style>
