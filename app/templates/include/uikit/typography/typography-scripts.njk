@@ -3,7 +3,7 @@
  * @function: Array.prototype.clean
  * @param: {string}
  * @return: [Array]
- * @description: clean empty value/s of an Array.
+ * @description: clean a value of an Array.
  */
 
 Array.prototype.clean = function(deleteValue) {
@@ -20,7 +20,7 @@ Array.prototype.clean = function(deleteValue) {
 /**
  * @function: getFontsInstalled
  * @param: {document.styleSheets}
- * @return: [object]
+ * @return: {String}
  * @description: Render the font Installed via @font-face or Google Fonts.
  * @author: mbertoldo@alpenite.com
  */
@@ -41,20 +41,21 @@ function getFontsInstalled(sheet) {
             var rule = sheet.cssRules[j];
 
             if (rule.toString() == "[object CSSFontFaceRule]") {
-                var value = rules[j];
+                var value = rule;
                 var fontFamilyName = value.style.fontFamily || value.style.cssText.match(/font-family\s*:\s*([^;\}]*)\s*[;}]/i)[1];
+                fontFamilyName = [fontFamilyName].join().replace(/"/g, '');
                 var fontStyle = value.style.fontStyle;
                 var fontWeight = value.style.fontWeight;
                 var list = document.createElement('li');
                 var p = document.createElement('p');
                 var span = document.createElement('span');
-                var arrFamilyName = [fontFamilyName];
 
                 list.setAttribute("style",
-                    "font-family:" + fontFamilyName + ";" +
+                    "font-family:" + '"' + fontFamilyName + '"' + ";" +
                     "font-style:" + fontStyle + ";" +
                     "font-weight:" + fontWeight + ";");
                 p.appendChild(document.createTextNode('Aa'));
+                span.setAttribute('class','family-name');
                 span.appendChild(document.createTextNode(fontFamilyName));
                 list.appendChild(p);
                 list.appendChild(span);
@@ -64,6 +65,7 @@ function getFontsInstalled(sheet) {
                 if (rule.href != undefined) {
                     var href = rule.href;
                     var familiesToSplit = href.split('https://fonts.googleapis.com/css?family=').clean('');
+                    var extraParam;
 
                     if (familiesToSplit[0] != undefined) {
                         if (href.match(/fonts.googleapis/)) {
@@ -71,6 +73,13 @@ function getFontsInstalled(sheet) {
 
                             fontToSplit.map(function(item) {
                                 var fontFamilyName = item.split(':')[0].replace(/\+/g,' ');
+
+                                if (item.split(':').length > 1) {
+                                    extraParam = ' ' + item.split(':').clean(item.split(':')[0]).join().replace(/i/g,' Italic');
+                                } else {
+                                    extraParam = '';
+                                }
+
                                 var list = document.createElement('li');
                                 var p = document.createElement('p');
                                 var span = document.createElement('span');
@@ -80,7 +89,8 @@ function getFontsInstalled(sheet) {
                                     "font-style:normal;" +
                                     "font-weight:normal;");
                                 p.appendChild(document.createTextNode('Aa'));
-                                span.appendChild(document.createTextNode(fontFamilyName));
+                                span.setAttribute('class','family-name');
+                                span.appendChild(document.createTextNode(fontFamilyName + extraParam));
                                 list.appendChild(p);
                                 list.appendChild(span);
 
