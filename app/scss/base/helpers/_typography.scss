@@ -3,8 +3,6 @@
 // @access: private
 
 // @set global heading font family & margin
-// @set margin only if heading was not the last-child
-// @param: tags
 // --------------------------------
 
 @mixin headers-style {
@@ -24,8 +22,7 @@
     }
 }
 
-// @set global heading font size + breakpoints
-// @param: tags
+// @set global heading font styles in breakpoints
 // --------------------------------
 
 @mixin headers-style-responsive {
@@ -93,7 +90,6 @@
 }
 
 // @set global paragraph font family & margin
-// @param: tag
 // --------------------------------
 
 @mixin paragraph-style {
