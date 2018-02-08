@@ -1,0 +1,55 @@
+<script type="text/javascript">
+/**
+ * @function headersTooltip
+ * @description: generate a "info tooltip" for global headers.
+ * @author: mbertoldo@alpenite.com
+ */
+
+function headersTooltip() {
+    var headers = document.querySelectorAll('#typography-list .h');
+
+    for (var i = 0; i < headers.length; i++) {
+        headers[i].addEventListener('mousemove', function(event) {
+            var rect = event.target.getBoundingClientRect();
+            var x = parseInt(event.pageX - rect.left);
+
+            this.querySelector('.header-info-style').setAttribute('style', 'left:' + x + 'px;');
+        });
+    }
+
+    for (var i = 0; i < headers.length; i++) {
+        headers[i].addEventListener('mouseenter', function(event) {
+            var fontFamily = window.getComputedStyle(this, null).getPropertyValue('font-family');
+            var fontSize = window.getComputedStyle(this, null).getPropertyValue('font-size');
+            var lineHeight = window.getComputedStyle(this, null).getPropertyValue('line-height');
+            var letterSpacing = window.getComputedStyle(this, null).getPropertyValue('letter-spacing');
+
+            if (!this.querySelector('#font-family-value').hasChildNodes()) {
+                this.querySelector('#font-family-value').appendChild(document.createTextNode(fontFamily));
+            }
+
+            if (this.querySelector('#font-size-value').textContent != fontSize) {
+                this.querySelector('#font-size-value').textContent = fontSize;
+            } else if (this.querySelector('#font-size-value').textContent == fontSize) {
+                this.querySelector('#font-size-value').textContent = fontSize;
+            }
+
+            if (this.querySelector('#line-height-value').textContent != lineHeight) {
+                this.querySelector('#line-height-value').textContent = lineHeight;
+            } else if (this.querySelector('#line-height-value').textContent == lineHeight) {
+                this.querySelector('#line-height-value').textContent = lineHeight;
+            }
+
+            if (this.querySelector('#letter-spacing-value').textContent != letterSpacing) {
+                this.querySelector('#letter-spacing-value').textContent = letterSpacing;
+            } else if (this.querySelector('#letter-spacing-value').textContent == letterSpacing) {
+                this.querySelector('#letter-spacing-value').textContent = letterSpacing;
+            }
+        });
+    }
+}
+
+window.addEventListener('load', function() {
+    headersTooltip();
+});
+</script>

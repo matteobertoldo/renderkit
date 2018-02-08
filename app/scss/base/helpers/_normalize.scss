@@ -36,7 +36,9 @@
     body {
     	font: {
     		family: $body-font-family;
-            size: $body-font-size;
+            @if ($body-root-font-size) {
+                size: $body-font-size;
+            }
     		weight: $body-font-weight;
     	}
         @if ($body-background-gradient) {
@@ -323,7 +325,9 @@
     	text-rendering: optimizeLegibility;
     	-webkit-font-smoothing: antialiased;
     	-moz-osx-font-smoothing: grayscale;
-    	-moz-font-feature-settings: 'liga', 'kern';
+        @if ($global-moz-liga-kern) {
+            -moz-font-feature-settings: 'liga', 'kern';
+        }
     	direction: $global-text-direction;
     }
 
@@ -443,7 +447,8 @@
     	&[type="checkbox"],
     	&[type="radio"] {
     		@if ($global-custom-checkbox-radio) {
-                display: none;
+                appearance: none;
+                @include visuallyhidden;
     		} @else {
     			margin: 0;
     			padding: 0;
@@ -478,6 +483,7 @@
     		@if ($global-reset-input-appearance) {
     			border: 1px solid lightgray;
     			background-color: white;
+                border-radius: 0;
     		}
     	}
 

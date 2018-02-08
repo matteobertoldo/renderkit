@@ -19,14 +19,8 @@
             family: $global-heading-font-family;
             weight: $global-heading-font-weight;
         }
-        line-height: $global-heading-line-height;
-        letter-spacing: $global-heading-letter-spacing;
         text-transform: $global-heading-text-transform;
         color: $global-heading-color;
-
-        @if ($global-margin-heading) {
-            margin: $margin-heading;
-        }
     }
 }
 
@@ -35,16 +29,66 @@
 // --------------------------------
 
 @mixin headers-style-responsive {
-    /*@headers-style-responsive*/
-    @each $size, $headers in $header-sizes {
-    	@include breakpoint($size) {
-    		@each $header, $font-size in $headers {
-    			#{$header},
+    @each $size, $headers in $header-styles {
+        @include breakpoint($size) {
+            @each $header, $header-defs in $headers {
+                $font-size-temp: 1rem;
+                $letter-spacing-temp: $global-heading-letter-spacing;
+                $margin-top-temp: 0;
+                $margin-bottom-temp: $global-margin-bottom-heading;
+
+                #{$header},
                 .#{$header} {
-    				font-size: $font-size;
-    			}
-    		}
-    	}
+                    @if map-has-key($header-defs, font-size) {
+                        $font-size-temp: map-get($header-defs, font-size);
+                        font-size: unquote($font-size-temp + 'px');
+                    } @else if map-has-key($header-defs, fs) {
+                        $font-size-temp: map-get($header-defs, fs);
+                        font-size: unquote($font-size-temp + 'px');
+                    } @else if $size == $-zf-zero-breakpoint {
+                        font-size: $font-size-temp;
+                    }
+
+                    @if map-has-key($header-defs, line-height) {
+                        line-height: map-get($header-defs, line-height);
+                    } @else if map-has-key($header-defs, lh) {
+                        line-height: map-get($header-defs, lh);
+                    } @else if $size == $-zf-zero-breakpoint {
+                        line-height: $global-heading-line-height;
+                    }
+
+                    @if map-has-key($header-defs, letter-spacing) {
+                        $letter-spacing-temp: map-get($header-defs, letter-spacing);
+                        letter-spacing: unquote($letter-spacing-temp + 'px');
+                    } @else if map-has-key($header-defs, ls) {
+                        $letter-spacing-temp: map-get($header-defs, ls);
+                        letter-spacing: unquote($letter-spacing-temp + 'px');
+                    } @else if $size == $-zf-zero-breakpoint {
+                        letter-spacing: $letter-spacing-temp;
+                    }
+
+                    @if map-has-key($header-defs, margin-top) {
+                        $margin-top-temp: map-get($header-defs, margin-top);
+                        margin-top: unquote($margin-top-temp + 'px');
+                    } @else if map-has-key($header-defs, mt) {
+                        $margin-top-temp: map-get($header-defs, mt);
+                        margin-top: unquote($margin-top-temp + 'px');
+                    } @else if $size == $-zf-zero-breakpoint {
+                        margin-top: $margin-top-temp;
+                    }
+
+                    @if map-has-key($header-defs, margin-bottom) {
+                        $margin-bottom-temp: map-get($header-defs, margin-bottom);
+                        margin-bottom: unquote($margin-bottom-temp + 'px');
+                    } @else if map-has-key($header-defs, mb) {
+                        $margin-bottom-temp: map-get($header-defs, mb);
+                        margin-bottom: unquote($margin-bottom-temp + 'px');
+                    } @else if $size == $-zf-zero-breakpoint {
+                        margin-bottom: $global-margin-bottom-heading;
+                    }
+                }
+            }
+        }
     }
 }
 

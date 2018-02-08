@@ -49,6 +49,7 @@ function getFontsInstalled(sheet) {
                 var list = document.createElement('li');
                 var p = document.createElement('p');
                 var span = document.createElement('span');
+                var em = document.createElement('em');
 
                 list.setAttribute("style",
                     "font-family:" + '"' + fontFamilyName + '"' + ";" +
@@ -57,8 +58,10 @@ function getFontsInstalled(sheet) {
                 p.appendChild(document.createTextNode('Aa'));
                 span.setAttribute('class','family-name');
                 span.appendChild(document.createTextNode(fontFamilyName));
+                em.appendChild(document.createTextNode('Font Face'));
                 list.appendChild(p);
                 list.appendChild(span);
+                list.appendChild(em);
 
                 fontFace = document.getElementById('font-list').appendChild(list);
             } else if (rule.toString() == "[object CSSImportRule]") {
@@ -83,6 +86,7 @@ function getFontsInstalled(sheet) {
                                 var list = document.createElement('li');
                                 var p = document.createElement('p');
                                 var span = document.createElement('span');
+                                var a = document.createElement('a');
 
                                 list.setAttribute("style",
                                     "font-family:" + '"' + fontFamilyName + '"' + ";" +
@@ -90,9 +94,13 @@ function getFontsInstalled(sheet) {
                                     "font-weight:normal;");
                                 p.appendChild(document.createTextNode('Aa'));
                                 span.setAttribute('class','family-name');
+                                a.setAttribute('href','https://fonts.google.com?selection.family=' + item);
+                                a.setAttribute('target','blank');
                                 span.appendChild(document.createTextNode(fontFamilyName + extraParam));
+                                a.appendChild(document.createTextNode('Google Font'));
                                 list.appendChild(p);
                                 list.appendChild(span);
+                                list.appendChild(a);
 
                                 gFonts = document.getElementById('font-list').appendChild(list);
                             });

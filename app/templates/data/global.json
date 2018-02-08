@@ -5,6 +5,7 @@
     "page": {
         "uikit": {
             "title": "UI Kit",
+            "projectname": "Boilerplate Standard",
             "flexgrid": {
                 "show": true,
                 "gridcontainer": "1200px",

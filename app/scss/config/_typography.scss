@@ -1,46 +1,56 @@
 // @typography
 // --------------------------------
 
+$global-text-direction: ltr;
+$global-moz-liga-kern: true;
 $body-font-family: $gfont-1;
+$body-root-font-size: false;
 $body-font-size: 16px;
 $body-font-weight: normal;
 $body-line-height: 1.15;
-$global-text-direction: ltr;
-$global-heading-font-family: inherit;
-$global-paragraph-font-family: inherit;
-$global-strong-font-family: inherit;
-$global-strong-font-weight: bolder;
 
-// @typography ~ headers + paragraph
+// @typography ~ headers
+// @$header-styles: only integers are accepted
 // --------------------------------
 
+$global-heading-font-family: inherit;
 $global-heading-font-weight: bold;
-$global-paragraph-font-weight: normal;
 $global-heading-line-height: 1.4;
-$global-paragraph-line-height: 1.4;
-$header-sizes: (
+$global-heading-letter-spacing: normal;
+$global-heading-text-transform: uppercase;
+$global-margin-bottom-heading: 16px;
+$header-styles: (
     small: (
-        'h1': 24px,
-        'h2': 20px,
-        'h3': 19px,
-        'h4': 18px,
-        'h5': 17px,
-        'h6': 16px,
+        'h1': ('font-size': 24),
+        'h2': ('font-size': 20),
+        'h3': ('font-size': 19),
+        'h4': ('font-size': 18),
+        'h5': ('font-size': 17),
+        'h6': ('font-size': 16),
     ),
     medium: (
-        'h1': 48px,
-        'h2': 40px,
-        'h3': 31px,
-        'h4': 25px,
-        'h5': 20px,
-        'h6': 16px,
+        'h1': ('font-size': 48),
+        'h2': ('font-size': 40),
+        'h3': ('font-size': 31),
+        'h4': ('font-size': 25),
+        'h5': ('font-size': 20),
+        'h6': ('font-size': 16),
     ),
 );
-$global-heading-letter-spacing: normal;
+
+// @typography ~ paragraph
+// --------------------------------
+
+$global-paragraph-font-family: inherit;
+$global-paragraph-font-weight: normal;
+$global-paragraph-line-height: 1.4;
 $global-paragraph-letter-spacing: normal;
-$global-heading-text-transform: uppercase;
 $global-paragraph-text-transform: none;
-$global-margin-heading: true;
 $global-margin-paragraph: false;
-$margin-heading: 0 0 16px 0;
 $margin-paragraph: 0;
+
+// @typography ~ strong/b
+// --------------------------------
+
+$global-strong-font-family: inherit;
+$global-strong-font-weight: bolder;
