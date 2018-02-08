@@ -1,18 +1,11 @@
 {
-    "modernizr": true,
-    "jquery": true,
-    "browserify": true,
     "file": {
-        "css": "css/style.min.css",
-        "modernizr": "js/lib/modernizr.custom.min.js",
-        "jquery": "js/lib/jquery.min.js",
-        "vendor": "js/vendor.min.js",
-        "bundle": "js/app.min.js"
+        "css": "css/style.min.css"
     },
     "page": {
         "uikit": {
             "title": "UI Kit",
-            "description": "From UI Kit to production",
+            "projectname": "Boilerplate Standard",
             "flexgrid": {
                 "show": true,
                 "gridcontainer": "1200px",

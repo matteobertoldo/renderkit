@@ -16,8 +16,6 @@ var mq = function(value) {
 };
 
 var utils = {
-    touchevents: Modernizr.touchevents,
-    objectfit: Modernizr.objectfit,
     breakpoint: {
         xxlarge: mq($breakpoint.xxlarge),
         xlarge: mq($breakpoint.xlarge),

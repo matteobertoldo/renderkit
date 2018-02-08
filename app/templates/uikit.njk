@@ -1,46 +1,11 @@
-{% extends "layout/default.njk" %}
-{% set title = page.uikit.title %}
-{% set description = page.uikit.description %}
-{% set flexgrid = page.uikit.flexgrid.show %}
-{% set floatgrid = page.uikit.floatgrid.show %}
+{% extends "layout/uikit-base.njk" %}
+{% block uikitcontent %}
+    {# global ui-kit style #}
+    {% include "include/uikit/ui/ui-style.njk" %}
 
-{% block content %}
-    <main>
-        {% include "include/uikit/controllers/ui/ui-style.njk" %}
-
-        <section class="section-type palette">
-            <div class="controllers" hidden="true">
-                {% include "include/uikit/controllers/palette/palette.njk" %}
-                {% include "include/uikit/controllers/palette/palette-style.njk" %}
-            </div>
-            <div class="content">
-                <h1 class="section-title">Palette</h1>
-                <h2 class="section-title-type">
-                    <span class="text">Colors palette</span>
-                </h2>
-                {% include "include/uikit/sections/palette.njk" %}
-            </div>
-        </section>
-
-        <section class="section-type grid">
-            <div class="controllers" hidden="true">
-                {% if flexgrid %}
-                    {% include "include/uikit/controllers/grid/xy-grid-style.njk" %}
-                {% endif %}
-                {% if floatgrid %}
-                    {% include "include/uikit/controllers/grid/float-grid-style.njk" %}
-                {% endif %}
-            </div>
-            <div class="content">
-                <h1 class="section-title">Grid</h1>
-                {% if flexgrid %}
-                    {% include "include/uikit/sections/xy-grid.njk" %}
-                {% endif %}
-                {% if floatgrid %}
-                    {% include "include/uikit/sections/float-grid.njk" %}
-                {% endif %}
-            </div>
-        </section>
-    </main>
-    {% include "include/base/scripts.njk" %}
+    {# sections #}
+    {% include "include/uikit/fonts/fonts.njk" %}
+    {% include "include/uikit/typography/typography.njk" %}
+    {% include "include/uikit/palette/palette.njk" %}
+    {% include "include/uikit/grid/grid.njk" %}
 {% endblock %}
