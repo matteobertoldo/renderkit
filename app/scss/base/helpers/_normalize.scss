@@ -322,7 +322,7 @@
     select,
     textarea {
     	font-synthesis: none;
-    	text-rendering: optimizeLegibility;
+    	text-rendering: $global-text-rendering;
     	-webkit-font-smoothing: antialiased;
     	-moz-osx-font-smoothing: grayscale;
         @if ($global-moz-liga-kern) {
