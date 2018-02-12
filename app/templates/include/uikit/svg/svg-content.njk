@@ -1,0 +1,21 @@
+<p class="description-type">
+
+</p>
+<ul id="ui-kit-svg-list" class="svg-list">
+    {% set svgpath = page.uikit.svgicons.spritepath %}
+    {% set icons = page.uikit.svgicons.icons %}
+    {% set size = page.uikit.svgicons.size %}
+
+    {% for icon in icons %}
+        <li>
+            <svg role="img" title="{{icon}}" class="{{size}}">
+                <use xlink:href="{{svgpath}}#{{icon}}"/>
+            </svg>
+        </li>
+    {% endfor %}
+</ul>
+<script type="text/javascript">
+    (function() {
+       svg4everybody();
+    })();
+</script>

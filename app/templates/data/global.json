@@ -9,14 +9,22 @@
             "flexgrid": {
                 "show": true,
                 "gridcontainer": "1200px",
-                "gridcolumns": 12
+                "gridcolumns": 12,
+                "gridcolors": "#d9d9d9"
             },
             "floatgrid": {
                 "show": false,
                 "gridcontainer": "1200px",
                 "gridcolumns": 12,
                 "rowclass": "row",
-                "columnclass": "column"
+                "columnclass": "column",
+                "gridcolors": "#d9d9d9"
+            },
+            "svgicons": {
+                "spritepath": "images/symbol/sprite.svg",
+                "icons": ["facebook","google-plus","instagram","twitter","youtube"],
+                "size": "large",
+                "truetone": true
             }
         }
     }

@@ -38,7 +38,7 @@
     height: 100%;
     border-radius: 50%;
     background-color: inherit;
-    opacity: 0.45;
+    opacity: 0.85;
     z-index: -1;
     -webkit-transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
@@ -53,8 +53,8 @@
 }
 
 #palette-list > li:hover::after {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
-    transform: scale3d(1.1, 1.1, 1.1) translate3d(0, 0, 0);
+    -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
+    transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
 }
 
 #palette-list > li:last-of-type {
@@ -67,6 +67,7 @@
     font-size: 18px;
     line-height: 1.4;
     text-transform: none;
+    letter-spacing: normal;
     margin: 0;
     padding: 0;
 }
@@ -79,5 +80,7 @@
 
 #palette-list > li em {
     font-size: 10px;
+    font-style: normal;
+    letter-spacing: normal;
 }
 </style>
