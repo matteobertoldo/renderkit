@@ -23,6 +23,9 @@ function headersTooltip() {
             var fontSize = window.getComputedStyle(this, null).getPropertyValue('font-size');
             var lineHeight = window.getComputedStyle(this, null).getPropertyValue('line-height');
             var letterSpacing = window.getComputedStyle(this, null).getPropertyValue('letter-spacing');
+            var color = window.getComputedStyle(this, null).getPropertyValue('color');
+
+            this.style.borderBottomColor = color;
 
             if (!this.querySelector('#font-family-value').hasChildNodes()) {
                 this.querySelector('#font-family-value').appendChild(document.createTextNode(fontFamily));
@@ -45,6 +48,12 @@ function headersTooltip() {
             } else if (this.querySelector('#letter-spacing-value').textContent == letterSpacing) {
                 this.querySelector('#letter-spacing-value').textContent = letterSpacing;
             }
+        });
+    }
+
+    for (var i = 0; i < headers.length; i++) {
+        headers[i].addEventListener('mouseleave', function(event) {
+            this.style.borderBottomColor = 'transparent';
         });
     }
 }

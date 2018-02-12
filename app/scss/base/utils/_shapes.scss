@@ -69,6 +69,7 @@
 // --------------------------------
 
 @mixin shape-close($shape-close-size, $shape-close-line-size, $shape-close-color) {
+    display: block;
     position: relative;
     width: $shape-close-size;
     height: $shape-close-size;
@@ -86,6 +87,7 @@
         width: 100%;
         height: $shape-close-line-size;
         background-color: $shape-close-color;
+        margin-top: - rem($shape-close-line-size / 2);
     }
 
     &::before {

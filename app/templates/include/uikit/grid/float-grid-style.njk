@@ -1,5 +1,6 @@
 {% set rowclass = page.uikit.floatgrid.rowclass %}
 {% set columnclass = page.uikit.floatgrid.columnclass %}
+{% set cellcolor = page.uikit.flexgrid.gridcolors %}
 <style>
 .render-grid-content .{{rowclass}}  {
     margin-top: 80px;
@@ -7,7 +8,7 @@
 
 .render-grid-content .{{columnclass}} .content {
     min-height: 80px;
-    background-color: #d9d9d9;
+    background-color: {{cellcolor}};
     border-radius: 3px;
     margin-bottom: 30px;
 }

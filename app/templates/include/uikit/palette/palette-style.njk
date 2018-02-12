@@ -9,6 +9,7 @@
 
 #palette-list > li {
     display: inline-table;
+    position: relative;
     list-style: none;
     width: 170px;
     height: 170px;
@@ -18,6 +19,42 @@
     margin-right: 25px;
     margin-bottom: 25px;
     padding: 0;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+    transition: -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#palette-list > li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+    opacity: 0.85;
+    z-index: -1;
+    -webkit-transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
+    transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
+    transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#palette-list > li:hover {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
+    transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
+}
+
+#palette-list > li:hover::after {
+    -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
+    transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
 }
 
 #palette-list > li:last-of-type {
@@ -30,6 +67,7 @@
     font-size: 18px;
     line-height: 1.4;
     text-transform: none;
+    letter-spacing: normal;
     margin: 0;
     padding: 0;
 }
@@ -42,5 +80,7 @@
 
 #palette-list > li em {
     font-size: 10px;
+    font-style: normal;
+    letter-spacing: normal;
 }
 </style>
