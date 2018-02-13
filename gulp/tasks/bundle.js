@@ -1,7 +1,7 @@
 /**
- * @file: bundle.js
- * @description: Generate a "bundle" file with "vendors" and "main" scripts.
- * @author: mbertoldo@alpenite.com
+ * @file bundle.js
+ * @description Generate a "bundle" file with "vendors" and "main" scripts.
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
@@ -14,14 +14,15 @@ var buffer = require('vinyl-buffer');
 var concat = require('gulp-concat');
 var browserify = require('browserify');
 var uglify = require('gulp-uglify');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
+var colors = require('ansi-colors');
 var errors = require('../utils/errors');
 var rename = require('gulp-rename');
 var sequence = require('run-sequence');
 
 /**
-* @var src: [Array]
-* @return: Array
+* @var src [Array]
+* @return Array
 */
 
 var src = [];
@@ -33,7 +34,7 @@ if (conf.jsOptions.browserify) {
 }
 
 /**
-* @var arr: [Array]
+* @var arr [Array]
 * @description: Convert @var arr into a single array. `run-sequence` don't accept "sub array".
 */
 
@@ -68,7 +69,7 @@ if (conf.jsOptions.browserify) {
         });
 
         return bundle.bundle().on('error', function(err) {
-            gutil.log(gutil.colors.red(err));
+            log(colors.red(err));
             this.emit('end');
         })
         .pipe(source(conf.jsOptions.outputBundleName + '.js'))
