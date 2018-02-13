@@ -1,14 +1,15 @@
 /**
- * @file: deploy.js
- * @return: {stream}
- * @author: mbertoldo@alpenite.com
+ * @file deploy.js
+ * @return {stream}
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
-var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var ftp = require('./ftp');
+var fancylog = require('fancy-log');
+var colors = require('ansi-colors');
 
 // @pathToRoot
 // @param: {String}
@@ -33,15 +34,15 @@ var pathToRoot = function(fullpath) {
 // -------------------
 
 var log = {
-    host: gutil.colors.magenta(ftp.ftphost),
+    host: colors.magenta(ftp.ftphost),
     path: function(p) {
-        return gutil.colors.cyan(p);
+        return colors.cyan(p);
     },
     rootpath: function(p) {
-        return gutil.colors.cyan(pathToRoot(p));
+        return colors.cyan(pathToRoot(p));
     },
     warn: function(p) {
-        return gutil.colors.red(p);
+        return colors.red(p);
     }
 };
 
@@ -57,35 +58,35 @@ var deployOnTheFly = function() {
         ignoreInitial: conf.deployOnTheFlyOptions.ignoreInitialRun,
         cwd: process.cwd()
     }).on('addDir', function(path) {
-        gutil.log("Upload folder '" + log.rootpath(path) + "' on " + log.host);
+        fancylog("Upload folder '" + log.rootpath(path) + "' on " + log.host);
 
         ftp.addftpElem(path);
     }).on('unlinkDir', function(path) {
-        gutil.log("Remove folder '" + log.rootpath(path) + "' on " + log.host);
+        fancylog("Remove folder '" + log.rootpath(path) + "' on " + log.host);
 
         return ftp.ftpconnection.rmdir(pathToRoot(path), function(err) {
             if (err) {
-                gutil.log(log.warn(err));
+                log(log.warn(err));
             } else {
                 return;
             }
         });
     }).on('add', function(path) {
-        gutil.log("Upload file '" + log.rootpath(path) + "' on " + log.host);
+        fancylog("Upload file '" + log.rootpath(path) + "' on " + log.host);
 
         ftp.addftpElem(path);
     }).on('unlink', function(path) {
-        gutil.log("Remove file '" + log.rootpath(path) + "' on " + log.host);
+        fancylog("Remove file '" + log.rootpath(path) + "' on " + log.host);
 
         return ftp.ftpconnection.delete(pathToRoot(path), function(err) {
             if (err) {
-                gutil.log(log.warn(err));
+                fancylog(log.warn(err));
             } else {
                 return;
             }
         });
     }).on('change', function(path) {
-        gutil.log("Upload new file '" + log.rootpath(path) + "' on " + log.host);
+        fancylog("Upload new file '" + log.rootpath(path) + "' on " + log.host);
 
         ftp.addftpElem(path);
     });
