@@ -1,0 +1,17 @@
+<script type="text/javascript">
+function switcher() {
+    var switcher = document.getElementById('uikit-toggle-truetone');
+
+    switcher.addEventListener('change', function(){
+        if (switcher.checked) {
+            document.getElementById('uikit-svg-list').classList.add('true-tone');
+        } else {
+            document.getElementById('uikit-svg-list').classList.remove('true-tone');
+        }
+    });
+}
+
+window.addEventListener('load', function() {
+    switcher();
+});
+</script>
