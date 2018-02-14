@@ -23,8 +23,13 @@
             "svgicons": {
                 "spritepath": "images/symbol/sprite.svg",
                 "icons": ["facebook","google-plus","instagram","twitter","youtube"],
-                "size": "large",
-                "truetone": true
+                "size": "medium",
+                "color": "#8c8c8c",
+                "switcher": {
+                    "show": true,
+                    "bordercolor": "#e5e5e5",
+                    "shadowcolor": "#d9d9d9"
+                }
             }
         }
     }
