@@ -1,14 +1,14 @@
 /**
- * @file: svg.js
- * @description: Generate an "svg-spritemaps".
- * @author: mbertoldo@alpenite.com
+ * @file svg.js
+ * @description Generate an "svg-spritemaps".
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
-var gutil = require('gulp-util');
 var svgSprite = require('gulp-svg-sprite');
 var plumber = require('gulp-plumber');
+var log = require('fancy-log');
 
 // @svg `spritemap` options
 // --------------
@@ -31,7 +31,7 @@ var svgSpriteOptions = {
 gulp.task('svg', function() {
     return gulp.src(conf.workspace.svg + '**/*.svg')
     .pipe(plumber())
-    .pipe(svgSprite(svgSpriteOptions)).on('error', gutil.log)
+    .pipe(svgSprite(svgSpriteOptions)).on('error', log)
     .pipe(gulp.dest(conf.distribution.svg));
 });
 

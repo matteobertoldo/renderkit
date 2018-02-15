@@ -132,7 +132,7 @@ module.exports = {
         ]
     },
     ftpOptions: {
-        sftpConnection: false,
+        sftpConnection: true,
         parallelUploads: 5,
         cacheReload: false,
         debugMode: false,

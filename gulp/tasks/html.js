@@ -1,7 +1,7 @@
 /**
- * @file: html.js
- * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
- * @author: mbertoldo@alpenite.com
+ * @file html.js
+ * @description Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
@@ -11,8 +11,9 @@ var path = require('path');
 var plumber = require('gulp-plumber');
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlBeautify = require('gulp-html-beautify');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var data = require('gulp-data');
+var colors = require('ansi-colors');
 
 // @get "data" options
 // @param: file
@@ -29,9 +30,9 @@ gulp.task('html', function() {
         path: [conf.workspace.html]
     }))
     .on('error', function(err) {
-        gutil.log('Error in: ' + gutil.colors.red(err.plugin));
-        gutil.log('Message: ' + gutil.colors.red(err.message));
-        gutil.log('File: ' + gutil.colors.red(err.fileName));
+        log('Error in: ' + colors.red(err.plugin));
+        log('Message: ' + colors.red(err.message));
+        log('File: ' + colors.red(err.fileName));
     })
     .pipe(htmlBeautify({
         indent_size: conf.htmlOptions.indentSize,

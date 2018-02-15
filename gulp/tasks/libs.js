@@ -1,7 +1,7 @@
 /**
- * @file: libs.js
- * @description: Task to compile libraries like Modernizr or compress libraries used.
- * @author: mbertoldo@alpenite.com
+ * @file libs.js
+ * @description Task to compile libraries like Modernizr or compress libraries used.
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
@@ -12,7 +12,6 @@ var modernizr = require('modernizr');
 var modernizrProp = require('modernizr/lib/config-all.json');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
-var gutil = require('gulp-util');
 var errors = require('../utils/errors');
 var rename = require('gulp-rename');
 var sequence = require('run-sequence');

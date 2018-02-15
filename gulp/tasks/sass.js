@@ -1,7 +1,7 @@
 /**
- * @file: sass.js
- * @description: Task for compile scss files & compress generated css file via `cleanCSS`.
- * @author: mbertoldo@alpenite.com
+ * @file sass.js
+ * @description Task for compile scss files & compress generated css file via `cleanCSS`.
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
@@ -36,8 +36,8 @@ var processors = [
 ];
 
 // @remUnit
-// @param: {bool}
-// @return: [processors]
+// @param {bool}
+// @return [processors]
 // ----------------------------------
 
 if (!conf.cssOptions.remUnit) {

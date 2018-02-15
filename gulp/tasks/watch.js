@@ -1,15 +1,16 @@
 /**
- * @file: watch.js
- * @description: gulp is watching you...
- * @author: mbertoldo@alpenite.com
+ * @file watch.js
+ * @description gulp is watching you...
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var conf = require('../gulpconfig');
 var sequence = require('run-sequence');
 var fs = require('fs');
+var log = require('fancy-log');
+var colors = require('ansi-colors');
 
 // @watch stream configuration
 // @return: browserSync.reload()
@@ -22,7 +23,7 @@ var stream = function() {
             cwd: process.cwd()
         }).on('change', function(path) {
             if (conf.syncOptions.streamLog) {
-                gutil.log("File '" + gutil.colors.cyan(path) + "' has been changed");
+                log("File '" + colors.cyan(path) + "' has been changed");
             }
 
             if (conf.syncOptions.browserSync && conf.syncOptions.reloadBrowsersOnChange) {
@@ -43,7 +44,7 @@ var defaultWatchTasks = keys.filter(function(key) {
 });
 
 // @unshift `plugins`
-// @param: {bool}
+// @param {bool}
 // -------------------
 
 if (conf.jsOptions.browserify) {
@@ -51,7 +52,7 @@ if (conf.jsOptions.browserify) {
 }
 
 // @push `browser-sync`
-// @param: {bool}
+// @param {bool}
 // -------------------
 
 if (conf.syncOptions.browserSync) {
@@ -59,14 +60,14 @@ if (conf.syncOptions.browserSync) {
 }
 
 // @push `deploy-watch`
-// @param: {bool}
+// @param {bool}
 // -------------------
 
 if (conf.deployOnTheFlyOptions.deployOnTheFly) {
     if (fs.existsSync('./gulp/private/ftp.json')) {
         defaultWatchTasks.push('deploy-watch');
     } else {
-        gutil.log("Rename '" + gutil.colors.cyan('gulp/private/ftp.json.access') + "' file into " + gutil.colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
+        log("Rename '" + colors.cyan('gulp/private/ftp.json.access') + "' file into " + colors.cyan('ftp.json') + " for enable 'Deploy On The Fly' option. And configure your access options.");
     }
 }
 
@@ -83,6 +84,6 @@ gulp.task('watch', function(done) {
         gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
         stream();
     } else {
-        gutil.log(gutil.colors.yellow('Set up at least one task to use `gulp watch`'));
+        log(colors.yellow('Set up at least one task to use `gulp watch`'));
     }
 });

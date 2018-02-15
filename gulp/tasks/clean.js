@@ -1,14 +1,14 @@
 /**
- * @file: clean.js
- * @description: Clean all generated file or by tipe.
- * @author: mbertoldo@alpenite.com
- * @author: mgaion@alpenite.com (regex `split`)
+ * @file clean.js
+ * @description Clean all generated file or by tipe.
+ * @author mbertoldo@alpenite.com
+ * @author mgaion@alpenite.com (regex `split`)
  */
 
 var gulp = require('gulp');
 var conf = require('../gulpconfig');
-var gutil = require('gulp-util');
 var del = require('del');
+var colors = require('ansi-colors');
 
 // @localfiles
 // @return: {string} || [arr]
@@ -34,15 +34,15 @@ gulp.task('clean', function() {
     }).then(function(paths) {
         if (conf.cleanOptions.dryRun) {
             if (paths.length > 0)  {
-                console.log('Files and/or folders that would be deleted:\n' + gutil.colors.yellow(paths.join('\n').trim()));
+                console.log('Files and/or folders that would be deleted:\n' + colors.yellow(paths.join('\n').trim()));
             } else {
-                console.log(gutil.colors.yellow('Nothing will be deleted'));
+                console.log(colors.yellow('Nothing will be deleted'));
             }
         } else {
             if (paths.length > 0)  {
-                console.log('Files and/or folders deleted:\n' + gutil.colors.red(paths.join('\n')));
+                console.log('Files and/or folders deleted:\n' + colors.red(paths.join('\n')));
             } else {
-                console.log(gutil.colors.green('Nothing to delete'));
+                console.log(colors.green('Nothing to delete'));
             }
         }
     });

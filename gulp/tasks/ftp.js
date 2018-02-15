@@ -1,13 +1,14 @@
 /**
- * @file: ftp.js
- * @return: {stream}
- * @author: mbertoldo@alpenite.com
+ * @file ftp.js
+ * @return {stream}
+ * @author mbertoldo@alpenite.com
  */
 
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var conf = require('../gulpconfig');
 var ftp = require('vinyl-ftp');
+var log = require('fancy-log');
+var colors = require('ansi-colors');
 
 try {
     var ftpconfig = require('../private/ftp.json');
@@ -16,7 +17,7 @@ try {
 }
 
 // @ftp `create` options
-// @return: {Obj}
+// @return {Obj}
 // --------------------
 
 var ftpconnection = ftp.create({
@@ -28,11 +29,11 @@ var ftpconnection = ftp.create({
     parallel: conf.ftpOptions.parallelUploads,
     reload: conf.ftpOptions.cacheReload,
     debug: conf.ftpOptions.debugMode,
-    log: (conf.ftpOptions.log) ? gutil.log : null
+    log: (conf.ftpOptions.log) ? log : null
 });
 
-// @function: addftpElem
-// @return: [stream]
+// @function addftpElem
+// @return [stream]
 // -------------------
 
 var addftpElem = function(fullpath) {
@@ -44,7 +45,7 @@ var addftpElem = function(fullpath) {
 };
 
 // @deploy ftp options
-// @return: [stream]
+// @return [stream]
 // --------------------
 
 gulp.task('ftp:deploy', function() {
@@ -60,7 +61,7 @@ gulp.task('ftp:cleandir', function() {
     return ftpconnection,
     ftpconnection.rmdir(conf.ftpOptions.remoteFolderToDelete, function(err) {
         if (err) {
-            gutil.log(gutil.colors.red(err));
+            log(colors.red(err));
         } else {
             return;
         }
