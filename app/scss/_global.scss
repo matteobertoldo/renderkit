@@ -2,10 +2,7 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
-@import 'base/utils/utils';
-@import 'base/fonts/fonts';
-@import 'base/helpers/helpers';
-@import 'base/components/components';
+@import 'base/base';
 @import 'config/config';
 
 @mixin sass() {

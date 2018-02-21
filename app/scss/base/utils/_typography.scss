@@ -72,16 +72,3 @@
         src: $src;
     }
 }
-
-// Mixin for restore the font dependencies styles.
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
-@mixin font-reset {
-    font: {
-		synthesis: none;
-		weight: normal;
-		size: normal;
-	}
-	text-transform: none;
-}

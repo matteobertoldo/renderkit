@@ -75,7 +75,7 @@ function createPaletteElements(selector, style, sheet) {
             var rule = sheet.cssRules[j];
 
             if (selector.test(rule.selectorText)) {
-                var selectors = rule.selectorText;
+                var selectors = rule.selectorText.replace(/\.palette-color-/g,'');
                 var rgb = rule.style[style].split(',');
                 var r = rgb[0].replace('rgb(', '');
                 var g = rgb[1];
@@ -84,15 +84,18 @@ function createPaletteElements(selector, style, sheet) {
 
                 var list = document.createElement('li');
                 var p = document.createElement('p');
-                var em = document.createElement('em');
                 var span = document.createElement('span');
+                var em = document.createElement('em');
+                var strong = document.createElement('strong');
                 var rgbtext = rule.style[style].toString();
                 var hextext = hex.toString();
                 var color = invertColor(hex, true);
 
                 span.appendChild(document.createTextNode('#' + hextext));
+                strong.appendChild(document.createTextNode(selectors));
                 em.appendChild(document.createTextNode(rgbtext));
                 p.setAttribute('style', 'color:' + color + ';');
+                p.appendChild(strong);
                 p.appendChild(span);
                 p.appendChild(em);
 

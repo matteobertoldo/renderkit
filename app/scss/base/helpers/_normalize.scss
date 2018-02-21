@@ -5,17 +5,16 @@
 // @access: private
 
 @mixin scss-normalize {
-    /*@custom normalize: normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css*/
+    /*@custom normalize: normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css*/
 
     // @param-1: Change the default font family in all browsers (opinionated).
     // @param-2|3: Prevent adjustments of font size after orientation changes in IE and iOS Devices.
-    // @param-4: Mixin for reset the default iOS tap highlight color.
+    // @param-4: Configure the default iOS tap highlight color.
     // @param-5: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     // --------------------------------
 
     html {
     	font-family: sans-serif;
-        -ms-text-size-adjust: percentage(1);
     	-webkit-text-size-adjust: percentage(1);
     	-webkit-tap-highlight-color: $ios-tap-color;
     	box-sizing: border-box;
@@ -145,8 +144,6 @@
     	color: $global-link-color;
 
     	@if ($global-link-text-decoration) {
-    		 -webkit-text-decoration-skip: objects;
-    	} @else {
     		text-decoration: none;
     	}
 
@@ -471,7 +468,6 @@
     	&[type="search"] {
     		outline-offset: -2px;
 
-    		&::-webkit-search-cancel-button,
     		&::-webkit-search-decoration {
     			-webkit-appearance: none;
     		}
