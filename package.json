@@ -18,7 +18,7 @@
   "author": "Matteo Bertoldo - mbertoldo@alpenite.com",
   "license": "MIT",
   "devDependencies": {
-    "ansi-colors": "^1.0.1",
+    "ansi-colors": "1.1.0",
     "autoprefixer": "^8.0.0",
     "browser-sync": "^2.23.6",
     "browserify": "^16.1.0",

@@ -1,7 +1,12 @@
 <p class="description-type">
     To display an example of inline SVG icons, update the array in the <span class="file-code">global.json</span> file to the <span class="function-code">`page.uikit.svgicons.icons`</span> object. <br /><br />
     &bull; Each element in the array corresponds to the name of the svg file. Also check the path of the correct spritemap in the distribution folder in the object: <span class="function-code">`page.uikit.svgicons.spritepath`</span>. <br /><br />
-    &bull; The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect. Make sure you have correctly enabled the Gulp task for svg.
+    &bull; The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect. Make sure you have correctly enabled the Gulp task for svg. <br />
+    {% if page.uikit.svgicons.showcollection %}
+        <br />
+        {% set examplefile = page.uikit.svgicons.examplefile %}
+        &bull; To view the entire list of svg icons installed consult <a href="{{examplefile}}">this</a> page. Be sure your configuration gulp task <code class="function-code">svgOptions.exampleFile</code> is set to <code class="function-code">true</code>.
+    {% endif %}
 </p>
 
 {% if page.uikit.svgicons.switcher.show %}
