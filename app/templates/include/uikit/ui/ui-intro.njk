@@ -2,19 +2,46 @@
 <div class="uikit-intro-section">
     <h1 class="global-project-title">
         <span class="intro-label">UIKIT for</span>
-            <span class="project">
-                {{projectname}}
-            </span>
-        </h1>
-        <div class="intro-description">
-            <p>
-                Welcome to the UIKIT render of your project. <br />
-                Each section rendered below is controlled according to the installed mixins, even if some sections are independent. <br /> If you have globally installed the mixin <code class="sass-code">sass</code> of "boilerplate-standard" you will find included:
-                <ul class="technology-used-list">
-                    <li>
-                        <a href="https://github.com/necolas/normalize.css" target="_blank" class="vendor-name">Normalize:</a>
-                    </li>
-                </ul>
-            </p>
-        </div>
+        <span class="project">
+            {{projectname}}
+        </span>
+    </h1>
+    <div class="intro-description">
+        <p>
+            Welcome to the UIKIT render of your project. <br />
+            Each section rendered below is controlled according to the installed mixins, even if some sections are independent. <br /> If you have globally installed the mixin <code class="sass-code">sass</code> of "boilerplate-standard" you will find included:
+        </p>
+        <ul class="technology-used-list">
+            <li>
+                <a href="https://github.com/necolas/normalize.css" target="_blank" class="vendor-name"><strong>Normalize</strong><span class="icon-normalize"></span></a>
+                <span class="info">Extended & re-written in <a href="https://github.com/matteobertoldo/boilerplate-standard/blob/master/app/scss/base/helpers/_normalize.scss">scss</a></span> <br />
+                <code class="mixin-code">
+                    <span class="include">@include</span> <span class="mixin-name">scss-normalize</span>
+                </code>
+            </li>
+            <li>
+                <a href="https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css" target="_blank" class="vendor-name"><strong>Media print</strong></a>
+                <span class="info">Media print from HTML5 Bolierplate
+                <code class="mixin-code">
+                    <span class="include">@include</span> <span class="mixin-name">media-print</span>
+                </code>
+            </li>
+            <li>
+                <a href="https://foundation.zurb.com/sites/docs/visibility.html" target="_blank" class="vendor-name"><strong>Foundation visibility classes</strong></a>
+                <span class="info">From original scss Foundation
+                <code class="mixin-code">
+                    <span class="include">@include</span> <span class="mixin-name">foundation-visibility-classes</span>
+                </code>
+            </li>
+            <li>
+                <a href="
+                https://github.com/matteobertoldo/boilerplate-standard/blob/master/app/scss/base/helpers/_accessibility.scss" target="_blank" class="vendor-name">
+                <strong class="vendor-name">Accessibility classes</strong></a>
+                <span class="info">Package of classes for accessibility use
+                <code class="mixin-code">
+                    <span class="include">@include</span> <span class="mixin-name">accessibility-classes</span>
+                </code>
+            </li>
+        </ul>
+    </div>
 </div>

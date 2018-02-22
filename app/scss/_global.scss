@@ -8,20 +8,18 @@
 @mixin sass() {
     @include global-fonts;
     @include scss-normalize;
+    @include media-print;
     @include headers-style;
     @include headers-style-responsive;
     @include paragraph-style;
-    @include media-print;
-    @include accessibility-classes;
     @include text-classes;
-    @include pointer-classes;
+    @include accessibility-classes;
     @include foundation-visibility-classes;
     @include float-classes;
     @include clearfix-classes;
 
     // @components
     // -------------
-
     @if ($flex) {
         @include foundation-xy-grid-classes;
         @include flexbox-classes;

@@ -25,6 +25,8 @@
                 "icons": ["facebook","google-plus","instagram","twitter","youtube"],
                 "size": "medium",
                 "color": "#8c8c8c",
+                "showcollection": true,
+                "examplefile": "images/symbol/sprite.symbol.html",
                 "switcher": {
                     "show": true,
                     "bordercolor": "#e5e5e5",

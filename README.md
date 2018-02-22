@@ -11,7 +11,7 @@ Great for developing static template but at the same time great to "interpose" a
 Features | Tools Used
 ------ | -----
 Dev. Environment|[Node.js](https://nodejs.org/), [Gulp](http://gulpjs.com)
-Package Manager|[Yarn](https://yarnpkg.com/en/)
+Package Manager|[npm](https://www.npmjs.com) [Yarn](https://yarnpkg.com/en/)
 HTML|[Nunjucks Templating](https://mozilla.github.io/nunjucks/)
 SCSS-CSS|[Sass Lang](http://sass-lang.com/), [gulp-sass](https://github.com/dlmanning/gulp-sass), [gulp-postcss](https://github.com/postcss/gulp-postcss), [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem), [Foundation Grid](http://foundation.zurb.com/sites/docs/grid.html), [clean-css](https://github.com/jakubpawlowicz/clean-css), [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps)
 JavaScript|[Modernizr](https://modernizr.com), [jQuery](http://jquery.com), [fastclick](https://github.com/ftlabs/fastclick), [what-input](https://github.com/ten1seven/what-input), [node-browserify](https://github.com/substack/node-browserify)
