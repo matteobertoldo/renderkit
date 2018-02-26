@@ -13,21 +13,28 @@
         </p>
         <ul class="technology-used-list">
             <li>
-                <a href="https://github.com/necolas/normalize.css" target="_blank" class="vendor-name"><strong>Normalize</strong><span class="icon-normalize"></span></a>
+                <a href="https://github.com/necolas/normalize.css/blob/master/normalize.css" class="vendor-name"><strong>Normalize</strong><span class="icon-normalize"></span></a>
                 <span class="info">Extended & re-written in <a href="https://github.com/matteobertoldo/boilerplate-standard/blob/master/app/scss/base/helpers/_normalize.scss">scss</a></span> <br />
                 <code class="mixin-code">
                     <span class="include">@include</span> <span class="mixin-name">scss-normalize</span>
                 </code>
             </li>
             <li>
-                <a href="https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css" target="_blank" class="vendor-name"><strong>Media print</strong></a>
+                <a href="https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css" class="vendor-name"><strong>Media print</strong></a>
                 <span class="info">Media print from HTML5 Bolierplate
                 <code class="mixin-code">
                     <span class="include">@include</span> <span class="mixin-name">media-print</span>
                 </code>
             </li>
             <li>
-                <a href="https://foundation.zurb.com/sites/docs/visibility.html" target="_blank" class="vendor-name"><strong>Foundation visibility classes</strong></a>
+                <a href="https://foundation.zurb.com/sites/docs/media-queries.html#sass" class="vendor-name"><strong>Foundation Breakpoint</strong></a>
+                <span class="info">Media Queries from Foundation (with no <code>rem</code> conversion) ignore the JS references</span>
+                <code class="mixin-code">
+                    <span class="include">@include</span> <span class="mixin-name">breakpoint</span>
+                </code>
+            </li>
+            <li>
+                <a href="https://foundation.zurb.com/sites/docs/visibility.html" class="vendor-name"><strong>Foundation visibility classes</strong></a>
                 <span class="info">From original scss Foundation
                 <code class="mixin-code">
                     <span class="include">@include</span> <span class="mixin-name">foundation-visibility-classes</span>
@@ -35,7 +42,7 @@
             </li>
             <li>
                 <a href="
-                https://github.com/matteobertoldo/boilerplate-standard/blob/master/app/scss/base/helpers/_accessibility.scss" target="_blank" class="vendor-name">
+                https://github.com/matteobertoldo/boilerplate-standard/blob/master/app/scss/base/helpers/_accessibility.scss" class="vendor-name">
                 <strong class="vendor-name">Accessibility classes</strong></a>
                 <span class="info">Package of classes for accessibility use
                 <code class="mixin-code">

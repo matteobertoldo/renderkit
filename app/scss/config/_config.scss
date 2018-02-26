@@ -1,14 +1,256 @@
-// @importer: global vars
-// @author: mbertoldo@alpenite.com
-// @access: private
+// Boilerplate Standard Global configuration
+//  -----------------------------------------
+//  Table of Contents:
+//  1. Global Fonts
+//  2. Typography: Base
+//   - 2.1  Typography: Heading
+//   - 2.2  Typography: Paragraph & Strong
+//  3. Breakpoint
+//  4. Layout
+//  5. XY Grid
+//  6. Float Grid
+//  7. Colors Palette
+//  8. Colors Global
+//  9. Form Global
+//   - 9.1 Form Textarea
+//   - 9.2 Form Select
+//   - 9.3 Form Checkbox Radio
+//   - 9.4 Form Validation & Autofill
+//  10. Shapes
+//  11. Print
 
-@import 'fonts';
-@import 'breakpoints';
-@import 'typography';
-@import 'float-grid';
-@import 'xy-grid';
-@import 'print';
-@import 'colors';
-@import 'layout';
-@import 'form';
-@import 'shapes';
+// 1. Global fonts
+// @note: $google-fonts-family accept the name of the font after string `?family=`.
+// --------------------------------
+
+$font-dir: '../fonts/';
+$google-fonts-load: true;
+$google-fonts-name: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
+$gfont-1: 'Work Sans', sans-serif;
+$font-face-load: false;
+$font-face-map: (
+    'MyFontFamilyAwesome': ('myfilename', normal, 400, woff woff2)
+);
+
+// 2. Typography: Base
+// --------------------------------
+
+$global-text-direction: ltr;
+$global-text-rendering: optimizeLegibility;
+$global-moz-liga-kern: true;
+$body-font-family: $gfont-1;
+$body-root-font-size: false;
+$body-font-size: 16px;
+$body-font-weight: normal;
+$body-line-height: 1.15;
+
+// 2.1 Typography: Heading
+// $header-styles: only integers are accepted
+// --------------------------------
+
+$global-heading-font-family: inherit;
+$global-heading-font-weight: bold;
+$global-heading-line-height: 1.4;
+$global-heading-letter-spacing: normal;
+$global-heading-text-transform: uppercase;
+$global-margin-bottom-heading: 16px;
+$header-styles: (
+    small: (
+        'h1': ('font-size': 24),
+        'h2': ('font-size': 20),
+        'h3': ('font-size': 19),
+        'h4': ('font-size': 18),
+        'h5': ('font-size': 17),
+        'h6': ('font-size': 16),
+    ),
+    medium: (
+        'h1': ('font-size': 48),
+        'h2': ('font-size': 40),
+        'h3': ('font-size': 31),
+        'h4': ('font-size': 25),
+        'h5': ('font-size': 20),
+        'h6': ('font-size': 16),
+    ),
+);
+
+// 2.2 Typography: Paragraph & Strong
+// --------------------------------
+
+$global-paragraph-font-family: inherit;
+$global-paragraph-font-weight: normal;
+$global-paragraph-line-height: 1.4;
+$global-paragraph-letter-spacing: normal;
+$global-paragraph-text-transform: none;
+$global-margin-paragraph: false;
+$margin-paragraph: 0;
+$global-strong-font-family: inherit;
+$global-strong-font-weight: bolder;
+
+// 3. Breakpoints
+// --------------------------------
+
+$breakpoints: (
+    small: 0,
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1200px,
+    xxlarge: 1440px
+);
+$breakpoint-classes: (small medium large);
+$print-breakpoint: large;
+
+// 4. Layout
+// $flex: if set to `false` the settings for the XY Grid will be ignored
+// --------------------------------
+
+$flex: true;
+$focus-outline-link-hidden: true;
+$focus-outline-input-hidden: true;
+$what-input-outline-detect: true;
+$global-link-text-decoration: true;
+
+// 5. XY Grid
+// --------------------------------
+
+$grid-container: 1200px;
+$grid-columns: 12;
+$grid-margin-gutters: (
+    small: 20px,
+    medium: 30px
+);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: $grid-padding-gutters;
+$grid-container-max: $grid-container;
+$xy-block-grid-max: 8;
+
+// 6. Float Grid
+// --------------------------------
+
+$grid-row-width: 1200px;
+$grid-column-count: 12;
+$grid-column-gutter: (
+    small: 20px,
+    medium: 30px,
+);
+$grid-column-align-edge: true;
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+$block-grid-max: 8;
+
+// 7. Colors Palette
+// --------------------------------
+
+$palette-color: (
+    1: #666666,
+    2: #8c8c8c,
+    3: #b2b2b2,
+    4: #d9d9d9,
+    5: #efefef
+);
+
+// 8. Colors Global
+// --------------------------------
+
+$global-selection-background-color: #b3d4fc;
+$global-selection-color: false;
+$selection-color: initial;
+$ios-tap-color: transparent;
+$body-background-gradient: false;
+$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+$body-background-color: white;
+$body-base-color: palette(1);
+$global-heading-color: inherit;
+$global-paragraph-color: inherit;
+$global-link-color: inherit;
+
+// 9. Form Global
+// --------------------------------
+
+$global-reset-input-appearance: true;
+$global-inputs-rowclass: 'form-row';
+$global-inputs-labelclass: 'form-label';
+$global-input-height: 40px;
+$global-input-font-family: inherit;
+$global-input-font-size: 14px;
+$global-input-label-font-family: inherit;
+$global-input-label-font-size: 14px;
+$global-input-label-color: palette(4);
+$global-input-label-margin: 0 0 5px 0;
+$global-input-border-radius: 4px;
+$global-input-padding: 10px;
+$global-input-background-color: palette(1);
+$global-input-color: palette(4);
+$global-input-placeholder-color: palette(2);
+$global-input-placeholder-focus-hidden: true;
+$global-input-placeholder-focus-color: palette(2);
+$global-input-placeholder-font-family: inherit;
+$global-input-placeholder-font-style: italic;
+$global-input-border: 1px solid palette(2);
+$global-hover-input-border: true;
+$global-hover-input-border-color: palette(4);
+$global-focus-input-border-color: palette(4);
+$global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+// 9.1 Form Textarea
+// --------------------------------
+
+$global-textarea-height: 110px;
+$global-textarea-resize: true;
+
+// 9.2 Form Select
+// $global-select-caret-shape: 'arrow' or 'triangle' or 'empty';
+// --------------------------------
+
+$global-custom-select: true;
+$global-select-caret-color: palette(4);
+$global-select-caret-shape-render: true;
+$global-select-caret-shape: 'arrow';
+$global-select-caret-size: 10px;
+$global-select-caret-image-url: 'path/to/shape';
+$global-select-caret-background-size: 10px;
+$global-custom-options-select: false;
+
+// 9.3 Form Checkbox Radio
+// --------------------------------
+
+$global-custom-checkbox-radio: true;
+$global-custom-checkbox-radio-size: 24px;
+$custom-checkbox-radio-label-gutter: 10px;
+$custom-checkbox-mark-thick: 2px;
+$custom-checkbox-mark-color: palette(4);
+$custom-radio-mark-color: palette(4);
+$checked-custom-input-border: true;
+$custom-checkbox-checked-border: palette(4);
+$custom-radio-checked-border: palette(4);
+$custom-checkbox-radio-outline-detect: true;
+
+// 9.4 Form Validation & Autofill
+// --------------------------------
+
+$validation-input-error-class: 'error';
+$validation-input-error-border-color: palette(5);
+$validation-input-error-background-color: $global-input-background-color;
+$global-input-custom-autofill: false;
+$global-input-autofill-color: $global-input-color;
+$global-input-autofill-background-color: $global-input-background-color;
+
+// 10. Shapes
+// --------------------------------
+
+$global-arrow-size: 20px;
+$global-arrow-color: palette(1);
+$global-arrow-width: 3px;
+$global-checkmark-size: 20px;
+$global-checkmark-color: palette(1);
+$global-checkmark-width: 3px;
+$global-shape-close-size: 20px;
+$global-shape-close-color: palette(1);
+$global-shape-close-line-size: 3px;
+
+// 11. Print
+// --------------------------------
+
+$global-transparent-background-print: false;
+$global-color-black-print: false;
+$global-margin-print: 0.5cm;
+$global-link-href-show: false;
