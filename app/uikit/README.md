@@ -11,11 +11,9 @@ It is **highly recommended** to create a template file in the `root` and separat
 You can configure dynamic data via `json` file.
 Configure reading the "data json" file in the `htmlOptions` directory under the entry:` dataFilePath` inside the `gulp/gulpconfig.js` file.
 
-## Include
+## Sections
 
-In the `include` folder will be placed all the partial files, which unlike the files in the` layout` folder will not be extended. To create new partial files, it is recommended to place them in a different folder.
-
-To simplify the distinction between future partial files for new templates, all files necessary for rendering the UI-Kit main page have been placed in the `ui-kit` folder.
+In the `sections` folder will be placed all the partial files, which unlike the files in the` layout` folder will not be extended.
 
 ## Layout
 
