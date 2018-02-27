@@ -1,19 +1,17 @@
 <section class="uikit-section-type">
-    {% set flexgrid = page.uikit.flexgrid.show %}
-    {% set floatgrid = page.uikit.floatgrid.show %}
     <div class="controllers" hidden="true">
-        {% if flexgrid %}
-            {% include "include/uikit/grid/xy-grid-style.njk" %}
+        {% if page.uikit.flexgrid.show %}
+            {% include "sections/grid/xy-grid-style.njk" %}
         {% endif %}
-        {% if floatgrid %}
-            {% include "include/uikit/grid/float-grid-style.njk" %}
+        {% if page.uikit.floatgrid.show %}
+            {% include "sections/grid/float-grid-style.njk" %}
         {% endif %}
     </div>
     <h2 class="section-title">Grid</h2>
-    {% if flexgrid %}
-        {% include "include/uikit/grid/xy-grid-content.njk" %}
+    {% if page.uikit.flexgrid.show %}
+        {% include "sections/grid/xy-grid-content.njk" %}
     {% endif %}
-    {% if floatgrid %}
-        {% include "include/uikit/grid/float-grid-content.njk" %}
+    {% if page.uikit.floatgrid.show %}
+        {% include "sections/grid/float-grid-content.njk" %}
     {% endif %}
 </section>
