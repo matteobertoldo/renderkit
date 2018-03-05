@@ -20,7 +20,7 @@ var colors = require('ansi-colors');
 // @return: {String}
 // --------------------
 
-gulp.task('html', function() {
+gulp.task('nunjucks', function() {
     return gulp.src(conf.workspace.html + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
     .pipe(data(function(file) {
@@ -41,6 +41,6 @@ gulp.task('html', function() {
     .pipe(gulp.dest(conf.distribution.html));
 });
 
-gulp.task('html:watch', ['html'], function() {
+gulp.task('nunjucks:watch', ['nunjucks'], function() {
     return global.browserSync.reload();
 });

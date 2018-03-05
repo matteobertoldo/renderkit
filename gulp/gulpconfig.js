@@ -18,12 +18,12 @@ var folder = {
 
 module.exports = {
     defaultWatchTasks: {
-        html: true,
+        nunjucks: true,
         sass: true,
         svg: true
     },
     workspace: {
-        html: folder.workspace + 'templates/',
+        html: folder.workspace + 'uikit/',
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + 'svg/'
     },
@@ -33,7 +33,7 @@ module.exports = {
         svg: folder.distribution + 'images/'
     },
     htmlOptions: {
-        dataFilePath: folder.workspace + 'templates/data/global.json',
+        dataFilePath: folder.workspace + 'uikit/data/global.json',
         indentSize: 4,
         endWithNewline: false
     },
@@ -77,8 +77,7 @@ module.exports = {
         streamLog: true,
         streamFoldersToWatch: [
             folder.workspace + '**/*.{xml,json,txt}'
-        ],
-        reloadBrowsersOnChange: true
+        ]
     },
     cleanOptions: {
         generatedFiles: {

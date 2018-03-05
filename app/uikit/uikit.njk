@@ -1,11 +1,234 @@
 {% extends "layout/uikit-base.njk" %}
+{% from "layout/macro/code-snippet.njk" import mixin, sassvar %}
 {% block uikitcontent %}
-    {% include "sections/ui/ui-style.njk" %}
-    {% include "sections/ui/ui-script.njk" %}
-    {% include "sections/ui/ui-intro.njk" %}
-    {% include "sections/fonts/fonts.njk" %}
-    {% include "sections/typography/typography.njk" %}
-    {% include "sections/palette/palette.njk" %}
-    {% include "sections/grid/grid.njk" %}
-    {% include "sections/svg/svg.njk" %}
+    <section class="uikit-element-render">
+        <h2 class="section-title">Fonts</h2>
+        <div class="section-description">
+            <span class="code-used">Primary Mixin</span>
+            {{ mixin('global-fonts') }}
+
+            <span class="code-used">Mixin related</span>
+            {{ mixin('font-face') }}
+
+            <span class="code-used">Variabiles</span>
+            {{ sassvar('google-fonts-name') }}
+            {{ sassvar('font-face-map') }}
+        </div>
+        {% include "sections/fonts/fonts-style.njk" %}
+        {% include "sections/fonts/fonts-script.njk" %}
+        <ul id="font-list" class="font-list"></ul>
+    </section>
+
+    <section class="uikit-element-render">
+        <h2 class="section-title">Typography</h2>
+        <div class="section-description">
+            <span class="code-used">Primary Mixins</span>
+            {{ mixin('headers-style') }}
+            {{ mixin('paragraph-style') }}
+
+            <span class="code-used">Mixin related</span>
+            {{ mixin('headers-style-responsive') }}
+
+            <span class="code-used">Variabiles</span>
+            {{ sassvar('header-styles') }}
+        </div>
+        {% include "sections/typography/typography-style.njk" %}
+        {% include "sections/typography/typography-script.njk" %}
+        <div id="typography-list" class="typography-list">
+            <div class="header-render">
+                {% for i in range(0, 6) %}
+                    <b class="header">h{{i +1}} &amp; .h{{i +1}}</b>
+                    <h{{i +1}} class="h">
+                        Header.
+                        <div class="header-info-style">
+                            <p class="font-style-rule font-style-rule-animatable">
+                                <i class="family"></i>
+                                <span id="font-family-value"></span>
+                            </p>
+                            <ul class="font-style-rule">
+                                <li class="font-style-rule-animatable delay-1">
+                                    <i class="size"></i>
+                                    <span id="font-size-value"></span>
+                                </li>
+                                <li class="font-style-rule-animatable delay-2">
+                                    <i class="lineheight"></i>
+                                    <span id="line-height-value"></span>
+                                </li>
+                                <li class="font-style-rule-animatable delay-3">
+                                    <i class="letterspacing"></i>
+                                    <span id="letter-spacing-value"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </h{{i+ 1}}>
+                {% endfor %}
+            </div>
+            <div class="paragraph-render">
+                <b class="paragraph">p</b>
+                <p class="p">
+                    <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="uikit-element-render">
+        <h2 class="section-title">Palette &amp; Colors</h2>
+        <div class="section-description">
+            <span class="code-used">Primary Mixin</span>
+            {{ mixin('colors-palette') }}
+
+            <span class="code-used">Related Mixin</span>
+            {{ mixin('manage-palette') }}
+
+            <span class="code-used">Variabiles</span>
+            {{ sassvar('palette-color') }}
+        </div>
+        {% include "sections/palette/palette-style.njk" %}
+        {% include "sections/palette/palette-script.njk" %}
+        <ul id="palette-list" class="font-list"></ul>
+    </section>
+
+    {% if xygrid.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">XY Grid</h2>
+            <div class="section-description">
+                <span class="code-used">Primary Mixin</span>
+                {{ mixin('foundation-xy-grid-classes') }}
+
+                <span class="code-used">Related Mixin</span>
+                {{ mixin('flexbox-classes') }}
+
+                <span class="code-used">Variabiles</span>
+                {{ sassvar('flex: true') }}
+                {{ sassvar('grid-margin-gutters') }}
+            </div>
+            {% include "sections/grid/xy-grid-style.njk" %}
+            {% set columns = xygrid.gridcolumns %}
+            {% set finalcolumns = columns / columns %}
+            {% set gridcontainer = xygrid.gridcontainer %}
+
+            <div class="render-grid-content">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        {% for column in range(0, columns) %}
+                            <div class="small-{{columns}} medium-{{columns}} large-{{finalcolumns}} cell"></div>
+                        {% endfor %}
+                    </div>
+                    <span class="max-width-count">{{gridcontainer}}</span>
+                    <span class="width-count"></span>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if floatgrid.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">Float Grid</h2>
+            <div class="section-description">
+                <span class="code-used">Primary Mixin</span>
+                {{ mixin('foundation-grid') }}
+
+                <span class="code-used">Related Mixin</span>
+                {{ mixin('clearfix-classes') }}
+
+                <span class="code-used">Variabiles</span>
+                {{ sassvar('grid-column-align-edge') }}
+                {{ sassvar('grid-column-alias') }}
+            </div>
+            {% include "sections/grid/float-grid-style.njk" %}
+            {% set rowclass = floatgrid.rowclass %}
+            {% set columns = floatgrid.gridcolumns %}
+            {% set finalcolumns = columns / columns %}
+            {% set columnclass = floatgrid.columnclass %}
+            {% set gridcontainer = floatgrid.gridcontainer %}
+
+            <div class="render-grid-content">
+                <div class="{{rowclass}}">
+                    {% for column in range(0, columns) %}
+                        <div class="small-{{columns}} medium-{{columns}} large-{{finalcolumns}} {{columnclass}}">
+                            <div class="content"></div>
+                        </div>
+                    {% endfor %}
+                    <div class="small-{{columns}} medium-{{columns}} large-{{columns}} {{columnclass}}">
+                        <span class="max-width-count">{{gridcontainer}}</span>
+                        <span class="width-count"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="uikit-element-render">
+        <h2 class="section-title">Form</h2>
+        <div class="section-description">
+            <span class="code-used">Primary Mixin</span>
+            {{ mixin('form-style') }}
+
+            <span class="code-used">Related Mixin</span>
+            {{ mixin('placeholder') }}
+
+            <span class="code-used">Variabiles</span>
+            {{ sassvar('global-reset-input-appearance') }}
+        </div>
+    </section>
+
+    {% if svg.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">SVG Inline</h2>
+            <div class="section-description">
+                <span class="code-used">Toggle true tone</span>
+                {% if svg.truetone %}
+                    <span id="uikit-switch-render">
+                        <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
+                        <span id="uikit-switch-item">
+                            <input type="checkbox" id="uikit-toggle-truetone" name="uikit-toggle">
+                            <span class="toggle">
+                                <label for="uikit-toggle-truetone">
+                                    <i></i>
+                                </label>
+                            </span>
+                        </span>
+                    </span>
+                {% endif %}
+                {% if svg.collection %}
+                    <span class="code-used">SVG Collection</span>
+                    <span class="info">To view the entire list of svg icons installed consult <a href="{{svg.examplefile}}">this page</a>.</span>
+                {% endif %}
+                <span class="code-used">Info</span>
+                <span class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</span>
+            </div>
+            {% include "sections/svg/svg-script.njk" %}
+            {% include "sections/svg/svg-style.njk" %}
+
+            <ul id="uikit-svg-list" class="svg-list">
+                {% set svgpath = svg.spritepath %}
+                {% set icons = svg.icons %}
+
+                {% for icon in icons %}
+                    <li>
+                        {% if svg.truetone and icon | lower == 'instagram' %}
+                            <svg width="0" height="0" class="visuallyhidden">
+                                <radialGradient id="instagram-gradient" r="150%" cx="30%" cy="107%">
+                                    <stop stop-color="#fdf497" offset="0" />
+                                    <stop stop-color="#fdf497" offset="0.05" />
+                                    <stop stop-color="#fd5949" offset="0.45" />
+                                    <stop stop-color="#d6249f" offset="0.6" />
+                                    <stop stop-color="#285AEB" offset="0.9" />
+                                </radialGradient>
+                            </svg>
+                        {% endif %}
+                        <svg role="img" title="{{icon | lower}}" class="{{icon | lower}}">
+                            <use xlink:href="{{svgpath}}#{{icon | lower}}"/>
+                        </svg>
+                    </li>
+                {% endfor %}
+            </ul>
+            <script type="text/javascript">
+                (function() {
+                   svg4everybody();
+                })();
+            </script>
+        </section>
+    {% endif %}
 {% endblock %}

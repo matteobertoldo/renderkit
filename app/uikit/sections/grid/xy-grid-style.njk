@@ -1,24 +1,24 @@
 {% set cellcolor = page.uikit.flexgrid.gridcolors %}
 <style>
-.render-grid-content .grid-container {
+#uikit-body-render .render-grid-content {
     margin-top: 80px;
 }
 
-.render-grid-content .grid-x .cell {
+#uikit-body-render .render-grid-content .grid-x .cell {
     min-height: 80px;
-    background-color: {{cellcolor}};
+    background-color: #d9d9d9;
     border-radius: 3px;
     margin-bottom: 30px;
 }
 
-.grid-container .max-width-count {
+#uikit-body-render .grid-container .max-width-count {
     display: block;
     text-align: center;
     font-size: 12px;
     color: #3bccff;
 }
 
-.grid-container .width-count {
+#uikit-body-render .grid-container .width-count {
     display: block;
     position: relative;
     width: 100%;
@@ -27,8 +27,8 @@
     margin-top: 10px;
 }
 
-.grid-container .width-count::before,
-.grid-container .width-count::after {
+#uikit-body-render .grid-container .width-count::before,
+#uikit-body-render .grid-container .width-count::after {
     content: '';
     position: absolute;
     top: -10px;
@@ -37,11 +37,11 @@
     background-color: inherit;
 }
 
-.grid-container .width-count::before {
+#uikit-body-render .grid-container .width-count::before {
     left: 0;
 }
 
-.grid-container .width-count::after {
+#uikit-body-render .grid-container .width-count::after {
     right: 0;
 }
 </style>

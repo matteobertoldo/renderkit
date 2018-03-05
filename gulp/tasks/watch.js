@@ -26,7 +26,7 @@ var stream = function() {
                 log("File '" + colors.cyan(path) + "' has been changed");
             }
 
-            if (conf.syncOptions.browserSync && conf.syncOptions.reloadBrowsersOnChange) {
+            if (conf.syncOptions.browserSync) {
                 return global.browserSync.reload();
             }
         });
@@ -58,7 +58,7 @@ if (conf.syncOptions.browserSync) {
 gulp.task('watch', function(done) {
     if (defaultWatchTasks.length) {
         sequence.apply(null, defaultWatchTasks, done);
-        gulp.watch(conf.workspace.html + '**/*.+(html|nunjucks|njk)', ['html:watch']);
+        gulp.watch([conf.workspace.html + '**/*.+(nunjucks|njk)', conf.workspace.html + '**/*.json'], ['nunjucks:watch']);
         gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
         gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
         stream();

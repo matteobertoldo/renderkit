@@ -1,20 +1,27 @@
 <style>
-#typography-list {
-    max-width: 1100px;
-    margin: 60px auto 0;
+#uikit-body-render #typography-list {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 110px auto 0;
     padding: 0;
 }
 
-#typography-list .header-render,
-#typography-list .paragraph-render {
-    padding-top: 20px;
+#uikit-body-render #typography-list .paragraph-render {
+    position: relative;
+    margin-left: 50px;
 }
 
-#typography-list .paragraph-render p {
+#uikit-body-render #typography-list .header-render {
+    padding-right: 60px;
+    border-right: 1px solid #cdcdcd;
+}
+
+#uikit-body-render #typography-list .paragraph-render p {
     max-width: 720px;
 }
 
-#typography-list .header-info-style {
+#uikit-body-render #typography-list .header-info-style {
     visibility: hidden;
     position: absolute;
     min-width: 200px;
@@ -38,7 +45,7 @@
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.3s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#typography-list .header-info-style::after {
+#uikit-body-render #typography-list .header-info-style::after {
     content: '';
     position: absolute;
     left: 16px;
@@ -51,7 +58,7 @@
     border-bottom-width: 0;
 }
 
-#typography-list .font-style-rule {
+#uikit-body-render #typography-list .font-style-rule {
     display: block;
     font-size: 13px;
     text-transform: none;
@@ -63,23 +70,23 @@
     padding: 0;
 }
 
-#typography-list ul.font-style-rule {
+#uikit-body-render #typography-list ul.font-style-rule {
     display: block;
     margin-top: 10px;
     padding: 0;
 }
 
-#typography-list .font-style-rule li {
+#uikit-body-render #typography-list .font-style-rule li {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
 }
 
-#typography-list .font-style-rule li:not(:last-of-type) {
+#uikit-body-render #typography-list .font-style-rule li:not(:last-of-type) {
     margin-right: 10px;
 }
 
-#typography-list .font-style-rule-animatable {
+#uikit-body-render #typography-list .font-style-rule-animatable {
     opacity: 0;
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
@@ -88,26 +95,26 @@
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#typography-list .font-style-rule-animatable.delay-1 {
+#uikit-body-render #typography-list .font-style-rule-animatable.delay-1 {
     transition-delay: 0.1s;
 }
 
-#typography-list .font-style-rule-animatable.delay-2 {
+#uikit-body-render #typography-list .font-style-rule-animatable.delay-2 {
     transition-delay: 0.15s;
 }
 
-#typography-list .font-style-rule-animatable.delay-3 {
+#uikit-body-render #typography-list .font-style-rule-animatable.delay-3 {
     transition-delay: 0.2s;
 }
 
-#typography-list .h {
+#uikit-body-render #typography-list .h {
     display: inline-block;
     position: relative;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease;
 }
 
-#typography-list .h:hover .header-info-style {
+#uikit-body-render #typography-list .h:hover .header-info-style {
     visibility: visible;
     -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
     transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
@@ -115,25 +122,29 @@
     z-index: 100;
 }
 
-#typography-list .h:hover .font-style-rule-animatable {
+#uikit-body-render #typography-list .h:hover .font-style-rule-animatable {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-#typography-list .header,
-#typography-list .paragraph {
+#uikit-body-render #typography-list .header,
+#uikit-body-render #typography-list .paragraph {
     display: block;
-    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
     font-style: normal;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: normal;
+    line-height: normal;
+    color: #666;
     opacity: 0.75;
     margin: 0;
     padding: 0;
 }
 
-#typography-list .family {
+#uikit-body-render #typography-list .family {
     display: inline-block;
     vertical-align: middle;
     width: 16px;
@@ -145,7 +156,7 @@
     background-size: 16px 16px;
 }
 
-#typography-list .size {
+#uikit-body-render #typography-list .size {
     display: inline-block;
     vertical-align: middle;
     width: 20px;
@@ -157,7 +168,7 @@
     background-size: 26px 20px;
 }
 
-#typography-list .lineheight {
+#uikit-body-render #typography-list .lineheight {
     display: inline-block;
     vertical-align: middle;
     width: 18px;
@@ -169,7 +180,7 @@
     background-size: auto 17px;
 }
 
-#typography-list .letterspacing {
+#uikit-body-render #typography-list .letterspacing {
     display: inline-block;
     vertical-align: middle;
     width: 20px;

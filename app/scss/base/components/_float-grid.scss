@@ -329,6 +329,26 @@
     @include grid-column-collapse;
 }
 
+// Sets bottom margin on grid columns to match gutters
+// @param {Number|Keyword} $margin [auto]
+// The bottom margin on grid columns, accepts multiple values:
+// - A single value will make the margin that exact size.
+// - A breakpoint name will make the margin the corresponding size in the $margins map.
+// - "auto" will make the margin responsive, using the $margins map values.
+// @param {Number|Map} $margins [$grid-column-gutter] - Map or single value to use. Responsive gutter settings by default.
+// --------------------------------
+
+@mixin grid-column-margin ($margin: auto, $margins: $grid-column-gutter) {
+    @include -zf-breakpoint-value($margin, $margins) {
+        $margin-bottom: rem-calc($-zf-bp-value);
+        margin-bottom: $margin-bottom;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 // Sizes child elements so that `$n` number of items appear on each row.
 // @param: {Number} $n - Number of elements to display per row.
 // @param: {String} $selector ['.column'] - Selector(s) to use for child elements.
@@ -340,8 +360,8 @@
 
 @mixin grid-layout($n, $selector: '.column', $gutter: null) {
     & > #{$selector} {
-        width: percentage(1/$n);
         float: $global-left;
+        width: percentage(1/$n);
 
         @if($gutter) {
             @if type-of($gutter) == 'map' {
@@ -377,7 +397,7 @@
 // @access private
 // --------------------------------
 
-@mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded') {
+@mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded', $block: 'block') {
 	/*@foundation-grid classes (6.4)*/
     .#{$row} {
         @include grid-row;
@@ -461,7 +481,7 @@
 
         @for $i from 1 through $block-grid-max {
             .#{$-zf-size}-up-#{$i} {
-                @include grid-layout($i, ".#{$column}");
+                @include grid-layout($i, '.#{$column}');
             }
         }
 
@@ -487,9 +507,27 @@
             }
         }
 
+        @if $center {
+            .#{$-zf-size}-#{$center} {
+                @include grid-col-pos(center);
+            }
+        }
+
         .#{$-zf-size}-#{$center} {
             @include grid-col-pos(center);
         }
+
+		$-gutter-unpos-selector: (
+			if($uncenter, '.#{$-zf-size}-#{$uncenter}', null),
+			if($push, '.#{$-zf-size}-#{$push}-0', null),
+			if($pull, '.#{$-zf-size}-#{$pull}-0', null),
+		);
+
+		@if ($uncenter or $push or $pull) {
+			#{$-gutter-unpos-selector} {
+				@include grid-col-unpos;
+			}
+	    }
 
         .#{$-zf-size}-#{$pull}-0,
         .#{$-zf-size}-#{$push}-0,
@@ -498,8 +536,12 @@
         }
     }
 
-    @if $column == 'column' {
-        .columns {
+	.#{$column}-#{$block} {
+    	@include grid-column-margin;
+	}
+
+    @if $column == 'column' and has-value($grid-column-alias) {
+        .#{$grid-column-alias} {
             @extend .column;
         }
     }

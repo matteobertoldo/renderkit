@@ -7,10 +7,11 @@
     linkedin: '#0077B5',
     youtube: '#cd201f',
     pinterest: '#bd081c',
-    "google-plus": '#dd4b39'
+    "google-plus": '#dd4b39',
+    "gplus": '#dd4b39'
 } %}
 <style type="text/css">
-#uikit-svg-list {
+#uikit-body-render #uikit-svg-list {
     display: block;
     width: 100%;
     max-width: 1400px;
@@ -26,7 +27,7 @@
     user-select: none;
 }
 
-#uikit-svg-list li {
+#uikit-body-render #uikit-svg-list li {
     display: inline-block;
     position: relative;
     vertical-align: middle;
@@ -38,7 +39,7 @@
     padding: 16px 16px 25px;
 }
 
-#uikit-svg-list li svg.visuallyhidden {
+#uikit-body-render #uikit-svg-list li svg.visuallyhidden {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,79 +50,64 @@
     padding: 0;
 }
 
-#uikit-svg-list li svg {
+#uikit-body-render #uikit-svg-list li svg {
     display: inline-block;
     vertical-align: middle;
     position: relative;
     top: -.0625em;
-    width: 100%;
-    height: 100%;
-    fill: {{fillcolor}};
-}
-
-#uikit-svg-list li svg.large {
-    width: 60px;
-}
-
-#uikit-svg-list li svg.medium {
     width: 45px;
-}
-
-#uikit-svg-list li svg.small {
-    width: 30px;
+    height: 100%;
+    fill: #666;
 }
 
 {% for svgicons, fill in socialfill %}
-#uikit-svg-list.true-tone li svg.{{svgicons}} {
-    fill: {{fill}};
-}
+    #uikit-body-render #uikit-svg-list.true-tone li svg.{{svgicons}} {
+        fill: {{fill}};
+    }
 {% endfor %}
 
-#uikit-svg-list.true-tone li svg.instagram {
+#uikit-body-render #uikit-svg-list.true-tone li svg.instagram {
     fill: url(#instagram-gradient);
 }
 
-#uikit-switch-render  {
-    max-width: 450px;
-    margin-top: 30px;
+#uikit-body-render #uikit-switch-render  {
+    display: block;
+    margin-top: 5px;
     margin-bottom: 0;
 }
 
-#uikit-switch-render .info {
-    display: block;
-    font-size: 11px;
-    line-height: 1.4;
-    letter-spacing: normal;
-    text-transform: uppercase;
+#uikit-body-render #uikit-switch-render .info {
     margin-bottom: 10px;
 }
 
-#uikit-switch-item {
+#uikit-body-render #uikit-switch-item {
+    display: block;
     position: relative;
 }
 
-#uikit-switch-item .toggle {
+#uikit-body-render #uikit-switch-item .toggle {
+    display: block;
 	width: 51px;
 	height: 31px;
 }
 
-#uikit-switch-item .toggle label,
-#uikit-switch-item .toggle i {
+#uikit-body-render #uikit-switch-item .toggle label,
+#uikit-body-render #uikit-switch-item .toggle i {
     display: block;
 	box-sizing: border-box;
 	background: #ffffff;
     cursor: pointer;
 }
 
-#uikit-switch-item .toggle label {
+#uikit-body-render #uikit-switch-item .toggle label {
 	width: 51px;
 	height: 32px;
 	border-radius: 32px;
-	border: 2px solid {{bordercolor}};
+	border: 2px solid #e5e5e5;
 	transition: all 0.30s ease;
 }
 
-#uikit-switch-item .toggle i {
+#uikit-body-render #uikit-switch-item .toggle i {
 	position: absolute;
 	top: 2px;
 	left: 2px;
@@ -133,15 +119,15 @@
 	transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
 }
 
-#uikit-switch-item input[type="checkbox"] {
+#uikit-body-render #uikit-switch-item input[type="checkbox"] {
 	display: none;
 }
 
-#uikit-switch-item input[type="checkbox"]:checked + .toggle label {
-	border: 16px solid {{shadowcolor}};
+#uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle label {
+	border: 16px solid #d9d9d9;
 }
 
-#uikit-switch-item input[type="checkbox"]:checked + .toggle i {
+#uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle i {
 	left: 21px;
 }
 </style>
