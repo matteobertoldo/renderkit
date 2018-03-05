@@ -8,7 +8,7 @@ var gulp = require('gulp');
 var conf = require('../gulpconfig');
 
 gulp.task('browser-sync', function() {
-    if(conf.syncOptions.staticServer) {
+    if (conf.syncOptions.staticServer) {
         return global.browserSync.init({
             server: {
                 baseDir: './'

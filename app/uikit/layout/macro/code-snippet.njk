@@ -1,0 +1,10 @@
+{% macro mixin(name) %}
+<span class="mixin-code">
+    <span class="include">@include</span>
+    <span class="mixin-name">{{name}}</span>
+</span>
+{% endmacro %}
+
+{% macro sassvar(name) %}
+    <span class="sass-code">${{name}}</span>
+{% endmacro %}

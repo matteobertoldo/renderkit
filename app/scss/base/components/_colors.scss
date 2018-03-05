@@ -5,6 +5,8 @@
 
 @mixin colors-palette {
     /*@global colors-palette*/
+    @include manage-palette;
+
     @each $palette, $color in $palette-color {
     	.palette-color-#{$palette} {
     		color: $color;

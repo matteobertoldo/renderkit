@@ -14,3 +14,13 @@
         @warn 'No color palette found in `$colors-palette` map.';
     }
 }
+
+// Mixin for mixin to intercept the "primary" key in $colors-palette map.
+// @note: as in Foundation, this mixin avoids having the empty $color-palette map.
+// --------------------------------
+
+@mixin manage-palette {
+    @if not map-has-key($palette-color, primary) {
+        @error 'In `$palette-color`, you must have a key named "primary".';
+    }
+}

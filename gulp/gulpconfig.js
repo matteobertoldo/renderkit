@@ -18,7 +18,7 @@ var folder = {
 
 module.exports = {
     defaultWatchTasks: {
-        html: true,
+        nunjucks: true,
         sass: true,
         svg: true
     },
@@ -77,8 +77,7 @@ module.exports = {
         streamLog: true,
         streamFoldersToWatch: [
             folder.workspace + '**/*.{xml,json,txt}'
-        ],
-        reloadBrowsersOnChange: true
+        ]
     },
     cleanOptions: {
         generatedFiles: {

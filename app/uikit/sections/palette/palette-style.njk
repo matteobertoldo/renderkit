@@ -1,18 +1,19 @@
 <style>
-#palette-list {
-    max-width: 1100px;
+#uikit-body-render #palette-list {
     width: 100%;
+    max-width: 1100px;
     text-align: center;
     margin: 60px auto 25px;
     padding: 0;
 }
 
-#palette-list > li {
+#uikit-body-render #palette-list > li {
     display: inline-table;
     position: relative;
     list-style: none;
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     border-radius: 50%;
     margin-left: 25px;
@@ -29,7 +30,7 @@
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#palette-list > li::after {
+#uikit-body-render #palette-list > li::after {
     content: '';
     position: absolute;
     top: 0;
@@ -38,6 +39,7 @@
     height: 100%;
     border-radius: 50%;
     background-color: inherit;
+    border: inherit;
     opacity: 0.85;
     z-index: -1;
     -webkit-transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
@@ -47,33 +49,37 @@
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#palette-list > li:hover {
+#uikit-body-render #palette-list > li:hover {
     -webkit-transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
     transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
 }
 
-#palette-list > li:hover::after {
+#uikit-body-render #palette-list > li:hover::after {
     -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
     transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
 }
 
-#palette-list > li:last-of-type {
+#uikit-body-render #palette-list > li:last-of-type {
     margin-bottom: 0;
 }
 
-#palette-list > li p {
+#uikit-body-render #palette-list > li p {
     display: table-cell;
     vertical-align: middle;
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     line-height: 1.4;
     text-transform: none;
+    text-shadow: none;
     letter-spacing: normal;
     margin: 0;
     padding: 0;
 }
 
-#palette-list > li strong {
+#uikit-body-render #palette-list > li strong {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    font-weight: bold;
     letter-spacing: normal;
     line-height: 1.4;
     text-transform: none;
@@ -81,15 +87,17 @@
     padding: 0;
 }
 
-#palette-list > li span,
-#palette-list > li em {
+#uikit-body-render #palette-list > li span,
+#uikit-body-render #palette-list > li em {
     display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
     color: inherit;
 }
 
-#palette-list > li em {
+#uikit-body-render #palette-list > li em {
     font-size: 10px;
-    font-style: normal;
-    letter-spacing: normal;
 }
 </style>

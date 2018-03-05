@@ -27,9 +27,10 @@ $font-dir: '../fonts/';
 $google-fonts-load: true;
 $google-fonts-name: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
 $gfont-1: 'Work Sans', sans-serif;
+$gfont-2: 'Josefin Sans', sans-serif;
 $font-face-load: false;
 $font-face-map: (
-    'MyFontFamilyAwesome': ('myfilename', normal, 400, woff woff2)
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
 );
 
 // 2. Typography: Base
@@ -37,7 +38,7 @@ $font-face-map: (
 
 $global-text-direction: ltr;
 $global-text-rendering: optimizeLegibility;
-$global-moz-liga-kern: true;
+$global-liga-kern: true;
 $body-font-family: $gfont-1;
 $body-root-font-size: false;
 $body-font-size: 16px;
@@ -48,7 +49,7 @@ $body-line-height: 1.15;
 // $header-styles: only integers are accepted
 // --------------------------------
 
-$global-heading-font-family: inherit;
+$global-heading-font-family: $gfont-1;
 $global-heading-font-weight: bold;
 $global-heading-line-height: 1.4;
 $global-heading-letter-spacing: normal;
@@ -76,7 +77,7 @@ $header-styles: (
 // 2.2 Typography: Paragraph & Strong
 // --------------------------------
 
-$global-paragraph-font-family: inherit;
+$global-paragraph-font-family: $gfont-2;
 $global-paragraph-font-weight: normal;
 $global-paragraph-line-height: 1.4;
 $global-paragraph-letter-spacing: normal;
@@ -108,6 +109,8 @@ $focus-outline-link-hidden: true;
 $focus-outline-input-hidden: true;
 $what-input-outline-detect: true;
 $global-link-text-decoration: true;
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
 
 // 5. XY Grid
 // --------------------------------
@@ -133,15 +136,14 @@ $grid-column-gutter: (
     medium: 30px,
 );
 $grid-column-align-edge: true;
-$global-left: if($global-text-direction == rtl, right, left);
-$global-right: if($global-text-direction == rtl, left, right);
+$grid-column-alias: 'columns';
 $block-grid-max: 8;
 
 // 7. Colors Palette
 // --------------------------------
 
 $palette-color: (
-    1: #666666,
+    primary: #666,
     2: #8c8c8c,
     3: #b2b2b2,
     4: #d9d9d9,
@@ -158,7 +160,7 @@ $ios-tap-color: transparent;
 $body-background-gradient: false;
 $body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 $body-background-color: white;
-$body-base-color: palette(1);
+$body-base-color: palette(primary);
 $global-heading-color: inherit;
 $global-paragraph-color: inherit;
 $global-link-color: inherit;
@@ -178,7 +180,7 @@ $global-input-label-color: palette(4);
 $global-input-label-margin: 0 0 5px 0;
 $global-input-border-radius: 4px;
 $global-input-padding: 10px;
-$global-input-background-color: palette(1);
+$global-input-background-color: palette(primary);
 $global-input-color: palette(4);
 $global-input-placeholder-color: palette(2);
 $global-input-placeholder-focus-hidden: true;
@@ -238,13 +240,13 @@ $global-input-autofill-background-color: $global-input-background-color;
 // --------------------------------
 
 $global-arrow-size: 20px;
-$global-arrow-color: palette(1);
+$global-arrow-color: palette(primary);
 $global-arrow-width: 3px;
 $global-checkmark-size: 20px;
-$global-checkmark-color: palette(1);
+$global-checkmark-color: palette(primary);
 $global-checkmark-width: 3px;
 $global-shape-close-size: 20px;
-$global-shape-close-color: palette(1);
+$global-shape-close-color: palette(primary);
 $global-shape-close-line-size: 3px;
 
 // 11. Print

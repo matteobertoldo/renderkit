@@ -1,38 +1,29 @@
 {
-    "file": {
+    "renderfile": {
         "css": "css/style.min.css"
     },
-    "page": {
-        "uikit": {
-            "title": "UI Kit",
-            "projectname": "Boilerplate Standard",
-            "flexgrid": {
-                "show": true,
-                "gridcontainer": "1200px",
-                "gridcolumns": 12,
-                "gridcolors": "#d9d9d9"
-            },
-            "floatgrid": {
-                "show": false,
-                "gridcontainer": "1200px",
-                "gridcolumns": 12,
-                "rowclass": "row",
-                "columnclass": "column",
-                "gridcolors": "#d9d9d9"
-            },
-            "svgicons": {
-                "spritepath": "images/symbol/sprite.svg",
-                "icons": ["facebook","google-plus","instagram","twitter","youtube"],
-                "size": "medium",
-                "color": "#8c8c8c",
-                "showcollection": true,
-                "examplefile": "images/symbol/sprite.symbol.html",
-                "switcher": {
-                    "show": true,
-                    "bordercolor": "#e5e5e5",
-                    "shadowcolor": "#d9d9d9"
-                }
-            }
-        }
+    "uikit": {
+        "title": "UI Kit",
+        "projectname": "Boilerplate Standard"
+    },
+    "xygrid": {
+        "show": true,
+        "gridcolumns": 12,
+        "gridcontainer": "1200px"
+    },
+    "floatgrid": {
+        "show": false,
+        "gridcolumns": 12,
+        "gridcontainer": "1200px",
+        "rowclass": "row",
+        "columnclass": "column"
+    },
+    "svg": {
+        "show": true,
+        "spritepath": "images/symbol/sprite.svg",
+        "icons": ["facebook","google-plus","instagram","twitter","youtube"],
+        "collection": true,
+        "examplefile": "images/symbol/sprite.symbol.html",
+        "truetone": true
     }
 }
