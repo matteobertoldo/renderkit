@@ -12,10 +12,12 @@
 //  7. Colors Palette
 //  8. Colors Global
 //  9. Form Global
-//   - 9.1 Form Textarea
-//   - 9.2 Form Select
-//   - 9.3 Form Checkbox Radio
-//   - 9.4 Form Validation & Autofill
+//   - 9.1 Form Input
+//   - 9.2 Form Input Label
+//   - 9.3 Form Textarea
+//   - 9.4 Form Select
+//   - 9.5 Form Checkbox Radio
+//   - 9.6 Form Validation & Autofill
 //  10. Shapes
 //  11. Print
 
@@ -147,7 +149,9 @@ $palette-color: (
     2: #8c8c8c,
     3: #b2b2b2,
     4: #d9d9d9,
-    5: #efefef
+    5: #efefef,
+    6: #c04649,
+    7: #f2c0c1
 );
 
 // 8. Colors Global
@@ -169,42 +173,58 @@ $global-link-color: inherit;
 // --------------------------------
 
 $global-reset-input-appearance: true;
+$global-webkit-search-cancel-button: true;
 $global-inputs-rowclass: 'form-row';
 $global-inputs-labelclass: 'form-label';
+
+// 9.1 Form Input
+// --------------------------------
+
 $global-input-height: 40px;
-$global-input-font-family: inherit;
+$global-input-font-family: $gfont-2;
 $global-input-font-size: 14px;
-$global-input-label-font-family: inherit;
-$global-input-label-font-size: 14px;
-$global-input-label-color: palette(4);
-$global-input-label-margin: 0 0 5px 0;
-$global-input-border-radius: 4px;
+$global-input-letter-spacing: normal;
+$global-input-text-transform: none;
 $global-input-padding: 10px;
-$global-input-background-color: palette(primary);
-$global-input-color: palette(4);
+$global-input-background-color: palette(5);
+$global-input-color: palette(primary);
+$global-input-border-radius: 5px;
+$global-input-border: 1px solid palette(4);
+$global-hover-input-border: true;
+$global-hover-input-border-color: palette(3);
+$global-focus-input-border-color: palette(3);
 $global-input-placeholder-color: palette(2);
 $global-input-placeholder-focus-hidden: true;
-$global-input-placeholder-focus-color: palette(2);
+$global-input-placeholder-focus-color: palette(3);
 $global-input-placeholder-font-family: inherit;
 $global-input-placeholder-font-style: italic;
-$global-input-border: 1px solid palette(2);
-$global-hover-input-border: true;
-$global-hover-input-border-color: palette(4);
-$global-focus-input-border-color: palette(4);
+$global-input-placeholder-text-transform: capitalize;
 $global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
-// 9.1 Form Textarea
+// 9.2 Form Input Label
+// --------------------------------
+
+$global-input-label-font-family: $gfont-2;
+$global-input-label-font-size: 11px;
+$global-input-label-text-transform: uppercase;
+$global-input-label-letter-spacing: 0.5px;
+$global-input-label-color: palette(2);
+$global-input-label-margin: 0 0 5px 0;
+
+// 9.3 Form Textarea
 // --------------------------------
 
 $global-textarea-height: 110px;
-$global-textarea-resize: true;
+$global-textarea-resize: false;
+$global-textarea-resize-mode: vertical;
 
-// 9.2 Form Select
+// 9.4 Form Select
 // $global-select-caret-shape: 'arrow' or 'triangle' or 'empty';
 // --------------------------------
 
 $global-custom-select: true;
-$global-select-caret-color: palette(4);
+$global-select-text-transform: none;
+$global-select-caret-color: palette(2);
 $global-select-caret-shape-render: true;
 $global-select-caret-shape: 'arrow';
 $global-select-caret-size: 10px;
@@ -212,7 +232,7 @@ $global-select-caret-image-url: 'path/to/shape';
 $global-select-caret-background-size: 10px;
 $global-custom-options-select: false;
 
-// 9.3 Form Checkbox Radio
+// 9.5 Form Checkbox Radio
 // --------------------------------
 
 $global-custom-checkbox-radio: true;
@@ -226,12 +246,14 @@ $custom-checkbox-checked-border: palette(4);
 $custom-radio-checked-border: palette(4);
 $custom-checkbox-radio-outline-detect: true;
 
-// 9.4 Form Validation & Autofill
+// 9.6 Form Validation & Autofill
 // --------------------------------
 
 $validation-input-error-class: 'error';
-$validation-input-error-border-color: palette(5);
-$validation-input-error-background-color: $global-input-background-color;
+$validation-input-error-border-color: palette(6);
+$validation-input-error-background-color: palette(7);
+$validation-input-error-color: palette(primary);
+$validation-input-error-placeholder-color: palette(6);
 $global-input-custom-autofill: false;
 $global-input-autofill-color: $global-input-color;
 $global-input-autofill-background-color: $global-input-background-color;

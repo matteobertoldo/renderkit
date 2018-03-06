@@ -473,6 +473,12 @@
     		&::-webkit-search-decoration {
     			-webkit-appearance: none;
     		}
+
+            @if not ($global-webkit-search-cancel-button) {
+                &::-webkit-search-cancel-button {
+                    -webkit-appearance: none;
+                }
+            }
     	}
 
     	&::-webkit-file-upload-button {

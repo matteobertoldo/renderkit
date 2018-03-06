@@ -6,6 +6,13 @@
         "title": "UI Kit",
         "projectname": "Boilerplate Standard"
     },
+    "breakpoint": {
+        "small": 0,
+        "medium": 640,
+        "large": 1024,
+        "xlarge": 1200,
+        "xxlarge": 1440
+    },
     "xygrid": {
         "show": true,
         "gridcolumns": 12,
@@ -17,6 +24,10 @@
         "gridcontainer": "1200px",
         "rowclass": "row",
         "columnclass": "column"
+    },
+    "form": {
+        "show": true,
+        "selectclass": "default"
     },
     "svg": {
         "show": true,
