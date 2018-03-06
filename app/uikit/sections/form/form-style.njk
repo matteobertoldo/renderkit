@@ -1,0 +1,40 @@
+<style>
+#uikit-body-render .uikit-form-render {
+    max-width: 680px;
+    margin: 60px auto 0;
+}
+
+#uikit-body-render .uikit-form::before,
+#uikit-body-render .uikit-form::after {
+    content: '';
+    display: table;
+}
+
+#uikit-body-render .uikit-form::after {
+    clear: both;
+}
+
+#uikit-body-render .uikit-form .form-row {
+    margin-bottom: 20px;
+}
+
+#uikit-body-render .uikit-form .form-row.wide {
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#uikit-body-render .uikit-form .form-row.split {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+    #uikit-body-render .uikit-form .form-row.split {
+        width: 100%;
+    }
+}
+</style>

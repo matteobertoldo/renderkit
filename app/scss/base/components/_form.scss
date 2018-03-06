@@ -1,5 +1,5 @@
 // @form: components
-// @note: style & classes all form components.
+// @note: style & classes for inputs form components.
 // @author: mbertoldo@alpenite.com
 // @access: private
 
@@ -48,6 +48,8 @@
                 family: $global-input-label-font-family;
                 size: $global-input-label-font-size;
             }
+            letter-spacing: $global-input-label-letter-spacing;
+            text-transform: $global-input-label-text-transform;
             color: $global-input-label-color;
             margin: $global-input-label-margin;
         }
@@ -60,6 +62,8 @@
                 family: $global-input-font-family;
                 size: $global-input-font-size;
             }
+            letter-spacing: $global-input-letter-spacing;
+            text-transform: $global-input-text-transform;
             background-color: $global-input-background-color;
             color: $global-input-color;
             border: $global-input-border;
@@ -73,7 +77,7 @@
 
             @if ($global-hover-input-border) {
                 &:hover {
-                    border-color: $global-focus-input-border-color;
+                    border-color: $global-hover-input-border-color;
                 }
             }
 
@@ -91,6 +95,7 @@
             &.#{$validation-input-error-class} {
                 border-color: $validation-input-error-border-color;
                 background-color: $validation-input-error-background-color;
+                color: $validation-input-error-color;
 
                 &:hover, &:focus {
                     border-color: $validation-input-error-border-color;
@@ -105,7 +110,9 @@
                     family: $global-input-placeholder-font-family;
                     style: $global-input-placeholder-font-style;
                 }
+                text-transform: $global-input-placeholder-text-transform;
                 color: $global-input-placeholder-color;
+                opacity: 1;
             }
 
             @if ($global-input-placeholder-focus-hidden) {
@@ -118,6 +125,29 @@
                 &:focus {
                     &::placeholder {
                         color: $global-input-placeholder-focus-color;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.#{$validation-input-error-class} {
+                &::placeholder {
+                    color: $validation-input-error-placeholder-color;
+                    opacity: 1;
+                }
+
+                @if ($global-input-placeholder-focus-hidden) {
+                    &:focus {
+                        &::placeholder {
+                            opacity: 0;
+                        }
+                    }
+                } @else {
+                    &:focus {
+                        &::placeholder {
+                            color: $global-input-placeholder-focus-color;
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -166,6 +196,7 @@
         }
 
         select {
+            text-transform: $global-select-text-transform;
             @if ($global-select-caret-shape-render) {
                 @include select-caret-shape($global-select-caret-color, $global-select-caret-shape);
                 background-size: $global-select-caret-size;
@@ -186,6 +217,8 @@
         textarea {
             height: $global-textarea-height;
             @if ($global-textarea-resize) {
+                resize: $global-textarea-resize-mode;
+            } @else {
                 resize: none;
             }
         }

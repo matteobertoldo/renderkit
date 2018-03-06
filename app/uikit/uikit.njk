@@ -1,16 +1,16 @@
 {% extends "layout/uikit-base.njk" %}
-{% from "layout/macro/code-snippet.njk" import mixin, sassvar %}
+{% from "layout/macro/code-snippet.njk" import infolabel, mixin, sassvar %}
 {% block uikitcontent %}
     <section class="uikit-element-render">
         <h2 class="section-title">Fonts</h2>
         <div class="section-description">
-            <span class="code-used">Primary Mixin</span>
+            {{ infolabel('Primary Mixin') }}
             {{ mixin('global-fonts') }}
 
-            <span class="code-used">Mixin related</span>
+            {{ infolabel('Related Mixin') }}
             {{ mixin('font-face') }}
 
-            <span class="code-used">Variabiles</span>
+            {{ infolabel('Variabiles') }}
             {{ sassvar('google-fonts-name') }}
             {{ sassvar('font-face-map') }}
         </div>
@@ -22,14 +22,14 @@
     <section class="uikit-element-render">
         <h2 class="section-title">Typography</h2>
         <div class="section-description">
-            <span class="code-used">Primary Mixins</span>
+            {{ infolabel('Primary Mixins') }}
             {{ mixin('headers-style') }}
             {{ mixin('paragraph-style') }}
 
-            <span class="code-used">Mixin related</span>
+            {{ infolabel('Related Mixin') }}
             {{ mixin('headers-style-responsive') }}
 
-            <span class="code-used">Variabiles</span>
+            {{ infolabel('Variabiles') }}
             {{ sassvar('header-styles') }}
         </div>
         {% include "sections/typography/typography-style.njk" %}
@@ -75,13 +75,13 @@
     <section class="uikit-element-render">
         <h2 class="section-title">Palette &amp; Colors</h2>
         <div class="section-description">
-            <span class="code-used">Primary Mixin</span>
+            {{ infolabel('Primary Mixin') }}
             {{ mixin('colors-palette') }}
 
-            <span class="code-used">Related Mixin</span>
+            {{ infolabel('Related Mixin') }}
             {{ mixin('manage-palette') }}
 
-            <span class="code-used">Variabiles</span>
+            {{ infolabel('Variabiles') }}
             {{ sassvar('palette-color') }}
         </div>
         {% include "sections/palette/palette-style.njk" %}
@@ -93,13 +93,13 @@
         <section class="uikit-element-render">
             <h2 class="section-title">XY Grid</h2>
             <div class="section-description">
-                <span class="code-used">Primary Mixin</span>
+                {{ infolabel('Primary Mixin') }}
                 {{ mixin('foundation-xy-grid-classes') }}
 
-                <span class="code-used">Related Mixin</span>
+                {{ infolabel('Related Mixin') }}
                 {{ mixin('flexbox-classes') }}
 
-                <span class="code-used">Variabiles</span>
+                {{ infolabel('Variabiles') }}
                 {{ sassvar('flex: true') }}
                 {{ sassvar('grid-margin-gutters') }}
             </div>
@@ -107,7 +107,6 @@
             {% set columns = xygrid.gridcolumns %}
             {% set finalcolumns = columns / columns %}
             {% set gridcontainer = xygrid.gridcontainer %}
-
             <div class="render-grid-content">
                 <div class="grid-container">
                     <div class="grid-x grid-margin-x">
@@ -126,13 +125,13 @@
         <section class="uikit-element-render">
             <h2 class="section-title">Float Grid</h2>
             <div class="section-description">
-                <span class="code-used">Primary Mixin</span>
+                {{ infolabel('Primary Mixin') }}
                 {{ mixin('foundation-grid') }}
 
-                <span class="code-used">Related Mixin</span>
+                {{ infolabel('Related Mixin') }}
                 {{ mixin('clearfix-classes') }}
 
-                <span class="code-used">Variabiles</span>
+                {{ infolabel('Variabiles') }}
                 {{ sassvar('grid-column-align-edge') }}
                 {{ sassvar('grid-column-alias') }}
             </div>
@@ -142,7 +141,6 @@
             {% set finalcolumns = columns / columns %}
             {% set columnclass = floatgrid.columnclass %}
             {% set gridcontainer = floatgrid.gridcontainer %}
-
             <div class="render-grid-content">
                 <div class="{{rowclass}}">
                     {% for column in range(0, columns) %}
@@ -159,25 +157,83 @@
         </section>
     {% endif %}
 
-    <section class="uikit-element-render">
-        <h2 class="section-title">Form</h2>
-        <div class="section-description">
-            <span class="code-used">Primary Mixin</span>
-            {{ mixin('form-style') }}
+    {% if form.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">Form</h2>
+            <div class="section-description">
+                {{ infolabel('Primary Mixin') }}
+                {{ mixin('form-style') }}
 
-            <span class="code-used">Related Mixin</span>
-            {{ mixin('placeholder') }}
+                {{ infolabel('Related Mixin') }}
+                {{ mixin('placeholder') }}
 
-            <span class="code-used">Variabiles</span>
-            {{ sassvar('global-reset-input-appearance') }}
-        </div>
-    </section>
+                {{ infolabel('Variabiles') }}
+                {{ sassvar('global-reset-input-appearance') }}
+                {{ sassvar('global-custom-select') }}
+
+                {{ infolabel('Info') }}
+                <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model</span>
+            </div>
+            {% include "sections/form/form-style.njk" %}
+            <div class="uikit-form-render">
+                <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
+                    <div class="form-row split">
+                        <label class="form-label">Input search</label>
+                        <input type="search" name="q" placeholder="input search"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input error</label>
+                        <input type="text" name="error-text" placeholder="bad input" class="error"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input text</label>
+                        <input type="text" name="name" placeholder="input text"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input email</label>
+                        <input type="email" name="email" placeholder="input email"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input password</label>
+                        <input type="password" name="password" placeholder="password"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input tel</label>
+                        <input type="tel" name="tel" placeholder="input tel"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Input url</label>
+                        <input type="tel" name="url" placeholder="input url"/>
+                    </div>
+                    <div class="form-row split">
+                        <label class="form-label">Select</label>
+                        <select name="select" class="{{form.selectclass}}">
+                            <option value="hotdog">
+                                Hot Dog
+                            </option>
+                            <option value="hamburger">
+                                Hamburger
+                            </option>
+                            <option value="chips">
+                                Chips
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-row wide">
+                        <label class="form-label">Textarea</label>
+                        <textarea placeholder="textarea"></textarea>
+                    </div>
+                </form>
+            </div>
+        </section>
+    {% endif %}
 
     {% if svg.show %}
         <section class="uikit-element-render">
             <h2 class="section-title">SVG Inline</h2>
             <div class="section-description">
-                <span class="code-used">Toggle true tone</span>
+                {{ infolabel('Toggle true tone') }}
+
                 {% if svg.truetone %}
                     <span id="uikit-switch-render">
                         <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
@@ -191,11 +247,13 @@
                         </span>
                     </span>
                 {% endif %}
+
                 {% if svg.collection %}
-                    <span class="code-used">SVG Collection</span>
+                    {{ infolabel('SVG collection') }}
                     <span class="info">To view the entire list of svg icons installed consult <a href="{{svg.examplefile}}">this page</a>.</span>
                 {% endif %}
-                <span class="code-used">Info</span>
+
+                {{ infolabel('Info') }}
                 <span class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</span>
             </div>
             {% include "sections/svg/svg-script.njk" %}
