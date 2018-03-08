@@ -16,6 +16,8 @@
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-left: 25px;
     margin-right: 25px;
     margin-bottom: 25px;
@@ -40,13 +42,16 @@
     height: 100%;
     border-radius: 50%;
     background-color: inherit;
-    opacity: 0.85;
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    opacity: 0;
     z-index: -1;
     -webkit-transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
-    transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    will-change: transform, opacity;
 }
 
 #uikit-body-render #palette-list > li:hover {
@@ -55,6 +60,7 @@
 }
 
 #uikit-body-render #palette-list > li:hover::after {
+    opacity: 0.85;
     -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
     transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
 }
