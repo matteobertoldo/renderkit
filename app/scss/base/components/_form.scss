@@ -76,7 +76,7 @@
             }
 
             @if ($global-hover-input-border) {
-                &:hover {
+                &:hover:not([disabled]) {
                     border-color: $global-hover-input-border-color;
                 }
             }
@@ -209,8 +209,10 @@
             background-origin: content-box;
 
             &[multiple] {
+                text-transform: $global-select-text-transform;
                 background-image: none;
                 height: auto;
+                cursor: default;
             }
         }
 

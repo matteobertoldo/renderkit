@@ -1,5 +1,4 @@
 {% extends "layout/uikit-base.njk" %}
-{% from "layout/macro/code-snippet.njk" import infolabel, mixin, sassvar %}
 {% block uikitcontent %}
     <section class="uikit-element-render">
         <h2 class="section-title">Fonts</h2>
@@ -13,6 +12,9 @@
             {{ infolabel('Variabiles') }}
             {{ sassvar('google-fonts-name') }}
             {{ sassvar('font-face-map') }}
+
+            {{ infolabel('Function for font-face') }}
+            {{ sassfunction('font-family','font','$nth-key-font-face-map') }}
         </div>
         {% include "sections/fonts/fonts-style.njk" %}
         {% include "sections/fonts/fonts-script.njk" %}
@@ -83,6 +85,9 @@
 
             {{ infolabel('Variabiles') }}
             {{ sassvar('palette-color') }}
+
+            {{ infolabel('Function for catch HEX')}}
+            {{ sassfunction('color','palette','$key-palette-color') }}
         </div>
         {% include "sections/palette/palette-style.njk" %}
         {% include "sections/palette/palette-script.njk" %}
@@ -102,6 +107,9 @@
                 {{ infolabel('Variabiles') }}
                 {{ sassvar('flex: true') }}
                 {{ sassvar('grid-margin-gutters') }}
+
+                {{ infolabel('Info') }}
+                <span class="info">For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.</span>
             </div>
             {% include "sections/grid/xy-grid-style.njk" %}
             {% set columns = xygrid.gridcolumns %}
@@ -221,7 +229,7 @@
                     </div>
                     <div class="form-row wide">
                         <label class="form-label">Textarea</label>
-                        <textarea placeholder="textarea"></textarea>
+                        <textarea placeholder="textarea" disabled></textarea>
                     </div>
                 </form>
             </div>
@@ -232,9 +240,8 @@
         <section class="uikit-element-render">
             <h2 class="section-title">SVG Inline</h2>
             <div class="section-description">
-                {{ infolabel('Toggle true tone') }}
-
                 {% if svg.truetone %}
+                    {{ infolabel('Toggle true tone') }}
                     <span id="uikit-switch-render">
                         <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
                         <span id="uikit-switch-item">

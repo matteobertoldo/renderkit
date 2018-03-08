@@ -81,7 +81,6 @@ function createPaletteElements(selector, style, sheet) {
                 var g = rgb[1];
                 var b = rgb[2].replace(')', '');
                 var hex = RGBtoHEX(r, g, b);
-                var extraparam;
 
                 var list = document.createElement('li');
                 var p = document.createElement('p');
@@ -101,14 +100,7 @@ function createPaletteElements(selector, style, sheet) {
                 p.appendChild(em);
 
                 list.appendChild(p);
-
-                if (hextext == 'f5f5f5' || hextext == 'f4f4f4') {
-                    extraparam = 'border: 1px solid #cdcdcd;';
-                } else {
-                    extraparam = '';
-                }
-
-                list.setAttribute('style', 'background-color:#' + hex + ';' + extraparam);
+                list.setAttribute('style', 'background-color:#' + hex + ';');
 
                 document.getElementById('palette-list').appendChild(list);
             }
@@ -117,6 +109,6 @@ function createPaletteElements(selector, style, sheet) {
 }
 
 window.addEventListener('load', function() {
-    createPaletteElements(/palette-color-/, 'color');
+    createPaletteElements(/^\.palette-color-([^ ]+)$/, 'color');
 });
 </script>

@@ -10,16 +10,22 @@
     }
 
     #uikit-body-render {
-        line-height: 1.15;
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #fff;
+        background-image: none;
     }
 
     #uikit-body-render #uikit-render-content {
         padding-left: 80px;
         overflow: hidden;
+    }
+
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render #uikit-render-content {
+            padding-left: 0;
+        }
     }
 
     #uikit-body-render #uikit-aside-nav {
@@ -33,6 +39,18 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        z-index: 99;
+    }
+
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render #uikit-aside-nav {
+            position: static;
+            width: 100%;
+            height: 115px;
+            min-height: 1px;
+            height: auto;
+            z-index: auto;
+        }
     }
 
     #uikit-body-render #uikit-aside-nav .project-name {
@@ -60,6 +78,19 @@
         z-index: 99;
     }
 
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render #uikit-aside-nav .project-name {
+            position: static;
+            font-size: 12px;
+            text-align: center;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
     #uikit-body-render #uikit-aside-nav .github-icon {
         position: absolute;
         left: 50%;
@@ -67,6 +98,16 @@
         width: 40px;
         height: 39px;
         margin-left: -20px;
+        z-index: 90;
+    }
+
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render #uikit-aside-nav .github-icon {
+            position: relative;
+            left: auto;
+            bottom: auto;
+            margin: 0 auto 20px;
+        }
     }
 
     #uikit-body-render #uikit-aside-nav .github-link {
@@ -83,6 +124,16 @@
     #uikit-body-render #uikit-aside-nav canvas {
         display: block;
         vertical-align: bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render #uikit-aside-nav canvas {
+            height: 115px !important;
+        }
     }
 
     #uikit-body-render .uikit-element-render {
@@ -175,5 +226,56 @@
         color: #e31d79;
         opacity: 0.70;
         margin-top: 3px;
+    }
+
+    #uikit-body-render .sass-function-snippet {
+        display: inline-block;
+        vertical-align: bottom;
+        font-family: monospace, monospace;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: normal;
+        background-color: #282c34;
+        color: #828997;
+        border-radius: 6px;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+        margin-top: 10px;
+        padding: 12px;
+    }
+
+    #uikit-body-render .sass-function-snippet span {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    #uikit-body-render .sass-function-snippet .selector {
+        font-family: monospace, monospace;
+        font-size: inherit;
+        font-weight: inherit;
+        color: #d19a66;
+    }
+
+    #uikit-body-render .sass-function-snippet .brackets,
+    #uikit-body-render .sass-function-snippet .property {
+        display: inline-block;
+        font-family: monospace, monospace;
+        color: #fff;
+    }
+
+    #uikit-body-render .sass-function-snippet .property-group {
+        display: block;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 25px;
+    }
+
+    #uikit-body-render .sass-function-snippet .sass-function {
+        color: #56b6c2;
+        margin-left: 5px;
+    }
+
+    #uikit-body-render .sass-function-snippet .function-sass-param {
+        color: #d19a66;
     }
 </style>
