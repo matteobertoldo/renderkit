@@ -374,7 +374,6 @@
 
     // Remove the inheritance of text transform in Edge, Firefox, and IE.
     // Remove the inheritance of text transform in Firefox.
-    // Remove the inheritance of background-color when remove the appearance.
     // --------------------------------
 
     select,
@@ -468,7 +467,11 @@
     	}
 
     	&[type="search"] {
-    		outline-offset: -2px;
+            @if ($global-reset-input-appearance) {
+                @extend %reset-input-style;
+            }
+
+            outline-offset: -2px;
 
     		&::-webkit-search-decoration {
     			-webkit-appearance: none;
@@ -548,8 +551,8 @@
     @if ($global-reset-input-appearance) {
     	[disabled] {
     		color: inherit;
-    		opacity: 0.5;
-    		cursor: default;
+    		opacity: $global-disable-input-opacity !important;
+    		cursor: default !important;
     	}
     }
 

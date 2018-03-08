@@ -30,6 +30,7 @@
                 </div>
             </aside>
             <div id="uikit-render-content">
+                {% from "layout/macro/code-snippet.njk" import infolabel, mixin, sassvar, sassfunction %}
                 {% block uikitcontent %}{% endblock %}
             </div>
         </main>
