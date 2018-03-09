@@ -11,6 +11,12 @@
     padding: 0;
 }
 
+@media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+    #uikit-body-render #font-list {
+        margin: 40px auto 0;
+    }
+}
+
 #uikit-body-render #font-list li {
     display: inline-block;
     vertical-align: middle;
@@ -22,6 +28,12 @@
     opacity: 0.75;
     margin: 0;
     padding: 16px 16px 25px;
+}
+
+@media only screen and (max-width: {{breakpoint.medium + 'px'}}) {
+    #uikit-body-render #font-list li {
+        width: 100%;
+    }
 }
 
 #uikit-body-render #font-list li p {
@@ -37,6 +49,12 @@
     color: inherit;
     margin: 0;
     padding: 0;
+}
+
+@media only screen and (max-width: {{breakpoint.medium + 'px'}}) {
+    #uikit-body-render #font-list li p {
+        font-size: 70px;
+    }
 }
 
 #uikit-body-render #font-list li .family-name {

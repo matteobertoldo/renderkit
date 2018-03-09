@@ -13,11 +13,13 @@
 //  8. Colors Global
 //  9. Form Global
 //   - 9.1 Form Input
-//   - 9.2 Form Input Label
+//   - 9.2 Form Select
 //   - 9.3 Form Textarea
-//   - 9.4 Form Select
-//   - 9.5 Form Checkbox Radio
-//   - 9.6 Form Validation & Autofill
+//   - 9.4 Form Input Label
+//   - 9.5 Form Input Checkbox-Radio Custom
+//   - 9.6 Form Input Checkbox Custom
+//   - 9.7 Form Input Radio Custom
+//   - 9.8 Form Validation & Autofill
 //  10. Shapes
 //  11. Print
 
@@ -189,8 +191,8 @@ $global-input-text-transform: none;
 $global-input-padding: 10px;
 $global-input-background-color: palette(5);
 $global-input-color: palette(primary);
-$global-input-border-radius: 5px;
 $global-input-border: 1px solid palette(4);
+$global-input-border-radius: 5px;
 $global-hover-input-border: true;
 $global-hover-input-border-color: palette(3);
 $global-focus-input-border-color: palette(3);
@@ -202,24 +204,7 @@ $global-input-placeholder-font-style: italic;
 $global-input-placeholder-text-transform: capitalize;
 $global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
-// 9.2 Form Input Label
-// --------------------------------
-
-$global-input-label-font-family: $gfont-2;
-$global-input-label-font-size: 11px;
-$global-input-label-text-transform: uppercase;
-$global-input-label-letter-spacing: 0.5px;
-$global-input-label-color: palette(2);
-$global-input-label-margin: 0 0 5px 0;
-
-// 9.3 Form Textarea
-// --------------------------------
-
-$global-textarea-height: 110px;
-$global-textarea-resize: false;
-$global-textarea-resize-mode: vertical;
-
-// 9.4 Form Select
+// 9.2 Form Select
 // $global-select-caret-shape: 'arrow' or 'triangle' or 'empty';
 // --------------------------------
 
@@ -233,21 +218,51 @@ $global-select-caret-image-url: 'path/to/shape';
 $global-select-caret-background-size: 10px;
 $global-custom-options-select: false;
 
-// 9.5 Form Checkbox Radio
+// 9.3 Form Textarea
+// --------------------------------
+
+$global-textarea-height: 110px;
+$global-textarea-resize: false;
+$global-textarea-resize-mode: vertical;
+
+// 9.4 Form Input Label
+// --------------------------------
+
+$global-input-label-font-family: $gfont-2;
+$global-input-label-font-size: 11px;
+$global-input-label-text-transform: uppercase;
+$global-input-label-letter-spacing: 0.5px;
+$global-input-label-color: palette(2);
+$global-input-label-margin: 0 0 5px 0;
+
+// 9.5 Form Input Checkbox-Radio Custom
 // --------------------------------
 
 $global-custom-checkbox-radio: true;
-$global-custom-checkbox-radio-size: 24px;
+$global-custom-checkbox-radio-font-family: $gfont-2;
+$global-custom-checkbox-radio-font-size: 13px;
+$global-custom-checkbox-radio-text-transform: none;
+$global-custom-checkbox-radio-color: palette(2);
+$global-custom-checkbox-radio-cursor: default;
+$global-custom-checkbox-radio-checked-border: true;
 $custom-checkbox-radio-label-gutter: 10px;
-$custom-checkbox-mark-thick: 2px;
-$custom-checkbox-mark-color: palette(4);
-$custom-radio-mark-color: palette(4);
-$checked-custom-input-border: true;
-$custom-checkbox-checked-border: palette(4);
-$custom-radio-checked-border: palette(4);
 $custom-checkbox-radio-outline-detect: true;
 
-// 9.6 Form Validation & Autofill
+// 9.6 Form Input Checkbox Custom
+// --------------------------------
+
+$custom-checkbox-mark-thick: 3px;
+$custom-checkbox-mark-color: palette(2);
+$custom-checkbox-checked-border: palette(3);
+
+// 9.7 Form Input Radio Custom
+// --------------------------------
+
+$custom-checkbox-radio-size: 24px;
+$custom-radio-mark-color: palette(2);
+$custom-radio-checked-border: palette(3);
+
+// 9.8 Form Validation & Autofill
 // --------------------------------
 
 $validation-input-error-class: 'error';

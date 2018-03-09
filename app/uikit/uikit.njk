@@ -1,98 +1,104 @@
 {% extends "layout/uikit-base.njk" %}
 {% block uikitcontent %}
-    <section class="uikit-element-render">
-        <h2 class="section-title">Fonts</h2>
-        <div class="section-description">
-            {{ infolabel('Primary Mixin') }}
-            {{ mixin('global-fonts') }}
+    {% if fonts.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">Fonts</h2>
+            <div class="section-description">
+                {{ infolabel('Primary Mixin') }}
+                {{ mixin('global-fonts') }}
 
-            {{ infolabel('Related Mixin') }}
-            {{ mixin('font-face') }}
+                {{ infolabel('Related Mixin') }}
+                {{ mixin('font-face') }}
 
-            {{ infolabel('Variabiles') }}
-            {{ sassvar('google-fonts-name') }}
-            {{ sassvar('font-face-map') }}
+                {{ infolabel('Variabiles') }}
+                {{ sassvar('google-fonts-name') }}
+                {{ sassvar('font-face-map') }}
 
-            {{ infolabel('Function for font-face') }}
-            {{ sassfunction('font-family','font','$nth-key-font-face-map') }}
-        </div>
-        {% include "sections/fonts/fonts-style.njk" %}
-        {% include "sections/fonts/fonts-script.njk" %}
-        <ul id="font-list" class="font-list"></ul>
-    </section>
-
-    <section class="uikit-element-render">
-        <h2 class="section-title">Typography</h2>
-        <div class="section-description">
-            {{ infolabel('Primary Mixins') }}
-            {{ mixin('headers-style') }}
-            {{ mixin('paragraph-style') }}
-
-            {{ infolabel('Related Mixin') }}
-            {{ mixin('headers-style-responsive') }}
-
-            {{ infolabel('Variabiles') }}
-            {{ sassvar('header-styles') }}
-        </div>
-        {% include "sections/typography/typography-style.njk" %}
-        {% include "sections/typography/typography-script.njk" %}
-        <div id="typography-list" class="typography-list">
-            <div class="header-render">
-                {% for i in range(0, 6) %}
-                    <b class="header">h{{i +1}} &amp; .h{{i +1}}</b>
-                    <h{{i +1}} class="h">
-                        Header.
-                        <div class="header-info-style">
-                            <p class="font-style-rule font-style-rule-animatable">
-                                <i class="family"></i>
-                                <span id="font-family-value"></span>
-                            </p>
-                            <ul class="font-style-rule">
-                                <li class="font-style-rule-animatable delay-1">
-                                    <i class="size"></i>
-                                    <span id="font-size-value"></span>
-                                </li>
-                                <li class="font-style-rule-animatable delay-2">
-                                    <i class="lineheight"></i>
-                                    <span id="line-height-value"></span>
-                                </li>
-                                <li class="font-style-rule-animatable delay-3">
-                                    <i class="letterspacing"></i>
-                                    <span id="letter-spacing-value"></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </h{{i+ 1}}>
-                {% endfor %}
+                {{ infolabel('Function for font-face') }}
+                {{ sassfunction('font-family','font','$nth-key-font-face-map') }}
             </div>
-            <div class="paragraph-render">
-                <b class="paragraph">p</b>
-                <p class="p">
-                    <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
-                </p>
+            {% include "sections/fonts/fonts-style.njk" %}
+            {% include "sections/fonts/fonts-script.njk" %}
+            <ul id="font-list" class="font-list"></ul>
+        </section>
+    {% endif %}
+
+    {% if typography.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">Typography</h2>
+            <div class="section-description">
+                {{ infolabel('Primary Mixins') }}
+                {{ mixin('headers-style') }}
+                {{ mixin('paragraph-style') }}
+
+                {{ infolabel('Related Mixin') }}
+                {{ mixin('headers-style-responsive') }}
+
+                {{ infolabel('Variabiles') }}
+                {{ sassvar('header-styles') }}
             </div>
-        </div>
-    </section>
+            {% include "sections/typography/typography-style.njk" %}
+            {% include "sections/typography/typography-script.njk" %}
+            <div id="typography-list" class="typography-list">
+                <div class="header-render">
+                    {% for i in range(0, 6) %}
+                        <b class="header">h{{i +1}} &amp; .h{{i +1}}</b>
+                        <h{{i +1}} class="h">
+                            Header.
+                            <div class="header-info-style">
+                                <p class="font-style-rule font-style-rule-animatable">
+                                    <i class="family"></i>
+                                    <span id="font-family-value"></span>
+                                </p>
+                                <ul class="font-style-rule">
+                                    <li class="font-style-rule-animatable delay-1">
+                                        <i class="size"></i>
+                                        <span id="font-size-value"></span>
+                                    </li>
+                                    <li class="font-style-rule-animatable delay-2">
+                                        <i class="lineheight"></i>
+                                        <span id="line-height-value"></span>
+                                    </li>
+                                    <li class="font-style-rule-animatable delay-3">
+                                        <i class="letterspacing"></i>
+                                        <span id="letter-spacing-value"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </h{{i+ 1}}>
+                    {% endfor %}
+                </div>
+                <div class="paragraph-render">
+                    <b class="paragraph">p</b>
+                    <p class="p">
+                        <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
+                    </p>
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
-    <section class="uikit-element-render">
-        <h2 class="section-title">Palette &amp; Colors</h2>
-        <div class="section-description">
-            {{ infolabel('Primary Mixin') }}
-            {{ mixin('colors-palette') }}
+    {% if palette.show %}
+        <section class="uikit-element-render">
+            <h2 class="section-title">Palette &amp; Colors</h2>
+            <div class="section-description">
+                {{ infolabel('Primary Mixin') }}
+                {{ mixin('colors-palette') }}
 
-            {{ infolabel('Related Mixin') }}
-            {{ mixin('manage-palette') }}
+                {{ infolabel('Related Mixin') }}
+                {{ mixin('manage-palette') }}
 
-            {{ infolabel('Variabiles') }}
-            {{ sassvar('palette-color') }}
+                {{ infolabel('Variabiles') }}
+                {{ sassvar('palette-color') }}
 
-            {{ infolabel('Function for catch HEX')}}
-            {{ sassfunction('color','palette','$key-palette-color') }}
-        </div>
-        {% include "sections/palette/palette-style.njk" %}
-        {% include "sections/palette/palette-script.njk" %}
-        <ul id="palette-list" class="font-list"></ul>
-    </section>
+                {{ infolabel('Function for catch HEX')}}
+                {{ sassfunction('color','palette','$key-palette-color') }}
+            </div>
+            {% include "sections/palette/palette-style.njk" %}
+            {% include "sections/palette/palette-script.njk" %}
+            <ul id="palette-list" class="font-list"></ul>
+        </section>
+    {% endif %}
 
     {% if xygrid.show %}
         <section class="uikit-element-render">
@@ -180,41 +186,43 @@
                 {{ sassvar('global-custom-select') }}
 
                 {{ infolabel('Info') }}
-                <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model</span>
+                <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.</span>
             </div>
             {% include "sections/form/form-style.njk" %}
             <div class="uikit-form-render">
+                {% set rowclass = form.rowclass %}
+                {% set labelclass = form.labelclass %}
                 <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
-                    <div class="form-row split">
-                        <label class="form-label">Input search</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input search</label>
                         <input type="search" name="q" placeholder="input search"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input error</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input error</label>
                         <input type="text" name="error-text" placeholder="bad input" class="error"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input text</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input text</label>
                         <input type="text" name="name" placeholder="input text"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input email</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input email</label>
                         <input type="email" name="email" placeholder="input email"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input password</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input password</label>
                         <input type="password" name="password" placeholder="password"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input tel</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input tel</label>
                         <input type="tel" name="tel" placeholder="input tel"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Input url</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Input url</label>
                         <input type="tel" name="url" placeholder="input url"/>
                     </div>
-                    <div class="form-row split">
-                        <label class="form-label">Select</label>
+                    <div class="{{rowclass}} split">
+                        <label class="{{labelclass}}">Select</label>
                         <select name="select" class="{{form.selectclass}}">
                             <option value="hotdog">
                                 Hot Dog
@@ -227,10 +235,31 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-row wide">
-                        <label class="form-label">Textarea</label>
-                        <textarea placeholder="textarea" disabled></textarea>
+                    <div class="{{rowclass}} wide">
+                        <label class="{{labelclass}}">Textarea Disabled</label>
+                        <textarea placeholder="textarea disabled" disabled></textarea>
                     </div>
+                    {% if form.customcheckboxradio %}
+                        <div class="{{rowclass}} checkbox-radio-group wide">
+                            <label class="{{labelclass}}">Input checkbox & radio custom</label>
+                            <div class="{{rowclass}} wide no-gutter">
+                                <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
+                                <label class="input-checkbox" for="uikit-checkbox-render">
+                                    Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
+                                </label>
+                            </div>
+                            <div class="{{rowclass}} radio-group wide no-gutter">
+                                <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
+                                <label class="input-radio" for="uikit-radio-render">
+                                    Chupa chups.
+                                </label>
+                                <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
+                                <label class="input-radio" for="uikit-radio-render-2">
+                                    Brownie.
+                                </label>
+                            </div>
+                        </div>
+                    {% endif %}
                 </form>
             </div>
         </section>

@@ -13,6 +13,15 @@
         "xlarge": 1200,
         "xxlarge": 1440
     },
+    "fonts": {
+        "show": true
+    },
+    "typography": {
+        "show": true
+    },
+    "palette": {
+        "show": true
+    },
     "xygrid": {
         "show": true,
         "gridcolumns": 12,
@@ -27,7 +36,10 @@
     },
     "form": {
         "show": true,
-        "selectclass": "default"
+        "rowclass": "form-row",
+        "labelclass": "form-label",
+        "selectclass": "default",
+        "customcheckboxradio": true
     },
     "svg": {
         "show": true,
