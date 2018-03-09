@@ -142,6 +142,12 @@
         padding: 50px 30px;
     }
 
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render .uikit-element-render {
+            padding: 20px 16px;
+        }
+    }
+
     #uikit-body-render .section-title {
         display: inline-block;
         vertical-align: middle;
@@ -162,6 +168,12 @@
         margin: 0;
         padding: 0;
         cursor: default;
+    }
+
+    @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+        #uikit-body-render .section-title {
+            font-size: 30px;
+        }
     }
 
     #uikit-body-render .section-title::after {
@@ -241,6 +253,15 @@
         box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
         margin-top: 10px;
         padding: 12px;
+    }
+
+    @media only screen and (max-width: {{breakpoint.medium + 'px'}}) {
+        #uikit-body-render .sass-function-snippet {
+            display: block;
+            white-space: nowrap;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
     }
 
     #uikit-body-render .sass-function-snippet span {

@@ -1,8 +1,14 @@
 {% set rowclass = floatgrid.rowclass %}
 {% set columnclass = floatgrid.columnclass %}
 <style>
-#uikit-body-render .render-grid-content .{{rowclass}}  {
+#uikit-body-render .render-grid-content {
     margin-top: 80px;
+}
+
+@media only screen and (max-width: {{breakpoint.medium + 'px'}}) {
+    #uikit-body-render .render-grid-content {
+        margin-top: 40px;
+    }
 }
 
 #uikit-body-render .render-grid-content .{{columnclass}} .content {

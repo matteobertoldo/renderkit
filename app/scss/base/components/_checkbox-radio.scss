@@ -10,11 +10,15 @@
     .input-radio {
     	display: inline-block;
     	position: relative;
-    	font-size: $global-input-font-size;
+        font: {
+            family: $global-custom-checkbox-radio-font-family;
+            size: $global-custom-checkbox-radio-font-size;
+        }
+        text-transform: $global-custom-checkbox-radio-text-transform;
+        color: $global-custom-checkbox-radio-color;
         margin: 0;
-    	padding-left: $global-custom-checkbox-radio-size + $custom-checkbox-radio-label-gutter;
-    	cursor: pointer;
-    	user-select: none;
+    	padding-left: $custom-checkbox-radio-size + $custom-checkbox-radio-label-gutter;
+        cursor: $global-custom-checkbox-radio-cursor;
 
     	&::before,
         &::after {
@@ -25,12 +29,12 @@
     	&::before {
     		top: 50%;
     		left: 0;
-    		width: $global-custom-checkbox-radio-size;
-    		height: $global-custom-checkbox-radio-size;
+    		width: $custom-checkbox-radio-size;
+    		height: $custom-checkbox-radio-size;
             background-color: $global-input-background-color;
     		border: $global-input-border;
     		border-radius: $global-input-border-radius;
-            margin-top: -(rem($global-custom-checkbox-radio-size / 2));
+            margin-top: -(rem($custom-checkbox-radio-size / 2));
     		transition: border-color 0.3s ease;
             overflow: hidden;
     	}
@@ -50,23 +54,23 @@
 
     // @global marker size for checkbox & radio
     // @return: {String}
-    // @note: the marker will always be half size compared to `$global-custom-checkbox-radio-size`;
+    // @note: the marker will always be half size compared to `$custom-checkbox-radio-size`;
     // --------------------------------
 
-    $marker-size: ($global-custom-checkbox-radio-size / 2);
+    $marker-size: ($custom-checkbox-radio-size / 2);
     $marker-size-half: ($marker-size / 2);
 
     .input-checkbox {
-    	&::after {
+        &::after {
     		top: 50%;
-    		left: rem(($global-custom-checkbox-radio-size - $marker-size-half) / 2);
+    		left: rem(($custom-checkbox-radio-size - $marker-size-half) / 2);
     		@include arrow(rem($marker-size-half), rem($marker-size), $custom-checkbox-mark-color, $custom-checkbox-mark-thick);
             margin-top: -(rem($marker-size-half));
     		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     	}
 
     	input[type="checkbox"]:checked + & {
-    		@if ($checked-custom-input-border) {
+    		@if ($global-custom-checkbox-radio-checked-border) {
     			&::before {
     				border-color: $custom-checkbox-checked-border;
     			}
@@ -114,7 +118,7 @@
 
     	&::after {
     		top: 50%;
-    		left: rem(($global-custom-checkbox-radio-size - $marker-size) / 2);
+    		left: rem(($custom-checkbox-radio-size - $marker-size) / 2);
     		width: rem($marker-size);
     		height: rem($marker-size);
     		background-color: $custom-radio-mark-color;
@@ -123,7 +127,7 @@
     	}
 
     	input[type="radio"]:checked + & {
-    		@if ($checked-custom-input-border) {
+    		@if ($global-custom-checkbox-radio-checked-border) {
     			&::before {
     				border-color: $custom-radio-checked-border;
     			}

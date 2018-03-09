@@ -23,7 +23,7 @@
     } @else if ($select-caret-shape == 'arrow') {
         $viewbox-value: '19';
         $shape: "<path fill='#{$caret-color}' d='M16,19.2L0,3.8L4.6,0L16,11.5L27.4,0L32,3.8L16,19.2z'/>";
-    } @else if ($select-caret-shape) == 'empty' {
+    } @else if ($select-caret-shape == 'empty') {
         $viewbox-value: null;
         $shape: null;
     } @else {
@@ -31,7 +31,7 @@
     }
 
     @if ($global-custom-select) {
-        @if ($select-caret-shape) != 'empty' {
+        @if ($select-caret-shape != 'empty') {
             background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 #{$viewbox-value}'>#{$shape}</svg>");
         }
     }
@@ -199,14 +199,20 @@
             text-transform: $global-select-text-transform;
             @if ($global-select-caret-shape-render) {
                 @include select-caret-shape($global-select-caret-color, $global-select-caret-shape);
-                background-size: $global-select-caret-size;
+
+                @if ($global-select-caret-shape != 'empty') {
+                    background-size: $global-select-caret-size;
+                }
             } @else {
                 background-image: url(#{$global-select-caret-image-url});
                 background-size: $global-select-caret-background-size;
             }
-            background-repeat: no-repeat;
-            background-position: center right;
-            background-origin: content-box;
+
+            @if ($global-select-caret-shape != 'empty') {
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-origin: content-box;
+            }
 
             &[multiple] {
                 text-transform: $global-select-text-transform;
