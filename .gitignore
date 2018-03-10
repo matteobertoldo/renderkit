@@ -17,11 +17,6 @@ bower_components
 
 *.npm
 
-# Compiled Gulp Files
-# --------------------------
-
-dist/**/*
-
 # Private files
 # --------------------------
 
@@ -31,8 +26,7 @@ gulp/private/*.json
 # --------------------------
 
 *.idea
-*.sublime-project
-*.sublime-workspace
+*.sublime-*
 *.settings
 *.project
 *.classpath

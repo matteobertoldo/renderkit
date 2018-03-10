@@ -1,9 +1,8 @@
-# Boilerplate Standard
+# RenderKit
 
 > "Definitely 👌🏽 the light way for start new front-end web projects."
 
 From a `UI-Kit` up in `production`. A light way for start new front-end web project.
-
 
 ## Table of contents
 
@@ -21,7 +20,8 @@ Full documentation coming soon.
 ## News & Coming Soon Features
 
 -   Nunjucks templating! ***NEW***
+-   New Flexbox Mixins ***SOON***
 
 ### License
 
-Boilerplate Standard is released under the [MIT](https://opensource.org/licenses/MIT) License.
+RenderKit is released under the [MIT](https://opensource.org/licenses/MIT) License.

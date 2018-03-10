@@ -4,11 +4,11 @@
  * @author mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var conf = require('../gulpconfig');
-var svgSprite = require('gulp-svg-sprite');
-var plumber = require('gulp-plumber');
-var log = require('fancy-log');
+let gulp = require('gulp'),
+conf = require('../gulpconfig'),
+svgSprite = require('gulp-svg-sprite'),
+plumber = require('gulp-plumber'),
+log = require('fancy-log');
 
 // @svg `spritemap` options
 // --------------
@@ -16,10 +16,6 @@ var log = require('fancy-log');
 var svgSpriteOptions = {
     mode: {
         symbol: {
-            render: {
-                css: conf.svgOptions.cssRender,
-                scss: conf.svgOptions.scssRender
-            },
             dist: './',
             prefix: '.svg--%s',
             sprite: conf.svgOptions.outputName + '.svg',
@@ -28,13 +24,13 @@ var svgSpriteOptions = {
     }
 };
 
-gulp.task('svg', function() {
+gulp.task('svg', () => {
     return gulp.src(conf.workspace.svg + '**/*.svg')
     .pipe(plumber())
     .pipe(svgSprite(svgSpriteOptions)).on('error', log)
     .pipe(gulp.dest(conf.distribution.svg));
 });
 
-gulp.task('svg:watch', ['svg'], function() {
+gulp.task('svg:watch', ['svg'], () => {
     return global.browserSync.reload();
 });

@@ -4,30 +4,30 @@
  * @author mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var conf = require('../gulpconfig');
-var fs = require('fs');
-var path = require('path');
-var plumber = require('gulp-plumber');
-var nunjucksRender = require('gulp-nunjucks-render');
-var htmlBeautify = require('gulp-html-beautify');
-var log = require('fancy-log');
-var data = require('gulp-data');
-var colors = require('ansi-colors');
+let gulp = require('gulp'),
+    conf = require('../gulpconfig'),
+    fs = require('fs'),
+    path = require('path'),
+    plumber = require('gulp-plumber'),
+    nunjucksRender = require('gulp-nunjucks-render'),
+    data = require('gulp-data'),
+    htmlBeautify = require('gulp-html-beautify'),
+    log = require('fancy-log'),
+    colors = require('ansi-colors');
 
 // @get "data" options
 // @param: file
 // @return: {String}
 // --------------------
 
-gulp.task('nunjucks', function() {
-    return gulp.src(conf.workspace.html + '*.+(html|nunjucks|njk)')
+gulp.task('nunjucks', () => {
+    return gulp.src(conf.workspace.uikit + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
     .pipe(data(function(file) {
-        return JSON.parse(fs.readFileSync(path.resolve(conf.htmlOptions.dataFilePath), 'utf8'));
+        return JSON.parse(fs.readFileSync(path.resolve(conf.nunjucksOptions.dataFilePath), 'utf8'));
     }))
     .pipe(nunjucksRender({
-        path: [conf.workspace.html]
+        path: [conf.workspace.uikit]
     }))
     .on('error', function(err) {
         log('Error in: ' + colors.red(err.plugin));
@@ -35,12 +35,12 @@ gulp.task('nunjucks', function() {
         log('File: ' + colors.red(err.fileName));
     })
     .pipe(htmlBeautify({
-        indent_size: conf.htmlOptions.indentSize,
-        end_with_newline: conf.htmlOptions.endWithNewLine,
+        indent_size: conf.nunjucksOptions.indentSize,
+        end_with_newline: conf.nunjucksOptions.endWithNewLine,
     }))
-    .pipe(gulp.dest(conf.distribution.html));
+    .pipe(gulp.dest(conf.distribution.uikit));
 });
 
-gulp.task('nunjucks:watch', ['nunjucks'], function() {
+gulp.task('nunjucks:watch', ['nunjucks'], () => {
     return global.browserSync.reload();
 });

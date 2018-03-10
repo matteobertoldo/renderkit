@@ -23,19 +23,14 @@ module.exports = {
         svg: true
     },
     workspace: {
-        html: folder.workspace + 'uikit/',
+        uikit: folder.workspace + 'uikit/',
         scss: folder.workspace + 'scss/',
         svg: folder.workspace + 'svg/'
     },
     distribution: {
-        html: folder.distribution,
+        uikit: folder.distribution,
         scss: folder.distribution + 'css/',
         svg: folder.distribution + 'images/'
-    },
-    htmlOptions: {
-        dataFilePath: folder.workspace + 'uikit/data/global.json',
-        indentSize: 4,
-        endWithNewline: false
     },
     cssOptions: {
         browsersSupport: [
@@ -55,14 +50,16 @@ module.exports = {
         ],
         remMediaQueries: false,
         singleOutput: true,
-        outputName: 'style',
+        outputName: 'renderkit',
         outputStyle: 'expanded',
-        minify: true,
         optimizationMinify: true
     },
+    nunjucksOptions: {
+        dataFilePath: folder.workspace + 'uikit/data/global.json',
+        indentSize: 4,
+        endWithNewline: false
+    },
     svgOptions: {
-        cssRender: false,
-        scssRender: false,
         outputName: 'sprite',
         exampleFile: true
     },
@@ -71,13 +68,8 @@ module.exports = {
         staticServer: true,
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
-        logPrefix: 'bp-standard',
-        notification: false,
-        stream: true,
-        streamLog: true,
-        streamFoldersToWatch: [
-            folder.workspace + '**/*.{xml,json,txt}'
-        ]
+        logPrefix: 'renderkit',
+        notification: false
     },
     cleanOptions: {
         generatedFiles: {

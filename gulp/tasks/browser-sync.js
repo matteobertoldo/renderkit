@@ -4,10 +4,10 @@
  * @author mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var conf = require('../gulpconfig');
+let gulp = require('gulp'),
+    conf = require('../gulpconfig');
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
     if (conf.syncOptions.staticServer) {
         return global.browserSync.init({
             server: {

@@ -1,4 +1,4 @@
-<style>
+<style type="text/css">
     *,
     ::after,
     ::before {
@@ -6,15 +6,19 @@
     }
 
     html[data-render="uikit"] {
-        box-sizing: border-box;
+        box-sizing: border-box !important;
     }
 
     #uikit-body-render {
-        margin: 0;
+        margin: 0 !important;
+        padding: 0 !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #fff;
-        background-image: none;
+        background-color: #fff !important;
+        background-image: none !important;
+        -webkit-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
     }
 
     #uikit-body-render #uikit-render-content {
@@ -55,19 +59,20 @@
 
     #uikit-body-render #uikit-aside-nav .project-name {
         position: absolute;
-        top: 65vh;
+        top: 50vh;
         left: 0;
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
+        text-transform: uppercase;
         letter-spacing: 1px;
         white-space: nowrap;
         color: #666;
         opacity: 0.5;
         margin: 0;
         cursor: default;
-        -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg) translateX(-50%);
+        -ms-transform: rotate(-90deg) translateX(-50%);
+        transform: rotate(-90deg) translateX(-50%);
         -webkit-transform-origin: 40px center;
         -ms-transform-origin: 40px center;
         transform-origin: 40px center;
@@ -205,6 +210,7 @@
         line-height: 1.4;
         letter-spacing: normal;
         max-width: 380px;
+        color: #666;
         margin-top: 3px;
     }
 

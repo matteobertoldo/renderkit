@@ -5,17 +5,18 @@
  * @author mgaion@alpenite.com (regex `split`)
  */
 
-var gulp = require('gulp');
-var conf = require('../gulpconfig');
-var del = require('del');
-var colors = require('ansi-colors');
+let gulp = require('gulp'),
+    conf = require('../gulpconfig'),
+    del = require('del'),
+    log = require('fancy-log'),
+    colors = require('ansi-colors');
 
 // @localfiles
 // @return: {string} || [arr]
 // -------------------
 
 if (conf.cleanOptions.cleanAllDistributionFiles) {
-    var vals = Object.keys(conf.cleanOptions.generatedFiles).map(function(key) {
+    let vals = Object.keys(conf.cleanOptions.generatedFiles).map((key) => {
         return conf.cleanOptions.generatedFiles[key];
     });
     var localfiles = vals.toString().split(/,(?=[^}]*(?:{|$))/);
@@ -27,22 +28,22 @@ if (conf.cleanOptions.cleanAllDistributionFiles) {
 // @return: [files]
 // -------------------
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
     del(localfiles, {
         dryRun: conf.cleanOptions.dryRun,
         force: conf.cleanOptions.forceDelete
-    }).then(function(paths) {
+    }).then((paths) => {
         if (conf.cleanOptions.dryRun) {
             if (paths.length > 0)  {
-                console.log('Files and/or folders that would be deleted:\n' + colors.yellow(paths.join('\n').trim()));
+                log('Files and/or folders that would be deleted:\n' + colors.yellow(paths.join('\n').trim()));
             } else {
-                console.log(colors.yellow('Nothing will be deleted'));
+                log(colors.yellow('Nothing will be deleted'));
             }
         } else {
             if (paths.length > 0)  {
-                console.log('Files and/or folders deleted:\n' + colors.red(paths.join('\n')));
+                log('Files and/or folders deleted:\n' + colors.red(paths.join('\n')));
             } else {
-                console.log(colors.green('Nothing to delete'));
+                log(colors.green('Nothing to delete'));
             }
         }
     });

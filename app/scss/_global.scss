@@ -1,11 +1,11 @@
-// @importer: for global "sass" mixin
+// @importer: for global "sass-renderkit" mixin
 // @author: mbertoldo@alpenite.com
 // @access: private
 
 @import 'base/base';
 @import 'config/config';
 
-@mixin sass() {
+@mixin renderkit() {
     @include global-fonts;
     @include scss-normalize;
     @include media-print;

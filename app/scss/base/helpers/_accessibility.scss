@@ -2,49 +2,6 @@
 // @author: mbertoldo@alpenite.com
 // @access: private
 
-// Mixin for visuallyhidden.
-// @note: this hide the target element visually only, but not it's interaction.
-// --------------------------------
-
-@mixin visuallyhidden {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    border: 0 !important;
-    white-space: nowrap !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    overflow: hidden !important;
-    margin: -1px !important;
-    padding: 0 !important;
-}
-
-// Mixin for visuallyhidden-off.
-// @note: restores the style applied by `visuallyhidden` mixin.
-// --------------------------------
-
-@mixin visuallyhidden-off {
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    border: initial !important;
-    white-space: inherit !important;
-    clip: none !important;
-    overflow: inherit !important;
-    margin: 0 !important;
-}
-
-// Mixin for no text shown.
-// @param 1 : fix the space generated on <a/> tag if it's not defined as (block || inline-block)
-// --------------------------------
-
-@mixin no-text {
-	font: 0/0 a;
-    text-indent: percentage(1);
-    white-space: nowrap;
-    color: transparent;
-    overflow: hidden;
-}
-
 // @accessibility classes mixin
 // @author: mbertoldo@alpenite.com
 // @note: packages of classes to be invoked via template

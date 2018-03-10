@@ -72,3 +72,32 @@
         src: $src;
     }
 }
+
+// Mixin for no text shown.
+// @param 1 : fix the space generated on <a/> tag if it's not defined as (block || inline-block)
+// --------------------------------
+
+@mixin no-text {
+	font: 0/0 a;
+    text-indent: percentage(1);
+    white-space: nowrap;
+    color: transparent;
+    overflow: hidden;
+}
+
+// Counter Increment Mixin, create a numerated list.
+// @require: {counter-reset: section;} defined on a parent selector
+// @note: include this on a child selector on `::before`, your separator, space or not.
+// @author: mbertoldo@alpenite.com
+// --------------------------------
+
+@mixin counter-increment($separator, $space: space) {
+	@if ($space == 'no-space') {
+		$space: '';
+	} @else {
+		$space: ' ';
+	}
+
+	counter-increment: section;
+	content: counters(section,'#{$separator}') $space;
+}
