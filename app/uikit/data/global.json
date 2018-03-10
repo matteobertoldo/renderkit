@@ -1,10 +1,10 @@
 {
     "renderfile": {
-        "css": "css/style.min.css"
+        "css": "css/renderkit.min.css"
     },
     "uikit": {
         "title": "UI Kit",
-        "projectname": "Boilerplate Standard"
+        "projectname": "RenderKit"
     },
     "breakpoint": {
         "small": 0,

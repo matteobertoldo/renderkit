@@ -4,18 +4,18 @@
  * @author mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var conf = require('../gulpconfig');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var sourcemaps = require('gulp-sourcemaps');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var pxtorem = require('postcss-pxtorem-plus');
-var cleanCSS = require('gulp-clean-css');
+let gulp = require('gulp'),
+    gulpif = require('gulp-if'),
+    conf = require('../gulpconfig'),
+    plumber = require('gulp-plumber'),
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    sourcemaps = require('gulp-sourcemaps'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    pxtorem = require('postcss-pxtorem-plus'),
+    cleanCSS = require('gulp-clean-css');
 
 // @processors
 // @include: [autoprefixer, pxtorem]
@@ -48,7 +48,7 @@ if (!conf.cssOptions.remUnit) {
 // @param: {bool}
 // ----------------------------------
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
     return gulp.src(conf.workspace.scss + '**/*.s+(a|c)ss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -57,16 +57,17 @@ gulp.task('sass', function() {
     }).on('error', sass.logError))
     .pipe(gulpif(conf.cssOptions.singleOutput, concat(conf.cssOptions.outputName + '.css')))
     .pipe(postcss(processors))
-    .pipe(gulpif(conf.cssOptions.minify, cleanCSS({
+    .pipe(gulp.dest(conf.distribution.scss))
+    .pipe(cleanCSS({
         level: (conf.cssOptions.optimizationMinify) ? 2 : 1
-    })))
-    .pipe(gulpif(conf.cssOptions.minify, rename({
+    }))
+    .pipe(rename({
         suffix: '.min'
-    })))
+    }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(conf.distribution.scss));
 });
 
-gulp.task('sass:watch', ['sass'], function() {
+gulp.task('sass:watch', ['sass'], () => {
     return global.browserSync.reload();
 });

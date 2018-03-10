@@ -445,7 +445,7 @@
     	&[type="checkbox"],
     	&[type="radio"] {
     		@if ($global-custom-checkbox-radio) {
-                appearance: none;
+                appearance: none !important;
                 @include visuallyhidden;
     		} @else {
     			margin: 0;
@@ -528,7 +528,7 @@
     	}
 
     	@if ($global-custom-options-select) {
-    		appearance: none;
+    		appearance: none !important;
     		@include visuallyhidden;
     	}
     }

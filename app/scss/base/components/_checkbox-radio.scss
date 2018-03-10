@@ -39,14 +39,6 @@
             overflow: hidden;
     	}
 
-    	@if ($global-hover-input-border) {
-    		&:hover {
-                &::before {
-        			border-color: $global-hover-input-border-color;
-        		}
-            }
-    	}
-
     	&::after {
     		transition: transform 0.3s ease;
     	}
@@ -69,6 +61,14 @@
     		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     	}
 
+        @if ($global-hover-input-border) {
+    		input[type="checkbox"]:not([disabled]) + &:hover {
+                &::before {
+                    border-color: $global-hover-input-border-color;
+                }
+            }
+        }
+
     	input[type="checkbox"]:checked + & {
     		@if ($global-custom-checkbox-radio-checked-border) {
     			&::before {
@@ -87,9 +87,10 @@
             }
         }
 
-        input[type="checkbox"].#{$validation-input-error-class} + & {
+        input[type="checkbox"].#{$validation-input-error-class}:not([disabled]) + & {
             &::before {
                 border-color: $validation-input-error-border-color;
+                background-color: $validation-input-error-background-color;
             }
         }
 
@@ -125,6 +126,14 @@
             margin-top: -(rem($marker-size / 2));
     		transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     	}
+
+        @if ($global-hover-input-border) {
+    		input[type="radio"]:not([disabled]) + &:hover {
+                &::before {
+                    border-color: $global-hover-input-border-color;
+                }
+            }
+        }
 
     	input[type="radio"]:checked + & {
     		@if ($global-custom-checkbox-radio-checked-border) {

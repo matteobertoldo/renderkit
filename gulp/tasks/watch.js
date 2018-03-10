@@ -4,42 +4,20 @@
  * @author mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var conf = require('../gulpconfig');
-var sequence = require('run-sequence');
-var fs = require('fs');
-var log = require('fancy-log');
-var colors = require('ansi-colors');
-
-// @watch stream configuration
-// @return: browserSync.reload()
-// -------------------
-
-var stream = function() {
-    if (conf.syncOptions.stream) {
-        return watch(conf.syncOptions.streamFoldersToWatch, {
-            ignoreInitial: true,
-            cwd: process.cwd()
-        }).on('change', function(path) {
-            if (conf.syncOptions.streamLog) {
-                log("File '" + colors.cyan(path) + "' has been changed");
-            }
-
-            if (conf.syncOptions.browserSync) {
-                return global.browserSync.reload();
-            }
-        });
-    }
-};
+let gulp = require('gulp'),
+    watch = require('gulp-watch'),
+    conf = require('../gulpconfig'),
+    sequence = require('run-sequence'),
+    log = require('fancy-log'),
+    colors = require('ansi-colors');
 
 // @default watch tasks
 // --------------
 
-var tasks = conf.defaultWatchTasks;
-var keys = Object.keys(tasks);
+let tasks = conf.defaultWatchTasks;
+let keys = Object.keys(tasks);
 
-var defaultWatchTasks = keys.filter(function(key) {
+let defaultWatchTasks = keys.filter(function(key) {
     return tasks[key];
 });
 
@@ -55,14 +33,13 @@ if (conf.syncOptions.browserSync) {
 // @start & enjoy
 // -------------------
 
-gulp.task('watch', function(done) {
+gulp.task('watch', (done) => {
     if (defaultWatchTasks.length) {
         sequence.apply(null, defaultWatchTasks, done);
-        gulp.watch([conf.workspace.html + '**/*.+(nunjucks|njk)', conf.workspace.html + '**/*.json'], ['nunjucks:watch']);
+        gulp.watch([conf.workspace.uikit + '**/*.+(nunjucks|njk)', conf.workspace.uikit + '**/*.json'], ['nunjucks:watch']);
         gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
         gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
-        stream();
     } else {
-        log(colors.yellow('Set up at least one task to use `gulp watch`'));
+        log(colors.red('Set up at least one task to use `gulp watch`'));
     }
 });
