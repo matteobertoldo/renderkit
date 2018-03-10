@@ -239,9 +239,12 @@ $global-input-label-margin: 0 0 5px 0;
 // --------------------------------
 
 $global-custom-checkbox-radio: true;
+$global-custom-checkbox-radio-align-center: false;
+$global-custom-checkbox-radio-size: 24px;
 $global-custom-checkbox-radio-font-family: $gfont-2;
 $global-custom-checkbox-radio-font-size: 13px;
 $global-custom-checkbox-radio-text-transform: none;
+$global-custom-checkbox-radio-letter-spacing: 0.5px;
 $global-custom-checkbox-radio-color: palette(2);
 $global-custom-checkbox-radio-cursor: default;
 $global-custom-checkbox-radio-checked-border: true;
@@ -258,7 +261,6 @@ $custom-checkbox-checked-border: palette(3);
 // 9.7 Form Input Radio Custom
 // --------------------------------
 
-$custom-checkbox-radio-size: 24px;
 $custom-radio-mark-color: palette(2);
 $custom-radio-checked-border: palette(3);
 

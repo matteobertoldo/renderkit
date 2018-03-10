@@ -17,10 +17,11 @@ bower_components
 
 *.npm
 
-# Private files
+# Task Generated file
 # --------------------------
 
-gulp/private/*.json
+dist/images/
+dist/*.html
 
 # IDE Generated Files & Folders
 # --------------------------
