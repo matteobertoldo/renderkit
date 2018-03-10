@@ -3257,6 +3257,7 @@ p {
   font-family: "Josefin Sans", sans-serif;
   font-size: 0.8125rem;
   text-transform: none;
+  letter-spacing: 0.03125rem;
   color: #8c8c8c;
   margin: 0;
   padding-left: 34px;
@@ -3272,14 +3273,13 @@ p {
 
 .input-checkbox::before,
 .input-radio::before {
-  top: 50%;
+  top: 0;
   left: 0;
   width: 24px;
   height: 24px;
   background-color: #efefef;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-  margin-top: -0.75rem;
   -webkit-transition: border-color 0.3s ease;
   -o-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
@@ -3295,15 +3295,24 @@ p {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+.input-checkbox {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 24px;
+}
+
 .input-checkbox::after {
-  top: 50%;
+  top: 6px;
   left: 0.5625rem;
   display: block;
   width: 0.375rem;
   height: 0.75rem;
   border: solid #8c8c8c;
   border-width: 0 3px 3px 0;
-  margin-top: -0.375rem;
   -webkit-transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
           transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
 }
@@ -3340,17 +3349,26 @@ input[type="checkbox"].error:focus:not(:checked) + .input-checkbox::before {
   outline-offset: -2px;
 }
 
+.input-radio {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 24px;
+}
+
 .input-radio::before, .input-radio::after {
   border-radius: 50%;
 }
 
 .input-radio::after {
-  top: 50%;
+  top: 0.375rem;
   left: 0.375rem;
   width: 0.75rem;
   height: 0.75rem;
   background-color: #8c8c8c;
-  margin-top: -0.375rem;
   -webkit-transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
           transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
 }

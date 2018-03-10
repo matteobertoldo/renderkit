@@ -15,9 +15,10 @@
             size: $global-custom-checkbox-radio-font-size;
         }
         text-transform: $global-custom-checkbox-radio-text-transform;
+        letter-spacing: $global-custom-checkbox-radio-letter-spacing;
         color: $global-custom-checkbox-radio-color;
         margin: 0;
-    	padding-left: $custom-checkbox-radio-size + $custom-checkbox-radio-label-gutter;
+    	padding-left: $global-custom-checkbox-radio-size + $custom-checkbox-radio-label-gutter;
         cursor: $global-custom-checkbox-radio-cursor;
 
     	&::before,
@@ -27,14 +28,20 @@
     	}
 
     	&::before {
-    		top: 50%;
+            @if ($global-custom-checkbox-radio-align-center) {
+                top: 50%;
+            } @else {
+                top: 0;
+            }
     		left: 0;
-    		width: $custom-checkbox-radio-size;
-    		height: $custom-checkbox-radio-size;
+    		width: $global-custom-checkbox-radio-size;
+    		height: $global-custom-checkbox-radio-size;
             background-color: $global-input-background-color;
     		border: $global-input-border;
     		border-radius: $global-input-border-radius;
-            margin-top: -(rem($custom-checkbox-radio-size / 2));
+            @if ($global-custom-checkbox-radio-align-center) {
+                margin-top: -(rem($global-custom-checkbox-radio-size / 2));
+            }
     		transition: border-color 0.3s ease;
             overflow: hidden;
     	}
@@ -46,18 +53,30 @@
 
     // @global marker size for checkbox & radio
     // @return: {String}
-    // @note: the marker will always be half size compared to `$custom-checkbox-radio-size`;
+    // @note: the marker will always be half size compared to `$global-custom-checkbox-radio-size`;
     // --------------------------------
 
-    $marker-size: ($custom-checkbox-radio-size / 2);
+    $marker-size: ($global-custom-checkbox-radio-size / 2);
     $marker-size-half: ($marker-size / 2);
 
     .input-checkbox {
+        @if not $global-custom-checkbox-radio-align-center {
+            display: inline-flex;
+            align-items: center;
+            min-height: $global-custom-checkbox-radio-size;
+        }
+
         &::after {
-    		top: 50%;
-    		left: rem(($custom-checkbox-radio-size - $marker-size-half) / 2);
+            @if ($global-custom-checkbox-radio-align-center) {
+                top: 50%;
+            } @else {
+                top: $global-custom-checkbox-radio-size - ($marker-size + $marker-size-half);
+            }
+    		left: rem(($global-custom-checkbox-radio-size - $marker-size-half) / 2);
     		@include arrow(rem($marker-size-half), rem($marker-size), $custom-checkbox-mark-color, $custom-checkbox-mark-thick);
-            margin-top: -(rem($marker-size-half));
+            @if ($global-custom-checkbox-radio-align-center) {
+                margin-top: -(rem($marker-size-half));
+            }
     		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     	}
 
@@ -112,18 +131,30 @@
     }
 
     .input-radio {
-    	&::before,
+        @if not $global-custom-checkbox-radio-align-center {
+            display: inline-flex;
+            align-items: center;
+            min-height: $global-custom-checkbox-radio-size;
+        }
+
+        &::before,
         &::after {
     		border-radius: 50%;
     	}
 
     	&::after {
-    		top: 50%;
-    		left: rem(($custom-checkbox-radio-size - $marker-size) / 2);
+            @if ($global-custom-checkbox-radio-align-center) {
+                top: 50%;
+            } @else {
+                top: rem(($global-custom-checkbox-radio-size - $marker-size) / 2);
+            }
+    		left: rem(($global-custom-checkbox-radio-size - $marker-size) / 2);
     		width: rem($marker-size);
     		height: rem($marker-size);
     		background-color: $custom-radio-mark-color;
-            margin-top: -(rem($marker-size / 2));
+            @if ($global-custom-checkbox-radio-align-center) {
+                margin-top: -(rem($marker-size / 2));
+            }
     		transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     	}
 
