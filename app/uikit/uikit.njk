@@ -115,7 +115,9 @@
                 {{ sassvar('grid-margin-gutters') }}
 
                 {{ infolabel('Info') }}
-                <span class="info">For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.</span>
+                <span class="info">
+                    For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.
+                </span>
             </div>
             {% include "sections/grid/xy-grid-style.njk" %}
             {% set columns = xygrid.gridcolumns %}
@@ -186,7 +188,7 @@
                 {{ sassvar('global-custom-select') }}
 
                 {{ infolabel('Info') }}
-                <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.</span>
+                {{infocontent("The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.")}}
             </div>
             {% include "sections/form/form-style.njk" %}
             <div class="uikit-form-render">
@@ -290,7 +292,7 @@
                 {% endif %}
 
                 {{ infolabel('Info') }}
-                <span class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</span>
+                {{ infocontent("The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.") }}
             </div>
             {% include "sections/svg/svg-script.njk" %}
             {% include "sections/svg/svg-style.njk" %}

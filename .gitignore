@@ -22,6 +22,7 @@ bower_components
 
 dist/images/
 dist/*.html
+dist/**/*.map
 
 # IDE Generated Files & Folders
 # --------------------------

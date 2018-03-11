@@ -150,16 +150,20 @@
 
     $gutter: -zf-get-bp-val($gutters, $breakpoint);
 
-    @include xy-cell-base($size);
+    @if ($gutter != null) {
+        @include xy-cell-base($size);
 
-    @if ($gutter-type == 'margin') {
-        @include -xy-cell-properties($size, $gutter, $vertical);
+        @if ($gutter-type == 'margin') {
+            @include -xy-cell-properties($size, $gutter, $vertical);
+        } @else {
+            @include -xy-cell-properties($size, 0, $vertical);
+        }
+
+        @if $gutter-output {
+            @include xy-gutters($gutter, $gutter-type, $gutter-position);
+        }
     } @else {
-        @include -xy-cell-properties($size, 0, $vertical);
-    }
-
-    @if $gutter-output {
-        @include xy-gutters($gutter, $gutter-type, $gutter-position);
+        @warn 'xy-cell: no gutters were found in `$gutters` for "$breakpoint: #{$breakpoint}", cell was not generated`';
     }
 }
 
@@ -427,6 +431,7 @@
 
         @for $i from 1 through $grid-columns {
             .grid-x > .#{$-zf-size}-#{$i} {
+                @include xy-cell-base(shrink);
                 @include xy-cell-static($i, false, $gutter-type: padding);
             }
         }

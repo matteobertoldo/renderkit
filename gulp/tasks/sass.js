@@ -4,18 +4,18 @@
  * @author mbertoldo@alpenite.com
  */
 
-let gulp = require('gulp'),
-    gulpif = require('gulp-if'),
-    conf = require('../gulpconfig'),
-    plumber = require('gulp-plumber'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps'),
-    postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    pxtorem = require('postcss-pxtorem-plus'),
-    cleanCSS = require('gulp-clean-css');
+const gulp = require('gulp'),
+gulpif = require('gulp-if'),
+conf = require('../gulpconfig'),
+plumber = require('gulp-plumber'),
+sass = require('gulp-sass'),
+concat = require('gulp-concat'),
+rename = require('gulp-rename'),
+sourcemaps = require('gulp-sourcemaps'),
+postcss = require('gulp-postcss'),
+autoprefixer = require('autoprefixer'),
+pxtorem = require('postcss-pxtorem-plus'),
+cleanCSS = require('gulp-clean-css');
 
 // @processors
 // @include: [autoprefixer, pxtorem]

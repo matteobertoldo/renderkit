@@ -5,11 +5,11 @@
  * @author mgaion@alpenite.com (regex `split`)
  */
 
-let gulp = require('gulp'),
-    conf = require('../gulpconfig'),
-    del = require('del'),
-    log = require('fancy-log'),
-    colors = require('ansi-colors');
+const gulp = require('gulp'),
+conf = require('../gulpconfig'),
+del = require('del'),
+log = require('fancy-log'),
+colors = require('ansi-colors');
 
 // @localfiles
 // @return: {string} || [arr]

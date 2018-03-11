@@ -2,6 +2,10 @@
     <span class="info-label">{{text}}</span>
 {% endmacro %}
 
+{% macro infocontent(content) %}
+    <span class="info">{{content}}</span>
+{% endmacro %}
+
 {% macro mixin(name) %}
 <span class="mixin-code">
     <span class="include">@include</span>
@@ -21,4 +25,8 @@
         </span>
     <span class="brackets">}</span>
 </code>
+{% endmacro %}
+
+{% macro templateclass(class) %}
+    <span class="template-class">.{{class}}</span>
 {% endmacro %}

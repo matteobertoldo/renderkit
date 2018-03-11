@@ -4,16 +4,16 @@
  * @author mbertoldo@alpenite.com
  */
 
-let gulp = require('gulp'),
-    conf = require('../gulpconfig'),
-    fs = require('fs'),
-    path = require('path'),
-    plumber = require('gulp-plumber'),
-    nunjucksRender = require('gulp-nunjucks-render'),
-    data = require('gulp-data'),
-    htmlBeautify = require('gulp-html-beautify'),
-    log = require('fancy-log'),
-    colors = require('ansi-colors');
+const gulp = require('gulp'),
+conf = require('../gulpconfig'),
+fs = require('fs'),
+path = require('path'),
+plumber = require('gulp-plumber'),
+nunjucksRender = require('gulp-nunjucks-render'),
+data = require('gulp-data'),
+htmlBeautify = require('gulp-html-beautify'),
+log = require('fancy-log'),
+colors = require('ansi-colors');
 
 // @get "data" options
 // @param: file
@@ -23,7 +23,7 @@ let gulp = require('gulp'),
 gulp.task('nunjucks', () => {
     return gulp.src(conf.workspace.uikit + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
-    .pipe(data(function(file) {
+    .pipe(data((file) => {
         return JSON.parse(fs.readFileSync(path.resolve(conf.nunjucksOptions.dataFilePath), 'utf8'));
     }))
     .pipe(nunjucksRender({

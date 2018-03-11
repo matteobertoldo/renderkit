@@ -4,8 +4,8 @@
  * @author mbertoldo@alpenite.com
  */
 
-let gulp = require('gulp'),
-    conf = require('../gulpconfig');
+const gulp = require('gulp'),
+conf = require('../gulpconfig');
 
 gulp.task('browser-sync', () => {
     if (conf.syncOptions.staticServer) {
