@@ -4,7 +4,7 @@
  * @author mbertoldo@alpenite.com
  */
 
-let gulp = require('gulp'),
+const gulp = require('gulp'),
 conf = require('../gulpconfig'),
 svgSprite = require('gulp-svg-sprite'),
 plumber = require('gulp-plumber'),

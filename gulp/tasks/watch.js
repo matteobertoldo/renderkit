@@ -4,12 +4,12 @@
  * @author mbertoldo@alpenite.com
  */
 
-let gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    conf = require('../gulpconfig'),
-    sequence = require('run-sequence'),
-    log = require('fancy-log'),
-    colors = require('ansi-colors');
+const gulp = require('gulp'),
+watch = require('gulp-watch'),
+conf = require('../gulpconfig'),
+sequence = require('run-sequence'),
+log = require('fancy-log'),
+colors = require('ansi-colors');
 
 // @default watch tasks
 // --------------
@@ -17,7 +17,7 @@ let gulp = require('gulp'),
 let tasks = conf.defaultWatchTasks;
 let keys = Object.keys(tasks);
 
-let defaultWatchTasks = keys.filter(function(key) {
+let defaultWatchTasks = keys.filter((key) => {
     return tasks[key];
 });
 
@@ -36,7 +36,7 @@ if (conf.syncOptions.browserSync) {
 gulp.task('watch', (done) => {
     if (defaultWatchTasks.length) {
         sequence.apply(null, defaultWatchTasks, done);
-        gulp.watch([conf.workspace.uikit + '**/*.+(nunjucks|njk)', conf.workspace.uikit + '**/*.json'], ['nunjucks:watch']);
+        gulp.watch([conf.workspace.uikit + '**/*.+(html|nunjucks|njk)', conf.workspace.uikit + '**/*.json'], ['nunjucks:watch']);
         gulp.watch(conf.workspace.scss + '**/*.scss', ['sass:watch']);
         gulp.watch(conf.workspace.svg + '**/*.svg', ['svg:watch']);
     } else {

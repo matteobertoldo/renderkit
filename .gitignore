@@ -22,6 +22,7 @@ bower_components
 
 dist/images/
 dist/*.html
+dist/**/*.map
 
 # IDE Generated Files & Folders
 # --------------------------
@@ -40,3 +41,4 @@ dist/*.html
 *.DS_Store
 *__MACOSX
 *Thumbs.db
+/dist/css/renderkit.min.css.map

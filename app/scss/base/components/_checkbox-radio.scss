@@ -80,6 +80,10 @@
     		transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
     	}
 
+        input[type="checkbox"][disabled] + & {
+            opacity: $global-disable-input-opacity !important;
+        }
+
         @if ($global-hover-input-border) {
     		input[type="checkbox"]:not([disabled]) + &:hover {
                 &::before {
@@ -157,6 +161,10 @@
             }
     		transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
     	}
+
+        input[type="radio"][disabled] + & {
+            opacity: $global-disable-input-opacity !important;
+        }
 
         @if ($global-hover-input-border) {
     		input[type="radio"]:not([disabled]) + &:hover {
