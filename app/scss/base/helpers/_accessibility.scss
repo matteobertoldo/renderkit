@@ -18,7 +18,7 @@
     }
 
     .invisible {
-        visibility: hidden;
+        visibility: hidden !important;
     }
 
     .visuallyhidden {
@@ -51,7 +51,7 @@
     }
 
     .no-display {
-        display: none;
+        display: none !important;
     }
 
     @each $cursor in (pointer, default, grab, grabbing) {

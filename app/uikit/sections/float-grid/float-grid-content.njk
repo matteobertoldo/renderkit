@@ -1,0 +1,18 @@
+{% set rowclass = floatgrid.rowclass %}
+{% set columns = floatgrid.gridcolumns %}
+{% set finalcolumns = columns / columns %}
+{% set columnclass = floatgrid.columnclass %}
+{% set gridcontainer = floatgrid.gridcontainer %}
+<div class="render-grid-content">
+    <div class="{{rowclass}}">
+        {% for column in range(0, columns) %}
+            <div class="small-{{columns}} medium-{{columns}} large-{{finalcolumns}} {{columnclass}}">
+                <div class="content"></div>
+            </div>
+        {% endfor %}
+        <div class="small-{{columns}} medium-{{columns}} large-{{columns}} {{columnclass}}">
+            <span class="max-width-count">{{gridcontainer}}</span>
+            <span class="width-count"></span>
+        </div>
+    </div>
+</div>

@@ -15,8 +15,12 @@
         <link rel="stylesheet" href="{{renderfile.css}}"/>
         {% include "layout/ui/ui-style.njk" %}
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Abril+Fatface" rel="stylesheet">
-		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.3/what-input.min.js"></script>
+        {% if uikit.js.whatinput %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
+        {% endif %}
+        {% if uikit.js.svg4everybody %}
+            <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+        {% endif %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     </head>
     <body id="uikit-body-render">
@@ -25,9 +29,11 @@
                 <h1 class="project-name">
                     {{uikit.projectname}}
                 </h1>
-                <div class="github-icon">
-                    <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
-                </div>
+                {% if uikit.github.show %}
+                    <div class="github-icon">
+                        <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
+                    </div>
+                {% endif %}
             </aside>
             <div id="uikit-render-content">
                 {% from "layout/macro/code-snippet.njk" import infolabel, infocontent, mixin, sassvar, sassfunction, templateclass %}

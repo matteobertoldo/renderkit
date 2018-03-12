@@ -1,0 +1,10 @@
+{% if floatgrid.show %}
+    <section class="uikit-element-render">
+        <h2 class="section-title">Float Grid</h2>
+        <div class="section-description">
+            {% include "sections/float-grid/float-grid-info.njk" %}
+        </div>
+        {% include "sections/float-grid/float-grid-style.njk" %}
+        {% include "sections/float-grid/float-grid-content.njk" %}
+    </section>
+{% endif %}

@@ -1,0 +1,36 @@
+<div id="typography-list" class="typography-list">
+    <div class="header-render">
+        {% for i in range(0, 6) %}
+            <b class="header">h{{i +1}} &amp; .h{{i +1}}</b>
+            <h{{i +1}} class="h">
+                Header.
+                <div class="header-info-style">
+                    <p class="font-style-rule font-style-rule-animatable">
+                        <i class="family"></i>
+                        <span id="font-family-value"></span>
+                    </p>
+                    <ul class="font-style-rule">
+                        <li class="font-style-rule-animatable delay-1">
+                            <i class="size"></i>
+                            <span id="font-size-value"></span>
+                        </li>
+                        <li class="font-style-rule-animatable delay-2">
+                            <i class="lineheight"></i>
+                            <span id="line-height-value"></span>
+                        </li>
+                        <li class="font-style-rule-animatable delay-3">
+                            <i class="letterspacing"></i>
+                            <span id="letter-spacing-value"></span>
+                        </li>
+                    </ul>
+                </div>
+            </h{{i+ 1}}>
+        {% endfor %}
+    </div>
+    <div class="paragraph-render">
+        <b class="paragraph">p</b>
+        <p class="p">
+            <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
+        </p>
+    </div>
+</div>

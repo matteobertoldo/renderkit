@@ -8,7 +8,13 @@
     /*@custom input checkbox & radio*/
     .input-checkbox,
     .input-radio {
-    	display: inline-block;
+        @if ($global-custom-checkbox-radio-align-center) {
+            display: inline-block;
+        } @else {
+            display: inline-flex;
+            align-items: center;
+            min-height: $global-custom-checkbox-radio-size;
+        }
     	position: relative;
         font: {
             family: $global-custom-checkbox-radio-font-family;
@@ -60,17 +66,11 @@
     $marker-size-half: ($marker-size / 2);
 
     .input-checkbox {
-        @if not $global-custom-checkbox-radio-align-center {
-            display: inline-flex;
-            align-items: center;
-            min-height: $global-custom-checkbox-radio-size;
-        }
-
         &::after {
             @if ($global-custom-checkbox-radio-align-center) {
                 top: 50%;
             } @else {
-                top: $global-custom-checkbox-radio-size - ($marker-size + $marker-size-half);
+                top: rem($global-custom-checkbox-radio-size - ($marker-size + $marker-size-half));
             }
     		left: rem(($global-custom-checkbox-radio-size - $marker-size-half) / 2);
     		@include arrow(rem($marker-size-half), rem($marker-size), $custom-checkbox-mark-color, $custom-checkbox-mark-thick);
@@ -84,10 +84,10 @@
             opacity: $global-disable-input-opacity !important;
         }
 
-        @if ($global-hover-input-border) {
+        @if ($global-custom-checkbox-radio-hover-border) {
     		input[type="checkbox"]:not([disabled]) + &:hover {
                 &::before {
-                    border-color: $global-hover-input-border-color;
+                    border-color: $global-custom-checkbox-radio-hover-border-color;
                 }
             }
         }
@@ -124,23 +124,26 @@
         }
 
         @if ($custom-checkbox-radio-outline-detect) {
-            [data-whatinput="initial"] input[type="checkbox"]:focus + &,
-            [data-whatinput="keyboard"] input[type="checkbox"]:focus + & {
-                &::before {
-                    outline: -webkit-focus-ring-color auto 5px;
-                    outline-offset: -2px;
+            @if ($custom-checkbox-radio-what-input-outline-detect) {
+                [data-whatinput="initial"] input[type="checkbox"]:focus + &,
+                [data-whatinput="keyboard"] input[type="checkbox"]:focus + & {
+                    &::before {
+                        outline: -webkit-focus-ring-color auto 5px;
+                        outline-offset: -2px;
+                     }
+                }
+            } @else {
+                input[type="checkbox"]:focus + & {
+                    &::before {
+                        outline: -webkit-focus-ring-color auto 5px;
+                        outline-offset: -2px;
+                    }
                  }
             }
         }
     }
 
     .input-radio {
-        @if not $global-custom-checkbox-radio-align-center {
-            display: inline-flex;
-            align-items: center;
-            min-height: $global-custom-checkbox-radio-size;
-        }
-
         &::before,
         &::after {
     		border-radius: 50%;
@@ -166,10 +169,10 @@
             opacity: $global-disable-input-opacity !important;
         }
 
-        @if ($global-hover-input-border) {
+        @if ($global-custom-checkbox-radio-hover-border) {
     		input[type="radio"]:not([disabled]) + &:hover {
                 &::before {
-                    border-color: $global-hover-input-border-color;
+                    border-color: $global-custom-checkbox-radio-hover-border-color;
                 }
             }
         }
@@ -205,11 +208,20 @@
         }
 
         @if ($custom-checkbox-radio-outline-detect) {
-            [data-whatinput="initial"] input[type="radio"]:focus + &,
-            [data-whatinput="keyboard"] input[type="radio"]:focus + & {
-                &::before {
-                    outline: -webkit-focus-ring-color auto 5px;
-                    outline-offset: -2px;
+            @if ($custom-checkbox-radio-what-input-outline-detect) {
+                [data-whatinput="initial"] input[type="radio"]:focus + &,
+                [data-whatinput="keyboard"] input[type="radio"]:focus + & {
+                    &::before {
+                        outline: -webkit-focus-ring-color auto 5px;
+                        outline-offset: -2px;
+                     }
+                }
+            } @else {
+                input[type="radio"]:focus + & {
+                    &::before {
+                        outline: -webkit-focus-ring-color auto 5px;
+                        outline-offset: -2px;
+                    }
                  }
             }
         }
