@@ -91,6 +91,10 @@
                 {{ infolabel('Variabiles') }}
                 {{ sassvar('palette-color') }}
 
+                {{ infolabel('Template class')}}
+                {{ templateclass('palette-color-$key-palette-color') }}
+                {{ templateclass('background-color-$key-palette-color') }}
+
                 {{ infolabel('Function for catch HEX')}}
                 {{ sassfunction('color','palette','$key-palette-color') }}
             </div>
@@ -188,7 +192,7 @@
                 {{ sassvar('global-custom-select') }}
 
                 {{ infolabel('Info') }}
-                {{infocontent("The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.")}}
+                {{ infocontent("The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.") }}
             </div>
             {% include "sections/form/form-style.njk" %}
             <div class="uikit-form-render">
@@ -241,27 +245,25 @@
                         <label class="{{labelclass}}">Textarea Disabled</label>
                         <textarea placeholder="textarea disabled" disabled></textarea>
                     </div>
-                    {% if form.customcheckboxradio %}
-                        <div class="{{rowclass}} checkbox-radio-group wide">
-                            <label class="{{labelclass}}">Input checkbox & radio custom</label>
-                            <div class="{{rowclass}} wide no-gutter">
-                                <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
-                                <label class="input-checkbox" for="uikit-checkbox-render">
-                                    Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
-                                </label>
-                            </div>
-                            <div class="{{rowclass}} radio-group wide no-gutter">
-                                <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
-                                <label class="input-radio" for="uikit-radio-render">
-                                    Brownie.
-                                </label>
-                                <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
-                                <label class="input-radio" for="uikit-radio-render-2">
-                                    Chupa chups.
-                                </label>
-                            </div>
+                    <div class="{{rowclass}} checkbox-radio-group wide">
+                        <label class="{{labelclass}}">Input checkbox & radio custom</label>
+                        <div class="{{rowclass}} wide no-gutter">
+                            <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
+                            <label class="input-checkbox" for="uikit-checkbox-render">
+                                Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
+                            </label>
                         </div>
-                    {% endif %}
+                        <div class="{{rowclass}} radio-group wide no-gutter">
+                            <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
+                            <label class="input-radio" for="uikit-radio-render">
+                                Brownie.
+                            </label>
+                            <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
+                            <label class="input-radio" for="uikit-radio-render-2">
+                                Chupa chups.
+                            </label>
+                        </div>
+                    </div>
                 </form>
             </div>
         </section>

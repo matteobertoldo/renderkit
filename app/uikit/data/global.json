@@ -38,8 +38,7 @@
         "show": true,
         "rowclass": "form-row",
         "labelclass": "form-label",
-        "selectclass": "default",
-        "customcheckboxradio": true
+        "selectclass": "default"
     },
     "svg": {
         "show": true,

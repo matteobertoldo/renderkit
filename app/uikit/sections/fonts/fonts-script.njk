@@ -26,89 +26,87 @@ Array.prototype.clean = function(deleteValue) {
  */
 
 function getFontsInstalled(sheet) {
-    var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets,
+    var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0],
         fontFace,
         gFonts;
 
-    for (var i = 0, l = sheets.length; i < l; i++) {
-        var sheet = sheets[i];
+    for (var j = 0, k = sheets.cssRules.length || sheets.rules.length; j < k; j++) {
+        var rule = sheets.cssRules[j] || sheets.rules[j];
 
-        if (!sheet.cssRules) {
-            continue;
-        }
+        if (rule.toString() == "[object CSSFontFaceRule]") {
+            var value = rule;
+            var fontFamilyName = value.style.fontFamily || value.style.cssText.match(/font-family\s*:\s*([^;\}]*)\s*[;}]/i)[1];
+            fontFamilyName = [fontFamilyName].join().replace(/"/g, '');
+            var fontStyle = value.style.fontStyle;
+            var fontWeight = value.style.fontWeight;
+            var list = document.createElement('li');
+            var p = document.createElement('p');
+            var span = document.createElement('span');
+            var em = document.createElement('em');
 
-        for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-            var rule = sheet.cssRules[j];
+            list.setAttribute("style",
+                "font-family:" + '"' + fontFamilyName + '"' + ";" +
+                "font-style:" + fontStyle + ";" +
+                "font-weight:" + fontWeight + ";");
+            p.appendChild(document.createTextNode('Aa'));
+            span.setAttribute('class','family-name');
+            span.appendChild(document.createTextNode(fontFamilyName));
+            em.appendChild(document.createTextNode('Font Face'));
+            list.appendChild(p);
+            list.appendChild(span);
+            list.appendChild(em);
 
-            if (rule.toString() == "[object CSSFontFaceRule]") {
-                var value = rule;
-                var fontFamilyName = value.style.fontFamily || value.style.cssText.match(/font-family\s*:\s*([^;\}]*)\s*[;}]/i)[1];
-                fontFamilyName = [fontFamilyName].join().replace(/"/g, '');
-                var fontStyle = value.style.fontStyle;
-                var fontWeight = value.style.fontWeight;
-                var list = document.createElement('li');
-                var p = document.createElement('p');
-                var span = document.createElement('span');
-                var em = document.createElement('em');
+            fontFace = document.getElementById('font-list').appendChild(list);
+        } else if (rule.toString() == "[object CSSImportRule]") {
+            if (rule.href != undefined) {
+                var href = rule.href;
+                var familiesToSplit = href.split('https://fonts.googleapis.com/css?family=').clean('');
+                var extraParam;
 
-                list.setAttribute("style",
-                    "font-family:" + '"' + fontFamilyName + '"' + ";" +
-                    "font-style:" + fontStyle + ";" +
-                    "font-weight:" + fontWeight + ";");
-                p.appendChild(document.createTextNode('Aa'));
-                span.setAttribute('class','family-name');
-                span.appendChild(document.createTextNode(fontFamilyName));
-                em.appendChild(document.createTextNode('Font Face'));
-                list.appendChild(p);
-                list.appendChild(span);
-                list.appendChild(em);
+                if (familiesToSplit[0] != undefined) {
+                    if (href.match(/fonts.googleapis/)) {
+                        fontToSplit = familiesToSplit[0].split('|');
 
-                fontFace = document.getElementById('font-list').appendChild(list);
-            } else if (rule.toString() == "[object CSSImportRule]") {
-                if (rule.href != undefined) {
-                    var href = rule.href;
-                    var familiesToSplit = href.split('https://fonts.googleapis.com/css?family=').clean('');
-                    var extraParam;
+                        fontToSplit.map(function(item) {
+                            var fontFamilyName = item.split(':')[0].replace(/\+/g,' ');
 
-                    if (familiesToSplit[0] != undefined) {
-                        if (href.match(/fonts.googleapis/)) {
-                            fontToSplit = familiesToSplit[0].split('|');
+                            if (item.split(':').length > 1) {
+                                extraParam = ' ' + item.split(':').clean(item.split(':')[0]).join().replace(/i/g,' Italic');
+                            } else {
+                                extraParam = '';
+                            }
 
-                            fontToSplit.map(function(item) {
-                                var fontFamilyName = item.split(':')[0].replace(/\+/g,' ');
+                            var list = document.createElement('li');
+                            var p = document.createElement('p');
+                            var span = document.createElement('span');
+                            var a = document.createElement('a');
 
-                                if (item.split(':').length > 1) {
-                                    extraParam = ' ' + item.split(':').clean(item.split(':')[0]).join().replace(/i/g,' Italic');
-                                } else {
-                                    extraParam = '';
-                                }
+                            list.setAttribute("style",
+                                "font-family:" + '"' + fontFamilyName + '"' + ";" +
+                                "font-style:normal;" +
+                                "font-weight:normal;");
+                            p.appendChild(document.createTextNode('Aa'));
+                            span.setAttribute('class','family-name');
+                            a.setAttribute('href','https://fonts.google.com?selection.family=' + item);
+                            a.setAttribute('target','blank');
+                            span.appendChild(document.createTextNode(fontFamilyName + extraParam));
+                            a.appendChild(document.createTextNode('Google Font'));
+                            list.appendChild(p);
+                            list.appendChild(span);
+                            list.appendChild(a);
 
-                                var list = document.createElement('li');
-                                var p = document.createElement('p');
-                                var span = document.createElement('span');
-                                var a = document.createElement('a');
-
-                                list.setAttribute("style",
-                                    "font-family:" + '"' + fontFamilyName + '"' + ";" +
-                                    "font-style:normal;" +
-                                    "font-weight:normal;");
-                                p.appendChild(document.createTextNode('Aa'));
-                                span.setAttribute('class','family-name');
-                                a.setAttribute('href','https://fonts.google.com?selection.family=' + item);
-                                a.setAttribute('target','blank');
-                                span.appendChild(document.createTextNode(fontFamilyName + extraParam));
-                                a.appendChild(document.createTextNode('Google Font'));
-                                list.appendChild(p);
-                                list.appendChild(span);
-                                list.appendChild(a);
-
-                                gFonts = document.getElementById('font-list').appendChild(list);
-                            });
-                        }
+                            gFonts = document.getElementById('font-list').appendChild(list);
+                        });
                     }
                 }
             }
         }
+    }
+
+    if (fontFace == undefined && gFonts == undefined) {
+        var h2 = document.createElement('h2');
+        h2.innerHTML = 'It looks like you have not installed any fonts. <br /> What a bad style.';
+        document.getElementById('font-list').appendChild(h2);
     }
 
     return fontFace, gFonts;

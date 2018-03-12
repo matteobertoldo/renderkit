@@ -42,6 +42,10 @@
         @include no-text;
     }
 
+    .no-bullet {
+        list-style-type: none;
+    }
+
     .no-overflow {
         overflow: hidden;
     }

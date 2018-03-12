@@ -6,7 +6,9 @@
     }
 
     html[data-render="uikit"] {
-        box-sizing: border-box !important;
+        font-family: sans-serif;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     #uikit-body-render {
@@ -200,7 +202,7 @@
         letter-spacing: 0.031em;
         line-height: 1.4;
         color: #666;
-        margin-top: 20px;
+        margin-top: 24px;
     }
 
     #uikit-body-render .section-description .info {
@@ -214,7 +216,7 @@
         margin-top: 3px;
     }
 
-    #uikit-body-render .section-description a {
+    #uikit-body-render .section-description .info a {
         color: #61afef;
         text-decoration: underline;
     }
@@ -236,7 +238,8 @@
         margin-left: -4px;
     }
 
-    #uikit-body-render .sass-code {
+    #uikit-body-render .sass-code,
+    #uikit-body-render .template-class {
         display: block;
         font-family: monospace, monospace;
         font-size: 13px;
@@ -244,6 +247,13 @@
         color: #e31d79;
         opacity: 0.70;
         margin-top: 3px;
+    }
+
+    #uikit-body-render .template-class {
+        font-weight: bold;
+        color: #d19a66;
+        margin-bottom: 10px;
+        opacity: 1;
     }
 
     #uikit-body-render .sass-function-snippet {
