@@ -52,6 +52,10 @@
             text-transform: $global-input-label-text-transform;
             color: $global-input-label-color;
             margin: $global-input-label-margin;
+
+            &.#{$validation-input-error-class} {
+                color: $validation-input-error-label-color;
+            }
         }
 
         %style-inputs {

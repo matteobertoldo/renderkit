@@ -1,0 +1,72 @@
+<div class="uikit-form-render">
+    {% set rowclass = form.rowclass %}
+    {% set labelclass = form.labelclass %}
+    {% set errorclass = form.errorclass %}
+    <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input search</label>
+            <input type="search" name="q" placeholder="input search"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}} {{errorclass}}">Input error</label>
+            <input type="text" name="error-text" placeholder="bad input" class="{{errorclass}}"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input text</label>
+            <input type="text" name="name" placeholder="input text"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input email</label>
+            <input type="email" name="email" placeholder="input email"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input password</label>
+            <input type="password" name="password" placeholder="password"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input tel</label>
+            <input type="tel" name="tel" placeholder="input tel"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Input url</label>
+            <input type="url" name="url" placeholder="input url"/>
+        </div>
+        <div class="{{rowclass}} split">
+            <label class="{{labelclass}}">Select</label>
+            <select name="select" class="{{form.selectclass}}">
+                <option value="hotdog">
+                    Hot Dog
+                </option>
+                <option value="hamburger">
+                    Hamburger
+                </option>
+                <option value="chips">
+                    Chips
+                </option>
+            </select>
+        </div>
+        <div class="{{rowclass}} wide">
+            <label class="{{labelclass}}">Textarea Disabled</label>
+            <textarea placeholder="textarea disabled" disabled></textarea>
+        </div>
+        <div class="{{rowclass}} checkbox-radio-group wide">
+            <label class="{{labelclass}}">Input checkbox & radio custom</label>
+            <div class="{{rowclass}} wide no-gutter">
+                <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
+                <label class="input-checkbox" for="uikit-checkbox-render">
+                    Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
+                </label>
+            </div>
+            <div class="{{rowclass}} radio-group wide no-gutter">
+                <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
+                <label class="input-radio" for="uikit-radio-render">
+                    Brownie.
+                </label>
+                <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
+                <label class="input-radio" for="uikit-radio-render-2">
+                    Chupa chups.
+                </label>
+            </div>
+        </div>
+    </form>
+</div>

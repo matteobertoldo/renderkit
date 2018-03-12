@@ -28,6 +28,12 @@
         overflow: hidden;
     }
 
+    @media print {
+        #uikit-body-render #uikit-render-content {
+            padding-left: 0;
+        }
+    }
+
     @media only screen and (max-width: {{breakpoint.large + 'px'}}) {
         #uikit-body-render #uikit-render-content {
             padding-left: 0;
@@ -46,6 +52,12 @@
         -ms-user-select: none;
         user-select: none;
         z-index: 99;
+    }
+
+    @media print {
+        #uikit-aside-nav {
+            display: none;
+        }
     }
 
     @media only screen and (max-width: {{breakpoint.large + 'px'}}) {

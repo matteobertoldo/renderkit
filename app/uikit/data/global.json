@@ -4,7 +4,14 @@
     },
     "uikit": {
         "title": "UI Kit",
-        "projectname": "RenderKit"
+        "projectname": "RenderKit",
+        "github": {
+            "show": true
+        },
+        "js": {
+            "whatinput": true,
+            "svg4everybody": true
+        }
     },
     "breakpoint": {
         "small": 0,
@@ -38,6 +45,7 @@
         "show": true,
         "rowclass": "form-row",
         "labelclass": "form-label",
+        "errorclass": "error",
         "selectclass": "default"
     },
     "svg": {

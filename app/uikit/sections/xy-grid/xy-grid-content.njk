@@ -1,0 +1,14 @@
+{% set columns = xygrid.gridcolumns %}
+{% set finalcolumns = columns / columns %}
+{% set gridcontainer = xygrid.gridcontainer %}
+<div class="render-grid-content">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            {% for column in range(0, columns) %}
+                <div class="small-{{columns}} medium-{{columns}} large-{{finalcolumns}} cell"></div>
+            {% endfor %}
+        </div>
+        <span class="max-width-count">{{gridcontainer}}</span>
+        <span class="width-count"></span>
+    </div>
+</div>

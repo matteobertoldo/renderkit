@@ -110,16 +110,6 @@
     }
 }
 
-// Mixin for ellipsis text.
-// @note: create ellipsis on text -> mytext...
-// --------------------------------
-
-@mixin text-ellipsis {
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-
 // Mixin for text disposition.
 // --------------------------------
 

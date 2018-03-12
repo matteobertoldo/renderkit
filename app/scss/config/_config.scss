@@ -247,9 +247,12 @@ $global-custom-checkbox-radio-text-transform: none;
 $global-custom-checkbox-radio-letter-spacing: 0.5px;
 $global-custom-checkbox-radio-color: palette(2);
 $global-custom-checkbox-radio-cursor: default;
+$global-custom-checkbox-radio-hover-border: false;
+$global-custom-checkbox-radio-hover-border-color: $global-hover-input-border-color;
 $global-custom-checkbox-radio-checked-border: true;
 $custom-checkbox-radio-label-gutter: 10px;
 $custom-checkbox-radio-outline-detect: true;
+$custom-checkbox-radio-what-input-outline-detect: true;
 
 // 9.6 Form Input Checkbox Custom
 // --------------------------------
@@ -272,6 +275,7 @@ $validation-input-error-border-color: palette(6);
 $validation-input-error-background-color: palette(7);
 $validation-input-error-color: palette(primary);
 $validation-input-error-placeholder-color: palette(6);
+$validation-input-error-label-color: palette(6);
 $global-input-custom-autofill: false;
 $global-input-autofill-color: $global-input-color;
 $global-input-autofill-background-color: $global-input-background-color;

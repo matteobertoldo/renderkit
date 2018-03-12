@@ -1,0 +1,10 @@
+{% if xygrid.show %}
+    <section class="uikit-element-render">
+        <h2 class="section-title">XY Grid</h2>
+        <div class="section-description">
+            {% include "sections/xy-grid/xy-grid-info.njk" %}
+        </div>
+        {% include "sections/xy-grid/xy-grid-style.njk" %}
+        {% include "sections/xy-grid/xy-grid-content.njk" %}
+    </section>
+{% endif %}

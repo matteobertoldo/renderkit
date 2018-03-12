@@ -552,7 +552,7 @@ p {
 }
 
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .visuallyhidden, .show-for-sr,
@@ -609,7 +609,7 @@ p {
 }
 
 .no-display {
-  display: none;
+  display: none !important;
 }
 
 .cursor-pointer {
@@ -3209,6 +3209,10 @@ p {
   margin: 0 0 5px 0;
 }
 
+.form-row .form-label.error {
+  color: #c04649;
+}
+
 .form-row input[type="email"], .form-row input[type="password"], .form-row input[type="search"], .form-row select, .form-row input[type="tel"], .form-row input[type="text"], .form-row textarea, .form-row input[type="url"] {
   display: block;
   width: 100%;
@@ -3364,7 +3368,13 @@ p {
 /*@custom input checkbox & radio*/
 .input-checkbox,
 .input-radio {
-  display: inline-block;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 24px;
   position: relative;
   font-family: "Josefin Sans", sans-serif;
   font-size: 0.8125rem;
@@ -3407,18 +3417,8 @@ p {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.input-checkbox {
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 24px;
-}
-
 .input-checkbox::after {
-  top: 6px;
+  top: 0.375rem;
   left: 0.5625rem;
   display: block;
   width: 0.375rem;
@@ -3431,10 +3431,6 @@ p {
 
 input[type="checkbox"][disabled] + .input-checkbox {
   opacity: 0.5 !important;
-}
-
-input[type="checkbox"]:not([disabled]) + .input-checkbox:hover::before {
-  border-color: #b2b2b2;
 }
 
 input[type="checkbox"]:checked + .input-checkbox::before {
@@ -3465,16 +3461,6 @@ input[type="checkbox"].error:focus:not(:checked) + .input-checkbox::before {
   outline-offset: -2px;
 }
 
-.input-radio {
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 24px;
-}
-
 .input-radio::before, .input-radio::after {
   border-radius: 50%;
 }
@@ -3491,10 +3477,6 @@ input[type="checkbox"].error:focus:not(:checked) + .input-checkbox::before {
 
 input[type="radio"][disabled] + .input-radio {
   opacity: 0.5 !important;
-}
-
-input[type="radio"]:not([disabled]) + .input-radio:hover::before {
-  border-color: #b2b2b2;
 }
 
 input[type="radio"]:checked + .input-radio::before {

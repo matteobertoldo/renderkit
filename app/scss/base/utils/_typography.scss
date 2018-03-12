@@ -85,6 +85,16 @@
     overflow: hidden;
 }
 
+// Mixin for ellipsis text.
+// @note: create ellipsis on text -> mytext...
+// --------------------------------
+
+@mixin text-ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
 // Counter Increment Mixin, create a numerated list.
 // @require: {counter-reset: section;} defined on a parent selector
 // @note: include this on a child selector on `::before`, your separator, space or not.
