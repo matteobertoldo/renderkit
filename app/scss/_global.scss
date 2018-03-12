@@ -28,11 +28,7 @@
     }
 
     @include form-style;
-
-    @if ($global-custom-checkbox-radio) {
-        @include checkbox-radio-classes;
-    }
-
+    @include checkbox-radio-classes;
     @include colors-palette;
     @include shape-classes;
 }

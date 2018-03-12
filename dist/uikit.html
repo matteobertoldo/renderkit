@@ -17,7 +17,9 @@
         }
 
         html[data-render="uikit"] {
-            box-sizing: border-box !important;
+            font-family: sans-serif;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
         }
 
         #uikit-body-render {
@@ -211,7 +213,7 @@
             letter-spacing: 0.031em;
             line-height: 1.4;
             color: #666;
-            margin-top: 20px;
+            margin-top: 24px;
         }
 
         #uikit-body-render .section-description .info {
@@ -225,7 +227,7 @@
             margin-top: 3px;
         }
 
-        #uikit-body-render .section-description a {
+        #uikit-body-render .section-description .info a {
             color: #61afef;
             text-decoration: underline;
         }
@@ -247,7 +249,8 @@
             margin-left: -4px;
         }
 
-        #uikit-body-render .sass-code {
+        #uikit-body-render .sass-code,
+        #uikit-body-render .template-class {
             display: block;
             font-family: monospace, monospace;
             font-size: 13px;
@@ -255,6 +258,13 @@
             color: #e31d79;
             opacity: 0.70;
             margin-top: 3px;
+        }
+
+        #uikit-body-render .template-class {
+            font-weight: bold;
+            color: #d19a66;
+            margin-bottom: 10px;
+            opacity: 1;
         }
 
         #uikit-body-render .sass-function-snippet {
@@ -476,6 +486,24 @@
                     #uikit-body-render #font-list li a:hover {
                         opacity: 0.7;
                     }
+
+                    #uikit-body-render #font-list h2 {
+                        font-family: 'Abril Fatface', coursive;
+                        font-size: 24px;
+                        font-weight: bold;
+                        text-transform: none;
+                        text-shadow: none;
+                        letter-spacing: 0.031em;
+                        line-height: 1.4;
+                        color: #1a1a1c;
+                        opacity: 0.75;
+                    }
+
+                    @media only screen and (max-width: 1024px) {
+                        #uikit-body-render #font-list h2 {
+                            font-size: 20px;
+                        }
+                    }
                 </style>
 
                 <script type="text/javascript">
@@ -506,89 +534,87 @@
                      */
 
                     function getFontsInstalled(sheet) {
-                        var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets,
+                        var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0],
                             fontFace,
                             gFonts;
 
-                        for (var i = 0, l = sheets.length; i < l; i++) {
-                            var sheet = sheets[i];
+                        for (var j = 0, k = sheets.cssRules.length || sheets.rules.length; j < k; j++) {
+                            var rule = sheets.cssRules[j] || sheets.rules[j];
 
-                            if (!sheet.cssRules) {
-                                continue;
-                            }
+                            if (rule.toString() == "[object CSSFontFaceRule]") {
+                                var value = rule;
+                                var fontFamilyName = value.style.fontFamily || value.style.cssText.match(/font-family\s*:\s*([^;\}]*)\s*[;}]/i)[1];
+                                fontFamilyName = [fontFamilyName].join().replace(/"/g, '');
+                                var fontStyle = value.style.fontStyle;
+                                var fontWeight = value.style.fontWeight;
+                                var list = document.createElement('li');
+                                var p = document.createElement('p');
+                                var span = document.createElement('span');
+                                var em = document.createElement('em');
 
-                            for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-                                var rule = sheet.cssRules[j];
+                                list.setAttribute("style",
+                                    "font-family:" + '"' + fontFamilyName + '"' + ";" +
+                                    "font-style:" + fontStyle + ";" +
+                                    "font-weight:" + fontWeight + ";");
+                                p.appendChild(document.createTextNode('Aa'));
+                                span.setAttribute('class', 'family-name');
+                                span.appendChild(document.createTextNode(fontFamilyName));
+                                em.appendChild(document.createTextNode('Font Face'));
+                                list.appendChild(p);
+                                list.appendChild(span);
+                                list.appendChild(em);
 
-                                if (rule.toString() == "[object CSSFontFaceRule]") {
-                                    var value = rule;
-                                    var fontFamilyName = value.style.fontFamily || value.style.cssText.match(/font-family\s*:\s*([^;\}]*)\s*[;}]/i)[1];
-                                    fontFamilyName = [fontFamilyName].join().replace(/"/g, '');
-                                    var fontStyle = value.style.fontStyle;
-                                    var fontWeight = value.style.fontWeight;
-                                    var list = document.createElement('li');
-                                    var p = document.createElement('p');
-                                    var span = document.createElement('span');
-                                    var em = document.createElement('em');
+                                fontFace = document.getElementById('font-list').appendChild(list);
+                            } else if (rule.toString() == "[object CSSImportRule]") {
+                                if (rule.href != undefined) {
+                                    var href = rule.href;
+                                    var familiesToSplit = href.split('https://fonts.googleapis.com/css?family=').clean('');
+                                    var extraParam;
 
-                                    list.setAttribute("style",
-                                        "font-family:" + '"' + fontFamilyName + '"' + ";" +
-                                        "font-style:" + fontStyle + ";" +
-                                        "font-weight:" + fontWeight + ";");
-                                    p.appendChild(document.createTextNode('Aa'));
-                                    span.setAttribute('class', 'family-name');
-                                    span.appendChild(document.createTextNode(fontFamilyName));
-                                    em.appendChild(document.createTextNode('Font Face'));
-                                    list.appendChild(p);
-                                    list.appendChild(span);
-                                    list.appendChild(em);
+                                    if (familiesToSplit[0] != undefined) {
+                                        if (href.match(/fonts.googleapis/)) {
+                                            fontToSplit = familiesToSplit[0].split('|');
 
-                                    fontFace = document.getElementById('font-list').appendChild(list);
-                                } else if (rule.toString() == "[object CSSImportRule]") {
-                                    if (rule.href != undefined) {
-                                        var href = rule.href;
-                                        var familiesToSplit = href.split('https://fonts.googleapis.com/css?family=').clean('');
-                                        var extraParam;
+                                            fontToSplit.map(function(item) {
+                                                var fontFamilyName = item.split(':')[0].replace(/\+/g, ' ');
 
-                                        if (familiesToSplit[0] != undefined) {
-                                            if (href.match(/fonts.googleapis/)) {
-                                                fontToSplit = familiesToSplit[0].split('|');
+                                                if (item.split(':').length > 1) {
+                                                    extraParam = ' ' + item.split(':').clean(item.split(':')[0]).join().replace(/i/g, ' Italic');
+                                                } else {
+                                                    extraParam = '';
+                                                }
 
-                                                fontToSplit.map(function(item) {
-                                                    var fontFamilyName = item.split(':')[0].replace(/\+/g, ' ');
+                                                var list = document.createElement('li');
+                                                var p = document.createElement('p');
+                                                var span = document.createElement('span');
+                                                var a = document.createElement('a');
 
-                                                    if (item.split(':').length > 1) {
-                                                        extraParam = ' ' + item.split(':').clean(item.split(':')[0]).join().replace(/i/g, ' Italic');
-                                                    } else {
-                                                        extraParam = '';
-                                                    }
+                                                list.setAttribute("style",
+                                                    "font-family:" + '"' + fontFamilyName + '"' + ";" +
+                                                    "font-style:normal;" +
+                                                    "font-weight:normal;");
+                                                p.appendChild(document.createTextNode('Aa'));
+                                                span.setAttribute('class', 'family-name');
+                                                a.setAttribute('href', 'https://fonts.google.com?selection.family=' + item);
+                                                a.setAttribute('target', 'blank');
+                                                span.appendChild(document.createTextNode(fontFamilyName + extraParam));
+                                                a.appendChild(document.createTextNode('Google Font'));
+                                                list.appendChild(p);
+                                                list.appendChild(span);
+                                                list.appendChild(a);
 
-                                                    var list = document.createElement('li');
-                                                    var p = document.createElement('p');
-                                                    var span = document.createElement('span');
-                                                    var a = document.createElement('a');
-
-                                                    list.setAttribute("style",
-                                                        "font-family:" + '"' + fontFamilyName + '"' + ";" +
-                                                        "font-style:normal;" +
-                                                        "font-weight:normal;");
-                                                    p.appendChild(document.createTextNode('Aa'));
-                                                    span.setAttribute('class', 'family-name');
-                                                    a.setAttribute('href', 'https://fonts.google.com?selection.family=' + item);
-                                                    a.setAttribute('target', 'blank');
-                                                    span.appendChild(document.createTextNode(fontFamilyName + extraParam));
-                                                    a.appendChild(document.createTextNode('Google Font'));
-                                                    list.appendChild(p);
-                                                    list.appendChild(span);
-                                                    list.appendChild(a);
-
-                                                    gFonts = document.getElementById('font-list').appendChild(list);
-                                                });
-                                            }
+                                                gFonts = document.getElementById('font-list').appendChild(list);
+                                            });
                                         }
                                     }
                                 }
                             }
+                        }
+
+                        if (fontFace == undefined && gFonts == undefined) {
+                            var h2 = document.createElement('h2');
+                            h2.innerHTML = 'It looks like you have not installed any fonts. <br /> What a bad style.';
+                            document.getElementById('font-list').appendChild(h2);
                         }
 
                         return fontFace, gFonts;
@@ -1127,6 +1153,16 @@
 
 
 
+                    <span class="info-label">Template class</span>
+
+
+                    <span class="template-class">.palette-color-$key-palette-color</span>
+
+
+                    <span class="template-class">.background-color-$key-palette-color</span>
+
+
+
                     <span class="info-label">Function for catch HEX</span>
 
 
@@ -1357,54 +1393,46 @@
                      */
 
                     function createPaletteElements(selector, style, sheet) {
-                        var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets;
+                        var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0];
 
-                        for (var i = 0, l = sheets.length; i < l; i++) {
-                            var sheet = sheets[i];
+                        for (var j = 0, k = sheets.cssRules.length || sheets.rules.lenght; j < k; j++) {
+                            var rule = sheets.cssRules[j] || sheets.rules[j];
 
-                            if (!sheet.cssRules) {
-                                continue;
-                            }
+                            if (selector.test(rule.selectorText)) {
+                                var selectors = rule.selectorText.replace(/\.palette-color-/g, '');
+                                var rgb = rule.style[style].split(',');
 
-                            for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-                                var rule = sheet.cssRules[j];
-
-                                if (selector.test(rule.selectorText)) {
-                                    var selectors = rule.selectorText.replace(/\.palette-color-/g, '');
-                                    var rgb = rule.style[style].split(',');
-
-                                    if (rgb.length > 1) {
-                                        var r = rgb[0].replace('rgb(', '');
-                                        var g = rgb[1];
-                                        var b = rgb[2].replace(')', '');
-                                        var hex = RGBtoHEX(r, g, b);
-                                        var hextext = '#' + hex.toString();
-                                    } else {
-                                        var hex = color_convert.to_hex(rgb[0]);
-                                        var hextext = rgb[0];
-                                    }
-
-                                    var color = invertColor(hex, true);
-                                    var list = document.createElement('li');
-                                    var p = document.createElement('p');
-                                    var span = document.createElement('span');
-                                    var em = document.createElement('em');
-                                    var strong = document.createElement('strong');
-                                    var rgbtext = rule.style[style].toString();
-
-                                    span.appendChild(document.createTextNode(hextext));
-                                    strong.appendChild(document.createTextNode(selectors));
-                                    em.appendChild(document.createTextNode(rgbtext));
-                                    p.setAttribute('style', 'color:' + color + ';');
-                                    p.appendChild(strong);
-                                    p.appendChild(span);
-                                    p.appendChild(em);
-
-                                    list.appendChild(p);
-                                    list.setAttribute('style', 'background-color:' + hextext + ';');
-
-                                    document.getElementById('palette-list').appendChild(list);
+                                if (rgb.length > 1) {
+                                    var r = rgb[0].replace('rgb(', '');
+                                    var g = rgb[1];
+                                    var b = rgb[2].replace(')', '');
+                                    var hex = RGBtoHEX(r, g, b);
+                                    var hextext = '#' + hex.toString();
+                                } else {
+                                    var hex = color_convert.to_hex(rgb[0]);
+                                    var hextext = rgb[0];
                                 }
+
+                                var color = invertColor(hex, true);
+                                var list = document.createElement('li');
+                                var p = document.createElement('p');
+                                var span = document.createElement('span');
+                                var em = document.createElement('em');
+                                var strong = document.createElement('strong');
+                                var rgbtext = rule.style[style].toString();
+
+                                span.appendChild(document.createTextNode(hextext));
+                                strong.appendChild(document.createTextNode(selectors));
+                                em.appendChild(document.createTextNode(rgbtext));
+                                p.setAttribute('style', 'color:' + color + ';');
+                                p.appendChild(strong);
+                                p.appendChild(span);
+                                p.appendChild(em);
+
+                                list.appendChild(p);
+                                list.setAttribute('style', 'background-color:' + hextext + ';');
+
+                                document.getElementById('palette-list').appendChild(list);
                             }
                         }
                     }
@@ -1455,7 +1483,9 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.</span>
+                    <span class="info">
+                    For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.
+                </span>
                 </div>
 
                 <style>
@@ -1589,7 +1619,9 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.</span>
+
+                    <span class="info">The layout of the fields is just an example. It&#39;s necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model.</span>
+
                 </div>
 
 
@@ -1708,27 +1740,25 @@
                             <label class="form-label">Textarea Disabled</label>
                             <textarea placeholder="textarea disabled" disabled></textarea>
                         </div>
-
                         <div class="form-row checkbox-radio-group wide">
                             <label class="form-label">Input checkbox & radio custom</label>
                             <div class="form-row wide no-gutter">
                                 <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render" />
                                 <label class="input-checkbox" for="uikit-checkbox-render">
-                                    Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
-                                </label>
+                                Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
+                            </label>
                             </div>
                             <div class="form-row radio-group wide no-gutter">
                                 <input type="radio" id="uikit-radio-render" name="input-radio-render" />
                                 <label class="input-radio" for="uikit-radio-render">
-                                    Brownie.
-                                </label>
+                                Brownie.
+                            </label>
                                 <input type="radio" id="uikit-radio-render-2" name="input-radio-render" />
                                 <label class="input-radio" for="uikit-radio-render-2">
-                                    Chupa chups.
-                                </label>
+                                Chupa chups.
+                            </label>
                             </div>
                         </div>
-
                     </form>
                 </div>
             </section>
@@ -1765,7 +1795,9 @@
 
                     <span class="info-label">Info</span>
 
+
                     <span class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</span>
+
                 </div>
                 <script type="text/javascript">
                     function switcher() {

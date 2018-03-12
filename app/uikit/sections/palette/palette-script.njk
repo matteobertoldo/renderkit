@@ -105,54 +105,46 @@ color_convert = function() {
  */
 
 function createPaletteElements(selector, style, sheet) {
-    var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets;
+    var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0];
 
-    for (var i = 0, l = sheets.length; i < l; i++) {
-        var sheet = sheets[i];
+    for (var j = 0, k = sheets.cssRules.length || sheets.rules.lenght; j < k; j++) {
+        var rule = sheets.cssRules[j] || sheets.rules[j];
 
-        if (!sheet.cssRules) {
-            continue;
-        }
+        if (selector.test(rule.selectorText)) {
+            var selectors = rule.selectorText.replace(/\.palette-color-/g,'');
+            var rgb = rule.style[style].split(',');
 
-        for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
-            var rule = sheet.cssRules[j];
-
-            if (selector.test(rule.selectorText)) {
-                var selectors = rule.selectorText.replace(/\.palette-color-/g,'');
-                var rgb = rule.style[style].split(',');
-
-                if (rgb.length > 1) {
-                    var r = rgb[0].replace('rgb(', '');
-                    var g = rgb[1];
-                    var b = rgb[2].replace(')', '');
-                    var hex = RGBtoHEX(r, g, b);
-                    var hextext = '#' + hex.toString();
-                } else {
-                    var hex = color_convert.to_hex(rgb[0]);
-                    var hextext = rgb[0];
-                }
-
-                var color = invertColor(hex, true);
-                var list = document.createElement('li');
-                var p = document.createElement('p');
-                var span = document.createElement('span');
-                var em = document.createElement('em');
-                var strong = document.createElement('strong');
-                var rgbtext = rule.style[style].toString();
-
-                span.appendChild(document.createTextNode(hextext));
-                strong.appendChild(document.createTextNode(selectors));
-                em.appendChild(document.createTextNode(rgbtext));
-                p.setAttribute('style', 'color:' + color + ';');
-                p.appendChild(strong);
-                p.appendChild(span);
-                p.appendChild(em);
-
-                list.appendChild(p);
-                list.setAttribute('style', 'background-color:' + hextext + ';');
-
-                document.getElementById('palette-list').appendChild(list);
+            if (rgb.length > 1) {
+                var r = rgb[0].replace('rgb(', '');
+                var g = rgb[1];
+                var b = rgb[2].replace(')', '');
+                var hex = RGBtoHEX(r, g, b);
+                var hextext = '#' + hex.toString();
+            } else {
+                var hex = color_convert.to_hex(rgb[0]);
+                var hextext = rgb[0];
             }
+
+            var color = invertColor(hex, true);
+            var list = document.createElement('li');
+            var p = document.createElement('p');
+            var span = document.createElement('span');
+            var em = document.createElement('em');
+            var strong = document.createElement('strong');
+            var rgbtext = rule.style[style].toString();
+
+            span.appendChild(document.createTextNode(hextext));
+            strong.appendChild(document.createTextNode(selectors));
+            em.appendChild(document.createTextNode(rgbtext));
+            p.setAttribute('style', 'color:' + color + ';');
+            p.appendChild(strong);
+            p.appendChild(span);
+            p.appendChild(em);
+
+            list.appendChild(p);
+            list.setAttribute('style', 'background-color:' + hextext + ';');
+
+            document.getElementById('palette-list').appendChild(list);
         }
     }
 }

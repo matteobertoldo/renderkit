@@ -1,17 +1,17 @@
 {
-  "name": "boilerplate-standard",
+  "name": "RenderKit",
   "version": "1.0.0",
   "description": "Definitely the light way for start new front-end web projects.",
   "main": "./gulpfile.js",
   "scripts": {
     "start": "gulp",
     "watch": "gulp watch",
-    "html": "gulp html",
+    "nunjucks": "gulp nunjucks",
     "sass": "gulp sass",
     "svg": "gulp svg",
     "clean": "gulp clean"
   },
-  "repository": "https://matteobertoldo@github.com/matteobertoldo/boilerplate-standard.git",
+  "repository": "https://github.com/matteobertoldo/renderkit.git",
   "author": "Matteo Bertoldo - mbertoldo@alpenite.com",
   "license": "MIT",
   "devDependencies": {

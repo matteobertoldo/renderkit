@@ -29,6 +29,26 @@
     margin: 0 !important;
 }
 
+// Clearfix Mixin, restores the height if the children have a float set.
+// @note: $flex -> (http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/)
+// --------------------------------
+
+@mixin clearfix {
+	&::before, &::after {
+		content: '';
+		display: table;
+
+		@if ($flex) {
+			flex-basis: 0;
+			order: 1;
+		}
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
 // Mixin for Placeholder, create multiple instances of the placeholder pseudo element.
 // @param: `-moz-` render the pseudo placeholder element with opacity included. We set it's value to 1 if you want to see the full color.
 // @param: `$on-focus` if `focus-hidden` is set, we make clear the pseudo element (only in -webkit- and -moz- render, in IE is already present this behavior.)

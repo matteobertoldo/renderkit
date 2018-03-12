@@ -41,4 +41,3 @@ dist/**/*.map
 *.DS_Store
 *__MACOSX
 *Thumbs.db
-/dist/css/renderkit.min.css.map
