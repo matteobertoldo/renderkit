@@ -1,7 +1,7 @@
 /**
- * @file svg.js
- * @description Generate an "svg-spritemaps".
- * @author mbertoldo@alpenite.com
+ * @file: svg.js
+ * @description: Generate an "SVG Spritemap".
+ * @author: mbertoldo@alpenite.com
  */
 
 const gulp = require('gulp'),

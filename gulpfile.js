@@ -1,12 +1,12 @@
 /**
- * @gulpfile tasks managment
- * @required: {node_modules}
+ * @file: gulpfile.js
+ * @description: `gulpfile.js` for RenderKit
  * @author: mbertoldo@alpenite.com
  */
 
-var gulp = require('gulp');
-var requireDir = require('require-dir');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const requireDir = require('require-dir');
+const browserSync = require('browser-sync').create();
 
 global.browserSync = browserSync;
 

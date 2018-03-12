@@ -1,7 +1,7 @@
 /**
- * @file watch.js
- * @description gulp is watching you...
- * @author mbertoldo@alpenite.com
+ * @file: watch.js
+ * @description: gulp is watching you...
+ * @author: mbertoldo@alpenite.com
  */
 
 const gulp = require('gulp'),

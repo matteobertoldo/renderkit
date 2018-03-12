@@ -1,6 +1,6 @@
 /**
  * @file: gulpconfig.js
- * @description: Global configuration file for `gulp`.
+ * @description: Global options for `gulp tasks` for RenderKit.
  * @author: mbertoldo@alpenite.com
  */
 

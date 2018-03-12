@@ -1,7 +1,7 @@
 /**
- * @file sass.js
- * @description Task for compile scss files & compress generated css file via `cleanCSS`.
- * @author mbertoldo@alpenite.com
+ * @file: sass.js
+ * @description: Task for compile scss files & compress generated css file via `cleanCSS`.
+ * @author: mbertoldo@alpenite.com
  */
 
 const gulp = require('gulp'),

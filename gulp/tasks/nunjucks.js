@@ -1,7 +1,7 @@
 /**
- * @file html.js
- * @description Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
- * @author mbertoldo@alpenite.com
+ * @file: html.js
+ * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
+ * @author: mbertoldo@alpenite.com
  */
 
 const gulp = require('gulp'),
