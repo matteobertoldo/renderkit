@@ -6,6 +6,10 @@
 /// @group Flexbox Utilities
 ////
 
+/// Quickly disable/enable count of flexbox source ordering
+/// @type Boolean
+$flex-source-ordering-count-enable: false !default;
+
 /// Default value for the count of source ordering`
 /// @type Number
 $flex-source-ordering-count: 6 !default;
@@ -98,10 +102,12 @@ $-zf-flex-justify: -zf-flex-justify($global-text-direction);
         align-content: center;
     }
 
-    @include -zf-each-breakpoint {
-        @for $i from 1 through $flex-source-ordering-count {
-            .#{$-zf-size}-order-#{$i} {
-                @include flex-order($i);
+    @if ($flex-source-ordering-count-enable) {
+        @include -zf-each-breakpoint {
+            @for $i from 1 through $flex-source-ordering-count {
+                .#{$-zf-size}-order-#{$i} {
+                    @include flex-order($i);
+                }
             }
         }
     }

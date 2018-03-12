@@ -106,7 +106,7 @@ $breakpoint-classes: (small medium large);
 $print-breakpoint: large;
 
 // 4. Layout
-// $flex: if set to `false` the settings for the XY Grid will be ignored
+// $flex: if set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored
 // --------------------------------
 
 $flex: true;
@@ -134,6 +134,7 @@ $xy-block-grid-max: 8;
 // 5.1 Flexbox Utilities
 // --------------------------------
 
+$flex-source-ordering-count-enable: false;
 $flex-source-ordering-count: 6;
 $flexbox-responsive-breakpoints: true;
 
