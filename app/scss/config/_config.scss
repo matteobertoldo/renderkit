@@ -8,6 +8,7 @@
 //  3. Breakpoint
 //  4. Layout
 //  5. XY Grid
+//   - 5.1 Flexbox Utilities
 //  6. Float Grid
 //  7. Colors Palette
 //  8. Colors Global
@@ -105,7 +106,7 @@ $breakpoint-classes: (small medium large);
 $print-breakpoint: large;
 
 // 4. Layout
-// $flex: if set to `false` the settings for the XY Grid will be ignored
+// $flex: if set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored
 // --------------------------------
 
 $flex: true;
@@ -129,6 +130,13 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $grid-container;
 $xy-block-grid-max: 8;
+
+// 5.1 Flexbox Utilities
+// --------------------------------
+
+$flex-source-ordering-count-enable: false;
+$flex-source-ordering-count: 6;
+$flexbox-responsive-breakpoints: true;
 
 // 6. Float Grid
 // --------------------------------

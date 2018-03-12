@@ -49,56 +49,6 @@
 	}
 }
 
-// Mixin for Placeholder, create multiple instances of the placeholder pseudo element.
-// @param: `-moz-` render the pseudo placeholder element with opacity included. We set it's value to 1 if you want to see the full color.
-// @param: `$on-focus` if `focus-hidden` is set, we make clear the pseudo element (only in -webkit- and -moz- render, in IE is already present this behavior.)
-// @author: mbertoldo@alpenite.com
-// @access: private
-
-// @use 1: (placeholder color is #ccc)
-// .myselector {
-// 		@include placeholder(#ccc);
-// }
-
-// @use 2: (placeholder color is #ccc, on focus it will be hidden)
-// .myselector {
-// 		@include placeholder(#ccc, 'focus-hidden');
-// }
-
-// @use 3: (placeholder color is #ccc on focus will become #333)
-// .myselector {
-// 		@include placeholder(#ccc, 'focus', #333);
-// }
-// --------------------------------
-
-@mixin placeholder($placeholder-color, $on-focus: null, $placeholder-focus-color: initial) {
-	$prefix: '-placeholder';
-
-	@each $vendor in ('::-webkit-input', '::-moz', ':-ms') {
-		&#{$vendor}#{$prefix} {
-			color: $placeholder-color;
-
-            @if ($vendor == '::-moz') {
-				opacity: 1;
-			}
-		}
-
-        @if ($on-focus == 'focus') {
-            &:focus#{$vendor}#{$prefix} {
-                @if ($vendor != ':-ms') {
-                    color: $placeholder-focus-color;
-                }
-            }
-        } @else if ($on-focus == 'focus-hidden') {
-            &:focus#{$vendor}#{$prefix} {
-                @if ($vendor != ':-ms') {
-                    opacity: 0;
-                }
-            }
-        }
-	}
-}
-
 // Mixin for create a "layer" position.
 // @note: can be used for modals.
 // @author: mbertoldo@alpenite.com

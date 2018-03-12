@@ -20,7 +20,7 @@ Full documentation coming soon.
 ## News & Coming Soon Features
 
 -   Nunjucks templating! ***NEW***
--   New Flexbox Mixins ***SOON***
+-   New Foundation Flexbox Mixins ***NEW***
 
 ### License
 

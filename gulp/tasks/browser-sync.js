@@ -1,7 +1,7 @@
 /**
- * @file browser-sync.js
- * @description Generate a "browser-sync" server. Configure your `static` or `proxy` server.
- * @author mbertoldo@alpenite.com
+ * @file: browser-sync.js
+ * @description: Generate a "browser-sync" server. Configure your `static` or `proxy` server.
+ * @author: mbertoldo@alpenite.com
  */
 
 const gulp = require('gulp'),
