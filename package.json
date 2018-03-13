@@ -40,7 +40,6 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "fastclick": "^1.0.6",
     "svg4everybody": "^2.1.9",
     "what-input": "^5.0.3"
   },

@@ -256,7 +256,7 @@ $global-custom-checkbox-radio-letter-spacing: 0.5px;
 $global-custom-checkbox-radio-color: palette(2);
 $global-custom-checkbox-radio-cursor: default;
 $global-custom-checkbox-radio-hover-border: false;
-$global-custom-checkbox-radio-hover-border-color: $global-hover-input-border-color;
+$global-custom-checkbox-radio-hover-border-color: palette(3);
 $global-custom-checkbox-radio-checked-border: true;
 $custom-checkbox-radio-label-gutter: 10px;
 $custom-checkbox-radio-outline-detect: true;
