@@ -1,0 +1,96 @@
+<style>
+#uikit-body-render #foundation-flex-classes {
+    max-width: 1200px;
+    margin: 60px auto 30px;
+}
+
+#uikit-body-render #foundation-flex-classes .flex-cell {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background-color: #e9e9e9;
+    -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+#uikit-body-render #foundation-flex-classes .flex-cell,
+#uikit-body-render #foundation-flex-classes .flex-class-group {
+    margin: 15px;
+}
+
+@media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+    #uikit-body-render #foundation-flex-classes .flex-class-group {
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #cdcdcd;
+    }
+}
+
+#uikit-body-render #foundation-flex-classes .flex-cell::before,
+#uikit-body-render #foundation-flex-classes .flex-cell::after {
+    content: '';
+    position: absolute;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    background-color: #3bccff;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+#uikit-body-render #foundation-flex-classes .flex-cell::before {
+    top: calc(50% - 0.5px);
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+#uikit-body-render #foundation-flex-classes .flex-cell::after {
+    top: 0;
+    left: calc(50% - 0.5px);
+    width: 1px;
+    height: 100%;
+}
+
+#uikit-body-render #foundation-flex-classes .template-class {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: {{breakpoint.large + 'px'}}) {
+    #uikit-body-render #foundation-flex-classes .template-class {
+        text-align: left;
+    }
+}
+
+#uikit-body-render #foundation-flex-classes .uikit-flex-children {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #666;
+    color: #fff;
+    border-radius: 50%;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+}
+
+#uikit-body-render #foundation-flex-classes .uikit-flex-children > span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.031em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+</style>

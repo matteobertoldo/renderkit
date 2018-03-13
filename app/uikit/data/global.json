@@ -34,6 +34,9 @@
         "gridcolumns": 12,
         "gridcontainer": "1200px"
     },
+    "flexbox": {
+        "show": true
+    },
     "floatgrid": {
         "show": false,
         "gridcolumns": 12,

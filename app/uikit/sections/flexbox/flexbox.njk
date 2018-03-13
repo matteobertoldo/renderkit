@@ -1,0 +1,10 @@
+{% if flexbox.show %}
+    <section class="uikit-element-render">
+        <h2 class="section-title">Flexbox Utils</h2>
+        <div class="section-description">
+            {% include "sections/flexbox/flexbox-info.njk" %}
+        </div>
+        {% include "sections/flexbox/flexbox-style.njk" %}
+        {% include "sections/flexbox/flexbox-content.njk" %}
+    </section>
+{% endif %}
