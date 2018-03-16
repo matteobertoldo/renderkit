@@ -1,12 +1,11 @@
-// @global-fonts mixin
-// @note: Load all fonts with `@import url` from Google Font or with `@font-face` method or both.
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 @mixin global-fonts {
     /*@global fonts*/
     @if ($google-fonts-load) {
-        @import url('https://fonts.googleapis.com/css?family=#{$google-fonts-name}');
+        @import url('https://fonts.googleapis.com/css?family=#{$google-fonts-family}');
     }
 
     @if ($font-face-load) {

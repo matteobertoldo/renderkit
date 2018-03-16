@@ -1,12 +1,29 @@
-// @palette functions
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-// Function for catch color palette in $colors-palette map.
-// @note: use -> .my-element { color: palette(1); }
-// @author: mbertoldo@alpenite.com
-// --------------------------------
+////
+/// @group colors & palette
+////
 
+/// Global default palette color used by RenderKit.
+///
+/// Each `key` of this map agrees with 2 classes to be used in the templates.
+///
+/// Ex. `.palette-color-primary` or `.background-color-primary`
+/// @type map
+$palette-color: (
+    primary: #666,
+    2: #8c8c8c,
+    3: #b2b2b2,
+    4: #d9d9d9,
+    5: #efefef,
+    6: #c04649,
+    7: #f2c0c1
+) !default;
+
+/// Function for catch HEX color in `$colors-palette` map.
+/// @param {String} $color - The key of `$colors-palette` map.
 @function palette($color) {
 	@if map-has-key($palette-color, $color) {
         @return map-get($palette-color, $color);
@@ -15,12 +32,11 @@
     }
 }
 
-// Mixin for mixin to intercept the "primary" key in $colors-palette map.
-// @note: as in Foundation, this mixin avoids having the empty $color-palette map.
-// --------------------------------
-
+/// Mixin for mixin to intercept the **primary** key in `$colors-palette` map.
+/// As in Foundation, this mixin avoids having empty keys in `$color-palette` map.
+/// @access private
 @mixin manage-palette {
     @if not map-has-key($palette-color, primary) {
-        @error 'In `$palette-color`, you must have a key named "primary".';
+        @error 'In `$palette-color`, you must have a key named `primary`.';
     }
 }

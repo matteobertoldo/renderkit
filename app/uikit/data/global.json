@@ -11,6 +11,10 @@
         "js": {
             "whatinput": true,
             "svg4everybody": true
+        },
+        "sassdocumentation": {
+            "show": true,
+            "file": "../docs/sass/index.html"
         }
     },
     "breakpoint": {

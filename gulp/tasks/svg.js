@@ -25,7 +25,7 @@ var svgSpriteOptions = {
 };
 
 gulp.task('svg', () => {
-    return gulp.src(conf.workspace.svg + '**/*.svg')
+    return gulp.src(conf.workspace.svg)
     .pipe(plumber())
     .pipe(svgSprite(svgSpriteOptions)).on('error', log)
     .pipe(gulp.dest(conf.distribution.svg));

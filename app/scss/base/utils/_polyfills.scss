@@ -1,31 +1,33 @@
-// @global polyfill mixins
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-// Firefox Fix Mixin, This mixin creates exclusive rules for Gecko browsers.
-// --------------------------------
+////
+/// @group polyfills
+////
 
+/// Firefox Fix Mixin, This mixin creates exclusive rules for Gecko browsers.
+/// @content Exclusive fix rules for Gecko browsers.
 @mixin fix-firefox {
 	@-moz-document url-prefix() & {
 		@content;
 	}
 }
 
-// Mixin for fix rules in very old IE browsers like IE6/7.
-// --------------------------------
-
+/// Mixin for fix rules in very old IE browsers like IE6/7.
+/// @content Exclusive fix rules for IE6/7.
 @mixin fix-old-ie {
 	* html & {
 		@content;
 	}
 }
 
-// Mixin for css pointer events support.
-// @require: {Modernizr.csspointerevents} custom build at https://modernizr.com
-// @note: include IE support for the browser doesn't support CSS pointer events
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
+/// Mixin for fix css pointer events for the browser doesn't support CSS pointer events.
+///
+/// Require Modernizr.
+/// @link https://modernizr.com/download#csspointerevents&q=css%20po
+/// @link https://caniuse.com/#feat=pointer-events
+/// @content Exclusive fix rules for css pointerevents.
 @mixin fix-pointer-events {
 	.no-csspointerevents & {
 		@content;

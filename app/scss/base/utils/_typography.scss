@@ -1,14 +1,24 @@
-// Mixin for font face rule.
-// @require: {function} str-replace
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-// Function for string replace.
-// @param: {String}
-// @return: str-replace($mystring, $string-to-replace, $replacer);
-// @note: https://css-tricks.com/snippets/sass/str-replace-function/
-// --------------------------------
+////
+/// @group typography
+////
 
+/// The default font dir for catch all font file.
+$font-dir: '../fonts/' !default;
+
+/// The default `$font-face-map` used by RenderKit.
+$font-face-map: (
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
+) !default;
+
+/// Function for string replace.
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace [''] - New value to replace
+/// @return {String} - Updated string with new value.
 @function str-replace($string, $search, $replace: '') {
 	$index: str-index($string, $search);
 
@@ -19,11 +29,9 @@
 	@return $string;
 }
 
-// Function for catch "font-family" in `$font-face-map`.
-// @note: use -> .my-text { font-family: font(1); }
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
+/// Function for catch font family in `$font-face-map`.
+/// @param {Integer} $font-family-key - The `nth` key of `$font-face-map`.
+/// @return {String} - The name of the font family.
 @function font($font-family-key) {
     $list: $font-face-map;
     $key: map-keys($list);
@@ -38,13 +46,12 @@
     }
 }
 
-// @font-face mixin.
-// @note: only define as String your Font Name and define your "font file name".
-// @note: if you have subfolders where is your font files, just simply define the folder where is this, before font file name. Ex ´mysubfolderfont/my_awesome_font_file_name´.
-// @note: important the `$font-dir` is defined on config @typography.scss
-// @use: @include font-face(GillSans, 'subpath/gillsans', normal, 400, eot woff woff2 ttf svg);
-// --------------------------------
-
+/// Mixin for generate a `@font-face` rule.
+/// @param {String} $font-name - The font family name.
+/// @param {String} $font-file - The name of font file.
+/// @param {String} $style [normal] - The style of your font.
+/// @param {String|Integer} $weight [400] - The font weight of your font.
+/// @param {String} $extension [eot woff woff2 ttf svg] - The extensions available for the font.
 @mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
 	$filepath: $font-dir + $font-file;
     $src: null;
@@ -73,10 +80,7 @@
     }
 }
 
-// Mixin for no text shown.
-// @param 1 : fix the space generated on <a/> tag if it's not defined as (block || inline-block)
-// --------------------------------
-
+/// Mixin for no text shown.
 @mixin no-text {
 	font: 0/0 a;
     text-indent: percentage(1);
@@ -85,23 +89,24 @@
     overflow: hidden;
 }
 
-// Mixin for ellipsis text.
-// @note: create ellipsis on text -> mytext...
-// --------------------------------
-
+/// Mixin for create "ellipsis text".
+///
+/// When the space for the text is no longer available in a large size for a button, for example.
+///
+/// Ex. Lorem ipsum dolor sit amet....
 @mixin text-ellipsis {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
-// Counter Increment Mixin, create a numerated list.
 // @require: {counter-reset: section;} defined on a parent selector
-// @note: include this on a child selector on `::before`, your separator, space or not.
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
-@mixin counter-increment($separator, $space: space) {
+/// Counter Increment Mixin, create a numerated list. Include this on a child selector on `::before` or `::after`.
+///
+/// The parent selector need `counter-reset: section;`
+/// @param {String} $separator - Any character as a type of separator is accepted.
+/// @param {String} $space [space] - It is possible to create a space after the separator or not. If set to `no-space` the space will not be present.
+@mixin counter-increment($separator, $space: 'space') {
 	@if ($space == 'no-space') {
 		$space: '';
 	} @else {

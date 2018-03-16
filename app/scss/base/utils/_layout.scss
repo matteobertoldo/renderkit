@@ -1,7 +1,18 @@
-// Mixin for visuallyhidden.
-// @note: this hide the target element visually only, but not it's interaction.
-// --------------------------------
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
+////
+/// @group layout
+////
+
+/// Variable to determine if we want to include flexbox utility in our layout and to include mixins such as `foundation-xy-grid-classes()` and `foundation-flex-classes()`.
+/// @type Boolean
+$flex: true !default;
+
+/// Mixin for visuallyhidden.
+///
+/// This hide the target element visually only, but not it's interaction.
 @mixin visuallyhidden {
     position: absolute !important;
     width: 1px !important;
@@ -14,10 +25,7 @@
     padding: 0 !important;
 }
 
-// Mixin for visuallyhidden-off.
-// @note: restores the style applied by `visuallyhidden` mixin.
-// --------------------------------
-
+/// Mixin for restores the style applied by `visuallyhidden` mixin.
 @mixin visuallyhidden-off {
     position: static !important;
     width: auto !important;
@@ -29,10 +37,10 @@
     margin: 0 !important;
 }
 
-// Clearfix Mixin, restores the height if the children have a float set.
-// @note: $flex -> (http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/)
-// --------------------------------
-
+/// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+/// The clearfix is augmented with specific styles to prevent borders in flexbox environments.
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
+/// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
 @mixin clearfix {
 	&::before, &::after {
 		content: '';
@@ -49,11 +57,7 @@
 	}
 }
 
-// Mixin for create a "layer" position.
-// @note: can be used for modals.
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
+/// Mixin for create a "layer" position can be used for modals.
 @mixin layer {
     position: fixed;
     top: 0;
@@ -62,9 +66,7 @@
     height: 100%;
 }
 
-// Mixin for simplify the syntax for iOS smooth scroll
-// --------------------------------
-
+/// Mixin for simplify the syntax for iOS smooth scroll.
 @mixin ios-scroll {
     -webkit-overflow-scrolling: touch;
 }

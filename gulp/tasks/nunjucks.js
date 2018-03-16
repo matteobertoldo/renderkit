@@ -1,6 +1,6 @@
 /**
- * @file: html.js
- * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more @https://mozilla.github.io/nunjucks/.
+ * @file: nunjucks.js
+ * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more at: https://mozilla.github.io/nunjucks/.
  * @author: mbertoldo@alpenite.com
  */
 
@@ -15,11 +15,6 @@ htmlBeautify = require('gulp-html-beautify'),
 log = require('fancy-log'),
 colors = require('ansi-colors');
 
-// @get "data" options
-// @param: file
-// @return: {String}
-// --------------------
-
 gulp.task('nunjucks', () => {
     return gulp.src(conf.workspace.uikit + '*.+(html|nunjucks|njk)')
     .pipe(plumber())
@@ -29,7 +24,7 @@ gulp.task('nunjucks', () => {
     .pipe(nunjucksRender({
         path: [conf.workspace.uikit]
     }))
-    .on('error', function(err) {
+    .on('error', (err) => {
         log('Error in: ' + colors.red(err.plugin));
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));
