@@ -1,14 +1,15 @@
-// @shapes mixins
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-// Mixin "triangle" from https://github.com/zurb/foundation-sites/blob/develop/scss/util/_mixins.scss
-// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
-// @param-1: {Number} $triangle-size - Width of the triangle.
-// @param-2: {Color} $triangle-color - Color of the triangle.
-// @param-3: {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
-// --------------------------------
+////
+/// @group shapes
+////
 
+/// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
+/// @param {Number} $triangle-size - Width of the triangle.
+/// @param {Color} $triangle-color - Color of the triangle.
+/// @param {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
 @mixin triangle($triangle-size, $triangle-color, $triangle-direction: down) {
 	display: block;
 	width: 0;
@@ -34,15 +35,11 @@
 	}
 }
 
-// Mixin "arrow"
-// Creates a CSS arrow, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the arrow to an existing element.
-// @param-1: {Number} $arrow-width - Width of the arrow.
-// @param-2: {Number} $arrow-height - Height of the arrow.
-// @param-3: {Color} $arrow-color - Color of the arrow.
-// @param-4: {Number} $arrow-border-width - The border width of the arrow.
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
+/// Creates a CSS arrow, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the arrow to an existing element.
+/// @param {Number} $arrow-width - Width of the arrow.
+/// @param {Number} $arrow-height - Height of the arrow.
+/// @param {Color} $arrow-color - Color of the arrow.
+/// @param {Number} $arrow-border-width - The border width of the arrow.
 @mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
 	display: block;
 	width: $arrow-width;
@@ -61,13 +58,10 @@
 	}
 }
 
-// Mixin "shape-close"
-// @param-1: {Number} $cross-size - Size of the close shape.
-// @param-2: {Number} $cross-line-size - Size of lines close shape.
-// @param-3: {Color} $cross-color - Color of the close shape.
-// @author: mbertoldo@alpenite.com
-// --------------------------------
-
+/// Creates a CSS "close-shape", which can be used for modals and more.
+/// @param {Number} $cross-size - Size of the close shape.
+/// @param {Number} $cross-line-size - Size of lines close shape.
+/// @param {Color} $cross-color - Color of the close shape.
 @mixin shape-close($shape-close-size, $shape-close-line-size, $shape-close-color) {
     display: block;
     position: relative;

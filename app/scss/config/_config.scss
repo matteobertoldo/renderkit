@@ -1,5 +1,7 @@
-// RenderKit Global configuration
-//  -----------------------------------------
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
 //  Table of Contents:
 //  1. Global Fonts
 //  2. Typography: Base
@@ -30,9 +32,7 @@
 
 $font-dir: '../fonts/';
 $google-fonts-load: true;
-$google-fonts-name: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
-$gfont-1: 'Work Sans', sans-serif;
-$gfont-2: 'Josefin Sans', sans-serif;
+$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
 $font-face-load: false;
 $font-face-map: (
     'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
@@ -44,7 +44,7 @@ $font-face-map: (
 $global-text-direction: ltr;
 $global-text-rendering: optimizeLegibility;
 $global-liga-kern: true;
-$body-font-family: $gfont-1;
+$body-font-family: 'Work Sans', sans-serif;
 $body-root-font-size: false;
 $body-font-size: 16px;
 $body-font-weight: normal;
@@ -54,7 +54,7 @@ $body-line-height: 1.15;
 // $header-styles: only integers are accepted
 // --------------------------------
 
-$global-heading-font-family: $gfont-1;
+$global-heading-font-family: inherit;
 $global-heading-font-weight: bold;
 $global-heading-line-height: 1.4;
 $global-heading-letter-spacing: normal;
@@ -82,7 +82,7 @@ $header-styles: (
 // 2.2 Typography: Paragraph & Strong
 // --------------------------------
 
-$global-paragraph-font-family: $gfont-2;
+$global-paragraph-font-family: 'Josefin Sans', sans-serif;
 $global-paragraph-font-weight: normal;
 $global-paragraph-line-height: 1.4;
 $global-paragraph-letter-spacing: normal;
@@ -192,7 +192,7 @@ $global-inputs-labelclass: 'form-label';
 // --------------------------------
 
 $global-input-height: 40px;
-$global-input-font-family: $gfont-2;
+$global-input-font-family: 'Josefin Sans', sans-serif;
 $global-input-font-size: 14px;
 $global-input-letter-spacing: normal;
 $global-input-text-transform: none;
@@ -236,7 +236,7 @@ $global-textarea-resize-mode: vertical;
 // 9.4 Form Input Label
 // --------------------------------
 
-$global-input-label-font-family: $gfont-2;
+$global-input-label-font-family: 'Josefin Sans', sans-serif;
 $global-input-label-font-size: 11px;
 $global-input-label-text-transform: uppercase;
 $global-input-label-letter-spacing: 0.5px;
@@ -249,7 +249,7 @@ $global-input-label-margin: 0 0 5px 0;
 $global-custom-checkbox-radio: true;
 $global-custom-checkbox-radio-align-center: false;
 $global-custom-checkbox-radio-size: 24px;
-$global-custom-checkbox-radio-font-family: $gfont-2;
+$global-custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif;
 $global-custom-checkbox-radio-font-size: 13px;
 $global-custom-checkbox-radio-text-transform: none;
 $global-custom-checkbox-radio-letter-spacing: 0.5px;

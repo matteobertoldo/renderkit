@@ -1,8 +1,6 @@
-// @custom: checkbox & radio input
-// @require: <label/> with `for` attribute in according to input `id`
-// @note: generate a pseudo elements for every input, fully customizable with associate <label/>.
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 @mixin checkbox-radio-classes {
     /*@custom input checkbox & radio*/

@@ -15,11 +15,8 @@ sourcemaps = require('gulp-sourcemaps'),
 postcss = require('gulp-postcss'),
 autoprefixer = require('autoprefixer'),
 pxtorem = require('postcss-pxtorem-plus'),
-cleanCSS = require('gulp-clean-css');
-
-// @processors
-// @include: [autoprefixer, pxtorem]
-// ----------------------------------
+cleanCSS = require('gulp-clean-css'),
+sassdoc = require('sassdoc');
 
 var processors = [
     autoprefixer({
@@ -35,21 +32,12 @@ var processors = [
     })
 ];
 
-// @remUnit
-// @param {bool}
-// @return [processors]
-// ----------------------------------
-
 if (!conf.cssOptions.remUnit) {
     processors.splice(1,1);
 }
 
-// @cleanCSS: (clean + minify mode)
-// @param: {bool}
-// ----------------------------------
-
 gulp.task('sass', () => {
-    return gulp.src(conf.workspace.scss + '**/*.s+(a|c)ss')
+    return gulp.src(conf.workspace.scss)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -65,7 +53,15 @@ gulp.task('sass', () => {
         suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.scss));
+    .pipe(gulp.dest(conf.distribution.scss))
+});
+
+gulp.task('sassdoc', () => {
+    return gulp.src(conf.workspace.scss)
+    .pipe(sassdoc({
+        dest: conf.cssOptions.sassdocDist
+    }))
+    .resume()
 });
 
 gulp.task('sass:watch', ['sass'], () => {

@@ -10,7 +10,7 @@
 var folder = {
     workspace: 'app/',
     distribution: 'dist/',
-    pkg: 'node_modules/'
+    docs: 'docs/'
 };
 
 // @global options
@@ -20,12 +20,13 @@ module.exports = {
     defaultWatchTasks: {
         nunjucks: true,
         sass: true,
+        sassdoc: true,
         svg: true
     },
     workspace: {
         uikit: folder.workspace + 'uikit/',
-        scss: folder.workspace + 'scss/',
-        svg: folder.workspace + 'svg/'
+        scss: folder.workspace + 'scss/**/*.s+(a|c)ss',
+        svg: folder.workspace + 'svg/**/*.svg'
     },
     distribution: {
         uikit: folder.distribution,
@@ -52,7 +53,9 @@ module.exports = {
         singleOutput: true,
         outputName: 'renderkit',
         outputStyle: 'expanded',
-        optimizationMinify: true
+        optimizationMinify: true,
+        sassdoc: true,
+        sassdocDist: folder.docs + 'sass/'
     },
     nunjucksOptions: {
         dataFilePath: folder.workspace + 'uikit/data/global.json',
@@ -66,6 +69,7 @@ module.exports = {
     syncOptions: {
         browserSync: true,
         staticServer: true,
+        staticServerBaseDir: './',
         startPath: folder.distribution + 'uikit.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'renderkit',

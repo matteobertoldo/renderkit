@@ -11,7 +11,7 @@ gulp.task('browser-sync', () => {
     if (conf.syncOptions.staticServer) {
         return global.browserSync.init({
             server: {
-                baseDir: './'
+                baseDir: conf.syncOptions.staticServerBaseDir
             },
             startPath: conf.syncOptions.startPath,
             notify: conf.syncOptions.notification,

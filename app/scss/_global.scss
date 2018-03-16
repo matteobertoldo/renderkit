@@ -1,6 +1,6 @@
-// @importer: for global "sass-renderkit" mixin
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 @import 'base/base';
 @import 'config/config';
@@ -18,8 +18,6 @@
     @include float-classes;
     @include clearfix-classes;
 
-    // @components
-    // -------------
     @if ($flex) {
         @include foundation-xy-grid-classes;
         @include foundation-flex-classes;

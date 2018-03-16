@@ -1,12 +1,10 @@
 // Foundation for Sites by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
-// @note: No `em` conversion. Every media query was added the `only` attribute.
 
-// Hide an element by default, only displaying it above a certain screen size.
-// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-// --------------------------------
-
+/// Hide an element by default, only displaying it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+/// @group layout
 @mixin show-for($size) {
 	$size: map-get($breakpoints, $size);
 
@@ -15,11 +13,11 @@
 	}
 }
 
-// Hide an element by default, only displaying it within a certain breakpoint.
-// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-// @note: remove unnecessary `media query` if value is 0. {mbertoldo@alpenite.com}
-// --------------------------------
-
+/// Hide an element by default, only displaying it within a certain breakpoint.
+///
+/// Removed unnecessary `media query` if value is 0.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+/// @group layout
 @mixin show-for-only($size) {
 	$lower-bound-size: map-get($breakpoints, $size);
 	$upper-bound-size: -zf-map-next($breakpoints, $size);
@@ -41,20 +39,18 @@
 	}
 }
 
-// Show an element by default, and hide it above a certain screen size.
-// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-// --------------------------------
-
+/// Show an element by default, and hide it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+/// @group layout
 @mixin hide-for($size) {
 	@include breakpoint($size) {
 		display: none !important;
 	}
 }
 
-// Show an element by default, and hide it above a certain screen size.
-// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-// --------------------------------
-
+/// Show an element by default, and hide it above a certain screen size.
+/// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
+/// @group layout
 @mixin hide-for-only($size) {
 	@include breakpoint($size only) {
 		display: none !important;
@@ -62,8 +58,6 @@
 }
 
 // Mixin for visibilty clasess
-// --------------------------------
-
 @mixin foundation-visibility-classes {
     /*@visibility classes*/
 	@each $size in $breakpoint-classes {

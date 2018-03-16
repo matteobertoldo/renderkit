@@ -1,6 +1,23 @@
-// @media print package
-// @access: private
-// @note: source (https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+/// If `true`, all elements will have transparent backgrounds when printed, to save on ink.
+/// @type Boolean
+/// @group print
+$global-transparent-background-print: false !default;
+
+/// If `true`, all link have black color when printed.
+/// @group print
+$global-color-black-print: false !default;
+
+/// If `true`, all link show your `href` attribute when printed.
+/// @group print
+$global-link-href-show: false !default;
+
+/// The global margin that a page can have when printed.
+/// @group print
+$global-margin-print: 0.5cm !default;
 
 @mixin media-print {
     /*@media print package*/
@@ -9,7 +26,7 @@
             text-shadow: none !important;
 
             @if ($global-transparent-background-print) {
-                background: 0 0 !important;
+                background: transparent !important;
             }
 
             @if ($global-color-black-print) {
@@ -63,16 +80,40 @@
             page-break-after: avoid;
         }
 
-        @page {
-            margin: $global-margin-print;
-        }
-
         .show-for-print {
             display: block !important;
         }
 
         .hide-for-print {
             display: none !important;
+        }
+
+        table.show-for-print {
+            display: table !important;
+        }
+
+        thead.show-for-print {
+            display: table-header-group !important;
+        }
+
+        tbody.show-for-print {
+            display: table-row-group !important;
+        }
+
+        tr.show-for-print {
+            display: table-row !important;
+        }
+
+        td.show-for-print {
+            display: table-cell !important;
+        }
+
+        th.show-for-print {
+            display: table-cell !important;
+        }
+
+        @page {
+            margin: $global-margin-print;
         }
     }
 }

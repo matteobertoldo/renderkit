@@ -1,11 +1,6 @@
-// @mixins: accessibility
-// @author: mbertoldo@alpenite.com
-// @access: private
-
-// @accessibility classes mixin
-// @author: mbertoldo@alpenite.com
-// @note: packages of classes to be invoked via template
-// --------------------------------
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 @mixin accessibility-classes {
     /*@accessibility classes & pseudo elem*/
@@ -44,6 +39,7 @@
 
     .no-bullet {
         list-style-type: none;
+        margin: 0;
     }
 
     .no-overflow {

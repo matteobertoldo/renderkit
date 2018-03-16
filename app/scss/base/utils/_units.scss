@@ -1,14 +1,16 @@
-// @global "units" functions
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 $global-font-size: 100% !default;
 
-// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
-// @param: {Number} $num - Number to strip unit from.
-// @returns: {Number} The same number, sans unit.
-// --------------------------------
+////
+/// @group units
+////
 
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+/// @param {Number} $num - Number to strip unit from.
+/// @returns {Number} The same number, sans unit.
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
 }
@@ -17,8 +19,6 @@ $global-font-size: 100% !default;
 // @param {Number} $value - Value to convert to a unitless line height
 // @param {Number} $base - The font size to use to work out the line height - defaults to $global-font-size
 // @return {Number} - Unitless number
-// --------------------------------
-
 @function unitless-calc($value, $base: null) {
     @if $base == null {
         $base: $global-font-size;
@@ -59,22 +59,22 @@ $global-font-size: 100% !default;
     @return $value;
 }
 
-// Function for transform "px" value to "em".
-// @note: use -> font-size: em(16px) == font-size: 1em;
-// --------------------------------
-
-@function em($size) {
-	$em: $size / 16px;
+/// Function for transform **px** value to **em** value.
+///
+/// Only **single** value in `px` are accepted.
+/// @param {Number} $num - Number in **px** to convert in **em**.
+@function em($num) {
+	$em: $num / 16px;
 
 	@return $em * 1em;
 }
 
-// Function for transform "px" value to "rem".
-// @note: use -> font-size: rem(16px) == font-size: 1rem;
-// --------------------------------
-
-@function rem($size) {
-	$rem: $size / 16px;
+/// Function for transform **px** value to **rem** value.
+///
+/// Only **single** value in `px` are accepted.
+/// @param {Number} $num - Number in **px** to convert in **rem**.
+@function rem($num) {
+	$rem: $num / 16px;
 
 	@return $rem * 1rem;
 }

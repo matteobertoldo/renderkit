@@ -1,6 +1,6 @@
-// @global: elements shapes & classes
-// @author: mbertoldo@alpenite.com
-// @access: private
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 @mixin shape-classes {
     /*@shape-classes*/
@@ -11,9 +11,8 @@
     	border: solid $global-arrow-color;
     	border-width: 0 $global-arrow-width $global-arrow-width 0;
 
-        // @arrow direction map
-        // --------------------------------
-
+        // $arrow direction
+        // @type map
         $arrow-direction: (
             down: 45deg,
             up: -135deg,

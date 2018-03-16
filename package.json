@@ -37,7 +37,8 @@
     "gulp-watch": "^5.0.0",
     "postcss-pxtorem-plus": "^3.5.1",
     "require-dir": "^1.0.0",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "sassdoc": "^2.5.0"
   },
   "dependencies": {
     "svg4everybody": "^2.1.9",

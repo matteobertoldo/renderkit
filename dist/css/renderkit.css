@@ -6,7 +6,7 @@
  */
 /*@global fonts*/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface");
-/*@custom normalize: normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css*/
+/*normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css*/
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -95,7 +95,6 @@ a {
   text-decoration: underline;
 }
 
-a:hover,
 [data-whatinput="mouse"] a:focus,
 [data-whatinput="touch"] a:focus {
   outline: 0;
@@ -390,14 +389,32 @@ table {
   h2, h3 {
     page-break-after: avoid;
   }
-  @page {
-    margin: 0.5cm;
-  }
   .show-for-print {
     display: block !important;
   }
   .hide-for-print {
     display: none !important;
+  }
+  table.show-for-print {
+    display: table !important;
+  }
+  thead.show-for-print {
+    display: table-header-group !important;
+  }
+  tbody.show-for-print {
+    display: table-row-group !important;
+  }
+  tr.show-for-print {
+    display: table-row !important;
+  }
+  td.show-for-print {
+    display: table-cell !important;
+  }
+  th.show-for-print {
+    display: table-cell !important;
+  }
+  @page {
+    margin: 0.5cm;
   }
 }
 
@@ -408,7 +425,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Work Sans", sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-transform: uppercase;
   color: inherit;
@@ -602,6 +619,7 @@ p {
 
 .no-bullet {
   list-style-type: none;
+  margin: 0;
 }
 
 .no-overflow {
