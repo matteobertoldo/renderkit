@@ -2,9 +2,7 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-// @set global heading font family & margin
-// --------------------------------
-
+//Mixin for global header font style
 @mixin headers-style {
     /*@headers-style*/
     h1, .h1,
@@ -22,9 +20,39 @@
     }
 }
 
-// @set global heading font styles in breakpoints
-// --------------------------------
+/// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
+///
+/// The possible values to pass to the map are:
+/// - `font-size` or `fs`
+/// - `line-height` or `lh`
+/// - `letter-spacing` or `ls`
+/// - `margin-top` or `mt`
+/// - `margin-bottom` or `mb`
+///
+/// Each value must obviously be comma separated. Only `integers` are accepted. Any value passed in `rem` or `em` will be ignored. The output will always be in `px`, except for the `line-height` property.
+/// Except for the `line-height` or `lh` value, in addition to `integers`, `floats` are also accepted.
+/// @group Typography
+/// @type Map
+$header-styles: (
+  small: (
+      'h1': ('font-size': 24),
+      'h2': ('font-size': 20),
+      'h3': ('font-size': 19),
+      'h4': ('font-size': 18),
+      'h5': ('font-size': 17),
+      'h6': ('font-size': 16),
+  ),
+  medium: (
+      'h1': ('font-size': 48),
+      'h2': ('font-size': 40),
+      'h3': ('font-size': 31),
+      'h4': ('font-size': 25),
+      'h5': ('font-size': 20),
+      'h6': ('font-size': 16),
+  ),
+) !default;
 
+//Mixin for global headers styles in breakpoints
 @mixin headers-style-responsive {
     @each $size, $headers in $header-styles {
         @include breakpoint($size) {
@@ -38,7 +66,7 @@
                 .#{$header} {
                     @if map-has-key($header-defs, font-size) {
                         $font-size-temp: map-get($header-defs, font-size);
-                        font-size: unquote($font-size-temp + 'px');
+                        font-size: unquote(strip-unit($font-size-temp) + 'px');
                     } @else if map-has-key($header-defs, fs) {
                         $font-size-temp: map-get($header-defs, fs);
                         font-size: unquote($font-size-temp + 'px');
@@ -47,39 +75,39 @@
                     }
 
                     @if map-has-key($header-defs, line-height) {
-                        line-height: map-get($header-defs, line-height);
+                        line-height: map-get(strip-unit($header-defs), line-height);
                     } @else if map-has-key($header-defs, lh) {
-                        line-height: map-get($header-defs, lh);
+                        line-height: map-get(strip-unit($header-defs), lh);
                     } @else if $size == $-zf-zero-breakpoint {
                         line-height: $global-heading-line-height;
                     }
 
                     @if map-has-key($header-defs, letter-spacing) {
                         $letter-spacing-temp: map-get($header-defs, letter-spacing);
-                        letter-spacing: unquote($letter-spacing-temp + 'px');
+                        letter-spacing: unquote(strip-unit($letter-spacing-temp) + 'px');
                     } @else if map-has-key($header-defs, ls) {
                         $letter-spacing-temp: map-get($header-defs, ls);
-                        letter-spacing: unquote($letter-spacing-temp + 'px');
+                        letter-spacing: unquote(strip-unit($letter-spacing-temp) + 'px');
                     } @else if $size == $-zf-zero-breakpoint {
                         letter-spacing: $letter-spacing-temp;
                     }
 
                     @if map-has-key($header-defs, margin-top) {
                         $margin-top-temp: map-get($header-defs, margin-top);
-                        margin-top: unquote($margin-top-temp + 'px');
+                        margin-top: unquote(strip-unit($margin-top-temp) + 'px');
                     } @else if map-has-key($header-defs, mt) {
                         $margin-top-temp: map-get($header-defs, mt);
-                        margin-top: unquote($margin-top-temp + 'px');
+                        margin-top: unquote(strip-unit($margin-top-temp) + 'px');
                     } @else if $size == $-zf-zero-breakpoint {
                         margin-top: $margin-top-temp;
                     }
 
                     @if map-has-key($header-defs, margin-bottom) {
                         $margin-bottom-temp: map-get($header-defs, margin-bottom);
-                        margin-bottom: unquote($margin-bottom-temp + 'px');
+                        margin-bottom: unquote(strip-unit($margin-bottom-temp) + 'px');
                     } @else if map-has-key($header-defs, mb) {
                         $margin-bottom-temp: map-get($header-defs, mb);
-                        margin-bottom: unquote($margin-bottom-temp + 'px');
+                        margin-bottom: unquote(strip-unit($margin-bottom-temp) + 'px');
                     } @else if $size == $-zf-zero-breakpoint {
                         margin-bottom: $global-margin-bottom-heading;
                     }
@@ -89,9 +117,7 @@
     }
 }
 
-// @set global paragraph font family & margin
-// --------------------------------
-
+//Mixin for set global paragraph style
 @mixin paragraph-style {
     /*@paragraph-style*/
     p {
@@ -111,8 +137,6 @@
 }
 
 // Mixin for text disposition.
-// --------------------------------
-
 @mixin text-classes {
     /*@text-classes*/
     @each $align in (left, right, center, justify, ellipsis) {

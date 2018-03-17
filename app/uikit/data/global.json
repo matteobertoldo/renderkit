@@ -1,9 +1,7 @@
 {
-    "renderfile": {
-        "css": "css/renderkit.min.css"
-    },
     "uikit": {
-        "title": "UI Kit",
+        "cssrenderfile": "css/renderkit.min.css",
+        "title": "RenderKit",
         "projectname": "RenderKit",
         "github": {
             "show": true

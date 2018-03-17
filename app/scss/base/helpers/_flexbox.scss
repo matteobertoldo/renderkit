@@ -3,7 +3,7 @@
 // Licensed under MIT Open Source
 
 ////
-/// @group Flexbox Utilities
+/// @group flexbox utilities
 ////
 
 /// Quickly disable/enable count of flexbox source ordering
@@ -19,6 +19,7 @@ $flex-source-ordering-count: 6 !default;
 $flexbox-responsive-breakpoints: true !default;
 
 /// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @group typography
 /// @type Keyword
 $global-text-direction: ltr !default;
 
