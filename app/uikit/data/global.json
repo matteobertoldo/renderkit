@@ -1,6 +1,6 @@
 {
     "uikit": {
-        "cssrenderfile": "css/renderkit.min.css",
+        "cssrenderfile": "../dist/css/renderkit.min.css",
         "title": "RenderKit",
         "projectname": "RenderKit",
         "github": {
@@ -12,7 +12,7 @@
         },
         "sassdocumentation": {
             "show": true,
-            "file": "../docs/sass/index.html"
+            "file": "sass/index.html"
         }
     },
     "breakpoint": {
