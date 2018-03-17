@@ -1,8 +1,10 @@
 <div class="uikit-form-render">
-    {% set rowclass = form.rowclass %}
-    {% set labelclass = form.labelclass %}
-    {% set errorclass = form.errorclass %}
-    <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
+    {% set rowclass = uikit.section.form.rowclass %}
+    {% set labelclass = uikit.section.form.labelclass %}
+    {% set formclass =  uikit.section.form.formclass %}
+    {% set selectclass = uikit.section.form.selectclass %}
+    {% set errorclass = uikit.section.form.errorclass %}
+    <form class="uikit-form {{formclass}}" action="javascript:void(0)" autocomplete="on" method="get">
         <div class="{{rowclass}} split">
             <label class="{{labelclass}}">Input search</label>
             <input type="search" name="q" placeholder="input search"/>
@@ -33,7 +35,7 @@
         </div>
         <div class="{{rowclass}} split">
             <label class="{{labelclass}}">Select</label>
-            <select name="select" class="{{form.selectclass}}">
+            <select name="select" class="{{selectclass}}">
                 <option value="hotdog">
                     Hot Dog
                 </option>

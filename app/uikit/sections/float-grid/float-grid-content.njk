@@ -1,8 +1,8 @@
-{% set rowclass = floatgrid.rowclass %}
-{% set columns = floatgrid.gridcolumns %}
+{% set rowclass = uikit.section.floatgrid.rowclass %}
+{% set columns = uikit.section.floatgrid.gridcolumns %}
 {% set finalcolumns = columns / columns %}
-{% set columnclass = floatgrid.columnclass %}
-{% set gridcontainer = floatgrid.gridcontainer %}
+{% set columnclass = uikit.section.floatgrid.columnclass %}
+{% set gridcontainer = uikit.section.floatgrid.gridcontainer %}
 <div class="render-grid-content">
     <div class="{{rowclass}}">
         {% for column in range(0, columns) %}

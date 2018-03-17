@@ -51,6 +51,22 @@
             }
         }
 
+        #uikit-body-render #sass-renderkit-docs {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        @media print {
+            #uikit-body-render #sass-renderkit-docs {
+                display: none;
+            }
+        }
+
         #uikit-body-render #uikit-aside-nav {
             position: fixed;
             width: 80px;
@@ -369,7 +385,7 @@
         <div id="uikit-render-content">
 
 
-            <a id="sass-renderkit-docs" href="sass/index.html"></a>
+            <a id="sass-renderkit-docs" href="sass/index.html" target="_blank"></a>
 
 
 
@@ -400,7 +416,7 @@
                     <span class="info-label">Variabiles</span>
 
 
-                    <span class="sass-code">$google-fonts-name</span>
+                    <span class="sass-code">$google-fonts-family</span>
 
 
                     <span class="sass-code">$font-face-map</span>
@@ -1853,7 +1869,7 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model. <br /> To maintain accessibility it was decided not to remove the basic outline of the fields, but to make it visible only if the event is intercepted by the keyboard thanks to <a href="https://github.com/ten1seven/what-input">this plugin</a>.</span>
+                    <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model. <br /> To maintain accessibility it was decided not to remove the basic outline of the fields, but to make it visible only if the event is intercepted by the keyboard thanks to <a href="https://github.com/ten1seven/what-input" target="_blank">this plugin</a>.</span>
 
                 </div>
 
@@ -1927,7 +1943,9 @@
 
 
 
-                    <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
+
+
+                    <form class="uikit-form default" action="javascript:void(0)" autocomplete="on" method="get">
                         <div class="form-row split">
                             <label class="form-label">Input search</label>
                             <input type="search" name="q" placeholder="input search" />
@@ -2022,9 +2040,10 @@
 
 
 
+
                     <span class="info-label">SVG collection</span>
 
-                    <span class="info">To view the entire list of svg icons installed consult <a href="images/symbol/sprite.symbol.html">this page</a>.</span>
+                    <span class="info">To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.</span>
 
 
 

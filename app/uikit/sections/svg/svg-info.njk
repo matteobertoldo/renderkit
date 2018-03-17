@@ -1,4 +1,4 @@
-{% if svg.truetone %}
+{% if uikit.section.svg.truetone %}
     {{ infolabel('Toggle true tone') }}
     <span id="uikit-switch-render">
         <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
@@ -13,9 +13,10 @@
     </span>
 {% endif %}
 
-{% if svg.collection %}
+{% if uikit.section.svg.collection %}
+    {% set examplefile = uikit.section.svg.examplefile %}
     {{ infolabel('SVG collection') }}
-    <span class="info">To view the entire list of svg icons installed consult <a href="{{svg.examplefile}}">this page</a>.</span>
+    <span class="info">To view the entire list of svg icons installed consult <a href="{{examplefile}}">this page</a>.</span>
 {% endif %}
 
 {{ infolabel('Info') }}
