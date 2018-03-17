@@ -29,9 +29,9 @@ module.exports = {
         svg: folder.workspace + 'svg/**/*.svg'
     },
     distribution: {
-        uikit: folder.distribution,
+        uikit: folder.docs,
         scss: folder.distribution + 'css/',
-        svg: folder.distribution + 'images/'
+        svg: folder.docs + 'svg/'
     },
     cssOptions: {
         browsersSupport: [
@@ -70,20 +70,20 @@ module.exports = {
         browserSync: true,
         staticServer: true,
         staticServerBaseDir: './',
-        startPath: folder.distribution + 'uikit.html',
+        startPath: folder.docs + 'index.html',
         proxyName: 'localhost:8888/',
         logPrefix: 'renderkit',
         notification: false
     },
     cleanOptions: {
         generatedFiles: {
-            html: folder.distribution + '*.html',
+            html: folder.docs + '*.html',
             css: folder.distribution + 'css/**/*.{css,map}',
-            svg: folder.distribution + 'images/**/*.{svg,html}'
+            svg: folder.docs + 'images/**/*.{svg,html}'
         },
-        dryRun: false,
+        dryRun: true,
         forceDelete: false,
-        cleanAllDistributionFiles: true,
+        cleanAllGeneratedFiles: true,
         cleanFilesByType: function() {
             return this.generatedFiles.html;
         }

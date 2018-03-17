@@ -15,7 +15,7 @@ colors = require('ansi-colors');
 // @return: {string} || [arr]
 // -------------------
 
-if (conf.cleanOptions.cleanAllDistributionFiles) {
+if (conf.cleanOptions.cleanAllGeneratedFiles) {
     let vals = Object.keys(conf.cleanOptions.generatedFiles).map((key) => {
         return conf.cleanOptions.generatedFiles[key];
     });
