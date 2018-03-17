@@ -40,6 +40,22 @@
         }
     }
 
+    #uikit-body-render #sass-renderkit-docs {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 0, 0, 0.5);
+        border-radius: 50%;
+    }
+
+    @media print {
+        #uikit-body-render #sass-renderkit-docs {
+            display: none;
+        }
+    }
+
     #uikit-body-render #uikit-aside-nav {
         position: fixed;
         width: 80px;

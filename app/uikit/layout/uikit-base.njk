@@ -38,7 +38,7 @@
             <div id="uikit-render-content">
                 {% from "layout/macro/code-snippet.njk" import infolabel, infocontent, mixin, sassvar, sassfunction, templateclass %}
                 {% if uikit.sassdocumentation.show %}
-                    <a id="sass-renderkit-docs" href="{{uikit.sassdocumentation.file}}"></a>
+                    <a id="sass-renderkit-docs" href="{{uikit.sassdocumentation.file}}" target="_blank"></a>
                 {% endif %}
                 {% block uikitcontent %}{% endblock %}
             </div>
