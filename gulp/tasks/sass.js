@@ -5,6 +5,7 @@
  */
 
 const gulp = require('gulp'),
+streamCombiner = require('stream-combiner'),
 gulpif = require('gulp-if'),
 conf = require('../gulpconfig'),
 plumber = require('gulp-plumber'),
@@ -36,6 +37,12 @@ if (!conf.cssOptions.remUnit) {
     processors.splice(1,1);
 }
 
+function dest(path) {
+    return streamCombiner(conf.distribution.scss.map((path) => {
+        return gulp.dest(path);
+    }));
+}
+
 gulp.task('sass', () => {
     return gulp.src(conf.workspace.scss)
     .pipe(plumber())
@@ -45,7 +52,7 @@ gulp.task('sass', () => {
     }).on('error', sass.logError))
     .pipe(gulpif(conf.cssOptions.singleOutput, concat(conf.cssOptions.outputName + '.css')))
     .pipe(postcss(processors))
-    .pipe(gulp.dest(conf.distribution.scss))
+    .pipe(dest(conf.distribution.scss))
     .pipe(cleanCSS({
         level: (conf.cssOptions.optimizationMinify) ? 2 : 1
     }))
@@ -53,7 +60,7 @@ gulp.task('sass', () => {
         suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.scss))
+    .pipe(dest(conf.distribution.scss))
 });
 
 gulp.task('sassdoc', () => {

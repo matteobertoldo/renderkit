@@ -30,8 +30,11 @@ module.exports = {
     },
     distribution: {
         uikit: folder.docs,
-        scss: folder.distribution + 'css/',
-        svg: folder.docs + 'svg/'
+        scss: [
+            folder.distribution + 'css/',
+            folder.docs + 'renderkit/css/'
+        ],
+        svg: folder.docs + 'renderkit/svg/'
     },
     cssOptions: {
         browsersSupport: [

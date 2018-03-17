@@ -38,7 +38,8 @@
     "postcss-pxtorem-plus": "^3.5.1",
     "require-dir": "^1.0.0",
     "run-sequence": "^2.2.1",
-    "sassdoc": "^2.5.0"
+    "sassdoc": "^2.5.0",
+    "stream-combiner": "^0.2.2"
   },
   "dependencies": {
     "svg4everybody": "^2.1.9",
