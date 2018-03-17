@@ -18,7 +18,7 @@
     @include float-classes;
     @include clearfix-classes;
 
-    @if ($flex) {
+    @if ($global-flexbox) {
         @include foundation-xy-grid-classes;
         @include foundation-flex-classes;
     } @else {

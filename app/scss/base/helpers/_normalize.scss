@@ -6,9 +6,9 @@
     /*normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css*/
 
     // @param-1: Change the default font family in all browsers (opinionated).
-    // @param-2|3: Prevent adjustments of font size after orientation changes in IE and iOS Devices.
-    // @param-4: Configure the default iOS tap highlight color.
-    // @param-5: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+    // @param-2: Prevent adjustments of font size after orientation changes in IE and iOS Devices.
+    // @param-3: Configure the default iOS tap highlight color.
+    // @param-4: Add "box-sizing: border-box" to html, not in universal selector {*} for best performance. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     html {
     	font-family: sans-serif;
     	-webkit-text-size-adjust: percentage(1);
@@ -23,7 +23,6 @@
 
     // @param-1: Set the default px value to rem 16px -> 1rem.
     // @param-2: Set global-line-height -> 1.4 (default best for paragraph)
-    // @vars: (./scss/vars/vars.scss @typography).
     body {
     	font: {
     		family: $body-font-family;
@@ -272,7 +271,7 @@
     	text-rendering: $global-text-rendering;
     	-webkit-font-smoothing: antialiased;
     	-moz-osx-font-smoothing: grayscale;
-        @if ($global-liga-kern) {
+        @if ($global-font-liga-kern) {
             font-feature-settings: 'liga', 'kern';
         }
     	direction: $global-text-direction;

@@ -43,7 +43,7 @@ $font-face-map: (
 
 $global-text-direction: ltr;
 $global-text-rendering: optimizeLegibility;
-$global-liga-kern: true;
+$global-font-liga-kern: true;
 $body-font-family: 'Work Sans', sans-serif;
 $body-root-font-size: false;
 $body-font-size: 16px;
@@ -106,10 +106,10 @@ $breakpoint-classes: (small medium large);
 $print-breakpoint: large;
 
 // 4. Layout
-// $flex: if set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored
+// $global-flexbox: if set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored
 // --------------------------------
 
-$flex: true;
+$global-flexbox: true;
 $focus-outline-link-hidden: true;
 $focus-outline-input-hidden: true;
 $what-input-outline-detect: true;

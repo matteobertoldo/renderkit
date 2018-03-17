@@ -8,7 +8,7 @@
 
 /// Variable to determine if we want to include flexbox utility in our layout and to include mixins such as `foundation-xy-grid-classes()` and `foundation-flex-classes()`.
 /// @type Boolean
-$flex: true !default;
+$global-flexbox: true !default;
 
 /// Mixin for visuallyhidden.
 ///
@@ -46,7 +46,7 @@ $flex: true !default;
 		content: '';
 		display: table;
 
-		@if ($flex) {
+		@if ($global-flexbox) {
 			flex-basis: 0;
 			order: 1;
 		}

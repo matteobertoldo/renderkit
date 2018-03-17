@@ -2,13 +2,46 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-// Create gutters for a cell/container.
-// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
-// @param {Keyword} $gutter-type [margin] - Type of gutter to output. Accepts either margin or padding.
-// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
-// @param {Boolean} $negative [false] - Whether to apply the gutter as a negative value. Commonly used for nested grids.
-// --------------------------------
+////
+/// @group xy-grid
+////
 
+/// The maximum width of a grid container.
+/// @type Number
+$grid-container: 1200px !default;
+
+/// The number of columns used in the grid.
+/// @type Number
+$grid-columns: 12 !default;
+
+/// The amount of margin between cells at different screen sizes when using the margin grid. To use just one size, set the variable to a number instead of a map.
+/// @type Map | Length
+$grid-margin-gutters: (
+    small: 20px,
+    medium: 30px
+) !default;
+
+/// The amount of padding in cells at different screen sizes when using the padding grid. To use just one size, set the variable to a number instead of a map.
+/// @type Map | Length
+$grid-padding-gutters: $grid-margin-gutters !default;
+
+/// The amount of padding to use when padding the grid-container.
+/// @type Map | Length
+$grid-container-padding: $grid-padding-gutters !default;
+
+/// The maximum width to apply to a grid container
+/// @type Number
+$grid-container-max: $grid-container !default;
+
+/// The maximum number of cells in an XY block grid.
+/// @type Number
+$xy-block-grid-max: 8 !default;
+
+/// Create gutters for a cell/container.
+/// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
+/// @param {Keyword} $gutter-type [margin] - Type of gutter to output. Accepts either margin or padding.
+/// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+/// @param {Boolean} $negative [false] - Whether to apply the gutter as a negative value. Commonly used for nested grids.
 @mixin xy-gutters($gutters: $grid-margin-gutters, $gutter-type: margin, $gutter-position: right left, $negative: false) {
     $operator: if($negative, '-', '');
     $gutter-type: if($negative, 'margin', $gutter-type);
@@ -30,10 +63,8 @@
     }
 }
 
-// Creates a max width container, designed to house your grid content.
-// @param {Number} $width [$grid-container] - a width to limit the container to.
-// --------------------------------
-
+/// Creates a max width container, designed to house your grid content.
+/// @param {Number} $width [$grid-container] - a width to limit the container to.
 @mixin xy-grid-container($width: $grid-container,$padding: $grid-container-padding) {
     @include xy-gutters($gutters: $padding, $gutter-type: padding);
 
@@ -41,11 +72,9 @@
     margin: 0 auto;
 }
 
-// Creates a container for your flex cells.
-// @param {Keyword} $direction [horizontal] - Either horizontal or vertical direction of cells within.
-// @param {Boolean} $wrap [true] - If the cells within should wrap or not.
-// --------------------------------
-
+/// Creates a container for your flex cells.
+/// @param {Keyword} $direction [horizontal] - Either `horizontal` or `vertical` direction of cells within.
+/// @param {Boolean} $wrap [true] - If the cells within should wrap or not.
 @mixin xy-grid($direction: horizontal, $wrap: true) {
     $direction: if($direction == 'horizontal', row, column);
     $wrap: if($wrap, wrap, nowrap);
@@ -54,10 +83,8 @@
     flex-flow: $direction $wrap;
 }
 
-// Calculate the percentage size of a cell.
-// @param {Number|List} $size [$grid-columns] - Size to make the cell. You can pass a value in multiple formats, such as `6`, `50%`, `1 of 2 or 1/3.
-// --------------------------------
-
+/// Calculate the percentage size of a cell.
+/// @param {Number|List} $size [$grid-columns] - Size to make the cell. You can pass a value in multiple formats, such as `6`, `50%`, `1 of 2 or 1/3.
 @function xy-cell-size($size: $grid-columns) {
     @if type-of($size) == 'number' {
         @if unit($size) == '%' {
@@ -80,10 +107,8 @@
     @return $size;
 }
 
-// Sets base flex properties for cells.
-// @param {Keyword} $size [full] - The size of your cell. Accepts `full`, `auto`, `shrink` or `grow`.
-// --------------------------------
-
+/// Sets base flex properties for cells.
+/// @param {Keyword} $size [full] - The size of your cell. Accepts `full`, `auto`, `shrink` or `grow`.
 @mixin xy-cell-base($size: full) {
     @if ($size == 'full') {
         flex: 0 0 auto;
@@ -98,10 +123,8 @@
     }
 }
 
-// Resets a cells width (or height if vertical is true) as well as strips its gutters.
-// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
-// --------------------------------
-
+/// Resets a cells width (or height if vertical is true) as well as strips its gutters.
+/// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
 @mixin xy-cell-reset($vertical: true) {
     $direction: if($vertical == true, width, height);
 
@@ -110,8 +133,6 @@
 }
 
 // Sets our cell widths or heights depending on gutter type.
-// --------------------------------
-
 @mixin -xy-cell-properties($size, $margin-gutter, $vertical) {
     $direction: if($vertical == true, height, width);
 
@@ -129,16 +150,14 @@
     }
 }
 
-// Creates a cell for your grid.
-// @param {Keyword|Number} $size [full] - The size of your cell. Can be `full` (default) for 100% width, `auto` to use up available space and `shrink` to use up only required space.
-// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
-// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
-// @param {Keyword} $gutter-type [margin] - Map or single value for gutters.
-// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
-// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from. If using with the `breakpoint()` mixin this will be set automatically unless manually entered.
-// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
-// --------------------------------
-
+/// Creates a cell for your grid.
+/// @param {Keyword|Number} $size [full] - The size of your cell. Can be `full` (default) for 100% width, `auto` to use up available space and `shrink` to use up only required space.
+/// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
+/// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
+/// @param {Keyword} $gutter-type [margin] - Map or single value for gutters.
+/// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+/// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from. If using with the `breakpoint()` mixin this will be set automatically unless manually entered.
+/// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
 @mixin xy-cell($size: full, $gutter-output: true, $gutters: $grid-margin-gutters, $gutter-type: margin, $gutter-position: right left, $breakpoint: null, $vertical: false) {
     @if ($breakpoint == null) {
         @if (variable-exists(-zf-size) and type-of($-zf-size) != 'number') and $-zf-size != null {
@@ -167,15 +186,13 @@
     }
 }
 
-// Creates a single breakpoint sized grid. Used to generate our grid classes.
-// @param {Keyword|Number} $size [full] - The size of your cell. Can be `full` (default) for 100% width, `auto` to use up available space and `shrink` to use up only required space.
-// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
-// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
-// @param {Keyword} $gutter-type [margin] - Map or single value for gutters.
-// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from. If using with the `breakpoint()` mixin this will be set automatically unless manually entered.
-// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
-// --------------------------------
-
+/// Creates a single breakpoint sized grid. Used to generate our grid classes.
+/// @param {Keyword|Number} $size [full] - The size of your cell. Can be `full` (default) for 100% width, `auto` to use up available space and `shrink` to use up only required space.
+/// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
+/// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
+/// @param {Keyword} $gutter-type [margin] - Map or single value for gutters.
+/// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from. If using with the `breakpoint()` mixin this will be set automatically unless manually entered.
+/// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
 @mixin xy-cell-static($size: full, $gutter-output: true, $gutters: $grid-margin-gutters, $gutter-type: margin, $breakpoint: $-zf-zero-breakpoint, $vertical: false) {
     $gutter: -zf-get-bp-val($gutters, $breakpoint);
     $gutter-position: if($vertical == true, top bottom, left right);
@@ -192,14 +209,12 @@
     }
 }
 
-// Modifies a grid to give it "frame" behavior (no overflow, no wrap, stretch behavior)
-// @param {Boolean} $vertical [false] - Is grid vertical or horizontal. Should match grid.
-// @param {Boolean} $nested [false] - Is grid nested or not. If nested is true this sets the frame to 100% height, otherwise will be 100vh.
-// @param {Number|Map} $gutters [null] - Map or single value for gutters.
-// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from.
-// @param {Boolean} $include-base [true] - Include the base styles that don't vary per breakpoint.
-// --------------------------------
-
+/// Modifies a grid to give it "frame" behavior (no overflow, no wrap, stretch behavior)
+/// @param {Boolean} $vertical [false] - Is grid vertical or horizontal. Should match grid.
+/// @param {Boolean} $nested [false] - Is grid nested or not. If nested is true this sets the frame to 100% height, otherwise will be 100vh.
+/// @param {Number|Map} $gutters [null] - Map or single value for gutters.
+/// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from.
+/// @param {Boolean} $include-base [true] - Include the base styles that don't vary per breakpoint.
 @mixin xy-grid-frame($vertical: false, $nested: false, $gutters: null, $breakpoint: null, $include-base: true) {
     @if $include-base {
         overflow: hidden;
@@ -235,10 +250,8 @@
     }
 }
 
-// Modifies a cell to give it "block" behavior (overflow auto, inertial scrolling)
-// @param {Boolean} $vertical [false] - Is grid vertical or horizontal. Should match grid.
-// --------------------------------
-
+/// Modifies a cell to give it "block" behavior (overflow auto, inertial scrolling)
+/// @param {Boolean} $vertical [false] - Is grid vertical or horizontal. Should match grid.
 @mixin xy-cell-block($vertical: false) {
     $property: if($vertical == true, 'overflow-y', 'overflow-x');
 
@@ -254,11 +267,9 @@
     -ms-overflow-stype: -ms-autohiding-scrollbar;
 }
 
-// Container for inside a grid frame containing multiple blocks. Typically used
-// as a modifier for a `.cell` to allow the cell to pass along flex sizing
-// constraints / from parents to children.
-// --------------------------------
-
+/// Container for inside a grid frame containing multiple blocks. Typically used
+/// as a modifier for a `.cell` to allow the cell to pass along flex sizing
+/// constraints / from parents to children.
 @mixin xy-cell-block-container() {
     display: flex;
     flex-direction: column;
@@ -270,11 +281,9 @@
     }
 }
 
-// Offsets a column to the right/bottom by `$n` columns.
-// @param {Number|List} $n - Size to offset by. You can pass in any value accepted by the `zf-cell()` mixin, such as `6`, `50%`, or `1 of 2`.
-// @param {Boolean} $vertical [false] Sets the direction of the offset. If set to true will apply margin-top instead.
-// --------------------------------
-
+/// Offsets a column to the right/bottom by `$n` columns.
+/// @param {Number|List} $n - Size to offset by. You can pass in any value accepted by the `zf-cell()` mixin, such as `6`, `50%`, or `1 of 2`.
+/// @param {Boolean} $vertical [false] Sets the direction of the offset. If set to true will apply margin-top instead.
 @mixin xy-cell-offset($n, $gutters: $grid-margin-gutters, $gutter-type: margin, $breakpoint: $-zf-zero-breakpoint, $vertical: false) {
     $direction: if($vertical, 'top', $global-left);
 
@@ -285,16 +294,14 @@
     }
 }
 
-// Sizes child elements so that `$n` number of items appear on each row.
-// @param {Number} $n - Number of elements to display per row.
-// @param {String} $selector ['.cell'] - Selector(s) to use for child elements.
-// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
-// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
-// @param {Keyword} $gutter-type [margin] - Type of gutter to output. Accepts `margin` or `padding`.
-// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
-// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
-// --------------------------------
-
+/// Sizes child elements so that `$n` number of items appear on each row.
+/// @param {Number} $n - Number of elements to display per row.
+/// @param {String} $selector ['.cell'] - Selector(s) to use for child elements.
+/// @param {Boolean} $gutter-output [true] - Whether or not to output gutters
+/// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
+/// @param {Keyword} $gutter-type [margin] - Type of gutter to output. Accepts `margin` or `padding`.
+/// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+/// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
 @mixin xy-grid-layout($n, $selector: '.cell', $gutter-output: true, $gutters: $grid-margin-gutters, $gutter-type: margin, $gutter-position: right left, $breakpoint: $-zf-zero-breakpoint, $vertical: false) {
     $size: percentage(1/$n);
 
@@ -303,12 +310,10 @@
     }
 }
 
-// Collapses the grid a cells within it.
-// @param {String} $selector [.cell] - The child element to remove the gutter from.
-// @param {Keyword} $gutter-type [margin] - The type of gutter to remove.
-// @param {List} $gutter-position [right left] - The positions to remove gutters from. Accepts `top`, `bottom`, `left`, `right` in any combination.
-// --------------------------------
-
+/// Collapses the grid a cells within it.
+/// @param {String} $selector [.cell] - The child element to remove the gutter from.
+/// @param {Keyword} $gutter-type [margin] - The type of gutter to remove.
+/// @param {List} $gutter-position [right left] - The positions to remove gutters from. Accepts `top`, `bottom`, `left`, `right` in any combination.
 @mixin xy-grid-collapse($selector: '.cell', $gutter-type: margin, $gutter-position: right left, $min-breakpoint: $-zf-zero-breakpoint) {
     @if ($gutter-type == 'margin') {
         @include breakpoint($min-breakpoint) {
@@ -360,8 +365,6 @@
 }
 
 // Margin Grid classes
-// --------------------------------
-
 @mixin xy-base-grid-classes {
     .grid-container {
         @include xy-grid-container;
@@ -466,8 +469,6 @@
 }
 
 // Margin Grid classes
-// --------------------------------
-
 @mixin xy-margin-grid-classes($gutter-position: left right, $vertical: false, $wrapping-selector: '.grid-margin-x') {
     #{$wrapping-selector} {
         @include xy-gutters($negative: true, $gutter-position: $gutter-position);
@@ -499,8 +500,6 @@
 }
 
 // Padding Grid classes
-// --------------------------------
-
 @mixin xy-padding-grid-classes {
     .grid-padding-x {
 
@@ -519,8 +518,6 @@
 }
 
 // Block Grid classes
-// --------------------------------
-
 @mixin xy-block-grid-classes($margin-grid: true, $padding-grid: true) {
     @if $padding-grid {
         @include -zf-each-breakpoint {
@@ -556,8 +553,6 @@
 }
 
 // Collapse classes
-// --------------------------------
-
 @mixin xy-collapse-grid-classes($margin-grid: true, $padding-grid: true) {
     @each $bp in $breakpoint-classes {
         @if $margin-grid {
@@ -575,8 +570,6 @@
 }
 
 // Offset classes
-// --------------------------------
-
 @mixin xy-offset-cell-classes {
     @include -zf-each-breakpoint {
         @for $i from 1 through $grid-columns {
@@ -594,8 +587,6 @@
 }
 
 // Vertical Grid classes
-// --------------------------------
-
 @mixin xy-vertical-grid-classes($margin-grid: true, $padding-grid: true) {
     @include -zf-each-breakpoint() {
         @if not($-zf-size == small) {}
@@ -753,9 +744,6 @@
 }
 
 // Outputs CSS classes for the xy-grid.
-// @access private
-// --------------------------------
-
 @mixin foundation-xy-grid-classes($base-grid: true, $margin-grid: true, $padding-grid: true, $block-grid: true, $collapse: true, $offset: true, $vertical-grid: true, $frame-grid: true) {
 
     @if ($base-grid) {
