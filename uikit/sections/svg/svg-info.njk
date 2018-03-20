@@ -14,9 +14,8 @@
 {% endif %}
 
 {% if uikit.section.svg.collection %}
-    {% set examplefile = uikit.section.svg.examplefile %}
     {{ snippet.infolabel('SVG collection') }}
-    <span class="info">To view the entire list of svg icons installed consult <a href="{{examplefile}}">this page</a>.</span>
+    <span class="info">To view the entire list of svg icons installed consult <a href="{{uikit.section.svg.examplefile}}">this page</a>.</span>
 {% endif %}
 
 {{ snippet.infolabel('Info') }}

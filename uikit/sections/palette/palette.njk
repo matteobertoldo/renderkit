@@ -1,11 +1,9 @@
-{% if uikit.section.palette.show %}
-    <section class="uikit-element-render">
-        <h2 class="section-title">Palette &amp; Colors</h2>
-        <div class="section-description">
-            {% include "sections/palette/palette-info.njk" %}
-        </div>
-        {% include "sections/palette/palette-style.njk" %}
-        {% include "sections/palette/palette-script.njk" %}
-        {% include "sections/palette/palette-content.njk" %}
-    </section>
-{% endif %}
+<section class="uikit-element-render">
+    <h2 class="section-title">Palette &amp; Colors</h2>
+    <div class="section-description">
+        {% include "sections/palette/palette-info.njk" %}
+    </div>
+    {% include "sections/palette/palette-style.njk" %}
+    {% include "sections/palette/palette-script.njk" %}
+    {% include "sections/palette/palette-content.njk" %}
+</section>

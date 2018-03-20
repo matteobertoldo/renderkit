@@ -6,11 +6,8 @@
     <span class="info">{{content}}</span>
 {% endmacro %}
 
-{% macro mixin(name) %}
-<span class="mixin-code">
-    <span class="include">@include</span>
-    <span class="mixin-name">{{name}}</span>
-</span>
+{% macro sassfile(filename) %}
+    <span class="sass-file-name">_{{filename}}.scss</span>
 {% endmacro %}
 
 {% macro sassvar(name) %}
@@ -25,6 +22,13 @@
         </span>
     <span class="brackets">}</span>
 </code>
+{% endmacro %}
+
+{% macro mixin(name) %}
+<span class="mixin-code">
+    <span class="include">@include</span>
+    <span class="mixin-name">{{name}}</span>
+</span>
 {% endmacro %}
 
 {% macro templateclass(class) %}

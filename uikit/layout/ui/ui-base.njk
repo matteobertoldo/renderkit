@@ -13,40 +13,30 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="{{uikit.cssrenderfile}}"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Abril+Fatface">
         {% include "layout/ui/ui-style.njk" %}
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Abril+Fatface" rel="stylesheet">
         {% if uikit.js.whatinput %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
         {% endif %}
         {% if uikit.js.svg4everybody %}
             <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
         {% endif %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     </head>
     <body id="uikit-body-render">
+        {% import "layout/macro/snippet.njk" as snippet %}
         <main id="uikit-main">
-            <aside id="uikit-aside-nav">
-                <h1 class="project-name">
-                    {{uikit.projectname}}
-                </h1>
-                {% if uikit.github.show %}
-                    <div class="github-icon">
-                        <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
-                    </div>
-                {% endif %}
-            </aside>
+            {% if uikit.aside.show %}
+                {% include "./ui-aside.njk" %}
+            {% endif %}
             <div id="uikit-render-content">
-                {% import "layout/macro/snippet.njk" as snippet %}
                 {% if uikit.sassdocumentation.show %}
-                    <div id="sass-renderkit-docs">
-                        <a href="{{uikit.sassdocumentation.file}}" target="_blank"></a>
-                    </div>
+                    {% include "./ui-sassdoc.njk" %}
                 {% endif %}
                 {% block uikitcontent %}{% endblock %}
             </div>
         </main>
-        {% include "layout/ui/ui-scripts.njk" %}
-        <script src="../uikit/layout/vendor/highlight.pack.js"></script>
+        <script src="{{uikit.js.highlightpath}}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        {% include "layout/ui/ui-scripts.njk" %}
     </body>
 </html>
