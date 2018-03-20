@@ -1,0 +1,15 @@
+{{ snippet.infolabel('Primary Mixin') }}
+{{ snippet.mixin('colors-palette') }}
+
+{{ snippet.infolabel('Related Mixin') }}
+{{ snippet.mixin('manage-palette') }}
+
+{{ snippet.infolabel('Variabiles') }}
+{{ snippet.sassvar('palette-color') }}
+
+{{ snippet.infolabel('Template classes')}}
+{{ snippet.templateclass('palette-color-$key-palette-color') }}
+{{ snippet.templateclass('background-color-$key-palette-color') }}
+
+{{ snippet.infolabel('Function for catch HEX')}}
+{{ snippet.sassfunction('color','palette','$key-palette-color') }}

@@ -1,24 +1,20 @@
 /**
  * @file: gulpconfig.js
- * @description: Global options for `gulp tasks` for RenderKit.
+ * @description: Global settings for `gulp tasks` for RenderKit.
  * @author: mbertoldo@alpenite.com
  */
 
 // @global base folders name
-// -----------------
-
 var folder = {
-    workspace: 'app/',
+    workspace: './',
     distribution: 'dist/',
     docs: 'docs/'
 };
 
 // @global options
-// -----------------
-
 module.exports = {
     defaultWatchTasks: {
-        nunjucks: true,
+        uikit: true,
         sass: true,
         sassdoc: true,
         svg: true
@@ -60,7 +56,7 @@ module.exports = {
         sassdoc: true,
         sassdocDist: folder.docs + 'sass/'
     },
-    nunjucksOptions: {
+    uikitOptions: {
         dataFilePath: folder.workspace + 'uikit/data/global.json',
         indentSize: 4,
         endWithNewline: false

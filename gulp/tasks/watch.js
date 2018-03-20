@@ -36,7 +36,10 @@ if (conf.syncOptions.browserSync) {
 gulp.task('watch', (done) => {
     if (defaultWatchTasks.length) {
         sequence.apply(null, defaultWatchTasks, done);
-        gulp.watch([conf.workspace.uikit + '**/*.+(html|nunjucks|njk)', conf.nunjucksOptions.dataFilePath], ['nunjucks:watch']);
+        gulp.watch([
+            conf.workspace.uikit + '**/*.+(html|nunjucks|njk)',
+            conf.uikitOptions.dataFilePath
+        ], ['uikit:watch']);
         gulp.watch(conf.workspace.scss, ['sass:watch', 'sassdoc']);
         gulp.watch(conf.workspace.svg, ['svg:watch']);
     } else {

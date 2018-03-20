@@ -1,0 +1,30 @@
+<ul id="uikit-svg-list" class="svg-list">
+    {% set svgpath = uikit.section.svg.spritepath %}
+    {% set icons = uikit.section.svg.icons %}
+    {% for icon in icons %}
+        <li>
+            {% if uikit.section.svg.truetone and icon | lower == 'instagram' %}
+                <svg width="0" height="0" class="visuallyhidden">
+                    <radialgradient id="instagram-gradient" r="150%" cx="30%" cy="107%">
+                        <stop stop-color="#fdf497" offset="0" />
+                        <stop stop-color="#fdf497" offset="0.05" />
+                        <stop stop-color="#fd5949" offset="0.45" />
+                        <stop stop-color="#d6249f" offset="0.6" />
+                        <stop stop-color="#285AEB" offset="0.9" />
+                    </radialgradient>
+                </svg>
+            {% endif %}
+            <svg role="img" title="{{icon | lower}}" class="{{icon | lower}}">
+                <use xlink:href="{{svgpath}}#{{icon | lower}}"/>
+            </svg>
+        </li>
+    {% endfor %}
+</ul>
+
+{% if uikit.js.svg4everybody %}
+    <script type="text/javascript">
+        (function() {
+           svg4everybody();
+        })();
+    </script>
+{% endif %}
