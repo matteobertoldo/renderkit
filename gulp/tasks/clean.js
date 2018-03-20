@@ -1,19 +1,12 @@
-/**
- * @file: clean.js
- * @description: Clean all generated file or by tipe.
- * @author: mbertoldo@alpenite.com
- * @author: mgaion@alpenite.com (regex `split`)
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 conf = require('../gulpconfig'),
 del = require('del'),
 log = require('fancy-log'),
 colors = require('ansi-colors');
-
-// @localfiles
-// @return: {string} || [arr]
-// -------------------
 
 if (conf.cleanOptions.cleanAllGeneratedFiles) {
     let vals = Object.keys(conf.cleanOptions.generatedFiles).map((key) => {
@@ -23,10 +16,6 @@ if (conf.cleanOptions.cleanAllGeneratedFiles) {
 } else {
     var localfiles = conf.cleanOptions.cleanFilesByType();
 }
-
-// @clean
-// @return: [files]
-// -------------------
 
 gulp.task('clean', () => {
     del(localfiles, {

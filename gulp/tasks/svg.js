@@ -1,17 +1,12 @@
-/**
- * @file: svg.js
- * @description: Generate an "SVG Spritemap".
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 conf = require('../gulpconfig'),
 svgSprite = require('gulp-svg-sprite'),
 plumber = require('gulp-plumber'),
 log = require('fancy-log');
-
-// @svg `spritemap` options
-// --------------
 
 var svgSpriteOptions = {
     mode: {

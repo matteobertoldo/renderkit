@@ -1,8 +1,6 @@
-/**
- * @file: browser-sync.js
- * @description: Generate a "browser-sync" server. Configure your `static` or `proxy` server.
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 conf = require('../gulpconfig');

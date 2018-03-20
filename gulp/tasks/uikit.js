@@ -1,8 +1,6 @@
-/**
- * @file: nunjucks.js
- * @description: Task for compile Nunjucks files into HTML files. For Nunjucks language & API see more at: https://mozilla.github.io/nunjucks/.
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 conf = require('../gulpconfig'),

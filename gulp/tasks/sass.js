@@ -1,8 +1,6 @@
-/**
- * @file: sass.js
- * @description: Task for compile scss files & compress generated css file via `cleanCSS`.
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 streamCombiner = require('stream-combiner'),

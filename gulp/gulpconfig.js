@@ -1,17 +1,13 @@
-/**
- * @file: gulpconfig.js
- * @description: Global settings for `gulp tasks` for RenderKit.
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-// @global base folders name
 var folder = {
     workspace: './',
     distribution: 'dist/',
     docs: 'docs/'
 };
 
-// @global options
 module.exports = {
     defaultWatchTasks: {
         uikit: true,

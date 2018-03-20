@@ -1,8 +1,6 @@
-/**
- * @file: watch.js
- * @description: gulp is watching you...
- * @author: mbertoldo@alpenite.com
- */
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
 const gulp = require('gulp'),
 watch = require('gulp-watch'),
@@ -11,9 +9,6 @@ sequence = require('run-sequence'),
 log = require('fancy-log'),
 colors = require('ansi-colors');
 
-// @default watch tasks
-// --------------
-
 let tasks = conf.defaultWatchTasks;
 let keys = Object.keys(tasks);
 
@@ -21,17 +16,9 @@ let defaultWatchTasks = keys.filter((key) => {
     return tasks[key];
 });
 
-// @push `browser-sync`
-// @param {bool}
-// -------------------
-
 if (conf.syncOptions.browserSync) {
     defaultWatchTasks.push('browser-sync');
 }
-
-// @init all events
-// @start & enjoy
-// -------------------
 
 gulp.task('watch', (done) => {
     if (defaultWatchTasks.length) {
