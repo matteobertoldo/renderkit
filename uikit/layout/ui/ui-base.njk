@@ -1,0 +1,52 @@
+{#
+    Nunjucks Templating!
+    Homepage: https://mozilla.github.io/nunjucks/
+    Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+<!DOCTYPE html>
+<html data-render="uikit">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <title>{{uikit.title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="{{uikit.cssrenderfile}}"/>
+        {% include "layout/ui/ui-style.njk" %}
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Abril+Fatface" rel="stylesheet">
+        {% if uikit.js.whatinput %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
+        {% endif %}
+        {% if uikit.js.svg4everybody %}
+            <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+        {% endif %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    </head>
+    <body id="uikit-body-render">
+        <main id="uikit-main">
+            <aside id="uikit-aside-nav">
+                <h1 class="project-name">
+                    {{uikit.projectname}}
+                </h1>
+                {% if uikit.github.show %}
+                    <div class="github-icon">
+                        <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
+                    </div>
+                {% endif %}
+            </aside>
+            <div id="uikit-render-content">
+                {% import "layout/macro/snippet.njk" as snippet %}
+                {% if uikit.sassdocumentation.show %}
+                    <div id="sass-renderkit-docs">
+                        <a href="{{uikit.sassdocumentation.file}}" target="_blank"></a>
+                    </div>
+                {% endif %}
+                {% block uikitcontent %}{% endblock %}
+            </div>
+        </main>
+        {% include "layout/ui/ui-scripts.njk" %}
+        <script src="../uikit/layout/vendor/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
