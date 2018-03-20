@@ -18,11 +18,13 @@ gulp.task('uikit', () => {
     .pipe(plumber())
     .pipe(data((file) => {
         return JSON.parse(fs.readFileSync(path.resolve(conf.uikitOptions.dataFilePath), 'utf8'));
-    }))
+    })).on('error', (err) => {
+        log('Error in: ' + colors.red(err.plugin));
+        log('Message: ' + colors.red(err.message));
+    })
     .pipe(nunjucksRender({
         path: [conf.workspace.uikit]
-    }))
-    .on('error', (err) => {
+    })).on('error', (err) => {
         log('Error in: ' + colors.red(err.plugin));
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));

@@ -3,12 +3,14 @@
         "cssrenderfile": "renderkit/css/renderkit.min.css",
         "title": "RenderKit",
         "projectname": "RenderKit",
-        "github": {
-            "show": true
+        "aside": {
+            "show": true,
+            "github": true
         },
         "js": {
             "whatinput": true,
-            "svg4everybody": true
+            "svg4everybody": true,
+            "highlightpath": "renderkit/js/highlight.pack.js"
         },
         "sassdocumentation": {
             "show": true,
@@ -22,32 +24,17 @@
             "xxlarge": 1440
         },
         "section": {
-            "fonts": {
-                "show": true
-            },
-            "typography": {
-                "show": true
-            },
-            "palette": {
-                "show": true
-            },
             "xygrid": {
-                "show": true,
                 "gridcolumns": 12,
                 "gridcontainer": "1200px"
             },
-            "flexbox": {
-                "show": true
-            },
             "floatgrid": {
-                "show": false,
                 "gridcolumns": 12,
                 "gridcontainer": "1200px",
                 "rowclass": "row",
                 "columnclass": "column"
             },
             "form": {
-                "show": true,
                 "rowclass": "form-row",
                 "labelclass": "form-label",
                 "errorclass": "error",
@@ -55,7 +42,6 @@
                 "selectclass": "default"
             },
             "svg": {
-                "show": true,
                 "spritepath": "renderkit/svg/symbol/sprite.svg",
                 "icons": ["facebook","google-plus","instagram","twitter","youtube"],
                 "collection": true,
