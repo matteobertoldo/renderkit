@@ -62,7 +62,6 @@ module.exports = {
         exampleFile: true
     },
     syncOptions: {
-        browserSync: true,
         staticServer: true,
         staticServerBaseDir: './',
         startPath: folder.docs + 'index.html',

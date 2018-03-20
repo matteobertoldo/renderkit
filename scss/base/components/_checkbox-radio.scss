@@ -12,6 +12,9 @@ $global-custom-checkbox-radio-align-center: false !default;
 /// The size the global dimension of the checkbox & radio components.
 $global-custom-checkbox-radio-size: 24px !default;
 
+/// Default font family for checkbox & radio components.
+$global-custom-checkbox-radio-font-family: sans-serif !default;
+
 @mixin checkbox-radio-classes {
     /*@custom input checkbox & radio*/
     .input-checkbox,
