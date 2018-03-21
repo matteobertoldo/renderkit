@@ -154,7 +154,7 @@
         color: #abb2bf;
         background: #282c34;
         border-radius: 6px;
-        padding: 12px;
+        padding: 14px 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -226,6 +226,60 @@
 
     #uikit-body-render .hljs-link {
         text-decoration: underline;
+    }
+
+    #uikit-body-render #uikit-switch-item {
+        position: relative;
+    }
+
+    #uikit-body-render #uikit-switch-item .toggle {
+        display: block;
+    	width: 51px;
+    	height: 31px;
+    }
+
+    #uikit-body-render #uikit-switch-item .toggle label,
+    #uikit-body-render #uikit-switch-item .toggle i {
+        display: block;
+        -webkit-box-sizing: border-box;
+    	box-sizing: border-box;
+    	background: #ffffff;
+        cursor: pointer;
+    }
+
+    #uikit-body-render #uikit-switch-item .toggle label {
+    	width: 51px;
+    	height: 32px;
+    	border-radius: 32px;
+    	border: 2px solid #e5e5e5;
+        -webkit-transition: all 0.30s ease;
+    	transition: all 0.30s ease;
+    }
+
+    #uikit-body-render #uikit-switch-item .toggle i {
+    	position: absolute;
+    	top: 2px;
+    	left: 2px;
+    	width: 28px;
+    	height: 28px;
+    	border-radius: 28px;
+        -webkit-box-shadow: 0 0 1px 0 rgba(0,0,0, 0.25), 0 3px 3px 0 rgba(0,0,0, 0.15);
+    	box-shadow: 0 0 1px 0 rgba(0,0,0, 0.25), 0 3px 3px 0 rgba(0,0,0, 0.15);
+    	background: #ffffff;
+        -webkit-transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+    	transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+    }
+
+    #uikit-body-render #uikit-switch-item input[type="checkbox"] {
+    	display: none;
+    }
+
+    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle label {
+    	border: 16px solid #d9d9d9;
+    }
+
+    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle i {
+    	left: 21px;
     }
 
     #uikit-body-render .section-description .ui-snippet {

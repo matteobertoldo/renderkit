@@ -33,3 +33,14 @@
 </pre>
 </div>
 {% endmacro %}
+
+{% macro togglebutton(id) %}
+<div id="uikit-switch-item">
+    <input type="checkbox" id="{{id}}">
+    <span class="toggle">
+        <label for="{{id}}">
+            <i></i>
+        </label>
+    </span>
+</div>
+{% endmacro %}

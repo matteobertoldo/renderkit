@@ -164,7 +164,7 @@
             color: #abb2bf;
             background: #282c34;
             border-radius: 6px;
-            padding: 12px;
+            padding: 14px 12px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -236,6 +236,60 @@
 
         #uikit-body-render .hljs-link {
             text-decoration: underline;
+        }
+
+        #uikit-body-render #uikit-switch-item {
+            position: relative;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle {
+            display: block;
+            width: 51px;
+            height: 31px;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle label,
+        #uikit-body-render #uikit-switch-item .toggle i {
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle label {
+            width: 51px;
+            height: 32px;
+            border-radius: 32px;
+            border: 2px solid #e5e5e5;
+            -webkit-transition: all 0.30s ease;
+            transition: all 0.30s ease;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle i {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 28px;
+            -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+            -webkit-transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+            transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"] {
+            display: none;
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
+            border: 16px solid #d9d9d9;
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
+            left: 21px;
         }
 
         #uikit-body-render .section-description .ui-snippet {
@@ -1019,6 +1073,7 @@
                         font-weight: normal;
                         line-height: normal;
                         letter-spacing: normal;
+                        text-shadow: none;
                         color: #fff;
                         margin: 0;
                         padding: 0;
@@ -2257,19 +2312,21 @@
 
                     <span class="info-label">Toggle true tone</span>
 
-                    <span id="uikit-switch-render">
-        <div class="info">
-            Toggle for show true tone on icons. <br /> (Only if the color is available)
-        </div>
-        <span id="uikit-switch-item">
-            <input type="checkbox" id="uikit-toggle-truetone" name="uikit-toggle">
-            <span class="toggle">
-                <label for="uikit-toggle-truetone">
-                    <i></i>
-                </label>
-            </span>
-                    </span>
-                    </span>
+                    <div id="uikit-switch-render">
+                        <div class="info">
+                            Toggle for show true tone on icons. <br /> (Only if the color is available)
+                        </div>
+
+                        <div id="uikit-switch-item">
+                            <input type="checkbox" id="uikit-toggle-truetone">
+                            <span class="toggle">
+        <label for="uikit-toggle-truetone">
+            <i></i>
+        </label>
+    </span>
+                        </div>
+
+                    </div>
 
 
 
@@ -2286,6 +2343,20 @@
 
 
                     <div class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div>
+
+
+
+                    <span class="info-label">Markup</span>
+
+
+                    <div class="ui-docs-code">
+                        <pre class="ui-snippet">
+<code class="html">&lt;svg role=&quot;img&quot;&gt;
+    &lt;use xlink:href=&quot;path/to/svgspritemap#filename&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+                    </div>
 
 
                 </div>
@@ -2394,64 +2465,11 @@
                     }
 
                     #uikit-body-render #uikit-switch-render {
-                        display: block;
                         margin-top: 5px;
-                        margin-bottom: 0;
                     }
 
                     #uikit-body-render #uikit-switch-render .info {
                         margin-bottom: 10px;
-                    }
-
-                    #uikit-body-render #uikit-switch-item {
-                        display: block;
-                        position: relative;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle {
-                        display: block;
-                        width: 51px;
-                        height: 31px;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle label,
-                    #uikit-body-render #uikit-switch-item .toggle i {
-                        display: block;
-                        box-sizing: border-box;
-                        background: #ffffff;
-                        cursor: pointer;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle label {
-                        width: 51px;
-                        height: 32px;
-                        border-radius: 32px;
-                        border: 2px solid #e5e5e5;
-                        transition: all 0.30s ease;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle i {
-                        position: absolute;
-                        top: 2px;
-                        left: 2px;
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 28px;
-                        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-                        background: #ffffff;
-                        transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"] {
-                        display: none;
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
-                        border: 16px solid #d9d9d9;
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
-                        left: 21px;
                     }
                 </style>
 
@@ -2462,14 +2480,14 @@
                     <li>
 
                         <svg role="img" title="facebook" class="facebook">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="google-plus" class="google-plus">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"/></use>
             </svg>
                     </li>
 
@@ -2486,21 +2504,21 @@
                 </svg>
 
                         <svg role="img" title="instagram" class="instagram">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="twitter" class="twitter">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="youtube" class="youtube">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"/></use>
             </svg>
                     </li>
 
