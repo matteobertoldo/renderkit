@@ -27,26 +27,26 @@ function headersTooltip() {
 
             this.style.borderBottomColor = color;
 
-            if (!this.querySelector('#font-family-value').hasChildNodes()) {
-                this.querySelector('#font-family-value').appendChild(document.createTextNode(fontFamily));
+            if (!this.querySelector('.font-family-value').hasChildNodes()) {
+                this.querySelector('.font-family-value').appendChild(document.createTextNode(fontFamily));
             }
 
-            if (this.querySelector('#font-size-value').textContent != fontSize) {
-                this.querySelector('#font-size-value').textContent = fontSize;
-            } else if (this.querySelector('#font-size-value').textContent == fontSize) {
-                this.querySelector('#font-size-value').textContent = fontSize;
+            if (this.querySelector('.font-size-value').textContent != fontSize) {
+                this.querySelector('.font-size-value').textContent = fontSize;
+            } else if (this.querySelector('.font-size-value').textContent == fontSize) {
+                this.querySelector('.font-size-value').textContent = fontSize;
             }
 
-            if (this.querySelector('#line-height-value').textContent != lineHeight) {
-                this.querySelector('#line-height-value').textContent = lineHeight;
-            } else if (this.querySelector('#line-height-value').textContent == lineHeight) {
-                this.querySelector('#line-height-value').textContent = lineHeight;
+            if (this.querySelector('.line-height-value').textContent != lineHeight) {
+                this.querySelector('.line-height-value').textContent = lineHeight;
+            } else if (this.querySelector('.line-height-value').textContent == lineHeight) {
+                this.querySelector('.line-height-value').textContent = lineHeight;
             }
 
-            if (this.querySelector('#letter-spacing-value').textContent != letterSpacing) {
-                this.querySelector('#letter-spacing-value').textContent = letterSpacing;
-            } else if (this.querySelector('#letter-spacing-value').textContent == letterSpacing) {
-                this.querySelector('#letter-spacing-value').textContent = letterSpacing;
+            if (this.querySelector('.letter-spacing-value').textContent != letterSpacing) {
+                this.querySelector('.letter-spacing-value').textContent = letterSpacing;
+            } else if (this.querySelector('.letter-spacing-value').textContent == letterSpacing) {
+                this.querySelector('.letter-spacing-value').textContent = letterSpacing;
             }
         });
     }

@@ -50,6 +50,7 @@
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
         #uikit-body-render .uikit-element-render {
+            margin: 10px;
             padding: 20px 16px;
         }
     }
@@ -92,34 +93,6 @@
         background-color: #5d5c56;
     }
 
-    #uikit-body-render .section-description .info-label {
-        display: block;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 11px;
-        letter-spacing: 0.031em;
-        line-height: 1.4;
-        color: #666;
-        margin-top: 24px;
-    }
-
-    #uikit-body-render .section-description .info {
-        display: block;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 11px;
-        line-height: 1.4;
-        letter-spacing: normal;
-        max-width: 380px;
-        color: #666;
-        margin-top: 3px;
-    }
-
-    #uikit-body-render .section-description .info a {
-        color: #61afef;
-        text-decoration: underline;
-    }
-
     #uikit-body-render .mixin-code {
         display: block;
         font-family: monospace, monospace;
@@ -146,7 +119,7 @@
         line-height: inherit;
         color: #e31d79;
         opacity: 0.70;
-        margin-top: 3px;
+        margin-top: 4px;
     }
 
     #uikit-body-render .template-class {
@@ -156,9 +129,12 @@
         opacity: 1;
     }
 
-    #uikit-body-render .sass-function-snippet {
-        display: inline-block;
-        vertical-align: bottom;
+    #uikit-body-render .ui-snippet {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        min-width: 220px;
+        max-width: 420px;
         font-family: monospace, monospace;
         font-size: 12px;
         font-weight: bold;
@@ -167,133 +143,124 @@
         color: #828997;
         border-radius: 6px;
         box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
-        margin-top: 10px;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+    }
+
+    #uikit-body-render .hljs {
+        display: block;
+        width: 100%;
+        color: #abb2bf;
+        background: #282c34;
+        border-radius: 6px;
         padding: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    @media only screen and (max-width: {{uikit.breakpoint.medium + 'px'}}) {
-        #uikit-body-render .sass-function-snippet {
-            display: block;
-            white-space: nowrap;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+    #uikit-body-render .hljs-comment,
+    #uikit-body-render .hljs-quote {
+        color: #5c6370;
+        font-style: italic;
     }
 
-    #uikit-body-render .sass-function-snippet span {
+    #uikit-body-render .hljs-doctag,
+    #uikit-body-render .hljs-keyword,
+    #uikit-body-render .hljs-formula {
+        color: #c678dd;
+    }
+
+    #uikit-body-render .hljs-section,
+    #uikit-body-render .hljs-name,
+    #uikit-body-render .hljs-selector-tag,
+    #uikit-body-render .hljs-deletion,
+    #uikit-body-render .hljs-subst {
+        color: #e06c75;
+    }
+
+    #uikit-body-render  .hljs-literal {
+        color: #56b6c2;
+    }
+
+    #uikit-body-render .hljs-string,
+    #uikit-body-render .hljs-regexp,
+    #uikit-body-render .hljs-addition,
+    #uikit-body-render .hljs-attribute,
+    #uikit-body-render .hljs-meta-string {
+        color: #98c379;
+    }
+
+    #uikit-body-render .hljs-built_in,
+    #uikit-body-render .hljs-class .hljs-title {
+        color: #e6c07b;
+    }
+
+    #uikit-body-render .hljs-attr,
+    #uikit-body-render .hljs-variable,
+    #uikit-body-render .hljs-template-variable,
+    #uikit-body-render .hljs-type,
+    #uikit-body-render .hljs-selector-class,
+    #uikit-body-render .hljs-selector-attr,
+    #uikit-body-render .hljs-selector-pseudo,
+    #uikit-body-render .hljs-number {
+        color: #d19a66;
+    }
+
+    #uikit-body-render .hljs-symbol,
+    #uikit-body-render .hljs-bullet,
+    #uikit-body-render .hljs-link,
+    #uikit-body-render .hljs-meta,
+    #uikit-body-render .hljs-selector-id,
+    #uikit-body-render .hljs-title {
+        color: #61aeee;
+    }
+
+    #uikit-body-render .hljs-emphasis {
+        font-style: italic;
+    }
+
+    #uikit-body-render .hljs-strong {
+        font-weight: bold;
+    }
+
+    #uikit-body-render .hljs-link {
+        text-decoration: underline;
+    }
+
+    #uikit-body-render .section-description .ui-snippet {
+        max-width: 380px;
+        margin-top: 10px;
+    }
+
+    #uikit-body-render .section-description .info-label {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.031em;
+        line-height: 1.4;
+        color: #666;
+        margin-top: 24px;
+    }
+
+    #uikit-body-render .section-description .info {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        line-height: 1.4;
+        letter-spacing: normal;
+        max-width: 380px;
+        color: #666;
+        margin-top: 4px;
+    }
+
+    #uikit-body-render .section-description .info a {
         font-family: inherit;
         font-size: inherit;
-        font-weight: inherit;
-    }
-
-    #uikit-body-render .sass-function-snippet .selector {
-        font-family: monospace, monospace;
-        font-size: inherit;
-        font-weight: inherit;
-        color: #d19a66;
-    }
-
-    #uikit-body-render .sass-function-snippet .brackets,
-    #uikit-body-render .sass-function-snippet .property {
-        display: inline-block;
-        font-family: monospace, monospace;
-        color: #fff;
-    }
-
-    #uikit-body-render .sass-function-snippet .property-group {
-        display: block;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-left: 25px;
-    }
-
-    #uikit-body-render .sass-function-snippet .sass-function {
-        color: #56b6c2;
-        margin-left: 5px;
-    }
-
-    #uikit-body-render .sass-function-snippet .function-sass-param {
-        color: #d19a66;
-    }
-
-    #uikit-body-render .sass-function-snippet .semicolon {
-        color: #fff;
-    }
-
-    .hljs {
-      display: block;
-      overflow-x: auto;
-      padding: 0.5em;
-      color: #abb2bf;
-      background: #282c34;
-    }
-
-    .hljs-comment,
-    .hljs-quote {
-      color: #5c6370;
-      font-style: italic;
-    }
-
-    .hljs-doctag,
-    .hljs-keyword,
-    .hljs-formula {
-      color: #c678dd;
-    }
-
-    .hljs-section,
-    .hljs-name,
-    .hljs-selector-tag,
-    .hljs-deletion,
-    .hljs-subst {
-      color: #e06c75;
-    }
-
-    .hljs-literal {
-      color: #56b6c2;
-    }
-
-    .hljs-string,
-    .hljs-regexp,
-    .hljs-addition,
-    .hljs-attribute,
-    .hljs-meta-string {
-      color: #98c379;
-    }
-
-    .hljs-built_in,
-    .hljs-class .hljs-title {
-      color: #e6c07b;
-    }
-
-    .hljs-attr,
-    .hljs-variable,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-selector-class,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo,
-    .hljs-number {
-      color: #d19a66;
-    }
-
-    .hljs-symbol,
-    .hljs-bullet,
-    .hljs-link,
-    .hljs-meta,
-    .hljs-selector-id,
-    .hljs-title {
-      color: #61aeee;
-    }
-
-    .hljs-emphasis {
-      font-style: italic;
-    }
-
-    .hljs-strong {
-      font-weight: bold;
-    }
-
-    .hljs-link {
-      text-decoration: underline;
+        font-weight: normal;
+        color: #61afef;
+        text-decoration: underline;
     }
 </style>

@@ -9,4 +9,6 @@
 {{ snippet.sassvar('font-face-map') }}
 
 {{ snippet.infolabel('Function for font-face') }}
-{{ snippet.sassfunction('font-family','font','$nth-key-font-face-map') }}
+{{ snippet.code('scss','.selector {
+    font-family: font($nth-key-font-face-map);
+}')}}

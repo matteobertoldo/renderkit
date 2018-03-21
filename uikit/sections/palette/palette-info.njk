@@ -12,4 +12,6 @@
 {{ snippet.templateclass('background-color-$key-palette-color') }}
 
 {{ snippet.infolabel('Function for catch HEX')}}
-{{ snippet.sassfunction('color','palette','$key-palette-color') }}
+{{ snippet.code('scss','.selector {
+    color: palette($key-palette-color);
+}')}}
