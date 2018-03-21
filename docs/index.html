@@ -9,7 +9,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="renderkit/css/renderkit.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Abril+Fatface">
     <style type="text/css">
         *,
         ::after,
@@ -60,6 +60,7 @@
 
         @media only screen and (max-width: 1024px) {
             #uikit-body-render .uikit-element-render {
+                margin: 10px;
                 padding: 20px 16px;
             }
         }
@@ -102,34 +103,6 @@
             background-color: #5d5c56;
         }
 
-        #uikit-body-render .section-description .info-label {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 0.031em;
-            line-height: 1.4;
-            color: #666;
-            margin-top: 24px;
-        }
-
-        #uikit-body-render .section-description .info {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            line-height: 1.4;
-            letter-spacing: normal;
-            max-width: 380px;
-            color: #666;
-            margin-top: 3px;
-        }
-
-        #uikit-body-render .section-description .info a {
-            color: #61afef;
-            text-decoration: underline;
-        }
-
         #uikit-body-render .mixin-code {
             display: block;
             font-family: monospace, monospace;
@@ -156,7 +129,7 @@
             line-height: inherit;
             color: #e31d79;
             opacity: 0.70;
-            margin-top: 3px;
+            margin-top: 4px;
         }
 
         #uikit-body-render .template-class {
@@ -166,9 +139,12 @@
             opacity: 1;
         }
 
-        #uikit-body-render .sass-function-snippet {
-            display: inline-block;
-            vertical-align: bottom;
+        #uikit-body-render .ui-snippet {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            min-width: 220px;
+            max-width: 420px;
             font-family: monospace, monospace;
             font-size: 12px;
             font-weight: bold;
@@ -177,133 +153,178 @@
             color: #828997;
             border-radius: 6px;
             box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
-            margin-top: 10px;
-            padding: 12px;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
         }
 
-        @media only screen and (max-width: 640px) {
-            #uikit-body-render .sass-function-snippet {
-                display: block;
-                white-space: nowrap;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-
-        #uikit-body-render .sass-function-snippet span {
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-        }
-
-        #uikit-body-render .sass-function-snippet .selector {
-            font-family: monospace, monospace;
-            font-size: inherit;
-            font-weight: inherit;
-            color: #d19a66;
-        }
-
-        #uikit-body-render .sass-function-snippet .brackets,
-        #uikit-body-render .sass-function-snippet .property {
-            display: inline-block;
-            font-family: monospace, monospace;
-            color: #fff;
-        }
-
-        #uikit-body-render .sass-function-snippet .property-group {
+        #uikit-body-render .hljs {
             display: block;
-            margin-top: 3px;
-            margin-bottom: 3px;
-            margin-left: 25px;
-        }
-
-        #uikit-body-render .sass-function-snippet .sass-function {
-            color: #56b6c2;
-            margin-left: 5px;
-        }
-
-        #uikit-body-render .sass-function-snippet .function-sass-param {
-            color: #d19a66;
-        }
-
-        #uikit-body-render .sass-function-snippet .semicolon {
-            color: #fff;
-        }
-
-        .hljs {
-            display: block;
-            overflow-x: auto;
-            padding: 0.5em;
+            width: 100%;
             color: #abb2bf;
             background: #282c34;
+            border-radius: 6px;
+            padding: 14px 12px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .hljs-comment,
-        .hljs-quote {
+        #uikit-body-render .hljs-comment,
+        #uikit-body-render .hljs-quote {
             color: #5c6370;
             font-style: italic;
         }
 
-        .hljs-doctag,
-        .hljs-keyword,
-        .hljs-formula {
+        #uikit-body-render .hljs-doctag,
+        #uikit-body-render .hljs-keyword,
+        #uikit-body-render .hljs-formula {
             color: #c678dd;
         }
 
-        .hljs-section,
-        .hljs-name,
-        .hljs-selector-tag,
-        .hljs-deletion,
-        .hljs-subst {
+        #uikit-body-render .hljs-section,
+        #uikit-body-render .hljs-name,
+        #uikit-body-render .hljs-selector-tag,
+        #uikit-body-render .hljs-deletion,
+        #uikit-body-render .hljs-subst {
             color: #e06c75;
         }
 
-        .hljs-literal {
+        #uikit-body-render .hljs-literal {
             color: #56b6c2;
         }
 
-        .hljs-string,
-        .hljs-regexp,
-        .hljs-addition,
-        .hljs-attribute,
-        .hljs-meta-string {
+        #uikit-body-render .hljs-string,
+        #uikit-body-render .hljs-regexp,
+        #uikit-body-render .hljs-addition,
+        #uikit-body-render .hljs-attribute,
+        #uikit-body-render .hljs-meta-string {
             color: #98c379;
         }
 
-        .hljs-built_in,
-        .hljs-class .hljs-title {
+        #uikit-body-render .hljs-built_in,
+        #uikit-body-render .hljs-class .hljs-title {
             color: #e6c07b;
         }
 
-        .hljs-attr,
-        .hljs-variable,
-        .hljs-template-variable,
-        .hljs-type,
-        .hljs-selector-class,
-        .hljs-selector-attr,
-        .hljs-selector-pseudo,
-        .hljs-number {
+        #uikit-body-render .hljs-attr,
+        #uikit-body-render .hljs-variable,
+        #uikit-body-render .hljs-template-variable,
+        #uikit-body-render .hljs-type,
+        #uikit-body-render .hljs-selector-class,
+        #uikit-body-render .hljs-selector-attr,
+        #uikit-body-render .hljs-selector-pseudo,
+        #uikit-body-render .hljs-number {
             color: #d19a66;
         }
 
-        .hljs-symbol,
-        .hljs-bullet,
-        .hljs-link,
-        .hljs-meta,
-        .hljs-selector-id,
-        .hljs-title {
+        #uikit-body-render .hljs-symbol,
+        #uikit-body-render .hljs-bullet,
+        #uikit-body-render .hljs-link,
+        #uikit-body-render .hljs-meta,
+        #uikit-body-render .hljs-selector-id,
+        #uikit-body-render .hljs-title {
             color: #61aeee;
         }
 
-        .hljs-emphasis {
+        #uikit-body-render .hljs-emphasis {
             font-style: italic;
         }
 
-        .hljs-strong {
+        #uikit-body-render .hljs-strong {
             font-weight: bold;
         }
 
-        .hljs-link {
+        #uikit-body-render .hljs-link {
+            text-decoration: underline;
+        }
+
+        #uikit-body-render #uikit-switch-item {
+            position: relative;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle {
+            display: block;
+            width: 51px;
+            height: 31px;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle label,
+        #uikit-body-render #uikit-switch-item .toggle i {
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle label {
+            width: 51px;
+            height: 32px;
+            border-radius: 32px;
+            border: 2px solid #e5e5e5;
+            -webkit-transition: all 0.30s ease;
+            transition: all 0.30s ease;
+        }
+
+        #uikit-body-render #uikit-switch-item .toggle i {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 28px;
+            height: 28px;
+            border-radius: 28px;
+            -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+            -webkit-transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+            transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"] {
+            display: none;
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
+            border: 16px solid #d9d9d9;
+        }
+
+        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
+            left: 21px;
+        }
+
+        #uikit-body-render .section-description .ui-snippet {
+            max-width: 380px;
+            margin-top: 10px;
+        }
+
+        #uikit-body-render .section-description .info-label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.031em;
+            line-height: 1.4;
+            color: #666;
+            margin-top: 24px;
+        }
+
+        #uikit-body-render .section-description .info {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: normal;
+            max-width: 380px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        #uikit-body-render .section-description .info a {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: normal;
+            color: #61afef;
             text-decoration: underline;
         }
     </style>
@@ -528,7 +549,7 @@
         <div id="uikit-render-content">
 
             <style type="text/css">
-                @keyframes pulse {
+                @keyframes -webkit-pulse {
                     0% {
                         -webkit-transform: scale(1);
                         transform: scale(1);
@@ -678,13 +699,14 @@
                     <span class="info-label">Function for font-face</span>
 
 
-                    <code class="sass-function-snippet">
-    <span class="selector">.selector </span><span class="brackets">{</span>
-        <span class="property-group">
-            <span class="property">font-family:</span><span class="sass-function">font</span>(<span class="function-sass-param">$nth-key-font-face-map</span>)<span class="semicolon">;</span>
-        </span>
-    <span class="brackets">}</span>
+                    <div class="ui-docs-code">
+                        <pre class="ui-snippet">
+<code class="scss">.selector {
+    font-family: font($nth-key-font-face-map);
+}
 </code>
+</pre>
+                    </div>
 
 
                 </div>
@@ -1051,6 +1073,7 @@
                         font-weight: normal;
                         line-height: normal;
                         letter-spacing: normal;
+                        text-shadow: none;
                         color: #fff;
                         margin: 0;
                         padding: 0;
@@ -1212,26 +1235,26 @@
 
                                 this.style.borderBottomColor = color;
 
-                                if (!this.querySelector('#font-family-value').hasChildNodes()) {
-                                    this.querySelector('#font-family-value').appendChild(document.createTextNode(fontFamily));
+                                if (!this.querySelector('.font-family-value').hasChildNodes()) {
+                                    this.querySelector('.font-family-value').appendChild(document.createTextNode(fontFamily));
                                 }
 
-                                if (this.querySelector('#font-size-value').textContent != fontSize) {
-                                    this.querySelector('#font-size-value').textContent = fontSize;
-                                } else if (this.querySelector('#font-size-value').textContent == fontSize) {
-                                    this.querySelector('#font-size-value').textContent = fontSize;
+                                if (this.querySelector('.font-size-value').textContent != fontSize) {
+                                    this.querySelector('.font-size-value').textContent = fontSize;
+                                } else if (this.querySelector('.font-size-value').textContent == fontSize) {
+                                    this.querySelector('.font-size-value').textContent = fontSize;
                                 }
 
-                                if (this.querySelector('#line-height-value').textContent != lineHeight) {
-                                    this.querySelector('#line-height-value').textContent = lineHeight;
-                                } else if (this.querySelector('#line-height-value').textContent == lineHeight) {
-                                    this.querySelector('#line-height-value').textContent = lineHeight;
+                                if (this.querySelector('.line-height-value').textContent != lineHeight) {
+                                    this.querySelector('.line-height-value').textContent = lineHeight;
+                                } else if (this.querySelector('.line-height-value').textContent == lineHeight) {
+                                    this.querySelector('.line-height-value').textContent = lineHeight;
                                 }
 
-                                if (this.querySelector('#letter-spacing-value').textContent != letterSpacing) {
-                                    this.querySelector('#letter-spacing-value').textContent = letterSpacing;
-                                } else if (this.querySelector('#letter-spacing-value').textContent == letterSpacing) {
-                                    this.querySelector('#letter-spacing-value').textContent = letterSpacing;
+                                if (this.querySelector('.letter-spacing-value').textContent != letterSpacing) {
+                                    this.querySelector('.letter-spacing-value').textContent = letterSpacing;
+                                } else if (this.querySelector('.letter-spacing-value').textContent == letterSpacing) {
+                                    this.querySelector('.letter-spacing-value').textContent = letterSpacing;
                                 }
                             });
                         }
@@ -1257,20 +1280,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1282,20 +1305,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1307,20 +1330,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1332,20 +1355,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1357,20 +1380,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1382,20 +1405,20 @@
                             <div class="header-info-style">
                                 <p class="font-style-rule font-style-rule-animatable">
                                     <i class="family"></i>
-                                    <span id="font-family-value"></span>
+                                    <span class="font-family-value"></span>
                                 </p>
                                 <ul class="font-style-rule">
                                     <li class="font-style-rule-animatable delay-1">
                                         <i class="size"></i>
-                                        <span id="font-size-value"></span>
+                                        <span class="font-size-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-2">
                                         <i class="lineheight"></i>
-                                        <span id="line-height-value"></span>
+                                        <span class="line-height-value"></span>
                                     </li>
                                     <li class="font-style-rule-animatable delay-3">
                                         <i class="letterspacing"></i>
-                                        <span id="letter-spacing-value"></span>
+                                        <span class="letter-spacing-value"></span>
                                     </li>
                                 </ul>
                             </div>
@@ -1456,13 +1479,14 @@
                     <span class="info-label">Function for catch HEX</span>
 
 
-                    <code class="sass-function-snippet">
-    <span class="selector">.selector </span><span class="brackets">{</span>
-        <span class="property-group">
-            <span class="property">color:</span><span class="sass-function">palette</span>(<span class="function-sass-param">$key-palette-color</span>)<span class="semicolon">;</span>
-        </span>
-    <span class="brackets">}</span>
+                    <div class="ui-docs-code">
+                        <pre class="ui-snippet">
+<code class="scss">.selector {
+    color: palette($key-palette-color);
+}
 </code>
+</pre>
+                    </div>
 
 
                 </div>
@@ -1777,10 +1801,10 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">
-    Compared to the original grid, the <strong>"rem"</strong> conversion for the various gutters has been removed. <br />
-    For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html" target="_blank">this page</a>.
-</span>
+                    <div class="info">
+                        Compared to the original grid, the <strong>"rem"</strong> conversion for the various gutters has been removed. <br /> For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html"
+                            target="_blank">this page</a>.
+                    </div>
 
                 </div>
 
@@ -1905,10 +1929,11 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">
-    If you set the variable: <strong>$flex</strong> to true in addition to the XY-Grid, there are flexbox utilities. They can be integrated with the XY-Grid as explained on <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html" target="_blank">this page</a>. <br /> In addition to these classes, has been added the possibility to enable or not the <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html#source-ordering" target="_blank">source ordering</a>.
-    Here are some examples of use with the classes to be called in our templates. <br /> The classes in these examples were applied only to the parent container.
-</span>
+                    <div class="info">
+                        If you set the variable: <strong>$flex</strong> to true in addition to the XY-Grid, there are flexbox utilities. They can be integrated with the XY-Grid as explained on <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html"
+                            target="_blank">this page</a>. <br /> In addition to these classes, has been added the possibility to enable or not the <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html#source-ordering" target="_blank">source ordering</a>.
+                        Here are some examples of use with the classes to be called in our templates. <br /> The classes in these examples were applied only to the parent container.
+                    </div>
 
                 </div>
                 <style type="text/css">
@@ -2109,7 +2134,10 @@
 
                     <span class="info-label">Info</span>
 
-                    <span class="info">The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model. <br /> To maintain accessibility it was decided not to remove the basic outline of the fields, but to make it visible only if the event is intercepted by the keyboard thanks to <a href="https://github.com/ten1seven/what-input" target="_blank">this plugin</a>.</span>
+                    <div class="info">
+                        The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model. <br /> To maintain accessibility it
+                        was decided not to remove the basic outline of the fields, but to make it visible only if the event is intercepted by the keyboard thanks to <a href="https://github.com/ten1seven/what-input" target="_blank">this plugin</a>.
+                    </div>
 
                 </div>
 
@@ -2177,6 +2205,12 @@
                         padding-bottom: 10px;
                         border-bottom: 1px solid #cdcdcd;
                     }
+
+                    #uikit-body-render .ui-form-snippet .ui-snippet {
+                        max-width: 680px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                 </style>
 
                 <div class="uikit-form-render">
@@ -2236,22 +2270,37 @@
                             <label class="form-label">Input checkbox & radio custom</label>
                             <div class="form-row wide no-gutter">
                                 <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render" />
-                                <label class="input-checkbox" for="uikit-checkbox-render">
+                                <label for="uikit-checkbox-render" class="input-checkbox">
                     Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
                 </label>
                             </div>
                             <div class="form-row radio-group wide no-gutter">
                                 <input type="radio" id="uikit-radio-render" name="input-radio-render" />
-                                <label class="input-radio" for="uikit-radio-render">
+                                <label for="uikit-radio-render" class="input-radio">
                     Brownie.
                 </label>
                                 <input type="radio" id="uikit-radio-render-2" name="input-radio-render" />
-                                <label class="input-radio" for="uikit-radio-render-2">
+                                <label for="uikit-radio-render-2" class="input-radio">
                     Chupa chups.
                 </label>
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="ui-form-snippet">
+
+                    <div class="ui-docs-code">
+                        <pre class="ui-snippet">
+<code class="html">&lt;div class=&quot;row&quot;&gt;
+    &lt;input id=&quot;uikit-checkbox-render&quot; type=&quot;checkbox&quot;&gt;
+    &lt;label for=&quot;uikit-checkbox-render&quot; class=&quot;input-checkbox&quot;&gt;
+        Text for my label
+    &lt;/label&gt;
+&lt;/div&gt;
+</code>
+</pre>
+                    </div>
+
                 </div>
 
             </section>
@@ -2263,31 +2312,51 @@
 
                     <span class="info-label">Toggle true tone</span>
 
-                    <span id="uikit-switch-render">
-        <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
-                    <span id="uikit-switch-item">
-            <input type="checkbox" id="uikit-toggle-truetone" name="uikit-toggle">
-            <span class="toggle">
-                <label for="uikit-toggle-truetone">
-                    <i></i>
-                </label>
-            </span>
-                    </span>
-                    </span>
+                    <div id="uikit-switch-render">
+                        <div class="info">
+                            Toggle for show true tone on icons. <br /> (Only if the color is available)
+                        </div>
+
+                        <div id="uikit-switch-item">
+                            <input type="checkbox" id="uikit-toggle-truetone">
+                            <span class="toggle">
+        <label for="uikit-toggle-truetone">
+            <i></i>
+        </label>
+    </span>
+                        </div>
+
+                    </div>
 
 
 
 
                     <span class="info-label">SVG collection</span>
 
-                    <span class="info">To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.</span>
+                    <div class="info">
+                        To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.
+                    </div>
 
 
 
                     <span class="info-label">Info</span>
 
 
-                    <span class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</span>
+                    <div class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div>
+
+
+
+                    <span class="info-label">Markup</span>
+
+
+                    <div class="ui-docs-code">
+                        <pre class="ui-snippet">
+<code class="html">&lt;svg role=&quot;img&quot;&gt;
+    &lt;use xlink:href=&quot;path/to/svgspritemap#filename&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+                    </div>
 
 
                 </div>
@@ -2396,64 +2465,11 @@
                     }
 
                     #uikit-body-render #uikit-switch-render {
-                        display: block;
                         margin-top: 5px;
-                        margin-bottom: 0;
                     }
 
                     #uikit-body-render #uikit-switch-render .info {
                         margin-bottom: 10px;
-                    }
-
-                    #uikit-body-render #uikit-switch-item {
-                        display: block;
-                        position: relative;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle {
-                        display: block;
-                        width: 51px;
-                        height: 31px;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle label,
-                    #uikit-body-render #uikit-switch-item .toggle i {
-                        display: block;
-                        box-sizing: border-box;
-                        background: #ffffff;
-                        cursor: pointer;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle label {
-                        width: 51px;
-                        height: 32px;
-                        border-radius: 32px;
-                        border: 2px solid #e5e5e5;
-                        transition: all 0.30s ease;
-                    }
-
-                    #uikit-body-render #uikit-switch-item .toggle i {
-                        position: absolute;
-                        top: 2px;
-                        left: 2px;
-                        width: 28px;
-                        height: 28px;
-                        border-radius: 28px;
-                        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25), 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-                        background: #ffffff;
-                        transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"] {
-                        display: none;
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
-                        border: 16px solid #d9d9d9;
-                    }
-
-                    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
-                        left: 21px;
                     }
                 </style>
 
@@ -2464,14 +2480,14 @@
                     <li>
 
                         <svg role="img" title="facebook" class="facebook">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="google-plus" class="google-plus">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"/></use>
             </svg>
                     </li>
 
@@ -2488,21 +2504,21 @@
                 </svg>
 
                         <svg role="img" title="instagram" class="instagram">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="twitter" class="twitter">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"/></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="youtube" class="youtube">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"/>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"/></use>
             </svg>
                     </li>
 

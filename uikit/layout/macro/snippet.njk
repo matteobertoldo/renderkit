@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro infocontent(content) %}
-    <span class="info">{{content}}</span>
+    <div class="info">{{content}}</div>
 {% endmacro %}
 
 {% macro sassfile(filename) %}
@@ -12,16 +12,6 @@
 
 {% macro sassvar(name) %}
     <span class="sass-code">${{name}}</span>
-{% endmacro %}
-
-{% macro sassfunction(param,function,value) %}
-<code class="sass-function-snippet">
-    <span class="selector">.selector </span><span class="brackets">{</span>
-        <span class="property-group">
-            <span class="property">{{param}}:</span><span class="sass-function">{{function}}</span>(<span class="function-sass-param">{{value}}</span>)<span class="semicolon">;</span>
-        </span>
-    <span class="brackets">}</span>
-</code>
 {% endmacro %}
 
 {% macro mixin(name) %}
@@ -33,4 +23,24 @@
 
 {% macro templateclass(class) %}
     <span class="template-class">.{{class}}</span>
+{% endmacro %}
+
+{% macro code(class, content) %}
+<div class="ui-docs-code">
+<pre class="ui-snippet">
+<code class="{{class}}">{{content | e}}
+</code>
+</pre>
+</div>
+{% endmacro %}
+
+{% macro togglebutton(id) %}
+<div id="uikit-switch-item">
+    <input type="checkbox" id="{{id}}">
+    <span class="toggle">
+        <label for="{{id}}">
+            <i></i>
+        </label>
+    </span>
+</div>
 {% endmacro %}

@@ -15,6 +15,21 @@ $global-custom-checkbox-radio-size: 24px !default;
 /// Default font family for checkbox & radio components.
 $global-custom-checkbox-radio-font-family: sans-serif !default;
 
+/// Default font size for checkbox & radio components.
+$global-custom-checkbox-radio-font-size: 12px !default;
+
+/// Default text transform for checkbox & radio components.
+$global-custom-checkbox-radio-text-transform: none !default;
+
+/// Default letter spacing for checkbox & radio components.
+$global-custom-checkbox-radio-letter-spacing: normal !default;
+
+/// Default color for checkbox & radio components.
+$global-custom-checkbox-radio-color: #666 !default;
+
+/// The space between the label text and the shape of the checkbox or radio component.
+$custom-checkbox-radio-label-gutter: 10px !default;
+
 @mixin checkbox-radio-classes {
     /*@custom input checkbox & radio*/
     .input-checkbox,
@@ -68,11 +83,9 @@ $global-custom-checkbox-radio-font-family: sans-serif !default;
     	}
     }
 
-    // @global marker size for checkbox & radio
-    // @return: {String}
-    // @note: the marker will always be half size compared to `$global-custom-checkbox-radio-size`;
-    // --------------------------------
-
+    // Global marker size for checkbox & radio.
+    // The marker will always be half size compared to `$global-custom-checkbox-radio-size`.
+    // @return {Integer|Float}
     $marker-size: ($global-custom-checkbox-radio-size / 2);
     $marker-size-half: ($marker-size / 2);
 

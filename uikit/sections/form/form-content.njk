@@ -55,20 +55,28 @@
             <label class="{{labelclass}}">Input checkbox & radio custom</label>
             <div class="{{rowclass}} wide no-gutter">
                 <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
-                <label class="input-checkbox" for="uikit-checkbox-render">
+                <label for="uikit-checkbox-render" class="input-checkbox">
                     Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
                 </label>
             </div>
             <div class="{{rowclass}} radio-group wide no-gutter">
                 <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
-                <label class="input-radio" for="uikit-radio-render">
+                <label for="uikit-radio-render" class="input-radio">
                     Brownie.
                 </label>
                 <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
-                <label class="input-radio" for="uikit-radio-render-2">
+                <label for="uikit-radio-render-2" class="input-radio">
                     Chupa chups.
                 </label>
             </div>
         </div>
     </form>
+</div>
+<div class="ui-form-snippet">
+{{snippet.code('html','<div class="row">
+    <input id="uikit-checkbox-render" type="checkbox">
+    <label for="uikit-checkbox-render" class="input-checkbox">
+        Text for my label
+    </label>
+</div>')}}
 </div>

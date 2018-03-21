@@ -1,22 +1,24 @@
 {% if uikit.section.svg.truetone %}
     {{ snippet.infolabel('Toggle true tone') }}
-    <span id="uikit-switch-render">
-        <span class="info">Toggle for show true tone on icons. <br /> (Only if the color is available)</span>
-        <span id="uikit-switch-item">
-            <input type="checkbox" id="uikit-toggle-truetone" name="uikit-toggle">
-            <span class="toggle">
-                <label for="uikit-toggle-truetone">
-                    <i></i>
-                </label>
-            </span>
-        </span>
-    </span>
+    <div id="uikit-switch-render">
+        <div class="info">
+            Toggle for show true tone on icons. <br /> (Only if the color is available)
+        </div>
+        {{ snippet.togglebutton('uikit-toggle-truetone') }}
+    </div>
 {% endif %}
 
 {% if uikit.section.svg.collection %}
     {{ snippet.infolabel('SVG collection') }}
-    <span class="info">To view the entire list of svg icons installed consult <a href="{{uikit.section.svg.examplefile}}">this page</a>.</span>
+    <div class="info">
+        To view the entire list of svg icons installed consult <a href="{{uikit.section.svg.examplefile}}">this page</a>.
+    </div>
 {% endif %}
 
 {{ snippet.infolabel('Info') }}
 {{ snippet.infocontent("The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.") }}
+
+{{ snippet.infolabel('Markup') }}
+{{ snippet.code('html','<svg role="img">
+    <use xlink:href="path/to/svgspritemap#filename"></use>
+</svg>')}}
