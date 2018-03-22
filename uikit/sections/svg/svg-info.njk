@@ -1,16 +1,16 @@
 {% if uikit.section.svg.truetone %}
     {{ snippet.infolabel('Toggle true tone') }}
+    <div class="docs-info">
+        Toggle for show true tone on icons. <br /> (Only if the color is available)
+    </div>
     <div id="uikit-switch-render">
-        <div class="info">
-            Toggle for show true tone on icons. <br /> (Only if the color is available)
-        </div>
         {{ snippet.togglebutton('uikit-toggle-truetone') }}
     </div>
 {% endif %}
 
 {% if uikit.section.svg.collection %}
     {{ snippet.infolabel('SVG collection') }}
-    <div class="info">
+    <div class="docs-info">
         To view the entire list of svg icons installed consult <a href="{{uikit.section.svg.examplefile}}">this page</a>.
     </div>
 {% endif %}

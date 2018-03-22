@@ -520,6 +520,7 @@ p {
   letter-spacing: normal;
   text-transform: none;
   color: inherit;
+  margin: 0;
 }
 
 /*@text-classes*/

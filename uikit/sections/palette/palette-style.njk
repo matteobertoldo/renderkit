@@ -1,5 +1,5 @@
 <style type="text/css">
-#uikit-body-render #palette-list {
+#renderkit-body #palette-list {
     width: 100%;
     max-width: 1100px;
     text-align: center;
@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-#uikit-body-render #palette-list > li {
+#renderkit-body #palette-list > li {
     display: inline-table;
     position: relative;
     list-style: none;
@@ -33,7 +33,7 @@
     will-change: transform;
 }
 
-#uikit-body-render #palette-list > li::after {
+#renderkit-body #palette-list > li::after {
     content: '';
     position: absolute;
     top: 0;
@@ -54,22 +54,22 @@
     will-change: transform, opacity;
 }
 
-#uikit-body-render #palette-list > li:hover {
+#renderkit-body #palette-list > li:hover {
     -webkit-transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
     transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
 }
 
-#uikit-body-render #palette-list > li:hover::after {
+#renderkit-body #palette-list > li:hover::after {
     opacity: 0.85;
     -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
     transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
 }
 
-#uikit-body-render #palette-list > li:last-of-type {
+#renderkit-body #palette-list > li:last-of-type {
     margin-bottom: 0;
 }
 
-#uikit-body-render #palette-list > li p {
+#renderkit-body #palette-list > li p {
     display: table-cell;
     vertical-align: middle;
     font-family: 'Montserrat', sans-serif;
@@ -82,7 +82,7 @@
     padding: 0;
 }
 
-#uikit-body-render #palette-list > li strong {
+#renderkit-body #palette-list > li strong {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -93,8 +93,8 @@
     padding: 0;
 }
 
-#uikit-body-render #palette-list > li span,
-#uikit-body-render #palette-list > li em {
+#renderkit-body #palette-list > li span,
+#renderkit-body #palette-list > li em {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -103,7 +103,7 @@
     color: inherit;
 }
 
-#uikit-body-render #palette-list > li em {
+#renderkit-body #palette-list > li em {
     font-size: 10px;
 }
 </style>

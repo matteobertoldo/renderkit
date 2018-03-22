@@ -27,7 +27,6 @@
 //  11. Print
 
 // 1. Global fonts
-// @note: $google-fonts-family accept the name of the font after string `?family=`.
 // --------------------------------
 
 $font-dir: '../fonts/';
@@ -87,8 +86,7 @@ $global-paragraph-font-weight: normal;
 $global-paragraph-line-height: 1.4;
 $global-paragraph-letter-spacing: normal;
 $global-paragraph-text-transform: none;
-$global-margin-paragraph: false;
-$margin-paragraph: 0;
+$global-margin-paragraph: 0;
 $global-strong-font-family: inherit;
 $global-strong-font-weight: bolder;
 
@@ -106,7 +104,6 @@ $breakpoint-classes: (small medium large);
 $print-breakpoint: large;
 
 // 4. Layout
-// $global-flexbox: if set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored
 // --------------------------------
 
 $global-flexbox: true;

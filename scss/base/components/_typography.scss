@@ -129,10 +129,7 @@ $header-styles: (
         letter-spacing: $global-paragraph-letter-spacing;
         text-transform: $global-paragraph-text-transform;
         color: $global-paragraph-color;
-
-        @if ($global-margin-paragraph) {
-            margin: $margin-paragraph;
-        }
+        margin: $global-margin-paragraph;
     }
 }
 

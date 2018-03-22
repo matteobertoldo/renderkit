@@ -39,7 +39,7 @@
     }
 }
 
-#uikit-body-render #sass-renderkit-docs {
+#renderkit-body #sass-renderkit-docs {
     position: fixed;
     top: 30px;
     right: 30px;
@@ -51,7 +51,7 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render #sass-renderkit-docs {
+    #renderkit-body #sass-renderkit-docs {
         top: 15px;
         right: 15px;
         width: 25px;
@@ -60,12 +60,12 @@
 }
 
 @media print {
-    #uikit-body-render #sass-renderkit-docs {
+    #renderkit-body #sass-renderkit-docs {
         display: none;
     }
 }
 
-#uikit-body-render #sass-renderkit-docs::after {
+#renderkit-body #sass-renderkit-docs::after {
     content: '';
     position: absolute;
     top: 0;
@@ -81,7 +81,7 @@
     z-index: -1;
 }
 
-#uikit-body-render #sass-renderkit-docs a {
+#renderkit-body #sass-renderkit-docs a {
     position: relative;
     display: block;
     width: 100%;
@@ -91,8 +91,8 @@
     color: inherit;
 }
 
-#uikit-body-render #sass-renderkit-docs a::before,
-#uikit-body-render #sass-renderkit-docs a::after {
+#renderkit-body #sass-renderkit-docs a::before,
+#renderkit-body #sass-renderkit-docs a::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -104,7 +104,7 @@
     margin-left: -5px;
 }
 
-#uikit-body-render #sass-renderkit-docs a::after {
+#renderkit-body #sass-renderkit-docs a::after {
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);

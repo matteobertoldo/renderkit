@@ -1,10 +1,10 @@
 <style type="text/css">
-#uikit-body-render #foundation-flex-classes {
+#renderkit-body #foundation-flex-classes {
     max-width: 1200px;
     margin: 60px auto 30px;
 }
 
-#uikit-body-render #foundation-flex-classes .flex-cell {
+#renderkit-body #foundation-flex-classes .flex-cell {
     position: relative;
     width: 180px;
     height: 180px;
@@ -14,21 +14,21 @@
     border-radius: 6px;
 }
 
-#uikit-body-render #foundation-flex-classes .flex-cell,
-#uikit-body-render #foundation-flex-classes .flex-class-group {
+#renderkit-body #foundation-flex-classes .flex-cell,
+#renderkit-body #foundation-flex-classes .flex-class-group {
     margin: 15px;
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render #foundation-flex-classes .flex-class-group {
+    #renderkit-body #foundation-flex-classes .flex-class-group {
         margin-bottom: 40px;
         padding-bottom: 15px;
         border-bottom: 1px solid #cdcdcd;
     }
 }
 
-#uikit-body-render #foundation-flex-classes .flex-cell::before,
-#uikit-body-render #foundation-flex-classes .flex-cell::after {
+#renderkit-body #foundation-flex-classes .flex-cell::before,
+#renderkit-body #foundation-flex-classes .flex-cell::after {
     content: '';
     position: absolute;
     -webkit-flex-basis: 0;
@@ -43,21 +43,21 @@
     z-index: 1;
 }
 
-#uikit-body-render #foundation-flex-classes .flex-cell::before {
+#renderkit-body #foundation-flex-classes .flex-cell::before {
     top: calc(50% - 0.5px);
     left: 0;
     width: 100%;
     height: 1px;
 }
 
-#uikit-body-render #foundation-flex-classes .flex-cell::after {
+#renderkit-body #foundation-flex-classes .flex-cell::after {
     top: 0;
     left: calc(50% - 0.5px);
     width: 1px;
     height: 100%;
 }
 
-#uikit-body-render #foundation-flex-classes .template-class {
+#renderkit-body #foundation-flex-classes .template-class {
     display: block;
     margin-top: 10px;
     margin-bottom: 0;
@@ -65,12 +65,12 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render #foundation-flex-classes .template-class {
+    #renderkit-body #foundation-flex-classes .template-class {
         text-align: left;
     }
 }
 
-#uikit-body-render #foundation-flex-classes .uikit-flex-children {
+#renderkit-body #foundation-flex-classes .uikit-flex-children {
     position: relative;
     width: 50px;
     height: 50px;
@@ -85,7 +85,7 @@
     z-index: 10;
 }
 
-#uikit-body-render #foundation-flex-classes .uikit-flex-children > span {
+#renderkit-body #foundation-flex-classes .uikit-flex-children > span {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;

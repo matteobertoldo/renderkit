@@ -7,6 +7,8 @@
 ////
 
 /// Variable to determine if we want to include flexbox utility in our layout and to include mixins such as `foundation-xy-grid-classes()` and `foundation-flex-classes()`.
+///
+/// If set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored.
 /// @type Boolean
 $global-flexbox: true !default;
 
@@ -69,4 +71,20 @@ $global-flexbox: true !default;
 /// Mixin for simplify the syntax for iOS smooth scroll.
 @mixin ios-scroll {
     -webkit-overflow-scrolling: touch;
+}
+
+/// Counter Increment Mixin, create a numerated list. Include this on a child selector on `::before` or `::after`.
+///
+/// The parent selector need `counter-reset: section;`
+/// @param {String} $separator - Any character as a type of separator is accepted.
+/// @param {String} $space [space] - It is possible to create a space after the separator or not. If set to `no-space` the space will not be present.
+@mixin counter-increment($separator, $space: 'space') {
+	@if ($space == 'no-space') {
+		$space: '';
+	} @else {
+		$space: ' ';
+	}
+
+	counter-increment: section;
+	content: counters(section,'#{$separator}') $space;
 }

@@ -6,14 +6,6 @@
 /// @group typography
 ////
 
-/// The default font dir for catch all font file.
-$font-dir: '../fonts/' !default;
-
-/// The default `$font-face-map` used by RenderKit.
-$font-face-map: (
-    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
-) !default;
-
 /// Function for string replace.
 /// @param {String} $string - Initial string
 /// @param {String} $search - Substring to replace
@@ -27,57 +19,6 @@ $font-face-map: (
 	}
 
 	@return $string;
-}
-
-/// Function for catch font family in `$font-face-map`.
-/// @param {Integer} $font-family-key - The `nth` key of `$font-face-map`.
-/// @return {String} - The name of the font family.
-@function font($font-family-key) {
-    $list: $font-face-map;
-    $key: map-keys($list);
-    $map-length: length($list);
-
-    @if ($font-family-key > $map-length) {
-        @warn 'No font-family found in `$font-face-map` map.';
-    } @else {
-        $value: nth($key, $font-family-key);
-
-        @return $value;
-    }
-}
-
-/// Mixin for generate a `@font-face` rule.
-/// @param {String} $font-name - The font family name.
-/// @param {String} $font-file - The name of font file.
-/// @param {String} $style [normal] - The style of your font.
-/// @param {String|Integer} $weight [400] - The font weight of your font.
-/// @param {String} $extension [eot woff woff2 ttf svg] - The extensions available for the font.
-@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
-	$filepath: $font-dir + $font-file;
-    $src: null;
-    $extmods: (
-		eot: "?#iefix",
-		svg: "#" + str-replace($font-name, ' ', '_')
-	);
-	$formats: (
-		otf: "opentype",
-		ttf: "truetype"
-	);
-
-	@each $extension in $extensions {
-		$extmod: if(map-has-key($extmods, $extension), $extension + map-get($extmods, $extension), $extension);
-		$format: if(map-has-key($formats, $extension), map-get($formats, $extension), $extension);
-        $src: append($src, url(quote($filepath + "." + $extmod)) format(quote($format)), comma);
-	}
-
-	@font-face {
-		font: {
-            family: quote(#{$font-name});
-			style: $style;
-			weight: $weight;
-		}
-        src: $src;
-    }
 }
 
 /// Mixin for no text shown.
@@ -98,21 +39,4 @@ $font-face-map: (
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-}
-
-// @require: {counter-reset: section;} defined on a parent selector
-/// Counter Increment Mixin, create a numerated list. Include this on a child selector on `::before` or `::after`.
-///
-/// The parent selector need `counter-reset: section;`
-/// @param {String} $separator - Any character as a type of separator is accepted.
-/// @param {String} $space [space] - It is possible to create a space after the separator or not. If set to `no-space` the space will not be present.
-@mixin counter-increment($separator, $space: 'space') {
-	@if ($space == 'no-space') {
-		$space: '';
-	} @else {
-		$space: ' ';
-	}
-
-	counter-increment: section;
-	content: counters(section,'#{$separator}') $space;
 }

@@ -1,0 +1,72 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group fonts
+////
+
+/// The default font dir for catch all font file.
+$font-dir: '../fonts/' !default;
+
+/// The default `$font-face-map` used by RenderKit.
+/// @type map
+$font-face-map: (
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
+) !default;
+
+/// The default Google Fonts used by by RenderKit.
+///
+/// `$google-fonts-family` accept the name of the font after string `?family=`.
+$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface' !default;
+
+/// Function for catch font family in `$font-face-map`.
+/// @param {Integer} $font-family-key - The `nth` key of `$font-face-map`.
+/// @return {String} - The name of the font family.
+@function font($font-family-key) {
+    $list: $font-face-map;
+    $key: map-keys($list);
+    $map-length: length($list);
+
+    @if ($font-family-key > $map-length) {
+        @warn 'No font-family found in `$font-face-map` map.';
+    } @else {
+        $value: nth($key, $font-family-key);
+
+        @return $value;
+    }
+}
+
+/// Mixin for generate a `@font-face` rule.
+/// @param {String} $font-name - The font family name.
+/// @param {String} $font-file - The name of font file.
+/// @param {String} $style [normal] - The style of your font.
+/// @param {String|Integer} $weight [400] - The font weight of your font.
+/// @param {String} $extension [eot woff woff2 ttf svg] - The extensions available for the font.
+@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
+	$filepath: $font-dir + $font-file;
+    $src: null;
+    $extmods: (
+		eot: "?#iefix",
+		svg: "#" + str-replace($font-name, ' ', '_')
+	);
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $extension in $extensions {
+		$extmod: if(map-has-key($extmods, $extension), $extension + map-get($extmods, $extension), $extension);
+		$format: if(map-has-key($formats, $extension), map-get($formats, $extension), $extension);
+        $src: append($src, url(quote($filepath + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font: {
+            family: quote(#{$font-name});
+			style: $style;
+			weight: $weight;
+		}
+        src: $src;
+    }
+}

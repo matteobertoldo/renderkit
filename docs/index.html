@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
 
-        #uikit-body-render {
+        #renderkit-body {
             margin: 0 !important;
             padding: 0 !important;
             -webkit-font-smoothing: antialiased;
@@ -35,37 +35,37 @@
             transform: none !important;
         }
 
-        #uikit-body-render #uikit-render-content {
+        #renderkit-body #uikit-render-content {
             overflow: hidden;
             padding-left: 80px;
         }
 
         @media print {
-            #uikit-body-render #uikit-render-content {
+            #renderkit-body #uikit-render-content {
                 padding-left: 0;
             }
         }
 
         @media only screen and (max-width: 1024px) {
-            #uikit-body-render #uikit-render-content {
+            #renderkit-body #uikit-render-content {
                 padding-left: 0;
             }
         }
 
-        #uikit-body-render .uikit-element-render {
+        #renderkit-body .uikit-element-render {
             background-color: #f5f5f5;
             margin: 15px;
             padding: 50px 30px;
         }
 
         @media only screen and (max-width: 1024px) {
-            #uikit-body-render .uikit-element-render {
+            #renderkit-body .uikit-element-render {
                 margin: 10px;
                 padding: 20px 16px;
             }
         }
 
-        #uikit-body-render .section-title {
+        #renderkit-body .section-title {
             display: inline-block;
             vertical-align: middle;
             position: relative;
@@ -88,12 +88,12 @@
         }
 
         @media only screen and (max-width: 1024px) {
-            #uikit-body-render .section-title {
+            #renderkit-body .section-title {
                 font-size: 30px;
             }
         }
 
-        #uikit-body-render .section-title::after {
+        #renderkit-body .section-title::after {
             content: '';
             position: absolute;
             left: 0;
@@ -103,7 +103,7 @@
             background-color: #5d5c56;
         }
 
-        #uikit-body-render .mixin-code {
+        #renderkit-body .mixin-code {
             display: block;
             font-family: monospace, monospace;
             font-size: 13px;
@@ -111,18 +111,18 @@
             margin-top: 3px;
         }
 
-        #uikit-body-render .mixin-code .include {
+        #renderkit-body .mixin-code .include {
             color: #c678dd;
         }
 
-        #uikit-body-render .mixin-code .mixin-name {
+        #renderkit-body .mixin-code .mixin-name {
             color: #61afef;
             margin-left: -4px;
         }
 
-        #uikit-body-render .sass-code,
-        #uikit-body-render .sass-file-name,
-        #uikit-body-render .template-class {
+        #renderkit-body .sass-code,
+        #renderkit-body .sass-file-name,
+        #renderkit-body .template-class {
             display: block;
             font-family: monospace, monospace;
             font-size: 13px;
@@ -132,14 +132,14 @@
             margin-top: 4px;
         }
 
-        #uikit-body-render .template-class {
+        #renderkit-body .template-class {
             font-weight: bold;
             color: #d19a66;
             margin-bottom: 10px;
             opacity: 1;
         }
 
-        #uikit-body-render .ui-snippet {
+        #renderkit-body .ui-snippet {
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
@@ -158,7 +158,7 @@
             overflow: auto;
         }
 
-        #uikit-body-render .hljs {
+        #renderkit-body .hljs {
             display: block;
             width: 100%;
             color: #abb2bf;
@@ -169,87 +169,87 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        #uikit-body-render .hljs-comment,
-        #uikit-body-render .hljs-quote {
+        #renderkit-body .hljs-comment,
+        #renderkit-body .hljs-quote {
             color: #5c6370;
             font-style: italic;
         }
 
-        #uikit-body-render .hljs-doctag,
-        #uikit-body-render .hljs-keyword,
-        #uikit-body-render .hljs-formula {
+        #renderkit-body .hljs-doctag,
+        #renderkit-body .hljs-keyword,
+        #renderkit-body .hljs-formula {
             color: #c678dd;
         }
 
-        #uikit-body-render .hljs-section,
-        #uikit-body-render .hljs-name,
-        #uikit-body-render .hljs-selector-tag,
-        #uikit-body-render .hljs-deletion,
-        #uikit-body-render .hljs-subst {
+        #renderkit-body .hljs-section,
+        #renderkit-body .hljs-name,
+        #renderkit-body .hljs-selector-tag,
+        #renderkit-body .hljs-deletion,
+        #renderkit-body .hljs-subst {
             color: #e06c75;
         }
 
-        #uikit-body-render .hljs-literal {
+        #renderkit-body .hljs-literal {
             color: #56b6c2;
         }
 
-        #uikit-body-render .hljs-string,
-        #uikit-body-render .hljs-regexp,
-        #uikit-body-render .hljs-addition,
-        #uikit-body-render .hljs-attribute,
-        #uikit-body-render .hljs-meta-string {
+        #renderkit-body .hljs-string,
+        #renderkit-body .hljs-regexp,
+        #renderkit-body .hljs-addition,
+        #renderkit-body .hljs-attribute,
+        #renderkit-body .hljs-meta-string {
             color: #98c379;
         }
 
-        #uikit-body-render .hljs-built_in,
-        #uikit-body-render .hljs-class .hljs-title {
+        #renderkit-body .hljs-built_in,
+        #renderkit-body .hljs-class .hljs-title {
             color: #e6c07b;
         }
 
-        #uikit-body-render .hljs-attr,
-        #uikit-body-render .hljs-variable,
-        #uikit-body-render .hljs-template-variable,
-        #uikit-body-render .hljs-type,
-        #uikit-body-render .hljs-selector-class,
-        #uikit-body-render .hljs-selector-attr,
-        #uikit-body-render .hljs-selector-pseudo,
-        #uikit-body-render .hljs-number {
+        #renderkit-body .hljs-attr,
+        #renderkit-body .hljs-variable,
+        #renderkit-body .hljs-template-variable,
+        #renderkit-body .hljs-type,
+        #renderkit-body .hljs-selector-class,
+        #renderkit-body .hljs-selector-attr,
+        #renderkit-body .hljs-selector-pseudo,
+        #renderkit-body .hljs-number {
             color: #d19a66;
         }
 
-        #uikit-body-render .hljs-symbol,
-        #uikit-body-render .hljs-bullet,
-        #uikit-body-render .hljs-link,
-        #uikit-body-render .hljs-meta,
-        #uikit-body-render .hljs-selector-id,
-        #uikit-body-render .hljs-title {
+        #renderkit-body .hljs-symbol,
+        #renderkit-body .hljs-bullet,
+        #renderkit-body .hljs-link,
+        #renderkit-body .hljs-meta,
+        #renderkit-body .hljs-selector-id,
+        #renderkit-body .hljs-title {
             color: #61aeee;
         }
 
-        #uikit-body-render .hljs-emphasis {
+        #renderkit-body .hljs-emphasis {
             font-style: italic;
         }
 
-        #uikit-body-render .hljs-strong {
+        #renderkit-body .hljs-strong {
             font-weight: bold;
         }
 
-        #uikit-body-render .hljs-link {
+        #renderkit-body .hljs-link {
             text-decoration: underline;
         }
 
-        #uikit-body-render #uikit-switch-item {
+        #renderkit-body #uikit-switch-item {
             position: relative;
         }
 
-        #uikit-body-render #uikit-switch-item .toggle {
+        #renderkit-body #uikit-switch-item .toggle {
             display: block;
             width: 51px;
             height: 31px;
         }
 
-        #uikit-body-render #uikit-switch-item .toggle label,
-        #uikit-body-render #uikit-switch-item .toggle i {
+        #renderkit-body #uikit-switch-item .toggle label,
+        #renderkit-body #uikit-switch-item .toggle i {
             display: block;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -257,7 +257,7 @@
             cursor: pointer;
         }
 
-        #uikit-body-render #uikit-switch-item .toggle label {
+        #renderkit-body #uikit-switch-item .toggle label {
             width: 51px;
             height: 32px;
             border-radius: 32px;
@@ -266,7 +266,7 @@
             transition: all 0.30s ease;
         }
 
-        #uikit-body-render #uikit-switch-item .toggle i {
+        #renderkit-body #uikit-switch-item .toggle i {
             position: absolute;
             top: 2px;
             left: 2px;
@@ -280,24 +280,24 @@
             transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
         }
 
-        #uikit-body-render #uikit-switch-item input[type="checkbox"] {
+        #renderkit-body #uikit-switch-item input[type="checkbox"] {
             display: none;
         }
 
-        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
+        #renderkit-body #uikit-switch-item input[type="checkbox"]:checked+.toggle label {
             border: 16px solid #d9d9d9;
         }
 
-        #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
+        #renderkit-body #uikit-switch-item input[type="checkbox"]:checked+.toggle i {
             left: 21px;
         }
 
-        #uikit-body-render .section-description .ui-snippet {
+        #renderkit-body .section-description .ui-snippet {
             max-width: 380px;
             margin-top: 10px;
         }
 
-        #uikit-body-render .section-description .info-label {
+        #renderkit-body .section-description .info-label {
             display: block;
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
@@ -309,7 +309,7 @@
             margin-top: 24px;
         }
 
-        #uikit-body-render .section-description .info {
+        #renderkit-body .section-description .docs-info {
             display: block;
             font-family: 'Montserrat', sans-serif;
             font-size: 11px;
@@ -320,7 +320,7 @@
             margin-top: 4px;
         }
 
-        #uikit-body-render .section-description .info a {
+        #renderkit-body .section-description .docs-info a {
             font-family: inherit;
             font-size: inherit;
             font-weight: normal;
@@ -337,12 +337,12 @@
 
 </head>
 
-<body id="uikit-body-render">
+<body id="renderkit-body">
 
     <main id="uikit-main">
 
         <style type="text/css">
-            #uikit-body-render #uikit-aside-nav {
+            #renderkit-body #uikit-aside-nav {
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -365,7 +365,7 @@
             }
 
             @media only screen and (max-width: 1024px) {
-                #uikit-body-render #uikit-aside-nav {
+                #renderkit-body #uikit-aside-nav {
                     position: static;
                     width: 100%;
                     height: 115px;
@@ -375,7 +375,7 @@
                 }
             }
 
-            #uikit-body-render #uikit-aside-nav .project-name {
+            #renderkit-body #uikit-aside-nav .project-name {
                 position: absolute;
                 top: 50vh;
                 left: 0;
@@ -402,7 +402,7 @@
             }
 
             @media only screen and (max-width: 1024px) {
-                #uikit-body-render #uikit-aside-nav .project-name {
+                #renderkit-body #uikit-aside-nav .project-name {
                     position: static;
                     font-size: 12px;
                     text-align: center;
@@ -414,7 +414,7 @@
                 }
             }
 
-            #uikit-body-render #uikit-aside-nav .github-icon {
+            #renderkit-body #uikit-aside-nav .github-icon {
                 position: absolute;
                 left: 50%;
                 bottom: 20px;
@@ -425,7 +425,7 @@
             }
 
             @media only screen and (max-width: 1024px) {
-                #uikit-body-render #uikit-aside-nav .github-icon {
+                #renderkit-body #uikit-aside-nav .github-icon {
                     position: relative;
                     left: auto;
                     bottom: auto;
@@ -433,7 +433,7 @@
                 }
             }
 
-            #uikit-body-render #uikit-aside-nav .github-link {
+            #renderkit-body #uikit-aside-nav .github-link {
                 display: block;
                 width: 100%;
                 height: 100%;
@@ -444,7 +444,7 @@
                 opacity: 0.65;
             }
 
-            #uikit-body-render #uikit-aside-nav canvas {
+            #renderkit-body #uikit-aside-nav canvas {
                 display: block;
                 vertical-align: bottom;
                 position: absolute;
@@ -454,7 +454,7 @@
             }
 
             @media only screen and (max-width: 1024px) {
-                #uikit-body-render #uikit-aside-nav canvas {
+                #renderkit-body #uikit-aside-nav canvas {
                     height: 115px !important;
                 }
             }
@@ -470,7 +470,7 @@
 
         </aside>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-        <script>
+        <script type="text/javascript">
             var bubbleConfig = {
                 "particles": {
                     "number": {
@@ -585,7 +585,7 @@
                     }
                 }
 
-                #uikit-body-render #sass-renderkit-docs {
+                #renderkit-body #sass-renderkit-docs {
                     position: fixed;
                     top: 30px;
                     right: 30px;
@@ -597,7 +597,7 @@
                 }
 
                 @media only screen and (max-width: 1024px) {
-                    #uikit-body-render #sass-renderkit-docs {
+                    #renderkit-body #sass-renderkit-docs {
                         top: 15px;
                         right: 15px;
                         width: 25px;
@@ -606,12 +606,12 @@
                 }
 
                 @media print {
-                    #uikit-body-render #sass-renderkit-docs {
+                    #renderkit-body #sass-renderkit-docs {
                         display: none;
                     }
                 }
 
-                #uikit-body-render #sass-renderkit-docs::after {
+                #renderkit-body #sass-renderkit-docs::after {
                     content: '';
                     position: absolute;
                     top: 0;
@@ -627,7 +627,7 @@
                     z-index: -1;
                 }
 
-                #uikit-body-render #sass-renderkit-docs a {
+                #renderkit-body #sass-renderkit-docs a {
                     position: relative;
                     display: block;
                     width: 100%;
@@ -637,8 +637,8 @@
                     color: inherit;
                 }
 
-                #uikit-body-render #sass-renderkit-docs a::before,
-                #uikit-body-render #sass-renderkit-docs a::after {
+                #renderkit-body #sass-renderkit-docs a::before,
+                #renderkit-body #sass-renderkit-docs a::after {
                     content: '';
                     position: absolute;
                     top: 50%;
@@ -650,7 +650,7 @@
                     margin-left: -5px;
                 }
 
-                #uikit-body-render #sass-renderkit-docs a::after {
+                #renderkit-body #sass-renderkit-docs a::after {
                     -webkit-transform: rotate(-90deg);
                     -ms-transform: rotate(-90deg);
                     transform: rotate(-90deg);
@@ -711,7 +711,7 @@
 
                 </div>
                 <style type="text/css">
-                    #uikit-body-render #font-list {
+                    #renderkit-body #font-list {
                         display: block;
                         width: 100%;
                         max-width: 1400px;
@@ -724,12 +724,12 @@
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #font-list {
+                        #renderkit-body #font-list {
                             margin: 40px auto 0;
                         }
                     }
 
-                    #uikit-body-render #font-list li {
+                    #renderkit-body #font-list li {
                         display: inline-block;
                         vertical-align: middle;
                         width: 285px;
@@ -743,12 +743,12 @@
                     }
 
                     @media only screen and (max-width: 640px) {
-                        #uikit-body-render #font-list li {
+                        #renderkit-body #font-list li {
                             width: 100%;
                         }
                     }
 
-                    #uikit-body-render #font-list li p {
+                    #renderkit-body #font-list li p {
                         display: block;
                         font-family: inherit;
                         font-size: 90px;
@@ -756,6 +756,7 @@
                         font-style: normal;
                         text-align: center;
                         text-transform: none;
+                        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
                         line-height: 1;
                         letter-spacing: normal;
                         color: inherit;
@@ -764,12 +765,12 @@
                     }
 
                     @media only screen and (max-width: 640px) {
-                        #uikit-body-render #font-list li p {
+                        #renderkit-body #font-list li p {
                             font-size: 70px;
                         }
                     }
 
-                    #uikit-body-render #font-list li .family-name {
+                    #renderkit-body #font-list li .family-name {
                         display: block;
                         font-family: inherit;
                         font-size: 14px;
@@ -781,25 +782,26 @@
                         padding: 4px 0 0 0;
                     }
 
-                    #uikit-body-render #font-list li a,
-                    #uikit-body-render #font-list li em {
+                    #renderkit-body #font-list li a,
+                    #renderkit-body #font-list li em {
                         font-size: 11px;
                         font-style: normal;
                         font-weight: normal;
                         letter-spacing: normal;
                         text-decoration: underline;
+                        text-shadow: none;
                     }
 
-                    #uikit-body-render #font-list li a {
+                    #renderkit-body #font-list li a {
                         -webkit-transition: opacity 0.3s ease;
                         transition: opacity 0.3s ease;
                     }
 
-                    #uikit-body-render #font-list li a:hover {
+                    #renderkit-body #font-list li a:hover {
                         opacity: 0.7;
                     }
 
-                    #uikit-body-render #font-list h2 {
+                    #renderkit-body #font-list h2 {
                         font-family: 'Abril Fatface', coursive;
                         font-size: 24px;
                         font-weight: bold;
@@ -812,7 +814,7 @@
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #font-list h2 {
+                        #renderkit-body #font-list h2 {
                             font-size: 20px;
                         }
                     }
@@ -841,7 +843,7 @@
                      * @function: getFontsInstalled
                      * @param: {document.styleSheets}
                      * @return: {String}
-                     * @description: Render the font Installed via @font-face or Google Fonts.
+                     * @description: Render the font installed via @font-face or Google Fonts.
                      * @author: mbertoldo@alpenite.com
                      */
 
@@ -978,9 +980,16 @@
                     <span class="sass-code">$header-styles</span>
 
 
+
+                    <span class="info-label">Info</span>
+
+
+                    <div class="docs-info">Go to hover or tap on any &quot;header&quot; to display all the information for font family, font size, line height and letter spacing.</div>
+
+
                 </div>
                 <style type="text/css">
-                    #uikit-body-render #typography-list {
+                    #renderkit-body #typography-list {
                         display: -webkit-flex;
                         display: -ms-flexbox;
                         display: flex;
@@ -993,29 +1002,29 @@
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #typography-list {
+                        #renderkit-body #typography-list {
                             display: block;
                             margin: 40px auto 0;
                         }
                     }
 
-                    #uikit-body-render #typography-list .paragraph-render {
+                    #renderkit-body #typography-list .paragraph-render {
                         margin-left: 50px;
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #typography-list .paragraph-render {
+                        #renderkit-body #typography-list .paragraph-render {
                             margin-left: 0;
                         }
                     }
 
-                    #uikit-body-render #typography-list .header-render {
+                    #renderkit-body #typography-list .header-render {
                         padding-right: 60px;
                         border-right: 1px solid #cdcdcd;
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #typography-list .header-render {
+                        #renderkit-body #typography-list .header-render {
                             margin-bottom: 15px;
                             padding-right: 0;
                             padding-bottom: 15px;
@@ -1024,11 +1033,11 @@
                         }
                     }
 
-                    #uikit-body-render #typography-list .paragraph-render p {
+                    #renderkit-body #typography-list .paragraph-render p {
                         max-width: 720px;
                     }
 
-                    #uikit-body-render #typography-list .header-info-style {
+                    #renderkit-body #typography-list .header-info-style {
                         visibility: hidden;
                         position: absolute;
                         min-width: 200px;
@@ -1053,7 +1062,7 @@
                         will-change: transform;
                     }
 
-                    #uikit-body-render #typography-list .header-info-style::after {
+                    #renderkit-body #typography-list .header-info-style::after {
                         content: '';
                         position: absolute;
                         left: 16px;
@@ -1066,36 +1075,42 @@
                         border-bottom-width: 0;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule {
+                    #renderkit-body #typography-list .font-style-rule {
                         display: block;
                         font-size: 13px;
-                        text-transform: none;
+                        font-family: inherit;
                         font-weight: normal;
                         line-height: normal;
                         letter-spacing: normal;
                         text-shadow: none;
+                        text-transform: none;
                         color: #fff;
                         margin: 0;
                         padding: 0;
                     }
 
-                    #uikit-body-render #typography-list ul.font-style-rule {
+                    #renderkit-body #typography-list ul.font-style-rule {
                         display: block;
                         margin-top: 10px;
+                        color: inherit;
+                        list-style-type: none;
                         padding: 0;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule li {
+                    #renderkit-body #typography-list .font-style-rule li {
                         display: inline-block;
+                        font-family: inherit;
+                        font-style: normal;
+                        font-weight: normal;
                         vertical-align: middle;
                         line-height: normal;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule li:not(:last-of-type) {
+                    #renderkit-body #typography-list .font-style-rule li:not(:last-of-type) {
                         margin-right: 10px;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule-animatable {
+                    #renderkit-body #typography-list .font-style-rule-animatable {
                         opacity: 0;
                         -webkit-transform: translate3d(0, 20px, 0);
                         transform: translate3d(0, 20px, 0);
@@ -1104,22 +1119,22 @@
                         transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule-animatable.delay-1 {
+                    #renderkit-body #typography-list .font-style-rule-animatable.delay-1 {
                         -webkit-transition-delay: 0.1s;
                         transition-delay: 0.1s;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule-animatable.delay-2 {
+                    #renderkit-body #typography-list .font-style-rule-animatable.delay-2 {
                         -webkit-transition-delay: 0.15s;
                         transition-delay: 0.15s;
                     }
 
-                    #uikit-body-render #typography-list .font-style-rule-animatable.delay-3 {
+                    #renderkit-body #typography-list .font-style-rule-animatable.delay-3 {
                         -webkit-transition-delay: 0.2s;
                         transition-delay: 0.2s;
                     }
 
-                    #uikit-body-render #typography-list .h {
+                    #renderkit-body #typography-list .h {
                         display: inline-block;
                         position: relative;
                         border-bottom: 1px solid transparent;
@@ -1127,7 +1142,7 @@
                         transition: border-color 0.3s ease;
                     }
 
-                    #uikit-body-render #typography-list .h:hover .header-info-style {
+                    #renderkit-body #typography-list .h:hover .header-info-style {
                         visibility: visible;
                         -webkit-transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
                         transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
@@ -1135,14 +1150,14 @@
                         z-index: 100;
                     }
 
-                    #uikit-body-render #typography-list .h:hover .font-style-rule-animatable {
+                    #renderkit-body #typography-list .h:hover .font-style-rule-animatable {
                         opacity: 1;
                         -webkit-transform: translate3d(0, 0, 0);
                         transform: translate3d(0, 0, 0);
                     }
 
-                    #uikit-body-render #typography-list .header,
-                    #uikit-body-render #typography-list .paragraph {
+                    #renderkit-body #typography-list .header,
+                    #renderkit-body #typography-list .paragraph {
                         display: block;
                         font-family: 'Montserrat', sans-serif;
                         font-size: 11px;
@@ -1157,7 +1172,7 @@
                         padding: 0;
                     }
 
-                    #uikit-body-render #typography-list .family {
+                    #renderkit-body .header-render .family {
                         display: inline-block;
                         vertical-align: middle;
                         width: 16px;
@@ -1169,7 +1184,7 @@
                         background-size: 16px 16px;
                     }
 
-                    #uikit-body-render #typography-list .size {
+                    #renderkit-body .header-render .size {
                         display: inline-block;
                         vertical-align: middle;
                         width: 20px;
@@ -1181,7 +1196,7 @@
                         background-size: 26px 20px;
                     }
 
-                    #uikit-body-render #typography-list .lineheight {
+                    #renderkit-body .header-render .lineheight {
                         display: inline-block;
                         vertical-align: middle;
                         width: 18px;
@@ -1193,13 +1208,84 @@
                         background-size: auto 17px;
                     }
 
-                    #uikit-body-render #typography-list .letterspacing {
+                    #renderkit-body .header-render .letterspacing {
                         display: inline-block;
                         vertical-align: middle;
                         width: 20px;
                         height: 20px;
                         line-height: 1;
                         background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9Ii01MDkuNSAtMjc4LjUgMjY1IDI2NiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtNTA5LjUgLTI3OC41IDI2NSAyNjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tNDk4LTI3M2MzLjMsMCw2LDIuNyw2LDZ2MjQzYzAsMy4zLTIuNyw2LTYsNmwwLDBjLTMuMywwLTYtMi43LTYtNnYtMjQzQy01MDQtMjcwLjMtNTAxLjMtMjczLTQ5OC0yNzNMLTQ5OC0yNzN6Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTS00OTgtMTIuNWMtNi4zLDAtMTEuNS01LjItMTEuNS0xMS41di0yNDNjMC02LjMsNS4yLTExLjUsMTEuNS0xMS41czExLjUsNS4yLDExLjUsMTEuNXYyNDNDLTQ4Ni41LTE3LjctNDkxLjctMTIuNS00OTgtMTIuNXogTS00OTgtMjY3LjVjLTAuMywwLTAuNSwwLjItMC41LDAuNXYyNDNjMCwwLjMsMC4yLDAuNSwwLjUsMC41czAuNS0wLjIsMC41LTAuNXYtMjQzQy00OTcuNS0yNjcuMy00OTcuNy0yNjcuNS00OTgtMjY3LjV6Ii8+PC9nPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tMjU2LTI3M2MzLjMsMCw2LDIuNyw2LDZ2MjQzYzAsMy4zLTIuNyw2LTYsNmwwLDBjLTMuMywwLTYtMi43LTYtNnYtMjQzQy0yNjItMjcwLjMtMjU5LjMtMjczLTI1Ni0yNzNMLTI1Ni0yNzN6Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTS0yNTYtMTIuNWMtNi4zLDAtMTEuNS01LjItMTEuNS0xMS41di0yNDNjMC02LjMsNS4yLTExLjUsMTEuNS0xMS41czExLjUsNS4yLDExLjUsMTEuNXYyNDNDLTI0NC41LTE3LjctMjQ5LjctMTIuNS0yNTYtMTIuNXogTS0yNTYtMjY3LjVjLTAuMywwLTAuNSwwLjItMC41LDAuNXYyNDNjMCwwLjMsMC4yLDAuNSwwLjUsMC41czAuNS0wLjIsMC41LTAuNXYtMjQzQy0yNTUuNS0yNjcuMy0yNTUuNy0yNjcuNS0yNTYtMjY3LjV6Ii8+PC9nPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tNDI3LTE4OC40YzIuNy0yLjcsNy4yLTIuNyw5LjksMGwwLDBjMi43LDIuNywyLjcsNy4yLDAsOS45bC0zOC45LDM4LjljLTIuNywyLjctNy4yLDIuNy05LjksMGwwLDBjLTIuNy0yLjctMi43LTcuMiwwLTkuOUwtNDI3LTE4OC40eiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tNDYwLjktMTMyLjFjLTMuMywwLTYuNS0xLjMtOC44LTMuN2MtNC45LTQuOS00LjktMTIuOCwwLTE3LjdsMzguOS0zOC45YzIuNC0yLjQsNS41LTMuNyw4LjgtMy43czYuNSwxLjMsOC44LDMuN2M0LjksNC45LDQuOSwxMi44LDAsMTcuN2wtMzguOSwzOC45Qy00NTQuNS0xMzMuNC00NTcuNi0xMzIuMS00NjAuOS0xMzIuMXogTS00MjIuMS0xODQuOWMtMC4zLDAtMC43LDAuMS0xLjEsMC40bC0zOC45LDM4LjljLTAuNiwwLjYtMC42LDEuNSwwLDIuMWMwLjQsMC40LDAuOCwwLjQsMS4xLDAuNHMwLjctMC4xLDEuMS0wLjRsMzguOS0zOC45YzAuNi0wLjYsMC42LTEuNSwwLTIuMUMtNDIxLjQtMTg0LjktNDIxLjgtMTg0LjktNDIyLjEtMTg0Ljl6Ii8+PC9nPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tNDE3LjEtMTA5LjVjMi43LDIuNywyLjcsNy4yLDAsOS45bDAsMGMtMi43LDIuNy03LjIsMi43LTkuOSwwbC0zOC45LTM4LjljLTIuNy0yLjctMi43LTcuMiwwLTkuOWwwLDBjMi43LTIuNyw3LjItMi43LDkuOSwwTC00MTcuMS0xMDkuNXoiLz48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNLTQyMi4xLTkyLjFjLTMuMywwLTYuNS0xLjMtOC44LTMuN2wtMzguOS0zOC45Yy00LjktNC45LTQuOS0xMi44LDAtMTcuN2MyLjQtMi40LDUuNS0zLjcsOC44LTMuN3M2LjUsMS4zLDguOCwzLjdsMzguOSwzOC45YzQuOSw0LjksNC45LDEyLjgsMCwxNy43Qy00MTUuNi05My40LTQxOC43LTkyLjEtNDIyLjEtOTIuMXogTS00NjAuOS0xNDQuOWMtMC4zLDAtMC43LDAuMS0xLjEsMC40Yy0wLjYsMC42LTAuNiwxLjUsMCwyLjFsMzguOSwzOC45YzAuNCwwLjQsMC44LDAuNCwxLjEsMC40czAuNy0wLjEsMS4xLTAuNGMwLjYtMC42LDAuNi0xLjUsMC0yLjFsLTM4LjktMzguOUMtNDYwLjItMTQ0LjktNDYwLjctMTQ0LjktNDYwLjktMTQ0Ljl6Ii8+PC9nPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tMzI4LTk5LjZjLTIuNywyLjctNy4yLDIuNy05LjksMGwwLDBjLTIuNy0yLjctMi43LTcuMiwwLTkuOWwzOC45LTM4LjljMi43LTIuNyw3LjItMi43LDkuOSwwbDAsMGMyLjcsMi43LDIuNyw3LjIsMCw5LjlMLTMyOC05OS42eiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tMzMyLjktOTIuMWMtMy4zLDAtNi41LTEuMy04LjgtMy43Yy00LjktNC45LTQuOS0xMi44LDAtMTcuN2wzOC45LTM4LjljMi40LTIuNCw1LjUtMy43LDguOC0zLjdzNi41LDEuMyw4LjgsMy43YzQuOSw0LjksNC45LDEyLjgsMCwxNy43bC0zOC45LDM4LjlDLTMyNi41LTkzLjQtMzI5LjYtOTIuMS0zMzIuOS05Mi4xeiBNLTI5NC4xLTE0NC45Yy0wLjMsMC0wLjcsMC4xLTEuMSwwLjRsLTM4LjksMzguOWMtMC42LDAuNi0wLjYsMS41LDAsMi4xYzAuNCwwLjQsMC44LDAuNCwxLjEsMC40czAuNy0wLjEsMS4xLTAuNGwzOC45LTM4LjljMC42LTAuNiwwLjYtMS41LDAtMi4xQy0yOTMuNC0xNDQuOS0yOTMuOC0xNDQuOS0yOTQuMS0xNDQuOXoiLz48L2c+PGc+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTS0zMzcuOS0xNzguNWMtMi43LTIuNy0yLjctNy4yLDAtOS45bDAsMGMyLjctMi43LDcuMi0yLjcsOS45LDBsMzguOSwzOC45YzIuNywyLjcsMi43LDcuMiwwLDkuOWwwLDBjLTIuNywyLjctNy4yLDIuNy05LjksMEwtMzM3LjktMTc4LjV6Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTS0yOTQuMS0xMzIuMWMtMy4zLDAtNi41LTEuMy04LjgtMy43bC0zOC45LTM4LjljLTQuOS00LjktNC45LTEyLjgsMC0xNy43YzIuNC0yLjQsNS41LTMuNyw4LjgtMy43czYuNSwxLjMsOC44LDMuN2wzOC45LDM4LjljNC45LDQuOSw0LjksMTIuOCwwLDE3LjdDLTI4Ny42LTEzMy40LTI5MC43LTEzMi4xLTI5NC4xLTEzMi4xeiBNLTMzMi45LTE4NC45Yy0wLjMsMC0wLjcsMC4xLTEuMSwwLjRjLTAuNiwwLjYtMC42LDEuNSwwLDIuMWwzOC45LDM4LjljMC40LDAuNCwwLjgsMC40LDEuMSwwLjRzMC43LTAuMSwxLjEtMC40YzAuNi0wLjYsMC42LTEuNSwwLTIuMWwtMzguOS0zOC45Qy0zMzIuMi0xODQuOS0zMzIuNy0xODQuOS0zMzIuOS0xODQuOXoiLz48L2c+PGc+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTS0yOTQuMS0xNDkuMmMyLjcsMCw0LjksMi40LDQuOSw1LjRsMCwwYzAsMy0yLjIsNS40LTQuOSw1LjRoLTE2Ni45Yy0yLjcsMC00LjktMi40LTQuOS01LjRsMCwwYzAtMywyLjItNS40LDQuOS01LjRILTI5NC4xeiIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0tMjk0LjEtMTMzaC0xNjYuOWMtNS44LDAtMTAuNC00LjktMTAuNC0xMC45czQuNy0xMC45LDEwLjQtMTAuOWgxNjYuOWM1LjgsMCwxMC40LDQuOSwxMC40LDEwLjlTLTI4OC4zLTEzMy0yOTQuMS0xMzN6Ii8+PC9nPjwvZz48L3N2Zz4=);
+                        background-size: 14px 14px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                    #renderkit-body .paragraph-info-style {
+                        font-size: 14px;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+
+                    #renderkit-body .paragraph-info-style p {
+                        display: inline-block;
+                        vertical-align: middle;
+                        line-height: 1.2;
+                    }
+
+                    #renderkit-body .paragraph-render i {
+                        opacity: 0.75;
+                    }
+
+                    #renderkit-body .paragraph-render .family {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 16px;
+                        height: 16px;
+                        line-height: 1;
+                        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTBweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBmaWxsPSIjNjY2NjY2IiBkPSJNNC4wMDksMS40NTVoNDIuMDE1bDAuMzQ0LDE1LjI5NmgtNC4xMDRsLTAuMzQ1LTQuMzY2Yy0wLjIxMS0yLjQ4NC0wLjk0Ni00LjI1Mi0yLjIxLTUuMjk1Yy0xLjI2Ni0xLjA0MS0zLjI5Mi0xLjU2Mi02LjA4NC0xLjU2MmMtMi4wMjcsMC0zLjQwNCwwLjM1Ny00LjEzNCwxLjA3N0MyOC43NjQsNy4zMjEsMjguNCw4LjgxNywyOC40LDExLjA5NGwtMC4wODYsMjcuOTI0YzAsMi4yMTksMC4zNjksMy42ODgsMS4xMDQsNC40MDVjMC43MzcsMC43MiwyLjE3OSwxLjA3Niw0LjMxOSwxLjA3NmgyLjk4NHY0LjA0NUgxMy4yNzhWNDQuNWgzLjQ3MmMxLjgzOSwwLDMuMTE4LTAuMzc3LDMuODQ3LTEuMTM1YzAuNzI3LTAuNzU2LDEuMDg5LTIuMjAxLDEuMDg5LTQuMzQ4VjEwLjk4MmMwLTIuMTY1LTAuMzcxLTMuNjE1LTEuMTE4LTQuMzQ5Yy0wLjc0Ny0wLjczNi0yLjEzNC0xLjEwNS00LjE2Mi0xLjEwNWMtMi43OTMsMC00LjgyMSwwLjUyMS02LjA4NCwxLjU2MmMtMS4yNjIsMS4wNDItMiwyLjgxLTIuMjExLDUuMjk0TDcuNzY3LDE2Ljc1SDMuNjM0TDQuMDA5LDEuNDU1eiIvPjwvZz48L3N2Zz4K);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 16px 16px;
+                    }
+
+                    #renderkit-body .paragraph-render .font-family {
+                        display: inline-block;
+                        vertical-align: middle;
+                        line-height: 1.2;
+                        margin-left: 2px;
+                    }
+
+                    #renderkit-body .paragraph-render .size {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 1;
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYWxxdWVfMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNnB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyNiAyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjYgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGZpbGw9IiM2NjY2NjYiIGQ9Ik0xMC4yMzYsMy42ODZoMTEuMTAxbDAuMDkxLDQuMDQyaC0xLjA4NGwtMC4wOTItMS4xNTRjLTAuMDU1LTAuNjU3LTAuMjQ5LTEuMTI0LTAuNTgzLTEuMzk5Yy0wLjMzNS0wLjI3NS0wLjg3LTAuNDEzLTEuNjA4LTAuNDEzYy0wLjUzNSwwLTAuODk4LDAuMDk1LTEuMDkxLDAuMjg0Yy0wLjE5MywwLjE4OS0wLjI4OSwwLjU4NS0wLjI4OSwxLjE4N2wtMC4wMjIsNy4zNzdjMCwwLjU4NiwwLjA5NywwLjk3NSwwLjI5MSwxLjE2NGMwLjE5NSwwLjE4OSwwLjU3NiwwLjI4MywxLjE0MiwwLjI4M2gwLjc4OHYxLjA2OWgtNi4xOTR2LTEuMDY4aDAuOTE3YzAuNDg1LDAsMC44MjQtMC4xLDEuMDE3LTAuMjk5YzAuMTkxLTAuMjAxLDAuMjg3LTAuNTgyLDAuMjg3LTEuMTQ5VjYuMjAzYzAtMC41NzItMC4wOTgtMC45NTUtMC4yOTQtMS4xNDljLTAuMTk4LTAuMTk0LTAuNTY1LTAuMjkyLTEuMTAxLTAuMjkyYy0wLjczOCwwLTEuMjczLDAuMTM4LTEuNjA3LDAuNDEzYy0wLjMzMywwLjI3NS0wLjUyOCwwLjc0Mi0wLjU4NCwxLjM5OWwtMC4wOTEsMS4xNTNoLTEuMDkyTDEwLjIzNiwzLjY4NnoiLz48L2c+PGc+PHBhdGggZmlsbD0iIzY2NjY2NiIgZD0iTTUuMzksOC45NThoNi4zOTZsMC4wNTIsMi4zMjloLTAuNjI0bC0wLjA1My0wLjY2NWMtMC4wMzItMC4zNzgtMC4xNDQtMC42NDctMC4zMzYtMC44MDZjLTAuMTkzLTAuMTU5LTAuNTAxLTAuMjM4LTAuOTI3LTAuMjM4Yy0wLjMwOCwwLTAuNTE4LDAuMDU0LTAuNjI4LDAuMTY0Yy0wLjExMSwwLjEwOS0wLjE2NywwLjMzNy0wLjE2NywwLjY4NEw5LjA5LDE0LjY3N2MwLDAuMzM4LDAuMDU2LDAuNTYyLDAuMTY4LDAuNjcxYzAuMTEzLDAuMTA5LDAuMzMyLDAuMTYzLDAuNjU4LDAuMTYzaDAuNDU0djAuNjE2SDYuODAxdi0wLjYxNUg3LjMzYzAuMjgsMCwwLjQ3NS0wLjA1OCwwLjU4NS0wLjE3M2MwLjExLTAuMTE1LDAuMTY2LTAuMzM1LDAuMTY2LTAuNjYydi00LjI2OGMwLTAuMzMtMC4wNTctMC41NS0wLjE3LTAuNjYyQzcuNzk3LDkuNjM1LDcuNTg2LDkuNTc5LDcuMjc3LDkuNTc5Yy0wLjQyNSwwLTAuNzMzLDAuMDc5LTAuOTI2LDAuMjM4Yy0wLjE5MiwwLjE1OS0wLjMwNCwwLjQyOC0wLjMzNiwwLjgwNmwtMC4wNTIsMC42NjVINS4zMzNMNS4zOSw4Ljk1OHoiLz48L2c+PC9zdmc+Cg==);
+                        background-position: -4px 0px;
+                        background-repeat: no-repeat;
+                        background-size: 26px 20px;
+                    }
+
+                    #renderkit-body .paragraph-render .lineheight {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 18px;
+                        height: 20px;
+                        line-height: 1;
+                        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAzNzAgMzg0LjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM3MCAzODQuNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM2NjY2NjY7c3Ryb2tlOiM2NjY2NjY7c3Ryb2tlLXdpZHRoOjExO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTMwNSw0OGMwLDMuMy0yLjcsNi02LDZINzZjLTMuMywwLTYtMi43LTYtNmwwLDBjMC0zLjMsMi43LTYsNi02aDIyM0MzMDIuMyw0MiwzMDUsNDQuNywzMDUsNDhMMzA1LDQ4eiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzA1LDMzMGMwLDMuMy0yLjcsNi02LDZINzZjLTMuMywwLTYtMi43LTYtNmwwLDBjMC0zLjMsMi43LTYsNi02aDIyM0MzMDIuMywzMjQsMzA1LDMyNi43LDMwNSwzMzBMMzA1LDMzMHoiCgkvPgo8Zz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzAuNCwxMTljMi43LDIuNywyLjcsNy4yLDAsOS45bDAsMGMtMi43LDIuNy03LjIsMi43LTkuOSwwTDE4MS42LDkwYy0yLjctMi43LTIuNy03LjIsMC05LjlsMCwwCgkJYzIuNy0yLjcsNy4yLTIuNyw5LjksMEwyMzAuNCwxMTl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTUxLjUsMTI4LjljLTIuNywyLjctNy4yLDIuNy05LjksMGwwLDBjLTIuNy0yLjctMi43LTcuMiwwLTkuOWwzOC45LTM4LjljMi43LTIuNyw3LjItMi43LDkuOSwwbDAsMAoJCWMyLjcsMi43LDIuNyw3LjIsMCw5LjlMMTUxLjUsMTI4Ljl6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTQxLjYsMjU4Yy0yLjctMi43LTIuNy03LjIsMC05LjlsMCwwYzIuNy0yLjcsNy4yLTIuNyw5LjksMGwzOC45LDM4LjljMi43LDIuNywyLjcsNy4yLDAsOS45bDAsMAoJCWMtMi43LDIuNy03LjIsMi43LTkuOSwwTDE0MS42LDI1OHoiLz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMjAuNSwyNDguMWMyLjctMi43LDcuMi0yLjcsOS45LDBsMCwwYzIuNywyLjcsMi43LDcuMiwwLDkuOWwtMzguOSwzOC45Yy0yLjcsMi43LTcuMiwyLjctOS45LDBsMCwwCgkJYy0yLjctMi43LTIuNy03LjIsMC05LjlMMjIwLjUsMjQ4LjF6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTkxLjIsMjkxLjljMCwyLjctMi40LDUtNS40LDVsMCwwYy0zLDAtNS40LTIuMi01LjQtNVY4NS4xYzAtMi43LDIuNC00LjksNS40LTQuOWwwLDBjMywwLDUuNCwyLjIsNS40LDQuOQoJCVYyOTEuOXoiLz4KPC9nPgo8L3N2Zz4K);
+                        background-position: left;
+                        background-repeat: no-repeat;
+                        background-size: auto 17px;
+                    }
+
+                    #renderkit-body .paragraph-render .letterspacing {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 1;
+                        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNjUgMjY2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNjUgMjY2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzY2NjY2Njt9Cjwvc3R5bGU+CjxnPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjUsNS41YzMuMywwLDYsMi43LDYsNnYyNDNjMCwzLjMtMi43LDYtNiw2bDAsMGMtMy4zLDAtNi0yLjctNi02di0yNDNDNS41LDguMiw4LjIsNS41LDExLjUsNS41TDExLjUsNS41egoJCSIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjUsMjY2QzUuMiwyNjYsMCwyNjAuOCwwLDI1NC41di0yNDNDMCw1LjIsNS4yLDAsMTEuNSwwUzIzLDUuMiwyMywxMS41djI0M0MyMywyNjAuOCwxNy44LDI2NiwxMS41LDI2NnoKCQkgTTExLjUsMTFjLTAuMywwLTAuNSwwLjItMC41LDAuNXYyNDNjMCwwLjMsMC4yLDAuNSwwLjUsMC41czAuNS0wLjIsMC41LTAuNXYtMjQzQzEyLDExLjIsMTEuOCwxMSwxMS41LDExeiIvPgo8L2c+CjxnPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI1My41LDUuNWMzLjMsMCw2LDIuNyw2LDZ2MjQzYzAsMy4zLTIuNyw2LTYsNmwwLDBjLTMuMywwLTYtMi43LTYtNnYtMjQzQzI0Ny41LDguMiwyNTAuMiw1LjUsMjUzLjUsNS41CgkJTDI1My41LDUuNXoiLz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNTMuNSwyNjZjLTYuMywwLTExLjUtNS4yLTExLjUtMTEuNXYtMjQzQzI0Miw1LjIsMjQ3LjIsMCwyNTMuNSwwUzI2NSw1LjIsMjY1LDExLjV2MjQzCgkJQzI2NSwyNjAuOCwyNTkuOCwyNjYsMjUzLjUsMjY2eiBNMjUzLjUsMTFjLTAuMywwLTAuNSwwLjItMC41LDAuNXYyNDNjMCwwLjMsMC4yLDAuNSwwLjUsMC41czAuNS0wLjIsMC41LTAuNXYtMjQzCgkJQzI1NCwxMS4yLDI1My44LDExLDI1My41LDExeiIvPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTgyLjUsOTAuMWMyLjctMi43LDcuMi0yLjcsOS45LDBsMCwwYzIuNywyLjcsMi43LDcuMiwwLDkuOWwtMzguOSwzOC45Yy0yLjcsMi43LTcuMiwyLjctOS45LDBsMCwwCgkJCWMtMi43LTIuNy0yLjctNy4yLDAtOS45TDgyLjUsOTAuMXoiLz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDguNiwxNDYuNGMtMy4zLDAtNi41LTEuMy04LjgtMy43Yy00LjktNC45LTQuOS0xMi44LDAtMTcuN2wzOC45LTM4LjljMi40LTIuNCw1LjUtMy43LDguOC0zLjcKCQkJczYuNSwxLjMsOC44LDMuN2M0LjksNC45LDQuOSwxMi44LDAsMTcuN2wtMzguOSwzOC45QzU1LDE0NS4xLDUxLjksMTQ2LjQsNDguNiwxNDYuNHogTTg3LjQsOTMuNmMtMC4zLDAtMC43LDAuMS0xLjEsMC40CgkJCWwtMzguOSwzOC45Yy0wLjYsMC42LTAuNiwxLjUsMCwyLjFjMC40LDAuNCwwLjgsMC40LDEuMSwwLjRzMC43LTAuMSwxLjEtMC40bDM4LjktMzguOWMwLjYtMC42LDAuNi0xLjUsMC0yLjEKCQkJQzg4LjEsOTMuNiw4Ny43LDkzLjYsODcuNCw5My42eiIvPgoJPC9nPgoJPGc+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTkyLjQsMTY5YzIuNywyLjcsMi43LDcuMiwwLDkuOWwwLDBjLTIuNywyLjctNy4yLDIuNy05LjksMEw0My42LDE0MGMtMi43LTIuNy0yLjctNy4yLDAtOS45bDAsMAoJCQljMi43LTIuNyw3LjItMi43LDkuOSwwTDkyLjQsMTY5eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04Ny40LDE4Ni40Yy0zLjMsMC02LjUtMS4zLTguOC0zLjdsLTM4LjktMzguOWMtNC45LTQuOS00LjktMTIuOCwwLTE3LjdjMi40LTIuNCw1LjUtMy43LDguOC0zLjcKCQkJczYuNSwxLjMsOC44LDMuN0w5Ni4yLDE2NWM0LjksNC45LDQuOSwxMi44LDAsMTcuN0M5My45LDE4NS4xLDkwLjgsMTg2LjQsODcuNCwxODYuNHogTTQ4LjYsMTMzLjZjLTAuMywwLTAuNywwLjEtMS4xLDAuNAoJCQljLTAuNiwwLjYtMC42LDEuNSwwLDIuMUw4Ni40LDE3NWMwLjQsMC40LDAuOCwwLjQsMS4xLDAuNHMwLjctMC4xLDEuMS0wLjRjMC42LTAuNiwwLjYtMS41LDAtMi4xTDQ5LjcsMTM0CgkJCUM0OS4zLDEzMy42LDQ4LjgsMTMzLjYsNDguNiwxMzMuNnoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xODEuNSwxNzguOWMtMi43LDIuNy03LjIsMi43LTkuOSwwbDAsMGMtMi43LTIuNy0yLjctNy4yLDAtOS45bDM4LjktMzguOWMyLjctMi43LDcuMi0yLjcsOS45LDBsMCwwCgkJCWMyLjcsMi43LDIuNyw3LjIsMCw5LjlMMTgxLjUsMTc4Ljl6Ii8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTE3Ni42LDE4Ni40Yy0zLjMsMC02LjUtMS4zLTguOC0zLjdjLTQuOS00LjktNC45LTEyLjgsMC0xNy43bDM4LjktMzguOWMyLjQtMi40LDUuNS0zLjcsOC44LTMuNwoJCQlzNi41LDEuMyw4LjgsMy43YzQuOSw0LjksNC45LDEyLjgsMCwxNy43bC0zOC45LDM4LjlDMTgzLDE4NS4xLDE3OS45LDE4Ni40LDE3Ni42LDE4Ni40eiBNMjE1LjQsMTMzLjZjLTAuMywwLTAuNywwLjEtMS4xLDAuNAoJCQlsLTM4LjksMzguOWMtMC42LDAuNi0wLjYsMS41LDAsMi4xYzAuNCwwLjQsMC44LDAuNCwxLjEsMC40czAuNy0wLjEsMS4xLTAuNGwzOC45LTM4LjljMC42LTAuNiwwLjYtMS41LDAtMi4xCgkJCUMyMTYuMSwxMzMuNiwyMTUuNywxMzMuNiwyMTUuNCwxMzMuNnoiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNzEuNiwxMDBjLTIuNy0yLjctMi43LTcuMiwwLTkuOWwwLDBjMi43LTIuNyw3LjItMi43LDkuOSwwbDM4LjksMzguOWMyLjcsMi43LDIuNyw3LjIsMCw5LjlsMCwwCgkJCWMtMi43LDIuNy03LjIsMi43LTkuOSwwTDE3MS42LDEwMHoiLz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjE1LjQsMTQ2LjRjLTMuMywwLTYuNS0xLjMtOC44LTMuN2wtMzguOS0zOC45Yy00LjktNC45LTQuOS0xMi44LDAtMTcuN2MyLjQtMi40LDUuNS0zLjcsOC44LTMuNwoJCQlzNi41LDEuMyw4LjgsMy43bDM4LjksMzguOWM0LjksNC45LDQuOSwxMi44LDAsMTcuN0MyMjEuOSwxNDUuMSwyMTguOCwxNDYuNCwyMTUuNCwxNDYuNHogTTE3Ni42LDkzLjZjLTAuMywwLTAuNywwLjEtMS4xLDAuNAoJCQljLTAuNiwwLjYtMC42LDEuNSwwLDIuMWwzOC45LDM4LjljMC40LDAuNCwwLjgsMC40LDEuMSwwLjRzMC43LTAuMSwxLjEtMC40YzAuNi0wLjYsMC42LTEuNSwwLTIuMUwxNzcuNyw5NAoJCQlDMTc3LjMsOTMuNiwxNzYuOCw5My42LDE3Ni42LDkzLjZ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjE1LjQsMTI5LjNjMi43LDAsNC45LDIuNCw0LjksNS40bDAsMGMwLDMtMi4yLDUuNC00LjksNS40SDQ4LjVjLTIuNywwLTQuOS0yLjQtNC45LTUuNGwwLDAKCQkJYzAtMywyLjItNS40LDQuOS01LjRIMjE1LjR6Ii8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIxNS40LDE0NS41SDQ4LjVjLTUuOCwwLTEwLjQtNC45LTEwLjQtMTAuOXM0LjctMTAuOSwxMC40LTEwLjloMTY2LjljNS44LDAsMTAuNCw0LjksMTAuNCwxMC45CgkJCVMyMjEuMiwxNDUuNSwyMTUuNCwxNDUuNXoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K);
                         background-size: 14px 14px;
                         background-repeat: no-repeat;
                         background-position: center;
@@ -1266,170 +1352,227 @@
                         }
                     }
 
+                    /**
+                     * @function paragraphInfoStyle
+                     * @description: generate a info style for global paragraph.
+                     * @author: mbertoldo@alpenite.com
+                     */
+
+                    function paragraphInfoStyle() {
+                        var paragraph = document.querySelector('#typography-list .p');
+                        var fontFamilySelector = document.querySelector('#typography-list .paragraph-info-style .font-family');
+                        var fontSizeSelector = document.querySelector('#typography-list .paragraph-info-style .font-size-value');
+                        var lineHeightSelector = document.querySelector('#typography-list .paragraph-info-style .line-height-value');
+                        var letterSpacingSelector = document.querySelector('#typography-list .paragraph-info-style .letter-spacing-value');
+
+                        var fontFamily = window.getComputedStyle(paragraph, null).getPropertyValue('font-family');
+                        var fontSize = window.getComputedStyle(paragraph, null).getPropertyValue('font-size');
+                        var lineHeight = window.getComputedStyle(paragraph, null).getPropertyValue('line-height');
+                        var letterSpacing = window.getComputedStyle(paragraph, null).getPropertyValue('letter-spacing');
+
+                        fontFamilySelector.appendChild(document.createTextNode(fontFamily));
+                        fontSizeSelector.appendChild(document.createTextNode(fontSize));
+                        lineHeightSelector.appendChild(document.createTextNode(lineHeight));
+                        letterSpacingSelector.appendChild(document.createTextNode(letterSpacing));
+                    }
+
                     window.addEventListener('load', function() {
                         headersTooltip();
+                        paragraphInfoStyle();
                     });
                 </script>
 
                 <div id="typography-list" class="typography-list">
                     <div class="header-render">
 
-                        <b class="header">h1 &amp; .h1</b>
-                        <h1 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h1>
+                        <div class="header-containter">
+                            <b class="header">h1 &amp; .h1</b>
+                            <h1 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h1>
+                        </div>
 
-                        <b class="header">h2 &amp; .h2</b>
-                        <h2 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h2>
+                        <div class="header-containter">
+                            <b class="header">h2 &amp; .h2</b>
+                            <h2 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h2>
+                        </div>
 
-                        <b class="header">h3 &amp; .h3</b>
-                        <h3 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h3>
+                        <div class="header-containter">
+                            <b class="header">h3 &amp; .h3</b>
+                            <h3 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h3>
+                        </div>
 
-                        <b class="header">h4 &amp; .h4</b>
-                        <h4 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h4>
+                        <div class="header-containter">
+                            <b class="header">h4 &amp; .h4</b>
+                            <h4 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h4>
+                        </div>
 
-                        <b class="header">h5 &amp; .h5</b>
-                        <h5 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h5>
+                        <div class="header-containter">
+                            <b class="header">h5 &amp; .h5</b>
+                            <h5 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h5>
+                        </div>
 
-                        <b class="header">h6 &amp; .h6</b>
-                        <h6 class="h">
-                            Header.
-                            <div class="header-info-style">
-                                <p class="font-style-rule font-style-rule-animatable">
-                                    <i class="family"></i>
-                                    <span class="font-family-value"></span>
-                                </p>
-                                <ul class="font-style-rule">
-                                    <li class="font-style-rule-animatable delay-1">
-                                        <i class="size"></i>
-                                        <span class="font-size-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-2">
-                                        <i class="lineheight"></i>
-                                        <span class="line-height-value"></span>
-                                    </li>
-                                    <li class="font-style-rule-animatable delay-3">
-                                        <i class="letterspacing"></i>
-                                        <span class="letter-spacing-value"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </h6>
+                        <div class="header-containter">
+                            <b class="header">h6 &amp; .h6</b>
+                            <h6 class="h">
+                                Header.
+                                <div class="header-info-style">
+                                    <p class="font-style-rule font-style-rule-animatable">
+                                        <i class="family"></i>
+                                        <span class="font-family-value"></span>
+                                    </p>
+                                    <ul class="font-style-rule">
+                                        <li class="font-style-rule-animatable delay-1">
+                                            <i class="size"></i>
+                                            <span class="font-size-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-2">
+                                            <i class="lineheight"></i>
+                                            <span class="line-height-value"></span>
+                                        </li>
+                                        <li class="font-style-rule-animatable delay-3">
+                                            <i class="letterspacing"></i>
+                                            <span class="letter-spacing-value"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </h6>
+                        </div>
 
                     </div>
                     <div class="paragraph-render">
-                        <b class="paragraph">p</b>
+                        <b class="paragraph">p &amp; a</b>
                         <p class="p">
-                            <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
+                            <q>Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. <b>Brownie</b> gingerbread sesame snaps toffee chupa chups <em>sweet</em> roll. Bonbon wafer ice cream gummies chocolate bar <b>candy sweet</b> roll apple pie. Chupa chups <a href="javascript:void(0)">linked</a> jelly-o candy canes toffee. <em>Sugar</em> plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.</q>
                         </p>
+                        <div class="paragraph-info-style">
+                            <p class="family-render">
+                                <i class="family"></i>
+                                <span class="font-family"></span>
+                            </p>
+                            <ul class="font-style-rule">
+                                <li>
+                                    <i class="size"></i>
+                                    <p class="font-size-value"></p>
+                                </li>
+                                <li>
+                                    <i class="lineheight"></i>
+                                    <p class="line-height-value"></p>
+                                </li>
+                                <li>
+                                    <i class="letterspacing"></i>
+                                    <p class="letter-spacing-value"></p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -1491,7 +1634,7 @@
 
                 </div>
                 <style type="text/css">
-                    #uikit-body-render #palette-list {
+                    #renderkit-body #palette-list {
                         width: 100%;
                         max-width: 1100px;
                         text-align: center;
@@ -1499,7 +1642,7 @@
                         padding: 0;
                     }
 
-                    #uikit-body-render #palette-list>li {
+                    #renderkit-body #palette-list>li {
                         display: inline-table;
                         position: relative;
                         list-style: none;
@@ -1525,7 +1668,7 @@
                         will-change: transform;
                     }
 
-                    #uikit-body-render #palette-list>li::after {
+                    #renderkit-body #palette-list>li::after {
                         content: '';
                         position: absolute;
                         top: 0;
@@ -1546,22 +1689,22 @@
                         will-change: transform, opacity;
                     }
 
-                    #uikit-body-render #palette-list>li:hover {
+                    #renderkit-body #palette-list>li:hover {
                         -webkit-transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
                         transform: scale3d(1.02, 1.02, 1.02) translate3d(0, 0, 0);
                     }
 
-                    #uikit-body-render #palette-list>li:hover::after {
+                    #renderkit-body #palette-list>li:hover::after {
                         opacity: 0.85;
                         -webkit-transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
                         transform: scale3d(1.08, 1.08, 1.08) translate3d(0, 0, 0);
                     }
 
-                    #uikit-body-render #palette-list>li:last-of-type {
+                    #renderkit-body #palette-list>li:last-of-type {
                         margin-bottom: 0;
                     }
 
-                    #uikit-body-render #palette-list>li p {
+                    #renderkit-body #palette-list>li p {
                         display: table-cell;
                         vertical-align: middle;
                         font-family: 'Montserrat', sans-serif;
@@ -1574,7 +1717,7 @@
                         padding: 0;
                     }
 
-                    #uikit-body-render #palette-list>li strong {
+                    #renderkit-body #palette-list>li strong {
                         font-family: 'Montserrat', sans-serif;
                         font-size: 16px;
                         font-weight: bold;
@@ -1585,8 +1728,8 @@
                         padding: 0;
                     }
 
-                    #uikit-body-render #palette-list>li span,
-                    #uikit-body-render #palette-list>li em {
+                    #renderkit-body #palette-list>li span,
+                    #renderkit-body #palette-list>li em {
                         display: block;
                         font-family: 'Montserrat', sans-serif;
                         font-style: normal;
@@ -1595,7 +1738,7 @@
                         color: inherit;
                     }
 
-                    #uikit-body-render #palette-list>li em {
+                    #renderkit-body #palette-list>li em {
                         font-size: 10px;
                     }
                 </style>
@@ -1762,6 +1905,7 @@
 
             </section>
 
+
             <section class="uikit-element-render">
                 <h2 class="section-title">XY Grid</h2>
                 <div class="section-description">
@@ -1789,7 +1933,7 @@
                     <span class="info-label">Variabiles</span>
 
 
-                    <span class="sass-code">$flex:true</span>
+                    <span class="sass-code">$global-flexbox: true</span>
 
 
                     <span class="sass-code">$grid-margin-gutters</span>
@@ -1801,39 +1945,39 @@
 
                     <span class="info-label">Info</span>
 
-                    <div class="info">
-                        Compared to the original grid, the <strong>"rem"</strong> conversion for the various gutters has been removed. <br /> For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html"
+                    <div class="docs-info">
+                        Compared to the original Foundation grid, the <strong>"rem"</strong> conversion for the various gutters has been removed. <br /> For a complete documentation on the use of this grid system and mixins consult <a href="https://foundation.zurb.com/sites/docs/xy-grid.html"
                             target="_blank">this page</a>.
                     </div>
 
                 </div>
 
                 <style type="text/css">
-                    #uikit-body-render .render-grid-content {
+                    #renderkit-body .render-grid-content {
                         margin-top: 80px;
                     }
 
                     @media only screen and (max-width: 640px) {
-                        #uikit-body-render .render-grid-content {
+                        #renderkit-body .render-grid-content {
                             margin-top: 40px;
                         }
                     }
 
-                    #uikit-body-render .render-grid-content .grid-x .cell {
+                    #renderkit-body .render-grid-content .grid-x .cell {
                         min-height: 80px;
                         background-color: #d9d9d9;
                         border-radius: 3px;
                         margin-bottom: 30px;
                     }
 
-                    #uikit-body-render .grid-container .max-width-count {
+                    #renderkit-body .grid-container .max-width-count {
                         display: block;
                         text-align: center;
                         font-size: 12px;
                         color: #3bccff;
                     }
 
-                    #uikit-body-render .grid-container .width-count {
+                    #renderkit-body .grid-container .width-count {
                         display: block;
                         position: relative;
                         width: 100%;
@@ -1842,8 +1986,8 @@
                         margin-top: 10px;
                     }
 
-                    #uikit-body-render .grid-container .width-count::before,
-                    #uikit-body-render .grid-container .width-count::after {
+                    #renderkit-body .grid-container .width-count::before,
+                    #renderkit-body .grid-container .width-count::after {
                         content: '';
                         position: absolute;
                         top: -10px;
@@ -1852,11 +1996,11 @@
                         background-color: inherit;
                     }
 
-                    #uikit-body-render .grid-container .width-count::before {
+                    #renderkit-body .grid-container .width-count::before {
                         left: 0;
                     }
 
-                    #uikit-body-render .grid-container .width-count::after {
+                    #renderkit-body .grid-container .width-count::after {
                         right: 0;
                     }
                 </style>
@@ -1929,7 +2073,7 @@
 
                     <span class="info-label">Info</span>
 
-                    <div class="info">
+                    <div class="docs-info">
                         If you set the variable: <strong>$flex</strong> to true in addition to the XY-Grid, there are flexbox utilities. They can be integrated with the XY-Grid as explained on <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html"
                             target="_blank">this page</a>. <br /> In addition to these classes, has been added the possibility to enable or not the <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html#source-ordering" target="_blank">source ordering</a>.
                         Here are some examples of use with the classes to be called in our templates. <br /> The classes in these examples were applied only to the parent container.
@@ -1937,12 +2081,12 @@
 
                 </div>
                 <style type="text/css">
-                    #uikit-body-render #foundation-flex-classes {
+                    #renderkit-body #foundation-flex-classes {
                         max-width: 1200px;
                         margin: 60px auto 30px;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .flex-cell {
+                    #renderkit-body #foundation-flex-classes .flex-cell {
                         position: relative;
                         width: 180px;
                         height: 180px;
@@ -1952,21 +2096,21 @@
                         border-radius: 6px;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .flex-cell,
-                    #uikit-body-render #foundation-flex-classes .flex-class-group {
+                    #renderkit-body #foundation-flex-classes .flex-cell,
+                    #renderkit-body #foundation-flex-classes .flex-class-group {
                         margin: 15px;
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #foundation-flex-classes .flex-class-group {
+                        #renderkit-body #foundation-flex-classes .flex-class-group {
                             margin-bottom: 40px;
                             padding-bottom: 15px;
                             border-bottom: 1px solid #cdcdcd;
                         }
                     }
 
-                    #uikit-body-render #foundation-flex-classes .flex-cell::before,
-                    #uikit-body-render #foundation-flex-classes .flex-cell::after {
+                    #renderkit-body #foundation-flex-classes .flex-cell::before,
+                    #renderkit-body #foundation-flex-classes .flex-cell::after {
                         content: '';
                         position: absolute;
                         -webkit-flex-basis: 0;
@@ -1981,21 +2125,21 @@
                         z-index: 1;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .flex-cell::before {
+                    #renderkit-body #foundation-flex-classes .flex-cell::before {
                         top: calc(50% - 0.5px);
                         left: 0;
                         width: 100%;
                         height: 1px;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .flex-cell::after {
+                    #renderkit-body #foundation-flex-classes .flex-cell::after {
                         top: 0;
                         left: calc(50% - 0.5px);
                         width: 1px;
                         height: 100%;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .template-class {
+                    #renderkit-body #foundation-flex-classes .template-class {
                         display: block;
                         margin-top: 10px;
                         margin-bottom: 0;
@@ -2003,12 +2147,12 @@
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render #foundation-flex-classes .template-class {
+                        #renderkit-body #foundation-flex-classes .template-class {
                             text-align: left;
                         }
                     }
 
-                    #uikit-body-render #foundation-flex-classes .uikit-flex-children {
+                    #renderkit-body #foundation-flex-classes .uikit-flex-children {
                         position: relative;
                         width: 50px;
                         height: 50px;
@@ -2023,7 +2167,7 @@
                         z-index: 10;
                     }
 
-                    #uikit-body-render #foundation-flex-classes .uikit-flex-children>span {
+                    #renderkit-body #foundation-flex-classes .uikit-flex-children>span {
                         display: block;
                         font-family: 'Montserrat', sans-serif;
                         font-size: 10px;
@@ -2098,6 +2242,7 @@
 
             </section>
 
+
             <section class="uikit-element-render">
                 <h2 class="section-title">Form</h2>
                 <div class="section-description">
@@ -2108,6 +2253,16 @@
                     <span class="mixin-code">
     <span class="include">@include</span>
                     <span class="mixin-name">form-style</span>
+                    </span>
+
+
+
+                    <span class="info-label">Related mixin</span>
+
+
+                    <span class="mixin-code">
+    <span class="include">@include</span>
+                    <span class="mixin-name">scss-normalize</span>
                     </span>
 
 
@@ -2134,7 +2289,7 @@
 
                     <span class="info-label">Info</span>
 
-                    <div class="info">
+                    <div class="docs-info">
                         The layout of the fields is just an example. It's necessary to create additional classes to create the desired effect. All configurations instead of fields are to be kept as a reference model. <br /> To maintain accessibility it
                         was decided not to remove the basic outline of the fields, but to make it visible only if the event is intercepted by the keyboard thanks to <a href="https://github.com/ten1seven/what-input" target="_blank">this plugin</a>.
                     </div>
@@ -2143,38 +2298,38 @@
 
 
                 <style type="text/css">
-                    #uikit-body-render .uikit-form-render {
+                    #renderkit-body .uikit-form-render {
                         max-width: 680px;
                         margin: 60px auto 0;
                     }
 
-                    #uikit-body-render .uikit-form::before,
-                    #uikit-body-render .uikit-form::after {
+                    #renderkit-body .uikit-form::before,
+                    #renderkit-body .uikit-form::after {
                         content: '';
                         display: table;
                     }
 
-                    #uikit-body-render .uikit-form::after {
+                    #renderkit-body .uikit-form::after {
                         clear: both;
                     }
 
-                    #uikit-body-render .uikit-form-render .uikit-form {
+                    #renderkit-body .uikit-form-render .uikit-form {
                         margin-left: -10px;
                         margin-right: -10px;
                     }
 
-                    #uikit-body-render .uikit-form .form-row {
+                    #renderkit-body .uikit-form .form-row {
                         margin-bottom: 20px;
                     }
 
-                    #uikit-body-render .uikit-form .form-row.wide {
+                    #renderkit-body .uikit-form .form-row.wide {
                         float: left;
                         width: 100%;
                         padding-left: 10px;
                         padding-right: 10px;
                     }
 
-                    #uikit-body-render .uikit-form .form-row.split {
+                    #renderkit-body .uikit-form .form-row.split {
                         float: left;
                         width: 50%;
                         padding-left: 10px;
@@ -2182,31 +2337,31 @@
                     }
 
                     @media only screen and (max-width: 1024px) {
-                        #uikit-body-render .uikit-form .form-row.split {
+                        #renderkit-body .uikit-form .form-row.split {
                             width: 100%;
                         }
                     }
 
-                    #uikit-body-render .uikit-form .form-row.no-gutter {
+                    #renderkit-body .uikit-form .form-row.no-gutter {
                         padding-left: 0;
                         padding-right: 0;
                     }
 
-                    #uikit-body-render .uikit-form .form-label {
+                    #renderkit-body .uikit-form .form-label {
                         display: block;
                     }
 
-                    #uikit-body-render .uikit-form .radio-group .input-radio:not(:last-of-type) {
+                    #renderkit-body .uikit-form .radio-group .input-radio:not(:last-of-type) {
                         margin-right: 10px;
                     }
 
-                    #uikit-body-render .uikit-form .checkbox-radio-group .form-label {
+                    #renderkit-body .uikit-form .checkbox-radio-group .form-label {
                         margin-bottom: 20px;
                         padding-bottom: 10px;
                         border-bottom: 1px solid #cdcdcd;
                     }
 
-                    #uikit-body-render .ui-form-snippet .ui-snippet {
+                    #renderkit-body .ui-form-snippet .ui-snippet {
                         max-width: 680px;
                         margin-left: auto;
                         margin-right: auto;
@@ -2312,10 +2467,10 @@
 
                     <span class="info-label">Toggle true tone</span>
 
+                    <div class="docs-info">
+                        Toggle for show true tone on icons. <br /> (Only if the color is available)
+                    </div>
                     <div id="uikit-switch-render">
-                        <div class="info">
-                            Toggle for show true tone on icons. <br /> (Only if the color is available)
-                        </div>
 
                         <div id="uikit-switch-item">
                             <input type="checkbox" id="uikit-toggle-truetone">
@@ -2333,7 +2488,7 @@
 
                     <span class="info-label">SVG collection</span>
 
-                    <div class="info">
+                    <div class="docs-info">
                         To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.
                     </div>
 
@@ -2342,7 +2497,7 @@
                     <span class="info-label">Info</span>
 
 
-                    <div class="info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div>
+                    <div class="docs-info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div>
 
 
 
@@ -2383,7 +2538,7 @@
 
 
                 <style type="text/css">
-                    #uikit-body-render #uikit-svg-list {
+                    #renderkit-body #uikit-svg-list {
                         display: block;
                         width: 100%;
                         max-width: 1400px;
@@ -2399,7 +2554,7 @@
                         user-select: none;
                     }
 
-                    #uikit-body-render #uikit-svg-list li {
+                    #renderkit-body #uikit-svg-list li {
                         display: inline-block;
                         position: relative;
                         vertical-align: middle;
@@ -2411,7 +2566,7 @@
                         padding: 16px 16px 25px;
                     }
 
-                    #uikit-body-render #uikit-svg-list li svg.visuallyhidden {
+                    #renderkit-body #uikit-svg-list li svg.visuallyhidden {
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -2422,7 +2577,7 @@
                         padding: 0;
                     }
 
-                    #uikit-body-render #uikit-svg-list li svg {
+                    #renderkit-body #uikit-svg-list li svg {
                         display: inline-block;
                         vertical-align: middle;
                         position: relative;
@@ -2432,44 +2587,40 @@
                         fill: #666;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.facebook {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.facebook {
                         fill: #3b5999;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.twitter {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.twitter {
                         fill: #55acee;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.linkedin {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.linkedin {
                         fill: #0077B5;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.youtube {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.youtube {
                         fill: #cd201f;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.pinterest {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.pinterest {
                         fill: #bd081c;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.google-plus {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.google-plus {
                         fill: #dd4b39;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.gplus {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.gplus {
                         fill: #dd4b39;
                     }
 
-                    #uikit-body-render #uikit-svg-list.true-tone li svg.instagram {
+                    #renderkit-body #uikit-svg-list.true-tone li svg.instagram {
                         fill: url(#instagram-gradient);
                     }
 
-                    #uikit-body-render #uikit-switch-render {
+                    #renderkit-body #uikit-switch-render {
                         margin-top: 5px;
-                    }
-
-                    #uikit-body-render #uikit-switch-render .info {
-                        margin-bottom: 10px;
                     }
                 </style>
 
@@ -2480,14 +2631,14 @@
                     <li>
 
                         <svg role="img" title="facebook" class="facebook">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"/></use>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#facebook"></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="google-plus" class="google-plus">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"/></use>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#google-plus"></use>
             </svg>
                     </li>
 
@@ -2504,21 +2655,21 @@
                 </svg>
 
                         <svg role="img" title="instagram" class="instagram">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"/></use>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#instagram"></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="twitter" class="twitter">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"/></use>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#twitter"></use>
             </svg>
                     </li>
 
                     <li>
 
                         <svg role="img" title="youtube" class="youtube">
-                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"/></use>
+                <use xlink:href="renderkit/svg/symbol/sprite.svg#youtube"></use>
             </svg>
                     </li>
 
@@ -2544,8 +2695,6 @@
     <script>
         hljs.initHighlightingOnLoad();
     </script>
-
-
 </body>
 
 </html>

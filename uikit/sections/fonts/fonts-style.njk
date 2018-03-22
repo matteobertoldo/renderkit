@@ -1,5 +1,5 @@
 <style type="text/css">
-#uikit-body-render #font-list {
+#renderkit-body #font-list {
     display: block;
     width: 100%;
     max-width: 1400px;
@@ -12,12 +12,12 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render #font-list {
+    #renderkit-body #font-list {
         margin: 40px auto 0;
     }
 }
 
-#uikit-body-render #font-list li {
+#renderkit-body #font-list li {
     display: inline-block;
     vertical-align: middle;
     width: 285px;
@@ -31,12 +31,12 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.medium + 'px'}}) {
-    #uikit-body-render #font-list li {
+    #renderkit-body #font-list li {
         width: 100%;
     }
 }
 
-#uikit-body-render #font-list li p {
+#renderkit-body #font-list li p {
     display: block;
     font-family: inherit;
     font-size: 90px;
@@ -44,6 +44,7 @@
     font-style: normal;
     text-align: center;
     text-transform: none;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
     line-height: 1;
     letter-spacing: normal;
     color: inherit;
@@ -52,12 +53,12 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.medium + 'px'}}) {
-    #uikit-body-render #font-list li p {
+    #renderkit-body #font-list li p {
         font-size: 70px;
     }
 }
 
-#uikit-body-render #font-list li .family-name {
+#renderkit-body #font-list li .family-name {
     display: block;
     font-family: inherit;
     font-size: 14px;
@@ -69,25 +70,26 @@
     padding: 4px 0 0 0;
 }
 
-#uikit-body-render #font-list li a,
-#uikit-body-render #font-list li em {
+#renderkit-body #font-list li a,
+#renderkit-body #font-list li em {
     font-size: 11px;
     font-style: normal;
     font-weight: normal;
     letter-spacing: normal;
     text-decoration: underline;
+    text-shadow: none;
 }
 
-#uikit-body-render #font-list li a {
+#renderkit-body #font-list li a {
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
 }
 
-#uikit-body-render #font-list li a:hover {
+#renderkit-body #font-list li a:hover {
     opacity: 0.7;
 }
 
-#uikit-body-render #font-list h2 {
+#renderkit-body #font-list h2 {
     font-family: 'Abril Fatface', coursive;
     font-size: 24px;
     font-weight: bold;
@@ -100,7 +102,7 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render #font-list h2 {
+    #renderkit-body #font-list h2 {
         font-size: 20px;
     }
 }

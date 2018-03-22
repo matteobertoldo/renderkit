@@ -58,7 +58,32 @@ function headersTooltip() {
     }
 }
 
+/**
+ * @function paragraphInfoStyle
+ * @description: generate a info style for global paragraph.
+ * @author: mbertoldo@alpenite.com
+ */
+
+function paragraphInfoStyle() {
+    var paragraph = document.querySelector('#typography-list .p');
+    var fontFamilySelector = document.querySelector('#typography-list .paragraph-info-style .font-family');
+    var fontSizeSelector = document.querySelector('#typography-list .paragraph-info-style .font-size-value');
+    var lineHeightSelector = document.querySelector('#typography-list .paragraph-info-style .line-height-value');
+    var letterSpacingSelector = document.querySelector('#typography-list .paragraph-info-style .letter-spacing-value');
+
+    var fontFamily = window.getComputedStyle(paragraph, null).getPropertyValue('font-family');
+    var fontSize = window.getComputedStyle(paragraph, null).getPropertyValue('font-size');
+    var lineHeight = window.getComputedStyle(paragraph, null).getPropertyValue('line-height');
+    var letterSpacing = window.getComputedStyle(paragraph, null).getPropertyValue('letter-spacing');
+
+    fontFamilySelector.appendChild(document.createTextNode(fontFamily));
+    fontSizeSelector.appendChild(document.createTextNode(fontSize));
+    lineHeightSelector.appendChild(document.createTextNode(lineHeight));
+    letterSpacingSelector.appendChild(document.createTextNode(letterSpacing));
+}
+
 window.addEventListener('load', function() {
     headersTooltip();
+    paragraphInfoStyle();
 });
 </script>

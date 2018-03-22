@@ -1,38 +1,38 @@
 {% set rowclass = uikit.section.form.rowclass %}
 {% set labelclass = uikit.section.form.labelclass %}
 <style type="text/css">
-#uikit-body-render .uikit-form-render {
+#renderkit-body .uikit-form-render {
     max-width: 680px;
     margin: 60px auto 0;
 }
 
-#uikit-body-render .uikit-form::before,
-#uikit-body-render .uikit-form::after {
+#renderkit-body .uikit-form::before,
+#renderkit-body .uikit-form::after {
     content: '';
     display: table;
 }
 
-#uikit-body-render .uikit-form::after {
+#renderkit-body .uikit-form::after {
     clear: both;
 }
 
-#uikit-body-render .uikit-form-render .uikit-form {
+#renderkit-body .uikit-form-render .uikit-form {
     margin-left: -10px;
     margin-right: -10px;
 }
 
-#uikit-body-render .uikit-form .{{rowclass}} {
+#renderkit-body .uikit-form .{{rowclass}} {
     margin-bottom: 20px;
 }
 
-#uikit-body-render .uikit-form .{{rowclass}}.wide {
+#renderkit-body .uikit-form .{{rowclass}}.wide {
     float: left;
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-#uikit-body-render .uikit-form .{{rowclass}}.split {
+#renderkit-body .uikit-form .{{rowclass}}.split {
     float: left;
     width: 50%;
     padding-left: 10px;
@@ -40,31 +40,31 @@
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #uikit-body-render .uikit-form .{{rowclass}}.split {
+    #renderkit-body .uikit-form .{{rowclass}}.split {
         width: 100%;
     }
 }
 
-#uikit-body-render .uikit-form .{{rowclass}}.no-gutter {
+#renderkit-body .uikit-form .{{rowclass}}.no-gutter {
     padding-left: 0;
     padding-right: 0;
 }
 
-#uikit-body-render .uikit-form .{{labelclass}} {
+#renderkit-body .uikit-form .{{labelclass}} {
     display: block;
 }
 
-#uikit-body-render .uikit-form .radio-group .input-radio:not(:last-of-type) {
+#renderkit-body .uikit-form .radio-group .input-radio:not(:last-of-type) {
     margin-right: 10px;
 }
 
-#uikit-body-render .uikit-form .checkbox-radio-group .{{labelclass}} {
+#renderkit-body .uikit-form .checkbox-radio-group .{{labelclass}} {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #cdcdcd;
 }
 
-#uikit-body-render .ui-form-snippet .ui-snippet {
+#renderkit-body .ui-form-snippet .ui-snippet {
     max-width: 680px;
     margin-left: auto;
     margin-right: auto;
