@@ -1229,6 +1229,9 @@
                     #renderkit-body .paragraph-info-style p {
                         display: inline-block;
                         vertical-align: middle;
+                        max-width: none;
+                        font-size: 13px;
+                        text-transform: none;
                         line-height: 1.2;
                     }
 
@@ -1741,6 +1744,33 @@
                     #renderkit-body #palette-list>li em {
                         font-size: 10px;
                     }
+
+                    #renderkit-body #palette-list h2 {
+                        font-family: 'Abril Fatface', coursive;
+                        font-size: 24px;
+                        font-weight: bold;
+                        text-transform: none;
+                        text-shadow: none;
+                        letter-spacing: 0.031em;
+                        line-height: 1.4;
+                        color: #1a1a1c;
+                        opacity: 0.75;
+                    }
+
+                    #renderkit-body #palette-list h2 .selector {
+                        color: #d19a66;
+                    }
+
+                    #renderkit-body #palette-list h2 .scss {
+                        color: #e31d79;
+                        opacity: 0.7;
+                    }
+
+                    @media only screen and (max-width: 1024px) {
+                        #renderkit-body #palette-list h2 {
+                            font-size: 20px;
+                        }
+                    }
                 </style>
 
                 <script type="text/javascript">
@@ -1895,8 +1925,19 @@
                         }
                     }
 
+                    function warnPaletteEmpty() {
+                        var paletteList = document.getElementById('palette-list');
+                        var h2 = document.createElement('h2');
+                        h2.innerHTML = 'It looks like you have not installed any palette color. <br /> Set on your <code class="scss">css/scss</code> some class like <code class="selector">.palette-color-primary</code>.';
+
+                        if (paletteList.children.length == 0) {
+                            paletteList.appendChild(h2);
+                        }
+                    }
+
                     window.addEventListener('load', function() {
                         createPaletteElements(/^\.palette-color-[^ ]+$/, 'color');
+                        warnPaletteEmpty();
                     });
                 </script>
 

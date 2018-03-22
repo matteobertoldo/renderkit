@@ -149,7 +149,18 @@ function createPaletteElements(selector, style, sheet) {
     }
 }
 
+function warnPaletteEmpty() {
+    var paletteList = document.getElementById('palette-list');
+    var h2 = document.createElement('h2');
+    h2.innerHTML = 'It looks like you have not installed any palette color. <br /> Set on your <code class="scss">css/scss</code> some class like <code class="selector">.palette-color-primary</code>.';
+
+    if (paletteList.children.length == 0) {
+        paletteList.appendChild(h2);
+    }
+}
+
 window.addEventListener('load', function() {
     createPaletteElements(/^\.palette-color-[^ ]+$/, 'color');
+    warnPaletteEmpty();
 });
 </script>

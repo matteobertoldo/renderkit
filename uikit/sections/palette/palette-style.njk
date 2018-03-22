@@ -106,4 +106,31 @@
 #renderkit-body #palette-list > li em {
     font-size: 10px;
 }
+
+#renderkit-body #palette-list h2 {
+    font-family: 'Abril Fatface', coursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: none;
+    text-shadow: none;
+    letter-spacing: 0.031em;
+    line-height: 1.4;
+    color: #1a1a1c;
+    opacity: 0.75;
+}
+
+#renderkit-body #palette-list h2 .selector {
+    color: #d19a66;
+}
+
+#renderkit-body #palette-list h2 .scss {
+    color: #e31d79;
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
+    #renderkit-body #palette-list h2 {
+        font-size: 20px;
+    }
+}
 </style>
