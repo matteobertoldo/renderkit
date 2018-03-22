@@ -11,7 +11,7 @@
     "gplus": '#dd4b39'
 } %}
 <style type="text/css">
-#uikit-body-render #uikit-svg-list {
+#renderkit-body #uikit-svg-list {
     display: block;
     width: 100%;
     max-width: 1400px;
@@ -27,7 +27,7 @@
     user-select: none;
 }
 
-#uikit-body-render #uikit-svg-list li {
+#renderkit-body #uikit-svg-list li {
     display: inline-block;
     position: relative;
     vertical-align: middle;
@@ -39,7 +39,7 @@
     padding: 16px 16px 25px;
 }
 
-#uikit-body-render #uikit-svg-list li svg.visuallyhidden {
+#renderkit-body #uikit-svg-list li svg.visuallyhidden {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,7 +50,7 @@
     padding: 0;
 }
 
-#uikit-body-render #uikit-svg-list li svg {
+#renderkit-body #uikit-svg-list li svg {
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -61,20 +61,16 @@
 }
 
 {% for svgicons, fill in socialfill %}
-    #uikit-body-render #uikit-svg-list.true-tone li svg.{{svgicons}} {
+    #renderkit-body #uikit-svg-list.true-tone li svg.{{svgicons}} {
         fill: {{fill}};
     }
 {% endfor %}
 
-#uikit-body-render #uikit-svg-list.true-tone li svg.instagram {
+#renderkit-body #uikit-svg-list.true-tone li svg.instagram {
     fill: url(#instagram-gradient);
 }
 
-#uikit-body-render #uikit-switch-render  {
+#renderkit-body #uikit-switch-render  {
     margin-top: 5px;
-}
-
-#uikit-body-render #uikit-switch-render .info {
-    margin-bottom: 10px;
 }
 </style>

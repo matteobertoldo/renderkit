@@ -11,7 +11,7 @@
         box-sizing: border-box;
     }
 
-    #uikit-body-render {
+    #renderkit-body {
         margin: 0 !important;
         padding: 0 !important;
         -webkit-font-smoothing: antialiased;
@@ -23,7 +23,7 @@
         transform: none !important;
     }
 
-    #uikit-body-render #uikit-render-content {
+    #renderkit-body #uikit-render-content {
         overflow: hidden;
         {% if uikit.aside.show %}
             padding-left: 80px;
@@ -31,31 +31,31 @@
     }
 
     @media print {
-        #uikit-body-render #uikit-render-content {
+        #renderkit-body #uikit-render-content {
             padding-left: 0;
         }
     }
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-        #uikit-body-render #uikit-render-content {
+        #renderkit-body #uikit-render-content {
             padding-left: 0;
         }
     }
 
-    #uikit-body-render .uikit-element-render {
+    #renderkit-body .uikit-element-render {
         background-color: #f5f5f5;
         margin: 15px;
         padding: 50px 30px;
     }
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-        #uikit-body-render .uikit-element-render {
+        #renderkit-body .uikit-element-render {
             margin: 10px;
             padding: 20px 16px;
         }
     }
 
-    #uikit-body-render .section-title {
+    #renderkit-body .section-title {
         display: inline-block;
         vertical-align: middle;
         position: relative;
@@ -78,12 +78,12 @@
     }
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-        #uikit-body-render .section-title {
+        #renderkit-body .section-title {
             font-size: 30px;
         }
     }
 
-    #uikit-body-render .section-title::after {
+    #renderkit-body .section-title::after {
         content: '';
         position: absolute;
         left: 0;
@@ -93,7 +93,7 @@
         background-color: #5d5c56;
     }
 
-    #uikit-body-render .mixin-code {
+    #renderkit-body .mixin-code {
         display: block;
         font-family: monospace, monospace;
         font-size: 13px;
@@ -101,18 +101,18 @@
         margin-top: 3px;
     }
 
-    #uikit-body-render .mixin-code .include {
+    #renderkit-body .mixin-code .include {
         color: #c678dd;
     }
 
-    #uikit-body-render .mixin-code .mixin-name {
+    #renderkit-body .mixin-code .mixin-name {
         color: #61afef;
         margin-left: -4px;
     }
 
-    #uikit-body-render .sass-code,
-    #uikit-body-render .sass-file-name,
-    #uikit-body-render .template-class {
+    #renderkit-body .sass-code,
+    #renderkit-body .sass-file-name,
+    #renderkit-body .template-class {
         display: block;
         font-family: monospace, monospace;
         font-size: 13px;
@@ -122,14 +122,14 @@
         margin-top: 4px;
     }
 
-    #uikit-body-render .template-class {
+    #renderkit-body .template-class {
         font-weight: bold;
         color: #d19a66;
         margin-bottom: 10px;
         opacity: 1;
     }
 
-    #uikit-body-render .ui-snippet {
+    #renderkit-body .ui-snippet {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
@@ -148,7 +148,7 @@
         overflow: auto;
     }
 
-    #uikit-body-render .hljs {
+    #renderkit-body .hljs {
         display: block;
         width: 100%;
         color: #abb2bf;
@@ -159,87 +159,87 @@
         -webkit-overflow-scrolling: touch;
     }
 
-    #uikit-body-render .hljs-comment,
-    #uikit-body-render .hljs-quote {
+    #renderkit-body .hljs-comment,
+    #renderkit-body .hljs-quote {
         color: #5c6370;
         font-style: italic;
     }
 
-    #uikit-body-render .hljs-doctag,
-    #uikit-body-render .hljs-keyword,
-    #uikit-body-render .hljs-formula {
+    #renderkit-body .hljs-doctag,
+    #renderkit-body .hljs-keyword,
+    #renderkit-body .hljs-formula {
         color: #c678dd;
     }
 
-    #uikit-body-render .hljs-section,
-    #uikit-body-render .hljs-name,
-    #uikit-body-render .hljs-selector-tag,
-    #uikit-body-render .hljs-deletion,
-    #uikit-body-render .hljs-subst {
+    #renderkit-body .hljs-section,
+    #renderkit-body .hljs-name,
+    #renderkit-body .hljs-selector-tag,
+    #renderkit-body .hljs-deletion,
+    #renderkit-body .hljs-subst {
         color: #e06c75;
     }
 
-    #uikit-body-render  .hljs-literal {
+    #renderkit-body  .hljs-literal {
         color: #56b6c2;
     }
 
-    #uikit-body-render .hljs-string,
-    #uikit-body-render .hljs-regexp,
-    #uikit-body-render .hljs-addition,
-    #uikit-body-render .hljs-attribute,
-    #uikit-body-render .hljs-meta-string {
+    #renderkit-body .hljs-string,
+    #renderkit-body .hljs-regexp,
+    #renderkit-body .hljs-addition,
+    #renderkit-body .hljs-attribute,
+    #renderkit-body .hljs-meta-string {
         color: #98c379;
     }
 
-    #uikit-body-render .hljs-built_in,
-    #uikit-body-render .hljs-class .hljs-title {
+    #renderkit-body .hljs-built_in,
+    #renderkit-body .hljs-class .hljs-title {
         color: #e6c07b;
     }
 
-    #uikit-body-render .hljs-attr,
-    #uikit-body-render .hljs-variable,
-    #uikit-body-render .hljs-template-variable,
-    #uikit-body-render .hljs-type,
-    #uikit-body-render .hljs-selector-class,
-    #uikit-body-render .hljs-selector-attr,
-    #uikit-body-render .hljs-selector-pseudo,
-    #uikit-body-render .hljs-number {
+    #renderkit-body .hljs-attr,
+    #renderkit-body .hljs-variable,
+    #renderkit-body .hljs-template-variable,
+    #renderkit-body .hljs-type,
+    #renderkit-body .hljs-selector-class,
+    #renderkit-body .hljs-selector-attr,
+    #renderkit-body .hljs-selector-pseudo,
+    #renderkit-body .hljs-number {
         color: #d19a66;
     }
 
-    #uikit-body-render .hljs-symbol,
-    #uikit-body-render .hljs-bullet,
-    #uikit-body-render .hljs-link,
-    #uikit-body-render .hljs-meta,
-    #uikit-body-render .hljs-selector-id,
-    #uikit-body-render .hljs-title {
+    #renderkit-body .hljs-symbol,
+    #renderkit-body .hljs-bullet,
+    #renderkit-body .hljs-link,
+    #renderkit-body .hljs-meta,
+    #renderkit-body .hljs-selector-id,
+    #renderkit-body .hljs-title {
         color: #61aeee;
     }
 
-    #uikit-body-render .hljs-emphasis {
+    #renderkit-body .hljs-emphasis {
         font-style: italic;
     }
 
-    #uikit-body-render .hljs-strong {
+    #renderkit-body .hljs-strong {
         font-weight: bold;
     }
 
-    #uikit-body-render .hljs-link {
+    #renderkit-body .hljs-link {
         text-decoration: underline;
     }
 
-    #uikit-body-render #uikit-switch-item {
+    #renderkit-body #uikit-switch-item {
         position: relative;
     }
 
-    #uikit-body-render #uikit-switch-item .toggle {
+    #renderkit-body #uikit-switch-item .toggle {
         display: block;
     	width: 51px;
     	height: 31px;
     }
 
-    #uikit-body-render #uikit-switch-item .toggle label,
-    #uikit-body-render #uikit-switch-item .toggle i {
+    #renderkit-body #uikit-switch-item .toggle label,
+    #renderkit-body #uikit-switch-item .toggle i {
         display: block;
         -webkit-box-sizing: border-box;
     	box-sizing: border-box;
@@ -247,7 +247,7 @@
         cursor: pointer;
     }
 
-    #uikit-body-render #uikit-switch-item .toggle label {
+    #renderkit-body #uikit-switch-item .toggle label {
     	width: 51px;
     	height: 32px;
     	border-radius: 32px;
@@ -256,7 +256,7 @@
     	transition: all 0.30s ease;
     }
 
-    #uikit-body-render #uikit-switch-item .toggle i {
+    #renderkit-body #uikit-switch-item .toggle i {
     	position: absolute;
     	top: 2px;
     	left: 2px;
@@ -270,24 +270,24 @@
     	transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
     }
 
-    #uikit-body-render #uikit-switch-item input[type="checkbox"] {
+    #renderkit-body #uikit-switch-item input[type="checkbox"] {
     	display: none;
     }
 
-    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle label {
+    #renderkit-body #uikit-switch-item input[type="checkbox"]:checked + .toggle label {
     	border: 16px solid #d9d9d9;
     }
 
-    #uikit-body-render #uikit-switch-item input[type="checkbox"]:checked + .toggle i {
+    #renderkit-body #uikit-switch-item input[type="checkbox"]:checked + .toggle i {
     	left: 21px;
     }
 
-    #uikit-body-render .section-description .ui-snippet {
+    #renderkit-body .section-description .ui-snippet {
         max-width: 380px;
         margin-top: 10px;
     }
 
-    #uikit-body-render .section-description .info-label {
+    #renderkit-body .section-description .info-label {
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
@@ -299,7 +299,7 @@
         margin-top: 24px;
     }
 
-    #uikit-body-render .section-description .info {
+    #renderkit-body .section-description .docs-info {
         display: block;
         font-family: 'Montserrat', sans-serif;
         font-size: 11px;
@@ -310,7 +310,7 @@
         margin-top: 4px;
     }
 
-    #uikit-body-render .section-description .info a {
+    #renderkit-body .section-description .docs-info a {
         font-family: inherit;
         font-size: inherit;
         font-weight: normal;

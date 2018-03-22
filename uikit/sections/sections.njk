@@ -1,7 +1,11 @@
 {% include "sections/fonts/fonts.njk" %}
 {% include "sections/typography/typography.njk" %}
 {% include "sections/palette/palette.njk" %}
-{% include "sections/xy-grid/xy-grid.njk" %}
-{% include "sections/flexbox/flexbox.njk" %}
+{% if uikit.section.globalflexbox %}
+    {% include "sections/xy-grid/xy-grid.njk" %}
+    {% include "sections/flexbox/flexbox.njk" %}
+{% else %}
+    {% include "sections/float-grid/float-grid.njk" %}
+{% endif %}
 {% include "sections/form/form.njk" %}
 {% include "sections/svg/svg.njk" %}

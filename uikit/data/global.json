@@ -24,6 +24,7 @@
             "xxlarge": 1440
         },
         "section": {
+            "globalflexbox": true,
             "xygrid": {
                 "gridcolumns": 12,
                 "gridcontainer": "1200px"

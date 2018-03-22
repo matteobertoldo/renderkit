@@ -5,7 +5,7 @@
 @import 'base/base';
 @import 'config/config';
 
-@mixin renderkit() {
+@mixin scss-renderkit() {
     @include global-fonts;
     @include scss-normalize;
     @include media-print;

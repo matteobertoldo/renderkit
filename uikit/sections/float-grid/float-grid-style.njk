@@ -1,31 +1,31 @@
 {% set rowclass = uikit.section.floatgrid.rowclass %}
 {% set columnclass = uikit.section.floatgrid.columnclass %}
 <style type="text/css">
-#uikit-body-render .render-grid-content {
+#renderkit-body .render-grid-content {
     margin-top: 80px;
 }
 
 @media only screen and (max-width: {{uikit.breakpoint.medium + 'px'}}) {
-    #uikit-body-render .render-grid-content {
+    #renderkit-body .render-grid-content {
         margin-top: 40px;
     }
 }
 
-#uikit-body-render .render-grid-content .{{columnclass}} .content {
+#renderkit-body .render-grid-content .{{columnclass}} .content {
     min-height: 80px;
     background-color: #d9d9d9;
     border-radius: 3px;
     margin-bottom: 30px;
 }
 
-#uikit-body-render .{{rowclass}} .max-width-count {
+#renderkit-body .{{rowclass}} .max-width-count {
     display: block;
     text-align: center;
     font-size: 12px;
     color: #3bccff;
 }
 
-#uikit-body-render .{{rowclass}} .width-count {
+#renderkit-body .{{rowclass}} .width-count {
     display: block;
     position: relative;
     width: 100%;
@@ -34,8 +34,8 @@
     margin-top: 10px;
 }
 
-#uikit-body-render .{{rowclass}} .width-count::before,
-#uikit-body-render .{{rowclass}} .width-count::after {
+#renderkit-body .{{rowclass}} .width-count::before,
+#renderkit-body .{{rowclass}} .width-count::after {
     content: '';
     position: absolute;
     top: -10px;
@@ -44,11 +44,11 @@
     background-color: inherit;
 }
 
-#uikit-body-render .{{rowclass}} .width-count::before {
+#renderkit-body .{{rowclass}} .width-count::before {
     left: 0;
 }
 
-#uikit-body-render .{{rowclass}} .width-count::after {
+#renderkit-body .{{rowclass}} .width-count::after {
     right: 0;
 }
 </style>

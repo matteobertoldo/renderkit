@@ -22,7 +22,7 @@
             <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
         {% endif %}
     </head>
-    <body id="uikit-body-render">
+    <body id="renderkit-body">
         {% import "layout/macro/snippet.njk" as snippet %}
         <main id="uikit-main">
             {% if uikit.aside.show %}
@@ -37,6 +37,5 @@
         </main>
         <script src="{{uikit.js.highlightpath}}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
-        {% include "layout/ui/ui-scripts.njk" %}
     </body>
 </html>
