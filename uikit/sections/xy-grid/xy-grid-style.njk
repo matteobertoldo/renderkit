@@ -1,4 +1,4 @@
-{% set cellcolor = page.uikit.flexgrid.gridcolors %}
+{% set cellcolor = uikit.section.xygrid.cellcolor %}
 <style type="text/css">
 #renderkit-body .render-grid-content {
     margin-top: 80px;
@@ -12,7 +12,7 @@
 
 #renderkit-body .render-grid-content .grid-x .cell {
     min-height: 80px;
-    background-color: #d9d9d9;
+    background-color: {{cellcolor}};
     border-radius: 3px;
     margin-bottom: 30px;
 }

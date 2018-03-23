@@ -6,7 +6,6 @@
  */
 /*@global fonts*/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface");
-/*normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css*/
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -185,7 +184,7 @@ svg {
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  top: -0.0625em;
+  top: -0.063em;
   width: 100%;
   height: 100%;
   fill: currentColor;
@@ -263,7 +262,7 @@ button::-moz-focus-inner,
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: 0.3125em 0.625em 0.75em;
+  padding: 0.313em 0.625em 0.750em;
 }
 
 legend {
@@ -540,23 +539,53 @@ p {
   text-align: justify;
 }
 
+@media print, only screen and (min-width: 641px) {
+  .medium-text-left {
+    text-align: left;
+  }
+  .medium-text-right {
+    text-align: right;
+  }
+  .medium-text-center {
+    text-align: center;
+  }
+  .medium-text-justify {
+    text-align: justify;
+  }
+}
+
+@media print, only screen and (min-width: 1025px) {
+  .large-text-left {
+    text-align: left;
+  }
+  .large-text-right {
+    text-align: right;
+  }
+  .large-text-center {
+    text-align: center;
+  }
+  .large-text-justify {
+    text-align: justify;
+  }
+}
+
+.text-uppercase {
+  text-align: uppercase;
+}
+
+.text-lowercase {
+  text-align: lowercase;
+}
+
+.text-capitalize {
+  text-align: capitalize;
+}
+
 .text-ellipsis {
   white-space: nowrap;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.text-lowercase {
-  text-transform: lowercase;
-}
-
-.text-capitalize {
-  text-transform: capitalize;
 }
 
 /*@accessibility classes & pseudo elem*/

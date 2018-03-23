@@ -691,8 +691,7 @@
                 height: auto;
                 text-align: center;
                 letter-spacing: normal;
-                color: #1a1a1c;
-                opacity: 0.75;
+                color: #404041;
                 margin: 0;
                 padding: 16px 16px 25px;
             }
@@ -745,6 +744,7 @@
                 letter-spacing: normal;
                 text-decoration: underline;
                 text-shadow: none;
+                color: #404041;
             }
 
             #renderkit-body #font-list li a {
@@ -1392,7 +1392,8 @@
         </section>
         <section class="uikit-element-render">
             <h2 class="section-title">Palette &amp; Colors</h2>
-            <div class="section-description"> <span class="info-label">Primary Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">colors-palette</span></span> <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span>                <span class="mixin-name">manage-palette</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$palette-color</span> <span class="info-label">Template classes</span> <span class="template-class">.palette-color-$key-palette-color</span>                <span class="template-class">.background-color-$key-palette-color</span> <span class="info-label">Function for catch HEX</span>
+            <div class="section-description"> <span class="info-label">Primary Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">colors-palette</span></span> <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span>                <span class="mixin-name">manage-palette</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$palette-color</span> <span class="info-label">Template classes</span> <span class="template-class">.palette-color-$key-palette-color</span>                <span class="template-class">.background-color-$key-palette-color</span> <span class="info-label">Info</span>
+                <div class="docs-info"> Click or tap on the "palette dots" for copy the <strong>HEX</strong>.</div> <span class="info-label">Function for catch HEX</span>
                 <div class="ui-docs-code">
                     <pre class="ui-snippet">
 <code class="scss">.selector {
@@ -1400,8 +1401,7 @@
 }
 </code>
 </pre>
-                </div> <span class="info-label">Info</span>
-                <div class="docs-info"> Click or tap on the "palette dots" for copy the <strong>HEX</strong>.</div>
+                </div>
             </div>
             <style type="text/css">
                 #renderkit-body #palette-list {
@@ -1436,6 +1436,12 @@
                     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     will-change: transform;
+                }
+
+                #renderkit-body #palette-list>li.transparent {
+                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxpdmVsbG9fMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDEwIDEwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMCAxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNENkQ2RDY7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxyZWN0IGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHg9IjUiIGNsYXNzPSJzdDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHg9IjUiIHk9IjUiIGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHk9IjUiIGNsYXNzPSJzdDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K);
+                    background-repeat: repeat;
+                    background-size: 10px 10px;
                 }
 
                 #renderkit-body #palette-list>li::after {
@@ -1655,6 +1661,7 @@
                         if (selector.test(rule.selectorText)) {
                             var selectors = rule.selectorText.replace(/\.palette-color-/g, '');
                             var rgb = rule.style[style].split(',');
+                            var transparent = false;
 
                             if (rgb.length > 1) {
                                 var r = rgb[0].replace('rgb(', '');
@@ -1665,6 +1672,15 @@
                             } else {
                                 var hex = color_convert.to_hex(rgb[0]);
                                 var hextext = rgb[0];
+
+                                if (rgb[0] == 'transparent' || rgb[0] == '') {
+                                    transparent = true;
+                                    hex = '#FFFFFF';
+                                }
+
+                                if (rgb[0] == '') {
+                                    hextext = 'invalid HEX';
+                                }
                             }
 
                             var color = invertColor(hex, true);
@@ -1686,6 +1702,10 @@
                             list.appendChild(p);
                             list.setAttribute('style', 'background-color:' + hextext + ';');
 
+                            if (transparent) {
+                                list.setAttribute('class', 'transparent');
+                            }
+
                             document.getElementById('palette-list').appendChild(list);
                         }
                     }
@@ -1701,9 +1721,14 @@
                     }
                 }
 
+                function copyToClipboardHEX() {
+
+                }
+
                 window.addEventListener('load', function() {
                     createPaletteElements(/^\.palette-color-[^ ]+$/, 'color');
                     warnPaletteEmpty();
+                    copyToClipboardHEX();
                 });
             </script>
             <ul id="palette-list" class="font-list"></ul>
@@ -2106,7 +2131,7 @@
                     top: -.0625em;
                     width: 45px;
                     height: 100%;
-                    fill: #666;
+                    fill: #666666;
                 }
 
                 #renderkit-body #uikit-svg-list.true-tone li svg.facebook {

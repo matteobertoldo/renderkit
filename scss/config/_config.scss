@@ -50,7 +50,6 @@ $body-font-weight: normal;
 $body-line-height: 1.15;
 
 // 2.1 Typography: Heading
-// $header-styles: only integers are accepted
 // --------------------------------
 
 $global-heading-font-family: inherit;
@@ -210,7 +209,6 @@ $global-input-placeholder-text-transform: capitalize;
 $global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 
 // 9.2 Form Select
-// $global-select-caret-shape: 'arrow' or 'triangle' or 'empty';
 // --------------------------------
 
 $global-custom-select: true;

@@ -1,3 +1,4 @@
+{% set fontscolor = uikit.section.fonts.color %}
 <style type="text/css">
 #renderkit-body #font-list {
     display: block;
@@ -24,8 +25,7 @@
     height: auto;
     text-align: center;
     letter-spacing: normal;
-    color: #1a1a1c;
-    opacity: 0.75;
+    color: {{fontscolor}};
     margin: 0;
     padding: 16px 16px 25px;
 }
@@ -78,6 +78,7 @@
     letter-spacing: normal;
     text-decoration: underline;
     text-shadow: none;
+    color: {{fontscolor}};
 }
 
 #renderkit-body #font-list li a {
