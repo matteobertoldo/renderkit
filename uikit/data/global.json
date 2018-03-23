@@ -7,6 +7,12 @@
             "show": true,
             "github": true
         },
+        "style": {
+            "darkmode": false,
+            "sectionsbackground": "#f5f5f5",
+            "titlecolor": "#1a1a1c",
+            "globalcolor": "#666666"
+        },
         "js": {
             "whatinput": true,
             "svg4everybody": true,

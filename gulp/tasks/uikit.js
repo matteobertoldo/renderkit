@@ -9,7 +9,8 @@ path = require('path'),
 plumber = require('gulp-plumber'),
 nunjucksRender = require('gulp-nunjucks-render'),
 data = require('gulp-data'),
-htmlBeautify = require('gulp-html-beautify'),
+htmlclean = require('gulp-htmlclean'),
+htmlbeautify = require('gulp-html-beautify'),
 log = require('fancy-log'),
 colors = require('ansi-colors');
 
@@ -29,7 +30,8 @@ gulp.task('uikit', () => {
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));
     })
-    .pipe(htmlBeautify({
+    .pipe(htmlclean())
+    .pipe(htmlbeautify({
         indent_size: conf.uikitOptions.indentSize,
         end_with_newline: conf.uikitOptions.endWithNewLine,
     }))

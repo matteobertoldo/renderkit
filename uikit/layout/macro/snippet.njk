@@ -2,8 +2,10 @@
     <span class="info-label">{{text}}</span>
 {% endmacro %}
 
-{% macro infocontent(content) %}
-    <div class="docs-info">{{content}}</div>
+{% macro infocontent() %}
+    <div class="docs-info">
+        {{caller()}}
+    </div>
 {% endmacro %}
 
 {% macro sassfile(filename) %}
