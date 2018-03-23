@@ -15,3 +15,8 @@
 {{ snippet.code('scss','.selector {
     color: palette($key-palette-color);
 }')}}
+
+{{ snippet.infolabel('Info') }}
+{% call snippet.infocontent() %}
+    Click or tap on the "palette dots" for copy the <strong>HEX</strong>.
+{% endcall %}

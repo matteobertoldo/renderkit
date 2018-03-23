@@ -9,6 +9,6 @@
 {{ snippet.sassvar('header-styles') }}
 
 {{ snippet.infolabel('Info') }}
-{{ snippet.infocontent(
-    'Go to hover or tap on any "header" to display all the information for font family, font size, line height and letter spacing.'
-)}}
+{% call snippet.infocontent() %}
+    Go to hover or tap on any "header" to display all the information for font family, font size, line height and letter spacing.
+{% endcall%}

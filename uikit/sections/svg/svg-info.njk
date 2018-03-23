@@ -1,8 +1,8 @@
 {% if uikit.section.svg.truetone %}
     {{ snippet.infolabel('Toggle true tone') }}
-    <div class="docs-info">
+    {% call snippet.infocontent() %}
         Toggle for show true tone on icons. <br /> (Only if the color is available)
-    </div>
+    {% endcall %}
     <div id="uikit-switch-render">
         {{ snippet.togglebutton('uikit-toggle-truetone') }}
     </div>
@@ -10,13 +10,15 @@
 
 {% if uikit.section.svg.collection %}
     {{ snippet.infolabel('SVG collection') }}
-    <div class="docs-info">
+    {% call snippet.infocontent() %}
         To view the entire list of svg icons installed consult <a href="{{uikit.section.svg.examplefile}}">this page</a>.
-    </div>
+    {% endcall %}
 {% endif %}
 
 {{ snippet.infolabel('Info') }}
-{{ snippet.infocontent("The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.") }}
+{% call snippet.infocontent() %}
+    The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.
+{% endcall%}
 
 {{ snippet.infolabel('Markup') }}
 {{ snippet.code('html','<svg role="img">
