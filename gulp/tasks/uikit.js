@@ -32,16 +32,16 @@ gulp.task('uikit', () => {
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));
     })
-    .pipe(gulpif(conf.uikitOptions.minifyInline, minifyInline({
-        css: {
-            level: (conf.cssOptions.optimizationMinify) ? 2 : 1
-        },
-    })))
     .pipe(htmlclean())
     .pipe(htmlbeautify({
         indent_size: conf.uikitOptions.indentSize,
         end_with_newline: conf.uikitOptions.endWithNewLine,
     }))
+    .pipe(gulpif(conf.uikitOptions.minifyInline, minifyInline({
+        css: {
+            level: (conf.cssOptions.optimizationMinify) ? 2 : 1
+        }
+    })))
     .pipe(gulp.dest(conf.distribution.uikit));
 });
 
