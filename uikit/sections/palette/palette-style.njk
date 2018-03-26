@@ -75,9 +75,10 @@
     margin-bottom: 0;
 }
 
-#renderkit-body #palette-list > li p {
+#renderkit-body #palette-list > li .render-hex {
     display: table-cell;
     vertical-align: middle;
+    position: relative;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 1.4;
@@ -111,6 +112,24 @@
 
 #renderkit-body #palette-list > li em {
     font-size: 10px;
+}
+
+#renderkit-body #palette-list > li input[type="text"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    opacity: 0;
+    z-index: -1;
 }
 
 #renderkit-body #palette-list h2 {

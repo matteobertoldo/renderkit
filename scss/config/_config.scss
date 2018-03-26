@@ -151,7 +151,7 @@ $block-grid-max: 8;
 // --------------------------------
 
 $palette-color: (
-    primary: #666,
+    primary: #666666,
     2: #8c8c8c,
     3: #b2b2b2,
     4: #d9d9d9,
@@ -170,10 +170,10 @@ $ios-tap-color: transparent;
 $body-background-gradient: false;
 $body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 $body-background-color: white;
-$body-base-color: palette(primary);
+$body-base-color: #666666;
 $global-heading-color: inherit;
 $global-paragraph-color: inherit;
-$global-link-color: inherit;
+$global-link-color: #61afef;
 
 // 9. Form Global
 // --------------------------------
@@ -194,15 +194,15 @@ $global-input-letter-spacing: normal;
 $global-input-text-transform: none;
 $global-input-padding: 10px;
 $global-input-background-color: palette(5);
-$global-input-color: palette(primary);
-$global-input-border: 1px solid palette(4);
+$global-input-color: #666666;
+$global-input-border: 1px solid #d9d9d9;
 $global-input-border-radius: 5px;
 $global-hover-input-border: true;
-$global-hover-input-border-color: palette(3);
-$global-focus-input-border-color: palette(3);
-$global-input-placeholder-color: palette(2);
+$global-hover-input-border-color: #b2b2b2;
+$global-focus-input-border-color: #b2b2b2;
+$global-input-placeholder-color: #8c8c8c;
 $global-input-placeholder-focus-hidden: true;
-$global-input-placeholder-focus-color: palette(3);
+$global-input-placeholder-focus-color: #b2b2b2;
 $global-input-placeholder-font-family: inherit;
 $global-input-placeholder-font-style: italic;
 $global-input-placeholder-text-transform: capitalize;
@@ -213,7 +213,7 @@ $global-input-transition: border-color 0.3s ease, background-color 0.3s ease, co
 
 $global-custom-select: true;
 $global-select-text-transform: none;
-$global-select-caret-color: palette(2);
+$global-select-caret-color: #8c8c8c;
 $global-select-caret-shape-render: true;
 $global-select-caret-shape: 'arrow';
 $global-select-caret-size: 10px;
@@ -235,7 +235,7 @@ $global-input-label-font-family: 'Josefin Sans', sans-serif;
 $global-input-label-font-size: 11px;
 $global-input-label-text-transform: uppercase;
 $global-input-label-letter-spacing: 0.5px;
-$global-input-label-color: palette(2);
+$global-input-label-color: #8c8c8c;
 $global-input-label-margin: 0 0 5px 0;
 
 // 9.5 Form Input Checkbox-Radio Custom
@@ -248,10 +248,10 @@ $global-custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif;
 $global-custom-checkbox-radio-font-size: 13px;
 $global-custom-checkbox-radio-text-transform: none;
 $global-custom-checkbox-radio-letter-spacing: 0.5px;
-$global-custom-checkbox-radio-color: palette(2);
+$global-custom-checkbox-radio-color: #8c8c8c;
 $global-custom-checkbox-radio-cursor: default;
 $global-custom-checkbox-radio-hover-border: false;
-$global-custom-checkbox-radio-hover-border-color: palette(3);
+$global-custom-checkbox-radio-hover-border-color: #b2b2b2;
 $global-custom-checkbox-radio-checked-border: true;
 $custom-checkbox-radio-label-gutter: 10px;
 $custom-checkbox-radio-outline-detect: true;
@@ -261,24 +261,24 @@ $custom-checkbox-radio-what-input-outline-detect: true;
 // --------------------------------
 
 $custom-checkbox-mark-thick: 3px;
-$custom-checkbox-mark-color: palette(2);
-$custom-checkbox-checked-border: palette(3);
+$custom-checkbox-mark-color: #8c8c8c;
+$custom-checkbox-checked-border: #b2b2b2;
 
 // 9.7 Form Input Radio Custom
 // --------------------------------
 
-$custom-radio-mark-color: palette(2);
-$custom-radio-checked-border: palette(3);
+$custom-radio-mark-color: #8c8c8c;
+$custom-radio-checked-border: #b2b2b2;
 
 // 9.8 Form Validation & Autofill
 // --------------------------------
 
 $validation-input-error-class: 'error';
-$validation-input-error-border-color: palette(6);
-$validation-input-error-background-color: palette(7);
-$validation-input-error-color: palette(primary);
-$validation-input-error-placeholder-color: palette(6);
-$validation-input-error-label-color: palette(6);
+$validation-input-error-border-color: #c04649;
+$validation-input-error-background-color: #f2c0c1;
+$validation-input-error-color: #666666;
+$validation-input-error-placeholder-color: #c04649;
+$validation-input-error-label-color: #c04649;
 $global-input-custom-autofill: false;
 $global-input-autofill-color: $global-input-color;
 $global-input-autofill-background-color: $global-input-background-color;
@@ -287,13 +287,13 @@ $global-input-autofill-background-color: $global-input-background-color;
 // --------------------------------
 
 $global-arrow-size: 20px;
-$global-arrow-color: palette(primary);
+$global-arrow-color: #666666;
 $global-arrow-width: 3px;
 $global-checkmark-size: 20px;
-$global-checkmark-color: palette(primary);
+$global-checkmark-color: #666666;
 $global-checkmark-width: 3px;
 $global-shape-close-size: 20px;
-$global-shape-close-color: palette(primary);
+$global-shape-close-color: #666666;
 $global-shape-close-line-size: 3px;
 
 // 11. Print

@@ -15,8 +15,7 @@
         },
         "js": {
             "whatinput": true,
-            "svg4everybody": true,
-            "highlightpath": "renderkit/js/highlight.pack.js"
+            "svg4everybody": true
         },
         "sassdocumentation": {
             "show": true,

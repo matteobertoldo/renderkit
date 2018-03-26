@@ -23,6 +23,7 @@ $body-font-size: 16px !default;
 $body-font-weight: normal !default;
 
 /// If it is `true` the value of the variable `$body-background-gradient-value` will be applied to the body.
+/// @group colors & palette
 $body-background-gradient: false !default;
 
 /// scss-normalize mixin for RenderKit. From original `normalize.css` v8.0.0

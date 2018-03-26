@@ -1,8 +1,8 @@
 <script type="text/javascript">
 /**
  * @function: Array.prototype.clean
- * @param: {string}
- * @return: [Array]
+ * @param: {String} - The string to delete in the array.
+ * @return: {Arr} - New array with the deleted value.
  * @description: clean a value of an Array.
  */
 
@@ -18,10 +18,9 @@ Array.prototype.clean = function(deleteValue) {
 };
 
 /**
- * @function: getFontsInstalled
- * @param: {document.styleSheets}
- * @return: {String}
- * @description: Render the font installed via @font-face or Google Fonts.
+ * @function: getFontsInstalled()
+ * @param: {Arr|Obj} sheet - The style sheet to intercept `@font-face` rules or `@import` rules linked with Google Fonts API.
+ * @description: Render the font installed via `@font-face` or Google Fonts.
  * @author: mbertoldo@alpenite.com
  */
 

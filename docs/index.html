@@ -100,7 +100,7 @@
             top: 100%;
             width: 100%;
             height: 2px;
-            background-color: #5d5c56;
+            background-color: #1a1a1c;
         }
 
         #renderkit-body .mixin-code {
@@ -305,7 +305,7 @@
             font-size: 11px;
             letter-spacing: 0.031em;
             line-height: 1.4;
-            color: #666;
+            color: #666666;
             margin-top: 24px;
         }
 
@@ -316,7 +316,7 @@
             line-height: 1.4;
             letter-spacing: normal;
             max-width: 380px;
-            color: #666;
+            color: #666666;
             margin-top: 4px;
         }
 
@@ -326,6 +326,17 @@
             font-weight: normal;
             color: #61afef;
             text-decoration: underline;
+        }
+
+        #renderkit-body .section-description .docs-info ul {
+            display: block;
+            list-style-type: disc;
+            text-transform: none;
+            text-shadow: none;
+            color: inherit;
+            line-height: 1.45;
+            padding-left: 15px;
+            margin: 0;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
@@ -699,7 +710,7 @@
                 font-style: normal;
                 text-align: center;
                 text-transform: none;
-                text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+                text-shadow: -10px 10px 10px rgba(0, 0, 0, 0.25);
                 line-height: 1;
                 letter-spacing: normal;
                 color: inherit;
@@ -766,8 +777,8 @@
         <script type="text/javascript">
             /**
              * @function: Array.prototype.clean
-             * @param: {string}
-             * @return: [Array]
+             * @param: {String} - The string to delete in the array.
+             * @return: {Arr} - New array with the deleted value.
              * @description: clean a value of an Array.
              */
 
@@ -783,10 +794,9 @@
             };
 
             /**
-             * @function: getFontsInstalled
-             * @param: {document.styleSheets}
-             * @return: {String}
-             * @description: Render the font installed via @font-face or Google Fonts.
+             * @function: getFontsInstalled()
+             * @param: {Arr|Obj} sheet - The style sheet to intercept `@font-face` rules or `@import` rules linked with Google Fonts API.
+             * @description: Render the font installed via `@font-face` or Google Fonts.
              * @author: mbertoldo@alpenite.com
              */
 
@@ -887,7 +897,7 @@
             <h2 class="section-title">Typography</h2>
             <div class="section-description"> <span class="info-label">Primary Mixins</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">headers-style</span></span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">paragraph-style</span></span>
                 <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">headers-style-responsive</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$header-styles</span>                <span class="info-label">Info</span>
-                <div class="docs-info">Go to hover or tap on any &quot;header&quot; to display all the information for font family, font size, line height and letter spacing.</div>
+                <div class="docs-info"> Go to hover or tap on any "header" to display all the information for font family, font size, line height and letter spacing.</div>
             </div>
             <style type="text/css">
                 #renderkit-body #typography-list {
@@ -1067,7 +1077,7 @@
                     text-transform: uppercase;
                     letter-spacing: normal;
                     line-height: normal;
-                    color: #666;
+                    color: ;
                     opacity: 0.75;
                     margin: 0 0 3px 0;
                     padding: 0;
@@ -1131,7 +1141,7 @@
                     display: inline-block;
                     vertical-align: middle;
                     max-width: none;
-                    font-size: 13px;
+                    font-size: 14px;
                     text-transform: none;
                     line-height: 1.2;
                 }
@@ -1197,8 +1207,8 @@
             </style>
             <script type="text/javascript">
                 /**
-                 * @function headersTooltip
-                 * @description: generate a "info tooltip" for global headers.
+                 * @function: headersTooltip
+                 * @description: Generate an info tooltip for global headers.
                  * @author: mbertoldo@alpenite.com
                  */
 
@@ -1257,7 +1267,7 @@
 
                 /**
                  * @function paragraphInfoStyle
-                 * @description: generate a info style for global paragraph.
+                 * @description: Generate an info style for global paragraph.
                  * @author: mbertoldo@alpenite.com
                  */
 
@@ -1469,9 +1479,10 @@
                     margin-bottom: 0;
                 }
 
-                #renderkit-body #palette-list>li p {
+                #renderkit-body #palette-list>li .render-hex {
                     display: table-cell;
                     vertical-align: middle;
+                    position: relative;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 14px;
                     line-height: 1.4;
@@ -1507,6 +1518,24 @@
                     font-size: 10px;
                 }
 
+                #renderkit-body #palette-list>li input[type="text"] {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1px;
+                    height: 1px;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    outline: 0;
+                    opacity: 0;
+                    z-index: -1;
+                }
+
                 #renderkit-body #palette-list h2 {
                     font-family: 'Abril Fatface', coursive;
                     font-size: 24px;
@@ -1537,8 +1566,7 @@
             <script type="text/javascript">
                 /**
                  * @function: RGBtoHEX
-                 * @param: {string}
-                 * @return: {string}
+                 * @return: {String}
                  */
 
                 function RGBtoHEX(r, g, b) {
@@ -1549,10 +1577,10 @@
 
                 /**
                  * @function: invertColor
-                 * @param hex: {string} HEX code
-                 * @param bw: {Bool} dinamically set black || white the final color
-                 * @return: {string}
-                 * @note: https://github.com/onury/invert-color
+                 * @param: {String} hex - HEX code
+                 * @param: {Bool} bw - Dinamically set black or white the final color.
+                 * @return: {String}
+                 * @link: https://github.com/onury/invert-color
                  */
 
                 function padZero(str, len) {
@@ -1591,10 +1619,10 @@
                 }
 
                 /**
-                 * @function color_convert()
-                 * @note: https://gist.github.com/njvack/02ad8efcb0d552b0230d
-                 * @description: convert to `rga` or `hex` an HTML color name.
-                 * @note: HTML colors name https://www.w3schools.com/colors/colors_names.asp
+                 * @function: color_convert
+                 * @description: Convert to `rgb` or `hex` an HTML color name.
+                 * @link: https://www.w3schools.com/colors/colors_names.asp
+                 * @link: https://gist.github.com/njvack/02ad8efcb0d552b0230d
                  */
 
                 color_convert = function() {
@@ -1636,13 +1664,19 @@
 
                 /**
                  * @function: createPaletteElements
-                 * @param: {regEx, property, stylesheets}
-                 * @return: {Obj}
+                 * @param: {RegEX|String} selector - The selector to render the list of color palettes.
+                 * @param: {String} style - The css property of the selector.
+                 * @param: {Arr|Obj} sheet - The style sheet to intercept the selectors.
                  * @author: mbertoldo@alpenite.com
                  */
 
                 function createPaletteElements(selector, style, sheet) {
                     var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0];
+                    var setAttributes = function(el, attrs) {
+                        for (var key in attrs) {
+                            el.setAttribute(key, attrs[key]);
+                        }
+                    };
 
                     for (var j = 0, k = sheets.cssRules.length || sheets.rules.lenght; j < k; j++) {
                         var rule = sheets.cssRules[j] || sheets.rules[j];
@@ -1674,21 +1708,35 @@
 
                             var color = invertColor(hex, true);
                             var list = document.createElement('li');
-                            var p = document.createElement('p');
+                            var div = document.createElement('div');
                             var span = document.createElement('span');
-                            var em = document.createElement('em');
                             var strong = document.createElement('strong');
+                            var em = document.createElement('em');
                             var rgbtext = rule.style[style].toString();
+                            var input = document.createElement('input');
 
                             span.appendChild(document.createTextNode(hextext));
                             strong.appendChild(document.createTextNode(selectors));
                             em.appendChild(document.createTextNode(rgbtext));
-                            p.setAttribute('style', 'color:' + color + ';');
-                            p.appendChild(strong);
-                            p.appendChild(span);
-                            p.appendChild(em);
 
-                            list.appendChild(p);
+                            setAttributes(input, {
+                                type: 'text',
+                                tabindex: '-1',
+                                value: hextext,
+                                class: 'hex-value'
+                            });
+
+                            setAttributes(div, {
+                                class: 'render-hex',
+                                style: 'color:' + color + ';',
+                            });
+
+                            div.appendChild(strong);
+                            div.appendChild(span);
+                            div.appendChild(em);
+                            div.appendChild(input);
+
+                            list.appendChild(div);
                             list.setAttribute('style', 'background-color:' + hextext + ';');
 
                             if (transparent) {
@@ -1711,7 +1759,22 @@
                 }
 
                 function copyToClipboardHEX() {
+                    var paletteList = document.querySelectorAll('#palette-list > li');
 
+                    for (var i = 0; i < paletteList.length; i++) {
+                        paletteList[i].addEventListener('click', function(event) {
+                            var self = this;
+                            var renderHEX = self.querySelector('.render-hex')
+                            var hex = self.querySelector('.hex-value');
+
+                            renderHEX.classList.add('perspective');
+                            setTimeout(function() {
+                                renderHEX.classList.remove('perspective');
+                            }, 1525);
+                            hex.select();
+                            document.execCommand('Copy');
+                        });
+                    }
                 }
 
                 window.addEventListener('load', function() {
@@ -2043,10 +2106,10 @@
             <div class="section-description"> <span class="info-label">Toggle true tone</span>
                 <div class="docs-info"> Toggle for show true tone on icons.<br/> (Only if the color is available)</div>
                 <div id="uikit-switch-render">
-                    <div id="uikit-switch-item"> <input type="checkbox" id="uikit-toggle-truetone"><span class="toggle"><label for="uikit-toggle-truetone"><i></i></label></span></div>
+                    <div id="uikit-switch-item"> <input type="checkbox" id="toggle-truetone"><span class="toggle"><label for="toggle-truetone"><i></i></label></span></div>
                 </div> <span class="info-label">SVG collection</span>
                 <div class="docs-info"> To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.</div> <span class="info-label">Info</span>
-                <div class="docs-info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div> <span class="info-label">Markup</span>
+                <div class="docs-info"> The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div> <span class="info-label">Markup</span>
                 <div class="ui-docs-code">
                     <pre class="ui-snippet">
 <code class="html">&lt;svg role=&quot;img&quot;&gt;
@@ -2058,7 +2121,7 @@
             </div>
             <script type="text/javascript">
                 function switcher() {
-                    var switcher = document.getElementById('uikit-toggle-truetone');
+                    var switcher = document.getElementById('toggle-truetone');
 
                     switcher.addEventListener('change', function() {
                         if (switcher.checked) {
@@ -2179,7 +2242,7 @@
         </section>
         </div>
     </main>
-    <script src="renderkit/js/highlight.pack.js"></script>
+    <script src="https://cdn.rawgit.com/matteobertoldo/9874c58f56669b4ecf9a3bd8ec305b75/raw/fe7219f7770a4fbc77d2174a3cc31994c73d2deb/renderkit-highlight.pack.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
     </script>

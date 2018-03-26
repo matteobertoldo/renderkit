@@ -1,5 +1,5 @@
 <ul id="uikit-svg-list" class="svg-list">
-    {% set svgpath = uikit.section.svg.spritepath %}
+    {% set spritepath = uikit.section.svg.spritepath %}
     {% set icons = uikit.section.svg.icons %}
     {% for icon in icons %}
         <li>
@@ -15,7 +15,7 @@
                 </svg>
             {% endif %}
             <svg role="img" title="{{icon | lower}}" class="{{icon | lower}}">
-                <use xlink:href="{{svgpath}}#{{icon | lower}}"></use>
+                <use xlink:href="{{spritepath}}#{{icon | lower}}"></use>
             </svg>
         </li>
     {% endfor %}
