@@ -691,8 +691,7 @@
                 height: auto;
                 text-align: center;
                 letter-spacing: normal;
-                color: #1a1a1c;
-                opacity: 0.75;
+                color: #404041;
                 margin: 0;
                 padding: 16px 16px 25px;
             }
@@ -711,7 +710,7 @@
                 font-style: normal;
                 text-align: center;
                 text-transform: none;
-                text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+                text-shadow: -10px 10px 10px rgba(0, 0, 0, 0.25);
                 line-height: 1;
                 letter-spacing: normal;
                 color: inherit;
@@ -745,6 +744,7 @@
                 letter-spacing: normal;
                 text-decoration: underline;
                 text-shadow: none;
+                color: #404041;
             }
 
             #renderkit-body #font-list li a {
@@ -777,8 +777,8 @@
         <script type="text/javascript">
             /**
              * @function: Array.prototype.clean
-             * @param: {string}
-             * @return: [Array]
+             * @param: {String} - The string to delete in the array.
+             * @return: {Arr} - New array with the deleted value.
              * @description: clean a value of an Array.
              */
 
@@ -794,10 +794,9 @@
             };
 
             /**
-             * @function: getFontsInstalled
-             * @param: {document.styleSheets}
-             * @return: {String}
-             * @description: Render the font installed via @font-face or Google Fonts.
+             * @function: getFontsInstalled()
+             * @param: {Arr|Obj} sheet - The style sheet to intercept `@font-face` rules or `@import` rules linked with Google Fonts API.
+             * @description: Render the font installed via `@font-face` or Google Fonts.
              * @author: mbertoldo@alpenite.com
              */
 
@@ -1208,8 +1207,8 @@
             </style>
             <script type="text/javascript">
                 /**
-                 * @function headersTooltip
-                 * @description: generate a "info tooltip" for global headers.
+                 * @function: headersTooltip
+                 * @description: Generate an info tooltip for global headers.
                  * @author: mbertoldo@alpenite.com
                  */
 
@@ -1268,7 +1267,7 @@
 
                 /**
                  * @function paragraphInfoStyle
-                 * @description: generate a info style for global paragraph.
+                 * @description: Generate an info style for global paragraph.
                  * @author: mbertoldo@alpenite.com
                  */
 
@@ -1392,7 +1391,8 @@
         </section>
         <section class="uikit-element-render">
             <h2 class="section-title">Palette &amp; Colors</h2>
-            <div class="section-description"> <span class="info-label">Primary Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">colors-palette</span></span> <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span>                <span class="mixin-name">manage-palette</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$palette-color</span> <span class="info-label">Template classes</span> <span class="template-class">.palette-color-$key-palette-color</span>                <span class="template-class">.background-color-$key-palette-color</span> <span class="info-label">Function for catch HEX</span>
+            <div class="section-description"> <span class="info-label">Primary Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">colors-palette</span></span> <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span>                <span class="mixin-name">manage-palette</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$palette-color</span> <span class="info-label">Template classes</span> <span class="template-class">.palette-color-$key-palette-color</span>                <span class="template-class">.background-color-$key-palette-color</span> <span class="info-label">Info</span>
+                <div class="docs-info"> Click or tap on the "palette dots" for copy the <strong>HEX</strong>.</div> <span class="info-label">Function for catch HEX</span>
                 <div class="ui-docs-code">
                     <pre class="ui-snippet">
 <code class="scss">.selector {
@@ -1400,8 +1400,7 @@
 }
 </code>
 </pre>
-                </div> <span class="info-label">Info</span>
-                <div class="docs-info"> Click or tap on the "palette dots" for copy the <strong>HEX</strong>.</div>
+                </div>
             </div>
             <style type="text/css">
                 #renderkit-body #palette-list {
@@ -1436,6 +1435,12 @@
                     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     will-change: transform;
+                }
+
+                #renderkit-body #palette-list>li.transparent {
+                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxpdmVsbG9fMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDEwIDEwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMCAxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNENkQ2RDY7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxyZWN0IGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHg9IjUiIGNsYXNzPSJzdDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHg9IjUiIHk9IjUiIGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KCTxnPgoJCTxyZWN0IHk9IjUiIGNsYXNzPSJzdDEiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K);
+                    background-repeat: repeat;
+                    background-size: 10px 10px;
                 }
 
                 #renderkit-body #palette-list>li::after {
@@ -1474,9 +1479,10 @@
                     margin-bottom: 0;
                 }
 
-                #renderkit-body #palette-list>li p {
+                #renderkit-body #palette-list>li .render-hex {
                     display: table-cell;
                     vertical-align: middle;
+                    position: relative;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 14px;
                     line-height: 1.4;
@@ -1512,6 +1518,24 @@
                     font-size: 10px;
                 }
 
+                #renderkit-body #palette-list>li input[type="text"] {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1px;
+                    height: 1px;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    outline: 0;
+                    opacity: 0;
+                    z-index: -1;
+                }
+
                 #renderkit-body #palette-list h2 {
                     font-family: 'Abril Fatface', coursive;
                     font-size: 24px;
@@ -1542,8 +1566,7 @@
             <script type="text/javascript">
                 /**
                  * @function: RGBtoHEX
-                 * @param: {string}
-                 * @return: {string}
+                 * @return: {String}
                  */
 
                 function RGBtoHEX(r, g, b) {
@@ -1554,10 +1577,10 @@
 
                 /**
                  * @function: invertColor
-                 * @param hex: {string} HEX code
-                 * @param bw: {Bool} dinamically set black || white the final color
-                 * @return: {string}
-                 * @note: https://github.com/onury/invert-color
+                 * @param: {String} hex - HEX code
+                 * @param: {Bool} bw - Dinamically set black or white the final color.
+                 * @return: {String}
+                 * @link: https://github.com/onury/invert-color
                  */
 
                 function padZero(str, len) {
@@ -1596,10 +1619,10 @@
                 }
 
                 /**
-                 * @function color_convert()
-                 * @note: https://gist.github.com/njvack/02ad8efcb0d552b0230d
-                 * @description: convert to `rga` or `hex` an HTML color name.
-                 * @note: HTML colors name https://www.w3schools.com/colors/colors_names.asp
+                 * @function: color_convert
+                 * @description: Convert to `rgb` or `hex` an HTML color name.
+                 * @link: https://www.w3schools.com/colors/colors_names.asp
+                 * @link: https://gist.github.com/njvack/02ad8efcb0d552b0230d
                  */
 
                 color_convert = function() {
@@ -1641,13 +1664,19 @@
 
                 /**
                  * @function: createPaletteElements
-                 * @param: {regEx, property, stylesheets}
-                 * @return: {Obj}
+                 * @param: {RegEX|String} selector - The selector to render the list of color palettes.
+                 * @param: {String} style - The css property of the selector.
+                 * @param: {Arr|Obj} sheet - The style sheet to intercept the selectors.
                  * @author: mbertoldo@alpenite.com
                  */
 
                 function createPaletteElements(selector, style, sheet) {
                     var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0];
+                    var setAttributes = function(el, attrs) {
+                        for (var key in attrs) {
+                            el.setAttribute(key, attrs[key]);
+                        }
+                    };
 
                     for (var j = 0, k = sheets.cssRules.length || sheets.rules.lenght; j < k; j++) {
                         var rule = sheets.cssRules[j] || sheets.rules[j];
@@ -1655,6 +1684,7 @@
                         if (selector.test(rule.selectorText)) {
                             var selectors = rule.selectorText.replace(/\.palette-color-/g, '');
                             var rgb = rule.style[style].split(',');
+                            var transparent = false;
 
                             if (rgb.length > 1) {
                                 var r = rgb[0].replace('rgb(', '');
@@ -1665,26 +1695,53 @@
                             } else {
                                 var hex = color_convert.to_hex(rgb[0]);
                                 var hextext = rgb[0];
+
+                                if (rgb[0] == 'transparent' || rgb[0] == '') {
+                                    transparent = true;
+                                    hex = '#FFFFFF';
+                                }
+
+                                if (rgb[0] == '') {
+                                    hextext = 'invalid HEX';
+                                }
                             }
 
                             var color = invertColor(hex, true);
                             var list = document.createElement('li');
-                            var p = document.createElement('p');
+                            var div = document.createElement('div');
                             var span = document.createElement('span');
-                            var em = document.createElement('em');
                             var strong = document.createElement('strong');
+                            var em = document.createElement('em');
                             var rgbtext = rule.style[style].toString();
+                            var input = document.createElement('input');
 
                             span.appendChild(document.createTextNode(hextext));
                             strong.appendChild(document.createTextNode(selectors));
                             em.appendChild(document.createTextNode(rgbtext));
-                            p.setAttribute('style', 'color:' + color + ';');
-                            p.appendChild(strong);
-                            p.appendChild(span);
-                            p.appendChild(em);
 
-                            list.appendChild(p);
+                            setAttributes(input, {
+                                type: 'text',
+                                tabindex: '-1',
+                                value: hextext,
+                                class: 'hex-value'
+                            });
+
+                            setAttributes(div, {
+                                class: 'render-hex',
+                                style: 'color:' + color + ';',
+                            });
+
+                            div.appendChild(strong);
+                            div.appendChild(span);
+                            div.appendChild(em);
+                            div.appendChild(input);
+
+                            list.appendChild(div);
                             list.setAttribute('style', 'background-color:' + hextext + ';');
+
+                            if (transparent) {
+                                list.setAttribute('class', 'transparent');
+                            }
 
                             document.getElementById('palette-list').appendChild(list);
                         }
@@ -1701,9 +1758,29 @@
                     }
                 }
 
+                function copyToClipboardHEX() {
+                    var paletteList = document.querySelectorAll('#palette-list > li');
+
+                    for (var i = 0; i < paletteList.length; i++) {
+                        paletteList[i].addEventListener('click', function(event) {
+                            var self = this;
+                            var renderHEX = self.querySelector('.render-hex')
+                            var hex = self.querySelector('.hex-value');
+
+                            renderHEX.classList.add('perspective');
+                            setTimeout(function() {
+                                renderHEX.classList.remove('perspective');
+                            }, 1525);
+                            hex.select();
+                            document.execCommand('Copy');
+                        });
+                    }
+                }
+
                 window.addEventListener('load', function() {
                     createPaletteElements(/^\.palette-color-[^ ]+$/, 'color');
                     warnPaletteEmpty();
+                    copyToClipboardHEX();
                 });
             </script>
             <ul id="palette-list" class="font-list"></ul>
@@ -2029,7 +2106,7 @@
             <div class="section-description"> <span class="info-label">Toggle true tone</span>
                 <div class="docs-info"> Toggle for show true tone on icons.<br/> (Only if the color is available)</div>
                 <div id="uikit-switch-render">
-                    <div id="uikit-switch-item"> <input type="checkbox" id="uikit-toggle-truetone"><span class="toggle"><label for="uikit-toggle-truetone"><i></i></label></span></div>
+                    <div id="uikit-switch-item"> <input type="checkbox" id="toggle-truetone"><span class="toggle"><label for="toggle-truetone"><i></i></label></span></div>
                 </div> <span class="info-label">SVG collection</span>
                 <div class="docs-info"> To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.</div> <span class="info-label">Info</span>
                 <div class="docs-info"> The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div> <span class="info-label">Markup</span>
@@ -2044,7 +2121,7 @@
             </div>
             <script type="text/javascript">
                 function switcher() {
-                    var switcher = document.getElementById('uikit-toggle-truetone');
+                    var switcher = document.getElementById('toggle-truetone');
 
                     switcher.addEventListener('change', function() {
                         if (switcher.checked) {
@@ -2106,7 +2183,7 @@
                     top: -.0625em;
                     width: 45px;
                     height: 100%;
-                    fill: #666;
+                    fill: #666666;
                 }
 
                 #renderkit-body #uikit-svg-list.true-tone li svg.facebook {
@@ -2165,7 +2242,7 @@
         </section>
         </div>
     </main>
-    <script src="renderkit/js/highlight.pack.js"></script>
+    <script src="https://cdn.rawgit.com/matteobertoldo/9874c58f56669b4ecf9a3bd8ec305b75/raw/fe7219f7770a4fbc77d2174a3cc31994c73d2deb/renderkit-highlight.pack.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
     </script>

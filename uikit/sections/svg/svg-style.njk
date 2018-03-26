@@ -1,6 +1,4 @@
-{% set fillcolor = page.uikit.svgicons.color %}
-{% set bordercolor = page.uikit.svgicons.switcher.bordercolor %}
-{% set shadowcolor = page.uikit.svgicons.switcher.shadowcolor %}
+{% set fillcolor = uikit.section.svg.iconscolor %}
 {% set socialfill = {
     facebook: '#3b5999',
     twitter: '#55acee',
@@ -57,7 +55,7 @@
     top: -.0625em;
     width: 45px;
     height: 100%;
-    fill: #666;
+    fill: {{fillcolor}};
 }
 
 {% for svgicons, fill in socialfill %}

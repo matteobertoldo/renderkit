@@ -1,5 +1,6 @@
 {% set rowclass = uikit.section.floatgrid.rowclass %}
 {% set columnclass = uikit.section.floatgrid.columnclass %}
+{% set cellcolor = uikit.section.floatgrid.cellcolor %}
 <style type="text/css">
 #renderkit-body .render-grid-content {
     margin-top: 80px;
@@ -13,7 +14,7 @@
 
 #renderkit-body .render-grid-content .{{columnclass}} .content {
     min-height: 80px;
-    background-color: #d9d9d9;
+    background-color: {{cellcolor}};
     border-radius: 3px;
     margin-bottom: 30px;
 }

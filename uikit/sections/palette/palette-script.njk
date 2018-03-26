@@ -1,8 +1,7 @@
 <script type="text/javascript">
 /**
  * @function: RGBtoHEX
- * @param: {string}
- * @return: {string}
+ * @return: {String}
  */
 
 function RGBtoHEX(r, g, b) {
@@ -13,10 +12,10 @@ function RGBtoHEX(r, g, b) {
 
 /**
  * @function: invertColor
- * @param hex: {string} HEX code
- * @param bw: {Bool} dinamically set black || white the final color
- * @return: {string}
- * @note: https://github.com/onury/invert-color
+ * @param: {String} hex - HEX code
+ * @param: {Bool} bw - Dinamically set black or white the final color.
+ * @return: {String}
+ * @link: https://github.com/onury/invert-color
  */
 
 function padZero(str, len) {
@@ -55,10 +54,10 @@ function invertColor(hex, bw) {
 }
 
 /**
- * @function color_convert()
- * @note: https://gist.github.com/njvack/02ad8efcb0d552b0230d
- * @description: convert to `rga` or `hex` an HTML color name.
- * @note: HTML colors name https://www.w3schools.com/colors/colors_names.asp
+ * @function: color_convert
+ * @description: Convert to `rgb` or `hex` an HTML color name.
+ * @link: https://www.w3schools.com/colors/colors_names.asp
+ * @link: https://gist.github.com/njvack/02ad8efcb0d552b0230d
  */
 
 color_convert = function() {
@@ -99,13 +98,19 @@ color_convert = function() {
 
 /**
  * @function: createPaletteElements
- * @param: {regEx, property, stylesheets}
- * @return: {Obj}
+ * @param: {RegEX|String} selector - The selector to render the list of color palettes.
+ * @param: {String} style - The css property of the selector.
+ * @param: {Arr|Obj} sheet - The style sheet to intercept the selectors.
  * @author: mbertoldo@alpenite.com
  */
 
 function createPaletteElements(selector, style, sheet) {
     var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets[0];
+    var setAttributes = function(el, attrs) {
+        for (var key in attrs) {
+            el.setAttribute(key, attrs[key]);
+        }
+    };
 
     for (var j = 0, k = sheets.cssRules.length || sheets.rules.lenght; j < k; j++) {
         var rule = sheets.cssRules[j] || sheets.rules[j];
@@ -113,6 +118,7 @@ function createPaletteElements(selector, style, sheet) {
         if (selector.test(rule.selectorText)) {
             var selectors = rule.selectorText.replace(/\.palette-color-/g,'');
             var rgb = rule.style[style].split(',');
+            var transparent = false;
 
             if (rgb.length > 1) {
                 var r = rgb[0].replace('rgb(', '');
@@ -123,26 +129,53 @@ function createPaletteElements(selector, style, sheet) {
             } else {
                 var hex = color_convert.to_hex(rgb[0]);
                 var hextext = rgb[0];
+
+                if (rgb[0] == 'transparent' || rgb[0] == '') {
+                    transparent = true;
+                    hex = '#FFFFFF';
+                }
+
+                if (rgb[0] == '') {
+                    hextext = 'invalid HEX';
+                }
             }
 
             var color = invertColor(hex, true);
             var list = document.createElement('li');
-            var p = document.createElement('p');
+            var div = document.createElement('div');
             var span = document.createElement('span');
-            var em = document.createElement('em');
             var strong = document.createElement('strong');
+            var em = document.createElement('em');
             var rgbtext = rule.style[style].toString();
+            var input = document.createElement('input');
 
             span.appendChild(document.createTextNode(hextext));
             strong.appendChild(document.createTextNode(selectors));
             em.appendChild(document.createTextNode(rgbtext));
-            p.setAttribute('style', 'color:' + color + ';');
-            p.appendChild(strong);
-            p.appendChild(span);
-            p.appendChild(em);
 
-            list.appendChild(p);
+            setAttributes(input, {
+                type: 'text',
+                tabindex: '-1',
+                value: hextext,
+                class: 'hex-value'
+            });
+
+            setAttributes(div, {
+                class: 'render-hex',
+                style: 'color:' + color + ';',
+            });
+
+            div.appendChild(strong);
+            div.appendChild(span);
+            div.appendChild(em);
+            div.appendChild(input);
+
+            list.appendChild(div);
             list.setAttribute('style', 'background-color:' + hextext + ';');
+
+            if (transparent) {
+                list.setAttribute('class', 'transparent');
+            }
 
             document.getElementById('palette-list').appendChild(list);
         }
@@ -159,8 +192,28 @@ function warnPaletteEmpty() {
     }
 }
 
+function copyToClipboardHEX() {
+    var paletteList = document.querySelectorAll('#palette-list > li');
+
+    for (var i = 0; i < paletteList.length; i++) {
+        paletteList[i].addEventListener('click', function(event) {
+            var self = this;
+            var renderHEX = self.querySelector('.render-hex')
+            var hex = self.querySelector('.hex-value');
+
+            renderHEX.classList.add('perspective');
+            setTimeout(function() {
+                renderHEX.classList.remove('perspective');
+            }, 1525);
+            hex.select();
+            document.execCommand('Copy');
+        });
+    }
+}
+
 window.addEventListener('load', function() {
     createPaletteElements(/^\.palette-color-[^ ]+$/, 'color');
     warnPaletteEmpty();
+    copyToClipboardHEX();
 });
 </script>

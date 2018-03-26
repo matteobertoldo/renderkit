@@ -2,7 +2,10 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-//Mixin for global header font style
+/// Mixin for global headers style
+///
+/// Each header has in association a class to invoke in the templates.
+/// @group _global renderkit
 @mixin headers-style {
     /*@headers-style*/
     h1, .h1,
@@ -136,19 +139,29 @@ $header-styles: (
 // Mixin for text disposition.
 @mixin text-classes {
     /*@text-classes*/
-    @each $align in (left, right, center, justify, ellipsis) {
-    	.text-#{$align} {
-            @if ($align == 'ellipsis') {
-                @include text-ellipsis;
-            } @else {
-                text-align: $align;
+    @each $size in $breakpoint-classes {
+        @include breakpoint($size) {
+            @each $align in (left, right, center, justify) {
+                @if $size != $-zf-zero-breakpoint {
+                    .#{$size}-text-#{$align} {
+                        text-align: $align;
+                    }
+                } @else {
+                    .text-#{$align} {
+                        text-align: $align;
+                    }
+                }
             }
         }
     }
 
-    @each $transform in (uppercase, lowercase, capitalize) {
-        .text-#{$transform} {
-            text-transform: $transform;
+    @each $param in (uppercase, lowercase, capitalize, ellipsis) {
+        .text-#{$param} {
+            @if ($param == 'ellipsis') {
+                @include text-ellipsis;
+            } @else {
+                text-align: $param;
+            }
         }
     }
 }

@@ -72,8 +72,11 @@ module.exports = {
     cleanOptions: {
         generatedFiles: {
             html: folder.docs + '*.html',
-            css: folder.distribution + 'css/**/*.{css,map}',
-            svg: folder.docs + 'images/**/*.{svg,html}'
+            css: [
+                folder.distribution + 'css/**/*.{css,map}',
+                folder.docs + 'renderkit/css/**/*.{css,map}'
+            ],
+            svg: folder.docs + 'renderkit/svg/**/*.{svg,html}'
         },
         dryRun: true,
         forceDelete: false,

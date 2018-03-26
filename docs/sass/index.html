@@ -1,5 +1,514 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Renderkit - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Renderkit - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Definitely the light way for start new front-end web projects.</p>
-"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Renderkit - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="breakpoint"><a href="#breakpoint">breakpoint</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-variable"><a href="#breakpoint-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoints" data-type="variable"><a href="#breakpoint-variable-breakpoints">breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="print-breakpoint" data-type="variable"><a href="#breakpoint-variable-print-breakpoint">print-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoint-classes" data-type="variable"><a href="#breakpoint-variable-breakpoint-classes">breakpoint-classes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-mixin"><a href="#breakpoint-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoint" data-type="mixin"><a href="#breakpoint-mixin-breakpoint">breakpoint</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="checkbox &amp; radio"><a href="#checkbox &amp; radio">checkbox &amp; radio</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="checkbox &amp; radio-variable"><a href="#checkbox &amp; radio-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-align-center" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-align-center">global-custom-checkbox-radio-align-center</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-size" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-size">global-custom-checkbox-radio-size</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-font-family" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-font-family">global-custom-checkbox-radio-font-family</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-font-size" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-font-size">global-custom-checkbox-radio-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-text-transform" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-text-transform">global-custom-checkbox-radio-text-transform</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-letter-spacing" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-letter-spacing">global-custom-checkbox-radio-letter-spacing</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-color" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-color">global-custom-checkbox-radio-color</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="custom-checkbox-radio-label-gutter" data-type="variable"><a href="#checkbox &amp; radio-variable-custom-checkbox-radio-label-gutter">custom-checkbox-radio-label-gutter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="colors &amp; palette"><a href="#colors &amp; palette">colors &amp; palette</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-variable"><a href="#colors &amp; palette-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="palette-color" data-type="variable"><a href="#colors &amp; palette-variable-palette-color">palette-color</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-function"><a href="#colors &amp; palette-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="palette" data-type="function"><a href="#colors &amp; palette-function-palette">palette</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-mixin"><a href="#colors &amp; palette-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="manage-palette" data-type="mixin"><a href="#colors &amp; palette-mixin-manage-palette">manage-palette</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="flexbox utilities"><a href="#flexbox utilities">flexbox utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="flexbox utilities-variable"><a href="#flexbox utilities-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-source-ordering-count-enable" data-type="variable"><a href="#flexbox utilities-variable-flex-source-ordering-count-enable">flex-source-ordering-count-enable</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-source-ordering-count" data-type="variable"><a href="#flexbox utilities-variable-flex-source-ordering-count">flex-source-ordering-count</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flexbox-responsive-breakpoints" data-type="variable"><a href="#flexbox utilities-variable-flexbox-responsive-breakpoints">flexbox-responsive-breakpoints</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="flexbox utilities-mixin"><a href="#flexbox utilities-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex" data-type="mixin"><a href="#flexbox utilities-mixin-flex">flex</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-align" data-type="mixin"><a href="#flexbox utilities-mixin-flex-align">flex-align</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-align-self" data-type="mixin"><a href="#flexbox utilities-mixin-flex-align-self">flex-align-self</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-order" data-type="mixin"><a href="#flexbox utilities-mixin-flex-order">flex-order</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-direction" data-type="mixin"><a href="#flexbox utilities-mixin-flex-direction">flex-direction</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="fonts"><a href="#fonts">fonts</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-mixin"><a href="#fonts-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="global-fonts" data-type="mixin"><a href="#fonts-mixin-global-fonts">global-fonts</a></li><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-face" data-type="mixin"><a href="#fonts-mixin-font-face">font-face</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-variable"><a href="#fonts-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-dir" data-type="variable"><a href="#fonts-variable-font-dir">font-dir</a></li><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-face-map" data-type="variable"><a href="#fonts-variable-font-face-map">font-face-map</a></li><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="google-fonts-family" data-type="variable"><a href="#fonts-variable-google-fonts-family">google-fonts-family</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-function"><a href="#fonts-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font" data-type="function"><a href="#fonts-function-font">font</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="layout"><a href="#layout">layout</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="layout-mixin"><a href="#layout-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layout" data-name="clearfix-classes" data-type="mixin"><a href="#layout-mixin-clearfix-classes">clearfix-classes</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="show-for" data-type="mixin"><a href="#layout-mixin-show-for">show-for</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="show-for-only" data-type="mixin"><a href="#layout-mixin-show-for-only">show-for-only</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="hide-for" data-type="mixin"><a href="#layout-mixin-hide-for">hide-for</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="hide-for-only" data-type="mixin"><a href="#layout-mixin-hide-for-only">hide-for-only</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="visuallyhidden" data-type="mixin"><a href="#layout-mixin-visuallyhidden">visuallyhidden</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="visuallyhidden-off" data-type="mixin"><a href="#layout-mixin-visuallyhidden-off">visuallyhidden-off</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="clearfix" data-type="mixin"><a href="#layout-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="layer" data-type="mixin"><a href="#layout-mixin-layer">layer</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="ios-scroll" data-type="mixin"><a href="#layout-mixin-ios-scroll">ios-scroll</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="counter-increment" data-type="mixin"><a href="#layout-mixin-counter-increment">counter-increment</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="layout-variable"><a href="#layout-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layout" data-name="global-flexbox" data-type="variable"><a href="#layout-variable-global-flexbox">global-flexbox</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="polyfills"><a href="#polyfills">polyfills</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="polyfills-mixin"><a href="#polyfills-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-firefox" data-type="mixin"><a href="#polyfills-mixin-fix-firefox">fix-firefox</a></li><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-old-ie" data-type="mixin"><a href="#polyfills-mixin-fix-old-ie">fix-old-ie</a></li><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-pointer-events" data-type="mixin"><a href="#polyfills-mixin-fix-pointer-events">fix-pointer-events</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="print"><a href="#print">print</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="print-variable"><a href="#print-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-transparent-background-print" data-type="variable"><a href="#print-variable-global-transparent-background-print">global-transparent-background-print</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-color-black-print" data-type="variable"><a href="#print-variable-global-color-black-print">global-color-black-print</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-link-href-show" data-type="variable"><a href="#print-variable-global-link-href-show">global-link-href-show</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-margin-print" data-type="variable"><a href="#print-variable-global-margin-print">global-margin-print</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="shapes"><a href="#shapes">shapes</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="shapes-mixin"><a href="#shapes-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="triangle" data-type="mixin"><a href="#shapes-mixin-triangle">triangle</a></li><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="arrow" data-type="mixin"><a href="#shapes-mixin-arrow">arrow</a></li><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="shape-close" data-type="mixin"><a href="#shapes-mixin-shape-close">shape-close</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="typography"><a href="#typography">typography</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-variable"><a href="#typography-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="header-styles" data-type="variable"><a href="#typography-variable-header-styles">header-styles</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="global-text-direction" data-type="variable"><a href="#typography-variable-global-text-direction">global-text-direction</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-function"><a href="#typography-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="str-replace" data-type="function"><a href="#typography-function-str-replace">str-replace</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-mixin"><a href="#typography-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="no-text" data-type="mixin"><a href="#typography-mixin-no-text">no-text</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="text-ellipsis" data-type="mixin"><a href="#typography-mixin-text-ellipsis">text-ellipsis</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="units"><a href="#units">units</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="units-function"><a href="#units-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="units" data-name="strip-unit" data-type="function"><a href="#units-function-strip-unit">strip-unit</a></li><li class="sidebar__item sassdoc__item" data-group="units" data-name="em" data-type="function"><a href="#units-function-em">em</a></li><li class="sidebar__item sassdoc__item" data-group="units" data-name="rem" data-type="function"><a href="#units-function-rem">rem</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="xy-grid"><a href="#xy-grid">xy-grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-variable"><a href="#xy-grid-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container" data-type="variable"><a href="#xy-grid-variable-grid-container">grid-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-columns" data-type="variable"><a href="#xy-grid-variable-grid-columns">grid-columns</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-margin-gutters" data-type="variable"><a href="#xy-grid-variable-grid-margin-gutters">grid-margin-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-padding-gutters" data-type="variable"><a href="#xy-grid-variable-grid-padding-gutters">grid-padding-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container-padding" data-type="variable"><a href="#xy-grid-variable-grid-container-padding">grid-container-padding</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container-max" data-type="variable"><a href="#xy-grid-variable-grid-container-max">grid-container-max</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-block-grid-max" data-type="variable"><a href="#xy-grid-variable-xy-block-grid-max">xy-block-grid-max</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-mixin"><a href="#xy-grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-gutters" data-type="mixin"><a href="#xy-grid-mixin-xy-gutters">xy-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-container" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-container">xy-grid-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid" data-type="mixin"><a href="#xy-grid-mixin-xy-grid">xy-grid</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-base" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-base">xy-cell-base</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-reset" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-reset">xy-cell-reset</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell" data-type="mixin"><a href="#xy-grid-mixin-xy-cell">xy-cell</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-static" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-static">xy-cell-static</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-frame" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-frame">xy-grid-frame</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-block" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-block">xy-cell-block</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-block-container" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-block-container">xy-cell-block-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-offset" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-offset">xy-cell-offset</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-layout" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-layout">xy-grid-layout</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-collapse" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-collapse">xy-grid-collapse</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-function"><a href="#xy-grid-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-size" data-type="function"><a href="#xy-grid-function-xy-cell-size">xy-cell-size</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="breakpoint"><div class="container">breakpoint</div></h1><section class="main__sub-section" id="breakpoint-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="breakpoint-variable-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoints">breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoints: (
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Renderkit - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="_global renderkit"><a href="#_global renderkit">_global renderkit</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="_global renderkit-mixin"><a href="#_global renderkit-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="_global renderkit" data-name="headers-style" data-type="mixin"><a href="#_global renderkit-mixin-headers-style">headers-style</a></li><li class="sidebar__item sassdoc__item" data-group="_global renderkit" data-name="global-fonts" data-type="mixin"><a href="#_global renderkit-mixin-global-fonts">global-fonts</a></li><li class="sidebar__item sassdoc__item" data-group="_global renderkit" data-name="scss-normalize" data-type="mixin"><a href="#_global renderkit-mixin-scss-normalize">scss-normalize</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="breakpoint"><a href="#breakpoint">breakpoint</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-variable"><a href="#breakpoint-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoints" data-type="variable"><a href="#breakpoint-variable-breakpoints">breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="print-breakpoint" data-type="variable"><a href="#breakpoint-variable-print-breakpoint">print-breakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoint-classes" data-type="variable"><a href="#breakpoint-variable-breakpoint-classes">breakpoint-classes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoint-mixin"><a href="#breakpoint-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoint" data-name="breakpoint" data-type="mixin"><a href="#breakpoint-mixin-breakpoint">breakpoint</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="checkbox &amp; radio"><a href="#checkbox &amp; radio">checkbox &amp; radio</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="checkbox &amp; radio-variable"><a href="#checkbox &amp; radio-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-align-center" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-align-center">global-custom-checkbox-radio-align-center</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-size" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-size">global-custom-checkbox-radio-size</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-font-family" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-font-family">global-custom-checkbox-radio-font-family</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-font-size" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-font-size">global-custom-checkbox-radio-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-text-transform" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-text-transform">global-custom-checkbox-radio-text-transform</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-letter-spacing" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-letter-spacing">global-custom-checkbox-radio-letter-spacing</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="global-custom-checkbox-radio-color" data-type="variable"><a href="#checkbox &amp; radio-variable-global-custom-checkbox-radio-color">global-custom-checkbox-radio-color</a></li><li class="sidebar__item sassdoc__item" data-group="checkbox &amp; radio" data-name="custom-checkbox-radio-label-gutter" data-type="variable"><a href="#checkbox &amp; radio-variable-custom-checkbox-radio-label-gutter">custom-checkbox-radio-label-gutter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="colors &amp; palette"><a href="#colors &amp; palette">colors &amp; palette</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-variable"><a href="#colors &amp; palette-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="ios-tap-color" data-type="variable"><a href="#colors &amp; palette-variable-ios-tap-color">ios-tap-color</a></li><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="body-background-gradient" data-type="variable"><a href="#colors &amp; palette-variable-body-background-gradient">body-background-gradient</a></li><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="palette-color" data-type="variable"><a href="#colors &amp; palette-variable-palette-color">palette-color</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-function"><a href="#colors &amp; palette-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="palette" data-type="function"><a href="#colors &amp; palette-function-palette">palette</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors &amp; palette-mixin"><a href="#colors &amp; palette-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors &amp; palette" data-name="manage-palette" data-type="mixin"><a href="#colors &amp; palette-mixin-manage-palette">manage-palette</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="flexbox utilities"><a href="#flexbox utilities">flexbox utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="flexbox utilities-variable"><a href="#flexbox utilities-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-source-ordering-count-enable" data-type="variable"><a href="#flexbox utilities-variable-flex-source-ordering-count-enable">flex-source-ordering-count-enable</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-source-ordering-count" data-type="variable"><a href="#flexbox utilities-variable-flex-source-ordering-count">flex-source-ordering-count</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flexbox-responsive-breakpoints" data-type="variable"><a href="#flexbox utilities-variable-flexbox-responsive-breakpoints">flexbox-responsive-breakpoints</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="flexbox utilities-mixin"><a href="#flexbox utilities-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex" data-type="mixin"><a href="#flexbox utilities-mixin-flex">flex</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-align" data-type="mixin"><a href="#flexbox utilities-mixin-flex-align">flex-align</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-align-self" data-type="mixin"><a href="#flexbox utilities-mixin-flex-align-self">flex-align-self</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-order" data-type="mixin"><a href="#flexbox utilities-mixin-flex-order">flex-order</a></li><li class="sidebar__item sassdoc__item" data-group="flexbox utilities" data-name="flex-direction" data-type="mixin"><a href="#flexbox utilities-mixin-flex-direction">flex-direction</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="fonts"><a href="#fonts">fonts</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-variable"><a href="#fonts-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-dir" data-type="variable"><a href="#fonts-variable-font-dir">font-dir</a></li><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-face-map" data-type="variable"><a href="#fonts-variable-font-face-map">font-face-map</a></li><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="google-fonts-family" data-type="variable"><a href="#fonts-variable-google-fonts-family">google-fonts-family</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-function"><a href="#fonts-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font" data-type="function"><a href="#fonts-function-font">font</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="fonts-mixin"><a href="#fonts-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="fonts" data-name="font-face" data-type="mixin"><a href="#fonts-mixin-font-face">font-face</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="layout"><a href="#layout">layout</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="layout-mixin"><a href="#layout-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layout" data-name="clearfix-classes" data-type="mixin"><a href="#layout-mixin-clearfix-classes">clearfix-classes</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="show-for" data-type="mixin"><a href="#layout-mixin-show-for">show-for</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="show-for-only" data-type="mixin"><a href="#layout-mixin-show-for-only">show-for-only</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="hide-for" data-type="mixin"><a href="#layout-mixin-hide-for">hide-for</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="hide-for-only" data-type="mixin"><a href="#layout-mixin-hide-for-only">hide-for-only</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="visuallyhidden" data-type="mixin"><a href="#layout-mixin-visuallyhidden">visuallyhidden</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="visuallyhidden-off" data-type="mixin"><a href="#layout-mixin-visuallyhidden-off">visuallyhidden-off</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="clearfix" data-type="mixin"><a href="#layout-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="layer" data-type="mixin"><a href="#layout-mixin-layer">layer</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="ios-scroll" data-type="mixin"><a href="#layout-mixin-ios-scroll">ios-scroll</a></li><li class="sidebar__item sassdoc__item" data-group="layout" data-name="counter-increment" data-type="mixin"><a href="#layout-mixin-counter-increment">counter-increment</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="layout-variable"><a href="#layout-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layout" data-name="global-flexbox" data-type="variable"><a href="#layout-variable-global-flexbox">global-flexbox</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="polyfills"><a href="#polyfills">polyfills</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="polyfills-mixin"><a href="#polyfills-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-firefox" data-type="mixin"><a href="#polyfills-mixin-fix-firefox">fix-firefox</a></li><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-old-ie" data-type="mixin"><a href="#polyfills-mixin-fix-old-ie">fix-old-ie</a></li><li class="sidebar__item sassdoc__item" data-group="polyfills" data-name="fix-pointer-events" data-type="mixin"><a href="#polyfills-mixin-fix-pointer-events">fix-pointer-events</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="print"><a href="#print">print</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="print-variable"><a href="#print-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-transparent-background-print" data-type="variable"><a href="#print-variable-global-transparent-background-print">global-transparent-background-print</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-color-black-print" data-type="variable"><a href="#print-variable-global-color-black-print">global-color-black-print</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-link-href-show" data-type="variable"><a href="#print-variable-global-link-href-show">global-link-href-show</a></li><li class="sidebar__item sassdoc__item" data-group="print" data-name="global-margin-print" data-type="variable"><a href="#print-variable-global-margin-print">global-margin-print</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="shapes"><a href="#shapes">shapes</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="shapes-mixin"><a href="#shapes-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="triangle" data-type="mixin"><a href="#shapes-mixin-triangle">triangle</a></li><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="arrow" data-type="mixin"><a href="#shapes-mixin-arrow">arrow</a></li><li class="sidebar__item sassdoc__item" data-group="shapes" data-name="shape-close" data-type="mixin"><a href="#shapes-mixin-shape-close">shape-close</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="typography"><a href="#typography">typography</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-variable"><a href="#typography-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="header-styles" data-type="variable"><a href="#typography-variable-header-styles">header-styles</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="global-text-direction" data-type="variable"><a href="#typography-variable-global-text-direction">global-text-direction</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="body-font-family" data-type="variable"><a href="#typography-variable-body-font-family">body-font-family</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="body-root-font-size" data-type="variable"><a href="#typography-variable-body-root-font-size">body-root-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="body-font-size" data-type="variable"><a href="#typography-variable-body-font-size">body-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="body-font-weight" data-type="variable"><a href="#typography-variable-body-font-weight">body-font-weight</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-function"><a href="#typography-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="str-replace" data-type="function"><a href="#typography-function-str-replace">str-replace</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-mixin"><a href="#typography-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="no-text" data-type="mixin"><a href="#typography-mixin-no-text">no-text</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="text-ellipsis" data-type="mixin"><a href="#typography-mixin-text-ellipsis">text-ellipsis</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="units"><a href="#units">units</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="units-function"><a href="#units-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="units" data-name="strip-unit" data-type="function"><a href="#units-function-strip-unit">strip-unit</a></li><li class="sidebar__item sassdoc__item" data-group="units" data-name="em" data-type="function"><a href="#units-function-em">em</a></li><li class="sidebar__item sassdoc__item" data-group="units" data-name="rem" data-type="function"><a href="#units-function-rem">rem</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="xy-grid"><a href="#xy-grid">xy-grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-variable"><a href="#xy-grid-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container" data-type="variable"><a href="#xy-grid-variable-grid-container">grid-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-columns" data-type="variable"><a href="#xy-grid-variable-grid-columns">grid-columns</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-margin-gutters" data-type="variable"><a href="#xy-grid-variable-grid-margin-gutters">grid-margin-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-padding-gutters" data-type="variable"><a href="#xy-grid-variable-grid-padding-gutters">grid-padding-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container-padding" data-type="variable"><a href="#xy-grid-variable-grid-container-padding">grid-container-padding</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="grid-container-max" data-type="variable"><a href="#xy-grid-variable-grid-container-max">grid-container-max</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-block-grid-max" data-type="variable"><a href="#xy-grid-variable-xy-block-grid-max">xy-block-grid-max</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-mixin"><a href="#xy-grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-gutters" data-type="mixin"><a href="#xy-grid-mixin-xy-gutters">xy-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-container" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-container">xy-grid-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid" data-type="mixin"><a href="#xy-grid-mixin-xy-grid">xy-grid</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-base" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-base">xy-cell-base</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-reset" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-reset">xy-cell-reset</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell" data-type="mixin"><a href="#xy-grid-mixin-xy-cell">xy-cell</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-static" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-static">xy-cell-static</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-frame" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-frame">xy-grid-frame</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-block" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-block">xy-cell-block</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-block-container" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-block-container">xy-cell-block-container</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-offset" data-type="mixin"><a href="#xy-grid-mixin-xy-cell-offset">xy-cell-offset</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-layout" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-layout">xy-grid-layout</a></li><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-grid-collapse" data-type="mixin"><a href="#xy-grid-mixin-xy-grid-collapse">xy-grid-collapse</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="xy-grid-function"><a href="#xy-grid-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="xy-grid" data-name="xy-cell-size" data-type="function"><a href="#xy-grid-function-xy-cell-size">xy-cell-size</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="_global renderkit"><div class="container">_global renderkit</div></h1><section class="main__sub-section" id="_global renderkit-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="_global renderkit-mixin-headers-style"><h3 class="item__heading"><a class="item__name" href="#mixin-headers-style">headers-style</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin headers-style() { 
+    /*@headers-style*/
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6, {
+        font: {
+            family: $global-heading-font-family;
+            weight: $global-heading-font-weight;
+        }
+        text-transform: $global-heading-text-transform;
+        color: $global-heading-color;
+    }
+ }" data-collapsed="@mixin headers-style() { ... }"><code>@mixin headers-style() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for global headers style</p><p>Each header has in association a class to invoke in the templates.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="_global renderkit-mixin-global-fonts"><h3 class="item__heading"><a class="item__name" href="#mixin-global-fonts">global-fonts</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin global-fonts() { 
+    /*@global fonts*/
+    @if ($google-fonts-load) {
+        @import url(&#39;https://fonts.googleapis.com/css?family=#{$google-fonts-family}&#39;);
+    }
+
+    @if ($font-face-load) {
+        @each $font-family, $property in $font-face-map {
+            $font-file: nth($property, 1);
+            $font-style: nth($property, 2);
+            $font-weight: nth($property, 3);
+            $extensions: nth($property, 4);
+
+            @include font-face($font-family, $font-file, $font-style, $font-weight, $extensions);
+        }
+    }
+ }" data-collapsed="@mixin global-fonts() { ... }"><code>@mixin global-fonts() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for importing Google Fonts and/or font face globally.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-font-face"><code>font-face</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-google-fonts-family"><code>google-fonts-family</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li></ul></section><section class="main__item container item" id="_global renderkit-mixin-scss-normalize"><h3 class="item__heading"><a class="item__name" href="#mixin-scss-normalize">scss-normalize</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin scss-normalize() { 
+    // Change the default font family in all browsers (opinionated).
+    // Prevent adjustments of font size after orientation changes in IE and iOS Devices.
+    // Configure the default iOS tap highlight color.
+    // Add &quot;box-sizing: border-box&quot; to html, not in universal selector `*` for best performance.
+    // @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+    html {
+    	font-family: sans-serif;
+    	-webkit-text-size-adjust: percentage(1);
+    	-webkit-tap-highlight-color: $ios-tap-color;
+    	box-sizing: border-box;
+    }
+
+    // universal reset (inherit ´box sizing´ for best performance)
+    *, ::before, ::after {
+    	box-sizing: inherit;
+    }
+
+    body {
+    	font: {
+    		family: $body-font-family;
+            @if ($body-root-font-size) {
+                size: $body-font-size;
+            }
+    		weight: $body-font-weight;
+    	}
+        @if ($body-background-gradient) {
+            background-image: $body-background-gradient-value;
+        } @else {
+            background-color: $body-background-color;
+        }
+    	color: $body-base-color;
+    	line-height: $body-line-height;
+    	margin: 0;
+    }
+
+    // HTML 5 tags correct display
+    // All HTML5 tags for reset the correct display in older browsers. No &quot;&lt;hgroup/&gt;&quot; tag included because is deprecated. See: http://caniuse.com/#search=html -&gt; Obsolete/deprecated HTML elements.
+    // &lt;details/&gt; &lt;summary/&gt; correct display in Edge, IE, and Firefox. &lt;main/&gt; correct display in IE.
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    main,
+    nav,
+    section,
+    summary {
+    	display: block;
+    }
+
+    // Remove the default html tags margin
+    abbr,
+    blockquote,
+    dd,
+    dl,
+    dt,
+    fieldset,
+    figure,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    legend,
+    li,
+    ol,
+    p,
+    pre,
+    ul {
+    	margin: 0;
+    }
+
+    // Add the correct display in IE 9-.
+    audio,
+    canvas,
+    progress,
+    video {
+    	display: inline-block;
+    	vertical-align: baseline;
+    }
+
+    // Add the correct display in iOS 4-7.
+    audio:not([controls]) {
+    	display: none;
+    	height: 0;
+    }
+
+    // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+    progress {
+    	vertical-align: baseline;
+    }
+
+    // Add the correct display in IE 10-.
+    // @note: &lt;template&gt; Add the correct display in IE.
+    template,
+    [hidden] {
+    	display: none;
+    }
+
+    // Remove the gray background on active links in IE 10.
+    // Set `true` or `false` on $global-link-text-decoration for remove o mantain the default underline.
+    // Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
+    // [data-whatinput=&quot;*&quot;] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
+    a {
+    	background-color: transparent;
+    	color: $global-link-color;
+
+    	@if ($global-link-text-decoration) {
+    		text-decoration: underline;
+    	} @else {
+            text-decoration: none;
+        }
+
+        @if ($focus-outline-link-hidden) {
+            @if ($what-input-outline-detect) {
+            	[data-whatinput=&quot;mouse&quot;] &amp;:focus,
+            	[data-whatinput=&quot;touch&quot;] &amp;:focus, {
+            		outline: 0;
+            	}
+            } @else {
+                &amp;:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    // Remove the bottom border in Firefox 39-.
+    // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+    abbr[title] {
+    	border-bottom: none;
+    	text-decoration: underline;
+    	text-decoration: underline dotted;
+    }
+
+    // Add the correct font weight in Chrome, Edge, and Safari.
+    b,
+    strong {
+    	font: {
+    		family: $global-strong-font-family;
+    		weight: $global-strong-font-weight;
+    	}
+    }
+
+    // Add the correct font style in Android 4.3-.
+    dfn {
+    	font-style: italic;
+    }
+
+    // Add the correct background and color in IE 9-.
+    mark {
+    	background-color: #ff0;
+    	color: #000;
+    }
+
+    // Replace the default &quot;quotes&quot; in all browsers.
+    q {
+    	&amp;::before {
+    		content: &#39;\201C&#39;;
+    	}
+
+    	&amp;::after {
+    		content: &#39;\201D&#39;;
+    	}
+    }
+
+    // Add the correct font size in all browsers.
+    small {
+    	font-size: percentage(0.8);
+    }
+
+    // Prevent &lt;sub/&gt; and &lt;sup/&gt; elements from affecting the line height in all browsers.
+    sub,
+    sup {
+    	position: relative;
+    	font-size: percentage(0.75);
+    	line-height: 0;
+    	vertical-align: baseline;
+    }
+
+    sub {
+    	bottom: -0.25em;
+    }
+
+    sup {
+    	top: -0.5em;
+    }
+
+    // Make &lt;img/&gt; &lt;video/&gt; tags responsive in all browsers.
+    img,
+    video {
+    	max-width: 100%;
+    	height: auto;
+    	vertical-align: middle;
+    }
+
+    // Remove the border on images inside links in IE 10-, and remove the default border for &lt;iframe/&gt; tag in all browsers.
+    img,
+    iframe {
+        border: 0;
+    }
+
+    // Correct the inheritance and scaling of font size in all browsers.
+    // Correct the odd `em` font sizing in all browsers.
+    code,
+    kbd,
+    pre,
+    samp {
+    	font: {
+    		family: monospace, monospace;
+    		size: 1em;
+    	}
+    }
+
+    // Set default overflow auto on &lt;pre/&gt; tag in all browsers.
+    pre {
+    	overflow: auto;
+    }
+
+    // Add the correct box sizing in Firefox.
+    // Show the overflow in Edge and IE.
+    hr {
+    	box-sizing: content-box;
+    	height: 0;
+    	overflow: visible;
+    }
+
+    // SVG inline tag reset.
+    // Hide the overflow in IE.
+    svg {
+    	display: inline-block;
+    	vertical-align: middle;
+    	position: relative;
+    	top: -0.063em;
+    	width: 100%;
+    	height: 100%;
+    	fill: currentColor;
+
+    	&amp;:not(:root) {
+    		overflow: hidden;
+    	}
+    }
+
+    // Set font smoothing on body and on form input
+    // if only apply on body the font smoothing don&#39;t have effect on inputs.
+    // Reset all default font synthesis of browsers
+    // Set all text to perform legibility
+    // Remove exeed weight on -moz-core on macOS
+    // Set on -moz-core the same font -webkit-core &quot;kerning&quot; (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
+    body,
+    button,
+    input,
+    select,
+    textarea {
+    	font-synthesis: none;
+    	text-rendering: $global-text-rendering;
+    	-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+        @if ($global-font-liga-kern) {
+            font-feature-settings: &#39;liga&#39;, &#39;kern&#39;;
+        }
+    	direction: $global-text-direction;
+    }
+
+    // Change font properties to `inherit` in all browsers (opinionated).
+    // Remove the margin in Firefox and Safari.
+    // [data-whatinput=&quot;*&quot;] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
+    button,
+    input,
+    select,
+    textarea {
+        font-family: inherit;
+    	@if ($global-reset-input-appearance) {
+    		font-size: percentage(1);
+    	}
+    	color: inherit;
+    	line-height: $body-line-height;
+    	margin: 0;
+
+        @if ($focus-outline-input-hidden) {
+            @if ($what-input-outline-detect) {
+                [data-whatinput=&quot;mouse&quot;] &amp;:focus,
+            	[data-whatinput=&quot;touch&quot;] &amp;:focus {
+            		outline: 0;
+            	}
+
+            } @else {
+                &amp;:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    // Show the overflow in IE.
+    // Show the overflow in Edge.
+    button,
+    input {
+    	overflow: visible;
+    }
+
+    // Remove the inheritance of text transform in Edge, Firefox, and IE.
+    // Remove the inheritance of text transform in Firefox.
+    select,
+    button {
+    	text-transform: none;
+    	cursor: pointer;
+    }
+
+    // Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4.
+    // Correct the inability to style clickable types in iOS and Safari.
+    button,
+    html [type=&quot;button&quot;],
+    [type=&quot;reset&quot;],
+    [type=&quot;submit&quot;] {
+    	-webkit-appearance: button;
+    }
+
+    // Remove the inner border and padding in Firefox.
+    button::-moz-focus-inner,
+    [type=&quot;button&quot;]::-moz-focus-inner,
+    [type=&quot;reset&quot;]::-moz-focus-inner,
+    [type=&quot;submit&quot;]::-moz-focus-inner {
+    	border-style: none;
+    	padding: 0;
+    }
+
+    // Change the border, margin, and padding in all browsers (opinionated).
+    fieldset {
+    	border: 1px solid silver;
+    	margin: 0 2px;
+    	padding: 0.313em 0.625em 0.750em;
+    }
+
+    // Correct the text wrapping in Edge and IE.
+    // Correct the color inheritance from `fieldset` elements in IE.
+    // Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
+    legend {
+    	display: table;
+    	max-width: 100%;
+    	white-space: normal;
+    	color: inherit;
+    	padding: 0;
+    }
+
+    // Remove the default margin on input[type=&quot;checkbox&quot;] &amp; [type=&quot;radio&quot;].
+    // input[type=&quot;checkbox&quot;] input[type=&quot;radio&quot;] Remove the padding in IE 10-.
+    // Loop all standard and &quot;Cross Browsing&quot; input type field.
+    // `::-webkit-inner-spin-button`, `::-webkit-outer-spin-button` Correct the cursor style of increment and decrement buttons in Chrome.
+    // input[type=&quot;search&quot;] Correct the outline style in Safari.
+    // `::-webkit-search-cancel-button`, Remove the inner padding in Chrome and Safari.
+    // `::-webkit-file-upload-button` Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
+    %reset-input-style {
+    	appearance: none;
+    	border: 1px solid lightgray;
+        border-radius: 0;
+    }
+
+    input {
+    	&amp;[type=&quot;checkbox&quot;],
+    	&amp;[type=&quot;radio&quot;] {
+    		@if ($global-custom-checkbox-radio) {
+                appearance: none !important;
+                @include visuallyhidden;
+    		} @else {
+    			margin: 0;
+    			padding: 0;
+    		}
+    	}
+
+    	@each $input-type in (email, password, search, tel, text, url) {
+    		&amp;[type=&quot;#{$input-type}&quot;] {
+    			@if ($global-reset-input-appearance) {
+    				@extend %reset-input-style;
+    			}
+    		}
+    	}
+
+    	&amp;[type=&quot;number&quot;]::-webkit-inner-spin-button,
+    	&amp;[type=&quot;number&quot;]::-webkit-outer-spin-button {
+    		height: auto;
+    	}
+
+    	&amp;[type=&quot;search&quot;] {
+            @if ($global-reset-input-appearance) {
+                @extend %reset-input-style;
+            }
+            outline-offset: -2px;
+
+    		&amp;::-webkit-search-decoration {
+    			-webkit-appearance: none;
+    		}
+
+            @if not ($global-webkit-search-cancel-button) {
+                &amp;::-webkit-search-cancel-button {
+                    -webkit-appearance: none;
+                }
+            }
+    	}
+
+    	&amp;::-webkit-file-upload-button {
+    		-webkit-appearance: button;
+    		font: inherit;
+    		@if ($global-reset-input-appearance) {
+    			border: 1px solid lightgray;
+    			background-color: white;
+                border-radius: 0;
+    		}
+    	}
+
+        // Reset line break for `input` tag.
+        &amp;[type=&quot;reset&quot;],
+        &amp;[type=&quot;submit&quot;] {
+            white-space: normal;
+        }
+    }
+
+    // Global reset for select
+    // `:-moz-focusring`: Hack for remove the &quot;focus-ring&quot; in Firefox, when &lt;select/&gt; is on focus.
+    // Remove the default IE/Edge &quot;arrow&quot; pseudo element.
+    // Restorage the current color in IE/Edge when is selected an option.
+    select {
+    	@if ($global-custom-select) {
+    		@extend %reset-input-style;
+
+    		&amp;:-moz-focusring {
+    			color: transparent;
+    			text-shadow: 0 0 0 $body-base-color;
+    		}
+
+    		&amp;::-ms-expand {
+    			display: none;
+    		}
+
+    		&amp;::-ms-value {
+    			color: currentColor;
+    		}
+    	}
+
+    	@if ($global-custom-options-select) {
+    		appearance: none !important;
+    		@include visuallyhidden;
+    	}
+    }
+
+    // Remove the default vertical scrollbar in IE.
+    textarea {
+    	@if ($global-reset-input-appearance) {
+    		@extend %reset-input-style;
+    	}
+    	overflow: auto;
+    }
+
+    // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
+    @if ($global-reset-input-appearance) {
+    	[disabled] {
+    		color: inherit;
+    		opacity: $global-disable-input-opacity !important;
+    		cursor: default !important;
+    	}
+    }
+
+    // Collapse borders on table in every browsers.
+    table {
+    	border-collapse: collapse;
+    	border-spacing: 0;
+    }
+
+    // IE10 viewport hack for Surface/Desktop Windows 8 bug.
+    @-ms-viewport {
+    	width: device-width;
+    }
+ }" data-collapsed="@mixin scss-normalize() { ... }"><code>@mixin scss-normalize() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>scss-normalize mixin for RenderKit. From original <code>normalize.css</code> v8.0.0</p><p>Compared to the original normalize, the ability to disable or enable the default <code>appearance</code> for the various fields in the form, or for radio checkboxes has been added.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-visuallyhidden"><code>visuallyhidden</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-visuallyhidden"><code>visuallyhidden</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#colors &amp; palette-variable-ios-tap-color"><code>ios-tap-color</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-body-font-family"><code>body-font-family</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-body-root-font-size"><code>body-root-font-size</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-body-font-size"><code>body-font-size</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-body-font-weight"><code>body-font-weight</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#colors &amp; palette-variable-body-background-gradient"><code>body-background-gradient</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-global-text-direction"><code>global-text-direction</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://github.com/necolas/normalize.css">https://github.com/necolas/normalize.css</a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="breakpoint"><div class="container">breakpoint</div></h1><section class="main__sub-section" id="breakpoint-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="breakpoint-variable-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoints">breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoints: (
     small: 0,
     medium: 640px,
     large: 1024px,
@@ -35,7 +544,7 @@
 
         $-zf-size: $old-zf-size !global;
     }
- }" data-collapsed="@mixin breakpoint($value) { ... }"><code>@mixin breakpoint($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Wraps a media query around the content you put inside the mixin. This mixin accepts a number of values:</p><ul><li>If a string is passed, the mixin will look for it in the <code>$breakpoints</code> map, and use a media query there.</li><li>Unlike the Foundation default mixin every value is passed will not be converted to <strong>em</strong> values.</li></ul><p>If multiple values are passed, the mixin will generate a media query for each of them as described above. Since the content is duplicated for each breakpoint, this mixin should only be used with properties that change across breakpoints.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Breakpoint name or px value to process.</p></td><td data-label="type"><code>Keyword</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p><h3 class="item__sub-heading">Output</h3><div class="item__description"><p>If the breakpoint is &quot;0px and larger&quot;, outputs the content as-is. Otherwise, outputs the content wrapped in a media query.</p><p>The <code>only</code> parameter has been added. Ex. <code>@media only screen()</code>.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#breakpoint-variable-print-breakpoint"><code>print-breakpoint</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-show-for"><code>show-for</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-hide-for"><code>hide-for</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-hide-for-only"><code>hide-for-only</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="checkbox &amp; radio"><div class="container">checkbox &amp; radio</div></h1><section class="main__sub-section" id="checkbox &amp; radio-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-align-center"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-align-center">global-custom-checkbox-radio-align-center</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-align-center: false !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>If set to <code>true</code> the alignment of the checkbox &amp; radio components will line up in the middle of the text.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-size"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-size">global-custom-checkbox-radio-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-size: 24px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The size the global dimension of the checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-font-family"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-font-family">global-custom-checkbox-radio-font-family</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-font-family: sans-serif !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default font family for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-font-size">global-custom-checkbox-radio-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-font-size: 12px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default font size for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-text-transform"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-text-transform">global-custom-checkbox-radio-text-transform</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-text-transform: none !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default text transform for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-letter-spacing"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-letter-spacing">global-custom-checkbox-radio-letter-spacing</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-letter-spacing: normal !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default letter spacing for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-color"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-color">global-custom-checkbox-radio-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-color: #666 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default color for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-custom-checkbox-radio-label-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-custom-checkbox-radio-label-gutter">custom-checkbox-radio-label-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$custom-checkbox-radio-label-gutter: 10px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The space between the label text and the shape of the checkbox or radio component.</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="colors &amp; palette"><div class="container">colors &amp; palette</div></h1><section class="main__sub-section" id="colors &amp; palette-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="colors &amp; palette-variable-palette-color"><h3 class="item__heading"><a class="item__name" href="#variable-palette-color">palette-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$palette-color: (
+ }" data-collapsed="@mixin breakpoint($value) { ... }"><code>@mixin breakpoint($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Wraps a media query around the content you put inside the mixin. This mixin accepts a number of values:</p><ul><li>If a string is passed, the mixin will look for it in the <code>$breakpoints</code> map, and use a media query there.</li><li>Unlike the Foundation default mixin every value is passed will not be converted to <strong>em</strong> values.</li></ul><p>If multiple values are passed, the mixin will generate a media query for each of them as described above. Since the content is duplicated for each breakpoint, this mixin should only be used with properties that change across breakpoints.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Breakpoint name or px value to process.</p></td><td data-label="type"><code>Keyword</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p><h3 class="item__sub-heading">Output</h3><div class="item__description"><p>If the breakpoint is &quot;0px and larger&quot;, outputs the content as-is. Otherwise, outputs the content wrapped in a media query.</p><p>The <code>only</code> parameter has been added. Ex. <code>@media only screen()</code>.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#breakpoint-variable-print-breakpoint"><code>print-breakpoint</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-show-for"><code>show-for</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-hide-for"><code>hide-for</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#layout-mixin-hide-for-only"><code>hide-for-only</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#xy-grid-mixin-xy-grid-collapse"><code>xy-grid-collapse</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="checkbox &amp; radio"><div class="container">checkbox &amp; radio</div></h1><section class="main__sub-section" id="checkbox &amp; radio-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-align-center"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-align-center">global-custom-checkbox-radio-align-center</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-align-center: false !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>If set to <code>true</code> the alignment of the checkbox &amp; radio components will line up in the middle of the text.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-size"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-size">global-custom-checkbox-radio-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-size: 24px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The size the global dimension of the checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-font-family"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-font-family">global-custom-checkbox-radio-font-family</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-font-family: sans-serif !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default font family for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-font-size">global-custom-checkbox-radio-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-font-size: 12px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default font size for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-text-transform"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-text-transform">global-custom-checkbox-radio-text-transform</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-text-transform: none !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default text transform for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-letter-spacing"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-letter-spacing">global-custom-checkbox-radio-letter-spacing</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-letter-spacing: normal !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default letter spacing for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-global-custom-checkbox-radio-color"><h3 class="item__heading"><a class="item__name" href="#variable-global-custom-checkbox-radio-color">global-custom-checkbox-radio-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-custom-checkbox-radio-color: #666 !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default color for checkbox &amp; radio components.</p></div></section><section class="main__item container item" id="checkbox &amp; radio-variable-custom-checkbox-radio-label-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-custom-checkbox-radio-label-gutter">custom-checkbox-radio-label-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$custom-checkbox-radio-label-gutter: 10px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The space between the label text and the shape of the checkbox or radio component.</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="colors &amp; palette"><div class="container">colors &amp; palette</div></h1><section class="main__sub-section" id="colors &amp; palette-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="colors &amp; palette-variable-ios-tap-color"><h3 class="item__heading"><a class="item__name" href="#variable-ios-tap-color">ios-tap-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$ios-tap-color: rgba(0, 0, 0, 0.5) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The tap highlight color for iOS devices.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="colors &amp; palette-variable-body-background-gradient"><h3 class="item__heading"><a class="item__name" href="#variable-body-background-gradient">body-background-gradient</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$body-background-gradient: false !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>If it is <code>true</code> the value of the variable <code>$body-background-gradient-value</code> will be applied to the body.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="colors &amp; palette-variable-palette-color"><h3 class="item__heading"><a class="item__name" href="#variable-palette-color">palette-color</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$palette-color: (
     primary: #666,
     2: #8c8c8c,
     3: #b2b2b2,
@@ -86,23 +595,21 @@
     order: $order;
  }" data-collapsed="@mixin flex-order($order: 0) { ... }"><code>@mixin flex-order($order: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Changes the source order of a flex child. Children with lower numbers appear first in the layout.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$order</code></th><td data-label="desc"><p>Order number to apply.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table></section><section class="main__item container item" id="flexbox utilities-mixin-flex-direction"><h3 class="item__heading"><a class="item__name" href="#mixin-flex-direction">flex-direction</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flex-direction($direction: row) { 
     flex-direction: $direction;
- }" data-collapsed="@mixin flex-direction($direction: row) { ... }"><code>@mixin flex-direction($direction: row) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Change flex-direction</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>Flex direction to use. Can be</p><ul><li>row (default): same as text direction</li><li>row-reverse: opposite to text direction</li><li>column: same as row but top to bottom</li><li>column-reverse: same as row-reverse top to bottom</li></ul></td><td data-label="type"><code>Keyword</code></td><td data-label="default"><code>row</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="fonts"><div class="container">fonts</div></h1><section class="main__sub-section" id="fonts-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="fonts-mixin-global-fonts"><h3 class="item__heading"><a class="item__name" href="#mixin-global-fonts">global-fonts</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin global-fonts() { 
-    /*@global fonts*/
-    @if ($google-fonts-load) {
-        @import url(&#39;https://fonts.googleapis.com/css?family=#{$google-fonts-family}&#39;);
-    }
+ }" data-collapsed="@mixin flex-direction($direction: row) { ... }"><code>@mixin flex-direction($direction: row) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Change flex-direction</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>Flex direction to use. Can be</p><ul><li>row (default): same as text direction</li><li>row-reverse: opposite to text direction</li><li>column: same as row but top to bottom</li><li>column-reverse: same as row-reverse top to bottom</li></ul></td><td data-label="type"><code>Keyword</code></td><td data-label="default"><code>row</code></td></tr></tbody></table></section></section></section><section class="main__section"><h1 class="main__heading" id="fonts"><div class="container">fonts</div></h1><section class="main__sub-section" id="fonts-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="fonts-variable-font-dir"><h3 class="item__heading"><a class="item__name" href="#variable-font-dir">font-dir</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-dir: &#39;../fonts/&#39; !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default font dir for catch all font file.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-font-face"><code>font-face</code></a></li></ul></section><section class="main__item container item" id="fonts-variable-font-face-map"><h3 class="item__heading"><a class="item__name" href="#variable-font-face-map">font-face-map</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-face-map: (
+    &#39;MyFontFamily&#39;: (&#39;myfilename&#39;, normal, 400, eot woff woff2 svg)
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default <code>$font-face-map</code> used by RenderKit.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-global-fonts"><code>global-fonts</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#fonts-function-font"><code>font</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#fonts-function-font"><code>font</code></a></li></ul></section><section class="main__item container item" id="fonts-variable-google-fonts-family"><h3 class="item__heading"><a class="item__name" href="#variable-google-fonts-family">google-fonts-family</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$google-fonts-family: &#39;Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface&#39; !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default Google Fonts used by by RenderKit.</p><p><code>$google-fonts-family</code> accept the name of the font after string <code>?family=</code>.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-global-fonts"><code>global-fonts</code></a></li></ul></section></section><section class="main__sub-section" id="fonts-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="fonts-function-font"><h3 class="item__heading"><a class="item__name" href="#function-font">font</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function font($font-family-key) { 
+    $list: $font-face-map;
+    $key: map-keys($list);
+    $map-length: length($list);
 
-    @if ($font-face-load) {
-        @each $font-family, $property in $font-face-map {
-            $font-file: nth($property, 1);
-            $font-style: nth($property, 2);
-            $font-weight: nth($property, 3);
-            $extensions: nth($property, 4);
+    @if ($font-family-key &gt; $map-length) {
+        @warn &#39;No font-family found in `$font-face-map` map.&#39;;
+    } @else {
+        $value: nth($key, $font-family-key);
 
-            @include font-face($font-family, $font-file, $font-style, $font-weight, $extensions);
-        }
+        @return $value;
     }
- }" data-collapsed="@mixin global-fonts() { ... }"><code>@mixin global-fonts() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for importing Google Fonts and/or font face globally.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-font-face"><code>font-face</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-google-fonts-family"><code>google-fonts-family</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li></ul></section><section class="main__item container item" id="fonts-mixin-font-face"><h3 class="item__heading"><a class="item__name" href="#mixin-font-face">font-face</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { 
+ }" data-collapsed="@function font($font-family-key) { ... }"><code>@function font($font-family-key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Function for catch font family in <code>$font-face-map</code>.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-family-key</code></th><td data-label="desc"><p>The <code>nth</code> key of <code>$font-face-map</code>.</p></td><td data-label="type"><code>Integer</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>The name of the font family.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li></ul></section></section><section class="main__sub-section" id="fonts-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="fonts-mixin-font-face"><h3 class="item__heading"><a class="item__name" href="#mixin-font-face">font-face</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { 
 	$filepath: $font-dir + $font-file;
     $src: null;
     $extmods: (
@@ -128,21 +635,7 @@
 		}
         src: $src;
     }
- }" data-collapsed="@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { ... }"><code>@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for generate a <code>@font-face</code> rule.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-name</code></th><td data-label="desc"><p>The font family name.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-file</code></th><td data-label="desc"><p>The name of font file.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>The style of your font.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>normal</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>The font weight of your font.</p></td><td data-label="type"><code>String</code> or <code>Integer</code></td><td data-label="default"><code>400</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$extension</code></th><td data-label="desc"><p>The extensions available for the font.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>eot woff woff2 ttf svg</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#typography-function-str-replace"><code>str-replace</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-dir"><code>font-dir</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-global-fonts"><code>global-fonts</code></a></li></ul></section></section><section class="main__sub-section" id="fonts-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="fonts-variable-font-dir"><h3 class="item__heading"><a class="item__name" href="#variable-font-dir">font-dir</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-dir: &#39;../fonts/&#39; !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default font dir for catch all font file.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-font-face"><code>font-face</code></a></li></ul></section><section class="main__item container item" id="fonts-variable-font-face-map"><h3 class="item__heading"><a class="item__name" href="#variable-font-face-map">font-face-map</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-face-map: (
-    &#39;MyFontFamily&#39;: (&#39;myfilename&#39;, normal, 400, eot woff woff2 svg)
-) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default <code>$font-face-map</code> used by RenderKit.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-global-fonts"><code>global-fonts</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#fonts-function-font"><code>font</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#fonts-function-font"><code>font</code></a></li></ul></section><section class="main__item container item" id="fonts-variable-google-fonts-family"><h3 class="item__heading"><a class="item__name" href="#variable-google-fonts-family">google-fonts-family</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$google-fonts-family: &#39;Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface&#39; !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default Google Fonts used by by RenderKit.</p><p><code>$google-fonts-family</code> accept the name of the font after string <code>?family=</code>.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#fonts-mixin-global-fonts"><code>global-fonts</code></a></li></ul></section></section><section class="main__sub-section" id="fonts-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="fonts-function-font"><h3 class="item__heading"><a class="item__name" href="#function-font">font</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function font($font-family-key) { 
-    $list: $font-face-map;
-    $key: map-keys($list);
-    $map-length: length($list);
-
-    @if ($font-family-key &gt; $map-length) {
-        @warn &#39;No font-family found in `$font-face-map` map.&#39;;
-    } @else {
-        $value: nth($key, $font-family-key);
-
-        @return $value;
-    }
- }" data-collapsed="@function font($font-family-key) { ... }"><code>@function font($font-family-key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Function for catch font family in <code>$font-face-map</code>.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-family-key</code></th><td data-label="desc"><p>The <code>nth</code> key of <code>$font-face-map</code>.</p></td><td data-label="type"><code>Integer</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>The name of the font family.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-face-map"><code>font-face-map</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="layout"><div class="container">layout</div></h1><section class="main__sub-section" id="layout-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="layout-mixin-clearfix-classes"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix-classes">clearfix-classes</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix-classes() { 
+ }" data-collapsed="@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { ... }"><code>@mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extension: eot woff woff2 ttf svg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for generate a <code>@font-face</code> rule.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-name</code></th><td data-label="desc"><p>The font family name.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-file</code></th><td data-label="desc"><p>The name of font file.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>The style of your font.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>normal</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>The font weight of your font.</p></td><td data-label="type"><code>String</code> or <code>Integer</code></td><td data-label="default"><code>400</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$extension</code></th><td data-label="desc"><p>The extensions available for the font.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>eot woff woff2 ttf svg</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#typography-function-str-replace"><code>str-replace</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#fonts-variable-font-dir"><code>font-dir</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-global-fonts"><code>global-fonts</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="layout"><div class="container">layout</div></h1><section class="main__sub-section" id="layout-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="layout-mixin-clearfix-classes"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix-classes">clearfix-classes</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix-classes() { 
     /*@clearfix*/
     .clearfix {
     	@include clearfix;
@@ -194,7 +687,7 @@
     overflow: hidden !important;
     margin: -1px !important;
     padding: 0 !important;
- }" data-collapsed="@mixin visuallyhidden() { ... }"><code>@mixin visuallyhidden() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for visuallyhidden.</p><p>This hide the target element visually only, but not it&#39;s interaction.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="layout-mixin-visuallyhidden-off"><h3 class="item__heading"><a class="item__name" href="#mixin-visuallyhidden-off">visuallyhidden-off</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin visuallyhidden-off() { 
+ }" data-collapsed="@mixin visuallyhidden() { ... }"><code>@mixin visuallyhidden() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin for visuallyhidden.</p><p>This hide the target element visually only, but not it&#39;s interaction.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="layout-mixin-visuallyhidden-off"><h3 class="item__heading"><a class="item__name" href="#mixin-visuallyhidden-off">visuallyhidden-off</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin visuallyhidden-off() { 
     position: static !important;
     width: auto !important;
     height: auto !important;
@@ -331,7 +824,7 @@
       &#39;h5&#39;: (&#39;font-size&#39;: 20),
       &#39;h6&#39;: (&#39;font-size&#39;: 16),
   ),
-) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.</p><p>The possible values to pass to the map are:</p><ul><li><code>font-size</code> or <code>fs</code></li><li><code>line-height</code> or <code>lh</code></li><li><code>letter-spacing</code> or <code>ls</code></li><li><code>margin-top</code> or <code>mt</code></li><li><code>margin-bottom</code> or <code>mb</code></li></ul><p>Each value must obviously be comma separated. Only <code>integers</code> are accepted. Any value passed in <code>rem</code> or <code>em</code> will be ignored. The output will always be in <code>px</code>, except for the <code>line-height</code> property. Except for the <code>line-height</code> or <code>lh</code> value, in addition to <code>integers</code>, <code>floats</code> are also accepted.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p></section><section class="main__item container item" id="typography-variable-global-text-direction"><h3 class="item__heading"><a class="item__name" href="#variable-global-text-direction">global-text-direction</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-text-direction: ltr !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the text direction of the CSS. Can be either <code>ltr</code> or <code>rtl</code>.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Keyword</code></p></section></section><section class="main__sub-section" id="typography-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="typography-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace: &#39;&#39;) { 
+) !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.</p><p>The possible values to pass to the map are:</p><ul><li><code>font-size</code> or <code>fs</code></li><li><code>line-height</code> or <code>lh</code></li><li><code>letter-spacing</code> or <code>ls</code></li><li><code>margin-top</code> or <code>mt</code></li><li><code>margin-bottom</code> or <code>mb</code></li></ul><p>Each value must obviously be comma separated. Only <code>integers</code> are accepted. Any value passed in <code>rem</code> or <code>em</code> will be ignored. The output will always be in <code>px</code>, except for the <code>line-height</code> property. Except for the <code>line-height</code> or <code>lh</code> value, in addition to <code>integers</code>, <code>floats</code> are also accepted.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p></section><section class="main__item container item" id="typography-variable-global-text-direction"><h3 class="item__heading"><a class="item__name" href="#variable-global-text-direction">global-text-direction</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$global-text-direction: ltr !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the text direction of the CSS. Can be either <code>ltr</code> or <code>rtl</code>.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Keyword</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="typography-variable-body-font-family"><h3 class="item__heading"><a class="item__name" href="#variable-body-font-family">body-font-family</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$body-font-family: sans-serif !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default body font family.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="typography-variable-body-root-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-body-root-font-size">body-root-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$body-root-font-size: false !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>If it is <code>true</code> the basic font size (<code>$body-font-size</code>) will be applied to the <code>body</code>.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="typography-variable-body-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-body-font-size">body-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$body-font-size: 16px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default font size applied to the body.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section><section class="main__item container item" id="typography-variable-body-font-weight"><h3 class="item__heading"><a class="item__name" href="#variable-body-font-weight">body-font-weight</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$body-font-weight: normal !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The default font weight applied to the body.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#_global renderkit-mixin-scss-normalize"><code>scss-normalize</code></a></li></ul></section></section><section class="main__sub-section" id="typography-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="typography-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace: &#39;&#39;) { 
 	$index: str-index($string, $search);
 
 	@if $index {

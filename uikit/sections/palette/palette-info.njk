@@ -11,12 +11,12 @@
 {{ snippet.templateclass('palette-color-$key-palette-color') }}
 {{ snippet.templateclass('background-color-$key-palette-color') }}
 
-{{ snippet.infolabel('Function for catch HEX')}}
-{{ snippet.code('scss','.selector {
-    color: palette($key-palette-color);
-}')}}
-
 {{ snippet.infolabel('Info') }}
 {% call snippet.infocontent() %}
     Click or tap on the "palette dots" for copy the <strong>HEX</strong>.
 {% endcall %}
+
+{{ snippet.infolabel('Function for catch HEX')}}
+{{ snippet.code('scss','.selector {
+    color: palette($key-palette-color);
+}')}}

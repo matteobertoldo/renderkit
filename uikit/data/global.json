@@ -15,8 +15,7 @@
         },
         "js": {
             "whatinput": true,
-            "svg4everybody": true,
-            "highlightpath": "renderkit/js/highlight.pack.js"
+            "svg4everybody": true
         },
         "sassdocumentation": {
             "show": true,
@@ -31,15 +30,23 @@
         },
         "section": {
             "globalflexbox": true,
+            "fonts": {
+                "color": "#404041"
+            },
             "xygrid": {
                 "gridcolumns": 12,
-                "gridcontainer": "1200px"
+                "gridcontainer": "1200px",
+                "cellcolor": "#d9d9d9"
+            },
+            "flexboxutils": {
+                "cellcolor": "#e9e9e9"
             },
             "floatgrid": {
                 "gridcolumns": 12,
                 "gridcontainer": "1200px",
                 "rowclass": "row",
-                "columnclass": "column"
+                "columnclass": "column",
+                "cellcolor": "#d9d9d9"
             },
             "form": {
                 "rowclass": "form-row",
@@ -51,6 +58,7 @@
             "svg": {
                 "spritepath": "renderkit/svg/symbol/sprite.svg",
                 "icons": ["facebook","google-plus","instagram","twitter","youtube"],
+                "iconscolor": "#666666",
                 "collection": true,
                 "examplefile": "renderkit/svg/symbol/sprite.symbol.html",
                 "truetone": true
