@@ -100,7 +100,7 @@
             top: 100%;
             width: 100%;
             height: 2px;
-            background-color: #5d5c56;
+            background-color: #1a1a1c;
         }
 
         #renderkit-body .mixin-code {
@@ -305,7 +305,7 @@
             font-size: 11px;
             letter-spacing: 0.031em;
             line-height: 1.4;
-            color: #666;
+            color: #666666;
             margin-top: 24px;
         }
 
@@ -316,7 +316,7 @@
             line-height: 1.4;
             letter-spacing: normal;
             max-width: 380px;
-            color: #666;
+            color: #666666;
             margin-top: 4px;
         }
 
@@ -326,6 +326,17 @@
             font-weight: normal;
             color: #61afef;
             text-decoration: underline;
+        }
+
+        #renderkit-body .section-description .docs-info ul {
+            display: block;
+            list-style-type: disc;
+            text-transform: none;
+            text-shadow: none;
+            color: inherit;
+            line-height: 1.45;
+            padding-left: 15px;
+            margin: 0;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
@@ -887,7 +898,7 @@
             <h2 class="section-title">Typography</h2>
             <div class="section-description"> <span class="info-label">Primary Mixins</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">headers-style</span></span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">paragraph-style</span></span>
                 <span class="info-label">Related Mixin</span> <span class="mixin-code"><span class="include">@include</span> <span class="mixin-name">headers-style-responsive</span></span> <span class="info-label">Variabiles</span> <span class="sass-code">$header-styles</span>                <span class="info-label">Info</span>
-                <div class="docs-info">Go to hover or tap on any &quot;header&quot; to display all the information for font family, font size, line height and letter spacing.</div>
+                <div class="docs-info"> Go to hover or tap on any "header" to display all the information for font family, font size, line height and letter spacing.</div>
             </div>
             <style type="text/css">
                 #renderkit-body #typography-list {
@@ -1067,7 +1078,7 @@
                     text-transform: uppercase;
                     letter-spacing: normal;
                     line-height: normal;
-                    color: #666;
+                    color: ;
                     opacity: 0.75;
                     margin: 0 0 3px 0;
                     padding: 0;
@@ -1131,7 +1142,7 @@
                     display: inline-block;
                     vertical-align: middle;
                     max-width: none;
-                    font-size: 13px;
+                    font-size: 14px;
                     text-transform: none;
                     line-height: 1.2;
                 }
@@ -1389,7 +1400,8 @@
 }
 </code>
 </pre>
-                </div>
+                </div> <span class="info-label">Info</span>
+                <div class="docs-info"> Click or tap on the "palette dots" for copy the <strong>HEX</strong>.</div>
             </div>
             <style type="text/css">
                 #renderkit-body #palette-list {
@@ -2020,7 +2032,7 @@
                     <div id="uikit-switch-item"> <input type="checkbox" id="uikit-toggle-truetone"><span class="toggle"><label for="uikit-toggle-truetone"><i></i></label></span></div>
                 </div> <span class="info-label">SVG collection</span>
                 <div class="docs-info"> To view the entire list of svg icons installed consult <a href="renderkit/svg/symbol/sprite.symbol.html">this page</a>.</div> <span class="info-label">Info</span>
-                <div class="docs-info">The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div> <span class="info-label">Markup</span>
+                <div class="docs-info"> The colors of the icons are just an example. It is necessary to create additional classes to draw up the desired effect.</div> <span class="info-label">Markup</span>
                 <div class="ui-docs-code">
                     <pre class="ui-snippet">
 <code class="html">&lt;svg role=&quot;img&quot;&gt;
