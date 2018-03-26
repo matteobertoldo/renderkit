@@ -55,7 +55,8 @@ module.exports = {
     uikitOptions: {
         dataFilePath: folder.workspace + 'uikit/data/global.json',
         indentSize: 4,
-        endWithNewline: false
+        endWithNewline: false,
+        minifyInline: true
     },
     svgOptions: {
         outputName: 'sprite',
