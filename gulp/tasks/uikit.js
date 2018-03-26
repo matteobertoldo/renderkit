@@ -3,6 +3,7 @@
 // Licensed under MIT Open Source
 
 const gulp = require('gulp'),
+gulpif = require('gulp-if'),
 conf = require('../gulpconfig'),
 fs = require('fs'),
 path = require('path'),
@@ -11,6 +12,7 @@ nunjucksRender = require('gulp-nunjucks-render'),
 data = require('gulp-data'),
 htmlclean = require('gulp-htmlclean'),
 htmlbeautify = require('gulp-html-beautify'),
+minifyInline = require('gulp-minify-inline'),
 log = require('fancy-log'),
 colors = require('ansi-colors');
 
@@ -30,6 +32,11 @@ gulp.task('uikit', () => {
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));
     })
+    .pipe(gulpif(conf.uikitOptions.minifyInline, minifyInline({
+        css: {
+            level: (conf.cssOptions.optimizationMinify) ? 2 : 1
+        },
+    })))
     .pipe(htmlclean())
     .pipe(htmlbeautify({
         indent_size: conf.uikitOptions.indentSize,
