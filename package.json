@@ -27,6 +27,7 @@
     "gulp-html-beautify": "^1.0.1",
     "gulp-htmlclean": "^2.7.20",
     "gulp-if": "^2.0.2",
+    "gulp-minify-inline": "^1.0.0",
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
