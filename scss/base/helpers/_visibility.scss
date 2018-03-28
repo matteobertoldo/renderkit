@@ -57,7 +57,8 @@
 	}
 }
 
-// Mixin for visibilty clasess
+/// Foundation visibilty clasess.
+/// @group _global renderkit
 @mixin foundation-visibility-classes {
     /*@visibility classes*/
 	@each $size in $breakpoint-classes {

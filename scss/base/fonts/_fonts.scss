@@ -2,7 +2,7 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// Mixin for importing Google Fonts and/or font face globally.
+/// Mixin for importing Google Fonts and/or `@font-face` fonts globally.
 /// @group _global renderkit
 @mixin global-fonts {
     /*@global fonts*/
