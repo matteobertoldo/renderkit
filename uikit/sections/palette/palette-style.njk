@@ -75,9 +75,14 @@
     margin-bottom: 0;
 }
 
-#renderkit-body #palette-list > li .render-hex {
+#renderkit-body #palette-list .render-hex {
     display: table-cell;
     vertical-align: middle;
+    position: relative;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
     position: relative;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -87,9 +92,55 @@
     letter-spacing: normal;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
-#renderkit-body #palette-list > li strong {
+#renderkit-body #palette-list .render-hex .copied-to-clipboard {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, -40px, 0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+    transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+    transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
+    will-change: transform, opacity;
+}
+
+#renderkit-body #palette-list .render-hex.perspective .copied-to-clipboard {
+    -webkit-transform: translate3d(0, 150%, 0);
+    transform: translate3d(0, 150%, 0);
+    opacity: 1;
+}
+
+#renderkit-body #palette-list .render-hex strong,
+#renderkit-body #palette-list .render-hex span,
+#renderkit-body #palette-list .render-hex em {
+    transition: -webkit-transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+    will-change: transform, opacity;
+}
+
+#renderkit-body #palette-list .render-hex.perspective strong,
+#renderkit-body #palette-list .render-hex.perspective span,
+#renderkit-body #palette-list .render-hex.perspective em {
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+#renderkit-body #palette-list strong {
+    display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -100,8 +151,8 @@
     padding: 0;
 }
 
-#renderkit-body #palette-list > li span,
-#renderkit-body #palette-list > li em {
+#renderkit-body #palette-list span,
+#renderkit-body #palette-list em {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -110,11 +161,11 @@
     color: inherit;
 }
 
-#renderkit-body #palette-list > li em {
+#renderkit-body #palette-list em {
     font-size: 10px;
 }
 
-#renderkit-body #palette-list > li input[type="text"] {
+#renderkit-body #palette-list input[type="text"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

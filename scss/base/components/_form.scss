@@ -2,18 +2,18 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-// Mixin for generate "caret" for custom select
-// @return: {String} - `background-image`
-// --------------------------------
+////
+/// @group form
+////
 
+/// Mixin for generate an "caret" for custom select without js added.
+/// @param {String} $select-caret-color - The color in `hex` value for the caret color.
+/// @access private
 @mixin select-caret-shape($select-caret-color: #000, $select-caret-shape: 'arrow') {
     $shape: '';
     $viewbox-value: '';
 
-    // @transform HEX caret color to rgb
-    // @return {String}
-    // --------------------------------
-
+    // Transform `hex` to `rgb` the caret color
     $caret-color: 'rgb%28#{round(red($select-caret-color))}, #{round(green($select-caret-color))}, #{round(blue($select-caret-color))}%29';
 
     @if ($select-caret-shape == 'triangle') {
@@ -84,17 +84,13 @@
                 }
             }
 
-            // @reset Firefox/Gecko pseudo attributes
-            // --------------------------------
-
+            // Reset Firefox/Gecko pseudo `:require` & `:invalid` attributes.
             &:required,
             &:invalid {
                 box-shadow: none;
             }
 
-            // @validation class
-            // --------------------------------
-
+            // Validation/Error class
             &.#{$validation-input-error-class} {
                 border-color: $validation-input-error-border-color;
                 background-color: $validation-input-error-background-color;
@@ -168,10 +164,8 @@
             }
         }
 
-        // @loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`
-        // @note: `:-moz-focusring` hide default focus ring in Firefox/Gecko with current `$global-input-color`
-        // --------------------------------
-
+        // Loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`.
+        // Hide default focus ring in Firefox/Gecko `:-moz-focusring` with current `$global-input-color`.
         @each $input-type in (email, password, search, select, tel, text, textarea, url) {
             @if ($input-type == select or $input-type == textarea) {
                 #{$input-type} {

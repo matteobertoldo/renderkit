@@ -21,9 +21,6 @@
         -moz-osx-font-smoothing: grayscale;
         background-color: #fff !important;
         background-image: none !important;
-        -webkit-transform: none !important;
-        -ms-transform: none !important;
-        transform: none !important;
     }
 
     #renderkit-body #uikit-render-content {
@@ -96,12 +93,20 @@
         background-color: {{titlecolor}};
     }
 
-    #renderkit-body .mixin-code {
+    #renderkit-body .snippet-code {
         display: block;
         font-family: monospace, monospace;
         font-size: 13px;
+        font-weight: normal;
         line-height: inherit;
-        margin-top: 3px;
+        color: inherit;
+        margin-top: 4px;
+    }
+
+    #renderkit-body .sass-var,
+    #renderkit-body .sass-file-name {
+        opacity: 0.7;
+        color: #e31d79;
     }
 
     #renderkit-body .mixin-code .include {
@@ -111,18 +116,6 @@
     #renderkit-body .mixin-code .mixin-name {
         color: #61afef;
         margin-left: -4px;
-    }
-
-    #renderkit-body .sass-code,
-    #renderkit-body .sass-file-name,
-    #renderkit-body .template-class {
-        display: block;
-        font-family: monospace, monospace;
-        font-size: 13px;
-        line-height: inherit;
-        color: #e31d79;
-        opacity: 0.70;
-        margin-top: 4px;
     }
 
     #renderkit-body .template-class {
@@ -239,6 +232,7 @@
         display: block;
     	width: 51px;
     	height: 31px;
+        border-radius: 32px;
     }
 
     #renderkit-body #uikit-switch-item .toggle label,
@@ -274,7 +268,23 @@
     }
 
     #renderkit-body #uikit-switch-item input[type="checkbox"] {
-    	display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        border: 0;
+        white-space: nowrap;
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        margin: -1px;
+        padding: 0;
+    }
+
+    [data-whatinput="keyboard"] #renderkit-body #uikit-switch-item input[type="checkbox"]:focus + .toggle {
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-offset: -2px;
     }
 
     #renderkit-body #uikit-switch-item input[type="checkbox"]:checked + .toggle label {
@@ -313,7 +323,24 @@
         margin-top: 4px;
     }
 
-    #renderkit-body .section-description .docs-info a {
+    #renderkit-body .docs-info .snippet-code {
+        display: inline;
+        font-size: 12px;
+        margin: 0 2px 0 2px;
+        font-size: 13px;
+    }
+
+    #renderkit-body .docs-info p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        line-height: inherit;
+        letter-spacing: normal;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    #renderkit-body .docs-info a {
         font-family: inherit;
         font-size: inherit;
         font-weight: normal;
@@ -321,7 +348,7 @@
         text-decoration: underline;
     }
 
-    #renderkit-body .section-description .docs-info ul {
+    #renderkit-body .docs-info ul {
         display: block;
         list-style-type: disc;
         text-transform: none;

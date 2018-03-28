@@ -143,12 +143,14 @@ function createPaletteElements(selector, style, sheet) {
             var color = invertColor(hex, true);
             var list = document.createElement('li');
             var div = document.createElement('div');
+            var copy = document.createElement('div');
             var span = document.createElement('span');
             var strong = document.createElement('strong');
             var em = document.createElement('em');
             var rgbtext = rule.style[style].toString();
             var input = document.createElement('input');
 
+            copy.appendChild(document.createTextNode('Copied to clipboard!'));
             span.appendChild(document.createTextNode(hextext));
             strong.appendChild(document.createTextNode(selectors));
             em.appendChild(document.createTextNode(rgbtext));
@@ -165,6 +167,8 @@ function createPaletteElements(selector, style, sheet) {
                 style: 'color:' + color + ';',
             });
 
+            copy.setAttribute('class', 'copied-to-clipboard');
+            div.appendChild(copy);
             div.appendChild(strong);
             div.appendChild(span);
             div.appendChild(em);
@@ -198,7 +202,7 @@ function copyToClipboardHEX() {
     for (var i = 0; i < paletteList.length; i++) {
         paletteList[i].addEventListener('click', function(event) {
             var self = this;
-            var renderHEX = self.querySelector('.render-hex')
+            var renderHEX = self.querySelector('.render-hex');
             var hex = self.querySelector('.hex-value');
 
             renderHEX.classList.add('perspective');

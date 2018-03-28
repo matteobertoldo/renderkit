@@ -1,5 +1,5 @@
 {% macro infolabel(text) %}
-    <span class="info-label">{{text}}</span>
+    <div class="info-label">{{text}}</div>
 {% endmacro %}
 
 {% macro infocontent() %}
@@ -9,22 +9,22 @@
 {% endmacro %}
 
 {% macro sassfile(filename) %}
-    <span class="sass-file-name">_{{filename}}.scss</span>
+    <span class="snippet-code sass-file-name">_{{filename}}.scss</span>
 {% endmacro %}
 
 {% macro sassvar(name) %}
-    <span class="sass-code">${{name}}</span>
+    <span class="snippet-code sass-var">${{name}}</span>
 {% endmacro %}
 
 {% macro mixin(name) %}
-<span class="mixin-code">
+<span class="snippet-code mixin-code">
     <span class="include">@include</span>
     <span class="mixin-name">{{name}}</span>
 </span>
 {% endmacro %}
 
 {% macro templateclass(class) %}
-    <span class="template-class">.{{class}}</span>
+    <span class="snippet-code template-class">.{{class}}</span>
 {% endmacro %}
 
 {% macro code(class, content) %}
