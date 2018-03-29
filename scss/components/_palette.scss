@@ -2,6 +2,12 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
+/// Mixin for global palette classes.
+///
+/// This mixin generates 2 concordant `CSS` classes with all the `$palette-color` keys.
+///
+/// Ex. `.palette-color-primary`, `.background-color-primary`.
+/// @group _global renderkit
 @mixin colors-palette {
     /*@global colors-palette*/
     @include manage-palette;

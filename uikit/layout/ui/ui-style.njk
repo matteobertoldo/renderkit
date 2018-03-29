@@ -19,9 +19,15 @@
         padding: 0 !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #fff !important;
+        background-color: #ffffff !important;
         background-image: none !important;
     }
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode {
+            background-color: #f5f5f5 !important;
+        }
+    {% endif %}
 
     #renderkit-body #uikit-render-content {
         overflow: hidden;
@@ -47,6 +53,12 @@
         margin: 15px;
         padding: 50px 30px;
     }
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .uikit-element-render {
+            background-color: #1a1a1c;
+        }
+    {% endif %}
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
         #renderkit-body .uikit-element-render {
@@ -77,6 +89,12 @@
         cursor: default;
     }
 
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .section-title {
+            color: #f5f5f5;
+        }
+    {% endif %}
+
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
         #renderkit-body .section-title {
             font-size: 30px;
@@ -92,6 +110,12 @@
         height: 2px;
         background-color: {{titlecolor}};
     }
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .section-title::after {
+            background-color: #f5f5f5;
+        }
+    {% endif %}
 
     #renderkit-body .snippet-code {
         display: block;
@@ -135,14 +159,18 @@
         font-size: 12px;
         font-weight: bold;
         letter-spacing: normal;
-        background-color: #282c34;
-        color: #828997;
         border-radius: 6px;
         box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
         margin: 0;
         padding: 0;
         overflow: auto;
     }
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .ui-snippet {
+            box-shadow: 0 0 14px rgba(244, 244, 244, 0.6);
+        }
+    {% endif %}
 
     #renderkit-body .hljs {
         display: block;
@@ -155,62 +183,128 @@
         -webkit-overflow-scrolling: touch;
     }
 
-    #renderkit-body .hljs-comment,
-    #renderkit-body .hljs-quote {
-        color: #5c6370;
-        font-style: italic;
-    }
+    {% if not uikit.style.darkmode %}
+        #renderkit-body .hljs-comment,
+        #renderkit-body .hljs-quote {
+            color: #5c6370;
+            font-style: italic;
+        }
 
-    #renderkit-body .hljs-doctag,
-    #renderkit-body .hljs-keyword,
-    #renderkit-body .hljs-formula {
-        color: #c678dd;
-    }
+        #renderkit-body .hljs-doctag,
+        #renderkit-body .hljs-keyword,
+        #renderkit-body .hljs-formula {
+            color: #c678dd;
+        }
 
-    #renderkit-body .hljs-section,
-    #renderkit-body .hljs-name,
-    #renderkit-body .hljs-selector-tag,
-    #renderkit-body .hljs-deletion,
-    #renderkit-body .hljs-subst {
-        color: #e06c75;
-    }
+        #renderkit-body .hljs-section,
+        #renderkit-body .hljs-name,
+        #renderkit-body .hljs-selector-tag,
+        #renderkit-body .hljs-deletion,
+        #renderkit-body .hljs-subst {
+            color: #e06c75;
+        }
 
-    #renderkit-body  .hljs-literal {
-        color: #56b6c2;
-    }
+        #renderkit-body  .hljs-literal {
+            color: #56b6c2;
+        }
 
-    #renderkit-body .hljs-string,
-    #renderkit-body .hljs-regexp,
-    #renderkit-body .hljs-addition,
-    #renderkit-body .hljs-attribute,
-    #renderkit-body .hljs-meta-string {
-        color: #98c379;
-    }
+        #renderkit-body .hljs-string,
+        #renderkit-body .hljs-regexp,
+        #renderkit-body .hljs-addition,
+        #renderkit-body .hljs-attribute,
+        #renderkit-body .hljs-meta-string {
+            color: #98c379;
+        }
 
-    #renderkit-body .hljs-built_in,
-    #renderkit-body .hljs-class .hljs-title {
-        color: #e6c07b;
-    }
+        #renderkit-body .hljs-built_in,
+        #renderkit-body .hljs-class .hljs-title {
+            color: #e6c07b;
+        }
 
-    #renderkit-body .hljs-attr,
-    #renderkit-body .hljs-variable,
-    #renderkit-body .hljs-template-variable,
-    #renderkit-body .hljs-type,
-    #renderkit-body .hljs-selector-class,
-    #renderkit-body .hljs-selector-attr,
-    #renderkit-body .hljs-selector-pseudo,
-    #renderkit-body .hljs-number {
-        color: #d19a66;
-    }
+        #renderkit-body .hljs-attr,
+        #renderkit-body .hljs-variable,
+        #renderkit-body .hljs-template-variable,
+        #renderkit-body .hljs-type,
+        #renderkit-body .hljs-selector-class,
+        #renderkit-body .hljs-selector-attr,
+        #renderkit-body .hljs-selector-pseudo,
+        #renderkit-body .hljs-number {
+            color: #d19a66;
+        }
 
-    #renderkit-body .hljs-symbol,
-    #renderkit-body .hljs-bullet,
-    #renderkit-body .hljs-link,
-    #renderkit-body .hljs-meta,
-    #renderkit-body .hljs-selector-id,
-    #renderkit-body .hljs-title {
-        color: #61aeee;
-    }
+        #renderkit-body .hljs-symbol,
+        #renderkit-body .hljs-bullet,
+        #renderkit-body .hljs-link,
+        #renderkit-body .hljs-meta,
+        #renderkit-body .hljs-selector-id,
+        #renderkit-body .hljs-title {
+            color: #61aeee;
+        }
+    {% endif %}
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .hljs {
+            color: #383a42;
+            background: #fafafa;
+        }
+
+        #renderkit-body.darkmode .hljs-comment,
+        #renderkit-body.darkmode .hljs-quote {
+            color: #a0a1a7;
+            font-style: italic;
+        }
+
+        #renderkit-body.darkmode .hljs-doctag,
+        #renderkit-body.darkmode .hljs-keyword,
+        #renderkit-body.darkmode .hljs-formula {
+            color: #a626a4;
+        }
+
+        #renderkit-body.darkmode .hljs-section,
+        #renderkit-body.darkmode .hljs-name,
+        #renderkit-body.darkmode .hljs-selector-tag,
+        #renderkit-body.darkmode .hljs-deletion,
+        #renderkit-body.darkmode .hljs-subst {
+            color: #e45649;
+        }
+
+        #renderkit-body.darkmode .hljs-literal {
+            color: #0184bb;
+        }
+
+        #renderkit-body.darkmode .hljs-string,
+        #renderkit-body.darkmode .hljs-regexp,
+        #renderkit-body.darkmode .hljs-addition,
+        #renderkit-body.darkmode .hljs-attribute,
+        #renderkit-body.darkmode .hljs-meta-string {
+            color: #50a14f;
+        }
+
+        #renderkit-body.darkmode .hljs-built_in,
+        #renderkit-body.darkmode .hljs-class .hljs-title {
+            color: #c18401;
+        }
+
+        #renderkit-body.darkmode .hljs-attr,
+        #renderkit-body.darkmode .hljs-variable,
+        #renderkit-body.darkmode .hljs-template-variable,
+        #renderkit-body.darkmode .hljs-type,
+        #renderkit-body.darkmode .hljs-selector-class,
+        #renderkit-body.darkmode .hljs-selector-attr,
+        #renderkit-body.darkmode .hljs-selector-pseudo,
+        #renderkit-body.darkmode .hljs-number {
+            color: #986801;
+        }
+
+        #renderkit-body.darkmode .hljs-symbol,
+        #renderkit-body.darkmode .hljs-bullet,
+        #renderkit-body.darkmode .hljs-link,
+        #renderkit-body.darkmode .hljs-meta,
+        #renderkit-body.darkmode .hljs-selector-id,
+        #renderkit-body.darkmode .hljs-title {
+            color: #4078f2;
+        }
+    {% endif %}
 
     #renderkit-body .hljs-emphasis {
         font-style: italic;
@@ -312,6 +406,12 @@
         margin-top: 24px;
     }
 
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .section-description .info-label {
+            color: #f5f5f5;
+        }
+    {% endif %}
+
     #renderkit-body .section-description .docs-info {
         display: block;
         font-family: 'Montserrat', sans-serif;
@@ -322,6 +422,12 @@
         color: {{globalcolor}};
         margin-top: 4px;
     }
+
+    {% if uikit.style.darkmode %}
+        #renderkit-body.darkmode .section-description .docs-info {
+            color: #f5f5f5;
+        }
+    {% endif %}
 
     #renderkit-body .docs-info .snippet-code {
         display: inline;

@@ -19,6 +19,9 @@ $global-link-href-show: false !default;
 /// @group print
 $global-margin-print: 0.5cm !default;
 
+/// Mixin for global `@media print` elements. From original HTML5 boilerplate.
+/// @link https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+/// @group _global renderkit
 @mixin media-print {
     /*@media print package*/
     @media print {

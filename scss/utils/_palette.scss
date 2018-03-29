@@ -33,7 +33,7 @@ $palette-color: (
 }
 
 /// Mixin for mixin to intercept the **primary** key in `$colors-palette` map.
-/// As in Foundation, this mixin avoids having empty keys in `$color-palette` map.
+/// This mixin avoids having empty keys in `$color-palette` map.
 /// @access private
 @mixin manage-palette {
     @if not map-has-key($palette-color, primary) {

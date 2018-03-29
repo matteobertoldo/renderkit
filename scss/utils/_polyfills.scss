@@ -6,7 +6,8 @@
 /// @group polyfills
 ////
 
-/// Firefox Fix Mixin, This mixin creates exclusive rules for Gecko browsers.
+/// Mixin for fix rules in Gecko browsers.
+/// This mixin creates exclusive rules for Firefox.
 /// @content Exclusive fix rules for Gecko browsers.
 @mixin fix-firefox {
 	@-moz-document url-prefix() & {

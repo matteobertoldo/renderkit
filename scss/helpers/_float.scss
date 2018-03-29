@@ -2,6 +2,8 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
+/// Float disposition classes.
+/// @group _global renderkit
 @mixin float-classes {
     /*@float classes*/
     @each $float in (left, right, center) {

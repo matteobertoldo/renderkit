@@ -1,4 +1,6 @@
 {% set cellcolor = uikit.section.flexboxutils.cellcolor %}
+{% set dotsbackgroundcolor = uikit.section.flexboxutils.dotsbackgroundcolor %}
+{% set dotscolor = uikit.section.flexboxutils.dotscolor %}
 <style type="text/css">
 #renderkit-body #foundation-flex-classes {
     max-width: 1200px;
@@ -75,8 +77,8 @@
     position: relative;
     width: 50px;
     height: 50px;
-    background-color: #666;
-    color: #fff;
+    background-color: {{dotsbackgroundcolor}};
+    color: {{dotscolor}};
     border-radius: 50%;
     cursor: default;
     -webkit-user-select: none;
