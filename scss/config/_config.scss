@@ -106,10 +106,10 @@ $print-breakpoint: large;
 // --------------------------------
 
 $global-flexbox: true;
-$focus-outline-link-hidden: true;
+$focus-outline-links-hidden: true;
 $focus-outline-input-hidden: true;
-$what-input-outline-detect: true;
-$global-link-text-decoration: true;
+$what-input-outline-keyboard-detect: true;
+$global-links-text-decoration: true;
 $global-left: if($global-text-direction == rtl, right, left);
 $global-right: if($global-text-direction == rtl, left, right);
 
@@ -169,7 +169,7 @@ $selection-color: initial;
 $ios-tap-color: transparent;
 $body-background-gradient: false;
 $body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-$body-background-color: white;
+$body-background-color: #ffffff;
 $body-base-color: #666666;
 $global-heading-color: inherit;
 $global-paragraph-color: inherit;

@@ -26,16 +26,65 @@ $body-font-weight: normal !default;
 /// @group colors & palette
 $body-background-gradient: false !default;
 
-/// scss-normalize mixin for RenderKit. From original `normalize.css` v8.0.0
+/// The `linear-gradient` that will be applied to the body.
+/// @group colors & palette
+$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) !default;
+
+/// The default `body` background color.
+/// @group colors & palette
+$body-background-color: #ffffff !default;
+
+/// The default `body` base color.
+/// @group colors & palette
+$body-base-color: #000000 !default;
+
+/// The defaut `body` line-height.
+/// @group typography
+$body-line-height: 1.15 !default;
+
+/// The global links color.
+/// @group colors & palette
+$global-link-color: #0000FF !default;
+
+/// If `false` the default `text-decoration` for the links will be hidden.
+/// @group layout
+$global-links-text-decoration: true !default;
+
+/// Enable or disable the default outline in `focus` on links.
+/// @group layout
+$focus-outline-links-hidden: false !default;
+
+/// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
 ///
+/// The installation of `what-input` is required.
+/// @group layout
+/// @link https://github.com/ten1seven/what-input
+$what-input-outline-keyboard-detect: true !default;
+
+/// Global font family applied to the `strong` and` b` tags.
+/// @group typography
+$global-strong-font-family: inherit !default;
+
+/// Global font weight applied to the `strong` and` b` tags.
+/// @group typography
+$global-strong-font-weight: bolder !default;
+
+/// Global text rendering applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group typography
+$global-text-rendering: optimizeLegibility !default;
+
+/// `scss-normalize` mixin for RenderKit.
+///
+/// From original `normalize.css` v8.0.0.
 /// Compared to the original normalize, the ability to disable or enable the default `appearance` for the various fields in the form, or for radio checkboxes has been added.
+/// Further reset for the typography have been added.
 /// @group _global renderkit
 /// @link https://github.com/necolas/normalize.css
 @mixin scss-normalize {
     // Change the default font family in all browsers (opinionated).
     // Prevent adjustments of font size after orientation changes in IE and iOS Devices.
     // Configure the default iOS tap highlight color.
-    // Add "box-sizing: border-box" to html, not in universal selector `*` for best performance.
+    // Add `box-sizing: border-box` to `html`, not in universal selector `*` for best performance.
     // @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     html {
     	font-family: sans-serif;
@@ -68,8 +117,9 @@ $body-background-gradient: false !default;
     }
 
     // HTML 5 tags correct display
-    // All HTML5 tags for reset the correct display in older browsers. No "<hgroup/>" tag included because is deprecated. See: http://caniuse.com/#search=html -> Obsolete/deprecated HTML elements.
-    // <details/> <summary/> correct display in Edge, IE, and Firefox. <main/> correct display in IE.
+    // All HTML5 tags for reset the correct display in older browsers. No `hgroup` tag included because is deprecated.
+    // @link http://caniuse.com/#search=html - Obsolete/deprecated HTML elements.
+    // `details` `summary` correct display in Edge, IE, and Firefox. `main` correct display in IE.
     article,
     aside,
     details,
@@ -109,7 +159,7 @@ $body-background-gradient: false !default;
     	margin: 0;
     }
 
-    // Add the correct display in IE 9-.
+    // Add the correct display in IE 9 and lower.
     audio,
     canvas,
     progress,
@@ -130,28 +180,28 @@ $body-background-gradient: false !default;
     }
 
     // Add the correct display in IE 10-.
-    // @note: <template> Add the correct display in IE.
+    // `template` Add the correct display in IE.
     template,
     [hidden] {
     	display: none;
     }
 
     // Remove the gray background on active links in IE 10.
-    // Set `true` or `false` on $global-link-text-decoration for remove o mantain the default underline.
-    // Remove the outline on focused links when they are also active or hovered in all browsers (opinionated).
-    // [data-whatinput="*"] detect if is a Mouse or Touch Event for remove the defaut outline. This improve the accessibility with keyboard navigation.
+    // Set `true` or `false` on `$global-links-text-decoration` for remove o mantain the default underline.
+    // Remove the outline on focused links (configurable).
+    // [data-whatinput="*"] Detect if is a mouse or touch event for remove the defaut outline. This improve the accessibility with keyboard navigation.
     a {
     	background-color: transparent;
     	color: $global-link-color;
 
-    	@if ($global-link-text-decoration) {
+    	@if ($global-links-text-decoration) {
     		text-decoration: underline;
     	} @else {
             text-decoration: none;
         }
 
-        @if ($focus-outline-link-hidden) {
-            @if ($what-input-outline-detect) {
+        @if ($focus-outline-links-hidden) {
+            @if ($what-input-outline-keyboard-detect) {
             	[data-whatinput="mouse"] &:focus,
             	[data-whatinput="touch"] &:focus, {
             		outline: 0;
@@ -225,7 +275,7 @@ $body-background-gradient: false !default;
     	top: -0.5em;
     }
 
-    // Make <img/> <video/> tags responsive in all browsers.
+    // Make `img`,`video` tags responsive in all browsers.
     img,
     video {
     	max-width: 100%;
@@ -233,7 +283,7 @@ $body-background-gradient: false !default;
     	vertical-align: middle;
     }
 
-    // Remove the border on images inside links in IE 10-, and remove the default border for <iframe/> tag in all browsers.
+    // Remove the border on images inside links in IE 10-, and remove the default border for `iframe` tag in all browsers.
     img,
     iframe {
         border: 0;
@@ -251,7 +301,7 @@ $body-background-gradient: false !default;
     	}
     }
 
-    // Set default overflow auto on <pre/> tag in all browsers.
+    // Set default overflow auto on `pre` tag in all browsers.
     pre {
     	overflow: auto;
     }
@@ -280,12 +330,12 @@ $body-background-gradient: false !default;
     	}
     }
 
-    // Set font smoothing on body and on form input
-    // if only apply on body the font smoothing don't have effect on inputs.
-    // Reset all default font synthesis of browsers
-    // Set all text to perform legibility
-    // Remove exeed weight on -moz-core on macOS
-    // Set on -moz-core the same font -webkit-core "kerning" (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
+    // Set font smoothing on body and on form input.
+    // If only apply on body the font smoothing don't have effect on inputs.
+    // Reset all default font synthesis of browsers.
+    // Set all text to perform legibility (configurable).
+    // Remove exeed weight on fonts in Fireforx on macOS
+    // Set on `-moz-` the same `-webkit-` font "kerning" (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
     body,
     button,
     input,
@@ -317,7 +367,7 @@ $body-background-gradient: false !default;
     	margin: 0;
 
         @if ($focus-outline-input-hidden) {
-            @if ($what-input-outline-detect) {
+            @if ($what-input-outline-keyboard-detect) {
                 [data-whatinput="mouse"] &:focus,
             	[data-whatinput="touch"] &:focus {
             		outline: 0;
@@ -385,10 +435,11 @@ $body-background-gradient: false !default;
     // Remove the default margin on input[type="checkbox"] & [type="radio"].
     // input[type="checkbox"] input[type="radio"] Remove the padding in IE 10-.
     // Loop all standard and "Cross Browsing" input type field.
-    // `::-webkit-inner-spin-button`, `::-webkit-outer-spin-button` Correct the cursor style of increment and decrement buttons in Chrome.
+    // `::-webkit-inner-spin-button`, `::-webkit-outer-spin-button` - Correct the cursor style of increment and decrement buttons in Chrome.
     // input[type="search"] Correct the outline style in Safari.
-    // `::-webkit-search-cancel-button`, Remove the inner padding in Chrome and Safari.
-    // `::-webkit-file-upload-button` Correct the inability to style clickable types in iOS and Safari. Change font properties to `inherit` in Safari.
+    // `::-webkit-search-cancel-button` - Remove the inner padding in Chrome and Safari.
+    // `::-webkit-file-upload-button` - Correct the inability to style clickable types in iOS and Safari.
+    // Change font properties to `inherit` in Safari.
     %reset-input-style {
     	appearance: none;
     	border: 1px solid lightgray;
@@ -459,10 +510,10 @@ $body-background-gradient: false !default;
     // Remove the default IE/Edge "arrow" pseudo element.
     // Restorage the current color in IE/Edge when is selected an option.
     select {
-    	@if ($global-custom-select) {
-    		@extend %reset-input-style;
+        @if ($global-custom-select) {
+            @extend %reset-input-style;
 
-    		&:-moz-focusring {
+            &:-moz-focusring {
     			color: transparent;
     			text-shadow: 0 0 0 $body-base-color;
     		}

@@ -1,3 +1,7 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
 //
 // @group sassy list
 //
@@ -13,7 +17,6 @@
 // sl-contain(a b c, z)
 // false
 // @return {Bool}
-
 @function sl-contain($list, $value) {
     @return not not index($list, $value);
 }
@@ -22,7 +25,6 @@
 // @access private
 // @param {*} $value - value to check
 // @return {Bool}
-
 @function sl-is-true($value) {
     @return if($value == null, false, $value and $value != null and $value != '' and $value != ());
 }
@@ -35,7 +37,6 @@
 // sl-to-list(a b c, comma)
 // a, b, c
 // @return {List}
-
 @function sl-to-list($value, $separator: list-separator($value)) {
     @return join((), $value, $separator);
 }
@@ -49,7 +50,6 @@
 // sl-purge(null a false b)
 // a b
 // @return {List}
-
 @function sl-purge($list) {
     $result: ();
 
@@ -77,7 +77,6 @@
 // sl-replace(a b c, y, z)
 // a b c
 // @return {List}
-
 @function sl-replace($list, $old, $value) {
     $running: true;
 
@@ -105,7 +104,6 @@
 // sl-remove(a b c, a)
 // b c
 // @return {List}
-
 @function sl-remove($list, $value) {
     @return sl-replace($list, $value, null);
 }

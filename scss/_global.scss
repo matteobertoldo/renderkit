@@ -2,7 +2,10 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-@import 'base/base';
+@import 'utils/utils';
+@import 'fonts/fonts';
+@import 'helpers/helpers';
+@import 'components/components';
 @import 'config/config';
 
 @mixin scss-renderkit() {

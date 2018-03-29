@@ -22,7 +22,7 @@ html {
 body {
   font-family: "Work Sans", sans-serif;
   font-weight: normal;
-  background-color: white;
+  background-color: #ffffff;
   color: #666666;
   line-height: 1.15;
   margin: 0;
@@ -2741,7 +2741,7 @@ p {
 .cell-block-y {
   overflow-y: auto;
   max-height: 100%;
-  height: 100%;
+  min-height: 100%;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-stype: -ms-autohiding-scrollbar;
 }
@@ -2802,7 +2802,7 @@ p {
   .medium-cell-block-y {
     overflow-y: auto;
     max-height: 100%;
-    height: 100%;
+    min-height: 100%;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-stype: -ms-autohiding-scrollbar;
   }
@@ -2847,7 +2847,7 @@ p {
   .large-cell-block-y {
     overflow-y: auto;
     max-height: 100%;
-    height: 100%;
+    min-height: 100%;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-stype: -ms-autohiding-scrollbar;
   }
