@@ -1,0 +1,60 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group checkbox & radio
+////
+
+/// If set to `true` the alignment of the checkbox-radio components will line up in the middle of the text.
+/// @type Boolean
+$custom-checkbox-radio-align-center: false !default;
+
+/// The size the global dimension of the checkbox-radio components.
+/// @type Integer
+$custom-checkbox-radio-size: 24px !default;
+
+/// Default font family for checkbox-radio components.
+/// @type String
+$custom-checkbox-radio-font-family: sans-serif !default;
+
+/// Default font size for checkbox-radio components.
+/// @type Integer
+$custom-checkbox-radio-font-size: 12px !default;
+
+/// Default text transform for checkbo-radio components.
+/// @type String
+$custom-checkbox-radio-text-transform: none !default;
+
+/// Default letter spacing for checkbox-radio components.
+/// @type String|Integer
+$custom-checkbox-radio-letter-spacing: normal !default;
+
+/// Default color for checkbox & radio components.
+/// @type Color
+$custom-checkbox-radio-color: #666666 !default;
+
+/// The space between the label text and the shape of the custom checkbox-radio component.
+/// @type Integer
+$custom-checkbox-radio-label-gutter: 10px !default;
+
+/// The `background-color` custom for checkbox-radio component.
+/// @type Color
+$custom-checkbox-radio-background-color: #efefef !default;
+
+/// The `border-color` for custom checkbox-radio component.
+/// @type String
+$custom-checkbox-radio-border: 1px solid #d9d9d9 !default;
+
+/// The `border-radius` for custom checkbox component.
+/// @type Integer
+$custom-checkbox-border-radius: 5px !default;
+
+// Internal variabiles for "marker-size" for checkbox-radio components.
+$marker-size: ($custom-checkbox-radio-size / 2);
+$marker-size-half: ($marker-size / 2);
+
+@import 'styles';
+@import 'checkbox';
+@import 'radio';
+@import 'classes';
