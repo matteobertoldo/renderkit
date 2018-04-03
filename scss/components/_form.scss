@@ -29,7 +29,7 @@
         @warn 'Incorrect value. Please choose between `arrow`, `triangle` or `empty` to set the caret for select.';
     }
 
-    @if ($global-custom-select) {
+    @if ($global-select-reset-appearence) {
         @if ($select-caret-shape != 'empty') {
             background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 #{$viewbox-value}'>#{$shape}</svg>");
         }

@@ -2,68 +2,8 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// The tap highlight color for iOS devices.
-/// @group colors & palette
-$ios-tap-color: rgba(0, 0, 0, 0.5) !default;
-
-/// The default body font family.
-/// @group typography
-$body-font-family: sans-serif !default;
-
-/// The default font weight applied to the `body`.
-/// @group typography
-$body-font-weight: normal !default;
-
-/// If it is `true` the value of the variable `$body-background-gradient-value` will be applied to the body.
-/// @group colors & palette
-$body-background-gradient: false !default;
-
-/// The `linear-gradient` that will be applied to the body.
-/// @group colors & palette
-$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) !default;
-
-/// The default `body` background color.
-/// @group colors & palette
-$body-background-color: #ffffff !default;
-
-/// The default `body` base color.
-/// @group colors & palette
-$body-base-color: #000000 !default;
-
-/// The defaut `body` line-height.
-/// @group typography
-$body-line-height: 1.15 !default;
-
-/// The global links color.
-/// @group colors & palette
-$links-color: #0000FF !default;
-
-/// If `false` the default `text-decoration` for the links will be hidden.
-/// @group layout
-$links-text-decoration: true !default;
-
-/// Enable or disable the default outline in `focus` on links.
-/// @group layout
-$focus-outline-links-hidden: false !default;
-
-/// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
-///
-/// The installation of `what-input` is required.
-/// @group accessibility
-/// @link https://github.com/ten1seven/what-input
-$what-input-outline-keyboard-detect: true !default;
-
-/// Font family applied to the `strong` and` b` tags.
-/// @group typography
-$strong-font-family: inherit !default;
-
-/// Font weight applied to the `strong` and` b` tags.
-/// @group typography
-$strong-font-weight: bolder !default;
-
-/// `scss-normalize` mixin for RenderKit.
-///
 /// From original `normalize.css` v8.0.0.
+///
 /// Compared to the original normalize, the ability to disable or enable the default `appearance` for the various fields in the form, or for radio checkboxes has been added.
 /// Further reset for the typography have been added.
 /// @group _global renderkit
@@ -76,11 +16,11 @@ $strong-font-weight: bolder !default;
     // @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     html {
     	font-family: sans-serif;
-        @if ($global-root-font-size) {
+        @if ($html-root-font-size) {
             font-size: $global-font-size;
         }
     	-webkit-text-size-adjust: percentage(1);
-    	-webkit-tap-highlight-color: $ios-tap-color;
+    	-webkit-tap-highlight-color: $global-ios-tap-color;
     	box-sizing: border-box;
     }
 
@@ -92,7 +32,7 @@ $strong-font-weight: bolder !default;
     body {
     	font: {
     		family: $body-font-family;
-            @if ($global-root-body-font-size) {
+            @if ($body-root-font-size) {
                 size: $global-body-font-size;
             }
     		weight: $body-font-weight;
@@ -178,14 +118,14 @@ $strong-font-weight: bolder !default;
     }
 
     // Remove the gray background on active links in IE 10.
-    // Set `true` or `false` on `$links-text-decoration` for remove o mantain the default underline.
+    // Set `true` or `false` on `$global-links-text-decoration` for remove o mantain the default underline.
     // Remove the outline on focused links (configurable).
     // [data-whatinput="*"] Detect if is a mouse or touch event for remove the defaut outline. This improve the accessibility with keyboard navigation.
     a {
     	background-color: transparent;
     	color: $links-color;
 
-    	@if ($links-text-decoration) {
+    	@if ($global-links-text-decoration) {
     		text-decoration: underline;
     	} @else {
             text-decoration: none;
@@ -350,7 +290,7 @@ $strong-font-weight: bolder !default;
     select,
     textarea {
         font-family: inherit;
-    	@if ($global-reset-input-appearance) {
+    	@if ($global-inputs-reset-appearence) {
     		font-size: percentage(1);
     	}
     	color: inherit;
@@ -440,7 +380,7 @@ $strong-font-weight: bolder !default;
     input {
     	&[type="checkbox"],
     	&[type="radio"] {
-    		@if ($custom-checkbox-radio) {
+    		@if ($global-custom-checkbox-radio) {
                 appearance: none !important;
                 @include visuallyhidden;
     		} @else {
@@ -451,7 +391,7 @@ $strong-font-weight: bolder !default;
 
     	@each $input-type in (email, password, search, tel, text, url) {
     		&[type="#{$input-type}"] {
-    			@if ($global-reset-input-appearance) {
+    			@if ($global-inputs-reset-appearence) {
     				@extend %reset-input-style;
     			}
     		}
@@ -463,7 +403,7 @@ $strong-font-weight: bolder !default;
     	}
 
     	&[type="search"] {
-            @if ($global-reset-input-appearance) {
+            @if ($global-inputs-reset-appearence) {
                 @extend %reset-input-style;
             }
             outline-offset: -2px;
@@ -472,7 +412,7 @@ $strong-font-weight: bolder !default;
     			-webkit-appearance: none;
     		}
 
-            @if not ($global-webkit-search-cancel-button) {
+            @if not ($global-input-search-cancel-button) {
                 &::-webkit-search-cancel-button {
                     -webkit-appearance: none;
                 }
@@ -482,7 +422,7 @@ $strong-font-weight: bolder !default;
     	&::-webkit-file-upload-button {
     		-webkit-appearance: button;
     		font: inherit;
-    		@if ($global-reset-input-appearance) {
+    		@if ($global-inputs-reset-appearence) {
     			border: 1px solid lightgray;
     			background-color: white;
                 border-radius: 0;
@@ -501,7 +441,7 @@ $strong-font-weight: bolder !default;
     // Remove the default IE/Edge "arrow" pseudo element.
     // Restorage the current color in IE/Edge when is selected an option.
     select {
-        @if ($global-custom-select) {
+        @if ($global-select-reset-appearence) {
             @extend %reset-input-style;
 
             &:-moz-focusring {
@@ -518,7 +458,7 @@ $strong-font-weight: bolder !default;
     		}
     	}
 
-    	@if ($global-custom-options-select) {
+    	@if ($global-select-reset-appearence-options) {
     		appearance: none !important;
     		@include visuallyhidden;
     	}
@@ -526,17 +466,17 @@ $strong-font-weight: bolder !default;
 
     // Remove the default vertical scrollbar in IE.
     textarea {
-    	@if ($global-reset-input-appearance) {
+    	@if ($global-inputs-reset-appearence) {
     		@extend %reset-input-style;
     	}
     	overflow: auto;
     }
 
     // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
-    @if ($global-reset-input-appearance) {
+    @if ($global-inputs-reset-appearence) {
     	[disabled] {
     		color: inherit;
-    		opacity: $global-disable-input-opacity !important;
+    		opacity: $global-disabled-input-opacity !important;
     		cursor: default !important;
     	}
     }
