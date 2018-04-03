@@ -2,16 +2,17 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// The default `background-color` selection for text and other elements.
+////
 /// @group accessibility
+////
+
+/// The default `background-color` selection for text and other elements.
 $selection-background-color: initial !default;
 
 /// If `true` the color will be applied based on the value of `$selection-color` of a selected element.
-/// @group accessibility
 $selection-color-apply: false !default;
 
 /// The color when an item is selected.
-/// @group accessibility
 $selection-color: initial !default;
 
 /// Accessibility classes mixin.

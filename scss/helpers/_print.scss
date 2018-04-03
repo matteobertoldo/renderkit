@@ -5,19 +5,19 @@
 /// If `true`, all elements will have transparent backgrounds when printed, to save on ink.
 /// @type Boolean
 /// @group print
-$global-transparent-background-print: false !default;
+$print-transparent-background: false !default;
 
 /// If `true`, all link have black color when printed.
 /// @group print
-$global-color-black-print: false !default;
+$print-color-black: false !default;
 
 /// If `true`, all link show your `href` attribute when printed.
 /// @group print
-$global-link-href-show: false !default;
+$print-link-href-show: false !default;
 
 /// The global margin that a page can have when printed.
 /// @group print
-$global-margin-print: 0.5cm !default;
+$print-margin: 0.5cm !default;
 
 /// Mixin for global `@media print` elements. From original HTML5 boilerplate.
 /// @link https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
@@ -28,12 +28,12 @@ $global-margin-print: 0.5cm !default;
         *, ::after, ::before {
             text-shadow: none !important;
 
-            @if ($global-transparent-background-print) {
+            @if ($print-transparent-background) {
                 background: transparent !important;
             }
 
-            @if ($global-color-black-print) {
-                color: #000 !important;
+            @if ($print-color-black) {
+                color: #000000 !important;
             }
 
             box-shadow: none !important;
@@ -43,7 +43,7 @@ $global-margin-print: 0.5cm !default;
             text-decoration: underline;
         }
 
-        @if ($global-link-href-show) {
+        @if ($print-link-href-show) {
             a[href]:after {
                 content: ' (' attr(href) ')';
             }
@@ -116,7 +116,7 @@ $global-margin-print: 0.5cm !default;
         }
 
         @page {
-            margin: $global-margin-print;
+            margin: $print-margin;
         }
     }
 }
