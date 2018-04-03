@@ -22,16 +22,6 @@ $body-root-font-size: false !default;
 /// @group typography
 $body-font-weight: normal !default;
 
-/// If it is `true` the value of the variable `$body-background-gradient-value` will be applied to the body.
-/// @type Boolean
-/// @group colors & palette
-$body-background-gradient: false !default;
-
-/// The `linear-gradient` that will be applied to the body.
-/// @type Keyword
-/// @group colors & palette
-$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) !default;
-
 /// The default `body` background color.
 /// @type Color
 /// @group colors & palette

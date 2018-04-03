@@ -1,0 +1,87 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+@mixin checkbox-shape($center-align: false) {
+    &::before {
+        border-radius: $custom-checkbox-border-radius;
+    }
+
+    &::after {
+        @if ($center-align) {
+            top: 50%;
+        } @else {
+            top: rem($custom-checkbox-radio-size - ($marker-size + $marker-size-half));
+        }
+        left: rem(($custom-checkbox-radio-size - $marker-size-half) / 2);
+        @include arrow(rem($marker-size-half), rem($marker-size), $custom-checkbox-mark-color, $custom-checkbox-mark-thick);
+        @if ($center-align) {
+            margin-top: -(rem($marker-size-half));
+        }
+        transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
+    }
+}
+
+@mixin checkbox-attr() {
+    input[type="checkbox"][disabled] + & {
+        opacity: $global-disabled-input-opacity !important;
+    }
+
+    @if ($custom-checkbox-radio-hover-border) {
+        input[type="checkbox"]:not([disabled]) + &:hover {
+            &::before {
+                border-color: $custom-checkbox-radio-hover-border-color;
+            }
+        }
+    }
+
+    input[type="checkbox"]:checked + & {
+        @if ($custom-checkbox-radio-checked-border) {
+            &::before {
+                border-color: $custom-checkbox-checked-border;
+            }
+        }
+
+        &::after {
+            transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 0, 0);
+        }
+    }
+
+    input[type="checkbox"]:focus:not(:checked) + & {
+        &::before {
+            border-color: $global-focus-input-border-color;
+        }
+    }
+
+    input[type="checkbox"].#{$validation-input-error-class}:not([disabled]) + & {
+        &::before {
+            border-color: $validation-input-error-border-color;
+            background-color: $validation-input-error-background-color;
+        }
+    }
+
+    input[type="checkbox"].#{$validation-input-error-class}:focus:not(:checked) + & {
+        &::before {
+            border-color: $validation-input-error-border-color;
+        }
+    }
+
+    @if ($custom-checkbox-radio-outline-detect) {
+        @if ($custom-checkbox-radio-what-input-outline-detect) {
+            [data-whatinput="initial"] input[type="checkbox"]:focus + &,
+            [data-whatinput="keyboard"] input[type="checkbox"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                 }
+            }
+        } @else {
+            input[type="checkbox"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                }
+             }
+        }
+    }
+}

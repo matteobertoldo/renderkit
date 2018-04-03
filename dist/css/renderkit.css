@@ -3588,7 +3588,6 @@ p {
   height: 24px;
   background-color: #efefef;
   border: 1px solid #d9d9d9;
-  border-radius: 5px;
   -webkit-transition: border-color 0.3s ease;
   -o-transition: border-color 0.3s ease;
   transition: border-color 0.3s ease;
@@ -3602,6 +3601,10 @@ p {
   -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.input-checkbox::before {
+  border-radius: 5px;
 }
 
 .input-checkbox::after {

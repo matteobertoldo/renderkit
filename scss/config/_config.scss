@@ -11,13 +11,11 @@
 //  5. Typography: Base
 //   - 5.1  Typography: Headers
 //   - 5.2  Typography: Paragraph & Strong
-//  6. Breakpoint
-//  7. Layout
-//  8. XY Grid
-//   - 5.1 Flexbox Utilities
-//  9. Float Grid
-//  10. Colors Global
-//  11. Colors Palette
+//  6. XY Grid
+//   - 6.1 Flexbox Utilities
+//  7. Float Grid
+//  8. Colors Global
+//  9. Colors Palette
 //  10. Form Global
 //   - 10.1 Form Input
 //   - 10.2 Form Select
@@ -55,6 +53,7 @@ $global-ios-tap-color: transparent;
 $focus-outline-links-hidden: true;
 $focus-outline-inputs-hidden: true;
 $what-input-outline-keyboard-detect: true;
+$selection-color-apply: false;
 
 // 3. Breakpoints
 // --------------
@@ -180,10 +179,7 @@ $palette-color: (
 // ----------------
 
 $selection-background-color: #b3d4fc;
-$selection-color-apply: false;
 $selection-color: initial;
-$body-background-gradient: false;
-$body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 $body-background-color: #ffffff;
 $body-base-color: #666666;
 $headers-color: inherit;
