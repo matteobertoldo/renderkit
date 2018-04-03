@@ -5,7 +5,7 @@
 //  Table of Contents:
 //  1. Global Fonts
 //  2. Typography: Base
-//   - 2.1  Typography: Heading
+//   - 2.1  Typography: Headers
 //   - 2.2  Typography: Paragraph & Strong
 //  3. Breakpoint
 //  4. Layout
@@ -22,7 +22,8 @@
 //   - 9.5 Form Input Checkbox-Radio Custom
 //   - 9.6 Form Input Checkbox Custom
 //   - 9.7 Form Input Radio Custom
-//   - 9.8 Form Validation & Autofill
+//   - 9.8 Form Validation
+//   - 9.9 Form Autofill
 //  10. Shapes
 //  11. Print
 
@@ -34,30 +35,32 @@ $google-fonts-load: true;
 $google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
 $font-face-load: false;
 $font-face-map: (
-    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg),
 );
 
 // 2. Typography: Base
 // --------------------------------
 
+$global-root-font-size: false;
+$global-font-size: 100%;
 $global-text-direction: ltr;
 $global-text-rendering: optimizeLegibility;
 $global-font-liga-kern: true;
+$global-root-body-font-size: false;
+$global-body-font-size: 16px;
 $body-font-family: 'Work Sans', sans-serif;
-$body-root-font-size: false;
-$body-font-size: 16px;
 $body-font-weight: normal;
 $body-line-height: 1.15;
 
-// 2.1 Typography: Heading
+// 2.1 Typography: Headers
 // --------------------------------
 
-$global-heading-font-family: inherit;
-$global-heading-font-weight: bold;
-$global-heading-line-height: 1.4;
-$global-heading-letter-spacing: normal;
-$global-heading-text-transform: uppercase;
-$global-margin-bottom-heading: 16px;
+$headers-font-family: inherit;
+$headers-font-weight: bold;
+$headers-line-height: 1.4;
+$headers-letter-spacing: normal;
+$headers-text-transform: uppercase;
+$headers-margin-bottom: 16px;
 $header-styles: (
     small: (
         'h1': ('font-size': 24),
@@ -80,14 +83,14 @@ $header-styles: (
 // 2.2 Typography: Paragraph & Strong
 // --------------------------------
 
-$global-paragraph-font-family: 'Josefin Sans', sans-serif;
-$global-paragraph-font-weight: normal;
-$global-paragraph-line-height: 1.4;
-$global-paragraph-letter-spacing: normal;
-$global-paragraph-text-transform: none;
-$global-margin-paragraph: 0;
-$global-strong-font-family: inherit;
-$global-strong-font-weight: bolder;
+$paragraph-font-family: 'Josefin Sans', sans-serif;
+$paragraph-font-weight: normal;
+$paragraph-line-height: 1.4;
+$paragraph-letter-spacing: normal;
+$paragraph-text-transform: none;
+$paragraph-margin: 0;
+$strong-font-family: inherit;
+$strong-font-weight: bolder;
 
 // 3. Breakpoints
 // --------------------------------
@@ -107,11 +110,9 @@ $print-breakpoint: large;
 
 $global-flexbox: true;
 $focus-outline-links-hidden: true;
-$focus-outline-input-hidden: true;
+$focus-outline-inputs-hidden: true;
 $what-input-outline-keyboard-detect: true;
-$global-links-text-decoration: true;
-$global-left: if($global-text-direction == rtl, right, left);
-$global-right: if($global-text-direction == rtl, left, right);
+$links-text-decoration: true;
 
 // 5. XY Grid
 // --------------------------------
@@ -163,17 +164,17 @@ $palette-color: (
 // 8. Colors Global
 // --------------------------------
 
-$global-selection-background-color: #b3d4fc;
-$global-selection-color: false;
+$selection-background-color: #b3d4fc;
+$selection-color-apply: false;
 $selection-color: initial;
 $ios-tap-color: transparent;
 $body-background-gradient: false;
 $body-background-gradient-value: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 $body-background-color: #ffffff;
 $body-base-color: #666666;
-$global-heading-color: inherit;
-$global-paragraph-color: inherit;
-$global-link-color: #61afef;
+$headers-color: inherit;
+$paragraph-color: inherit;
+$links-color: #61afef;
 
 // 9. Form Global
 // --------------------------------
@@ -193,7 +194,7 @@ $global-input-font-size: 14px;
 $global-input-letter-spacing: normal;
 $global-input-text-transform: none;
 $global-input-padding: 10px;
-$global-input-background-color: palette(5);
+$global-input-background-color: #efefef;
 $global-input-color: #666666;
 $global-input-border: 1px solid #d9d9d9;
 $global-input-border-radius: 5px;
@@ -231,28 +232,30 @@ $global-textarea-resize-mode: vertical;
 // 9.4 Form Input Label
 // --------------------------------
 
-$global-input-label-font-family: 'Josefin Sans', sans-serif;
-$global-input-label-font-size: 11px;
-$global-input-label-text-transform: uppercase;
-$global-input-label-letter-spacing: 0.5px;
-$global-input-label-color: #8c8c8c;
-$global-input-label-margin: 0 0 5px 0;
+$input-label-font-family: 'Josefin Sans', sans-serif;
+$input-label-font-size: 11px;
+$input-label-text-transform: uppercase;
+$input-label-letter-spacing: 0.5px;
+$input-label-color: #8c8c8c;
+$input-label-margin: 0 0 5px 0;
 
 // 9.5 Form Input Checkbox-Radio Custom
 // --------------------------------
 
-$global-custom-checkbox-radio: true;
-$global-custom-checkbox-radio-align-center: false;
-$global-custom-checkbox-radio-size: 24px;
-$global-custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif;
-$global-custom-checkbox-radio-font-size: 13px;
-$global-custom-checkbox-radio-text-transform: none;
-$global-custom-checkbox-radio-letter-spacing: 0.5px;
-$global-custom-checkbox-radio-color: #8c8c8c;
-$global-custom-checkbox-radio-cursor: default;
-$global-custom-checkbox-radio-hover-border: false;
-$global-custom-checkbox-radio-hover-border-color: #b2b2b2;
-$global-custom-checkbox-radio-checked-border: true;
+$custom-checkbox-radio: true;
+$custom-checkbox-radio-align-center: false;
+$custom-checkbox-radio-size: 24px;
+$custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif;
+$custom-checkbox-radio-font-size: 13px;
+$custom-checkbox-radio-text-transform: none;
+$custom-checkbox-radio-letter-spacing: 0.5px;
+$custom-checkbox-radio-background-color: #efefef;
+$custom-checkbox-radio-border: 1px solid #d9d9d9;
+$custom-checkbox-radio-color: #8c8c8c;
+$custom-checkbox-radio-cursor: default;
+$custom-checkbox-radio-hover-border: false;
+$custom-checkbox-radio-hover-border-color: #b2b2b2;
+$custom-checkbox-radio-checked-border: true;
 $custom-checkbox-radio-label-gutter: 10px;
 $custom-checkbox-radio-outline-detect: true;
 $custom-checkbox-radio-what-input-outline-detect: true;
@@ -260,6 +263,7 @@ $custom-checkbox-radio-what-input-outline-detect: true;
 // 9.6 Form Input Checkbox Custom
 // --------------------------------
 
+$custom-checkbox-border-radius: 5px;
 $custom-checkbox-mark-thick: 3px;
 $custom-checkbox-mark-color: #8c8c8c;
 $custom-checkbox-checked-border: #b2b2b2;
@@ -270,7 +274,7 @@ $custom-checkbox-checked-border: #b2b2b2;
 $custom-radio-mark-color: #8c8c8c;
 $custom-radio-checked-border: #b2b2b2;
 
-// 9.8 Form Validation & Autofill
+// 9.8 Form Validation
 // --------------------------------
 
 $validation-input-error-class: 'error';
@@ -279,9 +283,13 @@ $validation-input-error-background-color: #f2c0c1;
 $validation-input-error-color: #666666;
 $validation-input-error-placeholder-color: #c04649;
 $validation-input-error-label-color: #c04649;
-$global-input-custom-autofill: false;
-$global-input-autofill-color: $global-input-color;
-$global-input-autofill-background-color: $global-input-background-color;
+
+// 9.9 Form Autofill
+// --------------------------------
+
+$input-custom-autofill: false;
+$input-autofill-color: $global-input-color;
+$input-autofill-background-color: $global-input-background-color;
 
 // 10. Shapes
 // --------------------------------

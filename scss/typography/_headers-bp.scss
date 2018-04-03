@@ -2,26 +2,9 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// Mixin for global headers style
-///
-/// Each header has in association a class to invoke in the templates.
-/// @group _global renderkit
-@mixin headers-style {
-    /*@headers-style*/
-    h1, .h1,
-    h2, .h2,
-    h3, .h3,
-    h4, .h4,
-    h5, .h5,
-    h6, .h6, {
-        font: {
-            family: $global-heading-font-family;
-            weight: $global-heading-font-weight;
-        }
-        text-transform: $global-heading-text-transform;
-        color: $global-heading-color;
-    }
-}
+////
+/// @group typography
+////
 
 /// Styles for headings at various screen sizes. Each key is a breakpoint, and each value is a map of heading styles.
 ///
@@ -34,7 +17,6 @@
 ///
 /// Each value must obviously be comma separated. Only `integers` are accepted. Any value passed in `rem` or `em` will be ignored. The output will always be in `px`, except for the `line-height` property.
 /// Except for the `line-height` or `lh` value, in addition to `integers`, `floats` are also accepted.
-/// @group Typography
 /// @type Map
 $header-styles: (
   small: (
@@ -55,15 +37,16 @@ $header-styles: (
   ),
 ) !default;
 
-//Mixin for global headers styles in breakpoints
-@mixin headers-style-responsive {
+/// Mixin for global headers styles in breakpoints.
+@mixin headers-style-bp {
+    /*@headers-style-bp*/
     @each $size, $headers in $header-styles {
         @include breakpoint($size) {
             @each $header, $header-defs in $headers {
                 $font-size-temp: 1rem;
-                $letter-spacing-temp: $global-heading-letter-spacing;
+                $letter-spacing-temp: $headers-letter-spacing;
                 $margin-top-temp: 0;
-                $margin-bottom-temp: $global-margin-bottom-heading;
+                $margin-bottom-temp: $headers-margin-bottom;
 
                 #{$header},
                 .#{$header} {
@@ -82,7 +65,7 @@ $header-styles: (
                     } @else if map-has-key($header-defs, lh) {
                         line-height: map-get(strip-unit($header-defs), lh);
                     } @else if $size == $-zf-zero-breakpoint {
-                        line-height: $global-heading-line-height;
+                        line-height: $headers-line-height;
                     }
 
                     @if map-has-key($header-defs, letter-spacing) {
@@ -112,55 +95,9 @@ $header-styles: (
                         $margin-bottom-temp: map-get($header-defs, mb);
                         margin-bottom: unquote(strip-unit($margin-bottom-temp) + 'px');
                     } @else if $size == $-zf-zero-breakpoint {
-                        margin-bottom: $global-margin-bottom-heading;
+                        margin-bottom: $headers-margin-bottom;
                     }
                 }
-            }
-        }
-    }
-}
-
-//Mixin for set global paragraph style
-@mixin paragraph-style {
-    /*@paragraph-style*/
-    p {
-        font: {
-            family: $global-paragraph-font-family;
-            weight: $global-paragraph-font-weight;
-        }
-        line-height: $global-paragraph-line-height;
-        letter-spacing: $global-paragraph-letter-spacing;
-        text-transform: $global-paragraph-text-transform;
-        color: $global-paragraph-color;
-        margin: $global-margin-paragraph;
-    }
-}
-
-// Mixin for text disposition.
-@mixin text-classes {
-    /*@text-classes*/
-    @each $size in $breakpoint-classes {
-        @include breakpoint($size) {
-            @each $align in (left, right, center, justify) {
-                @if $size != $-zf-zero-breakpoint {
-                    .#{$size}-text-#{$align} {
-                        text-align: $align;
-                    }
-                } @else {
-                    .text-#{$align} {
-                        text-align: $align;
-                    }
-                }
-            }
-        }
-    }
-
-    @each $param in (uppercase, lowercase, capitalize, ellipsis) {
-        .text-#{$param} {
-            @if ($param == 'ellipsis') {
-                @include text-ellipsis;
-            } @else {
-                text-align: $param;
             }
         }
     }

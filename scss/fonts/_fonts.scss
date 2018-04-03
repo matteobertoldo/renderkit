@@ -2,22 +2,25 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// Mixin for importing Google Fonts and/or `@font-face` fonts globally.
-/// @group _global renderkit
-@mixin global-fonts {
-    /*@global fonts*/
-    @if ($google-fonts-load) {
-        @import url('https://fonts.googleapis.com/css?family=#{$google-fonts-family}');
-    }
+////
+/// @group fonts
+////
 
-    @if ($font-face-load) {
-        @each $font-family, $property in $font-face-map {
-            $font-file: nth($property, 1);
-            $font-style: nth($property, 2);
-            $font-weight: nth($property, 3);
-            $extensions: nth($property, 4);
+/// The default font dir for catch all font file.
+/// @type String
+$font-dir: '../fonts/' !default;
 
-            @include font-face($font-family, $font-file, $font-style, $font-weight, $extensions);
-        }
-    }
-}
+/// The default `$font-face-map` used by RenderKit.
+/// @type Map
+$font-face-map: (
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
+) !default;
+
+/// The default Google Fonts used by by RenderKit.
+///
+/// `$google-fonts-family` accept the name of the font after string `?family=`.
+/// @type String
+$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface' !default;
+
+@import 'utils';
+@import 'global-fonts';
