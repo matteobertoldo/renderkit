@@ -6,20 +6,6 @@
 /// @group fonts
 ////
 
-/// The default font dir for catch all font file.
-$font-dir: '../fonts/' !default;
-
-/// The default `$font-face-map` used by RenderKit.
-/// @type map
-$font-face-map: (
-    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg)
-) !default;
-
-/// The default Google Fonts used by by RenderKit.
-///
-/// `$google-fonts-family` accept the name of the font after string `?family=`.
-$google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface' !default;
-
 /// Function for catch font family in `$font-face-map`.
 /// @param {Integer} $font-family-key - The `nth` key of `$font-face-map`.
 /// @return {String} - The name of the font family.

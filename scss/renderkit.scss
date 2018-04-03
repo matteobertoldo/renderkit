@@ -6,4 +6,36 @@
  */
 
 @import 'global';
+@import 'utils/utils';
+@import 'fonts/fonts';
+@import 'typography/typography';
+@import 'helpers/helpers';
+@import 'float-grid/float-grid';
+@import 'xy-grid/xy-grid';
+@import 'components/components';
+@import 'config/config';
+
+@mixin scss-renderkit() {
+    @include global-fonts;
+    @include scss-normalize;
+    @include media-print;
+    @include global-typography;
+    @include accessibility-classes;
+    @include foundation-visibility-classes;
+    @include float-classes;
+    @include clearfix-classes;
+
+    @if ($global-flexbox) {
+        @include foundation-xy-grid-classes;
+        @include foundation-flex-classes;
+    } @else {
+        @include foundation-grid;
+    }
+
+    @include form-style;
+    @include checkbox-radio-classes;
+    @include colors-palette;
+    @include shape-classes;
+}
+
 @include scss-renderkit;

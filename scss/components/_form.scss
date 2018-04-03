@@ -44,13 +44,13 @@
         .#{$global-inputs-labelclass} {
             display: block;
             font: {
-                family: $global-input-label-font-family;
-                size: $global-input-label-font-size;
+                family: $input-label-font-family;
+                size: $input-label-font-size;
             }
-            letter-spacing: $global-input-label-letter-spacing;
-            text-transform: $global-input-label-text-transform;
-            color: $global-input-label-color;
-            margin: $global-input-label-margin;
+            letter-spacing: $input-label-letter-spacing;
+            text-transform: $input-label-text-transform;
+            color: $input-label-color;
+            margin: $input-label-margin;
 
             &.#{$validation-input-error-class} {
                 color: $validation-input-error-label-color;
@@ -153,12 +153,12 @@
         }
 
         %autofill {
-            @if ($global-input-custom-autofill) {
+            @if ($input-custom-autofill) {
                 &:-webkit-autofill,
                 &:-webkit-autofill:hover,
                 &:-webkit-autofill:focus {
-                    -webkit-box-shadow: 0 0 0 $global-input-height $global-input-autofill-background-color inset;
-                    -webkit-text-fill-color: $global-input-autofill-color;
+                    -webkit-box-shadow: 0 0 0 $global-input-height $input-autofill-background-color inset;
+                    -webkit-text-fill-color: $input-autofill-color;
                     transition: $global-input-transition;
                 }
             }

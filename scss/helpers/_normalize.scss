@@ -10,15 +10,7 @@ $ios-tap-color: rgba(0, 0, 0, 0.5) !default;
 /// @group typography
 $body-font-family: sans-serif !default;
 
-/// If it is `true` the basic font size (`$body-font-size`) will be applied to the `body`.
-/// @group typography
-$body-root-font-size: false !default;
-
-/// The default font size applied to the body.
-/// @group typography
-$body-font-size: 16px !default;
-
-/// The default font weight applied to the body.
+/// The default font weight applied to the `body`.
 /// @group typography
 $body-font-weight: normal !default;
 
@@ -44,11 +36,11 @@ $body-line-height: 1.15 !default;
 
 /// The global links color.
 /// @group colors & palette
-$global-link-color: #0000FF !default;
+$links-color: #0000FF !default;
 
 /// If `false` the default `text-decoration` for the links will be hidden.
 /// @group layout
-$global-links-text-decoration: true !default;
+$links-text-decoration: true !default;
 
 /// Enable or disable the default outline in `focus` on links.
 /// @group layout
@@ -57,21 +49,17 @@ $focus-outline-links-hidden: false !default;
 /// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
 ///
 /// The installation of `what-input` is required.
-/// @group layout
+/// @group accessibility
 /// @link https://github.com/ten1seven/what-input
 $what-input-outline-keyboard-detect: true !default;
 
-/// Global font family applied to the `strong` and` b` tags.
+/// Font family applied to the `strong` and` b` tags.
 /// @group typography
-$global-strong-font-family: inherit !default;
+$strong-font-family: inherit !default;
 
-/// Global font weight applied to the `strong` and` b` tags.
+/// Font weight applied to the `strong` and` b` tags.
 /// @group typography
-$global-strong-font-weight: bolder !default;
-
-/// Global text rendering applied to `body`, `button`, `input`, `select` and `textarea`.
-/// @group typography
-$global-text-rendering: optimizeLegibility !default;
+$strong-font-weight: bolder !default;
 
 /// `scss-normalize` mixin for RenderKit.
 ///
@@ -88,6 +76,9 @@ $global-text-rendering: optimizeLegibility !default;
     // @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     html {
     	font-family: sans-serif;
+        @if ($global-root-font-size) {
+            font-size: $global-font-size;
+        }
     	-webkit-text-size-adjust: percentage(1);
     	-webkit-tap-highlight-color: $ios-tap-color;
     	box-sizing: border-box;
@@ -101,8 +92,8 @@ $global-text-rendering: optimizeLegibility !default;
     body {
     	font: {
     		family: $body-font-family;
-            @if ($body-root-font-size) {
-                size: $body-font-size;
+            @if ($global-root-body-font-size) {
+                size: $global-body-font-size;
             }
     		weight: $body-font-weight;
     	}
@@ -187,14 +178,14 @@ $global-text-rendering: optimizeLegibility !default;
     }
 
     // Remove the gray background on active links in IE 10.
-    // Set `true` or `false` on `$global-links-text-decoration` for remove o mantain the default underline.
+    // Set `true` or `false` on `$links-text-decoration` for remove o mantain the default underline.
     // Remove the outline on focused links (configurable).
     // [data-whatinput="*"] Detect if is a mouse or touch event for remove the defaut outline. This improve the accessibility with keyboard navigation.
     a {
     	background-color: transparent;
-    	color: $global-link-color;
+    	color: $links-color;
 
-    	@if ($global-links-text-decoration) {
+    	@if ($links-text-decoration) {
     		text-decoration: underline;
     	} @else {
             text-decoration: none;
@@ -226,8 +217,8 @@ $global-text-rendering: optimizeLegibility !default;
     b,
     strong {
     	font: {
-    		family: $global-strong-font-family;
-    		weight: $global-strong-font-weight;
+    		family: $strong-font-family;
+    		weight: $strong-font-weight;
     	}
     }
 
@@ -366,7 +357,7 @@ $global-text-rendering: optimizeLegibility !default;
     	line-height: $body-line-height;
     	margin: 0;
 
-        @if ($focus-outline-input-hidden) {
+        @if ($focus-outline-inputs-hidden) {
             @if ($what-input-outline-keyboard-detect) {
                 [data-whatinput="mouse"] &:focus,
             	[data-whatinput="touch"] &:focus {
@@ -449,7 +440,7 @@ $global-text-rendering: optimizeLegibility !default;
     input {
     	&[type="checkbox"],
     	&[type="radio"] {
-    		@if ($global-custom-checkbox-radio) {
+    		@if ($custom-checkbox-radio) {
                 appearance: none !important;
                 @include visuallyhidden;
     		} @else {

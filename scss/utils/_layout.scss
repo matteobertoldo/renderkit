@@ -6,15 +6,10 @@
 /// @group layout
 ////
 
-/// Variable to determine if we want to include flexbox utility in our layout and to include mixins such as `foundation-xy-grid-classes()` and `foundation-flex-classes()`.
-///
-/// If set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored.
-/// @type Boolean
-$global-flexbox: true !default;
-
 /// Mixin for visuallyhidden.
 ///
 /// This hide the target element visually only, but not it's interaction.
+/// @group visibility
 @mixin visuallyhidden {
     position: absolute !important;
     width: 1px !important;
@@ -28,6 +23,7 @@ $global-flexbox: true !default;
 }
 
 /// Mixin for restores the style applied by `visuallyhidden` mixin.
+/// @group visibility
 @mixin visuallyhidden-off {
     position: static !important;
     width: auto !important;

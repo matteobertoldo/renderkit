@@ -2,34 +2,44 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-@import 'utils/utils';
-@import 'fonts/fonts';
-@import 'helpers/helpers';
-@import 'components/components';
-@import 'config/config';
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
 
-@mixin scss-renderkit() {
-    @include global-fonts;
-    @include scss-normalize;
-    @include media-print;
-    @include headers-style;
-    @include headers-style-responsive;
-    @include paragraph-style;
-    @include text-classes;
-    @include accessibility-classes;
-    @include foundation-visibility-classes;
-    @include float-classes;
-    @include clearfix-classes;
+////
+/// @group global
+////
 
-    @if ($global-flexbox) {
-        @include foundation-xy-grid-classes;
-        @include foundation-flex-classes;
-    } @else {
-        @include foundation-grid;
-    }
+/// Variable to determine if we want to include flexbox utility in our layout and to include mixins such as `foundation-xy-grid-classes()` and `foundation-flex-classes()`.
+///
+/// If set to `false` the settings for the XY Grid & Flexbox Utilities will be ignored.
+/// @type Boolean
+$global-flexbox: true !default;
 
-    @include form-style;
-    @include checkbox-radio-classes;
-    @include colors-palette;
-    @include shape-classes;
-}
+/// If it is `true` the basic font size (`$global-font-size`) will be applied to `html`.
+/// @type Boolean
+$global-root-font-size: false !default;
+
+/// Global font size apply to `html`.
+$global-font-size: 100% !default;
+
+/// If it is `true` the basic font size (`$global-body-font-size`) will be applied to `body`.
+/// @type Boolean
+$global-root-body-font-size: false !default;
+
+/// The default font size applied to the `body`.
+$global-body-font-size: 16px !default;
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+/// Global `disabled` input opacity value.
+$global-disable-input-opacity: 0.5 !default;
+
+/// Global text rendering applied to `body`, `button`, `input`, `select` and `textarea`.
+$global-text-rendering: optimizeLegibility !default;

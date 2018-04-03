@@ -4,7 +4,7 @@
 
 /// Hide an element by default, only displaying it above a certain screen size.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-/// @group layout
+/// @group visibility
 @mixin show-for($size) {
 	$size: map-get($breakpoints, $size);
 
@@ -17,7 +17,7 @@
 ///
 /// Removed unnecessary `media query` if value is 0.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-/// @group layout
+/// @group visibility
 @mixin show-for-only($size) {
 	$lower-bound-size: map-get($breakpoints, $size);
 	$upper-bound-size: -zf-map-next($breakpoints, $size);
@@ -41,7 +41,7 @@
 
 /// Show an element by default, and hide it above a certain screen size.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-/// @group layout
+/// @group visibility
 @mixin hide-for($size) {
 	@include breakpoint($size) {
 		display: none !important;
@@ -50,7 +50,7 @@
 
 /// Show an element by default, and hide it above a certain screen size.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
-/// @group layout
+/// @group visibility
 @mixin hide-for-only($size) {
 	@include breakpoint($size only) {
 		display: none !important;
@@ -58,6 +58,7 @@
 }
 
 /// Foundation visibilty clasess.
+/// @link https://foundation.zurb.com/sites/docs/visibility.html
 /// @group _global renderkit
 @mixin foundation-visibility-classes {
     /*@visibility classes*/

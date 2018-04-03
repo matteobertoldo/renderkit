@@ -1,0 +1,20 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+@import 'utils';
+@import 'headers';
+@import 'headers-bp';
+@import 'paragraph';
+@import 'alignment';
+@import 'transform';
+
+/// Mixin for global typography.
+/// @group _global renderkit
+@mixin global-typography {
+    @include headers-style;
+    @include headers-style-bp;
+    @include paragraph-style;
+    @include foundation-text-alignment;
+    @include text-transform-classes;
+}
