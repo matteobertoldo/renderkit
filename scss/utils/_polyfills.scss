@@ -6,9 +6,9 @@
 /// @group polyfills
 ////
 
-/// Mixin for fix rules in Gecko browsers.
+/// Mixin for fix rules in Firefox.
 /// This mixin creates exclusive rules for Firefox.
-/// @content Exclusive fix rules for Gecko browsers.
+/// @content Exclusive fix rules for Firefox.
 @mixin fix-firefox {
 	@-moz-document url-prefix() & {
 		@content;
@@ -19,18 +19,6 @@
 /// @content Exclusive fix rules for IE6/7.
 @mixin fix-old-ie {
 	* html & {
-		@content;
-	}
-}
-
-/// Mixin for fix css pointer events for the browser doesn't support CSS pointer events.
-///
-/// Require Modernizr.
-/// @link https://modernizr.com/download#csspointerevents&q=css%20po
-/// @link https://caniuse.com/#feat=pointer-events
-/// @content Exclusive fix rules for css pointerevents.
-@mixin fix-pointer-events {
-	.no-csspointerevents & {
 		@content;
 	}
 }

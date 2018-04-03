@@ -430,6 +430,7 @@ h6, .h6 {
   color: inherit;
 }
 
+/*@headers-style-bp*/
 h1,
 .h1 {
   font-size: 1.5rem;
@@ -522,7 +523,7 @@ p {
   margin: 0;
 }
 
-/*@text-classes*/
+/*@foundation-text-alignment*/
 .text-left {
   text-align: left;
 }
@@ -569,16 +570,17 @@ p {
   }
 }
 
+/*@text-transform-classes*/
 .text-uppercase {
-  text-align: uppercase;
+  text-transform: uppercase;
 }
 
 .text-lowercase {
-  text-align: lowercase;
+  text-transform: lowercase;
 }
 
 .text-capitalize {
-  text-align: capitalize;
+  text-transform: capitalize;
 }
 
 .text-ellipsis {

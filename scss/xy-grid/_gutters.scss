@@ -1,0 +1,34 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+////
+/// @group xy-grid
+////
+
+/// Create gutters for a cell/container.
+///
+/// @param {Number|Map} $gutters [$grid-margin-gutters] - Map or single value for gutters.
+/// @param {Keyword} $gutter-type [margin] - Type of gutter to output. Accepts either margin or padding.
+/// @param {List} $gutter-position [right left] - The position to apply gutters to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+/// @param {Boolean} $negative [false] - Whether to apply the gutter as a negative value. Commonly used for nested grids.
+@mixin xy-gutters($gutters: $grid-margin-gutters, $gutter-type: margin, $gutter-position: right left, $negative: false) {
+    $operator: if($negative, '-', '');
+    $gutter-type: if($negative, 'margin', $gutter-type);
+
+    @if (type-of($gutters) == 'map') {
+        @include -zf-breakpoint-value(auto, $gutters) {
+            $gutter: $-zf-bp-value / 2;
+
+            @each $value in $gutter-position {
+                #{$gutter-type}-#{$value}: unquote("#{$operator}#{$gutter}");
+            }
+        }
+    } @elseif (type-of($gutters) == 'number') {
+        $gutter: $gutters / 2;
+
+        @each $value in $gutter-position {
+            #{$gutter-type}-#{$value}: unquote("#{$operator}#{$gutter}");
+        }
+    }
+}

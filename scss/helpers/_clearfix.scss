@@ -3,10 +3,6 @@
 // Licensed under MIT Open Source
 
 /// Mixin for `clearfix` classes.
-///
-/// Classes available to call via template:
-///
-/// `.clearfix`, `.clear-both`
 /// @group layout
 @mixin clearfix-classes {
     /*@clearfix*/

@@ -2,8 +2,6 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-$global-font-size: 100% !default;
-
 ////
 /// @group units
 ////
@@ -15,10 +13,10 @@ $global-font-size: 100% !default;
 	@return $num / ($num * 0 + 1);
 }
 
-// Converts a pixel, percentage, rem or em value to a unitless value based on a given font size. Ideal for working out unitless line heights.
-// @param {Number} $value - Value to convert to a unitless line height
-// @param {Number} $base - The font size to use to work out the line height - defaults to $global-font-size
-// @return {Number} - Unitless number
+/// Converts a pixel, percentage, rem or em value to a unitless value based on a given font size. Ideal for working out unitless line heights.
+/// @param {Number} $value - Value to convert to a unitless line height
+/// @param {Number} $base - The font size to use to work out the line height - defaults to $global-font-size
+/// @return {Number} - Unitless number
 @function unitless-calc($value, $base: null) {
     @if $base == null {
         $base: $global-font-size;
@@ -64,7 +62,7 @@ $global-font-size: 100% !default;
 /// Only **single** value in `px` are accepted.
 /// @param {Number} $num - Number in **px** to convert in **em**.
 @function em($num) {
-	$em: $num / 16px;
+	$em: $num / $global-body-font-size;
 
 	@return $em * 1em;
 }
@@ -74,7 +72,7 @@ $global-font-size: 100% !default;
 /// Only **single** value in `px` are accepted.
 /// @param {Number} $num - Number in **px** to convert in **rem**.
 @function rem($num) {
-	$rem: $num / 16px;
+	$rem: $num / $global-body-font-size;
 
 	@return $rem * 1rem;
 }

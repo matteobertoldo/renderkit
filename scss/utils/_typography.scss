@@ -20,23 +20,3 @@
 
 	@return $string;
 }
-
-/// Mixin for no text shown.
-@mixin no-text {
-	font: 0/0 a;
-    text-indent: percentage(1);
-    white-space: nowrap;
-    color: transparent;
-    overflow: hidden;
-}
-
-/// Mixin for create "ellipsis text".
-///
-/// When the space for the text is no longer available in a large size for a button, for example.
-///
-/// Ex. Lorem ipsum dolor sit amet....
-@mixin text-ellipsis {
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}

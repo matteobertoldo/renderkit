@@ -26,6 +26,9 @@ $global-text-direction: ltr !default;
 // Internal variable that contains the flex justifying options
 $-zf-flex-justify: -zf-flex-justify($global-text-direction);
 
+/// Vanilla flexbox classes.
+/// @group flexbox utilities
+/// @access private
 @mixin flex-helpers {
     .flex-container {
         @include flex;
@@ -80,6 +83,12 @@ $-zf-flex-justify: -zf-flex-justify($global-text-direction);
     }
 }
 
+/// Foundation flex flex classes
+///
+/// The ability to enable or disable `flex-source-ordering` has been added.
+/// @link https://foundation.zurb.com/sites/docs/flexbox-utilities.html
+/// @link https://foundation.zurb.com/sites/docs/flexbox-utilities.html#source-ordering
+/// @group _global renderkit
 @mixin foundation-flex-classes {
     /*@foundation-flex-classes*/
     @each $hdir, $prop in $-zf-flex-justify {

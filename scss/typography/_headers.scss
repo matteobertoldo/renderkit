@@ -1,0 +1,43 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group typography
+////
+
+/// The `font-family` applied on each headers.
+/// @type String
+$headers-font-family: inherit !default;
+
+/// The `font-weight` applied on each headers.
+/// @type String|Integer
+$headers-font-weight: normal !default;
+
+/// The `text-transform` applied on each headers.
+/// @type String
+$headers-text-transform: none !default;
+
+/// The `color` applied on each headers.
+/// @type Color
+$headers-color: #000000 !default;
+
+/// Mixin for global headers style
+///
+/// Each header has in association a class to invoke in the templates.
+@mixin headers-style {
+    /*@headers-style*/
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6, {
+        font: {
+            family: $headers-font-family;
+            weight: $headers-font-weight;
+        }
+        text-transform: $headers-text-transform;
+        color: $headers-color;
+    }
+}
