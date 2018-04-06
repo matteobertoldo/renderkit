@@ -20,12 +20,12 @@
 //   - 10.1 Form Input
 //   - 10.2 Form Select
 //   - 10.3 Form Textarea
-//   - 10.4 Form Input Label
-//   - 10.5 Form Input Checkbox-Radio Custom
-//   - 10.6 Form Input Checkbox Custom
-//   - 10.7 Form Input Radio Custom
-//   - 10.8 Form Validation
-//   - 10.9 Form Autofill
+//   - 10.4 Form Label
+//   - 10.5 Form Validation
+//   - 10.6 Form Autofill
+//   - 10.7 Form Checkbox-Radio Custom
+//   - 10.8 Form Checkbox Custom
+//   - 10.9 Form Radio Custom
 //  11. Shapes
 //  12. Print
 
@@ -40,20 +40,25 @@ $global-text-rendering: optimizeLegibility;
 $global-font-liga-kern: true;
 $global-links-text-decoration: true;
 $global-inputs-reset-appearence: true;
-$global-select-reset-appearence: true;
-$global-select-reset-appearence-options: false;
-$global-custom-checkbox-radio: true;
 $global-input-search-cancel-button: true;
-$global-disabled-input-opacity: 0.5;
-$global-ios-tap-color: transparent;
+$global-input-disabled-opacity: 0.5;
+$global-select-reset-appearence: true;
+$global-select-reset-appearance-options: false;
+$global-custom-checkbox-radio: true;
+$global-form-inputs-error-class: 'error';
 
 // 2. Layout - Accessibility
-// --------------------------
+// -------------------------
 
-$focus-outline-links-hidden: true;
-$focus-outline-inputs-hidden: true;
 $what-input-outline-keyboard-detect: true;
+$focus-links-outline-hidden: true;
+$focus-inputs-outline-hidden: true;
+$custom-checkbox-radio-outline-detect: true;
+$custom-checkbox-radio-what-input-outline-detect: true;
+$selection-background-color: #b3d4fc;
 $selection-color-apply: false;
+$selection-color: initial;
+$ios-tap-color: transparent;
 
 // 3. Breakpoints
 // --------------
@@ -166,20 +171,18 @@ $block-grid-max: 8;
 // -----------------
 
 $palette-color: (
-    primary: #666666,
-    2: #8c8c8c,
-    3: #b2b2b2,
-    4: #d9d9d9,
-    5: #efefef,
-    6: #c04649,
-    7: #f2c0c1
+    primary: #666,
+    suvagrey: #8c8c8c,
+    darkgray: #b2b2b2,
+    gainsboro: #d9d9d9,
+    whitesmoke: #efefef,
+    sunset: #c04649,
+    coralcandy: #f2c0c1
 );
 
 // 9. Colors Global
 // ----------------
 
-$selection-background-color: #b3d4fc;
-$selection-color: initial;
 $body-background-color: #ffffff;
 $body-base-color: #666666;
 $headers-color: inherit;
@@ -189,111 +192,114 @@ $links-color: #61afef;
 // 10. Form Global
 // ---------------
 
-$global-inputs-rowclass: 'form-row';
-$global-inputs-labelclass: 'form-label';
+$form-inputs-rowclass: 'form-row';
+$form-inputs-labelclass: 'form-label';
 
 // 10.1 Form Input
-// --------------
-
-$global-input-height: 40px;
-$global-input-font-family: 'Josefin Sans', sans-serif;
-$global-input-font-size: 14px;
-$global-input-letter-spacing: normal;
-$global-input-text-transform: none;
-$global-input-padding: 10px;
-$global-input-background-color: #efefef;
-$global-input-color: #666666;
-$global-input-border: 1px solid #d9d9d9;
-$global-input-border-radius: 5px;
-$global-hover-input-border: true;
-$global-hover-input-border-color: #b2b2b2;
-$global-focus-input-border-color: #b2b2b2;
-$global-input-placeholder-color: #8c8c8c;
-$global-input-placeholder-focus-hidden: true;
-$global-input-placeholder-focus-color: #b2b2b2;
-$global-input-placeholder-font-family: inherit;
-$global-input-placeholder-font-style: italic;
-$global-input-placeholder-text-transform: capitalize;
-$global-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-
-// 10.2 Form Select
 // ---------------
 
-$global-select-text-transform: none;
-$global-select-caret-color: #8c8c8c;
-$global-select-caret-shape-render: true;
-$global-select-caret-shape: 'arrow';
-$global-select-caret-size: 10px;
-$global-select-caret-image-url: 'path/to/shape';
-$global-select-caret-background-size: 10px;
+$form-input-height: 40px;
+$form-input-font-family: 'Josefin Sans', sans-serif;
+$form-input-font-size: 14px;
+$form-input-letter-spacing: normal;
+$form-input-text-transform: none;
+$form-input-padding: 10px;
+$form-input-background-color: #efefef;
+$form-input-color: #666666;
+$form-input-border: 1px solid #d9d9d9;
+$form-input-border-radius: 5px;
+$form-input-hover-border: true;
+$form-input-hover-border-color: #b2b2b2;
+$form-input-focus-border-color: #b2b2b2;
+$form-input-placeholder-color: #8c8c8c;
+$form-input-placeholder-focus-hidden: true;
+$form-input-placeholder-focus-color: #b2b2b2;
+$form-input-placeholder-font-family: inherit;
+$form-input-placeholder-font-style: italic;
+$form-input-placeholder-text-transform: capitalize;
+$form-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+// 10.2 Form Select
+// ----------------
+
+$form-select-text-transform: none;
+$form-select-caret-color: #8c8c8c;
+$form-select-caret-shape-render: true;
+$form-select-caret-shape: 'arrow';
+$form-select-caret-size: 10px;
+$form-select-caret-image-url: 'path/to/shape';
+$form-select-caret-background-size: 10px;
 
 // 10.3 Form Textarea
-// -----------------
+// ------------------
 
-$global-textarea-height: 110px;
-$global-textarea-resize: false;
-$global-textarea-resize-mode: vertical;
+$form-textarea-height: 110px;
+$form-textarea-resize: false;
+$form-textarea-resize-mode: vertical;
 
-// 10.4 Form Input Label
+// 10.4 Form Label
+// ---------------
+
+$form-label-font-family: 'Josefin Sans', sans-serif;
+$form-label-font-size: 11px;
+$form-label-text-transform: uppercase;
+$form-label-letter-spacing: 0.5px;
+$form-label-color: #8c8c8c;
+$form-label-margin: 0 0 5px 0;
+
+// 10.5 Form Validation
 // --------------------
 
-$input-label-font-family: 'Josefin Sans', sans-serif;
-$input-label-font-size: 11px;
-$input-label-text-transform: uppercase;
-$input-label-letter-spacing: 0.5px;
-$input-label-color: #8c8c8c;
-$input-label-margin: 0 0 5px 0;
+$form-input-error-border-color: #c04649;
+$form-input-error-background-color: #f2c0c1;
+$form-input-error-color: #666666;
+$form-input-error-label-color: #c04649;
+$form-input-error-placeholder-color: #c04649;
 
-// 10.5 Form Input Checkbox-Radio Custom
-// ------------------------------------
+// 10.6 Form Input Autofill
+// ------------------------
 
-$custom-checkbox-radio-align-center: false;
-$custom-checkbox-radio-size: 24px;
+$form-input-custom-autofill: false;
+$form-input-autofill-color: $form-input-color;
+$form-input-autofill-background-color: $form-input-background-color;
+
+// 10.7 Form Checkbox-Radio Custom
+// -------------------------------
+
 $custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif;
 $custom-checkbox-radio-font-size: 13px;
 $custom-checkbox-radio-text-transform: none;
 $custom-checkbox-radio-letter-spacing: 0.5px;
-$custom-checkbox-radio-background-color: #efefef;
-$custom-checkbox-radio-border: 1px solid #d9d9d9;
 $custom-checkbox-radio-color: #8c8c8c;
 $custom-checkbox-radio-cursor: default;
+$custom-checkbox-radio-label-gutter: 10px;
+$custom-checkbox-radio-align-center: false;
+$custom-checkbox-radio-size: 24px;
+$custom-checkbox-radio-background-color: #efefef;
+$custom-checkbox-radio-border: 1px solid #d9d9d9;
 $custom-checkbox-radio-hover-border: false;
 $custom-checkbox-radio-hover-border-color: #b2b2b2;
 $custom-checkbox-radio-checked-border: true;
-$custom-checkbox-radio-label-gutter: 10px;
-$custom-checkbox-radio-outline-detect: true;
-$custom-checkbox-radio-what-input-outline-detect: true;
 
-// 10.6 Form Input Checkbox Custom
-// ------------------------------
+// 10.8 Form Checkbox Custom
+// -------------------------
 
 $custom-checkbox-border-radius: 5px;
 $custom-checkbox-mark-thick: 3px;
 $custom-checkbox-mark-color: #8c8c8c;
-$custom-checkbox-checked-border: #b2b2b2;
+$custom-checkbox-checked-border-color: #b2b2b2;
+$custom-checkbox-focus-border-color: #b2b2b2;
+$custom-checkbox-error-border-color: #c04649;
+$custom-checkbox-error-background-color: #f2c0c1;
 
-// 10.7 Form Input Radio Custom
-// ---------------------------
+// 10.9 Form Radio Custom
+// ----------------------
 
 $custom-radio-mark-color: #8c8c8c;
-$custom-radio-checked-border: #b2b2b2;
-
-// 10.8 Form Validation
-// -------------------
-
-$validation-input-error-class: 'error';
-$validation-input-error-border-color: #c04649;
-$validation-input-error-background-color: #f2c0c1;
-$validation-input-error-color: #666666;
-$validation-input-error-placeholder-color: #c04649;
-$validation-input-error-label-color: #c04649;
-
-// 10.9 Form Autofill
-// -----------------
-
-$input-custom-autofill: false;
-$input-autofill-color: $global-input-color;
-$input-autofill-background-color: $global-input-background-color;
+$custom-radio-checked-border-color: #b2b2b2;
+$custom-radio-focus-border-color: #b2b2b2;
+$custom-radio-error-border-color: #c04649;
+$custom-radio-error-background-color: #f2c0c1;
 
 // 11. Shapes
 // ----------

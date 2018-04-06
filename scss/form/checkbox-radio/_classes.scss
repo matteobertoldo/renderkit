@@ -1,0 +1,49 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+/// Checkbox radio classes
+///
+/// Output `CSS` classes for custom checkboxes and radios.
+///
+/// These classes are exclusive to `label` with the `[for]` attribute in agreement with `id` of the `checkbox` or `radio` input.
+/// @group _global renderkit
+@mixin checkbox-radio-classes {
+    /*@checkbox-radio-classes*/
+    $align: $custom-checkbox-radio-align-center;
+    $size: $custom-checkbox-radio-size;
+    $hover-border: $custom-checkbox-radio-hover-border;
+    $hover-border-color: $custom-checkbox-radio-hover-border-color;
+    $checked-border: $custom-checkbox-radio-checked-border;
+
+    .input-checkbox,
+    .input-radio {
+        font: {
+            family: $custom-checkbox-radio-font-family;
+            size: $custom-checkbox-radio-font-size;
+        }
+        text-transform: $custom-checkbox-radio-text-transform;
+        letter-spacing: $custom-checkbox-radio-letter-spacing;
+        color: $custom-checkbox-radio-color;
+        margin: 0;
+        @if ($global-custom-checkbox-radio) {
+            @include checkbox-radio-style($align, $size, $custom-checkbox-radio-label-gutter, $custom-checkbox-radio-cursor, $custom-checkbox-radio-background-color, $custom-checkbox-radio-border);
+        }
+    }
+
+    .input-checkbox {
+        @if ($global-custom-checkbox-radio) {
+            @include checkbox-shape($align, $size, $custom-checkbox-mark-color, $custom-checkbox-mark-thick, $custom-checkbox-border-radius);
+            @include checkbox-attr($hover-border, $hover-border-color, $checked-border, $custom-checkbox-checked-border-color, $custom-checkbox-focus-border-color);
+            @include radio-validation($global-form-inputs-error-class, $custom-checkbox-error-border-color, $custom-checkbox-error-background-color);
+        }
+    }
+
+    .input-radio {
+        @if ($global-custom-checkbox-radio) {
+            @include radio-shape($align, $size, $custom-radio-mark-color);
+            @include radio-attr($hover-border, $hover-border-color, $checked-border, $custom-radio-checked-border-color, $custom-radio-focus-border-color);
+            @include radio-validation($global-form-inputs-error-class, $custom-radio-error-border-color, $custom-radio-error-background-color);
+        }
+    }
+}

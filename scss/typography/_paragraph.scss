@@ -7,11 +7,11 @@
 ////
 
 /// The `font-family` applied on each paragraphs.
-/// @type String
+/// @type String|Keyword
 $paragraph-font-family: sans-serif !default;
 
 /// The `font-weight` applied on each paragraphs.
-/// @type String|Integer
+/// @type Keyword|Integer
 $paragraph-font-weight: normal !default;
 
 /// The `line-height` applied on each paragraphs.
@@ -23,7 +23,7 @@ $paragraph-line-height: 1.4 !default;
 $paragraph-letter-spacing: normal !default;
 
 /// The `text-transform` applied on each paragraphs.
-/// @type String
+/// @type Keyword
 $paragraph-text-transform: none !default;
 
 /// The `color` applied on each paragraphs.
@@ -31,7 +31,7 @@ $paragraph-text-transform: none !default;
 $paragraph-color: #000000 !default;
 
 /// The `margin` applied on each paragraphs.
-/// @type Integer
+/// @type Integer|Keyword
 $paragraph-margin: 0 !default;
 
 /// Mixin for set global paragraph style

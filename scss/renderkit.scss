@@ -13,11 +13,11 @@
 @import 'helpers/helpers';
 @import 'float-grid/float-grid';
 @import 'xy-grid/xy-grid';
-@import 'checkbox-radio/checkbox-radio';
+@import 'form/form';
 @import 'components/components';
 @import 'config/config';
 
-@mixin scss-renderkit() {
+@mixin scss-renderkit($flex: true) {
     @include global-fonts;
     @include scss-normalize;
     @include media-print;
@@ -26,6 +26,10 @@
     @include foundation-visibility-classes;
     @include float-classes;
     @include clearfix-classes;
+
+    @if $flex {
+        $global-flexbox: true !global;
+    }
 
     @if ($global-flexbox) {
         @include foundation-xy-grid-classes;

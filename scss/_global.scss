@@ -34,7 +34,7 @@ $global-right: if($global-text-direction == rtl, left, right);
 
 /// Global `disabled` input opacity value.
 /// @type Integer|Float
-$global-disabled-input-opacity: 0.5 !default;
+$global-input-disabled-opacity: 0.5 !default;
 
 /// If `true` the default appearance will be set to `none`.
 ///

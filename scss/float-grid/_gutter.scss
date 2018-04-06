@@ -29,7 +29,7 @@
 
 /// Shorthand for `grid-column-gutter()`.
 /// @alias grid-column-gutter
-@mixin grid-col-gutter($gutter: auto,$gutters: $grid-column-gutter) {
+@mixin grid-col-gutter($gutter: auto, $gutters: $grid-column-gutter) {
     @include grid-column-gutter($gutter, $gutters);
 }
 

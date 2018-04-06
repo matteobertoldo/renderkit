@@ -72,6 +72,7 @@
         </div>
     </form>
 </div>
+{% if uikit.section.form.checkboxradio.custom %}
 <div class="ui-form-snippet">
 {{snippet.code('html','<div class="row">
     <input id="uikit-checkbox-render" type="checkbox">
@@ -80,3 +81,4 @@
     </label>
 </div>')}}
 </div>
+{% endif %}

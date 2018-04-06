@@ -7,12 +7,15 @@
 ////
 
 /// The default `background-color` selection for text and other elements.
+/// @type Keyword|Color
 $selection-background-color: initial !default;
 
 /// If `true` the color will be applied based on the value of `$selection-color` of a selected element.
+/// @type Boolean
 $selection-color-apply: false !default;
 
 /// The color when an item is selected.
+/// @type Keyword|Color
 $selection-color: initial !default;
 
 /// Accessibility classes mixin.

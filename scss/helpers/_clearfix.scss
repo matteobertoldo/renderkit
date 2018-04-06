@@ -3,9 +3,9 @@
 // Licensed under MIT Open Source
 
 /// Clearfix classes.
-/// @group layout
+/// @group _global renderkit
 @mixin clearfix-classes {
-    /*@clearfix*/
+    /*@clearfix-classes*/
     .clearfix {
     	@include clearfix;
     }

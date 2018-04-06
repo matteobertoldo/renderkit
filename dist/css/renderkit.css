@@ -352,7 +352,7 @@ table {
   width: device-width;
 }
 
-/*@media print package*/
+/*@media-print*/
 @media print {
   *, ::after, ::before {
     text-shadow: none !important;
@@ -680,7 +680,7 @@ p {
   cursor: grabbing;
 }
 
-/*@visibility classes*/
+/*@foundation-visibility-classes*/
 @media only screen and (max-width: 640px) {
   .hide-for-small-only {
     display: none !important;
@@ -779,7 +779,7 @@ p {
   }
 }
 
-/*@float classes*/
+/*@float-classes*/
 .float-left {
   float: left;
 }
@@ -794,7 +794,7 @@ p {
   margin-right: auto;
 }
 
-/*@clearfix*/
+/*@clearfix-classes*/
 .clearfix::before, .clearfix::after {
   content: '';
   display: table;
@@ -3381,7 +3381,7 @@ p {
   }
 }
 
-/*@form style*/
+/*@form-style*/
 .form-row {
   position: relative;
 }
@@ -3552,9 +3552,15 @@ p {
   resize: none;
 }
 
-/*@custom input checkbox & radio*/
+/*@checkbox-radio-classes*/
 .input-checkbox,
 .input-radio {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.8125rem;
+  text-transform: none;
+  letter-spacing: 0.03125rem;
+  color: #8c8c8c;
+  margin: 0;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -3563,12 +3569,6 @@ p {
           align-items: center;
   min-height: 24px;
   position: relative;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 0.8125rem;
-  text-transform: none;
-  letter-spacing: 0.03125rem;
-  color: #8c8c8c;
-  margin: 0;
   padding-left: 34px;
   cursor: default;
 }
@@ -3636,19 +3636,18 @@ input[type="checkbox"]:focus:not(:checked) + .input-checkbox::before {
   border-color: #b2b2b2;
 }
 
-input[type="checkbox"].error:not([disabled]) + .input-checkbox::before {
+[data-whatinput="keyboard"] input[type="checkbox"]:focus + .input-checkbox::before {
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -2px;
+}
+
+input[type="radio"].error + .input-checkbox::before {
   border-color: #c04649;
   background-color: #f2c0c1;
 }
 
-input[type="checkbox"].error:focus:not(:checked) + .input-checkbox::before {
+input[type="radio"].error:focus:not(:checked) + .input-checkbox::before {
   border-color: #c04649;
-}
-
-[data-whatinput="initial"] input[type="checkbox"]:focus + .input-checkbox::before,
-[data-whatinput="keyboard"] input[type="checkbox"]:focus + .input-checkbox::before {
-  outline: -webkit-focus-ring-color auto 5px;
-  outline-offset: -2px;
 }
 
 .input-radio::before, .input-radio::after {
@@ -3682,74 +3681,74 @@ input[type="radio"]:focus:not(:checked) + .input-radio::before {
   border-color: #b2b2b2;
 }
 
+[data-whatinput="keyboard"] input[type="radio"]:focus + .input-radio::before {
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -2px;
+}
+
 input[type="radio"].error + .input-radio::before {
   border-color: #c04649;
+  background-color: #f2c0c1;
 }
 
 input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   border-color: #c04649;
 }
 
-[data-whatinput="initial"] input[type="radio"]:focus + .input-radio::before,
-[data-whatinput="keyboard"] input[type="radio"]:focus + .input-radio::before {
-  outline: -webkit-focus-ring-color auto 5px;
-  outline-offset: -2px;
-}
-
-/*@global colors-palette*/
+/*@colors-palette*/
 .palette-color-primary {
-  color: #666666;
+  color: #666;
 }
 
 .background-color-primary {
-  background-color: #666666;
+  background-color: #666;
 }
 
-.palette-color-2 {
+.palette-color-suvagrey {
   color: #8c8c8c;
 }
 
-.background-color-2 {
+.background-color-suvagrey {
   background-color: #8c8c8c;
 }
 
-.palette-color-3 {
+.palette-color-darkgray {
   color: #b2b2b2;
 }
 
-.background-color-3 {
+.background-color-darkgray {
   background-color: #b2b2b2;
 }
 
-.palette-color-4 {
+.palette-color-gainsboro {
   color: #d9d9d9;
 }
 
-.background-color-4 {
+.background-color-gainsboro {
   background-color: #d9d9d9;
 }
 
-.palette-color-5 {
+.palette-color-whitesmoke {
   color: #efefef;
 }
 
-.background-color-5 {
+.background-color-whitesmoke {
   background-color: #efefef;
 }
 
-.palette-color-6 {
+.palette-color-sunset {
   color: #c04649;
 }
 
-.background-color-6 {
+.background-color-sunset {
   background-color: #c04649;
 }
 
-.palette-color-7 {
+.palette-color-coralcandy {
   color: #f2c0c1;
 }
 
-.background-color-7 {
+.background-color-coralcandy {
   background-color: #f2c0c1;
 }
 
