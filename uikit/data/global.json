@@ -51,11 +51,14 @@
                 "cellcolor": "#d9d9d9"
             },
             "form": {
+                "formclass": "default",
                 "rowclass": "form-row",
                 "labelclass": "form-label",
-                "errorclass": "error",
-                "formclass": "default",
-                "selectclass": "default"
+                "selectclass": "default",
+                "checkboxradio": {
+                    "custom": true
+                },
+                "errorclass": "error"
             },
             "svg": {
                 "spritepath": "renderkit/svg/symbol/sprite.svg",

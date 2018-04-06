@@ -3,91 +3,115 @@
 // Licensed under MIT Open Source
 
 /// If it is `true` the basic font size (`$global-font-size`) will be applied to `html`.
+/// @group typography
+/// @type Boolean
 $html-root-font-size: false !default;
 
 /// The tap highlight color for iOS devices.
-/// @group colors & palette
-$global-ios-tap-color: rgba(0, 0, 0, 0.5) !default;
+/// @group global
+/// @type Keyword
+$ios-tap-color: rgba(0, 0, 0, 0.5) !default;
 
 /// The default body font family.
 /// @group typography
+/// @type String|Keyword
 $body-font-family: sans-serif !default;
 
 /// If it is `true` the basic font size (`$global-body-font-size`) will be applied to `body`.
+/// @group typography
 /// @type Boolean
 $body-root-font-size: false !default;
 
 /// The default font weight applied to the `body`.
-/// @type String|Integer
 /// @group typography
+/// @type String|Integer
 $body-font-weight: normal !default;
 
 /// The default `body` background color.
-/// @type Color
 /// @group colors & palette
+/// @type Color
 $body-background-color: #ffffff !default;
 
 /// The default `body` base color.
-/// @type Color
 /// @group colors & palette
+/// @type Color
 $body-base-color: #000000 !default;
 
 /// The defaut `body` line-height.
-/// @type Integer|Float
 /// @group typography
+/// @type Integer|Float
 $body-line-height: 1.15 !default;
 
+/// If `true` all the links will remove the default `text-decoration`.
+/// @group global
+/// @type Boolean
+$global-links-text-decoration: false !default;
+
 /// The global links color.
-/// @type Color
 /// @group colors & palette
+/// @type Color
 $links-color: #0000FF !default;
 
 /// If `false` the default `text-decoration` for the links will be hidden.
-/// @type Boolean
 /// @group layout
+/// @type Boolean
 $global-links-text-decoration: true !default;
 
 /// Enable or disable the default outline in `focus` on links.
+/// @group accessibility
 /// @type Boolean
-/// @group layout
-$focus-outline-links-hidden: false !default;
+$focus-links-outline-hidden: false !default;
+
+/// If `true` the default outline it will be hidden in `focus` in `button`,`input`,`select`,`textarea`.
+/// @group accessibility
+/// @type Boolean
+$focus-inputs-outline-hidden: false !default;
 
 /// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
 ///
-/// The installation of `what-input` is required.
+/// The installation of `what-input` js is required.
 /// @group accessibility
+/// @type Boolean
 /// @link https://github.com/ten1seven/what-input
 $what-input-outline-keyboard-detect: true !default;
 
 /// Font family applied to the `strong` and` b` tags.
 /// @group typography
+/// @type String|Keyword
 $strong-font-family: inherit !default;
 
 /// Font weight applied to the `strong` and` b` tags.
 /// @group typography
+/// @type String|Keyword
 $strong-font-weight: bolder !default;
 
 /// Global text rendering applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
 /// @type Keyword
 $global-text-rendering: optimizeLegibility !default;
 
 /// If it's `true` it will be applied to: `body`,` button`, `input`,` select` and `textarea`, the `font-feature-settings: 'liga','kern'` rule, which determines the "kering" between the various characters.
 /// @link https://blog.typekit.com/2014/02/05/kerning-on-the-web/
 /// @link https://practice.typekit.com/lesson/caring-about-opentype-features/
+/// @group global
 /// @type Boolean
 $global-font-liga-kern: false !default;
 
 /// If it's `true` the default `appearence` for `body`,` button`, `input`,` select` and `textarea` it will be set to `none`.
 ///
 /// If you decide to enable this rule it will be easier to cross-browse the field styles on the various browsers and iOS devices.
+/// @group global
 /// @type Boolean
 $global-inputs-reset-appearence: false !default;
 
 /// If `false` the default `search-cancel-button` will be hidden in all `type="search"` inputs.
+/// @group global
 /// @type Boolean
 $global-input-search-cancel-button: true !default;
 
 /// If `true` the all `select` it will be visually hidden in order to generate a select with custom options via js.
-$global-select-reset-appearence-options: false !default;
+/// @group global
+/// @type Boolean
+$global-select-reset-appearance-options: false !default;
 
 @import 'scss-normalize';

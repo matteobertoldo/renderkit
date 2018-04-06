@@ -1,0 +1,114 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group checkbox & radio
+////
+
+/// Mixin for generate a `radio` shape input.
+///
+/// @param {Boolean} $center-text-align [false] - If `true` the `radio` shape it will be displayed half on the height of the text occupying the `label`.
+/// @param {Keyword} $radio-size [24px] - The size in `px` for the `radio` shape.
+/// @param {Color} $mark-color [#8c8c8c] - The color of the `radio` mark.
+@mixin radio-shape($center-text-align: false, $radio-size: 24px, $mark-color: #8c8c8c) {
+    $marker-size: ($radio-size / 2);
+
+    &::before,
+    &::after {
+        border-radius: 50%;
+    }
+
+    &::after {
+        @if ($center-text-align) {
+            top: 50%;
+        } @else {
+            top: rem(($radio-size - $marker-size) / 2);
+        }
+        left: rem(($radio-size - $marker-size) / 2);
+        width: rem($marker-size);
+        height: rem($marker-size);
+        background-color: $mark-color;
+        @if ($center-text-align) {
+            margin-top: -(rem($marker-size / 2));
+        }
+        transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
+    }
+}
+
+/// Mixin for generate all the attributes needed to agree with `radio` shape.
+///
+/// @param {Boolean} $hover-border [false] - Enable or disable the ability to have a different `border` in hover.
+/// @param {Color} $hover-border-color [#b2b2b2] - The color of the `border` of the `radio` shape in hover.
+/// @param {Boolean} $checked-border [true] - Enable or disable the ability to have a different `border-color` when `input[type="radio"]` is `:checked`.
+/// @param {Color} $checked-border-color [#b2b2b2] - The `border-color` of the radio shape when `input[type="radio"]` is `:checked`.
+/// @param {Color} $focus-border-color [#b2b2b2] - The `border-color` of the radio shape when `input[type="radio"]` is in `:focus` but not `:checked`.
+@mixin radio-attr($hover-border: false, $hover-border-color: #b2b2b2, $checked-border: true, $checked-border-color: #b2b2b2, $focus-border-color: #b2b2b2) {
+    input[type="radio"][disabled] + & {
+        opacity: $global-input-disabled-opacity !important;
+    }
+
+    @if ($hover-border) {
+        input[type="radio"]:not([disabled]) + &:hover {
+            &::before {
+                border-color: $hover-border-color;
+            }
+        }
+    }
+
+    input[type="radio"]:checked + & {
+        @if ($checked-border) {
+            &::before {
+                border-color: $checked-border-color;
+            }
+        }
+
+        &::after {
+            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+        }
+    }
+
+    input[type="radio"]:focus:not(:checked) + & {
+        &::before {
+            border-color: $focus-border-color;
+        }
+    }
+
+    @if ($custom-checkbox-radio-outline-detect) {
+        @if ($custom-checkbox-radio-what-input-outline-detect) {
+            [data-whatinput="keyboard"] input[type="radio"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                 }
+            }
+        } @else {
+            input[type="radio"]:focus + & {
+                &::before {
+                    outline: -webkit-focus-ring-color auto 5px;
+                    outline-offset: -2px;
+                }
+             }
+        }
+    }
+}
+
+/// Mixin for generate all validation attributes needed to agree with `radio` shape.
+///
+/// @param {String} $error-class [error] - The validation class failed.
+/// @param {Color} $error-border-color [#c04649] - The `border-color` when `input[type="radio"]` is in validation failed.
+/// @param {Color} $error-background-color [#f2c0c1] - The `background-color` when `input[type="radio"]` is in validation failed.
+@mixin radio-validation($error-class: 'error', $error-border-color: #c04649, $error-background-color: #f2c0c1) {
+    input[type="radio"].#{$error-class} + & {
+        &::before {
+            border-color: $error-border-color;
+            background-color: $error-background-color;
+        }
+    }
+
+    input[type="radio"].#{$error-class}:focus:not(:checked) + & {
+        &::before {
+            border-color: $error-border-color;
+        }
+    }
+}

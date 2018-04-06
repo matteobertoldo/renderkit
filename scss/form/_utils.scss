@@ -1,0 +1,38 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// Mixin for generate an "caret" for custom select without js added.
+/// @param {Color} $select-caret-color [#000000] - The color in `hex` value for the "caret" color.
+/// @param {Keyword|String} $select-caret-shape [arrow] - The shape for the "caret". Could be `triangle`, `arrow`, `empty`.
+/// @access private
+@mixin select-caret-shape($select-caret-color: #000000, $select-caret-shape: 'arrow') {
+    $shape: '';
+    $viewbox-value: '';
+
+    // Transform `hex` to `rgb` the caret color
+    $caret-color: 'rgb%28#{round(red($select-caret-color))}, #{round(green($select-caret-color))}, #{round(blue($select-caret-color))}%29';
+
+    @if ($select-caret-shape == 'triangle') {
+        $viewbox-value: '24';
+        $shape: "<polygon fill='#{$caret-color}' points='0,0 32,0 16,24'></polygon>";
+    } @else if ($select-caret-shape == 'arrow') {
+        $viewbox-value: '19';
+        $shape: "<path fill='#{$caret-color}' d='M16,19.2L0,3.8L4.6,0L16,11.5L27.4,0L32,3.8L16,19.2z'/>";
+    } @else if ($select-caret-shape == 'empty') {
+        $viewbox-value: null;
+        $shape: null;
+    } @else {
+        @warn 'Incorrect value. Please choose between `arrow`, `triangle` or `empty` to set the caret for select.';
+    }
+
+    @if ($global-select-reset-appearence) {
+        @if ($select-caret-shape != 'empty') {
+            background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 #{$viewbox-value}'>#{$shape}</svg>");
+        }
+    }
+}

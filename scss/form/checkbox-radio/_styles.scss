@@ -1,0 +1,56 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group checkbox & radio
+////
+
+/// Mixin for create the basic style for custom checkboxes & radios.
+///
+/// @param {Boolean} $center-text-align [false] - If `true` the `checkbox` or `radio` shape it will be displayed half on the height of the text occupying the `label`.
+/// @param {Keyword} $checkbox-radio-size [24px] - The size in `px` for the `checkbox` and `radio` shape.
+/// @param {Keyword} $gutter [10px] - The space between the `label` text and the shape of the custom `checkbox` or `radio` component.
+/// @param {Keyword} $cursor [default] - The `CSS` value of the cursor for the label that hosts the `checkbox` or `radio` shape.
+/// @param {Color} $background-color [#efefef] - The `background-color` that will be applied to the `checkbox` or `radio` shape.
+/// @param {Keyword} $border [1px solid #d9d9d9] - The `border` that will be applied to the `checkbox` or `radio` shape.
+@mixin checkbox-radio-style($center-text-align: false, $checkbox-radio-size: 24px, $gutter: 10px, $cursor: default, $background-color: #efefef, $border: 1px solid #d9d9d9) {
+    @if ($center-text-align) {
+        display: inline-block;
+    } @else {
+        display: inline-flex;
+        align-items: center;
+        min-height: $checkbox-radio-size;
+    }
+    position: relative;
+    padding-left: $checkbox-radio-size + $gutter;
+    cursor: $cursor;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+    }
+
+    &::before {
+        @if ($center-text-align) {
+            top: 50%;
+        } @else {
+            top: 0;
+        }
+        left: 0;
+        width: $checkbox-radio-size;
+        height: $checkbox-radio-size;
+        background-color: $background-color;
+        border: $border;
+        @if ($center-text-align) {
+            margin-top: -(rem($checkbox-radio-size / 2));
+        }
+        transition: border-color 0.3s ease;
+        overflow: hidden;
+    }
+
+    &::after {
+        transition: transform 0.3s ease;
+    }
+}

@@ -1,0 +1,115 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group checkbox & radio
+////
+
+/// Default font family for checkbox-radio components.
+/// @type String|Keyword
+$custom-checkbox-radio-font-family: sans-serif !default;
+
+/// Default font size for checkbox-radio components.
+/// @type Keyword
+$custom-checkbox-radio-font-size: 13px !default;
+
+/// Default text transform for checkbo-radio components.
+/// @type String|Keyword
+$custom-checkbox-radio-text-transform: none !default;
+
+/// Default letter spacing for checkbox-radio components.
+/// @type String|Integer
+$custom-checkbox-radio-letter-spacing: normal !default;
+
+/// The `color` of the `label` for custom checkbox-radio component
+/// @type Color
+$custom-checkbox-radio-color: #8c8c8c !default;
+
+/// The `cursor` of the `label` for custom checkbox-radio component.
+/// @type Color
+$custom-checkbox-radio-cursor: default !default;
+
+/// The space between the `label` text and the shape of the custom checkbox-radio component.
+/// @type Keyword
+$custom-checkbox-radio-label-gutter: 10px !default;
+
+/// If set to `true` the alignment of the checkbox-radio components will line up in the middle of the text.
+/// @type Boolean
+$custom-checkbox-radio-align-center: false !default;
+
+/// The size the global dimension of the checkbox-radio components.
+/// @type Keyword
+$custom-checkbox-radio-size: 24px !default;
+
+/// The `background-color` of the checkbox-radio shape.
+/// @type Color
+$custom-checkbox-radio-background-color: #efefef !default;
+
+/// The `border-color` for custom checkbox-radio component.
+/// @type Keyword
+$custom-checkbox-radio-border: 1px solid #d9d9d9 !default;
+
+/// Enable or disable the ability to have a different border in `hover` on the checkbox or radio shape.
+/// @type Boolean
+$custom-checkbox-radio-hover-border: false !default;
+
+/// The border color in `hover` on the checkbox or radio shape.
+$custom-checkbox-radio-hover-border-color: #b2b2b2 !default;
+
+// Enable or disable the ability to have a different border on the checkbox or radio shape when the `input[type="checkbox"]` or `input[type="radio"]` is `:checked`.
+/// @type Boolean
+$custom-checkbox-radio-checked-border: true !default;
+
+/// The `border-radius` for custom checkbox component.
+/// @type Keyword
+$custom-checkbox-border-radius: 5px !default;
+
+/// The thickness of the "arrow" shape for custom checkbox component.
+/// @type Keyword
+$custom-checkbox-mark-thick: 3px !default;
+
+/// The "mark" color of the checkbox shape for custom checkbox component.
+/// @type Color
+$custom-checkbox-mark-color: #8c8c8c !default;
+
+/// The `border-color` of the checkbox shape when `input[type="checkbox"]` is `:checked`.
+/// @type Color
+$custom-checkbox-checked-border-color: #b2b2b2 !default;
+
+/// The `border-color` of the checkbox shape when `input[type="checkbox"]` is in `:focus` but not `:checked`.
+/// @type Color
+$custom-checkbox-focus-border-color: #b2b2b2 !default;
+
+/// The `border-color` when `input[type="checkbox"]` is in validation failed.
+/// @type Color
+$custom-checkbox-error-border-color: #c04649 !default;
+
+/// The `background-color` when `input[type="checkbox"]` is in validation failed.
+/// @type Color
+$custom-checkbox-error-background-color: #f2c0c1 !default;
+
+/// The color of the `radio` mark.
+/// @type Color
+$custom-radio-mark-color: #8c8c8c;
+
+/// The `border-color` of the checkbox shape when `input[type="radio"]` is `:checked`.
+/// @type Color
+$custom-radio-checked-border-color: #b2b2b2;
+
+/// The `border-color` of the checkbox shape when `input[type="radio"]` is in `:focus` but not `:checked`.
+/// @type Color
+$custom-radio-focus-border-color: #b2b2b2;
+
+/// The `border-color` when `input[type="radio"]` is in validation failed.
+/// @type Color
+$custom-radio-error-border-color: #c04649;
+
+/// The `background-color` when `input[type="radio"]` is in validation failed.
+/// @type Color
+$custom-radio-error-background-color: #f2c0c1;
+
+@import 'styles';
+@import 'checkbox';
+@import 'radio';
+@import 'classes';

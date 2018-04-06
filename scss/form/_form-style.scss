@@ -1,0 +1,201 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+@mixin form-style {
+    /*@form-style*/
+    .#{$form-inputs-rowclass} {
+        position: relative;
+
+        .#{$form-inputs-labelclass} {
+            display: block;
+            font: {
+                family: $form-label-font-family;
+                size: $form-label-font-size;
+            }
+            letter-spacing: $form-label-letter-spacing;
+            text-transform: $form-label-text-transform;
+            color: $form-label-color;
+            margin: $form-label-margin;
+
+            &.#{$global-form-inputs-error-class} {
+                color: $form-input-error-label-color;
+            }
+        }
+
+        %style-inputs {
+            display: block;
+            width: 100%;
+            height: $form-input-height;
+            font: {
+                family: $form-input-font-family;
+                size: $form-input-font-size;
+            }
+            letter-spacing: $form-input-letter-spacing;
+            text-transform: $form-input-text-transform;
+            background-color: $form-input-background-color;
+            color: $form-input-color;
+            border: $form-input-border;
+            border-radius: $form-input-border-radius;
+            padding: $form-input-padding;
+            transition: $form-input-transition;
+
+            &:focus {
+                border-color: $form-input-focus-border-color;
+            }
+
+            @if ($form-input-hover-border) {
+                &:hover:not([disabled]) {
+                    border-color: $form-input-hover-border-color;
+                }
+            }
+
+            // Reset Firefox/Gecko pseudo `:require` & `:invalid` attributes.
+            &:required,
+            &:invalid {
+                box-shadow: none;
+            }
+
+            // Validation/Error class
+            &.#{$global-form-inputs-error-class} {
+                border-color: $form-input-error-border-color;
+                background-color: $form-input-error-background-color;
+                color: $form-input-error-color;
+
+                &:hover, &:focus {
+                    border-color: $form-input-error-border-color;
+                    background-color: $form-input-error-background-color;
+                }
+            }
+        }
+
+        %placeholder-style {
+            &::placeholder {
+                font: {
+                    family: $form-input-placeholder-font-family;
+                    style: $form-input-placeholder-font-style;
+                }
+                text-transform: $form-input-placeholder-text-transform;
+                color: $form-input-placeholder-color;
+                opacity: 1;
+            }
+
+            @if ($form-input-placeholder-focus-hidden) {
+                &:focus {
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
+            } @else {
+                &:focus {
+                    &::placeholder {
+                        color: $form-input-placeholder-focus-color;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.#{$global-form-inputs-error-class} {
+                &::placeholder {
+                    color: $form-input-error-placeholder-color;
+                    opacity: 1;
+                }
+
+                @if ($form-input-placeholder-focus-hidden) {
+                    &:focus {
+                        &::placeholder {
+                            opacity: 0;
+                        }
+                    }
+                } @else {
+                    &:focus {
+                        &::placeholder {
+                            color: $form-input-placeholder-focus-color;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        %autofill {
+            @if ($form-input-custom-autofill) {
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0 $form-input-height $form-input-autofill-background-color inset;
+                    -webkit-text-fill-color: $form-input-autofill-color;
+                    transition: $form-input-transition;
+                }
+            }
+        }
+
+        // Loop all standard and cross browsing inputs. Extended with placeholder mixin `%style-inputs`.
+        // Hide default focus ring in Firefox `:-moz-focusring` with current `$global-input-color`.
+        @each $input-type in (email, password, search, select, tel, text, textarea, url) {
+            @if ($input-type == select or $input-type == textarea) {
+                #{$input-type} {
+                    @extend %style-inputs;
+                    @extend %autofill !optional;
+
+                    @if ($input-type == select) {
+                        &:-moz-focusring {
+                            color: transparent;
+                			text-shadow: 0 0 0 $form-input-color;
+                        }
+                    }
+
+                    @if ($input-type != select) {
+                        @extend %placeholder-style;
+                    }
+                }
+            } @else {
+                input[type="#{$input-type}"] {
+                    @extend %style-inputs;
+                    @extend %placeholder-style;
+                    @extend %autofill !optional;
+                }
+            }
+        }
+
+        select {
+            text-transform: $form-select-text-transform;
+            @if ($form-select-caret-shape-render) {
+                @include select-caret-shape($form-select-caret-color, $form-select-caret-shape);
+
+                @if ($form-select-caret-shape != 'empty') {
+                    background-size: $form-select-caret-size;
+                }
+            } @else {
+                background-image: url(#{$form-select-caret-image-url});
+                background-size: $form-select-caret-background-size;
+            }
+
+            @if ($form-select-caret-shape != 'empty') {
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-origin: content-box;
+            }
+
+            &[multiple] {
+                text-transform: $form-select-text-transform;
+                background-image: none;
+                height: auto;
+                cursor: default;
+            }
+        }
+
+        textarea {
+            height: $form-textarea-height;
+            @if ($form-textarea-resize) {
+                resize: $form-textarea-resize-mode;
+            } @else {
+                resize: none;
+            }
+        }
+    }
+}
