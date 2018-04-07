@@ -1,0 +1,46 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group shapes
+////
+
+/// The size for "arrow" shape.
+/// @type Number
+$shape-arrow-size: 20px !default;
+
+/// The color for "arrow" shape.
+/// @type Color
+$shape-arrow-color: #666666 !default;
+
+/// The thickness size for "arrow" shape.
+/// @type Number
+$shape-arrow-thickness: 3px !default;
+
+/// The size for "checkmark" shape.
+/// @type Number
+$shape-checkmark-size: 20px !default;
+
+/// The color for "checkmark" shape.
+/// @type Color
+$shape-checkmark-color: #666666 !default;
+
+/// The thickness size for "checkmark" shape.
+/// @type Number
+$shape-checkmark-thickness: 3px !default;
+
+/// The size for "cross" shape.
+/// @type Number
+$shape-cross-size: 20px !default;
+
+/// The color for "cross" shape.
+/// @type Color
+$shape-cross-color: #666666 !default;
+
+/// The thickness size for "cross" shape.
+/// @type Number
+$shape-cross-thickness: 3px !default;
+
+@import 'utils';
+@import 'classes';

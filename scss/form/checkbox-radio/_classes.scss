@@ -15,6 +15,7 @@
     $hover-border: $custom-checkbox-radio-hover-border;
     $hover-border-color: $custom-checkbox-radio-hover-border-color;
     $checked-border: $custom-checkbox-radio-checked-border;
+    $error: $global-form-inputs-error-class;
 
     .input-checkbox,
     .input-radio {
@@ -35,7 +36,7 @@
         @if ($global-custom-checkbox-radio) {
             @include checkbox-shape($align, $size, $custom-checkbox-mark-color, $custom-checkbox-mark-thick, $custom-checkbox-border-radius);
             @include checkbox-attr($hover-border, $hover-border-color, $checked-border, $custom-checkbox-checked-border-color, $custom-checkbox-focus-border-color);
-            @include radio-validation($global-form-inputs-error-class, $custom-checkbox-error-border-color, $custom-checkbox-error-background-color);
+            @include radio-validation($error, $custom-checkbox-error-border-color, $custom-checkbox-error-background-color);
         }
     }
 
@@ -43,7 +44,7 @@
         @if ($global-custom-checkbox-radio) {
             @include radio-shape($align, $size, $custom-radio-mark-color);
             @include radio-attr($hover-border, $hover-border-color, $checked-border, $custom-radio-checked-border-color, $custom-radio-focus-border-color);
-            @include radio-validation($global-form-inputs-error-class, $custom-radio-error-border-color, $custom-radio-error-background-color);
+            @include radio-validation($error, $custom-radio-error-border-color, $custom-radio-error-background-color);
         }
     }
 }

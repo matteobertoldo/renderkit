@@ -81,7 +81,7 @@ $google-fonts-load: true;
 $google-fonts-family: 'Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface';
 $font-face-load: false;
 $font-face-map: (
-    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 svg),
+    'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg),
 );
 
 // 5. Typography: Base
@@ -176,6 +176,7 @@ $palette-color: (
     darkgray: #b2b2b2,
     gainsboro: #d9d9d9,
     whitesmoke: #efefef,
+    cornflowerblue: #61afef,
     sunset: #c04649,
     coralcandy: #f2c0c1
 );
@@ -304,15 +305,15 @@ $custom-radio-error-background-color: #f2c0c1;
 // 11. Shapes
 // ----------
 
-$global-arrow-size: 20px;
-$global-arrow-color: #666666;
-$global-arrow-width: 3px;
-$global-checkmark-size: 20px;
-$global-checkmark-color: #666666;
-$global-checkmark-width: 3px;
-$global-shape-close-size: 20px;
-$global-shape-close-color: #666666;
-$global-shape-close-line-size: 3px;
+$shape-arrow-size: 20px;
+$shape-arrow-color: #666666;
+$shape-arrow-thickness: 3px;
+$shape-checkmark-size: 20px;
+$shape-checkmark-color: #666666;
+$shape-checkmark-thickness: 3px;
+$shape-cross-size: 20px;
+$shape-cross-color: #666666;
+$shape-cross-thickness: 3px;
 
 // 12. Print
 // ---------

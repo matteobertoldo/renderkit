@@ -1,0 +1,31 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+/// Mixin for shape classes.
+///
+/// @group _global renderkit
+@mixin shape-classes {
+    /*@shape-classes*/
+    .shape-arrow {
+        display: block;
+    	width: $shape-arrow-size;
+    	height: $shape-arrow-size;
+    	border: solid $shape-arrow-color;
+    	border-width: 0 $shape-arrow-thickness $shape-arrow-thickness 0;
+
+    	@each $direction, $transform in $arrow-shape-direction {
+    		&.#{$direction} {
+    			transform: rotate3d(0, 0, 1, $transform);
+    		}
+    	}
+    }
+
+    .shape-checkmark {
+        @include arrow(($shape-checkmark-size / 2), $shape-checkmark-size, $shape-checkmark-color, $shape-checkmark-thickness, down);
+    }
+
+    .shape-cross {
+        @include shape-close($shape-cross-size, $shape-cross-thickness, $shape-cross-color);
+    }
+}

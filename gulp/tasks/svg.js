@@ -2,11 +2,11 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp'),
-conf = require('../gulpconfig'),
-svgSprite = require('gulp-svg-sprite'),
-plumber = require('gulp-plumber'),
-log = require('fancy-log');
+const gulp = require('gulp');
+const conf = require('../gulpconfig');
+const svgSprite = require('gulp-svg-sprite');
+const plumber = require('gulp-plumber');
+const log = require('fancy-log');
 
 var svgSpriteOptions = {
     mode: {
