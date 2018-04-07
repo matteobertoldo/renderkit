@@ -2,20 +2,20 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-/// If it is `true` the basic font size (`$global-font-size`) will be applied to `html`.
+/// The basic font size (`$global-font-size`) will be applied to `html`.
 /// @group typography
 /// @type Boolean
-$html-root-font-size: false !default;
+$html-root-font-size: true !default;
 
 /// The tap highlight color for iOS devices.
 /// @group accessibility
 /// @type Color
-$ios-tap-color: rgba(0, 0, 0, 0.5) !default;
+$ios-tap-color: transparent !default;
 
 /// The default body font family.
 /// @group typography
 /// @type String|Keyword
-$body-font-family: sans-serif !default;
+$body-font-family: 'Work Sans', sans-serif !default;
 
 /// If it is `true` the basic font size (`$global-body-font-size`) will be applied to `body`.
 /// @group typography
@@ -35,37 +35,32 @@ $body-background-color: #ffffff !default;
 /// The default `body` base color.
 /// @group colors & palette
 /// @type Color
-$body-base-color: #000000 !default;
+$body-base-color: #666666 !default;
 
 /// The defaut `body` line-height.
 /// @group typography
 /// @type Integer|Float
 $body-line-height: 1.15 !default;
 
-/// If `true` all the links will remove the default `text-decoration`.
+/// Enable or disable the default `text-decoration` for all links.
 /// @group global
 /// @type Boolean
-$global-links-text-decoration: false !default;
+$global-links-text-decoration: true !default;
 
 /// The global links color.
 /// @group colors & palette
 /// @type Color
-$links-color: #0000FF !default;
+$links-color: #61afef !default;
 
-/// If `false` the default `text-decoration` for the links will be hidden.
-/// @group layout
-/// @type Boolean
-$global-links-text-decoration: true !default;
-
-/// Enable or disable the default outline in `focus` on links.
+/// Enable or disable the default `outline` in `focus` for links.
 /// @group accessibility
 /// @type Boolean
-$focus-links-outline-hidden: false !default;
+$focus-links-outline-hidden: true !default;
 
-/// If `true` the default outline it will be hidden in `focus` in `button`,`input`,`select`,`textarea`.
+/// Enable or disable the default `outline` in `focus` for `button`,`input`,`select`,`textarea`.
 /// @group accessibility
 /// @type Boolean
-$focus-inputs-outline-hidden: false !default;
+$focus-inputs-outline-hidden: true !default;
 
 /// This variable preserves the default outline for links or fields of a form if the event is intercepted by the keyboard so the basic outline is not shown in focus if the event is determined by a mouse or touch.
 ///
@@ -90,19 +85,19 @@ $strong-font-weight: bolder !default;
 /// @type Keyword
 $global-text-rendering: optimizeLegibility !default;
 
-/// If it's `true` it will be applied to: `body`,` button`, `input`,` select` and `textarea`, the `font-feature-settings: 'liga','kern'` rule, which determines the "kering" between the various characters.
+/// The `font-feature-settings: 'liga','kern'` rule is be applied to: `body`,` button`, `input`,` select` and `textarea`, which determines the "kering" between the various characters.
 /// @link https://blog.typekit.com/2014/02/05/kerning-on-the-web/
 /// @link https://practice.typekit.com/lesson/caring-about-opentype-features/
 /// @group global
 /// @type Boolean
-$global-font-liga-kern: false !default;
+$global-font-liga-kern: true !default;
 
-/// If it's `true` the default `appearence` for `body`,` button`, `input`,` select` and `textarea` it will be set to `none`.
+/// The default `appearence` for `body`,` button`, `input`,` select` and `textarea` it be set to `none`.
 ///
 /// If you decide to enable this rule it will be easier to cross-browse the field styles on the various browsers and iOS devices.
 /// @group global
 /// @type Boolean
-$global-inputs-reset-appearence: false !default;
+$global-inputs-reset-appearence: true !default;
 
 /// If `false` the default `search-cancel-button` will be hidden in all `type="search"` inputs.
 /// @group global

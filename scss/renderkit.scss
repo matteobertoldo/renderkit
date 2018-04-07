@@ -15,7 +15,10 @@
 @import 'xy-grid/xy-grid';
 @import 'form/form';
 @import 'components/components';
-@import 'config/config';
+
+// import your own `config` here or
+// import and modify the default settings through
+// @import 'config/config';
 
 @mixin scss-renderkit() {
     @include global-fonts;

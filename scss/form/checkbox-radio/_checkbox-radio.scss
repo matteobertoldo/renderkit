@@ -6,28 +6,42 @@
 /// @group checkbox & radio
 ////
 
+/// Enable or disable the ability to have the default outline in `focus` in the checkbox or radio shapes.
+/// @group accessibility
+/// @type Boolean
+$custom-checkbox-radio-outline-detect: true !default;
+
+/// Enables the possibility to preserve the outline in focus at the `click` or `touch` for the `checkbox` and` radio` shapes
+///
+/// And to enable it only if the event derives from the `keyboard`.
+/// The `what-input` plugins is required.
+/// @group accessibility
+/// @type Boolean
+/// @link https://github.com/ten1seven/what-input
+$custom-checkbox-radio-what-input-outline-detect: true !default;
+
 /// Default font family for checkbox-radio components.
 /// @type String|Keyword
-$custom-checkbox-radio-font-family: sans-serif !default;
+$custom-checkbox-radio-font-family: 'Josefin Sans', sans-serif !default;
 
 /// Default font size for checkbox-radio components.
 /// @type Number
 $custom-checkbox-radio-font-size: 13px !default;
 
 /// Default text transform for checkbo-radio components.
-/// @type String|Keyword
+/// @type Keyword
 $custom-checkbox-radio-text-transform: none !default;
 
 /// Default letter spacing for checkbox-radio components.
-/// @type String|Integer
-$custom-checkbox-radio-letter-spacing: normal !default;
+/// @type Keyword|Number
+$custom-checkbox-radio-letter-spacing: 0.5px !default;
 
 /// The `color` of the `label` for custom checkbox-radio component
 /// @type Color
 $custom-checkbox-radio-color: #8c8c8c !default;
 
 /// The `cursor` of the `label` for custom checkbox-radio component.
-/// @type Color
+/// @type Keyword
 $custom-checkbox-radio-cursor: default !default;
 
 /// The space between the `label` text and the shape of the custom checkbox-radio component.
@@ -55,6 +69,7 @@ $custom-checkbox-radio-border: 1px solid #d9d9d9 !default;
 $custom-checkbox-radio-hover-border: false !default;
 
 /// The border color in `hover` on the checkbox or radio shape.
+/// @type Color
 $custom-checkbox-radio-hover-border-color: #b2b2b2 !default;
 
 // Enable or disable the ability to have a different border on the checkbox or radio shape when the `input[type="checkbox"]` or `input[type="radio"]` is `:checked`.
@@ -91,23 +106,23 @@ $custom-checkbox-error-background-color: #f2c0c1 !default;
 
 /// The color of the `radio` mark.
 /// @type Color
-$custom-radio-mark-color: #8c8c8c;
+$custom-radio-mark-color: #8c8c8c !default;
 
 /// The `border-color` of the checkbox shape when `input[type="radio"]` is `:checked`.
 /// @type Color
-$custom-radio-checked-border-color: #b2b2b2;
+$custom-radio-checked-border-color: #b2b2b2 !default;
 
 /// The `border-color` of the checkbox shape when `input[type="radio"]` is in `:focus` but not `:checked`.
 /// @type Color
-$custom-radio-focus-border-color: #b2b2b2;
+$custom-radio-focus-border-color: #b2b2b2 !default;
 
 /// The `border-color` when `input[type="radio"]` is in validation failed.
 /// @type Color
-$custom-radio-error-border-color: #c04649;
+$custom-radio-error-border-color: #c04649 !default;
 
 /// The `background-color` when `input[type="radio"]` is in validation failed.
 /// @type Color
-$custom-radio-error-background-color: #f2c0c1;
+$custom-radio-error-background-color: #f2c0c1 !default;
 
 @import 'styles';
 @import 'checkbox';
