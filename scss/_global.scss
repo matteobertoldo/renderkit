@@ -36,11 +36,11 @@ $global-right: if($global-text-direction == rtl, left, right);
 ///
 /// If you decide to enable this rule it will be easier to cross-browse the select on the various browsers and iOS devices.
 /// @type Boolean
-$global-select-reset-appearence: false !default;
+$global-select-reset-appearence: true !default;
 
 /// If `true` all the checkboxes and radios will be visually hidden in order to apply the mixin `checkbox-radio-classess` style.
 /// @type Boolean
-$global-custom-checkbox-radio: false !default;
+$global-custom-checkbox-radio: true !default;
 
 /// Global `disabled` input opacity value.
 ///

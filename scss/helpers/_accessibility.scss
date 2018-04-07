@@ -8,7 +8,7 @@
 
 /// The default `background-color` selection for text and other elements.
 /// @type Keyword|Color
-$selection-background-color: initial !default;
+$selection-background-color: #b3d4fc !default;
 
 /// If `true` the color will be applied based on the value of `$selection-color` of a selected element.
 /// @type Boolean

@@ -10,6 +10,12 @@
 /// @type String
 $font-dir: '../fonts/' !default;
 
+/// Quickly enable or disable the `@font-face` directive for load "font face" fonts.
+///
+/// If it is `true` the values ​​of the `$font-face-map` will be read.
+/// @type Boolen
+$font-face-load: false !default;
+
 /// The default `$font-face-map` used by RenderKit.
 ///
 /// The parameters of the map are detailed below:
@@ -22,6 +28,10 @@ $font-dir: '../fonts/' !default;
 $font-face-map: (
     'MyFontFamily': ('myfilename', normal, 400, eot woff woff2 ttf svg)
 ) !default;
+
+/// Quickly enable or disable the `@import` directive for load Google fonts.
+/// @type Boolen
+$google-fonts-load: true !default;
 
 /// The default Google Fonts used by by RenderKit.
 ///

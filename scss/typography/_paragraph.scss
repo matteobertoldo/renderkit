@@ -8,7 +8,7 @@
 
 /// The `font-family` applied on each paragraphs.
 /// @type String|Keyword
-$paragraph-font-family: sans-serif !default;
+$paragraph-font-family: 'Josefin Sans', sans-serif !default;
 
 /// The `font-weight` applied on each paragraphs.
 /// @type Keyword|Integer
@@ -28,7 +28,7 @@ $paragraph-text-transform: none !default;
 
 /// The `color` applied on each paragraphs.
 /// @type Color
-$paragraph-color: #000000 !default;
+$paragraph-color: #666666 !default;
 
 /// The `margin` applied on each paragraphs.
 /// @type Integer|Keyword

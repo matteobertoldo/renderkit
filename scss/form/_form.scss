@@ -6,6 +6,53 @@
 /// @group form
 ////
 
+$form-inputs-rowclass: 'form-row' !default;
+$form-inputs-labelclass: 'form-label' !default;
+$form-input-height: 40px !default;
+$form-input-font-family: 'Josefin Sans', sans-serif !default;
+$form-input-font-size: 14px !default;
+$form-input-letter-spacing: normal !default;
+$form-input-text-transform: none !default;
+$form-input-padding: 10px !default;
+$form-input-background-color: #efefef !default;
+$form-input-color: #666666 !default;
+$form-input-border: 1px solid #d9d9d9 !default;
+$form-input-border-radius: 5px !default;
+$form-input-hover-border: true !default;
+$form-input-hover-border-color: #b2b2b2 !default;
+$form-input-focus-border-color: #b2b2b2 !default;
+$form-input-placeholder-color: #8c8c8c !default;
+$form-input-placeholder-focus-hidden: true !default;
+$form-input-placeholder-focus-color: #b2b2b2 !default;
+$form-input-placeholder-font-family: inherit !default;
+$form-input-placeholder-font-style: italic !default;
+$form-input-placeholder-text-transform: capitalize !default;
+$form-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease !default;
+$form-select-text-transform: none !default;
+$form-select-caret-color: #8c8c8c !default;
+$form-select-caret-shape-render: true !default;
+$form-select-caret-shape: 'arrow' !default;
+$form-select-caret-size: 10px !default;
+$form-select-caret-image-url: 'path/to/shape' !default;
+$form-select-caret-background-size: 10px !default;
+$form-textarea-height: 110px !default;
+$form-textarea-resize: false !default;
+$form-textarea-resize-mode: vertical !default;
+$form-label-font-family: 'Josefin Sans', sans-serif !default;
+$form-label-font-size: 11px !default;
+$form-label-text-transform: uppercase !default;
+$form-label-letter-spacing: 0.5px !default;
+$form-label-color: #8c8c8c !default;
+$form-label-margin: 0 0 5px 0 !default;
+$form-input-error-border-color: #c04649 !default;
+$form-input-error-background-color: #f2c0c1 !default;
+$form-input-error-color: #666666 !default;
+$form-input-error-label-color: #c04649 !default;
+$form-input-error-placeholder-color: #c04649 !default;
+$form-input-custom-autofill: false !default;
+$form-input-autofill-color: $form-input-color !default;
+$form-input-autofill-background-color: $form-input-background-color !default;
+
 @import 'utils';
 @import 'form-style';
 @import 'checkbox-radio/checkbox-radio';
