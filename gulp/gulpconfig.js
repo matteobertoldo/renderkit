@@ -3,9 +3,12 @@
 // Licensed under MIT Open Source
 
 var folder = {
-    workspace: './',
+    assets: 'assets/',
     distribution: 'dist/',
-    docs: 'docs/'
+    docs: 'docs/',
+    scss: 'scss/',
+    svg: 'svg/',
+    uikit: 'uikit/',
 };
 
 module.exports = {
@@ -16,9 +19,17 @@ module.exports = {
         svg: true
     },
     workspace: {
-        uikit: folder.workspace + 'uikit/',
-        scss: folder.workspace + 'scss/**/*.s+(a|c)ss',
-        svg: folder.workspace + 'svg/**/*.svg'
+        uikit: {
+            base: folder.uikit,
+            src: folder.uikit + '*.+(html|nunjucks|njk)',
+            data: folder.uikit + 'data/global.json'
+        },
+        scss: [
+            folder.scss + '**/*.s+(a|c)ss',
+            folder.assets + '**/*.s+(a|c)ss'
+        ],
+        sassdoc: folder.scss + '**/*.s+(a|c)ss',
+        svg: folder.svg + '**/*.svg',
     },
     distribution: {
         uikit: folder.docs,
@@ -26,6 +37,7 @@ module.exports = {
             folder.distribution + 'css/',
             folder.docs + 'renderkit/css/'
         ],
+        sassdoc: folder.docs + 'sass',
         svg: folder.docs + 'renderkit/svg/'
     },
     cssOptions: {
@@ -45,15 +57,11 @@ module.exports = {
             'letter-spacing'
         ],
         remMediaQueries: false,
-        singleOutput: true,
-        outputName: 'renderkit',
+        singleOutput: false,
         outputStyle: 'expanded',
-        optimizationMinify: true,
-        sassdoc: true,
-        sassdocDist: folder.docs + 'sass/'
+        optimizationMinify: true
     },
     uikitOptions: {
-        dataFilePath: folder.workspace + 'uikit/data/global.json',
         indentSize: 4,
         endWithNewline: false,
         minifyInline: true

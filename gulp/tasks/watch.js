@@ -2,12 +2,12 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp'),
-watch = require('gulp-watch'),
-conf = require('../gulpconfig'),
-sequence = require('run-sequence'),
-log = require('fancy-log'),
-colors = require('ansi-colors');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const conf = require('../gulpconfig');
+const sequence = require('run-sequence');
+const log = require('fancy-log');
+const colors = require('ansi-colors');
 
 let tasks = conf.defaultWatchTasks;
 let keys = Object.keys(tasks);
@@ -16,16 +16,12 @@ let defaultWatchTasks = keys.filter((key) => {
     return tasks[key];
 });
 
-defaultWatchTasks.push('browser-sync');
-
 gulp.task('watch', (done) => {
     if (defaultWatchTasks.length) {
+        defaultWatchTasks.push('browser-sync');
         sequence.apply(null, defaultWatchTasks, done);
 
-        watch([
-            conf.workspace.uikit + '**/*.+(html|nunjucks|njk)',
-            conf.uikitOptions.dataFilePath
-        ], () => {
+        watch([conf.workspace.uikit.src, conf.workspace.uikit.data], () => {
             gulp.start('uikit:watch');
         })
 

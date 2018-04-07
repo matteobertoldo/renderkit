@@ -35,11 +35,22 @@
 	}
 }
 
+/// Local map for all arrow shape directions.
+/// @type Map
+/// @access private
+$arrow-shape-direction: (
+    down: 45deg,
+    up: -135deg,
+    right: -45deg,
+    left: 135deg
+);
+
 /// Creates a CSS arrow, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the arrow to an existing element.
 /// @param {Number} $arrow-width - Width of the arrow.
 /// @param {Number} $arrow-height - Height of the arrow.
 /// @param {Color} $arrow-color - Color of the arrow.
 /// @param {Number} $arrow-border-width - The border width of the arrow.
+/// @param {Keyword} $arrow-direction [null] - The direction of the arrow. Can be `up`, `right`, `down`, or `left`.
 @mixin arrow($arrow-width, $arrow-height, $arrow-color, $arrow-border-width, $arrow-direction: null) {
 	display: block;
 	width: $arrow-width;
@@ -59,9 +70,9 @@
 }
 
 /// Creates a CSS "close-shape", which can be used for modals and more.
-/// @param {Number} $cross-size - Size of the close shape.
-/// @param {Number} $cross-line-size - Size of lines close shape.
-/// @param {Color} $cross-color - Color of the close shape.
+/// @param {Number} $shape-close-size - Size of the close shape.
+/// @param {Number} $shape-close-line-size - Size of lines close shape.
+/// @param {Color} $shape-close-color - Color of the close shape.
 @mixin shape-close($shape-close-size, $shape-close-line-size, $shape-close-color) {
     display: block;
     position: relative;

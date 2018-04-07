@@ -2,11 +2,11 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp'),
-conf = require('../gulpconfig'),
-del = require('del'),
-log = require('fancy-log'),
-colors = require('ansi-colors');
+const gulp = require('gulp');
+const conf = require('../gulpconfig');
+const del = require('del');
+const log = require('fancy-log');
+const colors = require('ansi-colors');
 
 if (conf.cleanOptions.cleanAllGeneratedFiles) {
     let vals = Object.keys(conf.cleanOptions.generatedFiles).map((key) => {

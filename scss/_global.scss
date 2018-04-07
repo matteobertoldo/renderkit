@@ -32,10 +32,6 @@ $global-text-direction: ltr !default;
 $global-left: if($global-text-direction == rtl, right, left);
 $global-right: if($global-text-direction == rtl, left, right);
 
-/// Global `disabled` input opacity value.
-/// @type Integer|Float
-$global-input-disabled-opacity: 0.5 !default;
-
 /// If `true` the default appearance will be set to `none`.
 ///
 /// If you decide to enable this rule it will be easier to cross-browse the select on the various browsers and iOS devices.
@@ -45,3 +41,23 @@ $global-select-reset-appearence: false !default;
 /// If `true` all the checkboxes and radios will be visually hidden in order to apply the mixin `checkbox-radio-classess` style.
 /// @type Boolean
 $global-custom-checkbox-radio: false !default;
+
+/// Global `disabled` input opacity value.
+///
+/// This value is valid only if `$ global-select-reset-appearence` is` true`.
+/// @type Integer|Float
+$global-input-disabled-opacity: 0.5 !default;
+
+/// the global class that is applied in the validation of the forms, usually via js.
+///
+/// This global class will be applied, if validation has failed to:
+/// - `input[type="email"]`,
+/// - `input[type="password"]`,
+/// - `input[type="search"]`,
+/// - `select`,
+/// - `input[type="tel"]`,
+/// - `input[type="text"]`,
+/// - `textarea`,
+/// - `input[type="url"]`
+/// @type String
+$global-form-inputs-error-class: 'error' !default;

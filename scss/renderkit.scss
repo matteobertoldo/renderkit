@@ -1,6 +1,6 @@
 /*!*
  * RenderKit "Definitely the light way for start new front-end web projects."
- * Version 1.0.0 (beta)
+ * Version 0.9.0 (beta)
  * github.com/matteobertoldo/renderkit
  * Licensed under MIT Open Source
  */
@@ -17,7 +17,7 @@
 @import 'components/components';
 @import 'config/config';
 
-@mixin scss-renderkit($flex: true) {
+@mixin scss-renderkit() {
     @include global-fonts;
     @include scss-normalize;
     @include media-print;
@@ -26,10 +26,6 @@
     @include foundation-visibility-classes;
     @include float-classes;
     @include clearfix-classes;
-
-    @if $flex {
-        $global-flexbox: true !global;
-    }
 
     @if ($global-flexbox) {
         @include foundation-xy-grid-classes;
@@ -43,5 +39,3 @@
     @include colors-palette;
     @include shape-classes;
 }
-
-@include scss-renderkit;

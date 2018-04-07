@@ -8,8 +8,8 @@
 $html-root-font-size: false !default;
 
 /// The tap highlight color for iOS devices.
-/// @group global
-/// @type Keyword
+/// @group accessibility
+/// @type Color
 $ios-tap-color: rgba(0, 0, 0, 0.5) !default;
 
 /// The default body font family.

@@ -2,20 +2,19 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp'),
-streamCombiner = require('stream-combiner'),
-gulpif = require('gulp-if'),
-conf = require('../gulpconfig'),
-plumber = require('gulp-plumber'),
-sass = require('gulp-sass'),
-concat = require('gulp-concat'),
-rename = require('gulp-rename'),
-sourcemaps = require('gulp-sourcemaps'),
-postcss = require('gulp-postcss'),
-autoprefixer = require('autoprefixer'),
-pxtorem = require('postcss-pxtorem-plus'),
-cleanCSS = require('gulp-clean-css'),
-sassdoc = require('sassdoc');
+const gulp = require('gulp');
+const streamCombiner = require('stream-combiner');
+const gulpif = require('gulp-if');
+const conf = require('../gulpconfig');
+const plumber = require('gulp-plumber');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem-plus');
+const cleanCSS = require('gulp-clean-css');
+const sassdoc = require('sassdoc');
 
 var processors = [
     autoprefixer({
@@ -48,7 +47,6 @@ gulp.task('sass', () => {
     .pipe(sass({
         outputStyle: conf.cssOptions.outputStyle
     }).on('error', sass.logError))
-    .pipe(gulpif(conf.cssOptions.singleOutput, concat(conf.cssOptions.outputName + '.css')))
     .pipe(postcss(processors))
     .pipe(dest(conf.distribution.scss))
     .pipe(cleanCSS({
@@ -62,9 +60,9 @@ gulp.task('sass', () => {
 });
 
 gulp.task('sassdoc', () => {
-    return gulp.src(conf.workspace.scss)
+    return gulp.src(conf.workspace.sassdoc)
     .pipe(sassdoc({
-        dest: conf.cssOptions.sassdocDist
+        dest: conf.distribution.sassdoc
     }))
     .resume()
 });

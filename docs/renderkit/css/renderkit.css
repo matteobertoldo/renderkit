@@ -1,6 +1,6 @@
 /*!*
  * RenderKit "Definitely the light way for start new front-end web projects."
- * Version 1.0.0 (beta)
+ * Version 0.9.0 (beta)
  * github.com/matteobertoldo/renderkit
  * Licensed under MIT Open Source
  */
@@ -3736,6 +3736,14 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   background-color: #efefef;
 }
 
+.palette-color-cornflowerblue {
+  color: #61afef;
+}
+
+.background-color-cornflowerblue {
+  background-color: #61afef;
+}
+
 .palette-color-sunset {
   color: #c04649;
 }
@@ -3791,7 +3799,7 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
           transform: rotate3d(0, 0, 1, 45deg);
 }
 
-.shape-close {
+.shape-cross {
   display: block;
   position: relative;
   width: 20px;
@@ -3802,7 +3810,7 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   padding: 0;
 }
 
-.shape-close::before, .shape-close::after {
+.shape-cross::before, .shape-cross::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -3813,13 +3821,13 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   margin-top: -0.09375rem;
 }
 
-.shape-close::before {
+.shape-cross::before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.shape-close::after {
+.shape-cross::after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);

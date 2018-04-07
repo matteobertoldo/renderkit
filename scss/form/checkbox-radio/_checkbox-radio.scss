@@ -11,7 +11,7 @@
 $custom-checkbox-radio-font-family: sans-serif !default;
 
 /// Default font size for checkbox-radio components.
-/// @type Keyword
+/// @type Number
 $custom-checkbox-radio-font-size: 13px !default;
 
 /// Default text transform for checkbo-radio components.
@@ -31,7 +31,7 @@ $custom-checkbox-radio-color: #8c8c8c !default;
 $custom-checkbox-radio-cursor: default !default;
 
 /// The space between the `label` text and the shape of the custom checkbox-radio component.
-/// @type Keyword
+/// @type Number
 $custom-checkbox-radio-label-gutter: 10px !default;
 
 /// If set to `true` the alignment of the checkbox-radio components will line up in the middle of the text.
@@ -39,7 +39,7 @@ $custom-checkbox-radio-label-gutter: 10px !default;
 $custom-checkbox-radio-align-center: false !default;
 
 /// The size the global dimension of the checkbox-radio components.
-/// @type Keyword
+/// @type Number
 $custom-checkbox-radio-size: 24px !default;
 
 /// The `background-color` of the checkbox-radio shape.
@@ -62,11 +62,11 @@ $custom-checkbox-radio-hover-border-color: #b2b2b2 !default;
 $custom-checkbox-radio-checked-border: true !default;
 
 /// The `border-radius` for custom checkbox component.
-/// @type Keyword
+/// @type Number
 $custom-checkbox-border-radius: 5px !default;
 
 /// The thickness of the "arrow" shape for custom checkbox component.
-/// @type Keyword
+/// @type Number
 $custom-checkbox-mark-thick: 3px !default;
 
 /// The "mark" color of the checkbox shape for custom checkbox component.
