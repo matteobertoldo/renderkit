@@ -130,9 +130,7 @@
         @include -zf-each-breakpoint() {
             @if (type-of($grid-margin-gutters) == 'map' and map-has-key($grid-margin-gutters, $-zf-size)) {
                 @each $bp in -zf-breakpoints-less-than($-zf-size) {
-                    @if (map-has-key($grid-margin-gutters, $bp)) {
-                        @include -xy-breakpoint-cell-classes($bp, $-zf-size, $vertical);
-                    }
+                    @include -xy-breakpoint-cell-classes($bp, $-zf-size, $vertical);
                 }
             }
 
@@ -390,7 +388,6 @@
 /// @group _global renderkit
 /// @link https://foundation.zurb.com/sites/docs/xy-grid.html
 @mixin foundation-xy-grid-classes($base-grid: true, $margin-grid: true, $padding-grid: true, $block-grid: true, $collapse: true, $offset: true, $vertical-grid: true, $frame-grid: true) {
-
     @if ($base-grid) {
         @include xy-base-grid-classes();
     }

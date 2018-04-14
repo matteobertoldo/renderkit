@@ -10,7 +10,6 @@
     "watch": "gulp watch",
     "uikit": "gulp uikit",
     "sass": "gulp sass",
-    "svg": "gulp svg",
     "clean": "gulp clean"
   },
   "repository": {
@@ -41,7 +40,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-svg-sprite": "1.4.0",
     "gulp-watch": "^5.0.0",
     "postcss-pxtorem-plus": "^3.5.1",
     "require-dir": "^1.0.0",
@@ -50,7 +48,6 @@
     "stream-combiner": "^0.2.2"
   },
   "dependencies": {
-    "svg4everybody": "^2.1.9",
     "what-input": "^5.0.5"
   }
 }

@@ -9,6 +9,8 @@
 /// @group _global renderkit
 /// @link https://github.com/necolas/normalize.css
 @mixin scss-normalize {
+    $reset-appearance: $global-inputs-reset-appearence;
+
     // Change the default font family in all browsers (opinionated).
     // Prevent adjustments of font size after orientation changes in IE and iOS Devices.
     // Configure the default iOS tap highlight color.
@@ -114,7 +116,7 @@
     }
 
     // Remove the gray background on active links in IE 10.
-    // Set `true` or `false` on `$global-links-text-decoration` for remove o mantain the default underline.
+    // Set `true` or `false` on `global-links-text-decoration` for remove o mantain the default underline.
     // Remove the outline on focused links (configurable).
     // [data-whatinput="*"] Detect if is a mouse or touch event for remove the defaut outline. This improve the accessibility with keyboard navigation.
     a {
@@ -286,7 +288,7 @@
     select,
     textarea {
         font-family: inherit;
-    	@if ($global-inputs-reset-appearence) {
+    	@if ($reset-appearance) {
     		font-size: percentage(1);
     	}
     	color: inherit;
@@ -387,7 +389,7 @@
 
     	@each $input-type in (email, password, search, tel, text, url) {
     		&[type="#{$input-type}"] {
-    			@if ($global-inputs-reset-appearence) {
+    			@if ($reset-appearance) {
     				@extend %reset-input-style;
     			}
     		}
@@ -399,7 +401,7 @@
     	}
 
     	&[type="search"] {
-            @if ($global-inputs-reset-appearence) {
+            @if ($reset-appearance) {
                 @extend %reset-input-style;
             }
             outline-offset: -2px;
@@ -418,7 +420,7 @@
     	&::-webkit-file-upload-button {
     		-webkit-appearance: button;
     		font: inherit;
-    		@if ($global-inputs-reset-appearence) {
+    		@if ($reset-appearance) {
     			border: 1px solid lightgray;
     			background-color: white;
                 border-radius: 0;
@@ -462,14 +464,14 @@
 
     // Remove the default vertical scrollbar in IE.
     textarea {
-    	@if ($global-inputs-reset-appearence) {
+    	@if ($reset-appearance) {
     		@extend %reset-input-style;
     	}
     	overflow: auto;
     }
 
     // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
-    @if ($global-inputs-reset-appearence) {
+    @if ($reset-appearance) {
     	[disabled] {
     		color: inherit;
     		opacity: $global-input-disabled-opacity !important;

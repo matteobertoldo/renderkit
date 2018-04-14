@@ -6,51 +6,210 @@
 /// @group form
 ////
 
+/// The class that will act as a container for styling up the fields:
+///
+/// - `input[type="email"]`,
+/// - `input[type="password"]`,
+/// - `input[type="search"]`,
+/// - `input[type="tel"]`,
+/// - `input[type="text"]`,
+/// - `input[type="url"]`
+/// - `select`,
+/// - `textarea`
+/// @type String
 $form-inputs-rowclass: 'form-row' !default;
+
+/// The class that will be applied to the `label` for the fields.
+/// @type String
 $form-inputs-labelclass: 'form-label' !default;
+
+/// The initial height of the fields.
+/// @type Number
 $form-input-height: 40px !default;
+
+/// The `font-family` of the fields.
+/// @type Keyword
 $form-input-font-family: 'Josefin Sans', sans-serif !default;
+
+/// The `font-size` of the fields.
+/// @type Number
 $form-input-font-size: 14px !default;
+
+/// The `letter-spacing` of the fields.
+/// @type Keyword|Number
 $form-input-letter-spacing: normal !default;
+
+/// The `text-transform` of the fields.
+/// @type Keyword
 $form-input-text-transform: none !default;
+
+/// The `padding` of the fields.
+/// @type Number
 $form-input-padding: 10px !default;
+
+/// The `background-color` of the fields.
+/// @type Color
 $form-input-background-color: #efefef !default;
+
+/// The `color` of the fields.
+/// @type Color
 $form-input-color: #666666 !default;
+
+/// The `border` of the fields.
+/// @type Keyword
 $form-input-border: 1px solid #d9d9d9 !default;
+
+/// The `border-radius` of the fields.
+/// @type Number
 $form-input-border-radius: 5px !default;
+
+/// Variable that determines whether to have a different border in `hover` for all fields except fields with `[disabled]` attribute.
+/// @type Boolean
 $form-input-hover-border: true !default;
+
+/// The color of the border of the fields when they are in `:hover`.
+/// @type Color
 $form-input-hover-border-color: #b2b2b2 !default;
+
+/// Variable that determines whether to have a different border in `focus` for all fields.
+/// @type Boolean
+$form-input-focus-border: true !default;
+
+/// The color of the border of the fields when they are in `:focus`.
+/// @type Color
 $form-input-focus-border-color: #b2b2b2 !default;
+
+/// The color of the `:placeholder` of the fields.
+/// @type Color
 $form-input-placeholder-color: #8c8c8c !default;
+
+/// Variable that determines whether to hide or not, the `:placeholder` of the fields when they are in `:focus`.
+/// @type Boolean
 $form-input-placeholder-focus-hidden: true !default;
+
+/// The color of the `:placeholder` of the fields when they are in `:focus`.
+/// @type Color
 $form-input-placeholder-focus-color: #b2b2b2 !default;
+
+/// The `font-family` of the `:placeholder` of the fields.
+/// @type Keyword|String
 $form-input-placeholder-font-family: inherit !default;
+
+/// The `font-style` of the `:placeholder` of the fields.
+/// @type Keyword
 $form-input-placeholder-font-style: italic !default;
+
+/// The `text-transform` style of the `:placeholder` of the fields.
+/// @type Keyword
 $form-input-placeholder-text-transform: capitalize !default;
+
+/// The global `transition` of the fields.
+/// @type Keyword
 $form-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease !default;
+
+/// The `text-transform` style of the `select`.
+/// @type Keyword
 $form-select-text-transform: none !default;
-$form-select-caret-color: #8c8c8c !default;
+
+/// Variable that determines whether to render the "caret" shape for the `select`.
+/// @type Boolean
 $form-select-caret-shape-render: true !default;
+
+/// The "caret" color of the `select`.
+/// @type Color
+$form-select-caret-color: #8c8c8c !default;
+
+/// The "caret" shape of the `select`.
+///
+/// The possible values ​​to pass are:
+/// - 'arrow'
+/// - 'triangle'
+/// - 'empty'
+/// @type String|Keyword
 $form-select-caret-shape: 'arrow' !default;
+
+/// The "caret" size of the `select`.
+/// @type Number
 $form-select-caret-size: 10px !default;
+
+/// If `$form-select-caret-shape-render` is set to `false` it is possible to load a custom "caret" shape.
+///
+/// This variable determines the pat of the custom "shape" for the `select`.
+/// @type String
 $form-select-caret-image-url: 'path/to/shape' !default;
+
+/// The size of the custom "caret" shape
+/// @type Number
 $form-select-caret-background-size: 10px !default;
+
+/// The global `height` of textarea.
+/// @type Number
 $form-textarea-height: 110px !default;
+
+/// Variable that determines whether to have the texarea resizeable or not.
+/// @type Boolean
 $form-textarea-resize: false !default;
+
+/// Variable that determines the `resize` mode of the textarea.
+///
+/// It goes to act only if `$form-textarea-resize` is set to `true`.
+/// @type Keyword
 $form-textarea-resize-mode: vertical !default;
+
+/// The `font-family` for the fields `label` element.
+/// @type Keyword|String
 $form-label-font-family: 'Josefin Sans', sans-serif !default;
+
+/// The `font-size` for the fields `label` element.
+/// @type Number
 $form-label-font-size: 11px !default;
+
+/// The `text-transform` style for the fields `label` element.
+/// @type Keyword
 $form-label-text-transform: uppercase !default;
+
+/// The `letter-spacing` for the fields `label` element.
+/// @type Number|Keyword
 $form-label-letter-spacing: 0.5px !default;
+
+/// The `color` for the fields `label` element.
+/// @type Color
 $form-label-color: #8c8c8c !default;
+
+/// The global `margin` for the fields `label` element.
+/// @type Number
 $form-label-margin: 0 0 5px 0 !default;
+
+/// The `border-color` for the fields when they have a failed validation.
+/// @type Color
 $form-input-error-border-color: #c04649 !default;
+
+/// The `background-color` for the fields when they have a failed validation.
+/// @type Color
 $form-input-error-background-color: #f2c0c1 !default;
+
+/// The `color` for the fields when they have a failed validation.
+/// @type Color
 $form-input-error-color: #666666 !default;
+
+/// The `color` for the `label` of the fields when it have a failed validation.
+/// @type Color
 $form-input-error-label-color: #c04649 !default;
+
+/// The `color` for the `:placeholder` of the fields when they have a failed validation.
+/// @type Color
 $form-input-error-placeholder-color: #c04649 !default;
+
+/// Variable that determines whether or not to enable a custom `autofill`.
+/// @type Boolean
 $form-input-custom-autofill: false !default;
+
+/// The `color` for the custom autofill.
+/// @type Color|Keyword
 $form-input-autofill-color: $form-input-color !default;
+
+/// The `background-color` for the custom autofill.
+/// @type Color|Keyword
 $form-input-autofill-background-color: $form-input-background-color !default;
 
 @import 'utils';

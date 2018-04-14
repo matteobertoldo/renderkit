@@ -21,16 +21,12 @@ gulp.task('watch', (done) => {
         defaultWatchTasks.push('browser-sync');
         sequence.apply(null, defaultWatchTasks, done);
 
-        watch([conf.workspace.uikit.src, conf.workspace.uikit.data], () => {
+        watch([conf.workspace.uikit.base, conf.workspace.uikit.data], () => {
             gulp.start('uikit:watch');
-        })
+        });
 
         watch(conf.workspace.scss, () => {
             gulp.start(['sass:watch', 'sassdoc']);
-        });
-
-        watch(conf.workspace.svg, () => {
-            gulp.start('svg:watch');
         });
     } else {
         log(colors.red('Set up at least one task to use `gulp watch`'));

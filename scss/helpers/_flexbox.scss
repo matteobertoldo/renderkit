@@ -90,7 +90,6 @@ $-zf-flex-justify: -zf-flex-justify($global-text-direction);
 /// @link https://foundation.zurb.com/sites/docs/flexbox-utilities.html#source-ordering
 /// @group _global renderkit
 @mixin foundation-flex-classes {
-    /*@foundation-flex-classes*/
     @each $hdir, $prop in $-zf-flex-justify {
         .align-#{$hdir} {
             @include flex-align($x: $hdir);

@@ -61,7 +61,6 @@
 /// @link https://foundation.zurb.com/sites/docs/visibility.html
 /// @group _global renderkit
 @mixin foundation-visibility-classes {
-    /*@foundation-visibility-classes*/
 	@each $size in $breakpoint-classes {
 		@if $size != $-zf-zero-breakpoint {
 			.hide-for-#{$size} {

@@ -8,7 +8,6 @@
 
 /// Mixin for text alignment.
 @mixin foundation-text-alignment {
-    /*@foundation-text-alignment*/
     @each $size in $breakpoint-classes {
         @include breakpoint($size) {
             @each $align in (left, right, center, justify) {

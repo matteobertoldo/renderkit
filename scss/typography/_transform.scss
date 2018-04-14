@@ -8,7 +8,6 @@
 
 /// Mixin for all `text-transform` values with helper classes.
 @mixin text-transform-classes {
-    /*@text-transform-classes*/
     @each $param in (uppercase, lowercase, capitalize, ellipsis) {
         .text-#{$param} {
             @if ($param == 'ellipsis') {

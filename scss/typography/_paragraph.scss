@@ -36,7 +36,6 @@ $paragraph-margin: 0 !default;
 
 /// Mixin for set global paragraph style
 @mixin paragraph-style {
-    /*@paragraph-style*/
     p {
         font: {
             family: $paragraph-font-family;

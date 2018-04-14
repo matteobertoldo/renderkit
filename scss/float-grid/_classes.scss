@@ -7,7 +7,6 @@
 /// @group _global renderkit
 /// @link https://foundation.zurb.com/sites/docs/grid.html
 @mixin foundation-grid($row: 'row', $column: 'column', $column-row: 'column-row', $gutter: 'gutter', $push: 'push', $pull: 'pull', $center: 'centered', $uncenter: 'uncentered', $collapse: 'collapse', $uncollapse: 'uncollapse', $offset: 'offset', $end: 'end', $expanded: 'expanded', $block: 'block') {
-	/*@foundation-grid (float 6.4)*/
     .#{$row} {
         @include grid-row;
 
