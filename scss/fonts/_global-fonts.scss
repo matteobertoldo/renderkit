@@ -5,7 +5,6 @@
 /// Mixin for importing Google Fonts and/or `@font-face` fonts globally.
 /// @group _global renderkit
 @mixin global-fonts {
-    /*@global fonts*/
     @if ($google-fonts-load) {
         @import url('https://fonts.googleapis.com/css?family=#{$google-fonts-family}');
     }

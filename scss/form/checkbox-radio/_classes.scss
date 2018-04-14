@@ -9,7 +9,6 @@
 /// These classes are exclusive to `label` with the `[for]` attribute in agreement with `id` of the `checkbox` or `radio` input.
 /// @group _global renderkit
 @mixin checkbox-radio-classes {
-    /*@checkbox-radio-classes*/
     $align: $custom-checkbox-radio-align-center;
     $size: $custom-checkbox-radio-size;
     $hover-border: $custom-checkbox-radio-hover-border;

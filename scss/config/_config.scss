@@ -211,6 +211,7 @@ $form-input-border: 1px solid #d9d9d9;
 $form-input-border-radius: 5px;
 $form-input-hover-border: true;
 $form-input-hover-border-color: #b2b2b2;
+$form-input-focus-border: true;
 $form-input-focus-border-color: #b2b2b2;
 $form-input-placeholder-color: #8c8c8c;
 $form-input-placeholder-focus-hidden: true;
@@ -224,8 +225,8 @@ $form-input-transition: border-color 0.3s ease, background-color 0.3s ease, colo
 // ----------------
 
 $form-select-text-transform: none;
-$form-select-caret-color: #8c8c8c;
 $form-select-caret-shape-render: true;
+$form-select-caret-color: #8c8c8c;
 $form-select-caret-shape: 'arrow';
 $form-select-caret-size: 10px;
 $form-select-caret-image-url: 'path/to/shape';

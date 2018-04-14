@@ -8,4 +8,17 @@
     {% include "sections/float-grid/float-grid.njk" %}
 {% endif %}
 {% include "sections/form/form.njk" %}
-{% include "sections/svg/svg.njk" %}
+
+{% if uikit.section.customsectionsrender.show %}
+    {% for section in uikit.customsections %}
+        <section class="uikit-element-render {{section.sectionclass}}">
+            <h2 class="section-title">{{section.title}}</h2>
+            <div class="section-description">
+                {% include section.renderpath + section.renderfile + "-info.njk" ignore missing %}
+            </div>
+            {% include section.renderpath + section.renderfile + "-style.njk" ignore missing %}
+            {% include section.renderpath + section.renderfile + "-script.njk" ignore missing %}
+            {% include section.renderpath + section.renderfile + "-content.njk" %}
+        </section>
+    {% endfor %}
+{% endif %}

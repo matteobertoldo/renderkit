@@ -21,7 +21,6 @@ $selection-color: initial !default;
 /// Accessibility classes mixin.
 /// @group _global renderkit
 @mixin accessibility-classes {
-    /*@accessibility classes & pseudo elem*/
     ::selection {
         background: $selection-background-color;
         @if ($selection-color-apply) {

@@ -4,7 +4,6 @@
  * github.com/matteobertoldo/renderkit
  * Licensed under MIT Open Source
  */
-/*@global fonts*/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface");
 html {
   font-family: sans-serif;
@@ -353,7 +352,6 @@ table {
   width: device-width;
 }
 
-/*@media-print*/
 @media print {
   *, ::after, ::before {
     text-shadow: none !important;
@@ -418,7 +416,6 @@ table {
   }
 }
 
-/*@headers-style*/
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -431,7 +428,6 @@ h6, .h6 {
   color: #666666;
 }
 
-/*@headers-style-bp*/
 h1,
 .h1 {
   font-size: 1.5rem;
@@ -513,7 +509,6 @@ h6,
   }
 }
 
-/*@paragraph-style*/
 p {
   font-family: "Josefin Sans", sans-serif;
   font-weight: normal;
@@ -524,7 +519,6 @@ p {
   margin: 0;
 }
 
-/*@foundation-text-alignment*/
 .text-left {
   text-align: left;
 }
@@ -571,7 +565,6 @@ p {
   }
 }
 
-/*@text-transform-classes*/
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -591,11 +584,11 @@ p {
   overflow: hidden;
 }
 
-/*@accessibility classes & pseudo elem*/
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
+
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -681,7 +674,6 @@ p {
   cursor: grabbing;
 }
 
-/*@foundation-visibility-classes*/
 @media only screen and (max-width: 640px) {
   .hide-for-small-only {
     display: none !important;
@@ -780,7 +772,6 @@ p {
   }
 }
 
-/*@float-classes*/
 .float-left {
   float: left;
 }
@@ -795,7 +786,6 @@ p {
   margin-right: auto;
 }
 
-/*@clearfix-classes*/
 .clearfix::before, .clearfix::after {
   content: '';
   display: table;
@@ -3157,7 +3147,6 @@ p {
   }
 }
 
-/*@foundation-flex-classes*/
 .align-left {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
@@ -3382,7 +3371,6 @@ p {
   }
 }
 
-/*@form-style*/
 .form-row {
   position: relative;
 }
@@ -3553,7 +3541,6 @@ p {
   resize: none;
 }
 
-/*@checkbox-radio-classes*/
 .input-checkbox,
 .input-radio {
   font-family: "Josefin Sans", sans-serif;
@@ -3696,7 +3683,6 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   border-color: #c04649;
 }
 
-/*@colors-palette*/
 .palette-color-primary {
   color: #666;
 }
@@ -3761,7 +3747,6 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   background-color: #f2c0c1;
 }
 
-/*@shape-classes*/
 .shape-arrow {
   display: block;
   width: 20px;

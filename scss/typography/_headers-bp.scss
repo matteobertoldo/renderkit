@@ -39,7 +39,6 @@ $header-styles: (
 
 /// Mixin for global headers styles in breakpoints.
 @mixin headers-style-bp {
-    /*@headers-style-bp*/
     @each $size, $headers in $header-styles {
         @include breakpoint($size) {
             @each $header, $header-defs in $headers {

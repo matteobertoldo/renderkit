@@ -2,12 +2,21 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-////
-/// @group form
-////
-
+/// Mixin for style all cross browsing inputs wrapped in a configurable "box" class.
+///
+/// The configurable inputs are:
+/// - `input[type="email"]`,
+/// - `input[type="password"]`,
+/// - `input[type="search"]`,
+/// - `input[type="tel"]`,
+/// - `input[type="text"]`,
+/// - `input[type="url"]`
+/// - `select`,
+/// - `textarea`
+/// @group _global renderkit
 @mixin form-style {
-    /*@form-style*/
+    $error-class: $global-form-inputs-error-class;
+
     .#{$form-inputs-rowclass} {
         position: relative;
 
@@ -22,7 +31,7 @@
             color: $form-label-color;
             margin: $form-label-margin;
 
-            &.#{$global-form-inputs-error-class} {
+            &.#{$error-class} {
                 color: $form-input-error-label-color;
             }
         }
@@ -44,8 +53,10 @@
             padding: $form-input-padding;
             transition: $form-input-transition;
 
-            &:focus {
-                border-color: $form-input-focus-border-color;
+            @if ($form-input-focus-border) {
+                &:focus {
+                    border-color: $form-input-focus-border-color;
+                }
             }
 
             @if ($form-input-hover-border) {
@@ -54,14 +65,14 @@
                 }
             }
 
-            // Reset Firefox/Gecko pseudo `:require` & `:invalid` attributes.
+            // Reset Firefox pseudo `:require` & `:invalid` attributes.
             &:required,
             &:invalid {
                 box-shadow: none;
             }
 
             // Validation/Error class
-            &.#{$global-form-inputs-error-class} {
+            &.#{$error-class} {
                 border-color: $form-input-error-border-color;
                 background-color: $form-input-error-background-color;
                 color: $form-input-error-color;
@@ -99,7 +110,7 @@
                 }
             }
 
-            &.#{$global-form-inputs-error-class} {
+            &.#{$error-class} {
                 &::placeholder {
                     color: $form-input-error-placeholder-color;
                     opacity: 1;

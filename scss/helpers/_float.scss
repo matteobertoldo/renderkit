@@ -5,7 +5,6 @@
 /// Float disposition classes.
 /// @group _global renderkit
 @mixin float-classes {
-    /*@float-classes*/
     @each $float in (left, right, center) {
         .float-#{$float} {
             @if ($float == 'center') {
