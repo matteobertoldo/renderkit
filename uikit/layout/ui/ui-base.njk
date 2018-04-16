@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
         {% include "layout/ui/ui-style.njk" %}
     </head>
-    <body id="renderkit-body"{% if uikit.style.darkmode %} class="darkmode"{% endif %}>
+    <body id="renderkit-body">
         {% import "layout/macro/snippet.njk" as snippet %}
         <main id="uikit-main" role="main">
             {% if uikit.aside.show %}
@@ -29,7 +29,6 @@
             </div>
         </main>
         {% block footer %}{% endblock %}
-        <script src="https://cdn.rawgit.com/matteobertoldo/9874c58f56669b4ecf9a3bd8ec305b75/raw/fe7219f7770a4fbc77d2174a3cc31994c73d2deb/renderkit-highlight.pack.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        {% include "./ui-scripts.njk" %}
     </body>
 </html>

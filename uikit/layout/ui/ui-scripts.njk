@@ -1,0 +1,32 @@
+<script src="https://cdn.rawgit.com/matteobertoldo/9874c58f56669b4ecf9a3bd8ec305b75/raw/fe7219f7770a4fbc77d2174a3cc31994c73d2deb/renderkit-highlight.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function docsCodeCopy() {
+    var codeBtn = document.querySelectorAll('.code-btn');
+
+    for (var i = 0; i < codeBtn.length; i++) {
+        codeBtn[i].addEventListener('click', function(event) {
+            event.preventDefault();
+            var self = this;
+            self.innerHTML = 'Copied!';
+
+            setTimeout(function() {
+                self.innerHTML = 'Copy';
+            }, 2000);
+        });
+    }
+
+    new ClipboardJS('.code-btn', {
+        text: function(trigger) {
+            return trigger.parentElement.querySelector('code').innerText;
+        }
+    });
+}
+
+(function() {
+    docsCodeCopy();
+})();
+</script>

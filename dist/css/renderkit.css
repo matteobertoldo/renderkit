@@ -3407,15 +3407,15 @@ p {
   transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.form-row input[type="email"]:focus, .form-row input[type="password"]:focus, .form-row input[type="search"]:focus, .form-row select:focus, .form-row input[type="tel"]:focus, .form-row input[type="text"]:focus, .form-row textarea:focus, .form-row input[type="url"]:focus {
+.form-row input:focus[type="email"], .form-row input:focus[type="password"], .form-row input:focus[type="search"], .form-row select:focus, .form-row input:focus[type="tel"], .form-row input:focus[type="text"], .form-row textarea:focus, .form-row input:focus[type="url"] {
   border-color: #b2b2b2;
 }
 
-.form-row input[type="email"]:hover:not([disabled]), .form-row input[type="password"]:hover:not([disabled]), .form-row input[type="search"]:hover:not([disabled]), .form-row select:hover:not([disabled]), .form-row input[type="tel"]:hover:not([disabled]), .form-row input[type="text"]:hover:not([disabled]), .form-row textarea:hover:not([disabled]), .form-row input[type="url"]:hover:not([disabled]) {
+.form-row input:hover:not([disabled])[type="email"], .form-row input:hover:not([disabled])[type="password"], .form-row input:hover:not([disabled])[type="search"], .form-row select:hover:not([disabled]), .form-row input:hover:not([disabled])[type="tel"], .form-row input:hover:not([disabled])[type="text"], .form-row textarea:hover:not([disabled]), .form-row input:hover:not([disabled])[type="url"] {
   border-color: #b2b2b2;
 }
 
-.form-row input[type="email"]:required, .form-row input[type="password"]:required, .form-row input[type="search"]:required, .form-row select:required, .form-row input[type="tel"]:required, .form-row input[type="text"]:required, .form-row textarea:required, .form-row input[type="url"]:required, .form-row input[type="email"]:invalid, .form-row input[type="password"]:invalid, .form-row input[type="search"]:invalid, .form-row select:invalid, .form-row input[type="tel"]:invalid, .form-row input[type="text"]:invalid, .form-row textarea:invalid, .form-row input[type="url"]:invalid {
+.form-row input:required[type="email"], .form-row input:required[type="password"], .form-row input:required[type="search"], .form-row select:required, .form-row input:required[type="tel"], .form-row input:required[type="text"], .form-row textarea:required, .form-row input:required[type="url"], .form-row input:invalid[type="email"], .form-row input:invalid[type="password"], .form-row input:invalid[type="search"], .form-row select:invalid, .form-row input:invalid[type="tel"], .form-row input:invalid[type="text"], .form-row textarea:invalid, .form-row input:invalid[type="url"] {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -3426,7 +3426,7 @@ p {
   color: #666666;
 }
 
-.form-row input.error[type="email"]:hover, .form-row input.error[type="password"]:hover, .form-row input.error[type="search"]:hover, .form-row select.error:hover, .form-row input.error[type="tel"]:hover, .form-row input.error[type="text"]:hover, .form-row textarea.error:hover, .form-row input.error[type="url"]:hover, .form-row input.error[type="email"]:focus, .form-row input.error[type="password"]:focus, .form-row input.error[type="search"]:focus, .form-row select.error:focus, .form-row input.error[type="tel"]:focus, .form-row input.error[type="text"]:focus, .form-row textarea.error:focus, .form-row input.error[type="url"]:focus {
+.form-row input.error:hover[type="email"], .form-row input.error:hover[type="password"], .form-row input.error:hover[type="search"], .form-row select.error:hover, .form-row input.error:hover[type="tel"], .form-row input.error:hover[type="text"], .form-row textarea.error:hover, .form-row input.error:hover[type="url"], .form-row input.error:focus[type="email"], .form-row input.error:focus[type="password"], .form-row input.error:focus[type="search"], .form-row select.error:focus, .form-row input.error:focus[type="tel"], .form-row input.error:focus[type="text"], .form-row textarea.error:focus, .form-row input.error:focus[type="url"] {
   border-color: #c04649;
   background-color: #f2c0c1;
 }
