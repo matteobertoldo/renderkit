@@ -1,5 +1,5 @@
 {
-  "name": "RenderKit",
+  "name": "renderkit",
   "version": "0.9.0",
   "main": "dist/css/renderkit.css",
   "description": "Definitely the light way for start new front-end web projects.",
