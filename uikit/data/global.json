@@ -7,7 +7,7 @@
             "github": true
         },
         "style": {
-            "darkmode": false,
+            "lightcode": false,
             "globalcolor": "#666666",
             "sections": {
                 "background": "#f5f5f5",

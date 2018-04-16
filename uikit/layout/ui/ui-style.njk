@@ -24,12 +24,6 @@
         background-image: none !important;
     }
 
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode {
-            background-color: #f5f5f5 !important;
-        }
-    {% endif %}
-
     #renderkit-body #uikit-render-content {
         overflow: hidden;
         {% if uikit.aside.show %}
@@ -54,12 +48,6 @@
         margin: {{sectionmargin}};
         padding: 50px 30px;
     }
-
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .uikit-element-render {
-            background-color: #1a1a1c;
-        }
-    {% endif %}
 
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
         #renderkit-body .uikit-element-render {
@@ -88,12 +76,6 @@
         cursor: default;
     }
 
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .section-title {
-            color: #f5f5f5;
-        }
-    {% endif %}
-
     @media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
         #renderkit-body .section-title {
             font-size: 30px;
@@ -109,12 +91,6 @@
             width: 100%;
             height: 2px;
             background-color: {{titlecolor}};
-        }
-    {% endif %}
-
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .section-title::after {
-            background-color: #f5f5f5;
         }
     {% endif %}
 
@@ -154,23 +130,38 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+        position: relative;
         min-width: 220px;
         font-family: monospace, monospace;
         font-size: 12px;
         font-weight: bold;
         letter-spacing: normal;
         border-radius: 6px;
-        box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+        box-shadow: {% if uikit.style.lightcode %} 0 0 14px rgba(244, 244, 244, 0.6) {% else %} 0 0 14px rgba(0, 0, 0, 0.6) {% endif %};
         margin: 0;
         padding: 0;
         overflow: auto;
     }
 
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .ui-snippet {
-            box-shadow: 0 0 14px rgba(244, 244, 244, 0.6);
-        }
-    {% endif %}
+    #renderkit-body .ui-snippet .code-btn {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background-color: rgba(245, 245, 245, 0.45);
+        color: #282c34;
+        border: 0;
+        border-radius: 0 0 0 6px;
+        padding: 4px;
+        cursor: pointer;
+    }
 
     #renderkit-body .hljs {
         display: block;
@@ -178,12 +169,12 @@
         color: #abb2bf;
         background: #282c34;
         border-radius: 6px;
-        padding: 14px 12px;
+        padding: 18px 12px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-    {% if not uikit.style.darkmode %}
+    {% if not uikit.style.lightcode %}
         #renderkit-body .hljs-comment,
         #renderkit-body .hljs-quote {
             color: #5c6370;
@@ -242,66 +233,66 @@
         }
     {% endif %}
 
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .hljs {
+    {% if uikit.style.lightcode %}
+        #renderkit-body .hljs {
             color: #383a42;
             background: #fafafa;
         }
 
-        #renderkit-body.darkmode .hljs-comment,
-        #renderkit-body.darkmode .hljs-quote {
+        #renderkit-body .hljs-comment,
+        #renderkit-body .hljs-quote {
             color: #a0a1a7;
             font-style: italic;
         }
 
-        #renderkit-body.darkmode .hljs-doctag,
-        #renderkit-body.darkmode .hljs-keyword,
-        #renderkit-body.darkmode .hljs-formula {
+        #renderkit-body .hljs-doctag,
+        #renderkit-body .hljs-keyword,
+        #renderkit-body .hljs-formula {
             color: #a626a4;
         }
 
-        #renderkit-body.darkmode .hljs-section,
-        #renderkit-body.darkmode .hljs-name,
-        #renderkit-body.darkmode .hljs-selector-tag,
-        #renderkit-body.darkmode .hljs-deletion,
-        #renderkit-body.darkmode .hljs-subst {
+        #renderkit-body .hljs-section,
+        #renderkit-body .hljs-name,
+        #renderkit-body .hljs-selector-tag,
+        #renderkit-body .hljs-deletion,
+        #renderkit-body .hljs-subst {
             color: #e45649;
         }
 
-        #renderkit-body.darkmode .hljs-literal {
+        #renderkit-body .hljs-literal {
             color: #0184bb;
         }
 
-        #renderkit-body.darkmode .hljs-string,
-        #renderkit-body.darkmode .hljs-regexp,
-        #renderkit-body.darkmode .hljs-addition,
-        #renderkit-body.darkmode .hljs-attribute,
-        #renderkit-body.darkmode .hljs-meta-string {
+        #renderkit-body .hljs-string,
+        #renderkit-body .hljs-regexp,
+        #renderkit-body .hljs-addition,
+        #renderkit-body .hljs-attribute,
+        #renderkit-body .hljs-meta-string {
             color: #50a14f;
         }
 
-        #renderkit-body.darkmode .hljs-built_in,
-        #renderkit-body.darkmode .hljs-class .hljs-title {
+        #renderkit-body .hljs-built_in,
+        #renderkit-body .hljs-class .hljs-title {
             color: #c18401;
         }
 
-        #renderkit-body.darkmode .hljs-attr,
-        #renderkit-body.darkmode .hljs-variable,
-        #renderkit-body.darkmode .hljs-template-variable,
-        #renderkit-body.darkmode .hljs-type,
-        #renderkit-body.darkmode .hljs-selector-class,
-        #renderkit-body.darkmode .hljs-selector-attr,
-        #renderkit-body.darkmode .hljs-selector-pseudo,
-        #renderkit-body.darkmode .hljs-number {
+        #renderkit-body .hljs-attr,
+        #renderkit-body .hljs-variable,
+        #renderkit-body .hljs-template-variable,
+        #renderkit-body .hljs-type,
+        #renderkit-body .hljs-selector-class,
+        #renderkit-body .hljs-selector-attr,
+        #renderkit-body .hljs-selector-pseudo,
+        #renderkit-body .hljs-number {
             color: #986801;
         }
 
-        #renderkit-body.darkmode .hljs-symbol,
-        #renderkit-body.darkmode .hljs-bullet,
-        #renderkit-body.darkmode .hljs-link,
-        #renderkit-body.darkmode .hljs-meta,
-        #renderkit-body.darkmode .hljs-selector-id,
-        #renderkit-body.darkmode .hljs-title {
+        #renderkit-body .hljs-symbol,
+        #renderkit-body .hljs-bullet,
+        #renderkit-body .hljs-link,
+        #renderkit-body .hljs-meta,
+        #renderkit-body .hljs-selector-id,
+        #renderkit-body .hljs-title {
             color: #4078f2;
         }
     {% endif %}
@@ -406,12 +397,6 @@
         margin-top: 24px;
     }
 
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .section-description .info-label {
-            color: #f5f5f5;
-        }
-    {% endif %}
-
     #renderkit-body .section-description .docs-info {
         display: block;
         font-family: 'Montserrat', sans-serif;
@@ -422,12 +407,6 @@
         color: {{globalcolor}};
         margin-top: 4px;
     }
-
-    {% if uikit.style.darkmode %}
-        #renderkit-body.darkmode .section-description .docs-info {
-            color: #f5f5f5;
-        }
-    {% endif %}
 
     #renderkit-body .docs-info .snippet-code {
         display: inline;
