@@ -26,7 +26,8 @@ gulp.task('uikit', () => {
         log('Message: ' + colors.red(err.message));
     })
     .pipe(nunjucksRender({
-        path: [conf.workspace.uikit.base]
+        path: [conf.workspace.uikit.base],
+        ext: conf.uikitOptions.outputExt
     })).on('error', (err) => {
         log('Error in: ' + colors.red(err.plugin));
         log('Message: ' + colors.red(err.message));

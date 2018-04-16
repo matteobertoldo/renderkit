@@ -9,17 +9,11 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title>{{uikit.title}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="stylesheet" href="{{uikit.cssrenderfile}}" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Abril+Fatface" />
+        {% block head %}{% endblock %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
         {% include "layout/ui/ui-style.njk" %}
-        {% if uikit.js.whatinput %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.5/what-input.min.js"></script>
-        {% endif %}
-        {% if uikit.js.svg4everybody %}
-            <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
-        {% endif %}
     </head>
     <body id="renderkit-body"{% if uikit.style.darkmode %} class="darkmode"{% endif %}>
         {% import "layout/macro/snippet.njk" as snippet %}
@@ -34,6 +28,7 @@
                 {% block uikit %}{% endblock %}
             </div>
         </main>
+        {% block footer %}{% endblock %}
         <script src="https://cdn.rawgit.com/matteobertoldo/9874c58f56669b4ecf9a3bd8ec305b75/raw/fe7219f7770a4fbc77d2174a3cc31994c73d2deb/renderkit-highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </body>

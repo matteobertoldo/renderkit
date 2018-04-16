@@ -1,6 +1,5 @@
 {
     "uikit": {
-        "cssrenderfile": "renderkit/css/renderkit.min.css",
         "title": "RenderKit",
         "projectname": "RenderKit",
         "aside": {
@@ -9,13 +8,19 @@
         },
         "style": {
             "darkmode": false,
-            "sectionsbackground": "#f5f5f5",
-            "titlecolor": "#1a1a1c",
-            "globalcolor": "#666666"
-        },
-        "js": {
-            "whatinput": true,
-            "svg4everybody": true
+            "globalcolor": "#666666",
+            "sections": {
+                "background": "#f5f5f5",
+                "margin": "15px"
+            },
+            "title": {
+                "family": "Abril Fatface, coursive;",
+                "size": "60px",
+                "weight": "normal",
+                "color": "#404041",
+                "texttransform": "none",
+                "border": true
+            }
         },
         "sassdocumentation": {
             "show": true,
@@ -59,14 +64,6 @@
                     "custom": true
                 },
                 "errorclass": "error"
-            },
-            "svg": {
-                "spritepath": "renderkit/svg/symbol/sprite.svg",
-                "icons": ["facebook","google-plus","instagram","twitter","youtube"],
-                "iconscolor": "#666666",
-                "collection": true,
-                "examplefile": "renderkit/svg/symbol/sprite.symbol.html",
-                "truetone": true
             },
             "customsectionsrender": {
                 "show": false

@@ -7,7 +7,6 @@ var folder = {
     distribution: 'dist/',
     docs: 'docs/',
     scss: 'scss/',
-    svg: 'svg/',
     uikit: 'uikit/',
 };
 
@@ -15,21 +14,19 @@ module.exports = {
     defaultWatchTasks: {
         uikit: true,
         sass: true,
-        sassdoc: true,
-        svg: true
+        sassdoc: true
     },
     workspace: {
         uikit: {
             base: folder.uikit,
-            src: folder.uikit + '*.+(html|nunjucks|njk)',
+            src: folder.assets + 'njk/index.njk',
             data: folder.uikit + 'data/global.json'
         },
         scss: [
             folder.scss + '**/*.s+(a|c)ss',
-            folder.assets + '**/*.s+(a|c)ss'
+            folder.assets + 'scss/**/*.s+(a|c)ss'
         ],
-        sassdoc: folder.scss + '**/*.s+(a|c)ss',
-        svg: folder.svg + '**/*.svg',
+        sassdoc: folder.scss + '**/*.s+(a|c)ss'
     },
     distribution: {
         uikit: folder.docs,
@@ -57,18 +54,14 @@ module.exports = {
             'letter-spacing'
         ],
         remMediaQueries: false,
-        singleOutput: false,
         outputStyle: 'expanded',
         optimizationMinify: true
     },
     uikitOptions: {
         indentSize: 4,
         endWithNewline: false,
-        minifyInline: true
-    },
-    svgOptions: {
-        outputName: 'sprite',
-        exampleFile: true
+        minifyInline: true,
+        outputExt: '.html'
     },
     syncOptions: {
         staticServer: true,
@@ -84,8 +77,7 @@ module.exports = {
             css: [
                 folder.distribution + 'css/**/*.{css,map}',
                 folder.docs + 'renderkit/css/**/*.{css,map}'
-            ],
-            svg: folder.docs + 'renderkit/svg/**/*.{svg,html}'
+            ]
         },
         dryRun: true,
         forceDelete: false,

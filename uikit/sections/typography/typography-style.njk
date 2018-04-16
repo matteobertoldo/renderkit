@@ -176,7 +176,7 @@
     text-transform: uppercase;
     letter-spacing: normal;
     line-height: normal;
-    color: {{globalcolor}};
+    color: {% if uikit.style.darkmode %} #f5f5f5 {% else %} {{globalcolor}} {% endif %};
     opacity: 0.75;
     margin: 0 0 3px 0;
     padding: 0;
@@ -192,6 +192,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
+}
+
+#renderkit-body .header-render .font-style-rule span {
+    margin-left: 4px;
 }
 
 #renderkit-body .header-render .size {

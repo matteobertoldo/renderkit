@@ -2,10 +2,6 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-// RenderKit
-// github.com/matteobertoldo/renderkit
-// Licensed under MIT Open Source
-
 ////
 /// @group global
 ////
@@ -48,16 +44,16 @@ $global-custom-checkbox-radio: true !default;
 /// @type Integer|Float
 $global-input-disabled-opacity: 0.5 !default;
 
-/// the global class that is applied in the validation of the forms, usually via js.
+/// The global class that is applied in the validation of the forms, usually via js.
 ///
 /// This global class will be applied, if validation has failed to:
 /// - `input[type="email"]`,
 /// - `input[type="password"]`,
 /// - `input[type="search"]`,
-/// - `select`,
 /// - `input[type="tel"]`,
 /// - `input[type="text"]`,
-/// - `textarea`,
 /// - `input[type="url"]`
+/// - `select`,
+/// - `textarea`
 /// @type String
 $global-form-inputs-error-class: 'error' !default;

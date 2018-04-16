@@ -4,7 +4,6 @@
  * github.com/matteobertoldo/renderkit
  * Licensed under MIT Open Source
  */
-/*@global fonts*/
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700|Josefin+Sans:400,400i,700|Abril+Fatface");
 html {
   font-family: sans-serif;
@@ -353,7 +352,6 @@ table {
   width: device-width;
 }
 
-/*@media-print*/
 @media print {
   *, ::after, ::before {
     text-shadow: none !important;
@@ -418,7 +416,6 @@ table {
   }
 }
 
-/*@headers-style*/
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -431,7 +428,6 @@ h6, .h6 {
   color: #666666;
 }
 
-/*@headers-style-bp*/
 h1,
 .h1 {
   font-size: 1.5rem;
@@ -513,7 +509,6 @@ h6,
   }
 }
 
-/*@paragraph-style*/
 p {
   font-family: "Josefin Sans", sans-serif;
   font-weight: normal;
@@ -524,7 +519,6 @@ p {
   margin: 0;
 }
 
-/*@foundation-text-alignment*/
 .text-left {
   text-align: left;
 }
@@ -571,7 +565,6 @@ p {
   }
 }
 
-/*@text-transform-classes*/
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -591,11 +584,11 @@ p {
   overflow: hidden;
 }
 
-/*@accessibility classes & pseudo elem*/
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
+
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -681,7 +674,6 @@ p {
   cursor: grabbing;
 }
 
-/*@foundation-visibility-classes*/
 @media only screen and (max-width: 640px) {
   .hide-for-small-only {
     display: none !important;
@@ -780,7 +772,6 @@ p {
   }
 }
 
-/*@float-classes*/
 .float-left {
   float: left;
 }
@@ -795,7 +786,6 @@ p {
   margin-right: auto;
 }
 
-/*@clearfix-classes*/
 .clearfix::before, .clearfix::after {
   content: '';
   display: table;
@@ -3157,7 +3147,6 @@ p {
   }
 }
 
-/*@foundation-flex-classes*/
 .align-left {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
@@ -3382,7 +3371,6 @@ p {
   }
 }
 
-/*@form-style*/
 .form-row {
   position: relative;
 }
@@ -3419,15 +3407,15 @@ p {
   transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.form-row input[type="email"]:focus, .form-row input[type="password"]:focus, .form-row input[type="search"]:focus, .form-row select:focus, .form-row input[type="tel"]:focus, .form-row input[type="text"]:focus, .form-row textarea:focus, .form-row input[type="url"]:focus {
+.form-row input:focus[type="email"], .form-row input:focus[type="password"], .form-row input:focus[type="search"], .form-row select:focus, .form-row input:focus[type="tel"], .form-row input:focus[type="text"], .form-row textarea:focus, .form-row input:focus[type="url"] {
   border-color: #b2b2b2;
 }
 
-.form-row input[type="email"]:hover:not([disabled]), .form-row input[type="password"]:hover:not([disabled]), .form-row input[type="search"]:hover:not([disabled]), .form-row select:hover:not([disabled]), .form-row input[type="tel"]:hover:not([disabled]), .form-row input[type="text"]:hover:not([disabled]), .form-row textarea:hover:not([disabled]), .form-row input[type="url"]:hover:not([disabled]) {
+.form-row input:hover:not([disabled])[type="email"], .form-row input:hover:not([disabled])[type="password"], .form-row input:hover:not([disabled])[type="search"], .form-row select:hover:not([disabled]), .form-row input:hover:not([disabled])[type="tel"], .form-row input:hover:not([disabled])[type="text"], .form-row textarea:hover:not([disabled]), .form-row input:hover:not([disabled])[type="url"] {
   border-color: #b2b2b2;
 }
 
-.form-row input[type="email"]:required, .form-row input[type="password"]:required, .form-row input[type="search"]:required, .form-row select:required, .form-row input[type="tel"]:required, .form-row input[type="text"]:required, .form-row textarea:required, .form-row input[type="url"]:required, .form-row input[type="email"]:invalid, .form-row input[type="password"]:invalid, .form-row input[type="search"]:invalid, .form-row select:invalid, .form-row input[type="tel"]:invalid, .form-row input[type="text"]:invalid, .form-row textarea:invalid, .form-row input[type="url"]:invalid {
+.form-row input:required[type="email"], .form-row input:required[type="password"], .form-row input:required[type="search"], .form-row select:required, .form-row input:required[type="tel"], .form-row input:required[type="text"], .form-row textarea:required, .form-row input:required[type="url"], .form-row input:invalid[type="email"], .form-row input:invalid[type="password"], .form-row input:invalid[type="search"], .form-row select:invalid, .form-row input:invalid[type="tel"], .form-row input:invalid[type="text"], .form-row textarea:invalid, .form-row input:invalid[type="url"] {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -3438,7 +3426,7 @@ p {
   color: #666666;
 }
 
-.form-row input.error[type="email"]:hover, .form-row input.error[type="password"]:hover, .form-row input.error[type="search"]:hover, .form-row select.error:hover, .form-row input.error[type="tel"]:hover, .form-row input.error[type="text"]:hover, .form-row textarea.error:hover, .form-row input.error[type="url"]:hover, .form-row input.error[type="email"]:focus, .form-row input.error[type="password"]:focus, .form-row input.error[type="search"]:focus, .form-row select.error:focus, .form-row input.error[type="tel"]:focus, .form-row input.error[type="text"]:focus, .form-row textarea.error:focus, .form-row input.error[type="url"]:focus {
+.form-row input.error:hover[type="email"], .form-row input.error:hover[type="password"], .form-row input.error:hover[type="search"], .form-row select.error:hover, .form-row input.error:hover[type="tel"], .form-row input.error:hover[type="text"], .form-row textarea.error:hover, .form-row input.error:hover[type="url"], .form-row input.error:focus[type="email"], .form-row input.error:focus[type="password"], .form-row input.error:focus[type="search"], .form-row select.error:focus, .form-row input.error:focus[type="tel"], .form-row input.error:focus[type="text"], .form-row textarea.error:focus, .form-row input.error:focus[type="url"] {
   border-color: #c04649;
   background-color: #f2c0c1;
 }
@@ -3553,7 +3541,6 @@ p {
   resize: none;
 }
 
-/*@checkbox-radio-classes*/
 .input-checkbox,
 .input-radio {
   font-family: "Josefin Sans", sans-serif;
@@ -3696,7 +3683,6 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   border-color: #c04649;
 }
 
-/*@colors-palette*/
 .palette-color-primary {
   color: #666;
 }
@@ -3761,7 +3747,6 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
   background-color: #f2c0c1;
 }
 
-/*@shape-classes*/
 .shape-arrow {
   display: block;
   width: 20px;

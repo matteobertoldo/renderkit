@@ -5,7 +5,6 @@
 /// Clearfix classes.
 /// @group _global renderkit
 @mixin clearfix-classes {
-    /*@clearfix-classes*/
     .clearfix {
     	@include clearfix;
     }

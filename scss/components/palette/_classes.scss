@@ -9,7 +9,6 @@
 /// Ex. `.palette-color-primary`, `.background-color-primary`.
 /// @group _global renderkit
 @mixin colors-palette {
-    /*@colors-palette*/
     @include manage-palette;
 
     @each $palette, $color in $palette-color {
