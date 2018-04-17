@@ -1,6 +1,6 @@
 {
   "name": "renderkit",
-  "version": "0.9.0",
+  "version": "0.9.1-beta",
   "main": "dist/css/renderkit.css",
   "description": "Definitely the light way for start new front-end web projects.",
   "author": "Matteo Bertoldo <mbertoldo@alpenite.com>",
