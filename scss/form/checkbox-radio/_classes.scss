@@ -35,7 +35,7 @@
         @if ($global-custom-checkbox-radio) {
             @include checkbox-shape($align, $size, $custom-checkbox-mark-color, $custom-checkbox-mark-thick, $custom-checkbox-border-radius);
             @include checkbox-attr($hover-border, $hover-border-color, $checked-border, $custom-checkbox-checked-border-color, $custom-checkbox-focus-border-color);
-            @include radio-validation($error, $custom-checkbox-error-border-color, $custom-checkbox-error-background-color);
+            @include checkbox-validation($error, $custom-checkbox-error-border-color, $custom-checkbox-error-background-color);
         }
     }
 

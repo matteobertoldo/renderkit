@@ -69,15 +69,15 @@ $arrow-shape-direction: (
 	}
 }
 
-/// Creates a CSS "close-shape", which can be used for modals and more.
-/// @param {Number} $shape-close-size - Size of the close shape.
-/// @param {Number} $shape-close-line-size - Size of lines close shape.
-/// @param {Color} $shape-close-color - Color of the close shape.
-@mixin shape-close($shape-close-size, $shape-close-line-size, $shape-close-color) {
+/// Creates a CSS "cross-shape", which can be used for modals and more.
+/// @param {Number} $shape-cross-size - Size of the close shape.
+/// @param {Number} $shape-cross-line-size - Size of lines close shape.
+/// @param {Color} $shape-cross-color - Color of the close shape.
+@mixin shape-cross($shape-cross-size, $shape-cross-line-size, $shape-cross-color) {
     display: block;
     position: relative;
-    width: $shape-close-size;
-    height: $shape-close-size;
+    width: $shape-cross-size;
+    height: $shape-cross-size;
     border: 0;
     background: none;
     margin: 0;
@@ -90,9 +90,9 @@ $arrow-shape-direction: (
         top: 50%;
         left: 0;
         width: 100%;
-        height: $shape-close-line-size;
-        background-color: $shape-close-color;
-        margin-top: - rem($shape-close-line-size / 2);
+        height: $shape-cross-line-size;
+        background-color: $shape-cross-color;
+        margin-top: - rem($shape-cross-line-size / 2);
     }
 
     &::before {

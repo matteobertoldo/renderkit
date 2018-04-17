@@ -25,6 +25,6 @@
     }
 
     .shape-cross {
-        @include shape-close($shape-cross-size, $shape-cross-thickness, $shape-cross-color);
+        @include shape-cross($shape-cross-size, $shape-cross-thickness, $shape-cross-color);
     }
 }

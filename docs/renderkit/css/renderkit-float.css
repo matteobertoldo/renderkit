@@ -2194,12 +2194,12 @@ input[type="checkbox"]:focus:not(:checked) + .input-checkbox::before {
   outline-offset: -2px;
 }
 
-input[type="radio"].error + .input-checkbox::before {
+input[type="checkbox"].error:not([disabled]) + .input-checkbox::before {
   border-color: #c04649;
   background-color: #f2c0c1;
 }
 
-input[type="radio"].error:focus:not(:checked) + .input-checkbox::before {
+input[type="checkbox"].error:focus:not(:checked) + .input-checkbox::before {
   border-color: #c04649;
 }
 
