@@ -18,6 +18,9 @@
 
     .input-checkbox,
     .input-radio {
+        @if ($global-custom-checkbox-radio) {
+            @include checkbox-radio-style($align, $size, $custom-checkbox-radio-label-gutter, $custom-checkbox-radio-cursor, $custom-checkbox-radio-background-color, $custom-checkbox-radio-border);
+        }
         font: {
             family: $custom-checkbox-radio-font-family;
             size: $custom-checkbox-radio-font-size;
@@ -26,9 +29,6 @@
         letter-spacing: $custom-checkbox-radio-letter-spacing;
         color: $custom-checkbox-radio-color;
         margin: 0;
-        @if ($global-custom-checkbox-radio) {
-            @include checkbox-radio-style($align, $size, $custom-checkbox-radio-label-gutter, $custom-checkbox-radio-cursor, $custom-checkbox-radio-background-color, $custom-checkbox-radio-border);
-        }
     }
 
     .input-checkbox {

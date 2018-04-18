@@ -9,10 +9,10 @@
 /// Function for catch HEX color in `$colors-palette` map.
 /// @param {String} $color - The key of `$colors-palette` map.
 @function palette($color) {
-	@if map-has-key($palette-color, $color) {
+    @if map-has-key($palette-color, $color) {
         @return map-get($palette-color, $color);
     } @else {
-        @warn 'No color palette found in `$colors-palette` map.';
+        @error 'No color palette found in `$colors-palette` map.';
     }
 }
 
