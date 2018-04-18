@@ -8,14 +8,14 @@
 @mixin shape-classes {
     .shape-arrow {
         display: block;
-    	width: $shape-arrow-size;
-    	height: $shape-arrow-size;
-    	border: solid $shape-arrow-color;
-    	border-width: 0 $shape-arrow-thickness $shape-arrow-thickness 0;
+        width: $shape-arrow-size;
+        height: $shape-arrow-size;
+        border: solid $shape-arrow-color;
+        border-width: 0 $shape-arrow-thickness $shape-arrow-thickness 0;
 
-    	@each $direction, $transform in $arrow-shape-direction {
-    		&.#{$direction} {
-    			transform: rotate3d(0, 0, 1, $transform);
+        @each $direction, $transform in $arrow-shape-direction {
+            &.#{$direction} {
+                transform: rotate3d(0, 0, 1, $transform);
     		}
     	}
     }

@@ -14,7 +14,8 @@ module.exports = {
     defaultWatchTasks: {
         uikit: true,
         sass: true,
-        sassdoc: true
+        sassdoc: true,
+        lint: true
     },
     workspace: {
         uikit: {
@@ -23,17 +24,14 @@ module.exports = {
             data: folder.uikit + 'data/global.json'
         },
         scss: [
-            folder.scss + '**/*.s+(a|c)ss',
-            folder.assets + 'scss/**/*.s+(a|c)ss'
+            folder.scss + '**/*.scss',
+            folder.assets + 'scss/**/*.scss'
         ],
-        sassdoc: folder.scss + '**/*.s+(a|c)ss'
+        sassdoc: folder.scss + '**/*.scss'
     },
     distribution: {
         uikit: folder.docs,
-        scss: [
-            folder.distribution + 'css/',
-            folder.docs + 'renderkit/css/'
-        ],
+        scss: folder.distribution + 'css/',
         sassdoc: folder.docs + 'sass',
         svg: folder.docs + 'renderkit/svg/'
     },
@@ -77,7 +75,8 @@ module.exports = {
             html: folder.docs + '*.html',
             css: [
                 folder.distribution + 'css/**/*.{css,map}',
-                folder.docs + 'renderkit/css/**/*.{css,map}'
+                folder.docs + 'renderkit/css/**/*.{css,map}',
+                folder.docs + 'sass/**/*'
             ]
         },
         dryRun: true,

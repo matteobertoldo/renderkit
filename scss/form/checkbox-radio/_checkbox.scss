@@ -22,13 +22,13 @@
     }
 
     &::after {
+        @include arrow(rem($marker-size-half), rem($marker-size), $checkbox-mark-color, $checkbox-mark-thick);
         @if ($center-align) {
             top: 50%;
         } @else {
             top: rem($checkbox-size - ($marker-size + $marker-size-half));
         }
         left: rem(($checkbox-size - $marker-size-half) / 2);
-        @include arrow(rem($marker-size-half), rem($marker-size), $checkbox-mark-color, $checkbox-mark-thick);
         @if ($center-align) {
             margin-top: -(rem($marker-size-half));
         }

@@ -3,6 +3,7 @@ logs
 npm-debug.log*
 *.log
 node_modules
+linters
 *.npm
 *.idea
 *.sublime-*
