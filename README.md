@@ -7,8 +7,8 @@ RenderKit is a lightweight `scss` framework that brings together the best front-
 
 RenderKit can also be used as styleguide and visual tester for the various `@mixins` installed with sections already ready for use.
 
-[!npm(https://img.shields.io/npm/v/renderkit.svg)](https://www.npmjs.com/package/renderkit)
-[!npm(https://img.shields.io/npm/l/renderkit.svg)](https://www.npmjs.com/package/renderkit)
+[![npm](https://img.shields.io/npm/v/renderkit.svg)](https://www.npmjs.com/package/renderkit)
+[![npm](https://img.shields.io/npm/l/renderkit.svg)](https://www.npmjs.com/package/renderkit)
 
 ## Getting started
 
