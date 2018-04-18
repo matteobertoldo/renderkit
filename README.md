@@ -19,45 +19,45 @@ npm install renderkit
 
 The following tools are included in the `scss` package:
 
--   CROSS BROWSING 💻
+-   **CROSS BROWSING** 💻
     -   [Normalize v.8.0.0](https://github.com/necolas/normalize.css) Extended and rewritten in `scss`. Configurable, in complete safety.
 
--   BREAKPOINTS 🔗
+-   **BREAKPOINTS** 🔗
     -   [Foundation Breakpoint](https://foundation.zurb.com/sites/docs/media-queries.html#changing-the-breakpoints) with `emless` output. (For pixel lovers).
 
--   GRID SYSTEM ⚔️
+-   **GRID SYSTEM** ⚔️
     -   [Foundation XY-Grid](https://foundation.zurb.com/sites/docs/xy-grid.html) with `remless` output for the gutters, with all mixin for [building semantically](https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically).
     -   [Foundation Float Grid](https://foundation.zurb.com/sites/docs/grid.html) with `remless` output for the gutters, with all mixin for [building semantically](https://foundation.zurb.com/sites/docs/grid.html#building-semantically).
 
--   TYPOGRAPHY ✒️
+-   **TYPOGRAPHY** ✒️
     -   [Mixin](https://matteobertoldo.github.io/renderkit/sass/index.html#_global%20renderkit-mixin-global-fonts) for `@font-face` rules & Google Fonts.
     -   [Headers responsive](https://matteobertoldo.github.io/renderkit/sass/index.html#typography-mixin-headers-style-bp).
 
--   FLEXBOX 🏋🏽‍
+-   **FLEXBOX** 🏋🏽‍
     -   [Foundation Flexbox Utilities](https://foundation.zurb.com/sites/docs/flexbox-utilities.html) (The ability to enable or disable `flex-source-ordering` has been added.)
 
--   FORM 🕹
+-   **FORM** 🕹
     -   Powerful [mixin](https://matteobertoldo.github.io/renderkit/sass/index.html#mixin-form-style) to styling up all cross browsing fields.
     -   Powerful checkbox & radio [mixin](https://matteobertoldo.github.io/renderkit/sass/index.html#mixin-checkbox-radio-classes) to styling up checkbox & radio without `js`. Available with **building semantically**.
 
--   ACCESSIBILITY ⛑
+-   **ACCESSIBILITY** ⛑
     -   [Accessibility classes](https://matteobertoldo.github.io/renderkit/sass/index.html#mixin-accessibility-classes)
     -   [Layout mixins](https://matteobertoldo.github.io/renderkit/sass/index.html#layout-mixin)
 
--   PALETTE 🎨
+-   **PALETTE** 🎨
     -   [Mixin](https://matteobertoldo.github.io/renderkit/sass/index.html#mixin-colors-palette) for manage all palette colors via `scss` map.
 
--   SHAPES 📐
+-   **SHAPES** 📐
     -   [Mixins](https://matteobertoldo.github.io/renderkit/sass/index.html#shapes-mixin) with **building semantically** & [classes](https://matteobertoldo.github.io/renderkit/sass/index.html#mixin-shape-classes) to generate shapes without images.
 
--   PROTOTYPING 🎛
+-   **PROTOTYPING** 🎛
     -   [Foundation visibility classes](https://foundation.zurb.com/sites/docs/visibility.html)
     -   [Foundation text alignment](https://foundation.zurb.com/sites/docs/typography-helpers.html#text-alignment)
     -   [Text transformation classes](https://matteobertoldo.github.io/renderkit/sass/index.html#typography-mixin-text-transform-classes)
     -   [Float classes](https://matteobertoldo.github.io/renderkit/sass/index.html#_global%20renderkit-mixin-float-classes)
     -   [Clearfix classes](https://matteobertoldo.github.io/renderkit/sass/index.html#_global%20renderkit-mixin-clearfix-classes)
 
--   MEDIA PRINT 🖨
+-   **MEDIA PRINT** 🖨
     -   [Media Print](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css) from original HTML5 boilerplate.
 
 **Important notes:**

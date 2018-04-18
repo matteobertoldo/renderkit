@@ -34,10 +34,10 @@ gulp.task('uikit', () => {
         log('File: ' + colors.red(err.fileName));
     })
     .pipe(htmlclean())
-    .pipe(htmlbeautify({
+    .pipe(gulpif(conf.uikitOptions.beautify, htmlbeautify({
         indent_size: conf.uikitOptions.indentSize,
         end_with_newline: conf.uikitOptions.endWithNewLine,
-    }))
+    })))
     .pipe(gulpif(conf.uikitOptions.minifyInline, minifyInline({
         css: {
             level: 2
