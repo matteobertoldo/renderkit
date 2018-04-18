@@ -58,6 +58,7 @@ module.exports = {
         optimizationMinify: true
     },
     uikitOptions: {
+        beautify: false,
         indentSize: 4,
         endWithNewline: false,
         minifyInline: true,

@@ -21,7 +21,7 @@ gulp.task('watch', (done) => {
         defaultWatchTasks.push('browser-sync');
         sequence.apply(null, defaultWatchTasks, done);
 
-        watch([conf.workspace.uikit.base, conf.workspace.uikit.data], () => {
+        watch([conf.workspace.uikit.base, conf.workspace.uikit.src, conf.workspace.uikit.data], () => {
             gulp.start('uikit:watch');
         });
 
