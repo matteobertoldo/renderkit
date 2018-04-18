@@ -7,6 +7,9 @@ RenderKit is a lightweight `scss` framework that brings together the best front-
 
 RenderKit can also be used as styleguide and visual tester for the various `@mixins` installed with sections already ready for use.
 
+[!npm(https://img.shields.io/npm/v/renderkit.svg)](https://www.npmjs.com/package/renderkit)
+[!npm(https://img.shields.io/npm/l/renderkit.svg)](https://www.npmjs.com/package/renderkit)
+
 ## Getting started
 
 Install via NPM
@@ -61,7 +64,7 @@ The following tools are included in the `scss` package:
     -   [Media Print](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css) from original HTML5 boilerplate.
 
 **Important notes:**
-all packages including the `Foundation` core have been revisited and customized without any `rem` output. If you want to install any additional Foundtion package, full functionality is not guaranteed.
+all packages including the `Foundation` core have been revisited and customized without any `rem` output. If you want to install any additional Foundation package, full functionality is not guaranteed.
 
 If you want to completely use all the accessibility features present, you need to install [what-input](https://github.com/ten1seven/what-input).
 For all `scss` **documentation** visit [this](https://matteobertoldo.github.io/renderkit/sass/index.html) page.
