@@ -125,17 +125,17 @@
             @include grid-col-pos(center);
         }
 
-		$-gutter-unpos-selector: (
-			if($uncenter, '.#{$-zf-size}-#{$uncenter}', null),
-			if($push, '.#{$-zf-size}-#{$push}-0', null),
-			if($pull, '.#{$-zf-size}-#{$pull}-0', null),
+        $-gutter-unpos-selector: (
+            if($uncenter, '.#{$-zf-size}-#{$uncenter}', null),
+            if($push, '.#{$-zf-size}-#{$push}-0', null),
+            if($pull, '.#{$-zf-size}-#{$pull}-0', null),
 		);
 
-		@if ($uncenter or $push or $pull) {
-			#{$-gutter-unpos-selector} {
-				@include grid-col-unpos;
-			}
-	    }
+        @if ($uncenter or $push or $pull) {
+            #{$-gutter-unpos-selector} {
+                @include grid-col-unpos;
+            }
+        }
 
         .#{$-zf-size}-#{$pull}-0,
         .#{$-zf-size}-#{$push}-0,
@@ -144,8 +144,8 @@
         }
     }
 
-	.#{$column}-#{$block} {
-    	@include grid-column-margin;
+    .#{$column}-#{$block} {
+        @include grid-column-margin;
 	}
 
     @if $column == 'column' and has-value($grid-column-alias) {

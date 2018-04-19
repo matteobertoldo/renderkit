@@ -79,10 +79,10 @@ $breakpoint-classes: (small medium large) !default;
     $str: '';
     $named: false;
 
-	@if $bp == 'landscape' or $bp == 'portrait' {
-		@return '(orientation: #{$bp})';
+    @if $bp == 'landscape' or $bp == 'portrait' {
+        @return '(orientation: #{$bp})';
 	} @else if $bp == 'retina' {
-		@return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
+        @return '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
     }
 
     @if type-of($bp) == 'string' {
@@ -100,37 +100,37 @@ $breakpoint-classes: (small medium large) !default;
         }
     }
 
-	@if $bp > 0 or $dir == 'only' or $dir == 'down' {
-		@if $dir == 'only' {
-			@if $named == true {
-		        @if $bp > 0 {
-					$str: $str + '(min-width: #{$bp + 1})';
+    @if $bp > 0 or $dir == 'only' or $dir == 'down' {
+        @if $dir == 'only' {
+            @if $named == true {
+                @if $bp > 0 {
+                    $str: $str + '(min-width: #{$bp + 1})';
 
-					@if $bp-max != null {
-						$str: $str + ' and ';
+                    @if $bp-max != null {
+                        $str: $str + ' and ';
 					}
 			  	}
 
-				@if $bp-max != null {
-					$str: $str + '(max-width: #{$bp-max})';
+                @if $bp-max != null {
+                    $str: $str + '(max-width: #{$bp-max})';
 			    }
 			} @else {
-				@warn 'breakpoint(): Only named media queries can have an `only` range.';
+                @warn 'breakpoint(): Only named media queries can have an `only` range.';
 			}
 	   	} @else if $dir == 'down' {
-			$max: if($named, $bp-max, $bp);
+            $max: if($named, $bp-max, $bp);
 
-			@if $named or $bp > 0 {
-				@if $max != null {
-					$str: $str + '(max-width: #{$max})';
-				}
-			}
+            @if $named or $bp > 0 {
+                @if $max != null {
+                    $str: $str + '(max-width: #{$max})';
+                }
+            }
 		} @else if $bp > 0 {
-			$str: $str + '(min-width: #{$bp + 1})';
+            $str: $str + '(min-width: #{$bp + 1})';
 	    }
-	}
+    }
 
-	@return $str;
+    @return $str;
 }
 
 /// Wraps a media query around the content you put inside the mixin. This mixin accepts a number of values:
