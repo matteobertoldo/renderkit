@@ -17,32 +17,32 @@
     // Add `box-sizing: border-box` to `html`, not in universal selector `*` for best performance.
     // @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
     html {
-    	font-family: sans-serif;
+        font-family: sans-serif;
         @if ($html-root-font-size) {
             font-size: $global-font-size;
         }
-    	-webkit-text-size-adjust: percentage(1);
-    	-webkit-tap-highlight-color: $ios-tap-color;
-    	box-sizing: border-box;
+        -webkit-text-size-adjust: percentage(1);
+        -webkit-tap-highlight-color: $ios-tap-color;
+        box-sizing: border-box;
     }
 
     // universal reset (inherit ´box sizing´ for best performance)
     *, ::before, ::after {
-    	box-sizing: inherit;
+        box-sizing: inherit;
     }
 
     body {
-    	font: {
-    		family: $body-font-family;
+        font: {
+            family: $body-font-family;
             @if ($body-root-font-size) {
                 size: $global-body-font-size;
             }
-    		weight: $body-font-weight;
+            weight: $body-font-weight;
     	}
         background-color: $body-background-color;
-    	color: $body-base-color;
-    	line-height: $body-line-height;
-    	margin: 0;
+        color: $body-base-color;
+        line-height: $body-line-height;
+        margin: 0;
     }
 
     // HTML 5 tags correct display
@@ -60,7 +60,7 @@
     nav,
     section,
     summary {
-    	display: block;
+        display: block;
     }
 
     // Remove the default html tags margin
@@ -85,7 +85,7 @@
     p,
     pre,
     ul {
-    	margin: 0;
+        margin: 0;
     }
 
     // Add the correct display in IE 9 and lower.
@@ -93,26 +93,26 @@
     canvas,
     progress,
     video {
-    	display: inline-block;
-    	vertical-align: baseline;
+        display: inline-block;
+        vertical-align: baseline;
     }
 
     // Add the correct display in iOS 4-7.
     audio:not([controls]) {
-    	display: none;
-    	height: 0;
+        display: none;
+        height: 0;
     }
 
     // Add the correct vertical alignment in Chrome, Firefox, and Opera.
     progress {
-    	vertical-align: baseline;
+        vertical-align: baseline;
     }
 
     // Add the correct display in IE 10-.
     // `template` Add the correct display in IE.
     template,
     [hidden] {
-    	display: none;
+        display: none;
     }
 
     // Remove the gray background on active links in IE 10.
@@ -120,21 +120,21 @@
     // Remove the outline on focused links (configurable).
     // [data-whatinput="*"] Detect if is a mouse or touch event for remove the defaut outline. This improve the accessibility with keyboard navigation.
     a {
-    	background-color: transparent;
-    	color: $links-color;
+        background-color: transparent;
+        color: $links-color;
 
-    	@if ($global-links-text-decoration) {
-    		text-decoration: underline;
+        @if ($global-links-text-decoration) {
+            text-decoration: underline;
     	} @else {
             text-decoration: none;
         }
 
         @if ($focus-links-outline-hidden) {
             @if ($what-input-outline-keyboard-detect) {
-            	[data-whatinput="mouse"] &:focus,
-            	[data-whatinput="touch"] &:focus, {
-            		outline: 0;
-            	}
+                [data-whatinput="mouse"] &:focus,
+                [data-whatinput="touch"] &:focus, {
+                    outline: 0;
+                }
             } @else {
                 &:focus {
                     outline: 0;
@@ -146,70 +146,70 @@
     // Remove the bottom border in Firefox 39-.
     // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
     abbr[title] {
-    	border-bottom: none;
-    	text-decoration: underline;
-    	text-decoration: underline dotted;
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
     }
 
     // Add the correct font weight in Chrome, Edge, and Safari.
     b,
     strong {
-    	font: {
-    		family: $strong-font-family;
-    		weight: $strong-font-weight;
-    	}
+        font: {
+            family: $strong-font-family;
+            weight: $strong-font-weight;
+        }
     }
 
     // Add the correct font style in Android 4.3-.
     dfn {
-    	font-style: italic;
+        font-style: italic;
     }
 
     // Add the correct background and color in IE 9-.
     mark {
-    	background-color: #ff0;
-    	color: #000;
+        background-color: #fff000;
+        color: #000000;
     }
 
     // Replace the default "quotes" in all browsers.
     q {
-    	&::before {
-    		content: '\201C';
+        &::before {
+            content: '\201C';
     	}
 
-    	&::after {
-    		content: '\201D';
+        &::after {
+            content: '\201D';
     	}
     }
 
     // Add the correct font size in all browsers.
     small {
-    	font-size: percentage(0.8);
+        font-size: percentage(0.8);
     }
 
     // Prevent <sub/> and <sup/> elements from affecting the line height in all browsers.
     sub,
     sup {
-    	position: relative;
-    	font-size: percentage(0.75);
-    	line-height: 0;
-    	vertical-align: baseline;
+        position: relative;
+        font-size: percentage(0.75);
+        line-height: 0;
+        vertical-align: baseline;
     }
 
     sub {
-    	bottom: -0.25em;
+        bottom: -0.25em;
     }
 
     sup {
-    	top: -0.5em;
+        top: -0.5em;
     }
 
     // Make `img`,`video` tags responsive in all browsers.
     img,
     video {
-    	max-width: 100%;
-    	height: auto;
-    	vertical-align: middle;
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
     }
 
     // Remove the border on images inside links in IE 10-, and remove the default border for `iframe` tag in all browsers.
@@ -224,38 +224,38 @@
     kbd,
     pre,
     samp {
-    	font: {
-    		family: monospace, monospace;
-    		size: 1em;
+        font: {
+            family: monospace, monospace;
+            size: 1em;
     	}
     }
 
     // Set default overflow auto on `pre` tag in all browsers.
     pre {
-    	overflow: auto;
+        overflow: auto;
     }
 
     // Add the correct box sizing in Firefox.
     // Show the overflow in Edge and IE.
     hr {
-    	box-sizing: content-box;
-    	height: 0;
-    	overflow: visible;
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
     }
 
     // SVG inline tag reset.
     // Hide the overflow in IE.
     svg {
-    	display: inline-block;
-    	vertical-align: middle;
-    	position: relative;
-    	top: -0.063em;
-    	width: 100%;
-    	height: 100%;
-    	fill: currentColor;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: -0.063em;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
 
-    	&:not(:root) {
-    		overflow: hidden;
+        &:not(:root) {
+            overflow: hidden;
     	}
     }
 
@@ -270,14 +270,14 @@
     input,
     select,
     textarea {
-    	font-synthesis: none;
-    	text-rendering: $global-text-rendering;
-    	-webkit-font-smoothing: antialiased;
-    	-moz-osx-font-smoothing: grayscale;
+        font-synthesis: none;
+        text-rendering: $global-text-rendering;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         @if ($global-font-liga-kern) {
             font-feature-settings: 'liga', 'kern';
         }
-    	direction: $global-text-direction;
+        direction: $global-text-direction;
     }
 
     // Change font properties to `inherit` in all browsers (opinionated).
@@ -288,19 +288,19 @@
     select,
     textarea {
         font-family: inherit;
-    	@if ($reset-appearance) {
-    		font-size: percentage(1);
+        @if ($reset-appearance) {
+            font-size: percentage(1);
     	}
-    	color: inherit;
-    	line-height: $body-line-height;
-    	margin: 0;
+        color: inherit;
+        line-height: $body-line-height;
+        margin: 0;
 
         @if ($focus-inputs-outline-hidden) {
             @if ($what-input-outline-keyboard-detect) {
                 [data-whatinput="mouse"] &:focus,
-            	[data-whatinput="touch"] &:focus {
-            		outline: 0;
-            	}
+                [data-whatinput="touch"] &:focus {
+                    outline: 0;
+                }
 
             } @else {
                 &:focus {
@@ -314,15 +314,15 @@
     // Show the overflow in Edge.
     button,
     input {
-    	overflow: visible;
+        overflow: visible;
     }
 
     // Remove the inheritance of text transform in Edge, Firefox, and IE.
     // Remove the inheritance of text transform in Firefox.
     select,
     button {
-    	text-transform: none;
-    	cursor: pointer;
+        text-transform: none;
+        cursor: pointer;
     }
 
     // Prevent a WebKit bug where (2) destroys native `audio` and `video` controls in Android 4.
@@ -331,7 +331,7 @@
     html [type="button"],
     [type="reset"],
     [type="submit"] {
-    	-webkit-appearance: button;
+        -webkit-appearance: button;
     }
 
     // Remove the inner border and padding in Firefox.
@@ -339,26 +339,26 @@
     [type="button"]::-moz-focus-inner,
     [type="reset"]::-moz-focus-inner,
     [type="submit"]::-moz-focus-inner {
-    	border-style: none;
-    	padding: 0;
+        border-style: none;
+        padding: 0;
     }
 
     // Change the border, margin, and padding in all browsers (opinionated).
     fieldset {
-    	border: 1px solid silver;
-    	margin: 0 2px;
-    	padding: 0.313em 0.625em 0.750em;
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.313em 0.625em 0.750em;
     }
 
     // Correct the text wrapping in Edge and IE.
     // Correct the color inheritance from `fieldset` elements in IE.
     // Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers.
     legend {
-    	display: table;
-    	max-width: 100%;
-    	white-space: normal;
-    	color: inherit;
-    	padding: 0;
+        display: table;
+        max-width: 100%;
+        white-space: normal;
+        color: inherit;
+        padding: 0;
     }
 
     // Remove the default margin on input[type="checkbox"] & [type="radio"].
@@ -370,44 +370,44 @@
     // `::-webkit-file-upload-button` - Correct the inability to style clickable types in iOS and Safari.
     // Change font properties to `inherit` in Safari.
     %reset-input-style {
-    	appearance: none;
-    	border: 1px solid lightgray;
+        appearance: none;
+        border: 1px solid lightgray;
         border-radius: 0;
     }
 
     input {
-    	&[type="checkbox"],
-    	&[type="radio"] {
-    		@if ($global-custom-checkbox-radio) {
+        &[type="checkbox"],
+        &[type="radio"] {
+            @if ($global-custom-checkbox-radio) {
                 appearance: none !important;
                 @include visuallyhidden;
     		} @else {
-    			margin: 0;
-    			padding: 0;
-    		}
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        @each $input-type in (email, password, search, tel, text, url) {
+            &[type="#{$input-type}"] {
+                @if ($reset-appearance) {
+                    @extend %reset-input-style;
+                }
+            }
+        }
+
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+            height: auto;
     	}
 
-    	@each $input-type in (email, password, search, tel, text, url) {
-    		&[type="#{$input-type}"] {
-    			@if ($reset-appearance) {
-    				@extend %reset-input-style;
-    			}
-    		}
-    	}
-
-    	&[type="number"]::-webkit-inner-spin-button,
-    	&[type="number"]::-webkit-outer-spin-button {
-    		height: auto;
-    	}
-
-    	&[type="search"] {
+        &[type="search"] {
             @if ($reset-appearance) {
                 @extend %reset-input-style;
             }
             outline-offset: -2px;
 
-    		&::-webkit-search-decoration {
-    			-webkit-appearance: none;
+            &::-webkit-search-decoration {
+                -webkit-appearance: none;
     		}
 
             @if not ($global-input-search-cancel-button) {
@@ -417,12 +417,12 @@
             }
     	}
 
-    	&::-webkit-file-upload-button {
-    		-webkit-appearance: button;
-    		font: inherit;
-    		@if ($reset-appearance) {
-    			border: 1px solid lightgray;
-    			background-color: white;
+        &::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+            @if ($reset-appearance) {
+                border: 1px solid lightgray;
+                background-color: white;
                 border-radius: 0;
     		}
     	}
@@ -443,50 +443,50 @@
             @extend %reset-input-style;
 
             &:-moz-focusring {
-    			color: transparent;
-    			text-shadow: 0 0 0 $body-base-color;
+                color: transparent;
+                text-shadow: 0 0 0 $body-base-color;
     		}
 
-    		&::-ms-expand {
-    			display: none;
+            &::-ms-expand {
+                display: none;
     		}
 
-    		&::-ms-value {
-    			color: currentColor;
+            &::-ms-value {
+                color: currentColor;
     		}
     	}
 
-    	@if ($global-select-reset-appearance-options) {
-    		appearance: none !important;
-    		@include visuallyhidden;
+        @if ($global-select-reset-appearance-options) {
+            appearance: none !important;
+            @include visuallyhidden;
     	}
     }
 
     // Remove the default vertical scrollbar in IE.
     textarea {
-    	@if ($reset-appearance) {
-    		@extend %reset-input-style;
+        @if ($reset-appearance) {
+            @extend %reset-input-style;
     	}
-    	overflow: auto;
+        overflow: auto;
     }
 
     // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
     @if ($reset-appearance) {
-    	[disabled] {
-    		color: inherit;
-    		opacity: $global-input-disabled-opacity !important;
-    		cursor: default !important;
+        [disabled] {
+            color: inherit;
+            opacity: $global-input-disabled-opacity !important;
+            cursor: default !important;
     	}
     }
 
     // Collapse borders on table in every browsers.
     table {
-    	border-collapse: collapse;
-    	border-spacing: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
     }
 
     // IE10 viewport hack for Surface/Desktop Windows 8 bug.
     @-ms-viewport {
-    	width: device-width;
+        width: device-width;
     }
 }

@@ -6,11 +6,11 @@
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
 /// @group visibility
 @mixin show-for($size) {
-	$size: map-get($breakpoints, $size);
+    $size: map-get($breakpoints, $size);
 
-	@include breakpoint($size down) {
-		display: none !important;
-	}
+    @include breakpoint($size down) {
+        display: none !important;
+    }
 }
 
 /// Hide an element by default, only displaying it within a certain breakpoint.
@@ -19,21 +19,21 @@
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
 /// @group visibility
 @mixin show-for-only($size) {
-	$lower-bound-size: map-get($breakpoints, $size);
-	$upper-bound-size: -zf-map-next($breakpoints, $size);
+    $lower-bound-size: map-get($breakpoints, $size);
+    $upper-bound-size: -zf-map-next($breakpoints, $size);
 
-	@if $upper-bound-size == null {
-		@media only screen and (max-width: $lower-bound-size) {
-			display: none !important;
-		}
+    @if $upper-bound-size == null {
+        @media only screen and (max-width: $lower-bound-size) {
+            display: none !important;
+        }
 	} @else {
-		@if strip-unit($lower-bound-size) == 0 {
-			@media only screen and (min-width: $upper-bound-size + 1) {
-				display: none !important;
-			}
+        @if strip-unit($lower-bound-size) == 0 {
+            @media only screen and (min-width: $upper-bound-size + 1) {
+                display: none !important;
+            }
 		} @else {
-			@media only screen and (max-width: $lower-bound-size), only screen and (min-width: $upper-bound-size + 1) {
-				display: none !important;
+            @media only screen and (max-width: $lower-bound-size), only screen and (min-width: $upper-bound-size + 1) {
+                display: none !important;
 			}
 		}
 	}
@@ -43,79 +43,79 @@
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
 /// @group visibility
 @mixin hide-for($size) {
-	@include breakpoint($size) {
-		display: none !important;
-	}
+    @include breakpoint($size) {
+        display: none !important;
+    }
 }
 
 /// Show an element by default, and hide it above a certain screen size.
 /// @param {Keyword} $size - Breakpoint to use. **Must be a breakpoint defined in `$breakpoints`.**
 /// @group visibility
 @mixin hide-for-only($size) {
-	@include breakpoint($size only) {
-		display: none !important;
-	}
+    @include breakpoint($size only) {
+        display: none !important;
+    }
 }
 
 /// Foundation visibilty clasess.
 /// @link https://foundation.zurb.com/sites/docs/visibility.html
 /// @group _global renderkit
 @mixin foundation-visibility-classes {
-	@each $size in $breakpoint-classes {
-		@if $size != $-zf-zero-breakpoint {
-			.hide-for-#{$size} {
-				@include hide-for($size);
-			}
+    @each $size in $breakpoint-classes {
+        @if $size != $-zf-zero-breakpoint {
+            .hide-for-#{$size} {
+                @include hide-for($size);
+            }
 
-			.show-for-#{$size} {
-				@include show-for($size);
-			}
-		}
+            .show-for-#{$size} {
+                @include show-for($size);
+            }
+        }
 
-		.hide-for-#{$size}-only {
-			@include hide-for-only($size);
-		}
+        .hide-for-#{$size}-only {
+            @include hide-for-only($size);
+        }
 
-		.show-for-#{$size}-only {
-			@include show-for-only($size);
-		}
-	}
+        .show-for-#{$size}-only {
+            @include show-for-only($size);
+        }
+    }
 
-	.show-for-sr,
-	.show-on-focus {
-		@extend .visuallyhidden;
-	}
+    .show-for-sr,
+    .show-on-focus {
+        @extend .visuallyhidden;
+    }
 
-	.show-on-focus {
-		&:active,
-		&:focus {
-			@extend .visuallyhidden-off;
-		}
-	}
-
-	.show-for-landscape,
-	.hide-for-portrait {
-		display: block !important;
-
-		@include breakpoint(landscape) {
-			display: block !important;
-		}
-
-		@include breakpoint(portrait) {
-			display: none !important;
+    .show-on-focus {
+        &:active,
+        &:focus {
+            @extend .visuallyhidden-off;
 		}
 	}
 
-	.hide-for-landscape,
-	.show-for-portrait {
-		display: none;
+    .show-for-landscape,
+    .hide-for-portrait {
+        display: block !important;
 
-		@include breakpoint(landscape) {
-			display: none !important;
-		}
+        @include breakpoint(landscape) {
+            display: block !important;
+        }
 
-		@include breakpoint(portrait) {
-			display: block !important;
-		}
-	}
+        @include breakpoint(portrait) {
+            display: none !important;
+        }
+    }
+
+    .hide-for-landscape,
+    .show-for-portrait {
+        display: none;
+
+        @include breakpoint(landscape) {
+            display: none !important;
+        }
+
+        @include breakpoint(portrait) {
+            display: block !important;
+        }
+    }
 }

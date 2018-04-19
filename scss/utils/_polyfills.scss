@@ -10,15 +10,15 @@
 /// This mixin creates exclusive rules for Firefox.
 /// @content Exclusive fix rules for Firefox.
 @mixin fix-firefox {
-	@-moz-document url-prefix() & {
-		@content;
-	}
+    @-moz-document url-prefix() & {
+        @content;
+    }
 }
 
 /// Mixin for fix rules in very old IE browsers like IE6/7.
 /// @content Exclusive fix rules for IE6/7.
 @mixin fix-old-ie {
-	* html & {
-		@content;
-	}
+    * html & {
+        @content;
+    }
 }

@@ -1,39 +1,53 @@
 # https://github.com/sasstools/sass-lint/blob/master/docs/sass-lint.yml
+# 0: null
+# 1: warning
+# 2: error
 
 options:
   merge-default-rules: false
   formatter: html
   output-file: 'linters/sass-lint.html'
-  max-warnings: 50
+  max-warnings: 150
 
 files:
   include: 'scss/**/*.scss'
 
 rules:
+  class-name-format:
+    - 1
+    - convention: '([a-z0-9]+-?)+'
   extends-before-mixins: 2
   extends-before-declarations: 2
-  placeholder-in-extend: 2
-  mixins-before-declarations:
+  hex-length:
     - 1
-    -
-      exclude:
+    - style: long
+  hex-notation:
+    - 1
+    - style: lowercase
+  indentation:
+    - 2
+    - size: 4
+  mixin-name-format:
+    - 1
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  mixins-before-declarations:
+    - 0
+    - exclude:
         - breakpoint
-  no-warn: 1
+  nesting-depth:
+    - 2
+    - max-depth: 3
+  no-warn: 0
   no-debug: 1
   no-ids: 2
   no-important: 0
-  hex-notation:
-    - 2
-    -
-      style: lowercase
-  indentation:
-    - 2
-    -
-      size: 4
+  no-css-comments: 1
+  placeholder-in-extend: 0
   property-sort-order:
     - 0
-    -
-      order:
+    - order:
         - display
         - position
-      ignore-custom-properties: true
+  space-before-brace: 1
+  zero-unit: 0

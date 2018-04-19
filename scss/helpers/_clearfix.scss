@@ -6,7 +6,7 @@
 /// @group _global renderkit
 @mixin clearfix-classes {
     .clearfix {
-    	@include clearfix;
+        @include clearfix;
     }
 
     .clear-both {

@@ -40,19 +40,19 @@
 /// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
 /// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
 @mixin clearfix {
-	&::before, &::after {
-		content: '';
-		display: table;
+    &::before, &::after {
+        content: '';
+        display: table;
 
-		@if ($global-flexbox) {
-			flex-basis: 0;
-			order: 1;
-		}
+        @if ($global-flexbox) {
+            flex-basis: 0;
+            order: 1;
+        }
 	}
 
-	&::after {
-		clear: both;
-	}
+    &::after {
+        clear: both;
+    }
 }
 
 /// Mixin for create a "layer" position can be used for modals.
@@ -75,12 +75,12 @@
 /// @param {String} $separator - Any character as a type of separator is accepted.
 /// @param {String} $space [space] - It is possible to create a space after the separator or not. If set to `no-space` the space will not be present.
 @mixin counter-increment($separator, $space: 'space') {
-	@if ($space == 'no-space') {
-		$space: '';
-	} @else {
-		$space: ' ';
-	}
+    @if ($space == 'no-space') {
+        $space: '';
+    } @else {
+        $space: ' ';
+    }
 
-	counter-increment: section;
-	content: counters(section,'#{$separator}') $space;
+    counter-increment: section;
+    content: counters(section,'#{$separator}') $space;
 }

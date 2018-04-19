@@ -156,7 +156,7 @@
                     @if ($input-type == select) {
                         &:-moz-focusring {
                             color: transparent;
-                			text-shadow: 0 0 0 $form-input-color;
+                            text-shadow: 0 0 0 $form-input-color;
                         }
                     }
 

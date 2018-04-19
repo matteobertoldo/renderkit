@@ -15,7 +15,7 @@ module.exports = {
         uikit: true,
         sass: true,
         sassdoc: true,
-        lint: true
+        'lint:sass': true
     },
     workspace: {
         uikit: {

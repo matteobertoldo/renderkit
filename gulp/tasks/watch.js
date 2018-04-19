@@ -26,7 +26,7 @@ gulp.task('watch', (done) => {
         });
 
         watch(conf.workspace.scss, () => {
-            sequence.apply(null, ['sass:watch', 'sassdoc', 'lint'], done);
+            sequence.apply(null, ['sass:watch', 'sassdoc', 'lint:watch'], done);
         });
     } else {
         log(colors.red('Set up at least one task to use `gulp watch`'));

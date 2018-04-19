@@ -33,50 +33,50 @@
 /// @param {Boolean} $cf [true] - Whether or not to include a clearfix.
 /// @param {Number|Map} $gutters [$grid-column-gutter] - Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
 @mixin grid-row($columns: null, $behavior: null, $size: $grid-row-width, $cf: true, $gutters: $grid-column-gutter) {
-	$margin: auto;
+    $margin: auto;
 
-	@if index($behavior, nest) != null {
-		@include grid-row-nest($gutters);
+    @if index($behavior, nest) != null {
+        @include grid-row-nest($gutters);
 
-		@if index($behavior, collapse) != null {
-			margin-left: 0;
-			margin-right: 0;
+        @if index($behavior, collapse) != null {
+            margin-left: 0;
+            margin-right: 0;
 		}
 	} @else {
-		@include grid-row-size($size);
-		margin-left: auto;
-		margin-right: auto;
-	}
+        @include grid-row-size($size);
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-	@if $cf {
-		@include clearfix;
-	}
+    @if $cf {
+        @include clearfix;
+    }
 
-	@if $columns != null {
-		@include grid-context($columns) {
-			@content;
-		}
-	}
+    @if $columns != null {
+        @include grid-context($columns) {
+            @content;
+        }
+    }
 }
 
 /// Inverts the margins of a row to nest it inside of a column.
 /// @param: {Number|Map} $gutters [$grid-column-gutter]
 /// Gutter map or single value to use when inverting margins. Responsive gutter settings by default.
 @mixin grid-row-nest($gutters: $grid-column-gutter) {
-	@include -zf-each-breakpoint {
-		$margin: -zf-get-bp-val($gutters, $-zf-size) / 2 * -1;
-		margin-left: $margin;
-		margin-right: $margin;
-	}
+    @include -zf-each-breakpoint {
+        $margin: -zf-get-bp-val($gutters, $-zf-size) / 2 * -1;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
 }
 
 /// Set a grid row size
 /// @param: {Keyword|Number} $size [$grid-row-width] Maximum size of the row.
 /// Set to `expand` to make the row taking the full width.
 @mixin grid-row-size($size: $grid-row-width) {
-	@if $size == expand {
-		$size: none;
-	}
+    @if $size == expand {
+        $size: none;
+    }
 
     max-width: $size;
 }
