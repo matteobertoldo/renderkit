@@ -24,7 +24,7 @@
         },
         "sassdocumentation": {
             "show": true,
-            "file": "sass/index.html"
+            "file": "sassdoc/index.html"
         },
         "breakpoint": {
             "small": 0,

@@ -7,15 +7,11 @@ const plumber = require('gulp-plumber');
 const conf = require('../gulpconfig');
 const sasslint = require('gulp-sass-lint');
 
-gulp.task('lint:sass', () => {
+gulp.task('sasslint', () => {
     return gulp.src(conf.workspace.scss)
     .pipe(plumber())
     .pipe(sasslint({
         configFile: './.sass-lint.yml'
     }))
     .pipe(sasslint.format())
-});
-
-gulp.task('lint:watch', ['lint:sass'], () => {
-    return global.browserSync.reload();
 });

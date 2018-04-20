@@ -1,0 +1,162 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// The initial height of the fields.
+/// @type Number
+$form-input-height: 40px !default;
+
+/// The `font-family` of the fields.
+/// @type Keyword
+$form-input-font-family: 'Josefin Sans', sans-serif !default;
+
+/// The `font-size` of the fields.
+/// @type Number
+$form-input-font-size: 14px !default;
+
+/// The `letter-spacing` of the fields.
+/// @type Keyword|Number
+$form-input-letter-spacing: normal !default;
+
+/// The `text-transform` of the fields.
+/// @type Keyword
+$form-input-text-transform: none !default;
+
+/// The `background-color` of the fields.
+/// @type Color
+$form-input-background-color: #efefef !default;
+
+/// The `color` of the fields.
+/// @type Color
+$form-input-color: #666666 !default;
+
+/// The `border` of the fields.
+/// @type Keyword
+$form-input-border: 1px solid #d9d9d9 !default;
+
+/// The `border-radius` of the fields.
+/// @type Number
+$form-input-border-radius: 5px !default;
+
+/// The `box-shadow` of the fields.
+/// @type Keyword
+$form-input-box-shadow: 0 0 6px rgba(0, 0, 0, 0) !default;
+
+/// The `padding` of the fields.
+/// @type Number
+$form-input-padding: 10px !default;
+
+/// The global `transition` of the fields.
+///
+/// By default, the `text-shadow` property has been added to fix the `:-moz-focusring` for `select` in Firefox.
+///
+/// @type Keyword
+$form-input-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease !default;
+
+/// Variable that determines whether to have a different properties in `:hover` for all fields except fields with `[disabled]` attribute.
+/// @type Boolean
+$form-input-hover-properties: true !default;
+
+/// The `background-color` of the fields when they are in `:hover`.
+/// @type Color
+$form-input-hover-background-color: #efefef !default;
+
+/// The `color` of the `border` of the fields when they are in `:hover`.
+/// @type Color
+$form-input-hover-border-color: #b2b2b2 !default;
+
+/// The `box-shadow` of the fields when they are in `:hover`.
+/// @type Keyword
+$form-input-hover-box-shadow: 0 0 6px rgba(0, 0, 0, 0) !default;
+
+/// Variable that determines whether to have a different properties in `focus` for all fields.
+/// @type Boolean
+$form-input-focus-properties: true !default;
+
+/// The `background-color` of the fields when they are in `:focus`.
+/// @type Color
+$form-input-focus-background-color: #efefef !default;
+
+/// The `color` of the `border` of the fields when they are in `:focus`.
+/// @type Color
+$form-input-focus-border-color: #b2b2b2 !default;
+
+/// The `box-shadow` of the fields.
+/// @type Keyword
+$form-input-focus-box-shadow: 0 0 6px rgba(#666666, 0.25) !default;
+
+/// The `border-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-border-color: #c04649 !default;
+
+/// The `background-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-background-color: #f2c0c1 !default;
+
+/// The `box-shadow` for the fields when they have a failed validation.
+/// @type Keyword
+$form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35) !default;
+
+/// The `color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-color: #666666 !default;
+
+/// Mixin for style all cross browsing inputs wrapped in a configurable "box" class.
+@mixin fields-style {
+    display: block;
+    width: 100%;
+    height: $form-input-height;
+    font: {
+        family: $form-input-font-family;
+        size: $form-input-font-size;
+	}
+    letter-spacing: $form-input-letter-spacing;
+    text-transform: $form-input-text-transform;
+    background-color: $form-input-background-color;
+    color: $form-input-color;
+    border: $form-input-border;
+    border-radius: $form-input-border-radius;
+    box-shadow: $form-input-box-shadow;
+    padding: $form-input-padding;
+    transition: $form-input-transition;
+
+    @if $form-input-focus-properties {
+        &:focus {
+            background-color: $form-input-focus-background-color;
+            border-color: $form-input-focus-border-color;
+            box-shadow: $form-input-focus-box-shadow;
+        }
+    }
+
+    @if $form-input-hover-properties {
+        &:hover:not(:focus):not([disabled]) {
+            background-color: $form-input-hover-background-color;
+            border-color: $form-input-hover-border-color;
+            box-shadow: $form-input-hover-box-shadow;
+        }
+    }
+
+    // Reset Firefox pseudo `:require` & `:invalid` attributes.
+    &:required,
+    &:invalid {
+        box-shadow: none;
+	}
+
+    &.#{$global-form-inputs-error-class} {
+        background-color: $form-input-error-background-color;
+        border-color: $form-input-error-border-color;
+        box-shadow: $form-input-error-box-shadow;
+        color: $form-input-error-color;
+
+        &:hover:not(:focus),
+        &:focus {
+            background-color: $form-input-error-background-color;
+            border-color: $form-input-error-border-color;
+            box-shadow: $form-input-error-box-shadow;
+		}
+	}
+}

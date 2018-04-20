@@ -16,8 +16,15 @@ rules:
   class-name-format:
     - 1
     - convention: '([a-z0-9]+-?)+'
+  clean-import-paths:
+    - 1
+    - filename-extension: false
+      leading-underscore: false
   extends-before-mixins: 2
   extends-before-declarations: 2
+  final-newline:
+    - 1
+    - include: true
   hex-length:
     - 1
     - style: long
@@ -50,4 +57,5 @@ rules:
         - display
         - position
   space-before-brace: 1
+  url-quotes: 1
   zero-unit: 0

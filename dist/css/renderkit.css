@@ -117,8 +117,8 @@ dfn {
 }
 
 mark {
-  background-color: #ff0;
-  color: #000;
+  background-color: #fff000;
+  color: #000000;
 }
 
 q::before {
@@ -340,6 +340,8 @@ textarea {
 [disabled] {
   color: inherit;
   opacity: 0.5 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   cursor: default !important;
 }
 
@@ -1536,28 +1538,28 @@ p {
 
 @media print, only screen and (min-width: 641px) {
   .grid-margin-x.small-up-1 > .cell {
-    width: calc(100% - 20px);
+    width: calc(100% - 30px);
   }
   .grid-margin-x.small-up-2 > .cell {
-    width: calc(50% - 20px);
+    width: calc(50% - 30px);
   }
   .grid-margin-x.small-up-3 > .cell {
-    width: calc(33.33333% - 20px);
+    width: calc(33.33333% - 30px);
   }
   .grid-margin-x.small-up-4 > .cell {
-    width: calc(25% - 20px);
+    width: calc(25% - 30px);
   }
   .grid-margin-x.small-up-5 > .cell {
-    width: calc(20% - 20px);
+    width: calc(20% - 30px);
   }
   .grid-margin-x.small-up-6 > .cell {
-    width: calc(16.66667% - 20px);
+    width: calc(16.66667% - 30px);
   }
   .grid-margin-x.small-up-7 > .cell {
-    width: calc(14.28571% - 20px);
+    width: calc(14.28571% - 30px);
   }
   .grid-margin-x.small-up-8 > .cell {
-    width: calc(12.5% - 20px);
+    width: calc(12.5% - 30px);
   }
   .grid-margin-x.medium-up-1 > .cell {
     width: calc(100% - 30px);
@@ -3371,10 +3373,6 @@ p {
   }
 }
 
-.form-row {
-  position: relative;
-}
-
 .form-row .form-label {
   display: block;
   font-family: "Josefin Sans", sans-serif;
@@ -3389,7 +3387,15 @@ p {
   color: #c04649;
 }
 
-.form-row input[type="email"], .form-row input[type="password"], .form-row input[type="search"], .form-row select, .form-row input[type="tel"], .form-row input[type="text"], .form-row textarea, .form-row input[type="url"] {
+.form-row input[type="email"],
+.form-row input[type="password"],
+.form-row input[type="password"],
+.form-row input[type="search"],
+.form-row input[type="tel"],
+.form-row input[type="text"],
+.form-row input[type="url"],
+.form-row select,
+.form-row textarea {
   display: block;
   width: 100%;
   height: 40px;
@@ -3401,37 +3407,114 @@ p {
   color: #666666;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 6px transparent;
+          box-shadow: 0 0 6px transparent;
   padding: 10px;
-  -webkit-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  -o-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
-.form-row input:focus[type="email"], .form-row input:focus[type="password"], .form-row input:focus[type="search"], .form-row select:focus, .form-row input:focus[type="tel"], .form-row input:focus[type="text"], .form-row textarea:focus, .form-row input:focus[type="url"] {
+.form-row input[type="email"]:focus,
+.form-row input[type="password"]:focus,
+.form-row input[type="password"]:focus,
+.form-row input[type="search"]:focus,
+.form-row input[type="tel"]:focus,
+.form-row input[type="text"]:focus,
+.form-row input[type="url"]:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  background-color: #efefef;
   border-color: #b2b2b2;
+  -webkit-box-shadow: 0 0 6px rgba(102, 102, 102, 0.25);
+          box-shadow: 0 0 6px rgba(102, 102, 102, 0.25);
 }
 
-.form-row input:hover:not([disabled])[type="email"], .form-row input:hover:not([disabled])[type="password"], .form-row input:hover:not([disabled])[type="search"], .form-row select:hover:not([disabled]), .form-row input:hover:not([disabled])[type="tel"], .form-row input:hover:not([disabled])[type="text"], .form-row textarea:hover:not([disabled]), .form-row input:hover:not([disabled])[type="url"] {
+.form-row input[type="email"]:hover:not(:focus):not([disabled]),
+.form-row input[type="password"]:hover:not(:focus):not([disabled]),
+.form-row input[type="password"]:hover:not(:focus):not([disabled]),
+.form-row input[type="search"]:hover:not(:focus):not([disabled]),
+.form-row input[type="tel"]:hover:not(:focus):not([disabled]),
+.form-row input[type="text"]:hover:not(:focus):not([disabled]),
+.form-row input[type="url"]:hover:not(:focus):not([disabled]),
+.form-row select:hover:not(:focus):not([disabled]),
+.form-row textarea:hover:not(:focus):not([disabled]) {
+  background-color: #efefef;
   border-color: #b2b2b2;
+  -webkit-box-shadow: 0 0 6px transparent;
+          box-shadow: 0 0 6px transparent;
 }
 
-.form-row input:required[type="email"], .form-row input:required[type="password"], .form-row input:required[type="search"], .form-row select:required, .form-row input:required[type="tel"], .form-row input:required[type="text"], .form-row textarea:required, .form-row input:required[type="url"], .form-row input:invalid[type="email"], .form-row input:invalid[type="password"], .form-row input:invalid[type="search"], .form-row select:invalid, .form-row input:invalid[type="tel"], .form-row input:invalid[type="text"], .form-row textarea:invalid, .form-row input:invalid[type="url"] {
+.form-row input[type="email"]:required, .form-row input[type="email"]:invalid,
+.form-row input[type="password"]:required,
+.form-row input[type="password"]:invalid,
+.form-row input[type="password"]:required,
+.form-row input[type="password"]:invalid,
+.form-row input[type="search"]:required,
+.form-row input[type="search"]:invalid,
+.form-row input[type="tel"]:required,
+.form-row input[type="tel"]:invalid,
+.form-row input[type="text"]:required,
+.form-row input[type="text"]:invalid,
+.form-row input[type="url"]:required,
+.form-row input[type="url"]:invalid,
+.form-row select:required,
+.form-row select:invalid,
+.form-row textarea:required,
+.form-row textarea:invalid {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.form-row input.error[type="email"], .form-row input.error[type="password"], .form-row input.error[type="search"], .form-row select.error, .form-row input.error[type="tel"], .form-row input.error[type="text"], .form-row textarea.error, .form-row input.error[type="url"] {
-  border-color: #c04649;
+.form-row input[type="email"].error,
+.form-row input[type="password"].error,
+.form-row input[type="password"].error,
+.form-row input[type="search"].error,
+.form-row input[type="tel"].error,
+.form-row input[type="text"].error,
+.form-row input[type="url"].error,
+.form-row select.error,
+.form-row textarea.error {
   background-color: #f2c0c1;
+  border-color: #c04649;
+  -webkit-box-shadow: 0 0 6px rgba(192, 70, 73, 0.35);
+          box-shadow: 0 0 6px rgba(192, 70, 73, 0.35);
   color: #666666;
 }
 
-.form-row input.error:hover[type="email"], .form-row input.error:hover[type="password"], .form-row input.error:hover[type="search"], .form-row select.error:hover, .form-row input.error:hover[type="tel"], .form-row input.error:hover[type="text"], .form-row textarea.error:hover, .form-row input.error:hover[type="url"], .form-row input.error:focus[type="email"], .form-row input.error:focus[type="password"], .form-row input.error:focus[type="search"], .form-row select.error:focus, .form-row input.error:focus[type="tel"], .form-row input.error:focus[type="text"], .form-row textarea.error:focus, .form-row input.error:focus[type="url"] {
-  border-color: #c04649;
+.form-row input[type="email"].error:hover:not(:focus), .form-row input[type="email"].error:focus,
+.form-row input[type="password"].error:hover:not(:focus),
+.form-row input[type="password"].error:focus,
+.form-row input[type="password"].error:hover:not(:focus),
+.form-row input[type="password"].error:focus,
+.form-row input[type="search"].error:hover:not(:focus),
+.form-row input[type="search"].error:focus,
+.form-row input[type="tel"].error:hover:not(:focus),
+.form-row input[type="tel"].error:focus,
+.form-row input[type="text"].error:hover:not(:focus),
+.form-row input[type="text"].error:focus,
+.form-row input[type="url"].error:hover:not(:focus),
+.form-row input[type="url"].error:focus,
+.form-row select.error:hover:not(:focus),
+.form-row select.error:focus,
+.form-row textarea.error:hover:not(:focus),
+.form-row textarea.error:focus {
   background-color: #f2c0c1;
+  border-color: #c04649;
+  -webkit-box-shadow: 0 0 6px rgba(192, 70, 73, 0.35);
+          box-shadow: 0 0 6px rgba(192, 70, 73, 0.35);
 }
 
-.form-row input[type="email"]::-webkit-input-placeholder, .form-row input[type="password"]::-webkit-input-placeholder, .form-row input[type="search"]::-webkit-input-placeholder, .form-row input[type="tel"]::-webkit-input-placeholder, .form-row input[type="text"]::-webkit-input-placeholder, .form-row textarea::-webkit-input-placeholder, .form-row input[type="url"]::-webkit-input-placeholder {
+.form-row input[type="email"]::-webkit-input-placeholder,
+.form-row input[type="password"]::-webkit-input-placeholder,
+.form-row input[type="password"]::-webkit-input-placeholder,
+.form-row input[type="search"]::-webkit-input-placeholder,
+.form-row input[type="tel"]::-webkit-input-placeholder,
+.form-row input[type="text"]::-webkit-input-placeholder,
+.form-row input[type="url"]::-webkit-input-placeholder,
+.form-row textarea::-webkit-input-placeholder {
   font-family: inherit;
   font-style: italic;
   text-transform: capitalize;
@@ -3439,7 +3522,14 @@ p {
   opacity: 1;
 }
 
-.form-row input[type="email"]:-ms-input-placeholder, .form-row input[type="password"]:-ms-input-placeholder, .form-row input[type="search"]:-ms-input-placeholder, .form-row input[type="tel"]:-ms-input-placeholder, .form-row input[type="text"]:-ms-input-placeholder, .form-row textarea:-ms-input-placeholder, .form-row input[type="url"]:-ms-input-placeholder {
+.form-row input[type="email"]:-ms-input-placeholder,
+.form-row input[type="password"]:-ms-input-placeholder,
+.form-row input[type="password"]:-ms-input-placeholder,
+.form-row input[type="search"]:-ms-input-placeholder,
+.form-row input[type="tel"]:-ms-input-placeholder,
+.form-row input[type="text"]:-ms-input-placeholder,
+.form-row input[type="url"]:-ms-input-placeholder,
+.form-row textarea:-ms-input-placeholder {
   font-family: inherit;
   font-style: italic;
   text-transform: capitalize;
@@ -3447,7 +3537,14 @@ p {
   opacity: 1;
 }
 
-.form-row input[type="email"]::-ms-input-placeholder, .form-row input[type="password"]::-ms-input-placeholder, .form-row input[type="search"]::-ms-input-placeholder, .form-row input[type="tel"]::-ms-input-placeholder, .form-row input[type="text"]::-ms-input-placeholder, .form-row textarea::-ms-input-placeholder, .form-row input[type="url"]::-ms-input-placeholder {
+.form-row input[type="email"]::-ms-input-placeholder,
+.form-row input[type="password"]::-ms-input-placeholder,
+.form-row input[type="password"]::-ms-input-placeholder,
+.form-row input[type="search"]::-ms-input-placeholder,
+.form-row input[type="tel"]::-ms-input-placeholder,
+.form-row input[type="text"]::-ms-input-placeholder,
+.form-row input[type="url"]::-ms-input-placeholder,
+.form-row textarea::-ms-input-placeholder {
   font-family: inherit;
   font-style: italic;
   text-transform: capitalize;
@@ -3455,7 +3552,14 @@ p {
   opacity: 1;
 }
 
-.form-row input[type="email"]::placeholder, .form-row input[type="password"]::placeholder, .form-row input[type="search"]::placeholder, .form-row input[type="tel"]::placeholder, .form-row input[type="text"]::placeholder, .form-row textarea::placeholder, .form-row input[type="url"]::placeholder {
+.form-row input[type="email"]::placeholder,
+.form-row input[type="password"]::placeholder,
+.form-row input[type="password"]::placeholder,
+.form-row input[type="search"]::placeholder,
+.form-row input[type="tel"]::placeholder,
+.form-row input[type="text"]::placeholder,
+.form-row input[type="url"]::placeholder,
+.form-row textarea::placeholder {
   font-family: inherit;
   font-style: italic;
   text-transform: capitalize;
@@ -3463,65 +3567,143 @@ p {
   opacity: 1;
 }
 
-.form-row input[type="email"]:focus::-webkit-input-placeholder, .form-row input[type="password"]:focus::-webkit-input-placeholder, .form-row input[type="search"]:focus::-webkit-input-placeholder, .form-row input[type="tel"]:focus::-webkit-input-placeholder, .form-row input[type="text"]:focus::-webkit-input-placeholder, .form-row textarea:focus::-webkit-input-placeholder, .form-row input[type="url"]:focus::-webkit-input-placeholder {
+.form-row input[type="email"]:focus::-webkit-input-placeholder,
+.form-row input[type="password"]:focus::-webkit-input-placeholder,
+.form-row input[type="password"]:focus::-webkit-input-placeholder,
+.form-row input[type="search"]:focus::-webkit-input-placeholder,
+.form-row input[type="tel"]:focus::-webkit-input-placeholder,
+.form-row input[type="text"]:focus::-webkit-input-placeholder,
+.form-row input[type="url"]:focus::-webkit-input-placeholder,
+.form-row textarea:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.form-row input[type="email"]:focus:-ms-input-placeholder, .form-row input[type="password"]:focus:-ms-input-placeholder, .form-row input[type="search"]:focus:-ms-input-placeholder, .form-row input[type="tel"]:focus:-ms-input-placeholder, .form-row input[type="text"]:focus:-ms-input-placeholder, .form-row textarea:focus:-ms-input-placeholder, .form-row input[type="url"]:focus:-ms-input-placeholder {
+.form-row input[type="email"]:focus:-ms-input-placeholder,
+.form-row input[type="password"]:focus:-ms-input-placeholder,
+.form-row input[type="password"]:focus:-ms-input-placeholder,
+.form-row input[type="search"]:focus:-ms-input-placeholder,
+.form-row input[type="tel"]:focus:-ms-input-placeholder,
+.form-row input[type="text"]:focus:-ms-input-placeholder,
+.form-row input[type="url"]:focus:-ms-input-placeholder,
+.form-row textarea:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
-.form-row input[type="email"]:focus::-ms-input-placeholder, .form-row input[type="password"]:focus::-ms-input-placeholder, .form-row input[type="search"]:focus::-ms-input-placeholder, .form-row input[type="tel"]:focus::-ms-input-placeholder, .form-row input[type="text"]:focus::-ms-input-placeholder, .form-row textarea:focus::-ms-input-placeholder, .form-row input[type="url"]:focus::-ms-input-placeholder {
+.form-row input[type="email"]:focus::-ms-input-placeholder,
+.form-row input[type="password"]:focus::-ms-input-placeholder,
+.form-row input[type="password"]:focus::-ms-input-placeholder,
+.form-row input[type="search"]:focus::-ms-input-placeholder,
+.form-row input[type="tel"]:focus::-ms-input-placeholder,
+.form-row input[type="text"]:focus::-ms-input-placeholder,
+.form-row input[type="url"]:focus::-ms-input-placeholder,
+.form-row textarea:focus::-ms-input-placeholder {
   opacity: 0;
 }
 
-.form-row input[type="email"]:focus::placeholder, .form-row input[type="password"]:focus::placeholder, .form-row input[type="search"]:focus::placeholder, .form-row input[type="tel"]:focus::placeholder, .form-row input[type="text"]:focus::placeholder, .form-row textarea:focus::placeholder, .form-row input[type="url"]:focus::placeholder {
+.form-row input[type="email"]:focus::placeholder,
+.form-row input[type="password"]:focus::placeholder,
+.form-row input[type="password"]:focus::placeholder,
+.form-row input[type="search"]:focus::placeholder,
+.form-row input[type="tel"]:focus::placeholder,
+.form-row input[type="text"]:focus::placeholder,
+.form-row input[type="url"]:focus::placeholder,
+.form-row textarea:focus::placeholder {
   opacity: 0;
 }
 
-.form-row input.error[type="email"]::-webkit-input-placeholder, .form-row input.error[type="password"]::-webkit-input-placeholder, .form-row input.error[type="search"]::-webkit-input-placeholder, .form-row input.error[type="tel"]::-webkit-input-placeholder, .form-row input.error[type="text"]::-webkit-input-placeholder, .form-row textarea.error::-webkit-input-placeholder, .form-row input.error[type="url"]::-webkit-input-placeholder {
+.form-row input[type="email"].error::-webkit-input-placeholder,
+.form-row input[type="password"].error::-webkit-input-placeholder,
+.form-row input[type="password"].error::-webkit-input-placeholder,
+.form-row input[type="search"].error::-webkit-input-placeholder,
+.form-row input[type="tel"].error::-webkit-input-placeholder,
+.form-row input[type="text"].error::-webkit-input-placeholder,
+.form-row input[type="url"].error::-webkit-input-placeholder,
+.form-row textarea.error::-webkit-input-placeholder {
   color: #c04649;
   opacity: 1;
 }
 
-.form-row input.error[type="email"]:-ms-input-placeholder, .form-row input.error[type="password"]:-ms-input-placeholder, .form-row input.error[type="search"]:-ms-input-placeholder, .form-row input.error[type="tel"]:-ms-input-placeholder, .form-row input.error[type="text"]:-ms-input-placeholder, .form-row textarea.error:-ms-input-placeholder, .form-row input.error[type="url"]:-ms-input-placeholder {
+.form-row input[type="email"].error:-ms-input-placeholder,
+.form-row input[type="password"].error:-ms-input-placeholder,
+.form-row input[type="password"].error:-ms-input-placeholder,
+.form-row input[type="search"].error:-ms-input-placeholder,
+.form-row input[type="tel"].error:-ms-input-placeholder,
+.form-row input[type="text"].error:-ms-input-placeholder,
+.form-row input[type="url"].error:-ms-input-placeholder,
+.form-row textarea.error:-ms-input-placeholder {
   color: #c04649;
   opacity: 1;
 }
 
-.form-row input.error[type="email"]::-ms-input-placeholder, .form-row input.error[type="password"]::-ms-input-placeholder, .form-row input.error[type="search"]::-ms-input-placeholder, .form-row input.error[type="tel"]::-ms-input-placeholder, .form-row input.error[type="text"]::-ms-input-placeholder, .form-row textarea.error::-ms-input-placeholder, .form-row input.error[type="url"]::-ms-input-placeholder {
+.form-row input[type="email"].error::-ms-input-placeholder,
+.form-row input[type="password"].error::-ms-input-placeholder,
+.form-row input[type="password"].error::-ms-input-placeholder,
+.form-row input[type="search"].error::-ms-input-placeholder,
+.form-row input[type="tel"].error::-ms-input-placeholder,
+.form-row input[type="text"].error::-ms-input-placeholder,
+.form-row input[type="url"].error::-ms-input-placeholder,
+.form-row textarea.error::-ms-input-placeholder {
   color: #c04649;
   opacity: 1;
 }
 
-.form-row input.error[type="email"]::placeholder, .form-row input.error[type="password"]::placeholder, .form-row input.error[type="search"]::placeholder, .form-row input.error[type="tel"]::placeholder, .form-row input.error[type="text"]::placeholder, .form-row textarea.error::placeholder, .form-row input.error[type="url"]::placeholder {
+.form-row input[type="email"].error::placeholder,
+.form-row input[type="password"].error::placeholder,
+.form-row input[type="password"].error::placeholder,
+.form-row input[type="search"].error::placeholder,
+.form-row input[type="tel"].error::placeholder,
+.form-row input[type="text"].error::placeholder,
+.form-row input[type="url"].error::placeholder,
+.form-row textarea.error::placeholder {
   color: #c04649;
   opacity: 1;
 }
 
-.form-row input.error[type="email"]:focus::-webkit-input-placeholder, .form-row input.error[type="password"]:focus::-webkit-input-placeholder, .form-row input.error[type="search"]:focus::-webkit-input-placeholder, .form-row input.error[type="tel"]:focus::-webkit-input-placeholder, .form-row input.error[type="text"]:focus::-webkit-input-placeholder, .form-row textarea.error:focus::-webkit-input-placeholder, .form-row input.error[type="url"]:focus::-webkit-input-placeholder {
+.form-row input[type="email"].error:focus::-webkit-input-placeholder,
+.form-row input[type="password"].error:focus::-webkit-input-placeholder,
+.form-row input[type="password"].error:focus::-webkit-input-placeholder,
+.form-row input[type="search"].error:focus::-webkit-input-placeholder,
+.form-row input[type="tel"].error:focus::-webkit-input-placeholder,
+.form-row input[type="text"].error:focus::-webkit-input-placeholder,
+.form-row input[type="url"].error:focus::-webkit-input-placeholder,
+.form-row textarea.error:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.form-row input.error[type="email"]:focus:-ms-input-placeholder, .form-row input.error[type="password"]:focus:-ms-input-placeholder, .form-row input.error[type="search"]:focus:-ms-input-placeholder, .form-row input.error[type="tel"]:focus:-ms-input-placeholder, .form-row input.error[type="text"]:focus:-ms-input-placeholder, .form-row textarea.error:focus:-ms-input-placeholder, .form-row input.error[type="url"]:focus:-ms-input-placeholder {
+.form-row input[type="email"].error:focus:-ms-input-placeholder,
+.form-row input[type="password"].error:focus:-ms-input-placeholder,
+.form-row input[type="password"].error:focus:-ms-input-placeholder,
+.form-row input[type="search"].error:focus:-ms-input-placeholder,
+.form-row input[type="tel"].error:focus:-ms-input-placeholder,
+.form-row input[type="text"].error:focus:-ms-input-placeholder,
+.form-row input[type="url"].error:focus:-ms-input-placeholder,
+.form-row textarea.error:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
-.form-row input.error[type="email"]:focus::-ms-input-placeholder, .form-row input.error[type="password"]:focus::-ms-input-placeholder, .form-row input.error[type="search"]:focus::-ms-input-placeholder, .form-row input.error[type="tel"]:focus::-ms-input-placeholder, .form-row input.error[type="text"]:focus::-ms-input-placeholder, .form-row textarea.error:focus::-ms-input-placeholder, .form-row input.error[type="url"]:focus::-ms-input-placeholder {
+.form-row input[type="email"].error:focus::-ms-input-placeholder,
+.form-row input[type="password"].error:focus::-ms-input-placeholder,
+.form-row input[type="password"].error:focus::-ms-input-placeholder,
+.form-row input[type="search"].error:focus::-ms-input-placeholder,
+.form-row input[type="tel"].error:focus::-ms-input-placeholder,
+.form-row input[type="text"].error:focus::-ms-input-placeholder,
+.form-row input[type="url"].error:focus::-ms-input-placeholder,
+.form-row textarea.error:focus::-ms-input-placeholder {
   opacity: 0;
 }
 
-.form-row input.error[type="email"]:focus::placeholder, .form-row input.error[type="password"]:focus::placeholder, .form-row input.error[type="search"]:focus::placeholder, .form-row input.error[type="tel"]:focus::placeholder, .form-row input.error[type="text"]:focus::placeholder, .form-row textarea.error:focus::placeholder, .form-row input.error[type="url"]:focus::placeholder {
+.form-row input[type="email"].error:focus::placeholder,
+.form-row input[type="password"].error:focus::placeholder,
+.form-row input[type="password"].error:focus::placeholder,
+.form-row input[type="search"].error:focus::placeholder,
+.form-row input[type="tel"].error:focus::placeholder,
+.form-row input[type="text"].error:focus::placeholder,
+.form-row input[type="url"].error:focus::placeholder,
+.form-row textarea.error:focus::placeholder {
   opacity: 0;
-}
-
-.form-row select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #666666;
 }
 
 .form-row select {
-  text-transform: none;
   background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 32 19'><path fill='rgb%28140, 140, 140%29' d='M16,19.2L0,3.8L4.6,0L16,11.5L27.4,0L32,3.8L16,19.2z'/></svg>");
   background-size: 10px;
   background-repeat: no-repeat;
@@ -3529,8 +3711,12 @@ p {
   background-origin: content-box;
 }
 
+.form-row select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #666666;
+}
+
 .form-row select[multiple] {
-  text-transform: none;
   background-image: none;
   height: auto;
   cursor: default;
@@ -3684,11 +3870,11 @@ input[type="radio"].error:focus:not(:checked) + .input-radio::before {
 }
 
 .palette-color-primary {
-  color: #666;
+  color: #666666;
 }
 
 .background-color-primary {
-  background-color: #666;
+  background-color: #666666;
 }
 
 .palette-color-suvagrey {

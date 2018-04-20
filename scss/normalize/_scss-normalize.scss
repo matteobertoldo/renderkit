@@ -475,6 +475,7 @@
         [disabled] {
             color: inherit;
             opacity: $global-input-disabled-opacity !important;
+            box-shadow: none !important;
             cursor: default !important;
     	}
     }
