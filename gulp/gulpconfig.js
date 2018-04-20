@@ -76,8 +76,8 @@ module.exports = {
             html: folder.docs + '*.html',
             css: [
                 folder.distribution + 'css/**/*.{css,map}',
-                folder.docs + 'renderkit/css/**/*.{css,map}',
-                folder.docs + 'sass/**/*'
+                folder.docs + 'css/**/*.{css,map}',
+                folder.docs + 'sassdoc/**/*'
             ]
         },
         dryRun: true,

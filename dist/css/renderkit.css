@@ -3443,8 +3443,8 @@ p {
 .form-row textarea:hover:not(:focus):not([disabled]) {
   background-color: #efefef;
   border-color: #b2b2b2;
-  -webkit-box-shadow: 0 0 0 rgba(102, 102, 102, 0.25);
-          box-shadow: 0 0 0 rgba(102, 102, 102, 0.25);
+  -webkit-box-shadow: 0 0 6px transparent;
+          box-shadow: 0 0 6px transparent;
 }
 
 .form-row input[type="email"]:required, .form-row input[type="email"]:invalid,
