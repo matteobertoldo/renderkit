@@ -30,29 +30,29 @@
 /// @param {String|Integer} $weight [400] - The font weight of your font.
 /// @param {String} $extension [eot woff woff2 ttf svg] - The extensions available for the font.
 @mixin font-face($font-name, $font-file, $style: normal, $weight: 400, $extensions: eot woff woff2 ttf svg) {
-	$filepath: $font-dir + $font-file;
+    $filepath: $font-dir + $font-file;
     $src: null;
     $extmods: (
-		eot: "?#iefix",
-		svg: "#" + str-replace($font-name, ' ', '_')
+        eot: "?#iefix",
+        svg: "#" + str-replace($font-name, ' ', '_')
 	);
-	$formats: (
-		otf: "opentype",
-		ttf: "truetype"
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
 	);
 
-	@each $extension in $extensions {
-		$extmod: if(map-has-key($extmods, $extension), $extension + map-get($extmods, $extension), $extension);
-		$format: if(map-has-key($formats, $extension), map-get($formats, $extension), $extension);
+    @each $extension in $extensions {
+        $extmod: if(map-has-key($extmods, $extension), $extension + map-get($extmods, $extension), $extension);
+        $format: if(map-has-key($formats, $extension), map-get($formats, $extension), $extension);
         $src: append($src, url(quote($filepath + "." + $extmod)) format(quote($format)), comma);
 	}
 
-	@font-face {
-		font: {
+    @font-face {
+        font: {
             family: quote(#{$font-name});
-			style: $style;
-			weight: $weight;
-		}
+            style: $style;
+            weight: $weight;
+        }
         src: $src;
     }
 }

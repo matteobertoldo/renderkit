@@ -10,7 +10,7 @@
 /// @param {Number} $num - Number to strip unit from.
 /// @returns {Number} The same number, sans unit.
 @function strip-unit($num) {
-	@return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
 }
 
 /// Converts a pixel, percentage, rem or em value to a unitless value based on a given font size. Ideal for working out unitless line heights.
@@ -63,9 +63,9 @@
 /// @param {Number} $num - Number in **px** to convert in **em**.
 /// @return {Number} - `em` number.
 @function em($num) {
-	$em: $num / $global-body-font-size;
+    $em: $num / $global-body-font-size;
 
-	@return $em * 1em;
+    @return $em * 1em;
 }
 
 /// Function for transform **px** value to **rem** value.
@@ -74,7 +74,7 @@
 /// @param {Number} $num - Number in **px** to convert in **rem**.
 /// @return {Number} - `rem` number.
 @function rem($num) {
-	$rem: $num / $global-body-font-size;
+    $rem: $num / $global-body-font-size;
 
-	@return $rem * 1rem;
+    @return $rem * 1rem;
 }
