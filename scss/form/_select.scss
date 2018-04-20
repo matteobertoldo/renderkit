@@ -1,0 +1,70 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// Variable that determines whether to render the "caret" shape for the `select`.
+/// @type Boolean
+$form-select-caret-shape-render: true !default;
+
+/// The "caret" color of the `select`.
+/// @type Color
+$form-select-caret-color: #8c8c8c !default;
+
+/// The "caret" shape of the `select`.
+///
+/// The possible values ​​to pass are:
+/// - 'arrow'
+/// - 'triangle'
+/// - 'empty'
+/// @type String|Keyword
+$form-select-caret-shape: 'arrow' !default;
+
+/// The "caret" size of the `select`.
+/// @type Number
+$form-select-caret-size: 10px !default;
+
+/// If `$form-select-caret-shape-render` is set to `false` it is possible to load a custom "caret" shape.
+///
+/// This variable determines the pat of the custom "shape" for the `select`.
+/// @type String
+$form-select-caret-image-url: 'path/to/shape' !default;
+
+/// The size of the custom "caret" shape
+/// @type Number
+$form-select-caret-background-size: 10px !default;
+
+/// Mixin for style the `select` for the forms.
+@mixin select-style {
+    select {
+        @if $form-select-caret-shape-render {
+            @include select-caret-shape($form-select-caret-color, $form-select-caret-shape);
+            @if $form-select-caret-shape != 'empty' {
+                background-size: $form-select-caret-size;
+            }
+        } @else {
+            background-image: url(#{$form-select-caret-image-url});
+            background-size: $form-select-caret-background-size;
+        }
+
+        @if $form-select-caret-shape != 'empty' {
+            background-repeat: no-repeat;
+            background-position: center right;
+            background-origin: content-box;
+        }
+
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $form-input-color;
+        }
+
+        &[multiple] {
+            background-image: none;
+            height: auto;
+            cursor: default;
+        }
+    }
+}

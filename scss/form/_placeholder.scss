@@ -1,0 +1,85 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// The `font-family` of the `:placeholder` of the fields.
+/// @type Keyword|String
+$form-input-placeholder-font-family: inherit !default;
+
+/// The `font-style` of the `:placeholder` of the fields.
+/// @type Keyword
+$form-input-placeholder-font-style: italic !default;
+
+/// The `text-transform` style of the `:placeholder` of the fields.
+/// @type Keyword
+$form-input-placeholder-text-transform: capitalize !default;
+
+/// The color of the `:placeholder` of the fields.
+/// @type Color
+$form-input-placeholder-color: #8c8c8c !default;
+
+/// Variable that determines whether to hide or not, the `:placeholder` of the fields when they are in `:focus`.
+/// @type Boolean
+$form-input-placeholder-focus-hidden: true !default;
+
+/// The color of the `:placeholder` of the fields when they are in `:focus`.
+/// @type Color
+$form-input-placeholder-focus-color: #b2b2b2 !default;
+
+/// The `color` for the `:placeholder` of the fields when they have a failed validation.
+/// @type Color
+$form-input-error-placeholder-color: #c04649 !default;
+
+/// Mixin for style the `::placeholder` for the fields.
+@mixin placeholder-style {
+    &::placeholder {
+        font: {
+            family: $form-input-placeholder-font-family;
+            style: $form-input-placeholder-font-style;
+        }
+        text-transform: $form-input-placeholder-text-transform;
+        color: $form-input-placeholder-color;
+        opacity: 1;
+    }
+
+    @if $form-input-placeholder-focus-hidden {
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    } @else {
+        &:focus {
+            &::placeholder {
+                color: $form-input-placeholder-focus-color;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.#{$global-form-inputs-error-class} {
+        &::placeholder {
+            color: $form-input-error-placeholder-color;
+            opacity: 1;
+        }
+
+        @if $form-input-placeholder-focus-hidden {
+            &:focus {
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        } @else {
+            &:focus {
+                &::placeholder {
+                    color: $form-input-placeholder-focus-color;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -13,9 +13,10 @@ var folder = {
 module.exports = {
     defaultWatchTasks: {
         uikit: true,
+        sasslint: true,
         sass: true,
         sassdoc: true,
-        'lint:sass': true
+        copy: true
     },
     workspace: {
         uikit: {
@@ -32,7 +33,7 @@ module.exports = {
     distribution: {
         uikit: folder.docs,
         scss: folder.distribution + 'css/',
-        sassdoc: folder.docs + 'sass',
+        sassdoc: folder.docs + 'sassdoc/',
         svg: folder.docs + 'renderkit/svg/'
     },
     cssOptions: {

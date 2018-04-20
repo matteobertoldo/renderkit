@@ -2,6 +2,7 @@ log
 logs
 npm-debug.log*
 *.log
+gulp
 node_modules
 linters
 *.npm
@@ -15,6 +16,7 @@ linters
 *.DS_Store
 *__MACOSX
 *Thumbs.db
+.editorconfig
 yarn.lock
 dist/**/*.map
 docs/

@@ -41,6 +41,7 @@ gulp.task('sass', () => {
         outputStyle: conf.cssOptions.outputStyle
     }).on('error', sass.logError))
     .pipe(postcss(processors))
+    .pipe(gulp.dest(conf.distribution.scss))
     .pipe(cleanCSS({
         level: (conf.cssOptions.optimizationMinify) ? 2 : 1
     }))

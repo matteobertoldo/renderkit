@@ -9,7 +9,6 @@
 /// Mixin for generate an "caret" for custom select without js added.
 /// @param {Color} $select-caret-color [#000000] - The color in `hex` value for the "caret" color.
 /// @param {Keyword|String} $select-caret-shape [arrow] - The shape for the "caret". Could be `triangle`, `arrow`, `empty`.
-/// @access private
 @mixin select-caret-shape($select-caret-color: #000000, $select-caret-shape: 'arrow') {
     $shape: '';
     $viewbox-value: '';

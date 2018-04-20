@@ -1,0 +1,30 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// Variable that determines whether or not to enable a custom `autofill`.
+/// @type Boolean
+$form-input-custom-autofill: false !default;
+
+/// The `color` for the custom autofill.
+/// @type Color|Keyword
+$form-input-autofill-color: $form-input-color !default;
+
+/// The `background-color` for the custom autofill.
+/// @type Color|Keyword
+$form-input-autofill-background-color: $form-input-background-color !default;
+
+/// Mixin for styling up the `:-webkit-autofill` for the fields.
+@mixin autofill-style {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 $form-input-height $form-input-autofill-background-color inset;
+        -webkit-text-fill-color: $form-input-autofill-color;
+        transition: $form-input-transition;
+    }
+}

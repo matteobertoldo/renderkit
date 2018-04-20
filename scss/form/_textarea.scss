@@ -1,0 +1,33 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// The global `height` of textarea.
+/// @type Number
+$form-textarea-height: 110px !default;
+
+/// Variable that determines whether to have the texarea resizeable or not.
+/// @type Boolean
+$form-textarea-resize: false !default;
+
+/// Variable that determines the `resize` mode of the textarea.
+///
+/// It goes to act only if `$form-textarea-resize` is set to `true`.
+/// @type Keyword
+$form-textarea-resize-mode: vertical !default;
+
+/// Mixin for style the `textarea` for the forms.
+@mixin textarea-style {
+    textarea {
+        height: $form-textarea-height;
+        @if $form-textarea-resize {
+            resize: $form-textarea-resize-mode;
+        } @else {
+            resize: none;
+        }
+    }
+}

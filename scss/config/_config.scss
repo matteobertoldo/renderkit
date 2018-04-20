@@ -209,22 +209,26 @@ $form-input-background-color: #efefef;
 $form-input-color: #666666;
 $form-input-border: 1px solid #d9d9d9;
 $form-input-border-radius: 5px;
-$form-input-hover-border: true;
+$form-input-box-shadow: 0 0 6px rgba(0, 0, 0, 0);
+$form-input-hover-properties: true;
 $form-input-hover-border-color: #b2b2b2;
-$form-input-focus-border: true;
+$form-input-hover-background-color: #efefef;
+$form-input-hover-box-shadow: 0 0 6px rgba(#666666, 0.25);
+$form-input-focus-properties: true;
+$form-input-focus-background-color: #efefef;
 $form-input-focus-border-color: #b2b2b2;
+$form-input-focus-box-shadow: 0 0 6px rgba(#666666, 0.25);
 $form-input-placeholder-color: #8c8c8c;
 $form-input-placeholder-focus-hidden: true;
 $form-input-placeholder-focus-color: #b2b2b2;
 $form-input-placeholder-font-family: inherit;
 $form-input-placeholder-font-style: italic;
 $form-input-placeholder-text-transform: capitalize;
-$form-input-transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+$form-input-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
 
 // 10.2 Form Select
 // ----------------
 
-$form-select-text-transform: none;
 $form-select-caret-shape-render: true;
 $form-select-caret-color: #8c8c8c;
 $form-select-caret-shape: 'arrow';
@@ -252,8 +256,9 @@ $form-label-margin: 0 0 5px 0;
 // 10.5 Form Validation
 // --------------------
 
-$form-input-error-border-color: #c04649;
 $form-input-error-background-color: #f2c0c1;
+$form-input-error-border-color: #c04649;
+$form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35);
 $form-input-error-color: #666666;
 $form-input-error-label-color: #c04649;
 $form-input-error-placeholder-color: #c04649;

@@ -1,0 +1,54 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// The `font-family` for the fields `label` element.
+/// @type Keyword|String
+$form-label-font-family: 'Josefin Sans', sans-serif !default;
+
+/// The `font-size` for the fields `label` element.
+/// @type Number
+$form-label-font-size: 11px !default;
+
+/// The `letter-spacing` for the fields `label` element.
+/// @type Number|Keyword
+$form-label-letter-spacing: 0.5px !default;
+
+/// The `text-transform` style for the fields `label` element.
+/// @type Keyword
+$form-label-text-transform: uppercase !default;
+
+/// The `color` for the fields `label` element.
+/// @type Color
+$form-label-color: #8c8c8c !default;
+
+/// The global `margin` for the fields `label` element.
+/// @type Number
+$form-label-margin: 0 0 5px 0 !default;
+
+/// The `color` for the `label` of the fields when it have a failed validation.
+/// @type Color
+$form-input-error-label-color: #c04649 !default;
+
+/// Mixin for style the `label` for the fields.
+@mixin form-style-label {
+    .#{$form-inputs-labelclass} {
+        display: block;
+        font: {
+            family: $form-label-font-family;
+            size: $form-label-font-size;
+        }
+        letter-spacing: $form-label-letter-spacing;
+        text-transform: $form-label-text-transform;
+        color: $form-label-color;
+        margin: $form-label-margin;
+
+        &.#{$global-form-inputs-error-class} {
+            color: $form-input-error-label-color;
+        }
+    }
+}
