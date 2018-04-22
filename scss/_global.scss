@@ -13,10 +13,14 @@
 $global-flexbox: true !default;
 
 /// Global font size apply to `html`.
+///
+/// This value is valid only if `$html-root-font-size` is `true`.
 /// @type Number
 $global-font-size: 100% !default;
 
 /// The default font size applied to the `body`.
+///
+/// This value is valid only if `$body-root-font-size` is `true`.
 /// @type Number
 $global-body-font-size: 16px !default;
 
@@ -40,7 +44,7 @@ $global-custom-checkbox-radio: true !default;
 
 /// Global `disabled` input opacity value.
 ///
-/// This value is valid only if `$ global-select-reset-appearence` is` true`.
+/// This value is valid only if `$global-select-reset-appearence` is `true`.
 /// @type Integer|Float
 $global-input-disabled-opacity: 0.5 !default;
 
