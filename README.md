@@ -54,7 +54,7 @@ The following tools are included in the `scss` package:
             <a href="https://foundation.zurb.com/sites/docs/xy-grid.html">
                 Foundation XY-Grid
             </a> 
-            with <code>remless</code> output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically">building semantically</a>. <br /> <br />
+            with <code>remless</code> output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically">building semantically</a>. <br />
             &middot; 
             <a href="https://foundation.zurb.com/sites/docs/grid.html">
                 Foundation Float Grid
@@ -71,7 +71,7 @@ The following tools are included in the `scss` package:
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-global-fonts">
                 Mixin
             </a> 
-            for <code>@font-face</code> rules & Google Fonts. <br/> <br/>
+            for <code>@font-face</code> rules & Google Fonts. <br/>
             &middot; 
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-headers-style-bp">
                 Headers responsive
@@ -96,7 +96,7 @@ The following tools are included in the `scss` package:
         </td>
         <td>
             &middot; 
-            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-form-style">mixin</a> to styling up all cross browsing fields. <br /> <br />
+            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-form-style">mixin</a> to styling up all cross browsing fields. <br />
             &middot; 
             Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-checkbox-radio-classes">mixin</a> to styling up checkbox & radio without <code>js</code>. Available with <strong>building semantically</strong>.
         </td>
@@ -138,13 +138,19 @@ The following tools are included in the `scss` package:
         </td>
         <td>
             &middot; 
-            [Foundation visibility classes](https://foundation.zurb.com/sites/docs/visibility.html) <br />
+            <a href="https://foundation.zurb.com/sites/docs/visibility.html">
+                Foundation visibility classes
+            </a> <br />
             &middot; 
-            [Foundation text alignment](https://foundation.zurb.com/sites/docs/typography-helpers.html#text-alignment) <br />
+            <a href="https://foundation.zurb.com/sites/docs/typography-helpers.html#text-alignment">
+                Foundation text alignment
+            </a> <br />
             &middot; 
-            [Text transformation classes](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-text-transform-classes) <br />
-            &middot; [Float classes](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-float-classes) <br />
-            &middot; [Clearfix classes](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-clearfix-classes)
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-text-transform-classes">Text transformation classes</a> <br />
+            &middot; 
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-float-classes">Float classes</a> <br />
+            &middot; 
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-clearfix-classes">Clearfix classes</a>
         </td>
     </tr>
     <tr>
