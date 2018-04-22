@@ -23,33 +23,72 @@ npm install renderkit
 The following tools are included in the `scss` package:
 
 <table>
-  <tr>
-    <td><strong>CROSS BROWSING 💻</strong></td>
-    <td>[Normalize v.8.0.0](https://github.com/necolas/normalize.css) Extended and rewritten in `scss`. Configurable, in complete safety.</td>
-  </tr>
-  <tr>
-    <td><strong>BREAKPOINTS 🔗</strong></td>
-    <td>[Foundation Breakpoint](https://foundation.zurb.com/sites/docs/media-queries.html#changing-the-breakpoints) with `emless` output. (For pixel lovers).</td>
-  </tr>
-  <tr>
-    <td><strong>GRID SYSTEM ⚔️</strong></td>
-    <td> &middot; [Foundation XY-Grid](https://foundation.zurb.com/sites/docs/xy-grid.html) with `remless` output for the gutters, with all mixin for [building semantically](https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically). <br /> <br />
-    &middot; [Foundation Float Grid](https://foundation.zurb.com/sites/docs/grid.html) with `remless` output for the gutters, with all mixin for [building semantically](https://foundation.zurb.com/sites/docs/grid.html#building-semantically).</td>
-  </tr>
-  <tr>
-    <td><strong>TYPOGRAPHY ✒️</strong></td>
-    <td> &middot; [Mixin](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-global-fonts) for `@font-face` rules & Google Fonts. <br/> <br/>
-    &middot; [Headers responsive](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-headers-style-bp). with a `scss` map to draw up every single header in every `breakpoint`.</td>
-  </tr>
-  <tr>
-    <td><strong>FLEXBOX 🏋🏽‍</strong></td>
-    <td>[Foundation Flexbox Utilities](https://foundation.zurb.com/sites/docs/flexbox-utilities.html) (The ability to enable or disable `flex-source-ordering` has been added.)</td>
-  </tr>
-  <tr>
-    <td><strong>FORM 🕹<strong></td>
-    <td>&middot; Powerful [mixin](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-form-style) to styling up all cross browsing fields. <br /> <br />
-    &middot; Powerful [mixin](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-checkbox-radio-classes) to styling up checkbox & radio without `js`. Available with **building semantically**.</td>
-  </tr>
+    <tr>
+        <td>
+            <strong>CROSS BROWSING</strong>
+        </td>
+        <td>
+            <a href="https://github.com/necolas/normalize.css">
+              Normalize v.8.0.0
+            </a> 
+            Extended and rewritten in `scss`. Configurable, in complete safety.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>BREAKPOINTS</strong>
+        </td>
+        <td>
+            <a href="https://foundation.zurb.com/sites/docs/media-queries.html#changing-the-breakpoints">
+                Foundation Breakpoint
+            </a> 
+            with `emless` output. (For pixel lovers).
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>GRID SYSTEM</strong>
+        </td>
+        <td> 
+            &middot; 
+            <a href="https://foundation.zurb.com/sites/docs/xy-grid.html">
+                Foundation XY-Grid
+            </a> 
+            with `remless` output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically">building semantically</a>. <br /> <br />
+            &middot; 
+            <a href="https://foundation.zurb.com/sites/docs/grid.html">
+                Foundation Float Grid
+            </a> 
+            with `remless` output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/grid.html#building-semantically">building semantically</a>.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>TYPOGRAPHY</strong>
+        </td>
+        <td> 
+            &middot; 
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-global-fonts">
+                Mixin
+            </a> 
+            for `@font-face` rules & Google Fonts. <br/> <br/>
+            &middot; 
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-headers-style-bp">
+                Headers responsive
+            </a>
+            with a `scss` map to draw up every single header in every `breakpoint`.
+        </td>
+    </tr>
+    <tr>
+        <td><strong>FLEXBOX</strong></td>
+        <td>[Foundation Flexbox Utilities](https://foundation.zurb.com/sites/docs/flexbox-utilities.html) (The ability to enable or disable `flex-source-ordering` has been added.)</td>
+    </tr>
+    <tr>
+        <td><strong>FORM 🕹<strong></td>
+        <td>&middot; Powerful [mixin](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-form-style) to styling up all cross browsing fields. <br /> <br />
+    &middot; Powerful [mixin](https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-checkbox-radio-classes) to styling up checkbox & radio without `js`. Available with **building semantically**.
+        </td>
+    </tr>
   <tr>
     <td><strong>ACCESSIBILITY ⛑</strong></td>
     <td>&middot; Accessibility [classes]((https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-accessibility-classes) <br/>
@@ -75,7 +114,7 @@ The following tools are included in the `scss` package:
     <td><strong>MEDIA PRINT 🖨</strong></td>
     <td>[Media Print](https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css) from original `HTML5` boilerplate.</td>
   </tr>
-</table>‍
+</table>
 
 **Important notes:**
 all packages including the `Foundation` core have been revisited and customized without any `rem` output. If you want to install any additional Foundation package, full functionality is not guaranteed.
