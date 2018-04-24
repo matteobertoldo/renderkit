@@ -6,6 +6,7 @@
     *,
     ::after,
     ::before {
+        -webkit-box-sizing: inherit;
         box-sizing: inherit;
     }
 
@@ -155,8 +156,13 @@
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        background-color: rgba(245, 245, 245, 0.45);
-        color: #282c34;
+        {% if uikit.style.lightcode %}
+            background-color: rgba(55, 55, 55, 0.55);
+            color: #ffffff;
+        {% else %}
+            background-color: rgba(245, 245, 245, 0.45);
+            color: #282c34;
+        {% endif%}
         border: 0;
         border-radius: 0 0 0 6px;
         padding: 4px;
