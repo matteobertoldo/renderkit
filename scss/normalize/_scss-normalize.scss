@@ -264,7 +264,7 @@
     // Reset all default font synthesis of browsers.
     // Set all text to perform legibility (configurable).
     // Remove exeed weight on fonts in Fireforx on macOS
-    // Set on `-moz-` the same `-webkit-` font "kerning" (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
+    // Enable or disable the font "kerning" (http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
     body,
     button,
     input,
@@ -272,6 +272,9 @@
     textarea {
         font-synthesis: none;
         text-rendering: $global-text-rendering;
+        @if ($global-letter-spacing-apply) {
+            letter-spacing: $global-letter-spacing;
+        }
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         @if ($global-font-liga-kern) {
@@ -361,6 +364,13 @@
         padding: 0;
     }
 
+    // Placeholder mixin for reset the default input style.
+    %reset-input-style {
+        appearance: none;
+        border: 1px solid lightgray;
+        border-radius: 0;
+    }
+
     // Remove the default margin on input[type="checkbox"] & [type="radio"].
     // input[type="checkbox"] input[type="radio"] Remove the padding in IE 10-.
     // Loop all standard and "Cross Browsing" input type field.
@@ -369,12 +379,6 @@
     // `::-webkit-search-cancel-button` - Remove the inner padding in Chrome and Safari.
     // `::-webkit-file-upload-button` - Correct the inability to style clickable types in iOS and Safari.
     // Change font properties to `inherit` in Safari.
-    %reset-input-style {
-        appearance: none;
-        border: 1px solid lightgray;
-        border-radius: 0;
-    }
-
     input {
         &[type="checkbox"],
         &[type="radio"] {

@@ -38,6 +38,9 @@
             "fonts": {
                 "color": "#404041"
             },
+            "typography": {
+                "lightindicators": true
+            },
             "xygrid": {
                 "gridcolumns": 12,
                 "gridcontainer": "1200px",

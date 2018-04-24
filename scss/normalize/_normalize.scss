@@ -85,6 +85,16 @@ $strong-font-weight: bolder !default;
 /// @type Keyword
 $global-text-rendering: optimizeLegibility !default;
 
+/// If `true` the `$global-letter-spacing` will be applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
+/// @type Boolean
+$global-letter-spacing-apply: false !default;
+
+/// Global `letter-spacing` applied to `body`, `button`, `input`, `select` and `textarea`.
+/// @group global
+/// @type Keyword|Number
+$global-letter-spacing: normal !default;
+
 /// The `font-feature-settings: 'liga','kern'` rule is be applied to: `body`,` button`, `input`,` select` and `textarea`, which determines the "kering" between the various characters.
 /// @link https://blog.typekit.com/2014/02/05/kerning-on-the-web/
 /// @link https://practice.typekit.com/lesson/caring-about-opentype-features/

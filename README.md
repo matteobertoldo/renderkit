@@ -30,7 +30,7 @@ The following tools are included in the `scss` package:
         <td>
             <a href="https://github.com/necolas/normalize.css">
               Normalize v.8.0.0
-            </a> 
+            </a>
             Extended and rewritten in <code>scss</code>. Configurable, in complete safety.
         </td>
     </tr>
@@ -41,7 +41,7 @@ The following tools are included in the `scss` package:
         <td>
             <a href="https://foundation.zurb.com/sites/docs/media-queries.html#changing-the-breakpoints">
                 Foundation Breakpoint
-            </a> 
+            </a>
             with <code>emless</code> output. (For pixel lovers).
         </td>
     </tr>
@@ -49,16 +49,16 @@ The following tools are included in the `scss` package:
         <td>
             <strong>GRID SYSTEM</strong>
         </td>
-        <td> 
-            &middot; 
+        <td>
+            &middot;
             <a href="https://foundation.zurb.com/sites/docs/xy-grid.html">
                 Foundation XY-Grid
-            </a> 
+            </a>
             with <code>remless</code> output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/xy-grid.html#building-semantically">building semantically</a>. <br />
-            &middot; 
+            &middot;
             <a href="https://foundation.zurb.com/sites/docs/grid.html">
                 Foundation Float Grid
-            </a> 
+            </a>
             with <code>remless</code> output for the gutters, with all mixin for <a href="https://foundation.zurb.com/sites/docs/grid.html#building-semantically">building semantically</a>.
         </td>
     </tr>
@@ -66,13 +66,13 @@ The following tools are included in the `scss` package:
         <td>
             <strong>TYPOGRAPHY</strong>
         </td>
-        <td> 
-            &middot; 
+        <td>
+            &middot;
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-global-fonts">
                 Mixin
-            </a> 
+            </a>
             for <code>@font-face</code> rules & Google Fonts. <br/>
-            &middot; 
+            &middot;
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-headers-style-bp">
                 Headers responsive
             </a>
@@ -86,7 +86,7 @@ The following tools are included in the `scss` package:
         <td>
             <a href="https://foundation.zurb.com/sites/docs/flexbox-utilities.html">
                 Foundation Flexbox Utilities
-            </a> 
+            </a>
             (The ability to enable or disable <code>flex-source-ordering</code> has been added.)
         </td>
     </tr>
@@ -95,10 +95,10 @@ The following tools are included in the `scss` package:
             <strong>FORM</strong>
         </td>
         <td>
-            &middot; 
-            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-form-style">mixin</a> to styling up all cross browsing fields. <br />
-            &middot; 
-            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-checkbox-radio-classes">mixin</a> to styling up checkbox & radio without <code>js</code>. Available with <strong>building semantically</strong>.
+            &middot;
+            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-form-style">mixin</a> to styling up all cross browsing fields. <br />
+            &middot;
+            Powerful <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-checkbox-radio-classes">mixin</a> to styling up checkbox & radio without <code>js</code>. Available with <strong>building semantically</strong>.
         </td>
     </tr>
     <tr>
@@ -106,9 +106,9 @@ The following tools are included in the `scss` package:
             <strong>ACCESSIBILITY</strong>
         </td>
         <td>
-            &middot; 
+            &middot;
             Accessibility <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-accessibility-classes">classes</a> <br/>
-            &middot; 
+            &middot;
             Layout <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#layout-mixin">mixins</a>
         </td>
     </tr>
@@ -117,9 +117,9 @@ The following tools are included in the `scss` package:
             <strong>PALETTE</strong>
         </td>
         <td>
-            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-colors-palette">
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-colors-palette">
                 Mixin
-            </a> 
+            </a>
             for manage all palette colors via <code>scss</code> map.
         </td>
     </tr>
@@ -128,8 +128,8 @@ The following tools are included in the `scss` package:
             <strong>SHAPES</strong>
         </td>
         <td>
-            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#shapes-mixin">Mixins</a> 
-            with <strong>building semantically</strong> &amp; <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#mixin-shape-classes">classes</a> to generate shapes without images.
+            <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#shapes-mixin">Mixins</a>
+            with <strong>building semantically</strong> &amp; <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-shape-classes">classes</a> to generate shapes without images.
         </td>
     </tr>
     <tr>
@@ -137,19 +137,19 @@ The following tools are included in the `scss` package:
             <strong>PROTOTYPING</strong>
         </td>
         <td>
-            &middot; 
+            &middot;
             <a href="https://foundation.zurb.com/sites/docs/visibility.html">
                 Foundation visibility classes
             </a> <br />
-            &middot; 
+            &middot;
             <a href="https://foundation.zurb.com/sites/docs/typography-helpers.html#text-alignment">
                 Foundation text alignment
             </a> <br />
-            &middot; 
+            &middot;
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#typography-mixin-text-transform-classes">Text transformation classes</a> <br />
-            &middot; 
+            &middot;
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-float-classes">Float classes</a> <br />
-            &middot; 
+            &middot;
             <a href="https://matteobertoldo.github.io/renderkit/sassdoc/index.html#_global%20renderkit-mixin-clearfix-classes">Clearfix classes</a>
         </td>
     </tr>
@@ -158,7 +158,7 @@ The following tools are included in the `scss` package:
             <strong>PRINT</strong>
         </td>
         <td>
-            <a href="https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css">Media Print</a> 
+            <a href="https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css">Media Print</a>
             from original <code>HTML5</code> boilerplate.
         </td>
     </tr>
@@ -184,7 +184,7 @@ Download the [settings](https://raw.github.com/matteobertoldo/renderkit/scss/con
 ## CSS Quickly install
 
 You can basic [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit.css) the RenderKit `css` file.
--   The default `css` RenderKit includes Foundation `XY-Grid` and `Flexbox Utilities` in less than `80KB` 🎉.
+-   The default `css` RenderKit includes Foundation `XY-Grid` and `Flexbox Utilities` in less than `85KB` 🎉.
 -   For a minify version [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit.css) this file, less than `60KB` 🎉.
 
 If you want the version without `flexbox` you can [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit-float.css) the "float" version with Foundation Float Grid.
