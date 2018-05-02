@@ -3407,8 +3407,8 @@ p {
   color: #666666;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 6px transparent;
-          box-shadow: 0 0 6px transparent;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0);
   padding: 10px;
   -webkit-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
@@ -3443,8 +3443,8 @@ p {
 .form-row textarea:hover:not(:focus):not([disabled]) {
   background-color: #efefef;
   border-color: #b2b2b2;
-  -webkit-box-shadow: 0 0 6px transparent;
-          box-shadow: 0 0 6px transparent;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0);
 }
 
 .form-row input[type="email"]:required, .form-row input[type="email"]:invalid,
