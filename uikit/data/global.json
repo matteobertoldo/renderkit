@@ -39,7 +39,7 @@
                 "color": "#404041"
             },
             "typography": {
-                "lightindicators": true
+                "lightindicators": false
             },
             "xygrid": {
                 "gridcolumns": 12,

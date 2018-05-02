@@ -1,4 +1,4 @@
-# https://github.com/sasstools/sass-lint/blob/master/docs/sass-lint.yml
+# https://github.com/sasstools/sass-lint/tree/master/docs/rules
 # 0: null
 # 1: warning
 # 2: error
@@ -13,6 +13,7 @@ files:
   include: 'scss/**/*.scss'
 
 rules:
+  brace-style: 1tbs
   class-name-format:
     - 1
     - convention: '([a-z0-9]+-?)+'
@@ -20,6 +21,7 @@ rules:
     - 1
     - filename-extension: false
       leading-underscore: false
+  declarations-before-nesting: true
   extends-before-mixins: 2
   extends-before-declarations: 2
   final-newline:
@@ -45,17 +47,21 @@ rules:
   nesting-depth:
     - 2
     - max-depth: 3
-  no-warn: 0
+  no-css-comments: 1
   no-debug: 1
   no-ids: 2
   no-important: 0
-  no-css-comments: 1
+  no-invalid-hex: 2
+  no-warn: 0
   placeholder-in-extend: 0
   property-sort-order:
     - 0
     - order:
         - display
         - position
-  space-before-brace: 1
-  url-quotes: 1
+  space-before-brace: 2
+  space-before-colon: 2
+  url-quotes:
+    - 1
+    - style: single
   zero-unit: 0
