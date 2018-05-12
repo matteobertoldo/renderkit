@@ -9,7 +9,7 @@
 /// @group _global renderkit
 /// @link https://github.com/necolas/normalize.css
 @mixin scss-normalize {
-    $reset-appearance: $global-inputs-reset-appearence;
+    $reset-appearance: $global-input-reset-appearence;
 
     // Change the default font family in all browsers (opinionated).
     // Prevent adjustments of font size after orientation changes in IE and iOS Devices.
@@ -472,16 +472,6 @@
             @extend %reset-input-style;
     	}
         overflow: auto;
-    }
-
-    // Set style for inputs [disabled] attribute after apply `appearance-none` rule.
-    @if ($reset-appearance) {
-        [disabled] {
-            color: inherit;
-            opacity: $global-input-disabled-opacity !important;
-            box-shadow: none !important;
-            cursor: default !important;
-    	}
     }
 
     // Collapse borders on table in every browsers.

@@ -15,7 +15,7 @@
 
         @each $direction, $transform in $arrow-shape-direction {
             &.#{$direction} {
-                transform: rotate3d(0, 0, 1, $transform);
+                transform: rotate($transform);
     		}
     	}
     }

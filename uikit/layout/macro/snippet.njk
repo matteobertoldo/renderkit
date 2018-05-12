@@ -1,10 +1,18 @@
 {% macro infolabel(text) %}
-    <div class="info-label">{{text | e}}</div>
+    <div class="info-label">
+        {{text | e}}
+    </div>
 {% endmacro %}
 
 {% macro infocontent() %}
     <div class="docs-info">
         {{caller()}}
+    </div>
+{% endmacro %}
+
+{% macro fancylabel(text) %}
+    <div class="fancy-label">
+        {{text | e}}
     </div>
 {% endmacro %}
 

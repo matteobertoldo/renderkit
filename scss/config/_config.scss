@@ -1,4 +1,4 @@
-// RenderKit
+// RenderKit 0.9.3-beta
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
@@ -41,9 +41,11 @@ $global-letter-spacing-apply: false;
 $global-letter-spacing: normal;
 $global-font-liga-kern: true;
 $global-links-text-decoration: true;
-$global-inputs-reset-appearence: true;
-$global-input-search-cancel-button: true;
+$global-input-reset-appearence: true;
+$global-input-disabled-color: inherit;
 $global-input-disabled-opacity: 0.5;
+$global-input-disabled-cursor: not-allowed;
+$global-input-search-cancel-button: true;
 $global-select-reset-appearence: true;
 $global-select-reset-appearance-options: false;
 $global-custom-checkbox-radio: true;

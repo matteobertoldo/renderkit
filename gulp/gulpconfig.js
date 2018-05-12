@@ -2,7 +2,7 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-var folder = {
+const folder = {
     assets: 'assets/',
     distribution: 'dist/',
     docs: 'docs/',
@@ -33,8 +33,7 @@ module.exports = {
     distribution: {
         uikit: folder.docs,
         scss: folder.distribution + 'css/',
-        sassdoc: folder.docs + 'sassdoc/',
-        svg: folder.docs + 'renderkit/svg/'
+        sassdoc: folder.docs + 'sassdoc/'
     },
     cssOptions: {
         browsersSupport: [

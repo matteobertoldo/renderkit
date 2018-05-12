@@ -42,11 +42,23 @@ $global-select-reset-appearence: true !default;
 /// @type Boolean
 $global-custom-checkbox-radio: true !default;
 
-/// Global `disabled` input opacity value.
+/// Global `disabled` input `color` value.
+///
+/// The color of the fields when they have the `disabled` attribute.
+/// @type Color|Keyword
+$global-input-disabled-color: inherit !default;
+
+/// Global `disabled` input `opacity` value.
 ///
 /// This value is valid only if `$global-select-reset-appearence` is `true`.
 /// @type Integer|Float
 $global-input-disabled-opacity: 0.5 !default;
+
+/// Global `disabled` input `cursor` value.
+///
+/// The type of cursor when the fields have the `disabled` attribute.
+/// @type Keyword
+$global-input-disabled-cursor: not-allowed !default;
 
 /// The global class that is applied in the validation of the forms, usually via js.
 ///

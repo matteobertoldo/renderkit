@@ -179,13 +179,13 @@ Create your `scss` file
 @import 'path/to/renderkit/scss/renderkit';
 @include scss-renderkit;
 ```
-Download the [settings](https://raw.github.com/matteobertoldo/renderkit/scss/config/_config.scss), change the default and enjoy!. The details of each variable can be found and searched on [this page](https://matteobertoldo.github.io/renderkit/sassdoc/index.html).
+Import the `config/_config.scss` file, change the default and enjoy!. The details of each variable can be found and searched on [this page](https://matteobertoldo.github.io/renderkit/sassdoc/index.html).
 
 ## CSS Quickly install
 
 You can basic [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit.css) the RenderKit `css` file.
--   The default `css` RenderKit includes Foundation `XY-Grid` and `Flexbox Utilities` in less than `85KB` 🎉.
--   For a minify version [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit.css) this file, less than `60KB` 🎉.
+-   The default `css` RenderKit includes Foundation `XY-Grid` and `Flexbox Utilities` in less than `95KB`.
+-   For a minify version [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit.css) this file, less than `70KB`.
 
 If you want the version without `flexbox` you can [download](https://raw.github.com/matteobertoldo/renderkit/dist/css/renderkit-float.css) the "float" version with Foundation Float Grid.
 
