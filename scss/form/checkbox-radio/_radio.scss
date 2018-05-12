@@ -32,7 +32,7 @@
         @if ($center-text-align) {
             margin-top: -(rem($marker-size / 2));
         }
-        transform: scale3d(0, 0, 0) translate3d(0, 0, 0);
+        transform: scale(0) translate(0);
     }
 }
 
@@ -45,7 +45,8 @@
 /// @param {Color} $focus-border-color [#b2b2b2] - The `border-color` of the radio shape when `input[type="radio"]` is in `:focus` but not `:checked`.
 @mixin radio-attr($hover-border: false, $hover-border-color: #b2b2b2, $checked-border: true, $checked-border-color: #b2b2b2, $focus-border-color: #b2b2b2) {
     input[type="radio"][disabled] + & {
-        opacity: $global-input-disabled-opacity !important;
+        opacity: $global-input-disabled-opacity;
+        cursor: $global-input-disabled-cursor;
     }
 
     @if ($hover-border) {
@@ -64,7 +65,7 @@
         }
 
         &::after {
-            transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+            transform: scale(1) translate(0);
         }
     }
 

@@ -140,6 +140,13 @@ $form-input-error-color: #666666 !default;
         }
     }
 
+    &[disabled] {
+        color: $global-input-disabled-color;
+        opacity:$global-input-disabled-opacity;
+        box-shadow: none;
+        cursor: $global-input-disabled-cursor;
+    }
+
     // Reset Firefox pseudo `:require` & `:invalid` attributes.
     &:required,
     &:invalid {
