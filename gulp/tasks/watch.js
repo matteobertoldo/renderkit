@@ -12,11 +12,11 @@ const colors = require('ansi-colors');
 let tasks = conf.defaultWatchTasks;
 let keys = Object.keys(tasks);
 
-let defaultWatchTasks = keys.filter((key) => {
+let defaultWatchTasks = keys.filter(key => {
     return tasks[key];
 });
 
-gulp.task('watch', (done) => {
+gulp.task('watch', done => {
     if (defaultWatchTasks.length) {
         defaultWatchTasks.push('browser-sync');
         sequence.apply(null, defaultWatchTasks, done);
