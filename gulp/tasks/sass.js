@@ -15,7 +15,7 @@ const pxtorem = require('postcss-pxtorem-plus');
 const cleanCSS = require('gulp-clean-css');
 const sassdoc = require('sassdoc');
 
-var processors = [
+let processors = [
     autoprefixer({
         browsers: conf.cssOptions.browsersSupport,
         flexbox: conf.cssOptions.flexbox,

@@ -9,7 +9,6 @@ const fs = require('fs');
 const path = require('path');
 const plumber = require('gulp-plumber');
 const nunjucksRender = require('gulp-nunjucks-render');
-const data = require('gulp-data');
 const htmlclean = require('gulp-htmlclean');
 const htmlbeautify = require('gulp-html-beautify');
 const minifyInline = require('gulp-minify-inline');
@@ -19,16 +18,11 @@ const colors = require('ansi-colors');
 gulp.task('uikit', () => {
     return gulp.src(conf.workspace.uikit.src)
     .pipe(plumber())
-    .pipe(data(() => {
-        return JSON.parse(fs.readFileSync(path.resolve(conf.workspace.uikit.data), 'utf8'));
-    })).on('error', (err) => {
-        log('Error in: ' + colors.red(err.plugin));
-        log('Message: ' + colors.red(err.message));
-    })
     .pipe(nunjucksRender({
         path: [conf.workspace.uikit.base],
+        data: JSON.parse(fs.readFileSync(path.resolve(conf.workspace.uikit.data), 'utf8')),
         ext: conf.uikitOptions.outputExt
-    })).on('error', (err) => {
+    })).on('error', err => {
         log('Error in: ' + colors.red(err.plugin));
         log('Message: ' + colors.red(err.message));
         log('File: ' + colors.red(err.fileName));
