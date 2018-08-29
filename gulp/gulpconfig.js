@@ -13,7 +13,6 @@ const folder = {
 module.exports = {
     defaultWatchTasks: {
         uikit: true,
-        sasslint: true,
         sass: true,
         sassdoc: true,
         copy: true
@@ -82,7 +81,7 @@ module.exports = {
         dryRun: true,
         forceDelete: false,
         cleanAllGeneratedFiles: true,
-        cleanFilesByType: function() {
+        cleanFilesByType: () => {
             return this.generatedFiles.html;
         }
     }

@@ -1,5 +1,3 @@
-{% set sectionbackground = uikit.style.sections.background %}
-{% set sectionmargin = uikit.style.sections.margin %}
 {% set titlecolor = uikit.style.title.color %}
 {% set globalcolor = uikit.style.globalcolor %}
 <style type="text/css">
@@ -21,7 +19,7 @@
         padding: 0 !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #ffffff !important;
+        background-color: {{uikit.style.backgroundcolor}} !important;
         background-image: none !important;
     }
 
@@ -45,8 +43,8 @@
     }
 
     #renderkit-body .uikit-element-render {
-        background-color: {{sectionbackground}};
-        margin: {{sectionmargin}};
+        background-color: {{uikit.style.sections.background}};
+        margin: 15px;
         padding: 50px 30px;
     }
 
@@ -178,7 +176,7 @@
             color: #282c34;
         {% endif%}
         border: 0;
-        border-radius: 0 0 0 6px;
+        border-radius: 0px 6px 0px 6px;
         padding: 4px;
         cursor: pointer;
         z-index: 1;

@@ -2,10 +2,11 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp');
-const requireDir = require('require-dir');
-const browserSync = require('browser-sync').create();
-global.browserSync = browserSync;
+import gulp from 'gulp';
+import requireDir from 'require-dir';
+import browserSync from 'browser-sync';
+
+global.browserSync = browserSync.create();
 
 requireDir('./gulp/tasks', {
 	recurse: false

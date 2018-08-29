@@ -1,41 +1,38 @@
 <div class="uikit-form-render">
     {% set rowclass = uikit.section.form.rowclass %}
     {% set labelclass = uikit.section.form.labelclass %}
-    {% set formclass =  uikit.section.form.formclass %}
-    {% set selectclass = uikit.section.form.selectclass %}
-    {% set errorclass = uikit.section.form.errorclass %}
-    <form class="uikit-form {{formclass}}" action="javascript:void(0)" autocomplete="on" method="get">
-        <div class="{{rowclass}} split">
+    <form class="uikit-form" action="javascript:void(0)" autocomplete="on" method="get">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input search</label>
-            <input type="search" name="q" placeholder="input search"/>
+            <input type="search" name="q" placeholder="input search" />
         </div>
-        <div class="{{rowclass}} split">
-            <label class="{{labelclass}} {{errorclass}}">Input error</label>
-            <input type="text" name="error-text" placeholder="bad input" class="{{errorclass}}"/>
+        <div class="form-row split">
+            <label class="{{labelclass}} {{uikit.section.form.labelerrorclass}}">Input error</label>
+            <input type="text" name="error-text" placeholder="bad input" class="{{uikit.section.form.errorclass}}" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input text</label>
-            <input type="text" name="name" placeholder="input text"/>
+            <input type="text" name="name" placeholder="input text" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input email</label>
-            <input type="email" name="email" placeholder="input email"/>
+            <input type="email" name="email" placeholder="input email" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input password</label>
-            <input type="password" name="password" placeholder="password"/>
+            <input type="password" name="password" placeholder="password" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input tel</label>
-            <input type="tel" name="tel" placeholder="input tel"/>
+            <input type="tel" name="tel" placeholder="input tel" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Input url</label>
-            <input type="url" name="url" placeholder="input url"/>
+            <input type="url" name="url" placeholder="input url" />
         </div>
-        <div class="{{rowclass}} split">
+        <div class="form-row split">
             <label class="{{labelclass}}">Select</label>
-            <select name="select" class="{{selectclass}}">
+            <select name="select" class="{{uikit.section.form.selectclass}}">
                 <option value="hotdog">
                     Hot Dog
                 </option>
@@ -47,24 +44,24 @@
                 </option>
             </select>
         </div>
-        <div class="{{rowclass}} wide">
+        <div class="form-row wide">
             <label class="{{labelclass}}">Textarea Disabled</label>
             <textarea placeholder="textarea disabled" disabled></textarea>
         </div>
-        <div class="{{rowclass}} checkbox-radio-group wide">
+        <div class="form-row checkbox-radio-group wide">
             <label class="{{labelclass}}">Input checkbox & radio custom</label>
-            <div class="{{rowclass}} wide no-gutter">
+            <div class="form-row wide no-gutter">
                 <input type="checkbox" id="uikit-checkbox-render" name="checkbox-render"/>
                 <label for="uikit-checkbox-render" class="input-checkbox">
                     Cupcake ipsum dolor sit amet chupa chups liquorice donut pie. Brownie gingerbread sesame snaps toffee chupa chups sweet roll. Bonbon wafer ice cream gummies chocolate bar candy sweet roll apple pie. Chupa chups jelly-o candy canes toffee. Sugar plum brownie powder sweet roll chocolate bar gingerbread lemon drops pudding.
                 </label>
             </div>
-            <div class="{{rowclass}} radio-group wide no-gutter">
-                <input type="radio" id="uikit-radio-render" name="input-radio-render"/>
+            <div class="form-row radio-group wide no-gutter">
+                <input type="radio" id="uikit-radio-render" name="input-radio-render" />
                 <label for="uikit-radio-render" class="input-radio">
                     Brownie.
                 </label>
-                <input type="radio" id="uikit-radio-render-2" name="input-radio-render"/>
+                <input type="radio" id="uikit-radio-render-2" name="input-radio-render" />
                 <label for="uikit-radio-render-2" class="input-radio">
                     Chupa chups.
                 </label>
@@ -74,11 +71,9 @@
 </div>
 {% if uikit.section.form.checkboxradio.custom %}
 <div class="ui-form-snippet">
-{{snippet.code('html','<div class="row">
-    <input id="uikit-checkbox-render" type="checkbox">
-    <label for="uikit-checkbox-render" class="input-checkbox">
-        Text for my label
-    </label>
-</div>')}}
+{{snippet.code('html','<input id="custom-checkbox" type="checkbox">
+<label for="custom-checkbox" class="input-checkbox">
+    Text for my label
+</label>')}}
 </div>
 {% endif %}

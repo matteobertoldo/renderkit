@@ -89,22 +89,6 @@ $form-input-focus-border-color: #b2b2b2 !default;
 /// @type Keyword
 $form-input-focus-box-shadow: 0 0 6px rgba(#666666, 0.25) !default;
 
-/// The `border-color` for the fields when they have a failed validation.
-/// @type Color
-$form-input-error-border-color: #c04649 !default;
-
-/// The `background-color` for the fields when they have a failed validation.
-/// @type Color
-$form-input-error-background-color: #f2c0c1 !default;
-
-/// The `box-shadow` for the fields when they have a failed validation.
-/// @type Keyword
-$form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35) !default;
-
-/// The `color` for the fields when they have a failed validation.
-/// @type Color
-$form-input-error-color: #666666 !default;
-
 /// Mixin for style all cross browsing inputs wrapped in a configurable "box" class.
 @mixin fields-style {
     display: block;
@@ -139,31 +123,4 @@ $form-input-error-color: #666666 !default;
             box-shadow: $form-input-hover-box-shadow;
         }
     }
-
-    &[disabled] {
-        color: $global-input-disabled-color;
-        opacity:$global-input-disabled-opacity;
-        box-shadow: none;
-        cursor: $global-input-disabled-cursor;
-    }
-
-    // Reset Firefox pseudo `:require` & `:invalid` attributes.
-    &:required,
-    &:invalid {
-        box-shadow: none;
-	}
-
-    &.#{$global-form-inputs-error-class} {
-        background-color: $form-input-error-background-color;
-        border-color: $form-input-error-border-color;
-        box-shadow: $form-input-error-box-shadow;
-        color: $form-input-error-color;
-
-        &:hover:not(:focus),
-        &:focus {
-            background-color: $form-input-error-background-color;
-            border-color: $form-input-error-border-color;
-            box-shadow: $form-input-error-box-shadow;
-		}
-	}
 }

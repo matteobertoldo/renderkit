@@ -13,18 +13,17 @@
         <meta name="format-detection" content="telephone=no" />
         {% block head %}{% endblock %}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
-        {% include "layout/ui/ui-style.njk" %}
+        {% include "./ui-style.njk" %}
     </head>
     <body id="renderkit-body">
         {% import "layout/macro/snippet.njk" as snippet %}
+        {% include "./ui-toggle.njk" %}
+        {% include "./ui-menu.njk" %}
         <main id="uikit-main" role="main">
             {% if uikit.aside.show %}
                 {% include "./ui-aside.njk" %}
             {% endif %}
             <div id="uikit-render-content">
-                {% if uikit.sassdocumentation.show %}
-                    {% include "./ui-sassdoc.njk" %}
-                {% endif %}
                 {% block uikit %}{% endblock %}
             </div>
         </main>

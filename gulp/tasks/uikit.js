@@ -2,18 +2,18 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp');
-const gulpif = require('gulp-if');
-const conf = require('../gulpconfig');
-const fs = require('fs');
-const path = require('path');
-const plumber = require('gulp-plumber');
-const nunjucksRender = require('gulp-nunjucks-render');
-const htmlclean = require('gulp-htmlclean');
-const htmlbeautify = require('gulp-html-beautify');
-const minifyInline = require('gulp-minify-inline');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
+import gulp from 'gulp';
+import gulpif from 'gulp-if';
+import conf from '../gulpconfig';
+import fs from 'fs';
+import path from 'path';
+import plumber from 'gulp-plumber';
+import nunjucksRender from 'gulp-nunjucks-render';
+import htmlclean from 'gulp-htmlclean';
+import htmlbeautify from 'gulp-html-beautify';
+import minifyInline from 'gulp-minify-inline';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
 
 gulp.task('uikit', () => {
     return gulp.src(conf.workspace.uikit.src)

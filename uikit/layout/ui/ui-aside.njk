@@ -1,3 +1,14 @@
+<aside id="uikit-aside-nav" role="presentation">
+    <h1 class="project-name">
+        {{uikit.projectname}}
+    </h1>
+    {% if uikit.aside.github %}
+        <div class="github-icon">
+            <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
+        </div>
+    {% endif %}
+</aside>
+
 <style type="text/css">
 #renderkit-body #uikit-aside-nav {
     position: fixed;
@@ -122,16 +133,6 @@
     }
 }
 </style>
-<aside id="uikit-aside-nav" role="presentation">
-    <h1 class="project-name">
-        {{uikit.projectname}}
-    </h1>
-    {% if uikit.aside.github %}
-        <div class="github-icon">
-            <a class="github-link" href="https://github.com/matteobertoldo/renderkit" target="_blank"></a>
-        </div>
-    {% endif %}
-</aside>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script type="text/javascript">
 var bubbleConfig = {

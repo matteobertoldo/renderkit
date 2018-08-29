@@ -2,18 +2,18 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp');
-const gulpif = require('gulp-if');
-const conf = require('../gulpconfig');
-const plumber = require('gulp-plumber');
-const sass = require('gulp-sass');
-const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const pxtorem = require('postcss-pxtorem-plus');
-const cleanCSS = require('gulp-clean-css');
-const sassdoc = require('sassdoc');
+import gulp from 'gulp';
+import gulpif from 'gulp-if';
+import conf from '../gulpconfig';
+import plumber from 'gulp-plumber';
+import sass from 'gulp-sass';
+import rename from 'gulp-rename';
+import sourcemaps from 'gulp-sourcemaps';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import pxtorem from 'postcss-pxtorem-plus';
+import cleanCSS from 'gulp-clean-css';
+import sassdoc from 'sassdoc';
 
 let processors = [
     autoprefixer({

@@ -383,7 +383,7 @@
         &[type="checkbox"],
         &[type="radio"] {
             @if ($global-custom-checkbox-radio) {
-                appearance: none !important;
+                appearance: none;
                 @include visuallyhidden;
     		} @else {
                 margin: 0;
@@ -461,7 +461,7 @@
     	}
 
         @if ($global-select-reset-appearance-options) {
-            appearance: none !important;
+            appearance: none;
             @include visuallyhidden;
     	}
     }

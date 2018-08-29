@@ -18,7 +18,7 @@
         } @else {
             $size: percentage($size / $grid-columns);
         }
-    } @elseif type-of($size) == 'list' {
+    } @else if type-of($size) == 'list' {
         @if length($size) != 3 {
             @error 'Wrong syntax for xy-cell-size(). Use the format "n of n" or "n/n".';
         } @else {
@@ -39,11 +39,11 @@
         flex: 0 0 auto;
         min-height: 0px;
         min-width: 0px;
-    } @elseif ($size == 'auto') {
+    } @else if ($size == 'auto') {
         flex: 1 1 0px;
-    } @elseif ($size == 'shrink') {
+    } @else if ($size == 'shrink') {
         flex: 0 0 auto;
-    } @elseif ($size == 'grow') {
+    } @else if ($size == 'grow') {
         flex: 1 0 auto;
     }
 }
@@ -65,10 +65,10 @@
     @if ($size == 'full') {
         $val: if($margin-gutter == 0, 100%, calc(100% - #{$margin-gutter}));
         #{$direction}: $val;
-    } @elseif ($size == 'auto') {
+    } @else if ($size == 'auto') {
         #{$direction}: auto;
         $val: if($margin-gutter == 0, 100%, calc(100% - #{$margin-gutter}));
-    } @elseif ($size == 'shrink') {
+    } @else if ($size == 'shrink') {
         #{$direction}: auto;
     } @else {
         $val: if($margin-gutter == 0, #{xy-cell-size($size)}, calc(#{xy-cell-size($size)} - #{$margin-gutter}));
@@ -86,15 +86,22 @@
 /// @param {String} $breakpoint [null] - The name of the breakpoint size in your gutters map to get the size from. If using with the `breakpoint()` mixin this will be set automatically unless manually entered.
 /// @param {Boolean} $vertical [false] - Set to true to output vertical (height) styles rather than widths.
 @mixin xy-cell($size: full, $gutter-output: true, $gutters: $grid-margin-gutters, $gutter-type: margin, $gutter-position: right left, $breakpoint: null, $vertical: false) {
+    $bp-is-fallback: false;
+
     @if ($breakpoint == null) {
         @if (variable-exists(-zf-size) and type-of($-zf-size) != 'number') and $-zf-size != null {
             $breakpoint: $-zf-size;
         } @else {
             $breakpoint: $-zf-zero-breakpoint;
+            $bp-is-fallback: true;
         }
     }
 
     $gutter: -zf-get-bp-val($gutters, $breakpoint);
+
+    @if ($bp-is-fallback == true and $gutter == null) {
+        $gutter: 0;
+    }
 
     @if ($gutter != null) {
         @include xy-cell-base($size);

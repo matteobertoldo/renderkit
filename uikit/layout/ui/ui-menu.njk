@@ -1,0 +1,216 @@
+{% if uikit.aside.show %}
+    {% set gutter = 80 %}
+{% else %}
+    {% set gutter = 0 %}
+{% endif %}
+{% set finalgutter = gutter + 45 %}
+
+<nav id="overlay-ui-nav" class="overlay-ui-nav">
+    <ul id="ui-menu" class="ui-menu"></ul>
+</nav>
+
+<style>
+#renderkit-body #overlay-ui-nav {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    z-index: 999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-transition: visibility 0.3s ease, opacity 0.3s ease;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+#renderkit-body #overlay-ui-nav.open {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#renderkit-body #ui-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px {{finalgutter + 'px'}};
+    max-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
+    #renderkit-body #ui-menu {
+        padding: 30px 25px;
+    }
+}
+
+#renderkit-body #ui-menu .uikit-menu-item {
+    font-family: {{uikit.style.title.family}};
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+@media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
+    #renderkit-body #ui-menu .uikit-menu-item {
+        font-size: 30px;
+    }
+}
+
+#renderkit-body #ui-menu .uikit-menu-item:not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
+#renderkit-body #ui-menu .uikit-menu-item sup {
+    position: relative;
+    top: -0.5em;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#renderkit-body #ui-menu .uikit-menu-item a {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    color: #c4c4c9;
+    text-decoration: none;
+}
+
+#renderkit-body #ui-menu .uikit-menu-item a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: rgba(221, 90, 111, 0.88);
+	-webkit-transform: scale3d(0, 5, 1);
+	transform: scale3d(0, 5, 1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+    transition: -webkit-transform 0.3s, transform 0.3s ease;
+	-webkit-transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9);
+	transition-timing-function: cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+#renderkit-body #ui-menu .uikit-menu-item a.active::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+</style>
+
+<script type="text/javascript">
+Math.easeInOutQuad = function (t, b, c, d) {
+	t /= d / 2;
+
+    if (t < 1) return c / 2 * t * t + b;
+	t--;
+
+    return -c / 2 * (t * (t - 2) - 1) + b;
+};
+
+function generateMenu() {
+    var menulistName = document.querySelectorAll('.section-title');
+    var uimenu = document.getElementById('ui-menu');
+
+    for (var i = 0; i < menulistName.length; i++) {
+        var text = menulistName[i].textContent;
+        var anchor = text.trim().replace(/ /g, '-').toLowerCase();
+        var menulist = document.createElement('li');
+        var sup = document.createElement('sup');
+        var suptext = document.createTextNode('0' + (i + 1).toString());
+        var a = document.createElement('a');
+        var textnode = document.createTextNode(text);
+
+        sup.appendChild(suptext);
+        a.appendChild(sup);
+        a.setAttribute('href', '#' + anchor);
+        a.setAttribute('rel', 'nofollow');
+        a.appendChild(textnode);
+
+        menulist.appendChild(a);
+        menulist.classList.add('uikit-menu-item');
+        uimenu.appendChild(menulist);
+    }
+}
+
+function generateSectionsAnchor() {
+    var sectionsTitle = document.querySelectorAll('.section-title');
+
+    for (var i = 0; i < sectionsTitle.length; i++) {
+        var sections = document.querySelectorAll('.uikit-element-render');
+        var text = sectionsTitle[i].textContent;
+        var attr = text.trim().replace(/ /g, '-').toLowerCase();
+        sections[i].setAttribute('id', attr);
+    }
+}
+
+function scrollTo(element, to, duration, hash) {
+    var start = element.scrollTop,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
+
+    var animateScroll = function() {
+        currentTime += increment;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        element.scrollTop = val;
+        location.hash = hash;
+
+        if (currentTime < duration) {
+            setTimeout(animateScroll, increment);
+        } else {
+            document.getElementById('overlay-ui-nav').classList.remove('open');
+            document.getElementById('ui-menu-toggle').classList.remove('open');
+        }
+    };
+
+    animateScroll();
+}
+
+function scrollToSection() {
+    var el = document.querySelectorAll('.uikit-menu-item > a');
+
+    for (var i = 0; i < el.length; i++) {
+        el[i].onclick = function (event) {
+            event.preventDefault();
+            var attr = this.getAttribute('href').replace(/#/g, '');
+            var section = document.getElementById(attr);
+            var c = 0;
+
+            while (c < el.length) {
+                el[c++].className = 'uikit-menu-item';
+            }
+
+            this.className = 'uikit-menu-item active';
+            scrollTo(document.body, section.offsetTop, 450, attr);
+        };
+    }
+}
+
+function toggleMenu() {
+    var menu = document.getElementById('overlay-ui-nav');
+    var menubutton = document.getElementById('ui-menu-toggle');
+
+    menubutton.onclick = function (event) {
+        event.preventDefault();
+
+        this.classList.toggle('open');
+        menu.classList.toggle('open')
+    };
+}
+
+window.addEventListener('load', function() {
+    generateSectionsAnchor();
+    generateMenu();
+    scrollToSection();
+    toggleMenu();
+});
+</script>

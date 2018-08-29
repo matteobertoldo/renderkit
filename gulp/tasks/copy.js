@@ -6,6 +6,9 @@ const gulp = require('gulp');
 const conf = require('../gulpconfig');
 
 gulp.task('copy', () => {
-    return gulp.src(conf.distribution.scss + 'renderkit.min.css')
+    return gulp.src([
+        conf.distribution.scss + 'renderkit.min.css',
+        conf.distribution.scss + 'renderkit.min.css.map',
+    ])
     .pipe(gulp.dest('docs/css/'))
 });

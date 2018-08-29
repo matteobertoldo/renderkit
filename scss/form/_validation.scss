@@ -1,0 +1,56 @@
+// RenderKit
+// github.com/matteobertoldo/renderkit
+// Licensed under MIT Open Source
+
+////
+/// @group form
+////
+
+/// The `background-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-background-color: #f2c0c1 !default;
+
+/// The `border-color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-border-color: #c04649 !default;
+
+/// The `box-shadow` for the fields when they have a failed validation.
+/// @type Keyword
+$form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35) !default;
+
+/// The `color` for the fields when they have a failed validation.
+/// @type Color
+$form-input-error-color: #666666 !default;
+
+/// Mixin to apply the style of the fields with failed validation.
+///
+/// It will be applied to:
+/// `input`, `select` & `textarea`
+@mixin fields-validation-style {
+    &[disabled] {
+        color: $global-input-disabled-color;
+        opacity: $global-input-disabled-opacity;
+        box-shadow: none;
+        cursor: $global-input-disabled-cursor;
+    }
+
+    // Reset Firefox pseudo `:require` & `:invalid` attributes.
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+
+    &.#{$global-form-inputs-error-class} {
+        background-color: $form-input-error-background-color;
+        border-color: $form-input-error-border-color;
+        box-shadow: $form-input-error-box-shadow;
+        color: $form-input-error-color;
+
+        &:hover:not(:focus):not([disabled]),
+        &:focus {
+            background-color: $form-input-error-background-color;
+            border-color: $form-input-error-border-color;
+            box-shadow: $form-input-error-box-shadow;
+        }
+    }
+}
