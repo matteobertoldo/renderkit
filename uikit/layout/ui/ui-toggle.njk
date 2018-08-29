@@ -1,3 +1,7 @@
+<div id="ui-menu-toggle">
+    <button type="button" class="trigger" tabindex="0"></button>
+</div>
+
 <style type="text/css">
 @keyframes -webkit-pulse {
     0% {
@@ -39,7 +43,7 @@
     }
 }
 
-#renderkit-body #sass-renderkit-docs {
+#renderkit-body #ui-menu-toggle {
     position: fixed;
     top: 30px;
     right: 30px;
@@ -47,25 +51,16 @@
     height: 30px;
     background-color: rgba(221, 90, 111, 0.88);
     border-radius: 50%;
-    z-index: 999;
-}
-
-@media only screen and (max-width: {{uikit.breakpoint.large + 'px'}}) {
-    #renderkit-body #sass-renderkit-docs {
-        top: 15px;
-        right: 15px;
-        width: 25px;
-        height: 25px;
-    }
+    z-index: 1000;
 }
 
 @media print {
-    #renderkit-body #sass-renderkit-docs {
+    #renderkit-body #ui-menu-toggle {
         display: none;
     }
 }
 
-#renderkit-body #sass-renderkit-docs::after {
+#renderkit-body #ui-menu-toggle::after {
     content: '';
     position: absolute;
     top: 0;
@@ -81,35 +76,46 @@
     z-index: -1;
 }
 
-#renderkit-body #sass-renderkit-docs a {
+#renderkit-body #ui-menu-toggle.open::after {
+    -webkit-animation: none;
+    animation: none;
+}
+
+#renderkit-body #ui-menu-toggle .trigger {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
+    background-color: transparent;
+    border: 0;
     border-radius: inherit;
     text-decoration: none;
     color: inherit;
 }
 
-#renderkit-body #sass-renderkit-docs a::before,
-#renderkit-body #sass-renderkit-docs a::after {
+#renderkit-body #ui-menu-toggle .trigger::before,
+#renderkit-body #ui-menu-toggle .trigger::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: calc(50% - 1px);
+    left: calc(50% - 5px);
     width: 10px;
     height: 2px;
-    background-color: rgba(255,255,255,0.88);
-    margin-top: -1px;
-    margin-left: -5px;
+    background-color: #fff;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-#renderkit-body #sass-renderkit-docs a::after {
+#renderkit-body #ui-menu-toggle .trigger::after {
     -webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
+
+#renderkit-body #ui-menu-toggle.open .trigger::after {
+    opacity: 0;
+}
 </style>
-<div id="sass-renderkit-docs">
-    <a href="{{uikit.sassdocumentation.file}}" target="_blank"></a>
-</div>

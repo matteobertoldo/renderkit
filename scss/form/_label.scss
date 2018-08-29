@@ -6,6 +6,14 @@
 /// @group form
 ////
 
+/// The class that will be applied to the `label` for the fields.
+/// @type String
+$form-inputs-labelclass: 'form-label' !default;
+
+/// The class that will be applied to the `label` when validation has failed.
+/// @type String
+$form-inputs-label-error-class: 'error';
+
 /// The `font-family` for the fields `label` element.
 /// @type Keyword|String
 $form-label-font-family: 'Josefin Sans', sans-serif !default;
@@ -35,7 +43,7 @@ $form-label-margin: 0 0 5px 0 !default;
 $form-input-error-label-color: #c04649 !default;
 
 /// Mixin for style the `label` for the fields.
-@mixin form-style-label {
+@mixin label-style {
     .#{$form-inputs-labelclass} {
         display: block;
         font: {
@@ -47,7 +55,7 @@ $form-input-error-label-color: #c04649 !default;
         color: $form-label-color;
         margin: $form-label-margin;
 
-        &.#{$global-form-inputs-error-class} {
+        &.#{$form-inputs-label-error-class} {
             color: $form-input-error-label-color;
         }
     }

@@ -9,9 +9,9 @@
         "style": {
             "lightcode": false,
             "globalcolor": "#666666",
+            "backgroundcolor": "#fff",
             "sections": {
-                "background": "#f5f5f5",
-                "margin": "15px"
+                "background": "#f5f5f5"
             },
             "title": {
                 "family": "Abril Fatface, coursive;",
@@ -21,10 +21,6 @@
                 "texttransform": "none",
                 "border": true
             }
-        },
-        "sassdocumentation": {
-            "show": true,
-            "file": "sassdoc/index.html"
         },
         "breakpoint": {
             "small": 0,
@@ -59,14 +55,13 @@
                 "cellcolor": "#d9d9d9"
             },
             "form": {
-                "formclass": "default",
-                "rowclass": "form-row",
                 "labelclass": "form-label",
                 "selectclass": "default",
                 "checkboxradio": {
                     "custom": true
                 },
-                "errorclass": "error"
+                "errorclass": "error",
+                "labelerrorclass": "error"
             },
             "customsectionsrender": {
                 "show": false

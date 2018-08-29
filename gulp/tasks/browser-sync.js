@@ -2,8 +2,8 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp');
-const conf = require('../gulpconfig');
+import gulp from 'gulp';
+import conf from '../gulpconfig';
 
 gulp.task('browser-sync', () => {
     if (conf.syncOptions.staticServer) {

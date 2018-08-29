@@ -6,33 +6,17 @@
 /// @group form
 ////
 
-/// The class that will act as a container for styling up the fields:
-///
-/// - `input[type="email"]`,
-/// - `input[type="password"]`,
-/// - `input[type="search"]`,
-/// - `input[type="tel"]`,
-/// - `input[type="text"]`,
-/// - `input[type="url"]`
-/// - `select`,
-/// - `textarea`
-/// @type String
-$form-inputs-rowclass: 'form-row' !default;
-
-/// The class that will be applied to the `label` for the fields.
-/// @type String
-$form-inputs-labelclass: 'form-label' !default;
-
 @import 'utils';
+@import 'label';
 @import 'fields';
 @import 'placeholder';
 @import 'autofill';
 @import 'select';
 @import 'textarea';
-@import 'label';
+@import 'validation';
 @import 'checkbox-radio/checkbox-radio';
 
-/// Mixin for style all cross browsing inputs wrapped in a configurable "box" class.
+/// Mixin for style all cross browsing inputs.
 ///
 /// The configurable inputs are:
 /// - `input[type="email"]`,
@@ -45,34 +29,33 @@ $form-inputs-labelclass: 'form-label' !default;
 /// - `textarea`
 /// @group _global renderkit
 @mixin form-style {
-    .#{$form-inputs-rowclass} {
-        @include form-style-label;
-
-        input[type="email"],
-        input[type="password"],
-        input[type="search"],
-        input[type="tel"],
-        input[type="text"],
-        input[type="url"],
-        select,
-        textarea {
-            @include fields-style;
-        }
-
-        input[type="email"],
-        input[type="password"],
-        input[type="search"],
-        input[type="tel"],
-        input[type="text"],
-        input[type="url"],
-        textarea {
-            @include placeholder-style;
-            @if $form-input-custom-autofill {
-                @include autofill-style;
-            }
-        }
-
-        @include select-style;
-        @include textarea-style;
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
+    select,
+    textarea {
+        @include fields-style;
     }
+
+    input,
+    select,
+    textarea {
+        @include fields-validation-style;
+
+        @if $form-input-custom-autofill {
+            @include autofill-style;
+        }
+    }
+
+    input,
+    textarea {
+        @include placeholder-style;
+    }
+
+    @include select-style;
+    @include textarea-style;
+    @include label-style;
 }

@@ -1,4 +1,4 @@
-// RenderKit 0.9.4-beta
+// RenderKit 0.9.5-beta
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
@@ -197,8 +197,8 @@ $links-color: #61afef;
 // 10. Form Global
 // ---------------
 
-$form-inputs-rowclass: 'form-row';
 $form-inputs-labelclass: 'form-label';
+$form-inputs-label-error-class: 'error';
 
 // 10.1 Form Input
 // ---------------

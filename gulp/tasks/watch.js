@@ -2,17 +2,16 @@
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
-const gulp = require('gulp');
-const watch = require('gulp-watch');
-const conf = require('../gulpconfig');
-const sequence = require('run-sequence');
-const log = require('fancy-log');
-const colors = require('ansi-colors');
+import gulp from 'gulp';
+import watch from 'gulp-watch';
+import conf from '../gulpconfig';
+import sequence from 'run-sequence';
+import log from 'fancy-log';
+import colors from 'ansi-colors';
 
-let tasks = conf.defaultWatchTasks;
-let keys = Object.keys(tasks);
-
-let defaultWatchTasks = keys.filter(key => {
+const tasks = conf.defaultWatchTasks;
+const keys = Object.keys(tasks);
+const defaultWatchTasks = keys.filter(key => {
     return tasks[key];
 });
 
@@ -26,7 +25,7 @@ gulp.task('watch', done => {
         });
 
         watch(conf.workspace.scss, () => {
-            sequence.apply(null, ['sasslint', 'sass:watch', 'sassdoc', 'copy'], done);
+            sequence.apply(null, ['sass:watch', 'sassdoc', 'copy'], done);
         });
     } else {
         log(colors.red('Set up at least one task to use `gulp watch`'));

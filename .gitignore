@@ -25,7 +25,6 @@ linters
 # -------------------
 
 dist/**/*.map
-docs/**/*.map
 
 # IDE Generated Files & Folders
 # -----------------------------

@@ -33,6 +33,10 @@ $selection-color: initial !default;
         visibility: hidden !important;
     }
 
+    .hide {
+        display: none !important;
+    }
+
     .visuallyhidden {
         @include visuallyhidden;
     }
@@ -61,10 +65,6 @@ $selection-color: initial !default;
 
     .no-overflow {
         overflow: hidden;
-    }
-
-    .no-display {
-        display: none !important;
     }
 
     @each $cursor in (pointer, default, grab, grabbing) {
