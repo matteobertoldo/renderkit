@@ -22,6 +22,9 @@ rules:
     - filename-extension: false
       leading-underscore: false
   declarations-before-nesting: true
+  empty-line-between-blocks:
+    - 1
+    - ignore-single-line-rulesets: true
   extends-before-mixins: 2
   extends-before-declarations: 2
   final-newline:
@@ -59,8 +62,11 @@ rules:
     - order:
         - display
         - position
+  space-after-comma: 2
+  space-before-bang: 1
   space-before-brace: 2
   space-before-colon: 2
+  trailing-semicolon: 2
   url-quotes:
     - 1
     - style: single
