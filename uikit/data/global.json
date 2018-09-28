@@ -2,6 +2,7 @@
     "uikit": {
         "title": "RenderKit",
         "projectname": "RenderKit",
+        "menu": true,
         "aside": {
             "show": true,
             "github": true

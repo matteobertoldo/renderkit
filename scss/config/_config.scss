@@ -1,4 +1,4 @@
-// RenderKit 0.9.5-beta
+// RenderKit 0.9.6-beta
 // github.com/matteobertoldo/renderkit
 // Licensed under MIT Open Source
 
@@ -224,7 +224,7 @@ $form-input-focus-border-color: #b2b2b2;
 $form-input-focus-box-shadow: 0 0 6px rgba(#666666, 0.25);
 $form-input-placeholder-color: #8c8c8c;
 $form-input-placeholder-focus-hidden: true;
-$form-input-placeholder-focus-color: #b2b2b2;
+$form-input-placeholder-focus-color: #8c8c8c;
 $form-input-placeholder-font-family: inherit;
 $form-input-placeholder-font-style: italic;
 $form-input-placeholder-text-transform: capitalize;
@@ -266,6 +266,7 @@ $form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35);
 $form-input-error-color: #666666;
 $form-input-error-label-color: #c04649;
 $form-input-error-placeholder-color: #c04649;
+$form-input-error-focus-style: false;
 
 // 10.6 Form Input Autofill
 // ------------------------

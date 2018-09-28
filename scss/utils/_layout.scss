@@ -81,6 +81,6 @@
         $space: ' ';
     }
 
-    counter-increment: section;
+    counter-increment: section; // sass-lint:disable space-after-comma
     content: counters(section,'#{$separator}') $space;
 }
