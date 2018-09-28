@@ -22,6 +22,10 @@ $form-input-error-box-shadow: 0 0 6px rgba(#c04649, 0.35) !default;
 /// @type Color
 $form-input-error-color: #666666 !default;
 
+/// Variable that determines whether to maintain the style of "error" even at the time of `focus` or less.
+/// @type Boolean
+$form-input-error-focus-style: true !default;
+
 /// Mixin to apply the style of the fields with failed validation.
 ///
 /// It will be applied to:
@@ -46,11 +50,19 @@ $form-input-error-color: #666666 !default;
         box-shadow: $form-input-error-box-shadow;
         color: $form-input-error-color;
 
-        &:hover:not(:focus):not([disabled]),
-        &:focus {
-            background-color: $form-input-error-background-color;
-            border-color: $form-input-error-border-color;
-            box-shadow: $form-input-error-box-shadow;
+        @if $form-input-error-focus-style {
+            &:hover:not(:focus):not([disabled]),
+            &:focus {
+                background-color: $form-input-error-background-color;
+                border-color: $form-input-error-border-color;
+                box-shadow: $form-input-error-box-shadow;
+            }
+        } @else {
+            &:hover:not(:focus):not([disabled]) {
+                background-color: $form-input-error-background-color;
+                border-color: $form-input-error-border-color;
+                box-shadow: $form-input-error-box-shadow;
+            }
         }
     }
 }

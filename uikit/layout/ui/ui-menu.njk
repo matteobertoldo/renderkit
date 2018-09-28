@@ -17,7 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.93);
     opacity: 0;
     z-index: 999;
     -webkit-user-select: none;
@@ -107,15 +107,6 @@
 </style>
 
 <script type="text/javascript">
-Math.easeInOutQuad = function (t, b, c, d) {
-	t /= d / 2;
-
-    if (t < 1) return c / 2 * t * t + b;
-	t--;
-
-    return -c / 2 * (t * (t - 2) - 1) + b;
-};
-
 function generateMenu() {
     var menulistName = document.querySelectorAll('.section-title');
     var uimenu = document.getElementById('ui-menu');
@@ -152,37 +143,11 @@ function generateSectionsAnchor() {
     }
 }
 
-function scrollTo(element, to, duration, hash) {
-    var start = element.scrollTop,
-        change = to - start,
-        currentTime = 0,
-        increment = 20;
-
-    var animateScroll = function() {
-        currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
-        location.hash = hash;
-
-        if (currentTime < duration) {
-            setTimeout(animateScroll, increment);
-        } else {
-            document.getElementById('overlay-ui-nav').classList.remove('open');
-            document.getElementById('ui-menu-toggle').classList.remove('open');
-        }
-    };
-
-    animateScroll();
-}
-
 function scrollToSection() {
     var el = document.querySelectorAll('.uikit-menu-item > a');
 
     for (var i = 0; i < el.length; i++) {
         el[i].onclick = function (event) {
-            event.preventDefault();
-            var attr = this.getAttribute('href').replace(/#/g, '');
-            var section = document.getElementById(attr);
             var c = 0;
 
             while (c < el.length) {
@@ -190,7 +155,8 @@ function scrollToSection() {
             }
 
             this.className = 'uikit-menu-item active';
-            scrollTo(document.body, section.offsetTop, 450, attr);
+            document.getElementById('overlay-ui-nav').classList.remove('open');
+            document.getElementById('ui-menu-toggle').classList.remove('open');
         };
     }
 }

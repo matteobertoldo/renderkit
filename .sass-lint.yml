@@ -5,12 +5,7 @@
 
 options:
   merge-default-rules: false
-  formatter: html
-  output-file: 'linters/sass-lint.html'
   max-warnings: 150
-
-files:
-  include: 'scss/**/*.scss'
 
 rules:
   brace-style: 1tbs
@@ -22,6 +17,9 @@ rules:
     - filename-extension: false
       leading-underscore: false
   declarations-before-nesting: true
+  empty-line-between-blocks:
+    - 1
+    - ignore-single-line-rulesets: true
   extends-before-mixins: 2
   extends-before-declarations: 2
   final-newline:
@@ -49,9 +47,11 @@ rules:
     - max-depth: 3
   no-css-comments: 1
   no-debug: 1
+  no-duplicate-properties: 1
   no-ids: 2
   no-important: 0
   no-invalid-hex: 2
+  no-misspelled-properties: 2
   no-warn: 0
   placeholder-in-extend: 0
   property-sort-order:
@@ -59,8 +59,11 @@ rules:
     - order:
         - display
         - position
+  space-after-comma: 2
+  space-before-bang: 1
   space-before-brace: 2
   space-before-colon: 2
+  trailing-semicolon: 2
   url-quotes:
     - 1
     - style: single

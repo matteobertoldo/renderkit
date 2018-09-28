@@ -45,6 +45,16 @@
 </div>
 {% endmacro %}
 
+{% macro codecenter(class, content) %}
+<div class="ui-docs-code">
+<pre class="ui-snippet center">
+<button type="button" class="code-btn">Copy</button>
+<code class="{{class}}">{{content | e}}
+</code>
+</pre>
+</div>
+{% endmacro %}
+
 {% macro togglebutton(id) %}
 <div id="uikit-switch-item">
     <input type="checkbox" id="{{id}}">

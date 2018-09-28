@@ -9,7 +9,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <title>{{uikit.title}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <meta name="format-detection" content="telephone=no" />
         {% block head %}{% endblock %}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
@@ -17,8 +17,10 @@
     </head>
     <body id="renderkit-body">
         {% import "layout/macro/snippet.njk" as snippet %}
-        {% include "./ui-toggle.njk" %}
-        {% include "./ui-menu.njk" %}
+        {% if uikit.menu %}
+            {% include "./ui-toggle.njk" %}
+            {% include "./ui-menu.njk" %}
+        {% endif %}
         <main id="uikit-main" role="main">
             {% if uikit.aside.show %}
                 {% include "./ui-aside.njk" %}

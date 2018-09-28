@@ -417,6 +417,6 @@
     }
 
     @if ($frame-grid) {
-        @include xy-frame-grid-classes($vertical-grid, $margin-grid)
+        @include xy-frame-grid-classes($vertical-grid, $margin-grid);
     }
 }
