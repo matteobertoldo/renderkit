@@ -11,11 +11,6 @@ npm-debug.log*
 
 node_modules
 
-# Linters directories
-# -------------------
-
-linters
-
 # npm cache file
 # --------------
 
