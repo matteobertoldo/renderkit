@@ -3,7 +3,6 @@
 // Licensed under MIT Open Source
 
 import gulp from 'gulp';
-import gulpif from 'gulp-if';
 import conf from '../gulpconfig';
 import plumber from 'gulp-plumber';
 import sass from 'gulp-sass';
@@ -49,7 +48,7 @@ gulp.task('sass', () => {
         suffix: '.min'
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(conf.distribution.scss))
+    .pipe(gulp.dest(conf.distribution.scss));
 });
 
 gulp.task('sassdoc', () => {
@@ -57,7 +56,7 @@ gulp.task('sassdoc', () => {
     .pipe(sassdoc({
         dest: conf.distribution.sassdoc
     }))
-    .resume()
+    .resume();
 });
 
 gulp.task('sass:watch', ['sass'], () => {

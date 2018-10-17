@@ -26,7 +26,7 @@
         box-sizing: border-box;
     }
 
-    // universal reset (inherit ´box sizing´ for best performance)
+    // Universal reset (inherit ´box sizing´ for best performance)
     *, ::before, ::after {
         box-sizing: inherit;
     }
@@ -34,10 +34,10 @@
     body {
         font: {
             family: $body-font-family;
+            weight: $body-font-weight;
             @if ($body-root-font-size) {
                 size: $global-body-font-size;
             }
-            weight: $body-font-weight;
     	}
         background-color: $body-background-color;
         color: $body-base-color;
@@ -143,11 +143,11 @@
         }
     }
 
-    // Remove the bottom border in Firefox 39-.
+    // Remove the bottom border in Chrome 57-
     // Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
     abbr[title] {
         border-bottom: none;
-        text-decoration: underline;
+        text-decoration: underline; //sass-lint:disable no-duplicate-properties
         text-decoration: underline dotted;
     }
 

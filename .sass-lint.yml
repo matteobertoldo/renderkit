@@ -1,7 +1,4 @@
 # https://github.com/sasstools/sass-lint/tree/master/docs/rules
-# 0: null
-# 1: warning
-# 2: error
 
 options:
   merge-default-rules: false
@@ -23,7 +20,7 @@ rules:
   extends-before-mixins: 2
   extends-before-declarations: 2
   final-newline:
-    - 1
+    - 0
     - include: true
   hex-length:
     - 1
@@ -59,6 +56,7 @@ rules:
     - order:
         - display
         - position
+  pseudo-element: 2
   space-after-comma: 2
   space-before-bang: 1
   space-before-brace: 2

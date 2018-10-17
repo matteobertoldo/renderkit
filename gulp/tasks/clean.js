@@ -8,13 +8,15 @@ import del from 'del';
 import log from 'fancy-log';
 import colors from 'ansi-colors';
 
+let localfiles = null;
+
 if (conf.cleanOptions.cleanAllGeneratedFiles) {
     let vals = Object.keys(conf.cleanOptions.generatedFiles).map(key => {
         return conf.cleanOptions.generatedFiles[key];
     });
-    var localfiles = vals.toString().split(/,(?=[^}]*(?:{|$))/);
+    localfiles = vals.toString().split(/,(?=[^}]*(?:{|$))/);
 } else {
-    var localfiles = conf.cleanOptions.cleanFilesByType();
+    localfiles = conf.cleanOptions.cleanFilesByType();
 }
 
 gulp.task('clean', () => {

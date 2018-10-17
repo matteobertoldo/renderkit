@@ -7,6 +7,6 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[{package.json,package-lock.json,.sass-lint.yml,.babelrc,yarn.lock}]
+[{package.json,package-lock.json,.babelrc,.eslintrc,.sass-lint.yml}]
 indent_style = space
 indent_size = 2

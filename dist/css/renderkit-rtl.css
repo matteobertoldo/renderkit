@@ -355,11 +355,11 @@ table {
   a, a:visited {
     text-decoration: underline;
   }
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after {
     content: '';
   }
-  abbr[title]:after {
+  abbr[title]::after {
     content: " (" attr(title) ")";
   }
   blockquote, pre, table {
